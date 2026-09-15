@@ -222,7 +222,7 @@ export function StudioField(props: FieldProps) {
  * are the exception, listed once per type below so they are not invisible.
  */
 const CODE_ONLY: Record<string, string[]> = {
-  certificationsPage: ["certifications.facility.inspection"],
+  certificationsPage: ["certifications.hero"],
   sku: ["sku.product", "sku.finishing", "sku.machining"],
   siteFooter: ["brand.mark", "brand.logo"],
   aboutPage: ["about.story.gauge"],

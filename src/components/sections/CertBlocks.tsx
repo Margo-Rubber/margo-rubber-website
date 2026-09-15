@@ -152,7 +152,7 @@ export function CertHero({
           about a quality management system, and the dimensional-inspection
           bench is the part of the floor that ISO 9001 actually governs. */}
       <Img
-        k="certifications.facility.inspection"
+        k="certifications.hero"
         fill
         priority
         sizes="100vw"

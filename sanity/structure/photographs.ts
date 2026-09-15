@@ -1,6 +1,6 @@
 import type { StructureBuilder } from "sanity/structure";
 import { IMAGE_SLOTS } from "../../src/content/image-slots.ts";
-import { PAGE_GROUPS } from "../../src/content/image-slot-labels.ts";
+import { pageGroup } from "../../src/content/image-slot-labels.ts";
 import { overrideId, slotIcon } from "../components/photographs.tsx";
 
 /**
@@ -36,37 +36,44 @@ import { overrideId, slotIcon } from "../components/photographs.tsx";
 
 export { overrideId };
 
-const AREA_ORDER = Object.keys(PAGE_GROUPS);
+/**
+ * Retired slots — split into per-placement slots and kept in the registry
+ * only until every document is re-pointed — are not offered to editors.
+ * A row nothing draws is a trap, not a choice.
+ */
+const isRetired = (slot: { title: string }) => slot.title.startsWith("Retired — ");
 
 export function photographsMenu(S: StructureBuilder) {
-  const byArea = new Map<string, typeof IMAGE_SLOTS>();
+  // One group per PAGE, in site order: the home page, then the products
+  // page, then each category page, and so on. An editor looking for the
+  // Gaskets hero opens "Gaskets page" and sees five photographs, not
+  // seventy under "products".
+  const groups = new Map<string, { title: string; order: number; slots: typeof IMAGE_SLOTS }>();
   for (const slot of IMAGE_SLOTS) {
-    const area = slot.key.split(".")[0];
-    if (!byArea.has(area)) byArea.set(area, []);
-    byArea.get(area)!.push(slot);
+    if (isRetired(slot)) continue;
+    const g = pageGroup(slot.page);
+    if (!groups.has(g.id)) groups.set(g.id, { title: g.title, order: g.order, slots: [] });
+    groups.get(g.id)!.slots.push(slot);
   }
 
-  const areas = [...byArea.keys()].sort(
-    (a, b) =>
-      (AREA_ORDER.indexOf(a) + 1 || 99) - (AREA_ORDER.indexOf(b) + 1 || 99) ||
-      a.localeCompare(b),
-  );
+  const ordered = [...groups.entries()].sort((a, b) => a[1].order - b[1].order);
 
   return S.list()
     .title("Photographs")
     .items(
-      areas.map((area) => {
-        // Page order within a group, not key order: "Our story" before
-        // "Our facility" because that is how the page reads, and a spare
-        // that renders nowhere sinks to the bottom.
-        const slots = [...byArea.get(area)!].sort(
+      ordered.map(([id, group]) => {
+        // Hero first, then page order by title; a spare that renders
+        // nowhere sinks to the bottom.
+        const slots = [...group.slots].sort(
           (a, b) =>
             Number(a.where.startsWith("Not shown")) -
               Number(b.where.startsWith("Not shown")) ||
+            Number(b.title.includes("hero")) - Number(a.title.includes("hero")) ||
             a.title.localeCompare(b.title),
         );
         const pending = slots.filter((s) => s.status === "placeholder").length;
-        const groupTitle = PAGE_GROUPS[area] ?? area;
+        const groupTitle = group.title;
+        const area = id.replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "home";
 
         return S.listItem()
           .id(area)
