@@ -1,4 +1,5 @@
 import { defineField, defineType } from "sanity";
+import { slotLabel } from "../../../src/content/image-slot-labels.ts";
 
 /**
  * REPLACING A PHOTOGRAPH
@@ -41,12 +42,31 @@ export const imageOverride = defineType({
   title: "Photograph",
   type: "document",
   fields: [
+    /**
+     * WHAT IS THERE NOW, before the field that replaces it.
+     *
+     * The original photograph is a file in the repo, not a Sanity asset, so
+     * the image field below starts empty — and an empty field beside a key
+     * like `home.story` tells an editor nothing about what they are about to
+     * replace. This field stores nothing; its component draws the current
+     * file from the site, names the slot in plain words, and says where on
+     * the page it appears. A string type only because a field must have one.
+     * The component is attached in sanity.config.ts (form.components.field),
+     * not here: this file is loaded by plain Node in the schema checks, which
+     * cannot parse JSX.
+     */
+    defineField({
+      name: "current",
+      title: "Currently on the site",
+      type: "string",
+      readOnly: true,
+    }),
     defineField({
       name: "image",
-      title: "The photograph",
+      title: "The replacement photograph",
       type: "image",
       description:
-        "Replaces the current image everywhere that slot appears. Drag the crop handles to choose what stays visible when the image is cropped.",
+        "Takes the exact place and size of the picture above, everywhere it appears. Drag the crop handles to choose what stays visible when the image is cropped.",
       options: { hotspot: true },
       validation: (r) => r.required(),
     }),
@@ -108,15 +128,21 @@ export const imageOverride = defineType({
 
   preview: {
     // The slot is the document id, so it is read back off the id rather than
-    // stored twice. Two copies of the same fact drift.
+    // stored twice. Two copies of the same fact drift. The id is then turned
+    // into the editor's name for the slot, so the Drafts list and history read
+    // "Our story — plant photo", not "imageOverride-home__story".
     select: { id: "_id", media: "image", alt: "alt" },
-    prepare: ({ id, media, alt }) => ({
-      title: String(id ?? "")
+    prepare: ({ id, media, alt }) => {
+      const key = String(id ?? "")
         .replace(/^drafts\./, "")
         .replace(/^imageOverride-/, "")
-        .replace(/__/g, "."),
-      subtitle: alt,
-      media,
-    }),
+        .replace(/__/g, ".");
+      const label = slotLabel(key);
+      return {
+        title: label.title,
+        subtitle: alt || label.where,
+        media,
+      };
+    },
   },
 });
