@@ -1,12 +1,16 @@
 "use client";
 
 import { defineConfig } from "sanity";
-import { structureTool } from "sanity/structure";
+import { structureTool, type DocumentBuilder, type StructureBuilder } from "sanity/structure";
 import { visionTool } from "@sanity/vision";
 import { apiVersion, dataset, projectId } from "./sanity/env";
 import { schemaTypes } from "./sanity/schemaTypes";
 import { photographsMenu } from "./sanity/structure/photographs";
-import { StudioField } from "./sanity/components/photographs.tsx";
+import {
+  PhotographsView,
+  RestoreOriginalAction,
+  StudioField,
+} from "./sanity/components/photographs.tsx";
 import {
   singletonActions,
   singletonTemplateFilter,
@@ -25,6 +29,22 @@ import {
  * is. That distinction matters more as the model grows: a flat alphabetical
  * list of 17 document types is a database browser, not a place to work.
  */
+/**
+ * Every page document opens with two tabs: the editor, and "Photographs" —
+ * the pictures that page draws, each with a button to replace it. That is
+ * the path an editor actually takes: "I'm on the home page and I want to
+ * change that picture", not "which of 85 slots is it".
+ *
+ * Explicit `S.document()` nodes in the structure below do not pick up
+ * `defaultDocumentNode`, so the singletons go through this helper and the
+ * lists get the same views from `defaultDocumentNode`.
+ */
+const withPhotographs = (S: StructureBuilder, doc: DocumentBuilder) =>
+  doc.views([
+    S.view.form(),
+    S.view.component(PhotographsView).id("photographs").title("Photographs"),
+  ]);
+
 export default defineConfig({
   name: "margo",
   title: "Margo Rubber",
@@ -33,8 +53,16 @@ export default defineConfig({
   dataset,
 
   document: {
-    // A page there can only be one of cannot be duplicated or deleted.
-    actions: singletonActions,
+    // A page there can only be one of cannot be duplicated or deleted. A
+    // photograph override gains "Restore original", placed right after
+    // Publish so it is the second thing an editor sees, not a hunt through
+    // the ⋮ menu for a Delete that sounds destructive.
+    actions: (prev, ctx) => {
+      const base = singletonActions(prev, ctx);
+      if (ctx.schemaType !== "imageOverride") return base;
+      const i = base.findIndex((a) => a.action === "publish");
+      return [...base.slice(0, i + 1), RestoreOriginalAction, ...base.slice(i + 1)];
+    },
     // …and is not offered by the global "create new" menu either, which builds
     // its list from the schema rather than from the actions above.
     newDocumentOptions: (prev) => singletonTemplateFilter(prev),
@@ -47,6 +75,8 @@ export default defineConfig({
   form: { components: { field: StudioField } },
   plugins: [
     structureTool({
+      defaultDocumentNode: (S, { schemaType }) =>
+        schemaType === "imageOverride" ? S.document() : withPhotographs(S, S.document()),
       structure: (S) =>
         S.list()
           .title("Content")
@@ -109,81 +139,81 @@ export default defineConfig({
                     S.listItem()
                       .title("Home")
                       .child(
-                        S.document().schemaType("homePage").documentId("homePage-home").title("Home"),
+                        withPhotographs(S, S.document().schemaType("homePage").documentId("homePage-home").title("Home")),
                       ),
                     S.listItem()
                       .title("About")
                       .child(
-                        S.document().schemaType("aboutPage").documentId("aboutPage-about").title("About"),
+                        withPhotographs(S, S.document().schemaType("aboutPage").documentId("aboutPage-about").title("About")),
                       ),
                     S.listItem()
                       .title("Why Margo")
                       .child(
-                        S.document().schemaType("whyMargoPage").documentId("whyMargoPage-why-margo").title("Why Margo"),
+                        withPhotographs(S, S.document().schemaType("whyMargoPage").documentId("whyMargoPage-why-margo").title("Why Margo")),
                       ),
                     S.listItem()
                       .title("Export")
                       .child(
-                        S.document().schemaType("exportPage").documentId("exportPage-export").title("Export"),
+                        withPhotographs(S, S.document().schemaType("exportPage").documentId("exportPage-export").title("Export")),
                       ),
                     S.listItem()
                       .title("Certifications")
                       .child(
-                        S.document().schemaType("certificationsPage").documentId("certificationsPage-certifications").title("Certifications"),
+                        withPhotographs(S, S.document().schemaType("certificationsPage").documentId("certificationsPage-certifications").title("Certifications")),
                       ),
                     S.listItem()
                       .title("Case Studies")
                       .child(
-                        S.document().schemaType("caseStudiesPage").documentId("caseStudiesPage-case-studies").title("Case Studies"),
+                        withPhotographs(S, S.document().schemaType("caseStudiesPage").documentId("caseStudiesPage-case-studies").title("Case Studies")),
                       ),
                     S.listItem()
                       .title("Contact")
                       .child(
-                        S.document()
+                        withPhotographs(S, S.document()
                           .schemaType("contactPage")
                           .documentId("contactPage-contact")
-                          .title("Contact"),
+                          .title("Contact")),
                       ),
                     S.listItem()
                       .title("Products page")
                       .child(
-                        S.document()
+                        withPhotographs(S, S.document()
                           .schemaType("productsHub")
                           .documentId("productsHub-products")
-                          .title("Products page"),
+                          .title("Products page")),
                       ),
                     S.listItem()
                       .title("Industries page")
                       .child(
-                        S.document()
+                        withPhotographs(S, S.document()
                           .schemaType("industriesHub")
                           .documentId("industriesHub-industries")
-                          .title("Industries page"),
+                          .title("Industries page")),
                       ),
                     S.listItem()
                       .title("Resources & Guides")
                       .child(
-                        S.document()
+                        withPhotographs(S, S.document()
                           .schemaType("resourcesHub")
                           .documentId("resourcesHub-resources")
-                          .title("Resources & Guides"),
+                          .title("Resources & Guides")),
                       ),
                     S.divider(),
                     S.listItem()
                       .title("Thank you")
                       .child(
-                        S.document()
+                        withPhotographs(S, S.document()
                           .schemaType("utilityPage")
                           .documentId("utilityPage-thank-you")
-                          .title("Thank you"),
+                          .title("Thank you")),
                       ),
                     S.listItem()
                       .title("Page not found (404)")
                       .child(
-                        S.document()
+                        withPhotographs(S, S.document()
                           .schemaType("utilityPage")
                           .documentId("utilityPage-not-found")
-                          .title("Page not found"),
+                          .title("Page not found")),
                       ),
                   ]),
               ),
@@ -194,10 +224,10 @@ export default defineConfig({
             S.listItem()
               .title("Footer")
               .child(
-                S.document()
+                withPhotographs(S, S.document()
                   .schemaType("siteFooter")
                   .documentId("siteFooter-footer")
-                  .title("Footer"),
+                  .title("Footer")),
               ),
 
             S.divider(),

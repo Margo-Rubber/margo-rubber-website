@@ -111,43 +111,43 @@ export const IMAGE_SLOT_LABELS = {
     page: "/products",
   },
   "products.card.oil-seals": {
-    title: "Oil Seals card",
-    where: "Products page range grid and the home page portfolio grid — card 2 of 11.",
+    title: "Oil Seals — card and page hero",
+    where: "Products page range grid and the home page portfolio grid — card 2 of 11, and the hero background at the top of the Oil Seals page.",
     page: "/products",
   },
   "products.card.gaskets": {
-    title: "Gaskets card",
-    where: "Products page range grid and the home page portfolio grid — card 3 of 11.",
+    title: "Gaskets — card and page hero",
+    where: "Products page range grid and the home page portfolio grid — card 3 of 11, and the hero background at the top of the Gaskets page.",
     page: "/products",
   },
   "products.card.bellows": {
-    title: "Bellows card",
-    where: "Products page range grid and the home page portfolio grid — card 4 of 11.",
+    title: "Bellows — card and page hero",
+    where: "Products page range grid and the home page portfolio grid — card 4 of 11, and the hero background at the top of the Bellows page.",
     page: "/products",
   },
   "products.card.anti-vibration-mounts": {
-    title: "Anti-Vibration Mounts card",
-    where: "Products page range grid and the home page portfolio grid — card 5 of 11.",
+    title: "Anti-Vibration Mounts — card and page hero",
+    where: "Products page range grid and the home page portfolio grid — card 5 of 11, and the hero background at the top of the Anti-Vibration Mounts page.",
     page: "/products",
   },
   "products.card.grommets": {
-    title: "Grommets card",
-    where: "Products page range grid and the home page portfolio grid — card 6 of 11.",
+    title: "Grommets — card and page hero",
+    where: "Products page range grid and the home page portfolio grid — card 6 of 11, and the hero background at the top of the Grommets page.",
     page: "/products",
   },
   "products.card.bushes": {
-    title: "Bushes & Bushings card",
-    where: "Products page range grid and the home page portfolio grid — card 7 of 11.",
+    title: "Bushes & Bushings — card and page hero",
+    where: "Products page range grid and the home page portfolio grid — card 7 of 11, and the hero background at the top of the Bushes & Bushings page.",
     page: "/products",
   },
   "products.card.pads-stoppers-caps": {
-    title: "Pads, Stoppers & Caps card",
-    where: "Products page range grid and the home page portfolio grid — card 8 of 11.",
+    title: "Pads, Stoppers & Caps — card and page hero",
+    where: "Products page range grid and the home page portfolio grid — card 8 of 11, and the hero background at the top of the Pads, Stoppers & Caps page.",
     page: "/products",
   },
   "products.card.leak-test-rubber": {
-    title: "Leak Test Rubber card",
-    where: "Products page range grid and the home page portfolio grid — card 9 of 11.",
+    title: "Leak Test Rubber — card and page hero",
+    where: "Products page range grid and the home page portfolio grid — card 9 of 11, and the hero background at the top of the Leak Test Rubber page.",
     page: "/products",
   },
   "products.card.extrusion": {
@@ -225,48 +225,48 @@ export const IMAGE_SLOT_LABELS = {
     page: "/industries",
   },
   "industries.automotive": {
-    title: "Automotive card",
-    where: "Industries page grid — card 1 of 9.",
+    title: "Automotive — card and page hero",
+    where: "Industries page grid — card 1 of 9, and the hero background at the top of the Automotive industry page.",
     page: "/industries",
   },
   "industries.mining": {
     title: "Mining card",
-    where: "Industries page grid — card 2 of 9.",
+    where: "Industries page grid — card 2 of 9. The Mining page has its own hero, listed under industry pages.",
     page: "/industries",
   },
   "industries.oil-gas": {
-    title: "Oil & Gas card",
-    where: "Industries page grid — card 3 of 9.",
+    title: "Oil & Gas — card and page hero",
+    where: "Industries page grid — card 3 of 9, and the hero background at the top of the Oil & Gas industry page.",
     page: "/industries",
   },
   "industries.pumps-valves": {
-    title: "Pumps & Valves card",
-    where: "Industries page grid — card 4 of 9.",
+    title: "Pumps & Valves — card and page hero",
+    where: "Industries page grid — card 4 of 9, and the hero background at the top of the Pumps & Valves industry page.",
     page: "/industries",
   },
   "industries.hvac": {
-    title: "HVAC card",
-    where: "Industries page grid — card 5 of 9.",
+    title: "HVAC — card and page hero",
+    where: "Industries page grid — card 5 of 9, and the hero background at the top of the HVAC industry page.",
     page: "/industries",
   },
   "industries.electrical-electronics": {
-    title: "Electrical & Electronics card",
-    where: "Industries page grid — card 6 of 9.",
+    title: "Electrical & Electronics — card and page hero",
+    where: "Industries page grid — card 6 of 9, and the hero background at the top of the Electrical & Electronics industry page.",
     page: "/industries",
   },
   "industries.agriculture": {
-    title: "Agriculture card",
-    where: "Industries page grid — card 7 of 9.",
+    title: "Agriculture — card and page hero",
+    where: "Industries page grid — card 7 of 9, and the hero background at the top of the Agriculture industry page.",
     page: "/industries",
   },
   "industries.medical-devices": {
-    title: "Medical Devices card",
-    where: "Industries page grid — card 8 of 9.",
+    title: "Medical Devices — card and page hero",
+    where: "Industries page grid — card 8 of 9, and the hero background at the top of the Medical Devices industry page.",
     page: "/industries",
   },
   "industries.water-fluid-management": {
-    title: "Water & Fluid Management card",
-    where: "Industries page grid — card 9 of 9.",
+    title: "Water & Fluid Management — card and page hero",
+    where: "Industries page grid — card 9 of 9, and the hero background at the top of the Water & Fluid Management industry page.",
     page: "/industries",
   },
 
@@ -309,8 +309,8 @@ export const IMAGE_SLOT_LABELS = {
 
   /* ── About page ───────────────────────────────────────────────────── */
   "about.hero": {
-    title: "About page — hero background",
-    where: "About page, the photograph behind the heading at the top (also used again in the closing section).",
+    title: "Home & About — hero background",
+    where: "The photograph behind the heading at the top of the HOME page and the About page, and again in the About page’s closing section. One file, three places.",
     page: "/about",
   },
   "about.story.plant": {
@@ -391,8 +391,8 @@ export const IMAGE_SLOT_LABELS = {
     page: "/export",
   },
   "export.vessel": {
-    title: "Export — container vessel photo",
-    where: "Export page.",
+    title: "Export page — hero background",
+    where: "Export page, the photograph behind the heading at the top.",
     page: "/export",
   },
   "export.pallets": {
@@ -413,8 +413,8 @@ export const IMAGE_SLOT_LABELS = {
     page: "/certifications",
   },
   "certifications.facility.inspection": {
-    title: "Certifications — facility photo 3 (inspection)",
-    where: "Certifications page, ‘Manufacturing & facility’ section.",
+    title: "Certifications — hero and facility photo 3 (inspection)",
+    where: "Certifications page: the hero background at the top, and again in the ‘Manufacturing & facility’ section.",
     page: "/certifications",
   },
   "certifications.facility.plant": {

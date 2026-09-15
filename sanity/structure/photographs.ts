@@ -1,7 +1,7 @@
 import type { StructureBuilder } from "sanity/structure";
 import { IMAGE_SLOTS } from "../../src/content/image-slots.ts";
 import { PAGE_GROUPS } from "../../src/content/image-slot-labels.ts";
-import { slotIcon } from "../components/photographs.tsx";
+import { overrideId, slotIcon } from "../components/photographs.tsx";
 
 /**
  * THE PHOTOGRAPHS SCREEN
@@ -34,17 +34,7 @@ import { slotIcon } from "../components/photographs.tsx";
  *    disagreeing with the document it sits on.
  */
 
-/**
- * Deterministic: one document per slot, by construction.
- *
- * Dots are ENCODED, not passed through. Sanity reserves the dot for
- * namespacing document ids — `drafts.`, `versions.<release>.` — and an id
- * containing one is invisible to the published perspective. It still saves,
- * still reads back by id, and simply never appears in a published query: a
- * document that exists and cannot be found.
- */
-export const overrideId = (slot: string) =>
-  `imageOverride-${slot.replace(/\./g, "__")}`;
+export { overrideId };
 
 const AREA_ORDER = Object.keys(PAGE_GROUPS);
 

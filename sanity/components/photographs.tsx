@@ -1,8 +1,15 @@
 "use client";
 
-import type { ComponentType } from "react";
-import { useFormValue, type FieldProps } from "sanity";
-import { Badge, Box, Card, Flex, Stack, Text } from "@sanity/ui";
+import { useState, type ComponentType } from "react";
+import {
+  useDocumentOperation,
+  useFormValue,
+  type DocumentActionComponent,
+  type FieldProps,
+} from "sanity";
+import { useRouter } from "sanity/router";
+import type { UserViewComponent } from "sanity/structure";
+import { Badge, Box, Button, Card, Flex, Stack, Text } from "@sanity/ui";
 import { IMAGE_SLOTS, type ImageSlot } from "../../src/content/image-slots.ts";
 
 /**
@@ -42,6 +49,18 @@ export const fileUrl = (slot: ImageSlot) => `${siteOrigin()}${slot.src}`;
  */
 export const sizedUrl = (slot: ImageSlot, w: 64 | 384 | 640) =>
   `${siteOrigin()}/_next/image?url=${encodeURIComponent(slot.src)}&w=${w}&q=75`;
+
+/**
+ * Deterministic: one override document per slot, by construction.
+ *
+ * Dots are ENCODED, not passed through. Sanity reserves the dot for
+ * namespacing document ids — `drafts.`, `versions.<release>.` — and an id
+ * containing one is invisible to the published perspective. It still saves,
+ * still reads back by id, and simply never appears in a published query: a
+ * document that exists and cannot be found.
+ */
+export const overrideId = (slot: string) =>
+  `imageOverride-${slot.replace(/\./g, "__")}`;
 
 /** Registry key ← override document id. The id encodes dots as `__`. */
 export const slotKeyFromId = (id: string) =>
@@ -164,9 +183,9 @@ export function CurrentPhotographField(props: FieldProps) {
 
         <Text size={1} muted>
           Upload a replacement below and publish — it takes this picture’s exact
-          place and size. To go back to this original, delete this document
-          (the ⋮ menu next to Publish → Delete). Clearing the field won’t
-          publish: a replacement needs a photograph.
+          place and size. To go back to this original, use{" "}
+          <strong>Restore original photograph</strong> next to Publish.
+          Clearing the field won’t publish: a replacement needs a photograph.
         </Text>
       </Stack>
     </Card>
@@ -187,3 +206,189 @@ export function StudioField(props: FieldProps) {
   }
   return props.renderDefault(props);
 }
+
+/* ── The "Photographs" tab on every page document ───────────────────── */
+
+/**
+ * WHICH PHOTOGRAPHS BELONG TO THIS PAGE — derived, not listed.
+ *
+ * A page's images are the registry keys its document actually contains:
+ * the hero key, every block's image key, every card's. Walking the document
+ * for strings that are registry keys finds all of them, in the order the
+ * document stores them, and a page that gains a section gains its
+ * photographs here without anyone maintaining a second list.
+ *
+ * The few images a component hard-codes rather than reads from the document
+ * are the exception, listed once per type below so they are not invisible.
+ */
+const CODE_ONLY: Record<string, string[]> = {
+  certificationsPage: ["certifications.facility.inspection"],
+  sku: ["sku.product", "sku.finishing", "sku.machining"],
+  siteFooter: ["brand.mark", "brand.logo"],
+  aboutPage: ["about.story.gauge"],
+};
+
+function collectKeys(value: unknown, out: string[]): void {
+  if (typeof value === "string") {
+    if (bySlot.has(value) && !out.includes(value)) out.push(value);
+  } else if (Array.isArray(value)) {
+    for (const v of value) collectKeys(v, out);
+  } else if (value && typeof value === "object") {
+    for (const v of Object.values(value as Record<string, unknown>)) collectKeys(v, out);
+  }
+}
+
+function heroKeyOf(doc: Record<string, unknown> | null): string | undefined {
+  const hero = doc?.hero as { image?: unknown } | undefined;
+  const candidates = [hero?.image, doc?.heroImage];
+  return candidates.find((c): c is string => typeof c === "string" && bySlot.has(c));
+}
+
+export const PhotographsView: UserViewComponent = ({ document, schemaType }) => {
+  const router = useRouter();
+  const displayed = (document.displayed ?? null) as Record<string, unknown> | null;
+
+  const keys: string[] = [];
+  const hero = heroKeyOf(displayed);
+  if (hero) keys.push(hero);
+  collectKeys(displayed, keys);
+  for (const k of CODE_ONLY[schemaType.name] ?? []) if (!keys.includes(k)) keys.push(k);
+
+  const slots = keys.map((k) => bySlot.get(k)!).filter(Boolean);
+
+  if (slots.length === 0) {
+    return (
+      <Box padding={4}>
+        <Text muted>This page has no photographs of its own.</Text>
+      </Box>
+    );
+  }
+
+  return (
+    <Box padding={4}>
+      <Stack gap={4}>
+        <Text size={1} muted>
+          Every photograph this page draws, in page order. Open one to replace it —
+          the replacement takes the same place and size. Photographs shared with
+          other pages say so.
+        </Text>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
+            gap: 12,
+          }}
+        >
+          {slots.map((slot) => {
+            const isHero = slot.key === hero;
+            const standIn = slot.status !== "final";
+            return (
+              <Card key={slot.key} radius={2} border overflow="hidden">
+                <Card
+                  style={{ background: "#17191c", aspectRatio: "4 / 3", overflow: "hidden" }}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element -- Studio preview of a repo file */}
+                  <img
+                    src={sizedUrl(slot, 384)}
+                    alt={slot.alt || slot.title}
+                    loading="lazy"
+                    style={{ display: "block", width: "100%", height: "100%", objectFit: "cover" }}
+                  />
+                </Card>
+                <Box padding={3}>
+                  <Stack gap={2}>
+                    <Flex gap={2} align="center" wrap="wrap">
+                      {isHero && (
+                        <Badge tone="primary" fontSize={0}>
+                          Hero
+                        </Badge>
+                      )}
+                      <Badge tone={standIn ? "caution" : "positive"} fontSize={0}>
+                        {standIn ? "stock stand-in" : "Margo photograph"}
+                      </Badge>
+                    </Flex>
+                    <Text weight="semibold" size={1}>
+                      {slot.title}
+                    </Text>
+                    <Text size={1} muted>
+                      {slot.where}
+                    </Text>
+                    <Button
+                      text="Replace this photograph"
+                      mode="ghost"
+                      fontSize={1}
+                      onClick={() =>
+                        router.navigateIntent("edit", {
+                          id: overrideId(slot.key),
+                          type: "imageOverride",
+                        })
+                      }
+                    />
+                  </Stack>
+                </Box>
+              </Card>
+            );
+          })}
+        </div>
+      </Stack>
+    </Box>
+  );
+};
+
+/* ── "Restore original photograph" — the delete, named for what it does ── */
+
+/**
+ * The override document IS the replacement; removing it is what puts the
+ * original back. The built-in Delete does exactly this, but "Delete" beside
+ * an image an editor has just uploaded reads as "destroy my photograph", and
+ * the first editor to try going back cleared the field instead — which
+ * leaves a document that cannot be published. This action says what will
+ * happen, shows the original that will return, and does the same delete.
+ */
+export const RestoreOriginalAction: DocumentActionComponent = (props) => {
+  const { id, type, draft, published, onComplete } = props;
+  const { delete: del } = useDocumentOperation(id, type);
+  const [open, setOpen] = useState(false);
+  const slot = findSlot(slotKeyFromId(id));
+  const nothingToRestore = !draft && !published;
+
+  if (!slot) return null;
+
+  return {
+    label: "Restore original photograph",
+    tone: "caution",
+    disabled: nothingToRestore || Boolean(del.disabled),
+    title: nothingToRestore
+      ? "Nothing has been uploaded for this slot yet — the site already shows the original."
+      : "Remove the uploaded replacement so the site shows the original photograph again.",
+    onHandle: () => setOpen(true),
+    dialog: open && {
+      type: "confirm",
+      tone: "caution",
+      confirmButtonText: "Restore original",
+      cancelButtonText: "Keep my photograph",
+      message: (
+        <Stack gap={3}>
+          <Text>
+            The site will go back to this photograph for <strong>{slot.title}</strong>.
+            Your uploaded replacement is removed — you can upload it again later.
+          </Text>
+          <Card style={{ background: "#17191c", overflow: "hidden" }} radius={2}>
+            {/* eslint-disable-next-line @next/next/no-img-element -- Studio preview of a repo file */}
+            <img
+              src={sizedUrl(slot, 384)}
+              alt={slot.alt || slot.title}
+              style={{ display: "block", margin: "0 auto", maxWidth: "100%", maxHeight: 200, objectFit: "contain" }}
+            />
+          </Card>
+        </Stack>
+      ),
+      onCancel: () => setOpen(false),
+      onConfirm: () => {
+        del.execute();
+        setOpen(false);
+        onComplete();
+      },
+    },
+  };
+};
