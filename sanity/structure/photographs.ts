@@ -1,5 +1,7 @@
 import type { StructureBuilder } from "sanity/structure";
 import { IMAGE_SLOTS } from "../../src/content/image-slots.ts";
+import { PAGE_GROUPS } from "../../src/content/image-slot-labels.ts";
+import { slotIcon } from "../components/photographs.tsx";
 
 /**
  * THE PHOTOGRAPHS SCREEN
@@ -16,6 +18,12 @@ import { IMAGE_SLOTS } from "../../src/content/image-slots.ts";
  * Opening one opens the editor for that slot's document, which is created on
  * first save — so nothing exists until a real photograph is uploaded, and the
  * list is still complete.
+ *
+ * Every row SHOWS its current picture and is named the way an editor would
+ * name it — "Our story — plant photo", under "Home page" — with the registry
+ * key kept out of sight. A key like `home.story` is for code; asking an
+ * editor to decode it was the reason the first version of this screen needed
+ * a developer standing beside it.
  *
  * Consequences worth having:
  *
@@ -38,22 +46,7 @@ import { IMAGE_SLOTS } from "../../src/content/image-slots.ts";
 export const overrideId = (slot: string) =>
   `imageOverride-${slot.replace(/\./g, "__")}`;
 
-/** Page areas, in the order they appear on the site rather than alphabetically. */
-const AREA_TITLES: Record<string, string> = {
-  home: "Home",
-  products: "Products",
-  industries: "Industries",
-  about: "About",
-  why: "Why Margo",
-  export: "Export",
-  certifications: "Certifications",
-  "case-studies": "Case Studies",
-  contact: "Contact",
-  sku: "Parts",
-  brand: "Brand",
-};
-
-const AREA_ORDER = Object.keys(AREA_TITLES);
+const AREA_ORDER = Object.keys(PAGE_GROUPS);
 
 export function photographsMenu(S: StructureBuilder) {
   const byArea = new Map<string, typeof IMAGE_SLOTS>();
@@ -73,13 +66,22 @@ export function photographsMenu(S: StructureBuilder) {
     .title("Photographs")
     .items(
       areas.map((area) => {
-        const slots = byArea.get(area)!;
+        // Page order within a group, not key order: "Our story" before
+        // "Our facility" because that is how the page reads, and a spare
+        // that renders nowhere sinks to the bottom.
+        const slots = [...byArea.get(area)!].sort(
+          (a, b) =>
+            Number(a.where.startsWith("Not shown")) -
+              Number(b.where.startsWith("Not shown")) ||
+            a.title.localeCompare(b.title),
+        );
         const pending = slots.filter((s) => s.status === "placeholder").length;
+        const groupTitle = PAGE_GROUPS[area] ?? area;
 
         return S.listItem()
           .id(area)
           .title(
-            `${AREA_TITLES[area] ?? area}  —  ${
+            `${groupTitle}  —  ${
               pending === 0
                 ? `${slots.length} done`
                 : pending === 1 && slots.length === 1
@@ -89,23 +91,19 @@ export function photographsMenu(S: StructureBuilder) {
           )
           .child(
             S.list()
-              .title(AREA_TITLES[area] ?? area)
+              .title(groupTitle)
               .items(
                 slots.map((slot) =>
                   S.listItem()
                     .id(slot.key.replace(/\./g, "_"))
-                    // The alt text is the only human-readable description of
-                    // what belongs in this slot, so it is the row's subtitle in
-                    // everything but name.
-                    .title(
-                      `${slot.status === "placeholder" ? "○" : "●"}  ${slot.key}  —  ${slot.alt}`,
-                    )
+                    .icon(slotIcon(slot))
+                    .title(slot.title)
                     .child(
                       S.editor()
                         .id(slot.key.replace(/\./g, "_"))
                         .schemaType("imageOverride")
                         .documentId(overrideId(slot.key))
-                        .title(slot.key),
+                        .title(slot.title),
                     ),
                 ),
               ),

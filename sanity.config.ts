@@ -6,6 +6,7 @@ import { visionTool } from "@sanity/vision";
 import { apiVersion, dataset, projectId } from "./sanity/env";
 import { schemaTypes } from "./sanity/schemaTypes";
 import { photographsMenu } from "./sanity/structure/photographs";
+import { StudioField } from "./sanity/components/photographs.tsx";
 import {
   singletonActions,
   singletonTemplateFilter,
@@ -40,6 +41,10 @@ export default defineConfig({
   },
 
   schema: { types: schemaTypes },
+  // The "Currently on the site" panel on photograph documents. Attached here
+  // rather than in the schema so the schema files stay loadable by the Node
+  // checks — see sanity/components/photographs.tsx.
+  form: { components: { field: StudioField } },
   plugins: [
     structureTool({
       structure: (S) =>
