@@ -31,6 +31,18 @@ const siteOrigin = () =>
 
 export const fileUrl = (slot: ImageSlot) => `${siteOrigin()}${slot.src}`;
 
+/**
+ * Resized by the site's own image optimiser, never the original.
+ *
+ * The originals are up to 1.9 MB each and the Photographs list draws 85 of
+ * them at once — 47 MB to paint a column of 25px thumbnails, and the larger
+ * files were still downloading when the editor looked. /_next/image serves
+ * the same file at 64px in about 5 KB. `q` must be 75: Next 16 rejects any
+ * quality not in `images.qualities`, and the default list is just [75].
+ */
+export const sizedUrl = (slot: ImageSlot, w: 64 | 384 | 640) =>
+  `${siteOrigin()}/_next/image?url=${encodeURIComponent(slot.src)}&w=${w}&q=75`;
+
 /** Registry key ← override document id. The id encodes dots as `__`. */
 export const slotKeyFromId = (id: string) =>
   id.replace(/^drafts\./, "").replace(/^imageOverride-/, "").replace(/__/g, ".");
@@ -51,7 +63,7 @@ export function slotIcon(slot: ImageSlot): ComponentType {
     // wrong tool for an editor's 25px thumbnail of a file already on disk.
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src={fileUrl(slot)}
+      src={sizedUrl(slot, 64)}
       alt=""
       width={25}
       height={25}
@@ -97,11 +109,24 @@ export function CurrentPhotographField(props: FieldProps) {
           </Badge>
         </Flex>
 
-        <Card radius={2} tone="default" style={{ background: "#17191c", overflow: "hidden" }}>
+        <Card
+          radius={2}
+          tone="default"
+          style={{ background: "#17191c", overflow: "hidden", minHeight: isPortrait ? 320 : 240 }}
+        >
           {/* eslint-disable-next-line @next/next/no-img-element -- Studio preview of a repo file, not a visitor image */}
           <img
-            src={fileUrl(slot)}
+            src={sizedUrl(slot, 640)}
             alt={slot.alt || slot.title}
+            onError={(e) => {
+              // The optimiser declined (unsupported format, or a dev server
+              // without it) — fall back to the file itself rather than a blank.
+              const el = e.currentTarget;
+              if (!el.dataset.fallback) {
+                el.dataset.fallback = "1";
+                el.src = fileUrl(slot);
+              }
+            }}
             style={{
               display: "block",
               margin: "0 auto",
