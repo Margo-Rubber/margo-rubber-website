@@ -1,4 +1,5 @@
 import { defineArrayMember, defineField } from "sanity";
+import { slotLabel } from "../../../src/content/image-slot-labels.ts";
 import { IMAGES } from "../../../src/content/images.ts";
 import { ICON_NAMES, PROFILE_SHAPES } from "../../../src/components/ui/icon-paths.ts";
 
@@ -84,8 +85,8 @@ export const BLOCK_GROUPS = [
  * decision about who owns alt text and dimensions, not a technical blocker.
  */
 const IMAGE_OPTIONS = Object.keys(IMAGES)
-  .sort()
-  .map((key) => ({ title: key, value: key }));
+  .map((key) => ({ title: `${slotLabel(key).title}  (${key})`, value: key }))
+  .sort((a, b) => a.title.localeCompare(b.title));
 
 export function imageRefField(
   name = "image",
