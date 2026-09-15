@@ -346,26 +346,46 @@ if (mode === "--patch-docs") {
 
 /* ── --verify ───────────────────────────────────────────────────────────── */
 
+/**
+ * Tests the RULE, not the plan: no registry key may be drawn by more than
+ * one placement across every document, and no retired key may be drawn at
+ * all. The plan above is derived from the live documents, so after
+ * --patch-docs it no longer describes anything — this check must not
+ * depend on it.
+ */
 if (mode === "--verify") {
-  const old = new Set(slots.map((s) => s.from));
-  const stillUsed = new Map<string, string[]>();
-  const walk = (v: unknown, id: string) => {
+  const RETIRED = [
+    "products.material.fkm", "products.material.nbr", "products.material.epdm", "products.material.silicone",
+    "industries.mining.component",
+    "export.vessel", "export.gantry", "export.containers", "export.warehouse", "export.pallets",
+  ];
+  // Deliberately shared, stated in their labels: the two part-page plates the
+  // template rework removes. The logo is drawn by code, not documents.
+  const ALLOWED_SHARED = new Set(["sku.finishing", "sku.machining"]);
+  const registry = new Set(
+    [...fs.readFileSync(path.join(ROOT, "src/content/images.ts"), "utf8").matchAll(/^  "([a-z0-9.-]+)": \{/gm)].map((m) => m[1]),
+  );
+  const uses = new Map<string, string[]>();
+  const walk = (v: unknown, at: string) => {
     if (typeof v === "string") {
-      if (old.has(v)) stillUsed.set(v, [...(stillUsed.get(v) ?? []), id]);
-    } else if (Array.isArray(v)) v.forEach((x) => walk(x, id));
-    else if (v && typeof v === "object") Object.values(v).forEach((x) => walk(x, id));
+      if (registry.has(v)) uses.set(v, [...(uses.get(v) ?? []), at]);
+    } else if (Array.isArray(v)) v.forEach((x, i) => walk(x, `${at}[${i}]`));
+    else if (v && typeof v === "object")
+      for (const [k, x] of Object.entries(v)) if (!k.startsWith("_")) walk(x, at ? `${at}.${k}` : k);
   };
   for (const d of docs) walk(d, d._id);
-  // A source key may legitimately keep ONE use — the placement it was named for.
-  const expectedKeepers = new Set(["about.hero", "about.manufacturing.floor", "about.team.portrait-b", "about.presence", "industries.mining.facility", "products.card.o-rings", "products.card.extrusion", "products.card.sponge-foam-rubber", "sku.product"]);
+
   let bad = 0;
-  for (const [k, ids] of stillUsed) {
-    const uniq = [...new Set(ids)];
-    const ok = expectedKeepers.has(k) || k.startsWith("products.card.") || k.startsWith("industries.");
-    if (!ok || (expectedKeepers.has(k) && uniq.length > 1 && !k.startsWith("products.card."))) {
-      bad++;
-      console.log(`  still shared: ${k} ← ${uniq.join(", ")}`);
-    }
+  for (const k of RETIRED) if (uses.has(k)) { bad++; console.log(`  retired key still drawn: ${k} ← ${uses.get(k)!.join(", ")}`); }
+  // A part page's gallery shows its main photograph again as thumbnails 1
+  // and 4 — the same picture at two sizes on one page, not two placements
+  // an editor would ever want to differ. All within one document, all
+  // under `gallery`, is the only repetition the rule permits.
+  const isOwnGallery = (at: string[]) =>
+    new Set(at.map((a) => a.split(".")[0])).size === 1 && at.every((a) => /\.gallery\.(main|thumbs\[\d+\])$/.test(a));
+  for (const [k, at] of uses) {
+    if (at.length > 1 && !ALLOWED_SHARED.has(k) && !isOwnGallery(at)) { bad++; console.log(`  shared: ${k} ← ${at.join(" · ")}`); }
   }
-  console.log(bad ? `\n${bad} keys still shared` : "\nno document draws a slot that another placement draws — old keys can be deleted");
+  console.log(`\n${uses.size} keys drawn by documents · ${[...uses.values()].reduce((n, a) => n + a.length, 0)} placements`);
+  console.log(bad ? `${bad} problems` : "every placement has its own slot; retired keys are unreferenced — safe to delete them");
 }
