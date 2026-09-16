@@ -374,6 +374,14 @@ export const productCategory = defineType({
       fields: [
         defineField({ name: "name", title: "Product name", type: "string" }),
         defineField({ name: "description", title: "One-line description", type: "text", rows: 2 }),
+        defineField({
+          name: "material",
+          title: "Materials",
+          type: "array",
+          of: [defineArrayMember({ type: "string" })],
+          description: "Only when the list is not exactly the eight compounds in Site settings.",
+          options: { layout: "tags" },
+        }),
       ],
       options: { collapsible: true, collapsed: true },
       group: "meta",

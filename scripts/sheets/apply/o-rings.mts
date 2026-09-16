@@ -28,10 +28,10 @@ const spec = s("02");
 const specH2 = heading(spec, "H2");
 const table = field(spec, "Full table", "table");
 for (const r of table.rows) for (const c of r) E(c);
-const footLines = lit(spec, "Footnote").split("\n");
-// The component prints the live count itself; the rest is the sheet's.
-const footnote = footLines.join("\n").replace(/^Showing \d+ of \d+ · /, "");
-for (const l of footLines) E(l);
+// Stored with its "Showing 12 of 12 ·"; the component keeps the wording and
+// substitutes the live count.
+const footnote = lit(spec, "Footnote");
+for (const l of footnote.split("\n")) E(l);
 // Filter chips: derived from the table's standards by the component; the
 // sheet's four are checked, not stored.
 for (const chip of lit(spec, "Filter chips").split(" · ")) E(chip);

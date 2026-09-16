@@ -334,7 +334,7 @@ export async function productNode(
     name: fm.schemaProduct?.name ?? fm.h1,
     description: fm.schemaProduct?.description ?? fm.seo.description,
     manufacturer: { "@id": ORG_ID },
-    material: compounds.map((c) => c.name),
+    material: fm.schemaProduct?.material ?? compounds.map((c) => c.name),
     ...(entry?.family ? { category: FAMILY_CATEGORY[entry.family] } : {}),
     ...(related.length ? { isRelatedTo: related } : {}),
     // No Offer, no price, no availability, no minimum: Margo quotes per part.

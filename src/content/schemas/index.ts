@@ -150,6 +150,9 @@ export const specSectionSchema = z
     caption: z.string().optional(),
     /** Filter chips + search. Off for short reference tables. */
     controls: z.boolean().default(true),
+    /** The standards a chip can select, in order; else those found in the table. */
+    chips: z.array(z.string()).optional(),
+    searchPlaceholder: z.string().optional(),
     columns: z.array(z.string()).min(2),
     rows: z.array(z.array(z.string())).min(1),
     footnote: z.string().optional(),
@@ -513,7 +516,12 @@ export const productCategorySchema = baseSchema.extend({
    * H1 of "Precision O-Rings, Manufactured in India" (sheet 09, page-level).
    */
   schemaProduct: z
-    .object({ name: z.string().min(3).optional(), description: z.string().min(20).optional() })
+    .object({
+      name: z.string().min(3).optional(),
+      description: z.string().min(20).optional(),
+      /** Full `material` list when it is not exactly the eight compounds. */
+      material: z.array(z.string()).optional(),
+    })
     .optional(),
 });
 

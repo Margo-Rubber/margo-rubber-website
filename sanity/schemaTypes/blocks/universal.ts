@@ -444,6 +444,23 @@ export const specTable = defineType({
       initialValue: true,
       group: "options",
     }),
+    defineField({
+      name: "chips",
+      title: "Filter chips",
+      type: "array",
+      of: [defineArrayMember({ type: "string" })],
+      description:
+        "The standards a chip can select, in order — ASME, EN, JIS. Leave empty to offer the standards found in the table.",
+      options: { layout: "tags" },
+      group: "options",
+    }),
+    defineField({
+      name: "searchPlaceholder",
+      title: "Search box hint",
+      type: "string",
+      description: "Grey text in the search box: \"Filter by compound or application\".",
+      group: "options",
+    }),
     anchorIdField(),
   ],
   preview: blockPreview("Specification table", (v) => count(v.rows, "row")),

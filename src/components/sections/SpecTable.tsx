@@ -9,6 +9,9 @@ type Props = {
   footnote?: string;
   /** Filter chips and search box. See the note at the render site. */
   controls?: boolean;
+  /** The standards a chip can select, in the sheet's order. */
+  chips?: string[];
+  searchPlaceholder?: string;
 };
 
 /**
@@ -17,7 +20,9 @@ type Props = {
  * is a dead control" (sheet 09 §02), and the same component serves oil-seal,
  * gasket and bush tables whose families differ.
  */
-const FAMILIES = ["AS568", "ISO", "JIS", "DIN", "BS", "SAE", "ANSI"] as const;
+const FAMILIES = ["AS568", "ISO", "JIS", "DIN", "ASME", "EN", "ASTM", "BS", "SAE"];
+const mentions = (row: string[], f: string) =>
+  row.some((cell) => new RegExp(`(^|[^A-Z0-9])${f}(?![A-Z0-9])`, "i").test(cell));
 
 /**
  * The spec table is a real <table>, never an image — required by both AI
@@ -28,20 +33,22 @@ const FAMILIES = ["AS568", "ISO", "JIS", "DIN", "BS", "SAE", "ANSI"] as const;
  * stacking: stacking would destroy the column-to-column comparability that is
  * the entire point of the table.
  */
-export function SpecTable({ columns, rows, footnote, controls = true }: Props) {
+export function SpecTable({ columns, rows, footnote, controls = true, chips, searchPlaceholder }: Props) {
   const [family, setFamily] = useState<string>("all");
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState<{ col: number; dir: 1 | -1 } | null>(null);
+  // A chip list may open with its own "All …" label ("All standards").
+  const allLabel = chips?.[0] && /^all\b/i.test(chips[0]) ? chips[0] : "All Standards";
   const families = useMemo(
-    () => FAMILIES.filter((f) => rows.some((r) => r[0].toUpperCase().includes(f))),
-    [rows],
+    () => (chips ?? FAMILIES).filter((f) => !/^all\b/i.test(f) && rows.some((r) => mentions(r, f))),
+    [rows, chips],
   );
 
   const visible = useMemo(() => {
     let out = rows;
 
     if (family !== "all") {
-      out = out.filter((r) => r[0].toUpperCase().includes(family));
+      out = out.filter((r) => mentions(r, family));
     }
     if (query.trim()) {
       const q = query.trim().toLowerCase();
@@ -80,7 +87,7 @@ export function SpecTable({ columns, rows, footnote, controls = true }: Props) {
       <div className="mb-4 flex flex-wrap items-center gap-3">
         <div className="flex flex-wrap gap-2">
           <Chip active={family === "all"} onClick={() => setFamily("all")}>
-            All Standards
+            {allLabel}
           </Chip>
           {families.map((f) => (
             <Chip key={f} active={family === f} onClick={() => setFamily(f)}>
@@ -95,7 +102,7 @@ export function SpecTable({ columns, rows, footnote, controls = true }: Props) {
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Filter by ID or dimension…"
+            placeholder={searchPlaceholder ?? "Filter by ID or dimension…"}
             className="border-line bg-surface-2 text-ink placeholder:text-ink-4 focus:border-accent-400 w-full rounded-pill border px-4 py-2 text-sm"
           />
         </label>
@@ -174,14 +181,24 @@ export function SpecTable({ columns, rows, footnote, controls = true }: Props) {
 
         {footnote && (
           <p className="text-ink-4 border-line border-t px-4 py-3 text-xs whitespace-pre-line">
-            {/* The count belongs to the filter, so it goes with it. */}
-            {controls && `Showing ${visible.length} of ${rows.length} · `}
-            {disclaimerLinked(footnote.replace(/^Showing \d+ of \d+( entries)? · /, ""))}
+            {disclaimerLinked(withCount(footnote, visible.length, rows.length, controls))}
           </p>
         )}
       </div>
     </div>
   );
+}
+
+/**
+ * The count belongs to the filter, so it goes with it. A footnote written
+ * with its own "Showing 9 of 9 entries." keeps that wording and gets the
+ * live numbers; one written without gets "Showing N of M · " in front.
+ */
+function withCount(footnote: string, shown: number, total: number, controls: boolean) {
+  const count = `Showing ${shown} of ${total}`;
+  if (/^Showing \d+ of \d+/.test(footnote))
+    return controls ? footnote.replace(/^Showing \d+ of \d+/, count) : footnote.replace(/^Showing \d+ of \d+( entries)?[ ·.]+/, "");
+  return controls ? `${count} · ${footnote}` : footnote;
 }
 
 /**

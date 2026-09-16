@@ -217,6 +217,8 @@ function renderBlock(block: Block, ctx: Ctx): ReactNode {
             rows={b.rows}
             footnote={b.footnote}
             controls={b.controls}
+            chips={b.chips}
+            searchPlaceholder={b.searchPlaceholder}
           />
         </Section>
       );

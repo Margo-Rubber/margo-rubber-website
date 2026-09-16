@@ -67,3 +67,9 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 33. **Silicone panel wording.** The panel table ships "Biocompatible grades available." while the sheet's Remove note asks for "Biocompatible grades available; we do not hold FDA registration or ISO 13485." — the table is what is applied; confirm which line.
 34. **Six live parts removed** (four compound variants, two non-seals) — the sheet's "CONFIRM which" on the two that belong under Leak Test Rubber or Pads, Stoppers & Caps.
 35. **FAQ "What is the lead time for custom oil seals?"** — named for the FAQPage node; the sheet writes the quoting answer (§05 intro, emitted) but no lead-time answer.
+
+## 11 Gaskets
+
+36. **Confirmation copy** "Enquiry received. A named engineer replies within 48 hours to {email}." is the contact form's post-submit state — Phase 7 (forms), not this page.
+37. **FAQ answers.** "Which rubber gasket material should I use for steam?", "What temperature can an EPDM gasket withstand?" and "What is the lead time for custom rubber gaskets?" are named for the FAQPage node with no written answers; only the quoting question (answered by §05's intro) is emitted.
+38. **Hero image.** The sheet says the hero has no image; the slot keeps the existing photograph with the sheet's alt text for when one is chosen.
