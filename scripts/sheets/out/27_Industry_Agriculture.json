@@ -1,0 +1,867 @@
+{
+  "file": "27_Industry_Agriculture.html",
+  "title": "Agriculture Industry Page Content Sheet",
+  "kicker": "Margo Rubber Products · /industries/agriculture · Vision Build · Sheet 27 of 28 — eighth of nine industry pages",
+  "head": {
+    "title": "Agricultural Machinery Rubber Components | India | Margo",
+    "description": "Weather and UV-resistant rubber components for tractors, implements and irrigation from Nashik, India — bushes, mounts, boots and seals moulded to drawing. Export to East Africa. ISO 9001:2015."
+  },
+  "sections": [
+    {
+      "num": "01",
+      "title": "Hero",
+      "chip": "Keep · add ISO and geo",
+      "live": "LIVE H1 → Rubber Components for Agricultural Machinery · “weather- and UV-resistant” is the right opening property · the subhead omits the ISO certification, as the HVAC one does",
+      "fields": [
+        {
+          "label": "Eyebrow",
+          "kind": "lit",
+          "value": "OEM COMPONENT SUPPLIER · DRAWING-MATCHED PRODUCTION",
+          "note": "[no change]"
+        },
+        {
+          "label": "H1 — 2 lines",
+          "kind": "heading",
+          "lines": [
+            "Rubber Components for Agricultural Machinery,",
+            "Manufactured in India"
+          ],
+          "accent": [
+            "Manufactured in India"
+          ],
+          "value": "Rubber Components for Agricultural Machinery, Manufactured in India",
+          "note": "8 words · live is 5 · only the geo clause is added"
+        },
+        {
+          "label": "Subhead",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Weather- and UV-resistant rubber components for farm equipment and irrigation systems, moulded to your drawing at our ISO 9001:2015 facility in Nashik, India."
+          ],
+          "leads": [
+            "moulded to your drawing at our ISO 9001:2015 facility in Nashik, India"
+          ],
+          "note": "23 words · live is 22 · the ISO reference is the addition. Live reads “moulded to your drawing in Nashik, India” — this and the HVAC page are the only two industry heroes that leave the certification out"
+        },
+        {
+          "label": "CTA 1",
+          "kind": "lit",
+          "value": "Request Agricultural Component Specs",
+          "href": "/contact",
+          "note": "[no change]"
+        },
+        {
+          "label": "CTA 2",
+          "kind": "lit",
+          "value": "View Certifications",
+          "href": "/certifications",
+          "note": "[no change to the label]"
+        }
+      ],
+      "notes": [
+        "Heading. The page’s only <h1>. Two <span> lines inside one <h1>.",
+        "“Weather- and UV-resistant” is the right opening property for this sector and it should not be traded for a generic adjective. Outdoor perishing is the failure mode that defines agricultural rubber, and the page names it before anything else.",
+        "Breadcrumb goes above the eyebrow. Home › Industries › Agriculture.",
+        "Two search audiences. Indian OEMs search tractor rubber parts manufacturer and implement bush supplier; East African importers search agricultural machinery spares India. The H1 and title carry the first, and section 07 carries the second once East Africa is named above the market list.",
+        "Image alt. No hero image. If one is added: “Silent-block bushes and protective boots for agricultural machinery, moulded at Margo Rubber Products, Nashik”."
+      ]
+    },
+    {
+      "num": "02",
+      "title": "Components we supply",
+      "chip": "3 cards become 8",
+      "live": "LIVE H2 → Three components. Engineered to spec. · bushes, AV mounts, bellows — the right three · the bushes card offers high-abrasion compounds with no boundary",
+      "fields": [
+        {
+          "label": "Three becomes eight, count out of the heading",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Same change as the other industry pages. Diaphragms are on this list because the page already names sprayer diaphragms twice in section 03. The product page behind them is now written (sheet 36) — route the entry to /products/diaphragms."
+          ],
+          "leads": [
+            "Diaphragms are on this list"
+          ]
+        },
+        {
+          "label": "H2",
+          "kind": "heading",
+          "lines": [
+            "Engineered to Spec, Not to Catalogue"
+          ],
+          "accent": [],
+          "value": "Engineered to Spec, Not to Catalogue",
+          "note": "5 words · live is 5 · count comes out. Consistent with the other industry sheets"
+        },
+        {
+          "label": "Intro",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "We don’t stock generic parts. Each component is produced against your drawing or an OEM sample — compound, hardness and geometry matched to outdoor service and the contamination it sees rather than picked from a catalogue."
+          ],
+          "leads": [
+            "Each component is produced against your drawing or an OEM sample"
+          ],
+          "note": "38 words · live is 31 · “your equipment” becomes “outdoor service and the contamination it sees”, matching section 04"
+        },
+        {
+          "label": "Cards ×8",
+          "kind": "table",
+          "columns": [
+            "Component",
+            "Agricultural parts",
+            "Links to"
+          ],
+          "rows": [
+            [
+              "Bushes & Bushings",
+              "Silent-block, pivot and shackle bushes for linkages, hitches and implement mounts",
+              "/products/bushes"
+            ],
+            [
+              "Anti-Vibration Mounts",
+              "Cab, engine and gearbox mounts for tractors and self-propelled machinery",
+              "/products/anti-vibration-mounts"
+            ],
+            [
+              "Bellows & Boots",
+              "Dust boots and protective covers for hydraulic rams, linkages and control rods",
+              "/products/bellows"
+            ],
+            [
+              "Diaphragms",
+              "Sprayer and metering-pump diaphragms, moulded to your drawing",
+              "—"
+            ],
+            [
+              "Gaskets",
+              "Valve, housing and tank gaskets for irrigation and fluid-handling assemblies",
+              "/products/gaskets"
+            ],
+            [
+              "O-Rings",
+              "Hose connector, coupling and hydraulic seals across implements and irrigation",
+              "/products/o-rings"
+            ],
+            [
+              "Oil Seals",
+              "Shaft seals for gearboxes, PTO drives and wheel hubs",
+              "/products/oil-seals"
+            ],
+            [
+              "Pads, Stoppers & Caps",
+              "Hitch pin buffers, bump stops, cab floor mats and port caps",
+              "/products/pads-stoppers-caps"
+            ]
+          ],
+          "note": "no product page yet · Three become eight. All three live cards are kept and lead, and they are the right three for this sector. Oil seals are the notable addition — a PTO drive and a wheel hub are the highest-turnover rotary seals on a tractor, and the page mentions neither today. Hitch pin buffers are named on the live page in section 03 and have no card; they belong under pads and stoppers"
+        },
+        {
+          "label": "Bushes card — bullets",
+          "kind": "table",
+          "columns": [
+            "Bullet",
+            "Replaces"
+          ],
+          "rows": [
+            [
+              "Bonded and unbonded variants",
+              "[no change — bonding is client-confirmed as in-house, 2026-09-01]"
+            ],
+            [
+              "Natural rubber — best abrasion resistance of the eight compounds we mix",
+              ""
+            ],
+            [
+              "Bore and OD to drawing",
+              "[no change]"
+            ],
+            [
+              "Long-run batch consistency",
+              "[no change]"
+            ]
+          ],
+          "note": "Four bullets, four bullets — one made specific. “High-abrasion compounds” is a category, not a claim; naming natural rubber and saying why it wins is both more useful and more defensible. Same wording as the mining and pumps sheets, so three pages describe one capability the same way"
+        },
+        {
+          "label": "Card CTA",
+          "kind": "lit",
+          "value": "Request Specs for {Component} › /products/{slug}",
+          "note": "Destination changes from /contact to the product page. All eight now have one — diaphragms route to /products/diaphragms (sheet 36)"
+        }
+      ],
+      "notes": [
+        "Seven internal links out of a page with none.",
+        "Diaphragms are claimed on three industry pages, and the product page behind them is written (sheet 36). Medical devices, pumps & valves and this one, each with application detail. That is no longer a CONFIRM — it is a missing product page, and sprayer diaphragm manufacturer India is a searched term with a clear buyer.",
+        "PTO is worth spelling out once. PTO shaft seal is how a dealer searches; power take-off is how a specification writes it. The card carries the abbreviation and the product page can carry both.",
+        "All eight tab panels in the DOM at first paint. Card titles are <h3>."
+      ]
+    },
+    {
+      "num": "03",
+      "title": "Where components are used",
+      "chip": "Keep · two extended",
+      "live": "LIVE H2 → Built into machinery that works outdoors. · four groups, well chosen · sprayer diaphragms named here and nowhere else on the site",
+      "fields": [
+        {
+          "label": "H2",
+          "kind": "heading",
+          "lines": [
+            "Built into machinery that works outdoors."
+          ],
+          "accent": [],
+          "value": "Built into machinery that works outdoors.",
+          "note": "[no change] — six words that name the defining condition of the sector, and the section delivers against it"
+        },
+        {
+          "label": "Groups ×4",
+          "kind": "table",
+          "columns": [
+            "Equipment",
+            "Body",
+            "Replaces"
+          ],
+          "rows": [
+            [
+              "Tractors & self-propelled machinery",
+              "Cab mounts, engine isolation and pivot bushes rated for continuous outdoor service. Shaft seals for PTO drives, gearboxes and wheel hubs.",
+              "Adds oil seals — the highest-turnover rotary part on a tractor and absent from the live card"
+            ],
+            [
+              "Irrigation systems",
+              "Hose connector seals, valve gaskets and sprayer diaphragms in weather-resistant compounds.",
+              "[no change]"
+            ],
+            [
+              "Implements & linkages",
+              "Hitch pin buffers, pivot bushes and protective boots for three-point linkages and towed implements.",
+              "[no change — “three-point linkage” is the correct term and no other page on this site uses sector vocabulary this precisely]"
+            ],
+            [
+              "Spraying & fluid handling",
+              "Diaphragms and seals selected for compatibility with agricultural chemicals and fertiliser solutions. Send the chemical and its concentration — a compound that holds against a dilute spray may not hold against the concentrate it is mixed from.",
+              "Adds the request and the reason"
+            ]
+          ],
+          "note": "Four groups, four groups — no count change, two untouched and two extended by one clause. This block is already well written; “three-point linkage” and “towed implements” are real sector vocabulary and they are what tell a farm-equipment engineer the page was written for them.\nCard 4’s addition is the useful one. Agricultural chemical compatibility is almost always asked about the diluted spray, and the compound that fails is the one in the mixing tank — saying so is the kind of detail a supplier who has made these parts would raise"
+        }
+      ],
+      "notes": [
+        "Equipment-group headings are <h3>. Four named classes, each a searched phrase — tractor cab mount, three-point linkage bush, sprayer diaphragm.",
+        "The concentrate-versus-spray point is this page’s AEO asset. “Which rubber for herbicide?” has a widely wrong answer, and the distinction between the diluted application and the concentrate it is mixed from is the part almost nobody publishes.",
+        "Inline links, not card links.",
+        "Do not name specific agrochemicals. Registration and availability vary by country and the list dates; asking for the chemical never does."
+      ]
+    },
+    {
+      "num": "04",
+      "title": "Built for agriculture conditions",
+      "chip": "4 cards stay four · two given figures",
+      "live": "LIVE H2 → Rubber that survives sun, water and grit. · the best-framed conditions block of the nine industry pages · “high-abrasion compounds” again, naming no compound",
+      "fields": [
+        {
+          "label": "Eyebrow",
+          "kind": "lit",
+          "value": "BUILT FOR AGRICULTURE CONDITIONS",
+          "note": "[no change]"
+        },
+        {
+          "label": "H2",
+          "kind": "heading",
+          "lines": [
+            "Rubber that survives sun, water and grit."
+          ],
+          "accent": [],
+          "value": "Rubber that survives sun, water and grit.",
+          "note": "[no change] — eight words, three named enemies, no adjective wasted. Leave it alone"
+        },
+        {
+          "label": "Intro",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Agricultural machinery sits outdoors year-round. Compound choice is driven by UV and ozone exposure, chemical contact and abrasive contamination rather than indoor service assumptions."
+          ],
+          "leads": [
+            null
+          ],
+          "note": "[no change] — 26 words that state the selection logic correctly. The cards below are where the figures go"
+        },
+        {
+          "label": "Card 1 — UV & Ozone Resistance",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "EPDM for components in continuous outdoor exposure — −40 °C to +140 °C, 40 to 90 Shore A — where general-purpose rubber perishes. Ozone resistance is one of the tests we run in-house, so a weathering specification can be checked before release rather than after a season in the field."
+          ],
+          "leads": [
+            "−40 °C to +140 °C, 40 to 90 Shore A"
+          ],
+          "note": "44 words · live is 20 · the temperature range and the in-house ozone test are the additions. Ozone is on the published test list; naming it here is the difference between a claim and a capability. “Weather-grade compounds” is dropped — it is not a grade of anything"
+        },
+        {
+          "label": "Card 2 — Abrasion & Contamination",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Natural rubber — the best abrasion resistance of the eight compounds we mix — with sealed geometries for soil, grit and organic contamination. We supply moulded components — bushes, boots, seals and mounts — and rubber sheet lining for hoppers, chutes and tanks."
+          ],
+          "leads": [
+            "We supply moulded components — bushes, boots, seals and mounts — and rubber sheet lining for hoppers, chutes and tanks."
+          ],
+          "note": "40 words · live is 14 · naming the compound is the point. “High-abrasion compounds” is a category, not a claim; natural rubber with a reason is both more useful and more defensible. Word for word the same range statement as the mining and pumps & valves sheets (lining client-confirmed 2026-09-02), so three pages describe one capability identically"
+        },
+        {
+          "label": "Card 3 — Temperature Swing",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Compounds selected to stay flexible across seasonal extremes rather than a narrow operating band — EPDM −40 to +140 °C, neoprene −40 to +120 °C, natural rubber −20 to +90 °C. Below −20 °C natural rubber stiffens, and a linkage bush that was compliant in summer will not be on a cold start."
+          ],
+          "leads": [
+            "EPDM −40 to +140 °C, neoprene −40 to +120 °C, natural rubber −20 to +90 °C"
+          ],
+          "note": "50 words · live is 17 · three ranges, then the consequence. Figures match the homepage compound table. The cold-start sentence is what makes the card useful — it names the failure a buyer in a cold climate will actually see"
+        },
+        {
+          "label": "Card 4 — Shock & Vibration",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Mount geometry tuned for rough-terrain shock loading rather than smooth-running industrial duty. Send the supported mass, the mounting orientation and the disturbing frequency — rate is set by geometry and hardness together, and a mount specified from hardness alone is a guess."
+          ],
+          "leads": [
+            "Send the supported mass, the mounting orientation and the disturbing frequency"
+          ],
+          "note": "42 words · live is 15 · adds the three inputs and why they are asked for. Same request as the anti-vibration mounts product sheet, so the two pages ask for the same things in the same order"
+        }
+      ],
+      "notes": [
+        "Card titles are <h3>. Section heading <h2>, eyebrow a <p> or <span> above it — never a heading level.",
+        "Cards 1 and 3 are the AEO passages. “Which rubber lasts outdoors?” and “What temperature range does EPDM cover?” both get a 40–50 word extractable answer with a figure in it, which is what an answer engine lifts.",
+        "Do not put the °C ranges in an image. Text nodes, so they can be extracted and translated.",
+        "Internal links: card 1 to /products/bellows, card 2 to /products/bushes, card 4 to /products/anti-vibration-mounts. Anchor text on the part, not on “learn more”.",
+        "Ozone testing is stated as in-house because it is on the published test list. No other test is added to this page — there is no UV weatherometer and no accelerated-ageing claim."
+      ]
+    },
+    {
+      "num": "05",
+      "title": "Custom engineering",
+      "chip": "5 bullets become 6",
+      "live": "LIVE H2 → We match your machine spec, not the other way around. · “equipment make and model” is the right input for this sector · the side card omits the certificate number",
+      "fields": [
+        {
+          "label": "Eyebrow",
+          "kind": "lit",
+          "value": "CUSTOM ENGINEERING",
+          "note": "[no change]"
+        },
+        {
+          "label": "H2",
+          "kind": "heading",
+          "lines": [
+            "We match your machine spec, not the other way around."
+          ],
+          "accent": [],
+          "value": "We match your machine spec, not the other way around.",
+          "note": "[no change] — the sharpest heading on the page, and true of the business"
+        },
+        {
+          "label": "Body",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Margo operates dedicated tooling capability for custom rubber components. Send us your OEM drawing, existing part, or equipment make and model — we reverse-engineer and produce to your specification."
+          ],
+          "leads": [
+            null
+          ],
+          "note": "29 words · live is 29 · comma splice fixed to a dash. “Equipment make and model” is the right third input for agriculture, where the part number is often long gone and the machine is not"
+        },
+        {
+          "label": "Bullets ×6",
+          "kind": "table",
+          "columns": [
+            "Bullet",
+            "Note"
+          ],
+          "rows": [
+            [
+              "OEM drawing and sample matching",
+              "[no change]"
+            ],
+            [
+              "Custom mould tooling in-house",
+              "[no change]"
+            ],
+            [
+              "Rubber-to-metal bonding in-house — bonded bushes and mounts",
+              "New sixth bullet. Client-confirmed 2026-09-01. Every bonded silent-block bush and cab mount on this page depends on it, and no section currently says Margo does it"
+            ],
+            [
+              "Compound selection by application, not by catalogue grade",
+              "Four words added, matching the section 02 intro"
+            ],
+            [
+              "Pre-production sample approval before volume release",
+              "Wording aligned with section 07, which uses the same phrase"
+            ],
+            [
+              "Long-run production with consistent batch quality",
+              "[no change]"
+            ]
+          ],
+          "note": "Five become six — tell the developer the list grows by one row. Bonding is the addition"
+        },
+        {
+          "label": "Side card",
+          "kind": "lit",
+          "value": "Nashik, Maharashtra, India\nISO 9001:2015 certified manufacturing facility · certificate 09111526A",
+          "note": "The certificate number is the addition. A number is checkable; a badge is not. Same treatment as the other eight industry sheets"
+        },
+        {
+          "label": "CTA",
+          "kind": "lit",
+          "value": "Discuss a Custom Component",
+          "href": "/contact",
+          "note": "[no change]"
+        }
+      ],
+      "notes": [
+        "Bullets are a real <ul>. Six <li>, no divs styled as bullets — a capability list is one of the structures answer engines lift whole.",
+        "“Reverse-engineer from an existing part” is a searched service and it is under-claimed on this site. Reverse engineering rubber parts and obsolete tractor rubber part manufacturer both have buyers with no other supplier.",
+        "The certificate number is visible text next to the ISO string, not an alt attribute and not an image caption.",
+        "Link “rubber-to-metal bonding” to /products/anti-vibration-mounts, which carries the bonding detail."
+      ]
+    },
+    {
+      "num": "06",
+      "title": "Quality & certification",
+      "chip": "3 cards · certificate number + IATF position",
+      "live": "LIVE H2 → Every batch. Every shipment. · three cards, correctly scoped · two of the three buttons are dead links",
+      "fields": [
+        {
+          "label": "Eyebrow · H2",
+          "kind": "heading",
+          "lines": [
+            "Every batch. Every shipment."
+          ],
+          "accent": [],
+          "value": "Every batch. Every shipment.",
+          "note": "[no change to either]"
+        },
+        {
+          "label": "Body",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Margo Rubber Products holds ISO 9001:2015 certification — certificate 09111526A, issued by Integral Certification Ltd and valid to 21 February 2027. Our quality management system covers incoming raw material inspection, in-process control and outgoing batch documentation. An IATF 16949:2016 upgrade is in progress, targeted for completion by the end of 2026."
+          ],
+          "leads": [
+            "certificate 09111526A, issued by Integral Certification Ltd and valid to 21 February 2027"
+          ],
+          "note": "51 words · live is 30 · certificate identity and the IATF position are the additions. Agricultural OEMs run automotive-style supplier audits, and a stated upgrade with a date is what an auditor files. Same wording as the other eight industry sheets"
+        },
+        {
+          "label": "Card 1",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Certified quality management covering all production and inspection processes. Certificate 09111526A, valid to 21 February 2027; documentation available on request."
+          ],
+          "leads": [
+            "Certificate 09111526A, valid to 21 February 2027"
+          ],
+          "note": "20 words · live is 15 · the number replaces nothing, it is added"
+        },
+        {
+          "label": "Card 2",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Every component produced against a controlled drawing revision. No substitutions without approval."
+          ],
+          "leads": [
+            null
+          ],
+          "note": "[no change] — twelve words, and “no substitutions without approval” is the single sentence an OEM buyer most wants to read"
+        },
+        {
+          "label": "Card 3",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Raw material certificates and batch records retained per shipment. Available to agriculture buyers on request."
+          ],
+          "leads": [
+            null
+          ],
+          "note": "[no change]"
+        },
+        {
+          "label": "Buttons ×3",
+          "kind": "table",
+          "columns": [
+            "Button",
+            "Live",
+            "Ships as"
+          ],
+          "rows": [
+            [
+              "View ISO Certificate",
+              "no href",
+              "/certifications#iso-9001"
+            ],
+            [
+              "Download Quality Policy",
+              "no file",
+              "Remove until the PDF exists"
+            ],
+            [
+              "All Certifications",
+              "/certifications",
+              "[no change]"
+            ]
+          ],
+          "note": "Two of three go nowhere — the fifteenth and sixteenth dead download across the industry pages. All eight written so far carry the same pair. A dead download in a supplier-qualification section is worse than no button: it is the first thing a buyer tests and the first thing that fails"
+        }
+      ],
+      "notes": [
+        "No hasCredential on this page. The ISO node lives once, on /certifications. Nine pages each declaring it creates nine credentials for one certificate.",
+        "IATF is prose only, never schema. An in-progress upgrade in structured data reads as held.",
+        "Fix or remove — do not leave a button with no destination. A control that does nothing is a soft 404 a crawler cannot see and a buyer can.",
+        "Card titles <h3>, sub-titles a <p> or <strong> — not <h4>, which would imply a level that is not there."
+      ]
+    },
+    {
+      "num": "07",
+      "title": "Export supply",
+      "chip": "Compliance note rewritten · East Africa named",
+      "live": "LIVE H2 → Direct supply from Nashik to agricultural equipment makers. · five markets, and two of them are a deliberate choice · “phytosanitary requirements” does not apply to rubber",
+      "fields": [
+        {
+          "label": "Eyebrow",
+          "kind": "lit",
+          "value": "EXPORT SUPPLY",
+          "note": "[no change]"
+        },
+        {
+          "label": "H2",
+          "kind": "heading",
+          "lines": [
+            "Direct supply from Nashik to agricultural equipment makers in East Africa, Australia and the UK."
+          ],
+          "accent": [],
+          "value": "Direct supply from Nashik to agricultural equipment makers in East Africa, Australia and the UK.",
+          "note": "15 words · live is 8 · the markets move into the heading. Mining puts Australia in its section heading and oil & gas puts the Gulf in its eyebrow; this page has the strongest market focus of the three and says so nowhere above a list of country names"
+        },
+        {
+          "label": "Body",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Margo Rubber Products exports agricultural machinery components directly to equipment manufacturers, with full export documentation managed from Nashik. Components are produced against your controlled drawing revision, with pre-production sample approval available before volume release."
+          ],
+          "leads": [
+            null
+          ],
+          "note": "[no change] — 34 words across two paragraphs, and the sample-approval sentence is the one that matters to an importer buying from 6,000 km away"
+        },
+        {
+          "label": "Info blocks ×4",
+          "kind": "table",
+          "columns": [
+            "Label",
+            "Ships as",
+            "Note"
+          ],
+          "rows": [
+            [
+              "EXPORT DOCUMENTATION",
+              "Commercial invoice, packing list, certificate of origin, ISPM-15 fumigation certificate where timber packaging is used",
+              "ISPM-15 added — see the compliance note below"
+            ],
+            [
+              "FREIGHT ROUTING",
+              "Sea and air freight via established forwarders, ex-works Nashik or FOB Nhava Sheva",
+              "Adds the port and the two terms an importer quotes against"
+            ],
+            [
+              "COMMUNICATION",
+              "English-language correspondence and technical support",
+              "[no change]"
+            ],
+            [
+              "PAYMENT TERMS",
+              "Discussed per order — TT and LC accepted",
+              "Comma splice fixed"
+            ]
+          ],
+          "note": "Four blocks, four blocks — no count change, two given a detail"
+        },
+        {
+          "label": "Market list",
+          "kind": "lit",
+          "value": "India → Export Markets\nDirect OEM supply chain from Nashik, Maharashtra\nAustralia · United Kingdom · Kenya · Tanzania · United States",
+          "note": "[no change to the five countries] — and they should not be changed. Kenya and Tanzania are not the generic default five other industry pages carry; they are an East African focus that matches the Mombasa and Dar es Salaam lanes on the export sheet, and East African agricultural mechanisation is a market Indian manufacturers win on price and lead time"
+        },
+        {
+          "label": "Compliance note",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Buyers are responsible for confirming applicable import duties and any phytosanitary requirements for their specific order.",
+            "Buyers are responsible for confirming applicable import duties for their specific order. Where timber packaging is used, consignments are shipped with ISPM-15 treated and marked pallets and a fumigation certificate. Kenya and Tanzania both require pre-shipment verification of conformity (PVoC) through an approved inspection body before departure — we supply the technical file and arrange inspection at the Nashik facility."
+          ],
+          "leads": [
+            null,
+            "Where timber packaging is used, consignments are shipped with ISPM-15 treated and marked pallets and a fumigation certificate."
+          ],
+          "note": "59 words · live is 16 · this is the correction the page most needs. Phytosanitary certification applies to plants and plant products — seeds, timber, produce, soil. A moulded rubber bush is none of those and will never need one. The word is on the page because the sector is agriculture, which is the kind of association error a knowledgeable importer notices immediately.\nThe two requirements that do apply are named instead: ISPM-15 on the wooden pallet, not on the rubber — the same standard the mining sheet raises for Australia — and PVoC for Kenya and Tanzania, which the export sheet already documents. A wrong word becomes the two most useful sentences on the page"
+        }
+      ],
+      "notes": [
+        "This is the page’s GEO section and the heading is where the market focus has to live. Agricultural machinery spares supplier India to Kenya and tractor rubber parts exporter Tanzania are low-competition terms with a real buyer, and no page on this site currently targets either.",
+        "Do not schema PVoC or ISPM-15. Both are processes, not credentials Margo holds; in structured data they would read as certifications.",
+        "Country names are text, not flag images. Flags without text nodes are invisible to extraction and ambiguous to a screen reader.",
+        "Link “full export documentation” to /export and the PVoC sentence to the export page section that covers it — the deepest useful internal link on the page.",
+        "Nhava Sheva named once. It is the port an importer will see on the bill of lading, and naming it is a small, checkable specific."
+      ]
+    },
+    {
+      "num": "08",
+      "title": "FAQ",
+      "chip": "5 questions become 6",
+      "live": "LIVE H2 → Questions from agricultural equipment buyers. · the chemistry answer is the best FAQ answer in the set · the minimum-order answer is wrong",
+      "fields": [
+        {
+          "label": "Eyebrow · H2",
+          "kind": "heading",
+          "lines": [
+            "Questions from agricultural equipment buyers."
+          ],
+          "accent": [],
+          "value": "Questions from agricultural equipment buyers.",
+          "note": "[no change to either]"
+        },
+        {
+          "label": "Q1",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "EPDM is the usual choice for weather-exposed components, for its UV and ozone resistance across −40 °C to +140 °C. Natural rubber blends are used where abrasion resistance matters more than weathering, at −20 °C to +90 °C. Ozone resistance is tested in-house before release."
+          ],
+          "leads": [
+            "−40 °C to +140 °C"
+          ],
+          "note": "42 words · live is 32 · two ranges and the in-house test added. Sits in the 40–60 word extraction band"
+        },
+        {
+          "label": "Q2",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Compound selection is driven by the specific chemistry in contact. Send the chemical, concentration and service temperature and we will recommend a compound. Send the concentrate as well as the diluted spray — a compound that holds against a field dilution may not hold in the mixing tank."
+          ],
+          "leads": [
+            "Send the concentrate as well as the diluted spray — a compound that holds against a field dilution may not hold in the mixing tank."
+          ],
+          "note": "49 words · live is 26 · the live answer is already the best FAQ answer in the whole set — it refuses to guess and asks for the three inputs that decide it. The addition is the one thing it misses, and it is the thing that actually fails"
+        },
+        {
+          "label": "Q3",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "500 pieces per part number, per material. Catalogue sizes ship in 14 to 21 days ex-works Nashik from drawing approval.",
+            "We supply in bulk. The minimum run is 10,000 pieces per part number, per compound, or quoted against the part where geometry or tooling makes that unrealistic. Prototype and first-article lots sit outside the minimum. Lead time is confirmed with the quotation, from approved drawing and approved sample."
+          ],
+          "leads": [
+            null,
+            "The minimum run is 10,000 pieces per part number, per compound"
+          ],
+          "note": "48 words · live is 21 · client instruction, 2026-09-01. Fifth industry page with a dedicated minimum-order FAQ and the number was wrong in the other direction. The lead time goes too — “catalogue sizes” contradicts a page that says twice that nothing is supplied from a catalogue, and 14 to 21 days is not a promise any drawing-matched moulder can make before tooling is settled.\nOn this sector the corrected answer qualifies buyers in, not out. An agricultural OEM ordering linkage bushes orders them by the tens of thousands"
+        },
+        {
+          "label": "Q4",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Yes. Bellows and boots are quoted against convolution count, free and compressed length, diameter, flex-cycle target and service temperature. We hold the geometry and the compound; the cycle life is proved by your rig or a third-party laboratory, and we will support that test."
+          ],
+          "leads": [
+            "We hold the geometry and the compound; the cycle life is proved by your rig or a third-party laboratory, and we will support that test."
+          ],
+          "note": "48 words · live is 24 · asking for the flex-cycle target is right; the addition is how it is answered. Margo publishes no fatigue rig, and De Mattia flex testing to ISO 132, ASTM D430 or ASTM D813 is what a cycle-life number would have to come from. Same position as the bellows product sheet"
+        },
+        {
+          "label": "Q5",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Yes. Send the physical sample or the equipment make and model and we will produce a drawing and confirm compound selection. A worn part measures smaller than it was made — we dimension to the original intent, not to the wear, and confirm the result with you before tooling."
+          ],
+          "leads": [
+            "A worn part measures smaller than it was made"
+          ],
+          "note": "50 words · live is 25 · the addition is the part a reverse-engineering buyer worries about and almost nobody publishes: copying a worn sample reproduces the wear. Saying it is both reassuring and true"
+        },
+        {
+          "label": "Q6 — new",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "We hold ISO 9001:2015 — certificate 09111526A, issued by Integral Certification Ltd, valid to 21 February 2027. An IATF 16949:2016 upgrade is in progress, targeted for completion by the end of 2026. ISO 14001 and ISO 45001 are targeted for 2027. Documentation is available on request."
+          ],
+          "leads": [
+            "An IATF 16949:2016 upgrade is in progress, targeted for completion by the end of 2026."
+          ],
+          "note": "47 words · new sixth question — tell the developer the accordion grows by one row. Agricultural OEMs run automotive-style supplier audits and the question is asked on every one of them. Same answer as the other eight industry sheets"
+        }
+      ],
+      "notes": [
+        "All six answers in the DOM at first paint, hidden with CSS. An accordion that mounts its answer on click ships a page with six questions and no answers.",
+        "FAQPage schema carries all six, verbatim. Any drift between the visible answer and the schema string is a mismatch a rich-result test will flag.",
+        "Questions stay literal. “What is the minimum order quantity?” is how it is typed; do not restyle it to “Order quantities”.",
+        "Q2 is the page’s strongest AEO asset. “Which rubber is resistant to herbicide?” is asked constantly and answered badly everywhere; the concentrate-versus-dilution distinction is the part that is genuinely hard to find.",
+        "Answers are <p>, questions <h3>. The 40–60 word band is deliberate on all six."
+      ]
+    },
+    {
+      "num": "09",
+      "title": "Closing CTA",
+      "chip": "Placeholder contact strip — third page",
+      "live": "LIVE H2 → Ready to specify agricultural components from the manufacturer? · the contact strip publishes two placeholder strings",
+      "fields": [
+        {
+          "label": "Same CTA variant as HVAC and electrical & electronics",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Three of the eight industry pages written so far use this block — an eyebrow, a heading, a body line, two buttons and a contact strip — where the other five use the plain shared CTA. Both contact fields are unfilled on all three.",
+            "The correct values are in the footer of this same page, which is what makes it a component-wiring problem rather than a copy problem: the data exists, the block was never connected to it. Fix the component once and three pages are fixed together. Water & fluid management is the last page unchecked."
+          ],
+          "leads": [
+            "Both contact fields are unfilled on all three.",
+            "The correct values are in the footer of this same page"
+          ]
+        },
+        {
+          "label": "Eyebrow",
+          "kind": "lit",
+          "value": "GET STARTED",
+          "note": "[no change]"
+        },
+        {
+          "label": "H2 — 2 lines",
+          "kind": "heading",
+          "lines": [
+            "Ready to specify agricultural components",
+            "from the manufacturer?"
+          ],
+          "accent": [
+            "from the manufacturer?"
+          ],
+          "value": "Ready to specify agricultural components from the manufacturer?",
+          "note": "[no change] — “from the manufacturer” is the whole differentiator against a trading house, and it is already there"
+        },
+        {
+          "label": "Body",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Send us your drawing, part number, or equipment make and model. Our team will confirm compound selection, tooling status, and lead time."
+          ],
+          "leads": [
+            null
+          ],
+          "note": "[no change] — 22 words naming three accepted inputs and three things that come back. It is the correct shape for a closing CTA"
+        },
+        {
+          "label": "Buttons ×2",
+          "kind": "table",
+          "columns": [
+            "Button",
+            "Live",
+            "Ships as"
+          ],
+          "rows": [
+            [
+              "Primary",
+              "Request Agricultural Component Specs → /contact",
+              "[no change]"
+            ],
+            [
+              "Secondary",
+              "Send a Technical Inquiry → /contact",
+              "Call +91 96655 79276 → tel:+919665579276"
+            ]
+          ],
+          "note": "Two buttons to the same page is one button with a spare. Turning the second into a phone link gives the section two different actions instead of one repeated — and on mobile, where an equipment buyer in Nairobi or Dar es Salaam is likely reading, a tap-to-call is the higher-intent action"
+        },
+        {
+          "label": "Contact strip",
+          "kind": "lit",
+          "value": "✆ +91 (Nashik), Contact for number\n✉ Contact for email\n⛊ ISO 9001:2015 Certified",
+          "note": "Both placeholder strings replaced with the values already published in the footer. The certificate number is added to the third item so the badge is checkable. Phone and email are real links — tel: and mailto:, not plain text"
+        }
+      ],
+      "notes": [
+        "No ContactPoint schema until the strip is filled. Publishing “Contact for number” as structured data puts a placeholder into a knowledge graph, where it is far harder to retract than to prevent.",
+        "Once filled, the contact data still lives on the Organization node only — declared once on the homepage, referenced by @id. Nine pages each declaring a phone number creates nine contact points for one line.",
+        "tel: in E.164 — tel:+919665579276, no spaces or punctuation in the href. Display formatting is for the label only.",
+        "The CTA heading stays an <h2>. Two <span> lines inside it, as in the hero."
+      ]
+    },
+    {
+      "num": "10",
+      "title": "Footer",
+      "chip": "Rewrite",
+      "live": "LIVE → 50+ countries, © 2024, and the wrong legal entity · Products column shows 9 of 11 categories · /export appears nowhere",
+      "fields": [
+        {
+          "label": "Wordmark",
+          "kind": "lit",
+          "value": "MARGO\nRUBBER PRODUCTS"
+        },
+        {
+          "label": "Description",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "ISO 9001:2015 certified manufacturer of precision moulded and extruded rubber components in Nashik, India. Sealing and anti-vibration parts to customer drawing, supplied to OEMs and distributors in 95 countries."
+          ],
+          "leads": [
+            null
+          ],
+          "note": "29 words · live is 26 · opens with the entity definition, since the footer repeats on all 40 pages"
+        },
+        {
+          "label": "NAP block",
+          "kind": "lit",
+          "value": "+91 96655 79276\ninfo@margorubber.in\nSRNO. 4494/10, behind Furniture Stop, opposite Samarth Dies,\nVilholi, Nashik, Maharashtra 422010, India",
+          "note": "Client-confirmed address. It replaces the live B-12, MIDC Ambad, which is a different location. The company name is not repeated inside the address line — it is already the wordmark directly above it. One string, everywhere, forever"
+        },
+        {
+          "label": "Column 1 — Products",
+          "kind": "lit",
+          "value": "SEALING\nO-Rings · Oil Seals · Gaskets · Diaphragms · Reciprocating Seals · Leak Test Rubber\nMOUNTING & PROTECTION\nAnti-Vibration Mounts · Bushes & Bushings · Bonded Components · Bellows · Grommets · Pads, Stoppers & Caps\nSHEET & PROFILE\nExtrusion Profiles · Sponge & Foam Rubber · Rubber Lining & Skirting",
+          "note": "15 entries in three groups, up from 11. Adds Diaphragms, Bonded Components, Rubber Lining & Skirting and Reciprocating Seals (sheets 36–39), plus /products/extrusion and /products/sponge-foam-rubber, which had no sitewide inbound link at all. The column was designed for eleven and fifteen flat is not readable, so it is grouped — Sealing (6), Mounting & protection (6), Sheet & profile (3). The third group is also the commercial split: those three are quoted by length or area rather than by piece count, per sheets 18, 38 and 40. “Seals” is labelled “Reciprocating Seals” so it is not read as a parent of O-Rings and Oil Seals — sheet 39 §02 explains why. Group labels are <p> or <div>, never headings — three more phantom sections is not an improvement on one. One label also changes: Bushes & Sleeves becomes Bushes & Bushings, matching that category’s own H1. Its URL stays /products/bushes"
+        },
+        {
+          "label": "Column 2 — Industries",
+          "kind": "lit",
+          "value": "Automotive · Mining · Oil & Gas · Pumps & Valves · HVAC ·\nElectrical & Electronics · Agriculture · Medical Devices ·\nWater & Fluid Management · Construction · Transport — Rail & Marine",
+          "note": "11 entries, up from 9 — adds Construction (sheet 41) and Transport — Rail & Marine (sheet 42), the first two of the six “additional sectors” on sheet 05 to earn a URL. Automotive still leads, matching real volume. 🛑 The live footer’s four industry links all resolve to the same /industries/ The full twenty-six-row footer link map is in sheet 01_Homepage.html, footer section — fifteen product links and eleven industry links, with the three label/slug mismatches called out. — adding two entries to a column whose links are broken makes eleven broken links, so fix the routing in this same commit"
+        },
+        {
+          "label": "Column 3 — Company",
+          "kind": "lit",
+          "value": "About Us · Certifications · Export Markets · Case Studies ·\nResources · Contact Us",
+          "note": "6 entries · Export Markets is new and fixes the orphaned /export page · Why Choose Us comes out — that page is recommended for deletion, its job is done better by /certifications and /export"
+        },
+        {
+          "label": "CTA lines",
+          "kind": "lit",
+          "value": "Ready to source precision rubber components?\nQuotation from our engineering team within 48 hours.\n[ Request Quote → ]",
+          "note": "“within 24 hours” becomes 48 hours. The footer CTA is the fastest of the six response times published on this site, and it contradicts the page body on /contact, /industries and /export. One constant, rendered everywhere"
+        },
+        {
+          "label": "Legal line",
+          "kind": "lit",
+          "value": "© 2026 Margo Rubber Products. All rights reserved.\nPrivacy Policy · Terms & Conditions · Disclaimer\nISO 9001:2015 · Certificate 09111526A · Integral Certification Ltd",
+          "note": "Fixes © 2024 and Margo Rubber Industries Pvt. Ltd. — GSTIN 27AAKFM8595Q1Z1 embeds PAN AAKFM8595Q, whose 4th character F denotes a firm, not a company. Pvt. Ltd. is positively excluded. The ISO line gains the certificate number and the issuer, which makes it checkable on all 40 pages instead of decorative"
+        }
+      ],
+      "notes": [
+        "What it fixes on this page specifically: the legal line names Margo Rubber Industries Pvt. Ltd., and section 07 of this page asks an East African importer to open a letter of credit. The entity on the invoice and the entity on the website have to be the same one, or the bank stops the payment.",
+        "What it fixes on this page specifically: the footer carries the correct phone number and email — the two strings the CTA two sections above it publishes as placeholders, exactly as on the HVAC and electrical & electronics pages. The values a developer needs to fix section 09 are already on the same page — roughly 600 px below the placeholder, in the same document.",
+        "The Products column must show all eleven. Section 02 now links to seven product pages from the body; the footer is where a buyer who arrived from a sector search finds the other three. It currently shows nine of eleven.",
+        "Build once, ships forty times. This is one component. The copy above is written out in full on every sheet in this set so nobody has to open two files to build one block, but it is authored once in the codebase.",
+        "Heading levels. The column labels (PRODUCTS / INDUSTRIES / COMPANY) are <h2> in the live build. As visible <h2>s they inject three phantom sections into every document outline on the site. Change to <p class=\"col-label\">.",
+        "Link equity. 26 sitewide links from here. Adding /export, /products/extrusion and /products/sponge-foam-rubber gives three orphaned or under-linked URLs a sitewide inbound link each — the cheapest internal-linking win available on this site.",
+        "NAP markup. Wrap in <address>. Phone as <a href=\"tel:+919665579276\">, email as <a href=\"mailto:info@margorubber.in\">. The visible string and the href must not diverge.",
+        "Schema. The footer emits nothing. The Organization node on the homepage is the single entity definition and every other page @id-references it. Repeating an Organization block per page creates 40 competing entities.",
+        "Copyright year. Render from new Date().getFullYear(), not a literal. It has read 2024 for eight months."
+      ]
+    }
+  ]
+}

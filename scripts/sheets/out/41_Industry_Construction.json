@@ -1,0 +1,673 @@
+{
+  "file": "41_Industry_Construction.html",
+  "title": "Construction Industry Page Content Sheet",
+  "kicker": "Margo Rubber Products · /industries/construction · Vision Build · Sheet 41 · NEW PAGE",
+  "head": {
+    "title": "Rubber Seals for Construction | Glazing, Expansion Joints | Margo",
+    "description": "EPDM glazing gaskets, facade expansion joint seals, weatherseal profiles and plant isolation mounts for construction and infrastructure — extruded and moulded to your drawing in Nashik, India. ISO 9001:2015."
+  },
+  "sections": [
+    {
+      "num": "01",
+      "title": "Hero",
+      "chip": "New",
+      "live": "NO LIVE SECTION → industry hero component, as on the nine existing industry pages",
+      "fields": [
+        {
+          "label": "Eyebrow",
+          "kind": "lit",
+          "value": "01 · CONSTRUCTION & INFRASTRUCTURE"
+        },
+        {
+          "label": "H1 — 2 lines",
+          "kind": "heading",
+          "lines": [
+            "Rubber That Seals a Building",
+            "Against Water, Wind and Movement."
+          ],
+          "accent": [
+            "Against Water, Wind and Movement."
+          ],
+          "value": "Rubber That Seals a Building Against Water, Wind and Movement.",
+          "note": "10 words · the three things a building envelope actually has to resist, and the third is the one that separates construction from every other sector on this site. Buildings move — thermally, structurally, seasonally — and a seal that cannot take movement fails whatever its material"
+        },
+        {
+          "label": "Subhead",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Extruded EPDM glazing and weatherseal profiles, cellular expansion joint seals, building-services gaskets and vibration mounts for plant — extruded and moulded to your drawing at our ISO 9001:2015 plant in Nashik. Compounded in-house, so the ozone and UV resistance a facade needs for twenty years is formulated rather than bought in."
+          ],
+          "leads": [
+            "Extruded EPDM glazing and weatherseal profiles, cellular expansion joint seals, building-services gaskets and vibration mounts for plant — extruded and moulded to your drawing at our ISO 9001:2015 plant in Nashik."
+          ],
+          "note": "50 words · the last clause is the sector-specific differentiator. A facade seal fails by ozone cracking and UV embrittlement long before it fails mechanically, and in-house compounding is what lets that be specified rather than assumed — which matters more here than on any other industry page"
+        },
+        {
+          "label": "Spec chips ×3",
+          "kind": "table",
+          "columns": [
+            "Chip",
+            "Why this one"
+          ],
+          "rows": [
+            [
+              "ISO 9001:2015",
+              "Same first chip as every industry page. The only certification held"
+            ],
+            [
+              "EPDM · OZONE & UV",
+              "The compound and the property a facade buyer is scanning for"
+            ],
+            [
+              "EXTRUDED & MOULDED",
+              "Both processes in one place. A curtain-wall package needs profile and corner mouldings from the same compound"
+            ]
+          ],
+          "note": "No piece count and no country figure. And no fire rating and no load rating — the two chips a construction page is most tempted into, and the two section 06 exists to refuse"
+        },
+        {
+          "label": "CTA slot",
+          "kind": "lit",
+          "value": "[ Send your profile drawing → /contact?industry=Construction ]",
+          "note": "The hero CTA slot renders empty on several industry pages because nothing is passed to it. Populate it. /contact?industry=… canonicals to /contact"
+        }
+      ],
+      "notes": [
+        "Heading. The page’s only <h1>, two <span class=\"block\"> children — not stacked bare JSX spans, which is the sitewide whitespace bug.",
+        "Image alt, if added: “EPDM glazing gaskets and expansion joint seals extruded at Margo Rubber Products, Nashik”.",
+        "Chips are <li> in a <ul>, uppercase set in CSS."
+      ]
+    },
+    {
+      "num": "02",
+      "title": "What we supply to construction",
+      "chip": "New",
+      "live": "NO LIVE SECTION → product routing grid, seven cards · every card links to a category page",
+      "fields": [
+        {
+          "label": "Eyebrow",
+          "kind": "lit",
+          "value": "02 · PRODUCTS"
+        },
+        {
+          "label": "H2",
+          "kind": "heading",
+          "lines": [
+            "Seven Product Lines on One Project"
+          ],
+          "accent": [],
+          "value": "Seven Product Lines on One Project",
+          "note": "6 words · construction buys across the catalogue more than any other sector — profile, sponge, gasket, mount and lining can all appear on a single building. The heading says so, because the cross-sell is the commercial point of the page"
+        },
+        {
+          "label": "Cards ×7",
+          "kind": "table",
+          "columns": [
+            "Product",
+            "On a building",
+            "Links to"
+          ],
+          "rows": [
+            [
+              "Extrusion Profiles",
+              "Glazing gaskets, wedge and H-sections, door and window weatherseals, cabinet and shutter seals. Die cut in-house, so a non-standard section is a drawing rather than a compromise.",
+              "/products/extrusion"
+            ],
+            [
+              "Sponge & Foam Rubber",
+              "Facade and curtain-wall expansion joints, closed-cell backing, self-adhesive foam tape, acoustic isolation pads.",
+              "/products/sponge-foam-rubber"
+            ],
+            [
+              "Gaskets",
+              "Flange and body gaskets for building-services pipework, pumps, tanks and plant.",
+              "/products/gaskets"
+            ],
+            [
+              "Anti-Vibration Mounts",
+              "Isolation for chillers, air-handling units, generator sets and pumps — the plant that transmits structure-borne noise into a building.",
+              "/products/anti-vibration-mounts"
+            ],
+            [
+              "O-Rings",
+              "Building-services pipework, valves, pumps and fire-main couplings.",
+              "/products/o-rings"
+            ],
+            [
+              "Rubber Lining & Skirting",
+              "Tank, sump and pipework lining for water and effluent plant on infrastructure projects.",
+              "/products/rubber-lining"
+            ],
+            [
+              "Bonded Components",
+              "Bonded acoustic and vibration pads where the rubber is vulcanised to a steel plate rather than glued to it.",
+              "/products/bonded-components"
+            ]
+          ],
+          "note": "All seven destinations exist — five were already live and two, lining and bonded components, were written on 2026-09-03. No card on this page routes to /contact, which is the defect the medical-devices, pumps & valves and agriculture sheets all had to correct.\nSealing rings to IS 5382 are deliberately not a card here. They belong to /industries/water-fluid-management and duplicating them would split the intent. Section 05 names the standard and section 08 Q3 routes the enquiry — that is the correct relationship between two industry pages that share a buyer"
+        }
+      ],
+      "notes": [
+        "Card titles are <h3> and each carries the product-page link on the product name, not on “learn more”.",
+        "Seven internal links out — the highest of any industry page in the set, which is right for the sector that buys most broadly.",
+        "All seven cards in the DOM at first paint."
+      ]
+    },
+    {
+      "num": "03",
+      "title": "Where it sits on a building",
+      "chip": "New",
+      "live": "NO LIVE SECTION → application card grid, six cards",
+      "fields": [
+        {
+          "label": "Eyebrow",
+          "kind": "lit",
+          "value": "03 · APPLICATIONS"
+        },
+        {
+          "label": "H2",
+          "kind": "heading",
+          "lines": [
+            "Six Places a Building Needs Rubber"
+          ],
+          "accent": [],
+          "value": "Six Places a Building Needs Rubber",
+          "note": "6 words · organised by location rather than by product, because a facade contractor and an MEP contractor are different buyers arriving at the same page"
+        },
+        {
+          "label": "Cards ×6",
+          "kind": "table",
+          "columns": [
+            "Location",
+            "What we supply",
+            "Compound"
+          ],
+          "rows": [
+            [
+              "Facade and curtain wall",
+              "Structural glazing gaskets, wedge and setting-block sections, weather seals and cellular expansion joint fillers. Corner mouldings vulcanised to the profile so the joint is not a butt splice on site.",
+              "EPDM"
+            ],
+            [
+              "Windows, doors and shutters",
+              "Extruded weatherseal profiles, bubble and fin sections, glazing beads and cabinet seals.",
+              "EPDM · CR"
+            ],
+            [
+              "Roof and waterproofing",
+              "Self-adhesive closed-cell tape, upstand and penetration seals, membrane termination tape.",
+              "EPDM · CR"
+            ],
+            [
+              "Plant rooms and services",
+              "Anti-vibration mounts and acoustic pads under chillers, AHUs and gensets; flange gaskets and O-rings on services pipework.",
+              "NR · Neoprene · NBR"
+            ],
+            [
+              "Below ground and wet areas",
+              "Pipe penetration seals, sump and tank lining, coupling and manhole gaskets.",
+              "EPDM · NR"
+            ],
+            [
+              "Structural movement",
+              "Expansion and movement joint seals in dense and cellular section, sized to the joint’s designed range rather than its installed gap.",
+              "EPDM · CR"
+            ]
+          ],
+          "note": "The last card carries the sector’s core engineering point. A movement joint is specified by its range — the maximum and minimum gap it will see through a thermal cycle — not by the gap on the day it was measured. A seal sized to the installed gap works until the first summer. Saying so on the page is the detail a facade engineer notices\nCompound column matches the homepage governing table throughout, and EPDM leads five of six because facade and roof duty is ozone, UV and water — exactly what EPDM is for and exactly what nitrile is not"
+        }
+      ],
+      "notes": [
+        "Card titles are <h3>. structural glazing gasket, expansion joint seal and pipe penetration seal are three distinct searched terms with no page on this site today.",
+        "All six cards in the DOM at first paint. If built as a filter, hide with CSS.",
+        "🛑 “Fire-rated seals” does not appear in this section. Sheet 19’s sector row names it and it must not carry over — see section 06."
+      ]
+    },
+    {
+      "num": "04",
+      "title": "Compound selection",
+      "chip": "New",
+      "live": "NO LIVE SECTION → router, from the /products/oil-seals compound selector",
+      "fields": [
+        {
+          "label": "Eyebrow",
+          "kind": "lit",
+          "value": "04 · COMPOUND"
+        },
+        {
+          "label": "H2",
+          "kind": "heading",
+          "lines": [
+            "On a Facade, Ozone Decides Before Temperature Does"
+          ],
+          "accent": [],
+          "value": "On a Facade, Ozone Decides Before Temperature Does",
+          "note": "8 words · states the sector’s selection rule. Every other industry page routes on medium or temperature; construction routes on weathering, and a compound table that leads with temperature would rank the wrong material first"
+        },
+        {
+          "label": "Intro",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "External seals fail by ozone cracking and UV embrittlement, not by reaching a temperature limit. A twenty-year facade seal spends its life between −5 and +65 °C and still perishes, because sunlight and atmospheric ozone attack the polymer backbone. Every compound we mix is available; these are ranked for building duty."
+          ],
+          "leads": [
+            null
+          ],
+          "note": "52 words · explains the failure mode rather than asserting the choice, which is what makes the EPDM recommendation credible instead of promotional. The temperature range given is deliberately unremarkable — the point is that the seal fails within it"
+        },
+        {
+          "label": "Compound router",
+          "kind": "table",
+          "columns": [
+            "If the duty is",
+            "Compound",
+            "Service temperature",
+            "Note"
+          ],
+          "rows": [
+            [
+              "External — facade, glazing, roof, weatherseal",
+              "EPDM",
+              "−40 to +140 °C",
+              "The default for anything exposed. Outstanding ozone, UV and water resistance; tested to ISO 1431-1. Never where oil or fuel is present"
+            ],
+            [
+              "Structural movement, acoustic and vibration pads",
+              "Natural rubber",
+              "−20 to +90 °C",
+              "Best damping and flex-fatigue of the eight, which is what a load-bearing pad needs. Protected positions only — poor ozone resistance"
+            ],
+            [
+              "Marine and coastal exposure, moderate oil, flame-retardant grades",
+              "Neoprene",
+              "−40 to +120 °C",
+              "The compromise where salt air, some oil and a flame-retardant grade are all wanted at once"
+            ],
+            [
+              "Plant-room pipework carrying oil, fuel or hydraulic fluid",
+              "NBR",
+              "−30 to +120 °C",
+              "Generator fuel lines and hydraulic plant. Never on a facade — nitrile has poor ozone resistance and will craze in sunlight"
+            ],
+            [
+              "High-temperature services, flue and boiler-room gasketing",
+              "Silicone",
+              "−60 to +220 °C",
+              "Where temperature genuinely governs. Low tear strength, so not for a section that is stretched over a frame"
+            ],
+            [
+              "Abrasive water, low-cost protected duty",
+              "SBR",
+              "−30 to +100 °C",
+              "Internal and protected positions only. No exposure, no oil"
+            ],
+            [
+              "Aggressive chemistry in effluent or process plant",
+              "FKM",
+              "−20 to +250 °C\ncontinuous to +200 °C",
+              "Rarely justified on a building. Specify on the medium, not the temperature"
+            ],
+            [
+              "Hot oil and oil mist",
+              "AEM",
+              "−40 to +175 °C\ncontinuous to +160 °C",
+              "Rarely a construction duty. Listed because every compound is available"
+            ]
+          ],
+          "note": "Every range is the homepage compound table, which governs across all fifteen category pages. FKM and AEM carry the continuous figure beneath the peak.\nThe NBR row is the one that earns trust here — “never on a facade” is a refusal aimed at a real and common error. Nitrile is the cheap default in a lot of Indian sealing supply and it crazes within a season in direct sun. Naming that is worth more than another EPDM sentence\nEPDM leads and natural rubber is second, which is the fifth different ranking across the five compound routers written in this run. Four pages, five orders, no house favourite"
+        }
+      ],
+      "notes": [
+        "All eight rows in the DOM at first paint. On /products the same component hides seven of eight compound descriptions from crawlers.",
+        "Link each compound name once to its anchor on /products.",
+        "This table answers “what rubber is used for window seals” and “which rubber lasts outdoors” with a routed, mechanistic answer. Keep it as one table so it lifts whole."
+      ]
+    },
+    {
+      "num": "05",
+      "title": "Standards we work to",
+      "chip": "New",
+      "live": "NO LIVE SECTION → standards table, existing table component",
+      "fields": [
+        {
+          "label": "H2",
+          "kind": "heading",
+          "lines": [
+            "Dimensional Standards, Not Approvals"
+          ],
+          "accent": [],
+          "value": "Dimensional Standards, Not Approvals",
+          "note": "4 words · the distinction stated as the heading, which is the house position from sheet SKU 14 on DIN 3760. On a construction page it matters more than anywhere else, because specifiers read a standard number as a certification"
+        },
+        {
+          "label": "Standards table",
+          "kind": "table",
+          "columns": [
+            "Standard",
+            "Covers",
+            "Our position"
+          ],
+          "rows": [
+            [
+              "ASTM C864",
+              "Dense elastomeric compression seal gaskets, setting blocks and spacers — the solid glazing sections",
+              "We mould and extrude to it"
+            ],
+            [
+              "ASTM C509",
+              "Elastomeric cellular preformed gasket and sealing material — the sponge glazing sections",
+              "We extrude to it"
+            ],
+            [
+              "ASTM C1115",
+              "Dense elastomeric silicone rubber gaskets and accessories",
+              "Where silicone is specified"
+            ],
+            [
+              "IS 5382",
+              "Rubber sealing rings for gas mains, water mains and sewers",
+              "Supplied — see /industries/water-fluid-management"
+            ],
+            [
+              "EN 681-1",
+              "Elastomeric seals for water supply and drainage pipe joints",
+              "Supplied"
+            ],
+            [
+              "ASTM D2000",
+              "Line-callout classification for the compound itself",
+              "We quote against a callout if you have one"
+            ],
+            [
+              "ISO 3302-1",
+              "Dimensional tolerances — class E1–E3 extruded, M1–M4 moulded",
+              "Tolerance follows the section"
+            ],
+            [
+              "ISO 1431-1",
+              "Ozone resistance test method",
+              "Tested at our NABL partner laboratory"
+            ],
+            [
+              "",
+              "",
+              ""
+            ],
+            [
+              "",
+              "",
+              ""
+            ]
+          ],
+          "note": "Eight standards worked to and two struck, in the same table. Putting the refusals inside the standards list rather than in a separate disclaimer is the strongest form — a specifier scanning for IRC:83 finds it, finds the answer, and does not have to enquire to learn it.\nASTM C864, C509 and C1115 verified 2026-09-03 against ASTM’s own catalogue. These are the three architectural glazing gasket standards and none of them appears anywhere on margorubber.in today, on a site that sells extruded EPDM profile.\nThe IS 5382 row cross-links rather than duplicating. Two industry pages sharing a buyer should point at each other, not repeat each other"
+        }
+      ],
+      "notes": [
+        "Every standard number is plain text in a table cell, not an image. These are the strings a specifier searches and an assistant matches.",
+        "The two struck rows ship visible, with real values, not below the contrast threshold.",
+        "🛑 No hasCredential or Certification schema for any row. Every one of these is a dimensional or test standard, not an approval Margo holds."
+      ]
+    },
+    {
+      "num": "06",
+      "title": "What we do not supply",
+      "chip": "🛑 New · the section this sector needs most",
+      "live": "NO LIVE SECTION → banner plus table · unusual for an industry page, and correct here",
+      "fields": [
+        {
+          "label": "H2",
+          "kind": "heading",
+          "lines": [
+            "Four Things We Will Not Quote"
+          ],
+          "accent": [],
+          "value": "Four Things We Will Not Quote",
+          "note": "6 words · a heading that promises a refusal, on the page of a supplier trying to win work. On construction that reads as competence rather than weakness, because a specifier has been let down by a supplier who said yes to all four"
+        },
+        {
+          "label": "Intro",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Rubber appears in parts of a building where the product is not really rubber, it is a certified assembly. We would rather tell you now than at qualification."
+          ],
+          "leads": [
+            null
+          ],
+          "note": "28 words · one sentence, and the second half is the commercial argument. Every hour spent qualifying a supplier who cannot do the work is an hour both sides lose"
+        },
+        {
+          "label": "Boundaries table",
+          "kind": "table",
+          "columns": [
+            "Not supplied",
+            "Why",
+            "What we can do"
+          ],
+          "rows": [
+            [
+              "Laminated elastomeric bridge bearings",
+              "A structural product type-tested and load-certified to IRC:83 Section IX, IS 15462 or EN 1337-3. We hold no structural product approval and a bearing sits under a deck.",
+              "Plain rubber bearing pads and acoustic isolation pads for non-structural duty, quoted against your load and area"
+            ],
+            [
+              "Fire-rated and intumescent seals",
+              "A fire rating is certified against a specific tested assembly by a third-party laboratory to IS 3809, BS 476 or EN 1366. A flame-retardant compound is not a fire rating and we will not let the two be confused.",
+              "Flame-retardant neoprene grades where the specification asks for a compound property rather than a tested assembly. Third-party testing arranged on request"
+            ],
+            [
+              "EPDM roofing membrane systems",
+              "Single-ply roofing is a warranted system with installer certification behind it. The warranty is the product.",
+              "Closed-cell EPDM tape, upstand and penetration seals, and termination detailing that goes with someone else’s membrane"
+            ],
+            [
+              "PVC waterstops",
+              "PVC is not a vulcanised rubber and we do not extrude it — the same reason we decline polyurethane liners and polyurethane hydraulic seals.",
+              "Rubber waterstops and construction-joint seals in EPDM or natural rubber, where the specification permits them"
+            ]
+          ],
+          "note": "The third column is what makes this section commercial rather than merely honest. Each refusal is paired with the adjacent thing Margo genuinely does, so a specifier reading it leaves with a product rather than a rejection. All four alternatives are real and all four are already on this site\nThe fire row is the one that will be carried over by mistake. Sheet 19’s live sector table names “fire-rated seals” as a construction application in plain text. It must not appear on this page as a capability, and sheet 19’s row should be amended to “flame-retardant grades” at the same time.\nSixth boundary section in six new sheets. Diaphragms refused cycle life, bonded components refused bond strength, lining refused polyurethane and butyl, seals refused polyurethane again, the datasheet refused food contact and a flame rating. On this sector the refusal is structural, which is why it gets a numbered section rather than a paragraph"
+        }
+      ],
+      "notes": [
+        "Row labels are <th scope=\"row\">, and the standard numbers are plain text — a specifier searching IRC:83 rubber bearing supplier should find this page and find the answer.",
+        "This section is a strong candidate for an AI answer to “does Margo Rubber make bridge bearings”. That the answer is no, stated by us, is exactly the outcome we want.",
+        "No schema on this section. There is no markup for a capability that is absent, and inventing one would be the same error as emitting an in-progress certification."
+      ]
+    },
+    {
+      "num": "07",
+      "title": "Supplier qualification",
+      "chip": "Shared · 🛑 carries the two dead downloads",
+      "live": "SHARED BLOCK → identical on all nine industry pages · and on all nine both download buttons are dead",
+      "fields": [
+        {
+          "label": "Certification block",
+          "kind": "lit",
+          "value": "ISO 9001:2015 · Certificate 09111526A\nIntegral Certification Ltd · Valid to 21 February 2027\nScope: rubber moulded components — quality management, not a product approval\nIATF 16949 — upgrade in progress, certification targeted by end 2026\nISO 14001 and ISO 45001 — targeted 2027",
+          "note": "The exact string used across the set, client-instructed 2026-08-31 and 2026-09-01. Nothing is added. The scope line matters on this sector: the certificate covers rubber moulded components, and extruded profile is not a moulding — the same observation sheets 38 and 40 make about lining and sponge"
+        },
+        {
+          "label": "Download buttons ×2",
+          "kind": "table",
+          "columns": [
+            "Button",
+            "State on all nine industry pages",
+            "On this page"
+          ],
+          "rows": [
+            [
+              "Download ISO Certificate",
+              "",
+              "Renders only once the hosted PDF exists"
+            ],
+            [
+              "Download Quality Policy",
+              "",
+              "Renders only once the document exists"
+            ]
+          ],
+          "note": "🛑 This is the eighteen-dead-downloads defect and this page must not make it twenty. The build checklist tracks it as a Gate 3 item, blocked on Gate 2 — the ISO certificate scan has never been supplied as a hosted PDF, and it appears zero times across all thirty-six live pages despite being the only real credential Margo holds.\nThe rule from sheet 02 applies: “a dead download on a quality page costs more than the missing asset.” On a supplier-qualification block read by a main contractor’s procurement team, a certificate button that does nothing is worse than no button — it is the one place a buyer is actively checking whether the claim is real"
+        }
+      ],
+      "notes": [
+        "Only ISO 9001:2015 goes into hasCredential, and only on the homepage Organization node.",
+        "No potable-water claim even though the sector invites it — WRAS, NSF/ANSI/CAN 61, AS/NZS 4020 and KTW-BWGL attach to a compound formulation held by the compound supplier. Sheet 28 carries the full position."
+      ]
+    },
+    {
+      "num": "08",
+      "title": "Technical & commercial questions",
+      "chip": "New",
+      "live": "NO LIVE SECTION → FAQ accordion, six questions · these six are the FAQPage mainEntity, verbatim",
+      "fields": [
+        {
+          "label": "Q1",
+          "kind": "heading",
+          "lines": [
+            "Which rubber lasts longest on an external facade?"
+          ],
+          "accent": [],
+          "value": "Which rubber lasts longest on an external facade?",
+          "note": "67 words · the extractable answer for this page. It names the compound, the failure mechanism, the wrong answer buyers are offered, and the test — in that order. Naming nitrile as the substitute to avoid is what makes it useful rather than promotional"
+        },
+        {
+          "label": "Q2",
+          "kind": "heading",
+          "lines": [
+            "Do you supply elastomeric bearings for bridges?"
+          ],
+          "accent": [],
+          "value": "Do you supply elastomeric bearings for bridges?",
+          "note": "76 words · the most important answer on the page. Bridge bearings are the largest rubber market in Indian construction and the easiest thing on this list to imply. Answering it as a flat no, with the standards named and the adjacent product offered, is the whole argument of section 06 in one FAQ"
+        },
+        {
+          "label": "Q3",
+          "kind": "heading",
+          "lines": [
+            "Can you supply sealing rings for concrete pipes and manholes?"
+          ],
+          "accent": [],
+          "value": "Can you supply sealing rings for concrete pipes and manholes?",
+          "note": "52 words · routes a real construction enquiry to the page that owns it, without duplicating the content. “The same team quotes both” removes the friction a cross-link would otherwise add"
+        },
+        {
+          "label": "Q4",
+          "kind": "heading",
+          "lines": [
+            "Are your seals fire rated?"
+          ],
+          "accent": [],
+          "value": "Are your seals fire rated?",
+          "note": "70 words · the second refusal, and the sentence in bold is the one that protects both parties. Sheet 19’s live copy currently names “fire-rated seals” as a construction application — this answer is what stops that becoming a claim"
+        },
+        {
+          "label": "Q5",
+          "kind": "heading",
+          "lines": [
+            "What is the minimum order for extruded profile on a project?"
+          ],
+          "accent": [],
+          "value": "What is the minimum order for extruded profile on a project?",
+          "note": "62 words · the bulk position adapted to a sector that buys both ways, matching sheet 18 on extrusion and sheet 38 on lining. Construction is the clearest case for the escape clause in the 2026-09-01 instruction — a project buys metres of profile and pieces of moulding on one purchase order"
+        },
+        {
+          "label": "Q6",
+          "kind": "heading",
+          "lines": [
+            "Can you make a non-standard profile for a facade system?"
+          ],
+          "accent": [],
+          "value": "Can you make a non-standard profile for a facade system?",
+          "note": "65 words · the qualifying answer for a facade contractor, and the vulcanised-corner detail is the one that separates a component supplier from a stockist. In-house tooling is the differentiator on this sector more than on any other"
+        }
+      ],
+      "notes": [
+        "All six panels in the DOM at first paint. FAQPage answers not present in the HTML are a structured-data mismatch.",
+        "Q1 and Q2 are the extractable answers. Q1 wins the compound query; Q2 is the one an assistant will quote when asked whether Margo supplies bridge bearings.",
+        "Q3 carries an internal link on water and fluid management page."
+      ]
+    },
+    {
+      "num": "09",
+      "title": "Enquiries",
+      "chip": "Shared · 🛑 use the working variant",
+      "live": "SHARED CTA COMPONENT → not the variant on HVAC, electrical, agriculture and water that prints +91 (Nashik), Contact for number and Contact for email",
+      "fields": [
+        {
+          "label": "Eyebrow",
+          "kind": "lit",
+          "value": "09 · ENQUIRIES"
+        },
+        {
+          "label": "H2",
+          "kind": "heading",
+          "lines": [
+            "Request a Construction Quotation"
+          ],
+          "accent": [],
+          "value": "Request a Construction Quotation",
+          "note": "4 words · “quotation” is the transactional term used on every page in this set"
+        },
+        {
+          "label": "Body",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Send the section drawing and the annual metreage, or the moulded part drawing and the quantity. Tell us whether the position is external or protected — that single answer decides the compound before anything else does. Our engineering team responds within 48 hours with a compound recommendation, dimensional confirmation and a quotation."
+          ],
+          "leads": [
+            "Our engineering team responds within 48 hours with a compound recommendation, dimensional confirmation and a quotation."
+          ],
+          "note": "53 words · the external-or-protected question is the page’s selection rule restated at the point of conversion, and it qualifies the enquiry in one line. 48 hours is the sitewide figure — not “two working days”, not “within 24 hours”"
+        },
+        {
+          "label": "Buttons ×2",
+          "kind": "lit",
+          "value": "[ Request a quote → /contact?industry=Construction ]\n[ ← All Industries → /industries ]",
+          "note": "Primary and secondary, the same pair as every industry page. 🛑 The contact panel must render the real values — info@margorubber.in and +91 96655 79276 — not the placeholder strings four existing industry pages ship today"
+        }
+      ],
+      "notes": [
+        "/contact?industry=Construction canonicals to /contact.",
+        "Add a “Construction” option to the contact form’s industry dropdown, which currently lists nine industries plus “Other”.",
+        "A named conversion event fires on submit."
+      ]
+    },
+    {
+      "num": "10",
+      "title": "Footer",
+      "chip": "Industries column gains a tenth entry",
+      "live": "GLOBAL COMPONENT → the Products column does not move · the Industries column does",
+      "fields": [
+        {
+          "label": "Industries column",
+          "kind": "lit",
+          "value": "Automotive · Mining · Oil & Gas · Pumps & Valves · HVAC ·\nElectrical & Electronics · Agriculture · Medical Devices ·\nWater & Fluid Management · Construction · Transport — Rail & Marine",
+          "note": "The sweep has run. The Industries column now ships with eleven entries in all twenty-nine sheets — Construction (this sheet) and Transport — Rail & Marine (sheet 42), the first two of the six “additional sectors” on sheet 05 to earn a URL. The identical nine-industry string ships in twenty-nine sheets today, so this is one component edit landing on every page at once — and /industries/transport will make it eleven. Sweep the Industries column with the Products column, once, when both are final\n🛑 The live footer’s four industry links all resolve to the same /industries/ The full twenty-six-row footer link map is in sheet 01_Homepage.html, footer section — fifteen product links and eleven industry links, with the three label/slug mismatches called out. — recorded in the build checklist. Adding a tenth entry to a column whose links are broken makes ten broken links, not nine. Fix the routing in the same commit"
+        },
+        {
+          "label": "Products column",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Unchanged at fifteen. This is an industry page and adds nothing to the Products column."
+          ],
+          "leads": [
+            "Unchanged at fifteen."
+          ],
+          "note": "Confirms the count from sheet 40: fifteen is final, and only /industries/transport remains to move the Industries column"
+        },
+        {
+          "label": "Legal line",
+          "kind": "lit",
+          "value": "© 2026 Margo Rubber Products. All rights reserved. Privacy Policy · Terms & Conditions · Disclaimer ISO 9001:2015 · Certificate 09111526A · Integral Certification Ltd",
+          "note": "The identical string used in all twenty-nine sheets"
+        }
+      ],
+      "notes": [
+        "Footer column labels are <p> or <div>, never headings.",
+        "Add /industries/construction to sitemap.xml and to phase0-route-handlers/lib/site.ts.",
+        "Add a card to the /industries hub grid, which shows nine. And move Construction out of sheet 05’s “additional sectors” prose into the ItemList — that block excludes it precisely because it had no URL, and now it has one.",
+        "Update sheet 19’s sector table: the Construction row’s destination changes from no industry page exists to this URL, and “fire-rated seals” becomes “flame-retardant grades”."
+      ]
+    }
+  ]
+}

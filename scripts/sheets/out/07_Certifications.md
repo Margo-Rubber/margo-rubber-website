@@ -1,0 +1,177 @@
+# 07_Certifications.html — Certifications Content Sheet
+
+**<title>** ISO 9001:2015 Certified Rubber Manufacturer | Margo, Nashik
+**description** Margo Rubber Products holds ISO 9001:2015, certificate 09111526A, for the manufacture of moulded rubber components in Nashik, India. Scope, surveillance cycle and what it does not cover.
+
+## 01 Hero [Tune]
+> live: LIVE H1 → ISO 9001:2015 Certified · subhead is accurate and well written · the certificate number is known and appears nowhere above the fold
+- **H1 — 2 lines**: “ISO 9001:2015 Certified” / “Rubber Manufacturer, Nashik”  (accent: Rubber Manufacturer, Nashik)
+  _6 words · live is 3 · adds the product noun and the geo. “ISO 9001:2015 Certified” alone is true of tens of thousands of companies and carries no head term_
+- **Subhead**:
+  > Margo Rubber Products operates a documented Quality Management System audited and certified to ISO 9001:2015 under certificate 09111526A, issued by Integral Certification Ltd and valid to 21 February 2027. The certified scope covers the manufacture of moulded rubber components.
+  _40 words · live is 26 · certificate number, issuing body, expiry and scope all in the first two sentences. These are the four things a supplier-qualification auditor is looking for, and live they appear either as placeholders or not at all_
+- **CTA**: `View Certificate ↓ #certificate`
+  _One button, not two. Understand the Scope → #scope comes off with section 02 — its target no longer exists. Anchor must carry the /certifications prefix, not /#certificate_
+- **Badge**: `ISO 9001 : 2015
+CERTIFIED · 09111526A`
+  _Certificate number added to the badge. A number on the badge is what turns it from decoration into something checkable_
+  <details><summary>notes (4)</summary>
+  - Heading. Page’s only <h1>, two <span class="block"> children.
+  - Keyword. ISO 9001 rubber manufacturer India resolves across H1 and subhead. This is a genuine buyer query — procurement teams filter suppliers by certification before anything else.
+  - AEO. The subhead is the answer to “is Margo Rubber Products ISO 9001 certified, and what does the certificate cover?” — entity, standard, number, issuer, expiry and scope in forty words. Nothing else on the site is this dense with checkable facts.
+  - Alt. alt="ISO 9001:2015 certification badge, Margo Rubber Products".
+  </details>
+
+## 02 Certification scope [Delete section]
+> live: LIVE H2 → What ISO 9001:2015 Covers, and What It Does Not · 1440×877
+- **Action**:
+  > DELETE THIS ENTIRE SECTION FROM THE WEBSITE.
+  > Remove the whole block — the eyebrow, the H2, both sub-headings, all seven bullets, the IATF paragraph and the closing audit note. No replacement copy is written for it and none should be invented. The page runs hero → certificate → manufacturing → quality system → documentation request, and loses roughly 877px.
+  > One consequence to carry forward, because it does not go away with the section: this block is currently the only place on the site that addresses IATF 16949, ISO 14001 and ISO 45001 at all. Deleting it does not license those claims elsewhere as held certifications — each now carries a client-instructed status with a target year, identical on all four pages. The IATF, ISO 14001, ISO 45001, RoHS and REACH entries on /products and /about must still be corrected to In Progress or removed, exactly as sheets 02 and 03 specify. Otherwise the site goes from stating a truth and contradicting it, to simply making the false claim.
+  > The scope limit itself — certificate 09111526A covers moulded components only — is still required, and is carried in section 03 below as a correction to the certificate block, where an auditor reads it.
+
+## 03 The certificate [All placeholder]
+> live: LIVE H2 → ISO 9001:2015 Certificate · every field is a placeholder · QMS-XXXX-XXXX · DD Mon YYYY · Plot No. [XX] · 422 007 · “Accredited Certification Body” ×2 · a download wired to nothing
+- **Certificate card** (Field | Correct value | Live):
+  | Certified entity | Margo Rubber Products | Margo Rubber Products — correct |
+  | Address |  |
+  | Standard | ISO 9001:2015 | ISO 9001:2015 — correct |
+  | Scope | Manufacture of moulded rubber components |  |
+  | Certificate No. | 09111526A |  |
+  | Valid until | 21 February 2027 |  |
+  | Issue date |  |
+  _MISMATCH — the certificate itself carries B-12, MIDC Ambad, Nashik 422010; the client-confirmed operating address is SRNO. 4494/10, behind Furniture Stop, opposite Samarth Dies, Vilholi, Nashik 422010 · CONFIRM — on the certificate, not yet extracted · The postcode is wrong twice over. Live says 422 007; every other surface on the site says 422 010. A supplier-qualification auditor cross-referencing the certificate against the letterhead finds a mismatch on the first field they check_
+- **Spec strip ×6** (Label | Correct value | Live):
+  | STANDARD | ISO 9001:2015 | Correct |
+  | ISSUED BY | Integral Certification Ltd |  |
+  | CERTIFICATE NO. | 09111526A |  |
+  | SURVEILLANCE CYCLE | Annual | Correct |
+  | VALID UNTIL | 21 February 2027 |  |
+  | SCOPE | Moulded rubber components |  |
+  _LOCATION row folds into the address above. The expiry date replaces the generic three-year cycle — a date is checkable, a cycle is not_
+- **Download**:
+  > The button is wired to nothing and labelled with an invented file size. Two questions: does a clean PDF scan exist, and does the certificate carry the old MIDC Ambad address? If it does, publishing the scan next to a Vilholi letterhead creates the exact mismatch this section is meant to close. Resolve the address question first, then publish. A certifications page whose certificate download does not work is worse than one with no download at all.
+  _CONFIRM before this ships._
+  <details><summary>notes (4)</summary>
+  - The certificate PDF should be crawlable, not gated. Serve from /downloads/margo-iso-9001-certificate.pdf, set the PDF’s own /Title metadata, and link it from here and from the footer. It is the single most requested document Margo has.
+  - Image. alt="ISO 9001:2015 certificate 09111526A issued to Margo Rubber Products by Integral Certification Ltd". The certificate image is the one place on the site where a long, fact-dense alt string is correct.
+  - Markup. <dl> for the spec strip, as live. Certificate values are <dd>, never headings.
+  - Never publish a placeholder certificate. Of every placeholder on this site — and there are four phone numbers, four leadership names and twelve legal sections — a fake certificate number on a certifications page is the one that reads as deliberate rather than unfinished.
+  </details>
+
+## 04 Manufacturing & facility [Tune]
+> live: LIVE H2 → Manufacturing & Facility · five capability cards, all plausible and mostly sourced · two figures need confirming and one image has a placeholder caption
+- **Intro**:
+  > Our Nashik plant runs compression and transfer moulding, injection moulding, continuous-cure extrusion and rubber-to-metal bonding. Process parameters are controlled and recorded per batch under the ISO 9001:2015 QMS, with cure records retrievable per production batch.
+  _36 words · live is 26 · injection moulding added — it is on every other capability list on the site and missing from this one_
+- **Cards ×5** (Card | Body | Status):
+  | Compression & transfer moulding | Automated hydraulic presses with closed-loop temperature and pressure control. Cure-time profiles logged per batch and retrievable. |
+  | Extrusion lines | Continuous-cure extrusion for profiles, cord and tube. Section checked against the drawing at start-up and at defined intervals; hardness per batch. Not yet within the ISO certificate scope. | Scope note added |
+  | Rubber-to-metal bonding | Surface preparation, bonding-agent application and cure documented with operator sign-off. |
+  | Compound mixing | Automated in-house mixing with traceability to raw material lots. Compound released on hardness and specific gravity before it reaches a press. | Keep — sourced |
+  | Tool room | Mould and die design, cutting, maintenance and modification in-house. Tooling records held as controlled documents. | Strengthened — live understates this as “maintenance and minor modifications” when tooling is designed and cut here |
+  _CONFIRM press tonnage — live says 50–300 tonne, which is not in any source document · CONFIRM — bonded pads appear in the company profile, but bonding as a named line does not · Card bodies 16–22 words, matching live. The tool room card is the one worth strengthening — in-house tooling is a genuine differentiator and this page describes it as if Margo only repairs moulds someone else made_
+- **Image caption**: `Compression moulding bay · Nashik plant`
+  _Replaces “Workers operating heavy machinery on the production floor” — that string is an alt-text description that has leaked into the visible caption. Alt should read alt="Compression moulding presses at the Margo Rubber Products plant, Nashik"_
+  <details><summary>notes (5)</summary>
+  - The alt-text leak is a real bug, not a wording preference. A generic image description rendered as visible caption means the alt attribute and the caption are the same string — so the image has either no useful alt or a duplicated one. Separate them.
+  - The extrusion scope note carries the page’s honesty forward. Naming which line is outside the certificate, on the card describing that line, is the same move as the scope paragraph in section 02.
+  - Heading levels. <h2> + five <h3> card titles.
+  - Schema. None. The Place node for the plant ships from the homepage.
+  - Internal links. Three: /products/extrusion, /products#compounds, /about#manufacturing. The live section has none.
+  </details>
+
+## 05 Quality system in practice [Keep]
+> live: LIVE H2 → Our Quality System in Practice · four stages, all sourced and correctly described · the intro line “no marketing language, just the actual process” earns itself
+- **Intro**:
+  > ISO 9001:2015 is a framework. Below is how it operates on the floor at Margo Rubber Products — no marketing language, just the actual process.
+  _Unchanged. 25 words, and the page delivers on it_
+- **Stages ×4** (Stage | Body):
+  | Incoming inspection | All raw materials and bought-out parts sampled against acceptance criteria. Non-conforming lots quarantined and tagged. Release authorised before production use. |
+  | In-process checks | Defined control points at mould setup, first-off inspection and mid-production sampling. Dimensions, hardness and visual attributes verified per control plan. |
+  | Final QC & release | Continuous visual and flash inspection at the press and after deflashing. Dimensional sampling per AQL plan. Hardness and specific gravity per batch. Signed inspection release data accompanies every despatch lot. |
+  | Corrective actions | Customer complaints and internal non-conformances trigger documented root-cause analysis and corrective action. Effectiveness verified at closure. Records retained. |
+  _(no change — keep the live wording) · (no change — keep the live wording) · (no change — keep the live wording) · Two edits in stage 3. “100% visual inspection on all moulded parts” becomes the process the profile actually documents — continuous visual and flash inspection at the press and after deflashing. A 100% claim is refutable by one escaped defect, and the real process is more specific anyway. “inspection record” becomes inspection release data, matching sheets 02, 05 and 06 — “record” and “certificate” both imply document classes that invite requests Margo cannot meet_
+- **Audit note**:
+  > For supplier qualification audits: we can provide our Quality Manual, process flow diagrams, control plans and FMEA documentation on request, under NDA where required. On-site quality and supply-chain audits are welcomed, not negotiated around.
+  _35 words · live is 40 · the closing clause is lifted from the company profile and is a stronger statement than anything else in this block. CONFIRM that FMEA documentation exists — it is named in the live copy and appears in no source document · CONFIRM_
+  <details><summary>notes (4)</summary>
+  - Four named process stages with real control points is exactly what a second-party auditor searches for before booking a visit, and no competitor in the teardown publishes it.
+  - Heading levels. <h2> + four <h3>.
+  - “100%” claims are a category of risk. The site carries several — 100% safety record, 100% traceable, 100% recyclable packaging, 100% visual inspection. Each is refutable by a single counterexample, and none is measured. Where the underlying process is real, describe the process.
+  - Cross-link. Stage 3 links to /products#testing where the twelve ASTM and ISO test standards are listed.
+  </details>
+
+## 06 Documentation request [Tune]
+> live: LIVE H2 → Request Quality Documentation · five-option checklist and a four-field form · the best-targeted CTA on the site — it asks the auditor which document they need
+- **H2 — 2 lines**: “Request Quality” / “Documentation”  (accent: Documentation)
+  _Unchanged_
+- **Body**:
+  > For supplier qualification, second-party audits or quoting, tell us what you need. We respond within one business day.
+  _19 words · live is 20 · one business day is correct here — this is a document request, not a quotation, and the 48-hour rule does not apply_
+- **Options ×5** (Replacement | Replaces):
+  | ISO 9001:2015 certificate 09111526A (PDF) | ISO 9001:2015 Certificate (PDF) — number added |
+  | Quality Manual (on request) | Unchanged |
+  | Process flow & control plans (on request, NDA) | Unchanged |
+  | Compound data — eight families, ranges and test standards |  |
+  | On-site audit scheduling |  |
+  _Option 5 changes purpose. A quotation request belongs on /contact; the person on this page is qualifying a supplier, and audit scheduling is what they actually want next — the company profile already offers it unconditionally_
+- **Form fields ×4**: `YOUR NAME * COMPANY * EMAIL ADDRESS *
+WHAT DO YOU NEED?
+[ Send Request → ]`
+  _Unchanged. Four fields is right — do not extend it toward the RFQ form_
+- **Footnote**: `We respond to all qualified enquiries. Information shared is treated as confidential.`
+  _Unchanged_
+  <details><summary>notes (5)</summary>
+  - This is the highest-intent form on the site. Someone requesting a Quality Manual is deep in a supplier-qualification process. It should be the most closely tracked conversion event on the domain and it is currently untracked, like the other five.
+  - Route it separately. Documentation requests should not land in the same inbox as quotations — different urgency, different responder, different SLA.
+  - Labels bound, autocomplete on name / organization / email, server-side validation, honeypot.
+  - Success state. “Received. The documents you selected will follow within one business day to {email}.”
+  - Schema. None. ContactPoint lives on the homepage node.
+  </details>
+
+## 07 Footer [Rewrite]
+> live: LIVE → 50+ countries, © 2024, and the wrong legal entity · Products column shows 9 of 11 categories · /export appears nowhere
+- **Wordmark**: `MARGO
+RUBBER PRODUCTS`
+- **Description**:
+  > ISO 9001:2015 certified manufacturer of precision moulded and extruded rubber components in Nashik, India. Sealing and anti-vibration parts to customer drawing, supplied to OEMs and distributors in 95 countries.
+  _29 words · live is 26 · opens with the entity definition, since the footer repeats on all 40 pages_
+- **NAP block**: `+91 96655 79276
+info@margorubber.in
+SRNO. 4494/10, behind Furniture Stop,
+opposite Samarth Dies, Vilholi,
+Nashik, Maharashtra 422010, India`
+  _Client-confirmed 2026-09-01 — this exact string, on all 40 pages, in the PostalAddress node and on the Google Business Profile. The landmarks are part of the address and stay in; B-12, MIDC Ambad is wrong and comes off the site. The company name is not repeated inside the address line — the wordmark above it already carries it_
+- **Column 1 — Products**: `SEALING
+O-Rings · Oil Seals · Gaskets · Diaphragms · Reciprocating Seals · Leak Test Rubber
+MOUNTING & PROTECTION
+Anti-Vibration Mounts · Bushes & Bushings · Bonded Components · Bellows · Grommets · Pads, Stoppers & Caps
+SHEET & PROFILE
+Extrusion Profiles · Sponge & Foam Rubber · Rubber Lining & Skirting`
+  _15 entries in three groups, up from 11. Adds Diaphragms, Bonded Components, Rubber Lining & Skirting and Reciprocating Seals (sheets 36–39), plus /products/extrusion and /products/sponge-foam-rubber, which had no sitewide inbound link at all. The column was designed for eleven and fifteen flat is not readable, so it is grouped — Sealing (6), Mounting & protection (6), Sheet & profile (3). The third group is also the commercial split: those three are quoted by length or area rather than by piece count, per sheets 18, 38 and 40. “Seals” is labelled “Reciprocating Seals” so it is not read as a parent of O-Rings and Oil Seals — sheet 39 §02 explains why. Group labels are <p> or <div>, never headings — three more phantom sections is not an improvement on one_
+- **Column 2 — Industries**: `Automotive · Mining · Oil & Gas · Pumps & Valves · HVAC ·
+Electrical & Electronics · Agriculture · Medical Devices ·
+Water & Fluid Management · Construction · Transport — Rail & Marine`
+  _11 entries, up from 9 — adds Construction (sheet 41) and Transport — Rail & Marine (sheet 42), the first two of the six “additional sectors” on sheet 05 to earn a URL. Automotive still leads, matching real volume. 🛑 The live footer’s four industry links all resolve to the same /industries/ The full twenty-six-row footer link map is in sheet 01_Homepage.html, footer section — fifteen product links and eleven industry links, with the three label/slug mismatches called out. — adding two entries to a column whose links are broken makes eleven broken links, so fix the routing in this same commit_
+- **Column 3 — Company**: `About Us · Certifications · Export Markets · Case Studies ·
+Resources · Contact Us`
+  _6 entries · Export Markets is new and fixes the orphaned /export page · Why Choose Us comes out — that page is recommended for deletion, its job is done better by /certifications and /export_
+- **CTA lines**: `Ready to source precision rubber components?
+Quotation from our engineering team within 48 hours.
+[ Request Quote → ]`
+  _“within 24 hours” becomes 48 hours. The footer CTA is the fastest of the six response times published on this site, and it contradicts the page body on /contact, /industries and /export. One constant, rendered everywhere_
+- **Legal line**: `© 2026 Margo Rubber Products. All rights reserved.
+Privacy Policy · Terms & Conditions · Disclaimer
+ISO 9001:2015 · Certificate 09111526A · Integral Certification Ltd`
+  _Fixes © 2024 and Margo Rubber Industries Pvt. Ltd. — GSTIN 27AAKFM8595Q1Z1 embeds PAN AAKFM8595Q, whose 4th character F denotes a firm, not a company. Pvt. Ltd. is positively excluded. The ISO line gains the certificate number and the issuer, which makes it checkable on all 40 pages instead of decorative_
+  <details><summary>notes (8)</summary>
+  - The legal line becomes checkable on this page’s own terms. ISO 9001:2015 Certified becomes ISO 9001:2015 · Certificate 09111526A · Integral Certification Ltd — a number and an issuer on all 40 pages instead of an unattributed badge. It must match the certificate block in section 03 exactly.
+  - Link the certificate PDF from the legal strip once it is live, alongside the ISO line. It is the most requested document Margo has and it is currently reachable from one page only.
+  - Build once, ships forty times. This is one component. The copy above is written out in full on every sheet in this set so nobody has to open two files to build one block, but it is authored once in the codebase.
+  - Heading levels. The column labels (PRODUCTS / INDUSTRIES / COMPANY) are <h2> in the live build. As visible <h2>s they inject three phantom sections into every document outline on the site. Change to <p class="col-label">.
+  - Link equity. 26 sitewide links from here. Adding /export, /products/extrusion and /products/sponge-foam-rubber gives three orphaned or under-linked URLs a sitewide inbound link each — the cheapest internal-linking win available on this site.
+  - NAP markup. Wrap in <address>. Phone as <a href="tel:+919665579276">, email as <a href="mailto:info@margorubber.in">. The visible string and the href must not diverge.
+  - Schema. The footer emits nothing. The Organization node on the homepage is the single entity definition and every other page @id-references it. Repeating an Organization block per page creates 40 competing entities.
+  - Copyright year. Render from new Date().getFullYear(), not a literal. It has read 2024 for eight months.
+  </details>

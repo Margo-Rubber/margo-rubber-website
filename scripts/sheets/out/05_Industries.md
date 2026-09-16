@@ -1,0 +1,161 @@
+# 05_Industries.html — Industries Page Content Sheet
+
+**<title>** Rubber Components by Industry | 9 Sectors | Margo, India
+**description** Precision moulded and extruded rubber components for mining, oil & gas, automotive, pumps, HVAC, electrical, agriculture, medical and water. ISO 9001:2015, Nashik, India.
+
+## 01 Hero [Tune]
+> live: LIVE H1 → IndustriesWe Serve (whitespace bug) · subhead is accurate and well written · the three stats include an MOQ and a seven-country export list
+- **H1 — 2 lines**: “Rubber Components” / “for Nine Industries”  (accent: for Nine Industries)
+  _5 words · live is 3 · adds the head noun; the live H1 carries no product term at all_
+- **Subhead**:
+  > Precision moulded and extruded rubber components, manufactured in Nashik, India under ISO 9001:2015, supplied to demanding sectors across nine core industries.
+  _22 words · unchanged — entity, process, geo, certification and scope in one sentence. One of the best-written strings on the site_
+- **Stats ×3** (Label | Value | Replaces):
+  | Certified Standard | ISO 9001:2015 | Unchanged |
+  | Quotation | 48 hours, feasibility report included |  |
+  | Export Markets | AU · GB · AE · SA · MY · +90 MORE |  |
+  _The MOQ stat is replaced with the one thing a buyer scanning an industry hub actually wants: how fast they get a number. The country-code format is kept — it is scannable at a glance and fits a stat slot, which a sentence does not. Codes are the Top-5 activation order, and +90 MORE carries the 95 total (95 − 5 = 90) without spending a second line on it. Live shows a seven-country list, the sixth distinct market count on the site; the others are 60+, 50+, 30+, 27+, 25+, eight and zero_
+  <details><summary>notes (4)</summary>
+  - Heading. Page’s only <h1>, two <span class="block"> children — the concatenation bug is live on this element.
+  - Keyword. The hub targets the industry cluster as a set. The nine specific terms live on the nine child pages; this page’s job is to route, not to compete with its own children.
+  - Stats markup. <dl> with <dt> label and <dd> value, as live. Correct already.
+  - Vision-build guard. On the buyer-facing build the stat label changes from Export Markets to Markets Mapped, same codes, same +90 MORE. The research is true today; the shipments are not, and one word carries the whole difference.
+  </details>
+
+## 02 Search & filter [Keep]
+> live: LIVE → search field + ten filter chips · works, and is the only search control anywhere on the site
+- **Search placeholder**: `Search by industry, part or application…`
+  _Replaces Search industries… — buyers arrive knowing the part they need (“diaphragm”, “duct gasket”) far more often than the sector name. The search should match part names in the card lists, not only card titles_
+- **Filter chips ×10**: `All Industries · Mining · Oil & Gas · Automotive · Pumps & Valves
+HVAC · Electrical · Agriculture · Medical · Water`
+  _Unchanged. Display names are correct and the raw slugs are not leaking, which they do elsewhere on the site_
+  <details><summary>notes (4)</summary>
+  - All nine cards must render in the DOM at first paint. Filtering toggles CSS classes; it must not unmount. If cards unmount, eight of nine industry links disappear from the crawlable page — and this hub is how the nine child pages get their internal links.
+  - Filter state and canonical. Chips may push ?sector=mining, but <link rel="canonical" href="https://margorubber.in/industries"> stays fixed on every state, or ten filter combinations become ten duplicate URLs.
+  - Search is client-side and must stay so. A server round-trip on a nine-item list is wasted, and a search results URL would be another duplicate-content surface.
+  - Accessibility. role="search" on the wrapper, a bound label on the input (visually hidden is fine), chips as <button aria-pressed> in a <div role="group">, and a live region announcing “9 of 9 showing” on change.
+  </details>
+
+## 03 Industry grid [Rewrite the part lists]
+> live: LIVE H2 → 9 Primary Markets · nine cards, each with a one-line description and four named parts · 14 of the 36 parts are things Margo does not make
+- **Eyebrow**: `CORE INDUSTRIES`
+- **H2**: “Nine Industries,” / “One Compound Library”  (accent: One Compound Library)
+  _5 words · live is 3 · “9 Primary Markets” reads as a count; this reads as the reason the count is possible_
+- **Counter**: `9 of 9 showing`
+  _Unchanged — a genuinely good detail, and rare on this site_
+- **Cards ×9** (Industry | Description | Four parts | Parts removed):
+  | Automotive | Moulded rubber for powertrain, chassis, interior and under-bonnet assemblies. | AEM insulation bushes · Oil filler caps · Radiator shroud flaps · Footrest mats |  |
+  | Mining | Precision moulded components for abrasive, high-load extraction plant — not wear linings. | Anti-vibration mounts · O-rings · Bushes & sleeves · Sealing gaskets |  |
+  | Oil & Gas | FKM sealing to 250 °C for general industrial and process service. | FKM O-rings · Flange gaskets · Oil seals · Valve stem seals |  |
+  | Pumps & Valves | Sealing components chosen against the pumped medium, not a catalogue default. | Moulded diaphragms · Valve seats · Lip seals · Casing gaskets |  |
+  | HVAC | Airtight compression under continuous low-amplitude vibration. | EPDM foam strips · Duct gaskets · Self-adhesive foam tape · Fan grommets |  |
+  | Electrical & Electronics | Insulating and sealing rubber, with flame-retardant grades where specified. | Cable grommets · Insulator head covers · Switchgear gaskets · Enclosure seals | All four retained, one renamed |
+  | Agriculture | Weather- and UV-resistant parts built for ozone under static strain. | Cab and door seals · Extruded weatherstrip · Grommets · Buffer stops |  |
+  | Medical Devices | Biocompatible silicone components. We do not hold ISO 13485 or FDA registration. | Silicone gaskets · Equipment seals · O-rings · Moulded bellows |  |
+  | Water & Fluid Management | Sealing rings to IS 5382 for water, gas and sewer mains. | Pipe coupling gaskets · Sealing rings · Check valve seats · Meter gaskets |  |
+  <details><summary>notes (6)</summary>
+  - Nine internal links out, anchor text “Rubber components for {industry}” rather than nine identical “View industry page”. Nine identical anchors waste nine links.
+  - Part names are the page’s AEO surface. Thirty-six specific part names is what lets an assistant answer “who makes EPDM foam strips for HVAC in India?”. Which is exactly why the fourteen wrong ones matter: they are equally extractable.
+  - Heading levels. <h2> + nine <h3> card titles inside the links. Part lists are <ul>.
+  - Honest negatives stay in the card copy. The ISO 13485 non-claim belongs on the hub card, not only on the child page — the hub is where a medical buyer decides whether to click.
+  - Consistency gate. These nine descriptions must not contradict the nine on the homepage sectors section or the nine child pages. Three surfaces, one source.
+  - Images. Nine card backgrounds, loading="lazy", unique alt per card: alt="Rubber components supplied by Margo for {industry} applications".
+  </details>
+
+## 04 Additional sectors [Tune]
+> live: LIVE H2 → More Sectors We Support · six sectors with no dedicated page · the honesty of “these don’t yet have dedicated pages” is right; two of the six are Margo’s largest real markets
+- **Eyebrow**: `ADDITIONAL SECTORS`
+- **H2**: “More Sectors We Supply”
+  _4 words · live is 4 · “support” is what a software company does; “supply” is what a manufacturer does_
+- **Intro**:
+  > These sectors do not have a dedicated page yet. Browse the relevant product category, or send the drawing and we will quote it.
+  _23 words · live is 15 · keeps the honest framing and adds the route that actually converts_
+- **Cards ×6** (Sector | Body | Links to):
+  | Industrial machinery | Anti-vibration mounts, bonded pads and machine seals for general plant equipment. Three named accounts in this band. | /products/anti-vibration-mounts |
+  | Construction & glazing | Extruded glazing and weatherstrip profiles, edge protection, expansion-joint sealing and bearing pads. | /products/extrusion |
+  | Chemical processing | FKM and EPDM gaskets and seals selected against the process stream. Composition declarations per part on request. | /products/gaskets |
+  | Specialist vehicles | Sealing, mounting and interior components for special-purpose vehicle builders. | /industries/automotive |
+  | Elevators & lifts | Buffer blocks, door seals and cabin mounting pads for lift and escalator OEMs. | /products/pads-stoppers-caps |
+  | Furniture & interior hardware | Bumpers, feet, edge trim and dampening pads for furniture and cabinetry. | /products/pads-stoppers-caps |
+  <details><summary>notes (5)</summary>
+  - Six links recovered. Five of six cards currently link nowhere. Wiring each to its most relevant category page turns a decorative block into six contextual internal links from a Tier-1 hub.
+  - Do not promote any of these to a page yet. A card becomes a page on a demand signal, not on ambition. Construction & glazing is the strongest candidate and the correct trigger is search data from /products/extrusion and /products/sponge-foam-rubber once the site is indexable.
+  - Heading levels. <h2> + six <h3>.
+  - Keep them out of the ItemList. No URL of their own, so no ListItem.
+  - The honest framing is an asset. “These do not have a dedicated page yet” tells a buyer the site is maintained rather than padded, and it is the kind of sentence no competitor writes.
+  </details>
+
+## 05 Application enquiry [Tune]
+> live: LIVE H2 → Not Sure Which Fits Your Application? · the best-positioned CTA on the site · four assurance lines, two of which overclaim: ISO 9001:2015 inspection cert with every shipment and export to 8+ countries
+- **H2**: “Not Sure Which Fits” / “Your Application?”  (accent: Your Application?)
+  _Unchanged — it is the right question, asked at the right point on the page_
+- **Body**:
+  > Tell us what you are sealing, containing or dampening. We will recommend the compound, the form factor and the product category, and quote inside 48 hours.
+  _26 words · live is 23 · No obligation comes off: it is a phrase that only appears where obligation was a live question, and this is a B2B RFQ, not a consumer sign-up_
+- **Assurance lines ×4** (Replacement | Replaces):
+  | Acknowledgement within one business day | Response within 1 business day — unchanged |
+  | Compound recommended against your duty cycle | Material recommendation included — sharpened |
+  | Inspection release data with every despatch lot |  |
+  | FOB Nhava Sheva, CIF, EXW or DAP by agreement |  |
+  _“ISO 9001:2015 inspection cert” is not a thing. ISO 9001 certifies the management system, not a shipment. What actually ships is hardness and dimensional release data per despatch lot, with batch traceability — which is both true and more useful to a quality engineer. 8+ countries is the seventh distinct market count on the site_
+- **Form fields ×5**: `YOUR NAME * COMPANY * EMAIL *
+INDUSTRY / APPLICATION
+APPLICATION / REQUIREMENTS
+[ Talk to Our Engineers → ]`
+  _Unchanged. Five fields is right for a mid-funnel hub form — do not extend it toward the full RFQ form on /contact_
+- **Footnote**: `All enquiries are treated as confidential. We respond within one business day.`
+  _Unchanged_
+  <details><summary>notes (6)</summary>
+  - Two form fields named INDUSTRY / APPLICATION and APPLICATION / REQUIREMENTS. Rename the first to INDUSTRY and the second to WHAT ARE YOU SEALING? — two fields sharing a word makes people fill the same thing twice, then abandon.
+  - Prefill from the filter. If a buyer arrives via ?sector=hvac or clicks the HVAC chip, prefill INDUSTRY. It costs one line and measurably lifts completion.
+  - Labels bound, autocomplete on name / organization / email, server-side validation, honeypot. Same rules as /contact.
+  - Success state and a named conversion event. Neither exists. This is the fourth RFQ entry point on the site and none of them is tracked.
+  - Consistency gate. One business day to acknowledge, 48 hours to quote — the same two strings everywhere.
+  - Schema. None. ContactPoint lives on the homepage node.
+  </details>
+
+## 06 Footer [Rewrite]
+> live: LIVE → 50+ countries, © 2024, and the wrong legal entity · Products column shows 9 of 11 categories · /export appears nowhere
+- **Wordmark**: `MARGO
+RUBBER PRODUCTS`
+- **Description**:
+  > ISO 9001:2015 certified manufacturer of precision moulded and extruded rubber components in Nashik, India. Sealing and anti-vibration parts to customer drawing, supplied to OEMs and distributors in 95 countries.
+  _29 words · live is 26 · opens with the entity definition, since the footer repeats on all 40 pages_
+- **NAP block**: `+91 96655 79276
+info@margorubber.in
+SRNO. 4494/10, behind Furniture Stop,
+opposite Samarth Dies, Vilholi,
+Nashik, Maharashtra 422010, India`
+  _Client-confirmed 2026-09-01 — this exact string, on all 40 pages, in the PostalAddress node and on the Google Business Profile. The landmarks are part of the address and stay in; B-12, MIDC Ambad is wrong and comes off the site. The company name is not repeated inside the address line — the wordmark above it already carries it_
+- **Column 1 — Products**: `SEALING
+O-Rings · Oil Seals · Gaskets · Diaphragms · Reciprocating Seals · Leak Test Rubber
+MOUNTING & PROTECTION
+Anti-Vibration Mounts · Bushes & Bushings · Bonded Components · Bellows · Grommets · Pads, Stoppers & Caps
+SHEET & PROFILE
+Extrusion Profiles · Sponge & Foam Rubber · Rubber Lining & Skirting`
+  _15 entries in three groups, up from 11. Adds Diaphragms, Bonded Components, Rubber Lining & Skirting and Reciprocating Seals (sheets 36–39), plus /products/extrusion and /products/sponge-foam-rubber, which had no sitewide inbound link at all. The column was designed for eleven and fifteen flat is not readable, so it is grouped — Sealing (6), Mounting & protection (6), Sheet & profile (3). The third group is also the commercial split: those three are quoted by length or area rather than by piece count, per sheets 18, 38 and 40. “Seals” is labelled “Reciprocating Seals” so it is not read as a parent of O-Rings and Oil Seals — sheet 39 §02 explains why. Group labels are <p> or <div>, never headings — three more phantom sections is not an improvement on one_
+- **Column 2 — Industries**: `Automotive · Mining · Oil & Gas · Pumps & Valves · HVAC ·
+Electrical & Electronics · Agriculture · Medical Devices ·
+Water & Fluid Management · Construction · Transport — Rail & Marine`
+  _11 entries, up from 9 — adds Construction (sheet 41) and Transport — Rail & Marine (sheet 42), the first two of the six “additional sectors” on sheet 05 to earn a URL. Automotive still leads, matching real volume. 🛑 The live footer’s four industry links all resolve to the same /industries/ The full twenty-six-row footer link map is in sheet 01_Homepage.html, footer section — fifteen product links and eleven industry links, with the three label/slug mismatches called out. — adding two entries to a column whose links are broken makes eleven broken links, so fix the routing in this same commit_
+- **Column 3 — Company**: `About Us · Certifications · Export Markets · Case Studies ·
+Resources · Contact Us`
+  _6 entries · Export Markets is new and fixes the orphaned /export page · Why Choose Us comes out — that page is recommended for deletion, its job is done better by /certifications and /export_
+- **CTA lines**: `Ready to source precision rubber components?
+Quotation from our engineering team within 48 hours.
+[ Request Quote → ]`
+  _“within 24 hours” becomes 48 hours. The footer CTA is the fastest of the six response times published on this site, and it contradicts the page body on /contact, /industries and /export. One constant, rendered everywhere_
+- **Legal line**: `© 2026 Margo Rubber Products. All rights reserved.
+Privacy Policy · Terms & Conditions · Disclaimer
+ISO 9001:2015 · Certificate 09111526A · Integral Certification Ltd`
+  _Fixes © 2024 and Margo Rubber Industries Pvt. Ltd. — GSTIN 27AAKFM8595Q1Z1 embeds PAN AAKFM8595Q, whose 4th character F denotes a firm, not a company. Pvt. Ltd. is positively excluded. The ISO line gains the certificate number and the issuer, which makes it checkable on all 40 pages instead of decorative_
+  <details><summary>notes (8)</summary>
+  - What matters here: the Industries column lists all nine correctly and is the one column that needs no change. The Products column going 9 → 11 matters on this page because four of the nine industry cards name extrusion profiles or sponge parts that the footer cannot currently link to.
+  - Response-time conflict again. The page body says one business day; the footer CTA says 24 hours. The replacement sets both to 48 hours — same single fix as /contact.
+  - Build once, ships forty times. This is one component. The copy above is written out in full on every sheet in this set so nobody has to open two files to build one block, but it is authored once in the codebase.
+  - Heading levels. The column labels (PRODUCTS / INDUSTRIES / COMPANY) are <h2> in the live build. As visible <h2>s they inject three phantom sections into every document outline on the site. Change to <p class="col-label">.
+  - Link equity. 26 sitewide links from here. Adding /export, /products/extrusion and /products/sponge-foam-rubber gives three orphaned or under-linked URLs a sitewide inbound link each — the cheapest internal-linking win available on this site.
+  - NAP markup. Wrap in <address>. Phone as <a href="tel:+919665579276">, email as <a href="mailto:info@margorubber.in">. The visible string and the href must not diverge.
+  - Schema. The footer emits nothing. The Organization node on the homepage is the single entity definition and every other page @id-references it. Repeating an Organization block per page creates 40 competing entities.
+  - Copyright year. Render from new Date().getFullYear(), not a literal. It has read 2024 for eight months.
+  </details>

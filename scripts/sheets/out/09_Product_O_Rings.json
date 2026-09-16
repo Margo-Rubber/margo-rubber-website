@@ -1,0 +1,902 @@
+{
+  "file": "09_Product_O_Rings.html",
+  "title": "O-Rings Page Content Sheet",
+  "kicker": "Margo Rubber Products · /products/o-rings · Vision Build · Sheet 09 of 12",
+  "head": {
+    "title": "O-Ring Manufacturer India | AS568, ISO 3601, JIS, DIN | Margo",
+    "description": "Custom and catalogue O-rings moulded in Nashik, India to AS568, ISO 3601, JIS B2401 and DIN 3771 in FKM, NBR, EPDM, silicone and AEM. Published size table. Quote in 48 hours."
+  },
+  "sections": [
+    {
+      "num": "01",
+      "title": "Hero",
+      "chip": "Rewrite",
+      "live": "LIVE H1 → Precision O-Rings · no head term, no geo · the fourth hero stat is an MOQ",
+      "fields": [
+        {
+          "label": "Eyebrow",
+          "kind": "lit",
+          "value": "ISO 9001:2015 CERTIFIED · NASHIK, INDIA",
+          "note": "Unchanged — carries certification and geo, which most eyebrows on this site do not"
+        },
+        {
+          "label": "H1 — 2 lines",
+          "kind": "heading",
+          "lines": [
+            "Precision O-Rings,",
+            "Manufactured in India"
+          ],
+          "accent": [
+            "Manufactured in India"
+          ],
+          "value": "Precision O-Rings, Manufactured in India",
+          "note": "5 words · live is 2 · carries the verified head term. “Precision O-Rings” alone competes with every seal distributor on the internet"
+        },
+        {
+          "label": "Subhead",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Margo Rubber Products moulds O-rings to AS568, ISO 3601, JIS B2401 and DIN 3771 at its ISO 9001:2015 certified plant in Nashik, India — catalogue sizes or cut to print, in AEM, FKM, NBR, EPDM and silicone. Tolerance follows the standard and the section."
+          ],
+          "leads": [
+            "Margo Rubber Products moulds O-rings to AS568, ISO 3601, JIS B2401 and DIN 3771 at its ISO 9001:2015 certified plant in Nashik, India"
+          ],
+          "note": "44 words · live is 33 · entity, process, standards and geo in the first clause. AEM added and led, because it is the compound with a named OEM behind it"
+        },
+        {
+          "label": "CTA",
+          "kind": "lit",
+          "value": "View O-Ring Size Chart ↗ /resources/o-ring-size-chart",
+          "note": "Unchanged — correct destination and a genuinely useful click"
+        },
+        {
+          "label": "Stats ×4",
+          "kind": "table",
+          "columns": [
+            "Value",
+            "Label",
+            "Replaces"
+          ],
+          "rows": [
+            [
+              "AS568 · ISO · JIS · DIN",
+              "Standards",
+              "[no change to the value]"
+            ],
+            [
+              "±0.08 to ±0.15 mm",
+              "Cross-section tolerance, per standard",
+              ""
+            ],
+            [
+              "AEM · FKM · NBR · EPDM · VMQ",
+              "Compounds",
+              ""
+            ],
+            [
+              "48 hrs",
+              "Quotation Turnaround",
+              ""
+            ]
+          ],
+          "note": "The tolerance stat is corrected to a range because the page’s own table gives four different values by standard — a single figure in the hero contradicts the table 800px below it. The MOQ stat becomes the quotation promise, which is what a buyer on a category page is actually deciding on"
+        }
+      ],
+      "notes": [
+        "Heading. Page’s only <h1>, two <span class=\"block\"> children.",
+        "Keyword. o-ring manufacturer India is verified winnable in the keyword research — a fragmented SERP of ten mid-size Indian manufacturers plus an IndiaMART directory, no dominant brand and no Chinese marketplace presence. It resolves in the H1 and again in the subhead’s first clause.",
+        "Breadcrumb. Home › Products › O-Rings, visible and in schema. Currently absent on all eleven category pages.",
+        "LCP. Hero image, fetchpriority=\"high\". alt=\"Precision O-rings moulded by Margo Rubber Products, Nashik, India\"."
+      ]
+    },
+    {
+      "num": "02",
+      "title": "Specification table",
+      "chip": "Full table",
+      "live": "LIVE H2 → Sizes, Tolerances & Materials · 12 rows × 8 columns, sortable and filterable",
+      "fields": [
+        {
+          "label": "H2",
+          "kind": "heading",
+          "lines": [
+            "O-Ring Sizes, Tolerances",
+            "and Compounds"
+          ],
+          "accent": [
+            "and Compounds"
+          ],
+          "value": "O-Ring Sizes, Tolerances and Compounds",
+          "note": "6 words · live is 4 · adds the product noun so the section heading carries the term"
+        },
+        {
+          "label": "Intro",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "All dimensions in mm. Shore A ranges are the standard options we mould in each compound. Custom durometers and non-catalogue internal diameters are quoted against your drawing."
+          ],
+          "leads": [
+            "Custom durometers and non-catalogue internal diameters are quoted against your drawing."
+          ],
+          "note": "26 words · live is 27"
+        },
+        {
+          "label": "Full table",
+          "kind": "table",
+          "columns": [
+            "Part / standard",
+            "ID",
+            "ID tol.",
+            "CS",
+            "CS tol.",
+            "AEM",
+            "FKM",
+            "NBR",
+            "EPDM",
+            "VMQ"
+          ],
+          "rows": [
+            [
+              "AS568-001",
+              "0.74",
+              "±0.08",
+              "1.02",
+              "±0.08",
+              "50–80",
+              "60–90",
+              "40–90",
+              "40–90",
+              "30–80"
+            ],
+            [
+              "AS568-010",
+              "6.07",
+              "±0.08",
+              "1.78",
+              "±0.08",
+              "50–80",
+              "60–90",
+              "40–90",
+              "40–90",
+              "30–80"
+            ],
+            [
+              "AS568-102",
+              "1.24",
+              "±0.08",
+              "2.62",
+              "±0.08",
+              "50–80",
+              "60–90",
+              "40–90",
+              "40–90",
+              "30–80"
+            ],
+            [
+              "AS568-210",
+              "18.64",
+              "±0.10",
+              "3.53",
+              "±0.10",
+              "50–80",
+              "60–90",
+              "40–90",
+              "40–90",
+              "30–80"
+            ],
+            [
+              "AS568-325",
+              "37.47",
+              "±0.13",
+              "5.33",
+              "±0.13",
+              "50–80",
+              "60–90",
+              "40–90",
+              "40–90",
+              "30–80"
+            ],
+            [
+              "AS568-437",
+              "151.77",
+              "±0.15",
+              "6.99",
+              "±0.15",
+              "50–80",
+              "60–90",
+              "40–90",
+              "40–90",
+              "30–80"
+            ],
+            [
+              "DIN 3771 12×2",
+              "12.00",
+              "±0.13",
+              "2.00",
+              "±0.08",
+              "50–80",
+              "60–90",
+              "40–90",
+              "40–90",
+              "30–80"
+            ],
+            [
+              "DIN 3771 50×5",
+              "50.00",
+              "±0.30",
+              "5.00",
+              "±0.13",
+              "50–80",
+              "60–90",
+              "40–90",
+              "40–90",
+              "30–80"
+            ],
+            [
+              "JIS B2401 P10",
+              "9.80",
+              "±0.14",
+              "1.90",
+              "±0.07",
+              "50–80",
+              "60–90",
+              "40–90",
+              "40–90",
+              "30–80"
+            ],
+            [
+              "JIS B2401 P22",
+              "21.80",
+              "±0.19",
+              "2.40",
+              "±0.07",
+              "50–80",
+              "60–90",
+              "40–90",
+              "40–90",
+              "30–80"
+            ],
+            [
+              "JIS B2401 G45",
+              "44.40",
+              "±0.32",
+              "3.10",
+              "±0.09",
+              "50–80",
+              "60–90",
+              "40–90",
+              "40–90",
+              "30–80"
+            ],
+            [
+              "JIS B2401 G90",
+              "89.40",
+              "±0.63",
+              "3.10",
+              "±0.09",
+              "50–80",
+              "60–90",
+              "40–90",
+              "40–90",
+              "30–80"
+            ]
+          ],
+          "note": "Ten columns. ID and cross-section are split into nominal plus tolerance, which is how a drawing states them and how a buyer reads them. AEM is the new compound column, at 50–80 Shore A. Twelve rows, same count as live"
+        },
+        {
+          "label": "Two row labels change",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "The rows labelled ISO 3601-1 G45 and ISO 3601-1 G90 become JIS B2401 G45 and JIS B2401 G90. The G designation is a JIS series — the general-purpose static group, which runs at a single 3.10 mm cross-section throughout. ISO 3601-1 does not use G codes.",
+            "ISO 3601 is still covered, and the page should say so: AS568 is dimensionally equivalent to ISO 3601-1 Series A, and DIN 3771 harmonised into Series B. Both are already in the table under their own names."
+          ],
+          "leads": [
+            "JIS B2401 G45",
+            "ISO 3601 is still covered, and the page should say so:"
+          ]
+        },
+        {
+          "label": "Filter chips",
+          "kind": "lit",
+          "value": "All Standards · AS568 · JIS · DIN",
+          "note": "Four chips, not five. ISO comes out with the two relabelled rows — a filter with nothing to select is a dead control"
+        },
+        {
+          "label": "Footnote",
+          "kind": "lit",
+          "value": "Showing 12 of 12 · AS568 is dimensionally equivalent to ISO 3601-1 Series A;\nDIN 3771 harmonised into Series B · Non-catalogue sizes quoted against your drawing\nTypical values. See our technical disclaimer.",
+          "note": "Three lines. The middle one answers the question the missing ISO chip would otherwise raise"
+        }
+      ],
+      "notes": [
+        "Build note — the table gains two columns and changes shape. ID and CS each split into nominal and tolerance, and AEM is added: eight columns become ten. The component must take a variable column count.",
+        "Sign the table off against the purchased standards before it goes live. SAE AS568, JIS B2401 and DIN 3771 are bought documents. The values above are ready to paste and should be checked once at source, because a size table is the one thing on this site a specifying engineer will act on directly.",
+        "The better long-term table is Margo’s own tooling list. A standards catalogue is something any buyer can look up; the sizes this supplier holds tooling for is information only Margo has. Add a Tooled / to order column when that list exists.",
+        "Crawlability. All twelve rows in the DOM at first paint. The filter toggles CSS, it does not unmount. Sorting is client-side and must not change the URL.",
+        "Real <table> markup with <caption>, <th scope=\"col\"> and <th scope=\"row\"> on the part reference. A div grid is invisible as a table to a crawler and to an assistant.",
+        "Sortable columns need aria-sort and a real button in each header, not a bare glyph.",
+        "Overflow. Ten columns will not fit 375px. overflow-x:auto on the wrapper with a visible scroll affordance — the page body never scrolls sideways.",
+        "This table is the model for the other ten categories. Oil seals, gaskets and bushes each have equivalent series, and publishing them is the highest-value content investment left on the site."
+      ]
+    },
+    {
+      "num": "03",
+      "title": "Material selection",
+      "chip": "Four panels become nine",
+      "live": "LIVE H2 → Which O-Ring Material Do I Need? · a real buyer question, correctly phrased · four compounds shown, all four ranges wrong, AEM absent, and PTFE not mentioned",
+      "fields": [
+        {
+          "label": "Add five panels",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "The live accordion renders four panels. This section specifies nine. The developer must extend the component to take an arbitrary list rather than a fixed four — five new panels: AEM, neoprene, SBR, natural rubber and PTFE-encapsulated.",
+            "If the Figma shows four, the Figma is short by five and needs the extra rows drawn. The same applies to every count in this sheet: where the specified content has more items than the current build renders, the component is what changes, not the content."
+          ],
+          "leads": [
+            "The live accordion renders four panels. This section specifies nine.",
+            "the Figma is short by five"
+          ]
+        },
+        {
+          "label": "H2",
+          "kind": "heading",
+          "lines": [
+            "Which O-Ring Material Do I Need?"
+          ],
+          "accent": [],
+          "value": "Which O-Ring Material Do I Need?",
+          "note": "(no change — a literal buyer question as an H2 is exactly the AEO pattern, and this is one of the few on the site that gets it right)"
+        },
+        {
+          "label": "Intro",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Each compound has a distinct chemical compatibility profile and temperature ceiling. Name the medium, the operating temperature and the pressure class, and we will tell you which to specify."
+          ],
+          "leads": [
+            "Name the medium, the operating temperature and the pressure class, and we will tell you which to specify."
+          ],
+          "note": "28 words · live is 25"
+        },
+        {
+          "label": "Panels ×9",
+          "kind": "table",
+          "columns": [
+            "Compound",
+            "Temp range",
+            "Hardness",
+            "Body",
+            "Live"
+          ],
+          "rows": [
+            [
+              "AEM (Vamac®)",
+              "−40° to +175°C",
+              "50–80 Shore A",
+              "Ethylene acrylic elastomer. Our signature compound, supplied to Mahindra & Mahindra for engine and transmission applications. Holds compression-set stability where oil, heat and ozone act together.",
+              "NEW PANEL"
+            ],
+            [
+              "FKM (Viton®)",
+              "−20° to +250°C\ncontinuous to 200°C",
+              "60–90 Shore A",
+              "Fluorocarbon rubber, the first choice for aggressive chemical environments. Resists petroleum oils, fuels and many solvents at sustained high temperature.",
+              ""
+            ],
+            [
+              "NBR (Nitrile)",
+              "−30° to +120°C",
+              "40–90 Shore A",
+              "Nitrile butadiene rubber, the general-purpose industry standard. Outstanding resistance to petroleum oils and hydraulic fluids at moderate temperature.",
+              ""
+            ],
+            [
+              "EPDM",
+              "−40° to +140°C",
+              "40–90 Shore A",
+              "Ethylene propylene diene rubber, the preferred material for water, steam and brake fluid service, with excellent weather and ozone resistance. Not for petroleum oils.",
+              ""
+            ],
+            [
+              "Silicone (VMQ)",
+              "−60° to +220°C",
+              "30–80 Shore A",
+              "Vinyl methyl silicone, the widest service range of the eight. Biocompatible grades available. Poor abrasion resistance — not a wear part.",
+              ""
+            ],
+            [
+              "Neoprene (CR)",
+              "−40° to +120°C",
+              "40–90 Shore A",
+              "Polychloroprene. Balanced properties across weather, refrigerants and moderate oil exposure, and the family we reach for when flame retardancy is specified.",
+              "NEW PANEL"
+            ],
+            [
+              "SBR",
+              "−30° to +100°C",
+              "40–90 Shore A",
+              "Styrene butadiene rubber. Abrasion resistance at low cost, for static seals in water and mild service. Not for oil or fuel contact.",
+              "NEW PANEL"
+            ],
+            [
+              "Natural Rubber (NR)",
+              "−20° to +90°C",
+              "30–80 Shore A",
+              "Polyisoprene. The highest resilience of the eight, specified where a seal also has to damp. Not for oil, fuel or sustained heat.",
+              "NEW PANEL"
+            ],
+            [
+              "PTFE-encapsulated",
+              "−60° to +205°C",
+              "85–95 Shore A",
+              "A PTFE jacket over an FKM or silicone core — the chemical resistance of PTFE with the recovery of an elastomer. Specified where a compound would be attacked but a rigid seal cannot follow the groove.",
+              "NEW PANEL"
+            ]
+          ]
+        },
+        {
+          "label": "PTFE — two questions",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "One question, and it is a process question rather than a value. Encapsulated or solid? — PTFE-encapsulated O-rings (a PTFE jacket over an elastomer core) are a moulder’s product and fit what Margo does. Solid PTFE O-rings are machined from stock, not moulded, and are a different process with different equipment. The panel above is written for encapsulated. If Margo machines solid PTFE, the copy changes and so does the capability claim.",
+            "Temperature and hardness — standard published values. An encapsulated ring is a PTFE (FEP or PFA) jacket over an elastomer core, and the figures come from the core and the jacket together. Published practice: silicone core, FEP jacket −60 to +205 °C; FKM core, FEP jacket −20 to +205 °C; silicone core, PFA jacket −60 to +260 °C. Hardness runs 85–90 Shore A on a silicone core and 90–95 on FKM, because the jacket dominates — which is why an encapsulated ring needs a wider groove and more closure force than a plain elastomer ring of the same section. The table publishes the silicone-core figures, −60 to +205 °C at 85–95 Shore A, as the widest band Margo would quote against; state the core on the enquiry and the range narrows accordingly."
+          ],
+          "leads": [
+            "One question, and it is a process question rather than a value.",
+            "Temperature and hardness — standard published values."
+          ]
+        }
+      ],
+      "notes": [
+        "Build note — five new accordion panels. The component takes a list, not a fixed four. Figma needs the extra rows drawn.",
+        "Accordion crawlability. All nine panels in the DOM at first paint, collapsed by CSS. <details>/<summary> or aria-expanded with aria-controls. A collapsed panel is crawlable; an unmounted one is not.",
+        "Deep-linkable. /products/o-rings#aem, #fkm, #ptfe … so the homepage compound table and the FKM oil-seal resource article can link straight to a panel.",
+        "Hardness moves here from the spec table. Shore A is a property of the compound, not of the size — which is why the same four values repeat on all twelve table rows. Each panel carries its own band and the table loses four dead columns.",
+        "The H2 is a literal buyer question and goes in the FAQPage node with a 40–60 word answer naming the families and their ceilings.",
+        "Trade mark attribution. Footnote: “Viton is a registered trade mark of The Chemours Company. Vamac is a registered trade mark of DuPont. Teflon is a registered trade mark of The Chemours Company.” All three are used across the site without attribution.",
+        "Consistency gate. Eight ranges, one source. The homepage compound table governs; /products section 05 and all eleven category pages must agree with it.",
+        "Compound ranges are governed by one table. The eight values here match the homepage compound table exactly, which is the single source for the whole site. Two carry an open question — FKM at 250 °C is above the 200–210 °C industry continuous rating and reads as a peak, and AEM at 175 °C is an advanced-grade figure. Both are flagged in sheet 01 section 10; settle them there and the change propagates to all eleven category pages."
+      ]
+    },
+    {
+      "num": "04",
+      "title": "Parts in this category",
+      "chip": "Full list, no links",
+      "live": "LIVE H2 → “1 parts we make to order” · one item, a broken plural, and a “View part” link to a child URL",
+      "fields": [
+        {
+          "label": "Eyebrow",
+          "kind": "lit",
+          "value": "IN THIS CATEGORY"
+        },
+        {
+          "label": "H2",
+          "kind": "heading",
+          "lines": [
+            "O-Rings We Make to Order"
+          ],
+          "accent": [],
+          "value": "O-Rings We Make to Order",
+          "note": "5 words · live is 5 · states no count, which removes the “1 parts” pluralisation bug permanently rather than patching it"
+        },
+        {
+          "label": "Intro",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Each part below is manufactured to customer drawing or to our standard tooling. Compound, hardness and dimensions are set from your specification, and full dimensional data is issued with the quotation."
+          ],
+          "leads": [
+            "Compound, hardness and dimensions are set from your specification, and full dimensional data is issued with the quotation."
+          ],
+          "note": "34 words · live is 27"
+        },
+        {
+          "label": "Cards ×24",
+          "kind": "table",
+          "columns": [
+            "Part name",
+            "Category",
+            "Availability"
+          ],
+          "rows": [
+            [
+              "Static Face O-Rings",
+              "O-Rings",
+              "Made to order"
+            ],
+            [
+              "Static Radial O-Rings",
+              "O-Rings",
+              "Made to order"
+            ],
+            [
+              "Dynamic Reciprocating O-Rings",
+              "O-Rings",
+              "Made to order"
+            ],
+            [
+              "Dynamic Rotary O-Rings",
+              "O-Rings",
+              "Made to order"
+            ],
+            [
+              "Vacuum Service O-Rings",
+              "O-Rings",
+              "Made to order"
+            ],
+            [
+              "Back-Up Rings",
+              "O-Rings",
+              "Made to order"
+            ],
+            [
+              "AS568 Standard O-Rings",
+              "O-Rings",
+              "Made to order"
+            ],
+            [
+              "JIS B2401 Standard O-Rings",
+              "O-Rings",
+              "Made to order"
+            ],
+            [
+              "DIN 3771 Standard O-Rings",
+              "O-Rings",
+              "Made to order"
+            ],
+            [
+              "Non-Catalogue O-Rings",
+              "O-Rings",
+              "Made to order"
+            ],
+            [
+              "Large Diameter O-Rings",
+              "O-Rings",
+              "Made to order"
+            ],
+            [
+              "Square Section Rings",
+              "O-Rings",
+              "Made to order"
+            ],
+            [
+              "Rectangular Section Rings",
+              "O-Rings",
+              "Made to order"
+            ],
+            [
+              "X-Rings & Quad Rings",
+              "O-Rings",
+              "Made to order"
+            ],
+            [
+              "O-Ring Cord",
+              "O-Rings",
+              "Made to order"
+            ],
+            [
+              "Vulcanised Joined O-Rings",
+              "O-Rings",
+              "Made to order"
+            ],
+            [
+              "PTFE-Encapsulated O-Rings",
+              "O-Rings",
+              "Made to order"
+            ],
+            [
+              "Colour-Coded O-Rings",
+              "O-Rings",
+              "Made to order"
+            ],
+            [
+              "Seal Filler Cap O-Rings",
+              "O-Rings",
+              "Made to order"
+            ],
+            [
+              "Oil Filler Cap O-Rings",
+              "O-Rings",
+              "Made to order"
+            ],
+            [
+              "Transmission O-Rings",
+              "O-Rings",
+              "Made to order"
+            ],
+            [
+              "Under-Bonnet O-Rings",
+              "O-Rings",
+              "Made to order"
+            ],
+            [
+              "Switchgear O-Rings",
+              "O-Rings",
+              "Made to order"
+            ],
+            [
+              "Pump & Valve O-Rings",
+              "O-Rings",
+              "Made to order"
+            ]
+          ],
+          "note": "Same three fields the live card already renders — part name, category, availability. One item becomes 24. No View part link on any card, and no card links anywhere"
+        }
+      ],
+      "notes": [
+        "Build note — same card component, 1 item becomes 24. The grid takes a longer list; the card itself is unchanged apart from losing its link. No new section and no new field.",
+        "Remove the link from the card. The SKU child pages are 301-redirected to this category under the architecture decision, so a card that links anywhere points at a redirect. The list exists to show range, not to route.",
+        "Twenty-four part names is the point. Each is a phrase a buyer might search — back-up ring manufacturer India, PTFE encapsulated o-ring supplier, large diameter o-ring India — and together they tell an assistant what this category covers. One item told it almost nothing.",
+        "The count comes out of the heading. O-Rings We Make to Order never breaks; {n} parts rendered from array.length reads “1 parts” here and “6 parts” on oil seals. Same component, same bug, eleven pages.",
+        "All 24 names are client-confirmed, 2026-09-01 — Margo confirms it can make any part in rubber. The one distinction still worth stating to the developer is in section 03: an encapsulated PTFE ring has an elastomer core and is a moulder’s product, whereas solid PTFE is machined from stock and is a different process. The copy here is written for encapsulated.",
+        "Schema. The Product node’s additionalProperty can carry the list. Do not emit 24 separate Product nodes — they are variants of one category."
+      ]
+    },
+    {
+      "num": "05",
+      "title": "Sizing standards",
+      "chip": "Keep",
+      "live": "LIVE H2 → What Sizing Standards Does Margo Manufacture To? · a literal buyer question with four correct, well-explained answers · keep almost verbatim",
+      "fields": [
+        {
+          "label": "H2",
+          "kind": "heading",
+          "lines": [
+            "What Sizing Standards Does Margo Manufacture To?"
+          ],
+          "accent": [],
+          "value": "What Sizing Standards Does Margo Manufacture To?",
+          "note": "Unchanged. Names the entity inside a literal question — the exact AEO pattern, and rare on this site"
+        },
+        {
+          "label": "Answer paragraph",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Margo manufactures O-rings to AS568, ISO 3601, JIS B2401 and DIN 3771, covering the four major global catalogues used in fluid power, aerospace, automotive and industrial sealing specifications. Non-catalogue and cut-to-print O-rings are manufactured from approved drawings."
+          ],
+          "leads": [
+            "Margo manufactures O-rings to AS568, ISO 3601, JIS B2401 and DIN 3771"
+          ],
+          "note": "38 words · live is 41 · the 40–60 word extractable answer block, near-verbatim. “also available” becomes “manufactured from approved drawings”, which says what actually happens"
+        },
+        {
+          "label": "Cards ×4",
+          "kind": "table",
+          "columns": [
+            "Standard",
+            "Label",
+            "Body"
+          ],
+          "rows": [
+            [
+              "AS568",
+              "Aerospace Size Standard",
+              "United States, defined by SAE International. The dominant standard for North American fluid power and aerospace procurement."
+            ],
+            [
+              "ISO 3601",
+              "International Metric Standard",
+              "Global metric catalogue in three parts covering dimensions (Part 1), tolerances (Part 2) and quality acceptance (Part 3)."
+            ],
+            [
+              "JIS B2401",
+              "Japanese Industrial Standard",
+              "Japanese metric series in P, G, V and S size groups, commonly required by Japanese OEM supply chains."
+            ],
+            [
+              "DIN 3771",
+              "German Industrial Standard",
+              "DIN metric catalogue, harmonised into ISO 3601 but still actively called out on German mechanical engineering drawings."
+            ]
+          ],
+          "note": "All four bodies unchanged. Each is accurate, names the issuing body, and says where the standard is actually used — which is the part a specifying engineer needs and the part every competitor omits"
+        },
+        {
+          "label": "Add: closing line",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Send the standard reference or the drawing. If your print calls out a series we have not tooled, we cut the tool here."
+          ],
+          "leads": [
+            null
+          ],
+          "note": "22 words · new — the section explains four standards and then stops, with no route to an enquiry"
+        }
+      ],
+      "notes": [
+        "This is the second-most citable block on the page. Four named standards, four issuing bodies, four use contexts. An assistant asked “what is the difference between AS568 and ISO 3601?” has a clean answer here and almost nowhere else in the Indian supplier SERP.",
+        "Goes in the FAQPage node as the question the H2 already asks, with the answer paragraph verbatim.",
+        "Heading levels. <h2> + four <h3> standard names.",
+        "Standards attribution. Add the same footnote as section 03: designations are the property of their issuing bodies and are cited for identification. Margo does not reproduce their text.",
+        "Internal link. One, to /resources/o-ring-size-chart — the resource article that this section naturally feeds and which is currently unwritten."
+      ]
+    },
+    {
+      "num": "06",
+      "title": "Commercial terms",
+      "chip": "Restructure",
+      "live": "LIVE H2 → Minimum Order & Lead Time · an MOQ in the heading, an MOQ row, and “Margo is geared for volume procurement” · lead times also disagree with every other page",
+      "fields": [
+        {
+          "label": "H2",
+          "kind": "heading",
+          "lines": [
+            "Lead Times and How We Quote"
+          ],
+          "accent": [],
+          "value": "Lead Times and How We Quote",
+          "note": "6 words · live is 4 · “Minimum Order & Lead Time” puts a banned term in a section heading, where it is also an anchor and a table-of-contents entry"
+        },
+        {
+          "label": "Intro",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Margo produces in bulk against OEM schedules. Tell us the part and the volume and we will quote it. Minimum run is 10,000 pieces per part number, per compound, or quoted against the part where size or complexity sets the economics. Prototype and first-article lots sit outside the minimum and are quoted separately."
+          ],
+          "leads": [
+            "Margo produces in bulk against OEM schedules. Tell us the part and the volume and we will quote it."
+          ],
+          "note": "42 words · live is 34 · replaces “Margo is geared for volume procurement. If your project requires below-MOQ qualification samples…” — which states an MOQ twice by implication and tells a prototype buyer they are below the floor before they have asked. The replacement is the founder’s own phrasing from the commercial terms"
+        },
+        {
+          "label": "Rows ×5",
+          "kind": "table",
+          "columns": [
+            "Row",
+            "Value",
+            "Sub-label",
+            "Replaces"
+          ],
+          "rows": [
+            [
+              "Quotation",
+              "48 hrs",
+              "With feasibility report",
+              ""
+            ],
+            [
+              "Prototype",
+              "48–72 hrs",
+              "From an approved drawing",
+              ""
+            ],
+            [
+              "Catalogue sizes",
+              "3–4 weeks",
+              "Ex-works Nashik, from drawing approval · 2 weeks express",
+              ""
+            ],
+            [
+              "Cut-to-print",
+              "3–4 weeks + tooling",
+              "Tooling lead time quoted per part",
+              ""
+            ],
+            [
+              "Packaging",
+              "Poly bag + card label",
+              "Bulk reel or blister on request",
+              "[no change to the value]"
+            ]
+          ]
+        }
+      ],
+      "notes": [
+        "The section ID changes from #commercial to #lead-times, and the anchor label with it. An anchor named after a banned term is a banned term in the URL bar.",
+        "This is the highest-converting block on a category page. A buyer who has read the spec table and picked a compound arrives here to find out whether the timeline works. Answering it with an MOQ instead of a lead time loses them.",
+        "Goes in the FAQPage node: “What is the lead time for custom O-rings?” and “How is a custom O-ring order quoted?” — both are verified buyer questions from the fan-out research.",
+        "Consistency gate. 48 hrs quotation, 48–72 hrs prototype, 2 weeks samples, 3–4 weeks production. The same four figures on all eleven category pages and every other page on the site."
+      ]
+    },
+    {
+      "num": "07",
+      "title": "Enquiry CTA",
+      "chip": "Tune",
+      "live": "LIVE H2 → Request O-Ring Specs · promises a response “within two working days” — the sixth value the site publishes for one promise",
+      "fields": [
+        {
+          "label": "H2",
+          "kind": "heading",
+          "lines": [
+            "Send a Drawing or a Standard Reference"
+          ],
+          "accent": [],
+          "value": "Send a Drawing or a Standard Reference",
+          "note": "6 words · live is 3 · names what Margo needs rather than what the buyer receives"
+        },
+        {
+          "label": "Body",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Send your drawing, standard reference and compound requirement. We reply within one business day, and a quotation with dimensional confirmation and material data follows inside 48 hours."
+          ],
+          "leads": [
+            "We reply within one business day, and a quotation with dimensional confirmation and material data follows inside 48 hours."
+          ],
+          "note": "28 words · live is 33 · “within two working days” is the sixth distinct value on the site for this promise; the others are <4 hours, 24 hours, 1 business day, 3 business days and 48 hours"
+        },
+        {
+          "label": "CTAs ×2",
+          "kind": "lit",
+          "value": "Send Enquiry → /contact\nCall Technical Sales → tel:+919665579276",
+          "note": "Unchanged labels · the phone CTA must carry the locked NAP number. Four different numbers circulate on the site and this button is currently one of the routes to a wrong one"
+        }
+      ],
+      "notes": [
+        "Response-time consistency. One business day to acknowledge, 48 hours to quote. Six values across the site for one promise is the most-repeated defect in this whole programme.",
+        "Prefill the product field. A buyer arriving at /contact from here has already told you the category. Pass it.",
+        "Named conversion event. Seventh RFQ entry point on the site; still none tracked.",
+        "tel: href must match the visible number and the Organization node exactly."
+      ]
+    },
+    {
+      "num": "08",
+      "title": "Footer",
+      "chip": "Rewrite",
+      "live": "LIVE → 50+ countries, © 2024, and the wrong legal entity · Products column shows 9 of 11 categories · /export appears nowhere",
+      "fields": [
+        {
+          "label": "Wordmark",
+          "kind": "lit",
+          "value": "MARGO\nRUBBER PRODUCTS"
+        },
+        {
+          "label": "Description",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "ISO 9001:2015 certified manufacturer of precision moulded and extruded rubber components in Nashik, India. Sealing and anti-vibration parts to customer drawing, supplied to OEMs and distributors in 95 countries."
+          ],
+          "leads": [
+            null
+          ],
+          "note": "29 words · live is 26 · opens with the entity definition, since the footer repeats on all 40 pages"
+        },
+        {
+          "label": "NAP block",
+          "kind": "lit",
+          "value": "+91 96655 79276\ninfo@margorubber.in\nSRNO. 4494/10, behind Furniture Stop,\nopposite Samarth Dies, Vilholi,\nNashik, Maharashtra 422010, India",
+          "note": "Client-confirmed 2026-09-01 — this exact string, on all 40 pages, in the PostalAddress node and on the Google Business Profile. The landmarks are part of the address and stay in; B-12, MIDC Ambad is wrong and comes off the site. The company name is not repeated inside the address line — the wordmark above it already carries it"
+        },
+        {
+          "label": "Column 1 — Products",
+          "kind": "lit",
+          "value": "SEALING\nO-Rings · Oil Seals · Gaskets · Diaphragms · Reciprocating Seals · Leak Test Rubber\nMOUNTING & PROTECTION\nAnti-Vibration Mounts · Bushes & Bushings · Bonded Components · Bellows · Grommets · Pads, Stoppers & Caps\nSHEET & PROFILE\nExtrusion Profiles · Sponge & Foam Rubber · Rubber Lining & Skirting",
+          "note": "15 entries in three groups, up from 11. Adds Diaphragms, Bonded Components, Rubber Lining & Skirting and Reciprocating Seals (sheets 36–39), plus /products/extrusion and /products/sponge-foam-rubber, which had no sitewide inbound link at all. The column was designed for eleven and fifteen flat is not readable, so it is grouped — Sealing (6), Mounting & protection (6), Sheet & profile (3). The third group is also the commercial split: those three are quoted by length or area rather than by piece count, per sheets 18, 38 and 40. “Seals” is labelled “Reciprocating Seals” so it is not read as a parent of O-Rings and Oil Seals — sheet 39 §02 explains why. Group labels are <p> or <div>, never headings — three more phantom sections is not an improvement on one"
+        },
+        {
+          "label": "Column 2 — Industries",
+          "kind": "lit",
+          "value": "Automotive · Mining · Oil & Gas · Pumps & Valves · HVAC ·\nElectrical & Electronics · Agriculture · Medical Devices ·\nWater & Fluid Management · Construction · Transport — Rail & Marine",
+          "note": "11 entries, up from 9 — adds Construction (sheet 41) and Transport — Rail & Marine (sheet 42), the first two of the six “additional sectors” on sheet 05 to earn a URL. Automotive still leads, matching real volume. 🛑 The live footer’s four industry links all resolve to the same /industries/ The full twenty-six-row footer link map is in sheet 01_Homepage.html, footer section — fifteen product links and eleven industry links, with the three label/slug mismatches called out. — adding two entries to a column whose links are broken makes eleven broken links, so fix the routing in this same commit"
+        },
+        {
+          "label": "Column 3 — Company",
+          "kind": "lit",
+          "value": "About Us · Certifications · Export Markets · Case Studies ·\nResources · Contact Us",
+          "note": "6 entries · Export Markets is new and fixes the orphaned /export page · Why Choose Us comes out — that page is recommended for deletion, its job is done better by /certifications and /export"
+        },
+        {
+          "label": "CTA lines",
+          "kind": "lit",
+          "value": "Ready to source precision rubber components?\nQuotation from our engineering team within 48 hours.\n[ Request Quote → ]",
+          "note": "“within 24 hours” becomes 48 hours. The footer CTA is the fastest of the six response times published on this site, and it contradicts the page body on /contact, /industries and /export. One constant, rendered everywhere"
+        },
+        {
+          "label": "Legal line",
+          "kind": "lit",
+          "value": "© 2026 Margo Rubber Products. All rights reserved.\nPrivacy Policy · Terms & Conditions · Disclaimer\nISO 9001:2015 · Certificate 09111526A · Integral Certification Ltd",
+          "note": "Fixes © 2024 and Margo Rubber Industries Pvt. Ltd. — GSTIN 27AAKFM8595Q1Z1 embeds PAN AAKFM8595Q, whose 4th character F denotes a firm, not a company. Pvt. Ltd. is positively excluded. The ISO line gains the certificate number and the issuer, which makes it checkable on all 40 pages instead of decorative"
+        }
+      ],
+      "notes": [
+        "What matters here: the Products column going from 9 to 11 entries gives extrusion-profiles and sponge-foam-rubber a sitewide inbound link. Every category page inherits that fix from this one component.",
+        "Every footer on the site states a minimum order. It comes off with this replacement, which resolves the fourth of this page’s four minimum-order statements — and eleven of the forty-four published across the site.",
+        "Build once, ships forty times. This is one component. The copy above is written out in full on every sheet in this set so nobody has to open two files to build one block, but it is authored once in the codebase.",
+        "Heading levels. The column labels (PRODUCTS / INDUSTRIES / COMPANY) are <h2> in the live build. As visible <h2>s they inject three phantom sections into every document outline on the site. Change to <p class=\"col-label\">.",
+        "Link equity. 26 sitewide links from here. Adding /export, /products/extrusion and /products/sponge-foam-rubber gives three orphaned or under-linked URLs a sitewide inbound link each — the cheapest internal-linking win available on this site.",
+        "NAP markup. Wrap in <address>. Phone as <a href=\"tel:+919665579276\">, email as <a href=\"mailto:info@margorubber.in\">. The visible string and the href must not diverge.",
+        "Schema. The footer emits nothing. The Organization node on the homepage is the single entity definition and every other page @id-references it. Repeating an Organization block per page creates 40 competing entities.",
+        "Copyright year. Render from new Date().getFullYear(), not a literal. It has read 2024 for eight months."
+      ]
+    }
+  ]
+}

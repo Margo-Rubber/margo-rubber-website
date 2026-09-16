@@ -1,0 +1,1306 @@
+{
+  "file": "03_About.html",
+  "title": "About Page Content Sheet",
+  "kicker": "Margo Rubber Products · /about · Vision Build · Sheet 03 of 12",
+  "head": {
+    "title": "About Margo Rubber Products | Rubber Manufacturer in Nashik",
+    "description": "Margo Rubber Products has manufactured precision moulded and extruded rubber components in Nashik, India since 2005. ISO 9001:2015 certified. Eight compounds, tooling cut in-house."
+  },
+  "sections": [
+    {
+      "num": "01",
+      "title": "Hero",
+      "chip": "Rewrite",
+      "live": "LIVE H1 → EngineeringExcellenceSince 1997. (whitespace bug) · subhead claims 1,200+ clients across 25+ countries",
+      "fields": [
+        {
+          "label": "H1 — 3 lines",
+          "kind": "heading",
+          "lines": [
+            "Precision Rubber,",
+            "Made in Nashik",
+            "Since 2005."
+          ],
+          "accent": [
+            "Made in Nashik"
+          ],
+          "value": "Precision Rubber, Made in Nashik Since 2005.",
+          "note": "6 words · live is 4 · year corrected, geo added"
+        },
+        {
+          "label": "Subhead",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Margo Rubber Products is an ISO 9001:2015 certified manufacturer of moulded and extruded rubber components in Nashik, Maharashtra. Compound formulation, mould tooling, moulding, finishing and testing all happen under one roof, for 24 named accounts across seven sectors."
+          ],
+          "leads": [
+            "Margo Rubber Products is an ISO 9001:2015 certified manufacturer of moulded and extruded rubber components in Nashik, Maharashtra."
+          ],
+          "note": "38 words · live is 19 · entity definition in the first clause"
+        },
+        {
+          "label": "CTA primary",
+          "kind": "lit",
+          "value": "Discover Our Story",
+          "href": "#story"
+        },
+        {
+          "label": "CTA secondary",
+          "kind": "lit",
+          "value": "Our Capabilities",
+          "href": "#manufacturing"
+        },
+        {
+          "label": "Remove",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "WATCH FILM — there is no film, and the live control goes nowhere. A dead play button on the first screen of the About page is the first thing a buyer clicks and the first thing that fails."
+          ],
+          "leads": [
+            null
+          ]
+        }
+      ],
+      "notes": [
+        "Heading. Page’s only <h1>. Three <span class=\"block\"> children — the concatenation bug is live on this element.",
+        "Keyword. rubber manufacturer Nashik in H1 line 2 and resolved literally in the subhead. Brand term Margo Rubber Products opens the subhead, which is what an entity query needs.",
+        "Removed claims. Since 1997, 1,200+ clients, 25+ countries — three in one 19-word subhead.",
+        "Anchors. /about#story and /about#manufacturing, not /#story. Both target IDs already exist on the live page.",
+        "LCP. Hero image, fetchpriority=\"high\", AVIF + WebP, preload. alt=\"Margo Rubber Products manufacturing plant, Nashik, Maharashtra\"."
+      ]
+    },
+    {
+      "num": "02",
+      "title": "Stat bar",
+      "chip": "Rewrite",
+      "live": "LIVE → 27+ years · 1,200+ clients · 25+ countries · 500T monthly capacity — all four unsourced; capacity is stated in tonnes, a unit Margo does not measure in",
+      "fields": [
+        {
+          "label": "Stat cards ×4",
+          "kind": "table",
+          "columns": [
+            "Value",
+            "Label",
+            "Replaces"
+          ],
+          "rows": [
+            [
+              "2005",
+              "Year Established",
+              ""
+            ],
+            [
+              "17.9M",
+              "Components Delivered Per Year",
+              ""
+            ],
+            [
+              "95",
+              "Export Markets",
+              ""
+            ],
+            [
+              "5M",
+              "Components Per Month, Installed",
+              ""
+            ]
+          ],
+          "note": "17.9M = the four sector volumes on company profile p29 summed: 13M automotive + 2.7M industrial + 1.4M electrical + 0.8M HVAC. It cross-checks twice — 17.9M ÷ 12 = 1.49M a month against the stated 1.5M current output, and 17.9M against 60M installed = 29.8% utilisation against the stated ~30%. Three figures from different pages of the profile reconcile, which is what makes it safe in front of a buyer. Same figure as the homepage story bar, deliberately — consistency across pages is the goal; only repetition within a page is padding. 500 tonnes a month comes off: rubber components are made and sold by the piece, not by weight, and it is a figure Margo does not hold in a unit Margo does not use"
+        }
+      ],
+      "notes": [
+        "Markup. <dl> with <dd> value and <dt> label, as live. Values are not headings.",
+        "Consistency gate. 2005, 95 and 5M must match the homepage hero and the Organization node exactly. This bar is the most-screenshotted element on the page.",
+        "Tabular numerals. font-variant-numeric: tabular-nums so the four values align on a shared baseline grid."
+      ]
+    },
+    {
+      "num": "03",
+      "title": "Our story",
+      "chip": "Rewrite",
+      "live": "LIVE H2 → From a Single Workshop to a Global Force. · 1997 founding, 80,000 sq ft, six continents, aerospace and pharmaceuticals, NABL in-house, REACH & RoHS across the catalogue — none sourced",
+      "fields": [
+        {
+          "label": "Floating badge",
+          "kind": "lit",
+          "value": ">99%\nON-TIME DELIVERY",
+          "note": "Replaces 98.7% — the real figure from company profile p13 is >99%, which is better than the invented one. This happens more than once on the site: the fabrications are not even flattering"
+        },
+        {
+          "label": "H2 — 2 lines",
+          "kind": "heading",
+          "lines": [
+            "From a 6,000 sq ft Workshop",
+            "to an Automated Plant."
+          ],
+          "accent": [
+            "to an Automated Plant."
+          ],
+          "value": "From a 6,000 sq ft Workshop to an Automated Plant.",
+          "note": "8 words · live is 7 · a specific, verifiable arc replaces “global force”"
+        },
+        {
+          "label": "Paragraph 1",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Margo Rubber Products was founded in Nashik in 2005. The previous works ran 6,000 sq ft and about 200,000 parts a month. Moving to a purpose-built 10,000+ sq ft plant, and automating during the move, took installed capacity to five million parts a month — twenty-five times the old works."
+          ],
+          "leads": [
+            "Margo Rubber Products was founded in Nashik in 2005."
+          ],
+          "note": "50 words · live is 36"
+        },
+        {
+          "label": "Paragraph 2",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "The plant is built for a single linear workflow: raw material in at one end, finished goods out at the other, with no cross-traffic between clean and flash-generating areas. Today it supplies 24 named accounts across automotive, industrial machinery, electrical, specialist vehicles, medical, chemicals and tooling."
+          ],
+          "leads": [
+            null
+          ],
+          "note": "46 words · live is 41"
+        },
+        {
+          "label": "Bullets ×3",
+          "kind": "table",
+          "columns": [
+            "Replacement",
+            "Replaces"
+          ],
+          "rows": [
+            [
+              "ISO 9001:2015 certified — certificate 09111526A, Integral Certification Ltd, valid to 21 February 2027",
+              ""
+            ],
+            [
+              "Eight compounds mixed in-house, from AEM to natural rubber — formulation is not subcontracted",
+              ""
+            ],
+            [
+              "In-house test laboratory on a scheduled calibration cycle; accredited-lab testing through a NABL partner on request",
+              ""
+            ]
+          ],
+          "note": "The NABL bullet is the sharpest error on the page. Live it claims NABL accreditation for Margo’s own lab. Margo’s lab is not accredited — it uses a NABL-accredited partner. Any buyer who asks for the accreditation certificate gets a very short conversation"
+        },
+        {
+          "label": "CTA",
+          "kind": "lit",
+          "value": "See Our Manufacturing",
+          "href": "#manufacturing"
+        }
+      ],
+      "notes": [
+        "Answer block. Paragraph 1 opens with the 40–60 word extractable answer to “when was Margo Rubber Products founded and where?” — entity, verb, date and city in the first eight words.",
+        "Removed claims. 1997, 27 years, 80,000 sq ft, 24/7 operation, aerospace, pharmaceuticals, marine, six continents, 98.7%, NABL in-house, REACH & RoHS across the catalogue, renewed since 2008. Twelve.",
+        "Sectors named must match section 06 of the homepage and the industry hub — nine industries, and aerospace, pharmaceuticals and marine are not among them. Naming a sector Margo does not serve invites an enquiry it cannot quote.",
+        "Internal links. Three: #manufacturing, /certifications, /products#compounds.",
+        "Schema. No node. foundingDate 2005 lives on the Organization; prose and schema must agree."
+      ]
+    },
+    {
+      "num": "04",
+      "title": "Vision & mission",
+      "chip": "Tune",
+      "live": "LIVE H2 → Built on Purpose. Driven by Principle. · structurally fine · “world’s most trusted rubber solutions company by 2030” is the kind of sentence that is true of no one and claimed by everyone",
+      "fields": [
+        {
+          "label": "H2 — 2 lines",
+          "kind": "heading",
+          "lines": [
+            "Where We Are Going,",
+            "and What We Will Not Trade for It."
+          ],
+          "accent": [
+            "and What We Will Not Trade for It."
+          ],
+          "value": "Where We Are Going, and What We Will Not Trade for It.",
+          "note": "10 words · live is 6"
+        },
+        {
+          "label": "Card 1 — Vision",
+          "kind": "table",
+          "columns": [],
+          "rows": [
+            [
+              "Eyebrow",
+              "OUR VISION"
+            ],
+            [
+              "H3",
+              "To supply the export markets we have already mapped."
+            ],
+            [
+              "Body",
+              "We have screened 95 countries, written country-level sourcing playbooks for 18 of them, and set an activation order of five: Australia, the United Kingdom, the UAE, Saudi Arabia and Malaysia. The research is done. The work now is filling the lanes."
+            ],
+            [
+              "Footer",
+              "95 markets screened · 18 playbooks written · 5 lanes first"
+            ]
+          ],
+          "note": "Body 42 words · live is 40. Replaces “world’s most trusted rubber solutions company by 2030” and “Targeting 50+ export markets by 2028” — the 50+ figure contradicts the 95 stated everywhere else on this build"
+        },
+        {
+          "label": "Card 2 — Mission",
+          "kind": "table",
+          "columns": [],
+          "rows": [
+            [
+              "Eyebrow",
+              "OUR MISSION"
+            ],
+            [
+              "H3",
+              "Formulate the compound for the job, not for the shelf."
+            ],
+            [
+              "Body",
+              "We mix our own compound. If the part sits in hot oil we build for hot oil; if it sits in sunlight under static strain we build for ozone. The formulation is the engineering, and it is the one thing we will not subcontract."
+            ],
+            [
+              "Footer",
+              "Eight compounds mixed in-house · tooling cut in-house"
+            ]
+          ],
+          "note": "Body 44 words · live is 42. Replaces “Zero-defect manufacturing philosophy” — the real target is <1% rejection, and a zero-defect claim is refutable by a single returned part"
+        }
+      ],
+      "notes": [
+        "Heading levels. <h2> + two <h3>. Eyebrows are <p>.",
+        "Why a vision statement can rank at all. Only if it contains a fact. “World’s most trusted by 2030” is unquotable; “95 countries screened, 18 playbooks, 5 activation markets” is a passage an assistant can lift when asked “which export markets is Margo targeting?”.",
+        "Internal link. One, from the vision footer to /export — a second inbound link for the orphaned page.",
+        "Consistency gate. 95 / 18 / 5 must match section 09 and the homepage export section. Three different market counts on one site is how the live build got to seven."
+      ]
+    },
+    {
+      "num": "05",
+      "title": "Values",
+      "chip": "Rewrite",
+      "live": "LIVE H2 → What We Stand For. · six principles · five of the six carry a fabricated figure: <0.1% defect, ±0.01 mm, REACH, solar lines, 98.7% across 1,200+ accounts",
+      "fields": [
+        {
+          "label": "H2",
+          "kind": "heading",
+          "lines": [
+            "What We Stand For."
+          ],
+          "accent": [],
+          "value": "What We Stand For.",
+          "note": "Unchanged — the heading is fine, the six bodies are not"
+        },
+        {
+          "label": "Intro",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Six commitments, each with a number behind it that we will show you on an audit."
+          ],
+          "leads": [
+            null
+          ],
+          "note": "16 words · live is 17"
+        },
+        {
+          "label": "Cards ×6",
+          "kind": "table",
+          "columns": [
+            "#",
+            "Title",
+            "Body",
+            "Replaces"
+          ],
+          "rows": [
+            [
+              "01",
+              "Inspected, not assumed",
+              "First article, in-process and final release inspection on every despatch lot. Target rejection rate under 1%.",
+              ""
+            ],
+            [
+              "02",
+              "Tolerance that is real",
+              "Dimensional conformity to ISO 3302-1, classes M1–M4 moulded and E1–E3 extruded. Tolerance follows the section.",
+              ""
+            ],
+            [
+              "03",
+              "Specify us against a standard",
+              "We quote against ASTM D2000 / SAE J200, ASTM D1056, ISO 3601 / AS568 and IS 5382.",
+              ""
+            ],
+            [
+              "04",
+              "Compound is ours",
+              "Eight polymer families mixed in-house. Even filler distribution, batch after batch, since mixing was automated.",
+              ""
+            ],
+            [
+              "05",
+              "Engineers, not account managers",
+              "Our engineers work directly with your R&D on design validation. Audits welcomed, not negotiated around.",
+              "Technical teams embedded with clients — sharpened"
+            ],
+            [
+              "06",
+              "Delivered when promised",
+              "Over 99% on-time delivery, 95% repeat order rate, and an average client relationship over ten years.",
+              ""
+            ]
+          ],
+          "note": "Bodies 15–18 words, matching the live one-line format. Card 04 changes subject entirely — the sustainability claims move to section 11, where every one of them is also unsourced"
+        }
+      ],
+      "notes": [
+        "Numbering is real here, so <ol> is correct — but only because the live design displays 01–06. If the numbers were dropped, so should the ordered list; a sequence marker that encodes nothing is decoration.",
+        "Heading levels. <h2> + six <h3>.",
+        "Card 03 is the citation earner. Four named specification systems is the kind of passage an assistant lifts for “what standards do Indian rubber manufacturers quote against?”. No competitor in the teardown publishes them.",
+        "±0.01 mm appears on three pages. It is the resolution of the vernier and micrometer in the inspection lab, not a part tolerance, and it is not achievable in moulded rubber. Fix all three occurrences from the same source string."
+      ]
+    },
+    {
+      "num": "06",
+      "title": "Founder quote",
+      "chip": "Rewrite",
+      "live": "LIVE → a founder quote attributed to “Margo Rubber Products, Founder & Managing Director” with the initials MR — an unnamed person quoting themselves, dated to a founding year that is wrong",
+      "fields": [
+        {
+          "label": "Pull quote",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "“A large share of our work arrives as a worn part in an envelope, not a CAD file. Somebody needs that part to exist again, and it has to fit.”"
+          ],
+          "leads": [
+            null
+          ],
+          "note": "29 words · live is 20 · replaces “We did not set out to build a factory. We set out to build trust, one component at a time.” — a sentence that could belong to any manufacturer in any industry"
+        },
+        {
+          "label": "Body",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Reverse engineering is a standard route to a first order here. We measure the part, identify the compound family, and quote against the sample. It is also the clearest test of whether a supplier actually formulates compound or simply buys it in."
+          ],
+          "leads": [
+            null
+          ],
+          "note": "42 words · live is 43"
+        },
+        {
+          "label": "Attribution",
+          "kind": "lit",
+          "value": "MS\nMehboob Shaikh\nFounder & Director · Margo Rubber Products",
+          "note": "Replaces the initials MR and the unnamed Founder & Managing Director. CONFIRM the exact title Mehboob uses on a business card — Director and Managing Director are different roles and the wrong one is worse than none · CONFIRM"
+        }
+      ],
+      "notes": [
+        "Markup. <blockquote> with a <cite>, and <figure>/<figcaption> around the attribution block.",
+        "Schema. Quotation with spokenByCharacter pointing at #mehboob-shaikh. Low value on its own, real value as corroboration that the Person node is a person who says things.",
+        "An unnamed quote is worth less than no quote. Initials with no name read to a buyer as a stock template, and give an assistant nothing to attribute. This is the only place on the site where a founder speaks.",
+        "Image. A real photograph beats an initials monogram by a wide margin here. CONFIRM whether a usable headshot exists."
+      ]
+    },
+    {
+      "num": "07",
+      "title": "Manufacturing",
+      "chip": "Rewrite",
+      "live": "LIVE H2 → Built to Perform. Engineered to Last. · 80,000 sq ft, ISO Class 7 cleanroom, 500+ tonnes/month · the product list names two categories that do not exist and omits six that do",
+      "fields": [
+        {
+          "label": "H2 — 2 lines",
+          "kind": "heading",
+          "lines": [
+            "One Roof, One Flow,",
+            "No Handoffs."
+          ],
+          "accent": [
+            "No Handoffs."
+          ],
+          "value": "One Roof, One Flow, No Handoffs.",
+          "note": "6 words · live is 6"
+        },
+        {
+          "label": "Intro",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "A 10,000+ sq ft plant in the Nashik industrial belt, laid out for a single linear workflow with compression, transfer and injection moulding plus continuous-cure extrusion. Automated presses hold cure temperature and pressure closed-loop, which takes operator variation out of the part."
+          ],
+          "leads": [
+            "Automated presses hold cure temperature and pressure closed-loop, which takes operator variation out of the part."
+          ],
+          "note": "42 words · live is 26"
+        },
+        {
+          "label": "Image caption",
+          "kind": "lit",
+          "value": "Main production floor · Nashik",
+          "note": "Unchanged"
+        },
+        {
+          "label": "Stat cards ×3",
+          "kind": "table",
+          "columns": [
+            "Value",
+            "Label",
+            "Replaces"
+          ],
+          "rows": [
+            [
+              "10,000+ sq ft",
+              "Manufacturing Floor Area",
+              ""
+            ],
+            [
+              "30% / 20%",
+              "Less Cycle Time · Better Material Utilisation",
+              ""
+            ],
+            [
+              "5M pcs",
+              "Monthly Installed Capacity",
+              ""
+            ]
+          ],
+          "note": "ISO Class 7 cleanroom is the most dangerous claim in this section. A cleanroom class is a measured, certified environment with particle counts and a validation report. A medical-device buyer will ask for that report on the first call. Margo does not have one, and /industries/medical-devices already says so"
+        },
+        {
+          "label": "Equipment list — new",
+          "kind": "list",
+          "items": [
+            "Automated moulding presses — closed-loop temperature and pressure control",
+            "Digital curing ovens — programmable, with a retrievable cure record per batch",
+            "Compound mixing, automated — even filler distribution, batch after batch",
+            "In-line deflashing and trimming — consistent finish, less manual handling",
+            "IoT production monitoring — a slow press shows up the same day, not at month end",
+            "Centralised ERP and MES — planning, tracking and batch traceability across the plant"
+          ],
+          "note": "Six items · replaces nothing, this list does not exist live. It is the strongest factual content available for this section and it is sitting unused in the company profile"
+        },
+        {
+          "label": "Product portfolio",
+          "kind": "table",
+          "columns": [
+            "Corrected list — 11",
+            "Live list — 8"
+          ],
+          "rows": [
+            [
+              "O-Rings",
+              "O-Rings & Cord"
+            ],
+            [
+              "Oil Seals",
+              ""
+            ],
+            [
+              "Gaskets",
+              "Gaskets & Washers"
+            ],
+            [
+              "Bellows",
+              ""
+            ],
+            [
+              "Anti-Vibration Mounts",
+              "Vibration Mounts"
+            ],
+            [
+              "Grommets",
+              "Grommets & Plugs"
+            ],
+            [
+              "Bushes & Bushings",
+              ""
+            ],
+            [
+              "Pads, Stoppers & Caps",
+              ""
+            ],
+            [
+              "Leak Test Rubber",
+              ""
+            ],
+            [
+              "Extrusion Profiles",
+              "Extruded Profiles"
+            ],
+            [
+              "Sponge & Foam Rubber",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "twelfth category",
+              "Diaphragms — keep it. Page written 2026-09-03 (sheet 36); the link resolves on deploy"
+            ]
+          ],
+          "note": "Six of twelve categories are missing from the live list. Of the two entries that were not categories, Diaphragms now is one — the page is written (sheet 36) and the link resolves on deploy, closing the only confirmed broken internal link on the site. Rubber Sheets still is not; the nearest real product is sheet lining, which has no page yet either"
+        }
+      ],
+      "notes": [
+        "Automated moulding presses — closed-loop temperature and pressure control",
+        "Digital curing ovens — programmable, with a retrievable cure record per batch",
+        "Compound mixing, automated — even filler distribution, batch after batch",
+        "In-line deflashing and trimming — consistent finish, less manual handling",
+        "IoT production monitoring — a slow press shows up the same day, not at month end",
+        "Centralised ERP and MES — planning, tracking and batch traceability across the plant",
+        "Fix the 404 by shipping sheet 36. /products/diaphragms is linked from this page and does not exist yet. Build it and the link is correct as written — no repoint, no redirect. Do not repoint to /products/leak-test-rubber#diaphragm: that anchor was proposed here before the diaphragms page existed, and sheet 17 does not cover diaphragms at all.",
+        "Eleven links out. Each portfolio entry links to its category page. This is the second-densest link block on the site after the /products grid, and live it wastes six of them.",
+        "Images. Plant photography, loading=\"lazy\", unique geo-bearing alt per image — alt=\"Automated compression moulding press at the Margo Rubber Products plant, Nashik\". One string repeated across every plant photo is a wasted signal.",
+        "Schema. Add nothing here. The Place node with the plant coordinates ships from the homepage; a second location node splits the entity.",
+        "Heading levels. <h2> + <h3> on “Product portfolio”. Stat values are <p>."
+      ]
+    },
+    {
+      "num": "08",
+      "title": "Leadership",
+      "chip": "Rewrite",
+      "live": "LIVE H2 → The Minds Behind The Machines. · four leadership cards all reading “Name pending sign-off”, live and public · 400+ team members, 18 yrs average senior tenure, 100% safety record",
+      "fields": [
+        {
+          "label": "H2 — 2 lines",
+          "kind": "heading",
+          "lines": [
+            "Two Founders,",
+            "Both on the Floor."
+          ],
+          "accent": [
+            "Both on the Floor."
+          ],
+          "value": "Two Founders, Both on the Floor.",
+          "note": "5 words · live is 5 · a two-person leadership team is a strength for this buyer, not a gap — it means the person who answers the phone can change the compound"
+        },
+        {
+          "label": "Intro",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Margo is run by the two people who started it. Neither sits between you and the plant."
+          ],
+          "leads": [
+            null
+          ],
+          "note": "17 words · live is 16"
+        },
+        {
+          "label": "Cards ×2",
+          "kind": "table",
+          "columns": [
+            "Name",
+            "Title",
+            "Body"
+          ],
+          "rows": [
+            [
+              "Mehboob Shaikh",
+              "Founder & Director",
+              "Twenty years in rubber compounding. Leads formulation, product development and quality — the three things that decide whether a part works."
+            ],
+            [
+              "Ayyaz Shaikh",
+              "Co-Founder & Business Development Head",
+              "Nine years leading customer relations and vendor development. Runs quotation, programme onboarding and the export desk."
+            ]
+          ],
+          "note": "Replaces four cards reading Name pending sign-off. CONFIRM both exact titles and whether either wants a photograph published · CONFIRM"
+        },
+        {
+          "label": "Stat cards ×3",
+          "kind": "table",
+          "columns": [
+            "Value",
+            "Label",
+            "Replaces"
+          ],
+          "rows": [
+            [
+              "Team Members",
+              ""
+            ],
+            [
+              "20 yrs",
+              "Founder Experience in Rubber",
+              ""
+            ],
+            [
+              "10+ yrs",
+              "Average Client Relationship",
+              ""
+            ]
+          ],
+          "note": "CONFIRM · Headcount is the one figure worth asking for — a real number, even 35, is more persuasive than 400+ that no one believes and a buyer can disprove on a plant visit in ten seconds. 100% safety record comes off regardless: it is unprovable, and the first incident makes it a liability rather than an error"
+        }
+      ],
+      "notes": [
+        "This is the only section on the site that can carry Person schema. Two named people with titles, linked to the Organization, is a stronger trust signal for an entity query than every adjective on the page combined.",
+        "Markup. <h3> name, <p> title, itemprop not required — the JSON-LD carries it. Photograph: alt=\"Mehboob Shaikh, Founder and Director of Margo Rubber Products\".",
+        "Add sameAs per founder once LinkedIn URLs are confirmed. A Person node with external corroboration resolves; one without is an assertion.",
+        "Do not emit numberOfEmployees until the headcount is confirmed. It is one of the few Organization properties a competitor or a journalist can check.",
+        "Two people is not a weakness to hide. A procurement buyer sourcing custom moulded parts reads a small, technical, owner-run supplier as lower risk than a faceless 400-person org chart with four unnamed executives."
+      ]
+    },
+    {
+      "num": "09",
+      "title": "Global reach",
+      "chip": "Rewrite",
+      "live": "LIVE H2 → Shipped to 25+ Nations. · twelve country flags including Japan, France, Canada and the Netherlands · ₹120 Cr+ export turnover FY 2023-24, a financial claim with no source anywhere",
+      "fields": [
+        {
+          "label": "H2 — 2 lines",
+          "kind": "heading",
+          "lines": [
+            "95 Markets Screened.",
+            "Five Lanes First."
+          ],
+          "accent": [
+            "Five Lanes First."
+          ],
+          "value": "95 Markets Screened. Five Lanes First.",
+          "note": "6 words · live is 4 · the tiering is what makes the number defensible rather than decorative"
+        },
+        {
+          "label": "Intro",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "We screened and scored 95 countries across seven regions, wrote country-level sourcing playbooks for 18, and set an activation order of five. Each playbook carries duty treatment, certificate requirements, transit time and destination port — not a flag on a map."
+          ],
+          "leads": [
+            "Each playbook carries duty treatment, certificate requirements, transit time and destination port — not a flag on a map."
+          ],
+          "note": "42 words · live is 33"
+        },
+        {
+          "label": "Tier 1 chips ×5",
+          "kind": "lit",
+          "value": "🇦🇺 Australia · 🇬🇧 United Kingdom · 🇦🇪 UAE\n🇸🇦 Saudi Arabia · 🇲🇾 Malaysia",
+          "note": "Activation order, with transit days on hover: Melbourne 18–22 d · Felixstowe 22–28 d · Jebel Ali 5–8 d · Dammam · Port Klang 10–14 d"
+        },
+        {
+          "label": "Tier 2 chips ×13",
+          "kind": "lit",
+          "value": "🇰🇷 South Korea · 🇰🇪 Kenya · 🇺🇸 United States · 🇿🇦 South Africa · 🇸🇬 Singapore\n🇳🇴 Norway · 🇨🇱 Chile · 🇿🇲 Zambia · 🇹🇿 Tanzania · 🇬🇭 Ghana · 🇵🇪 Peru\n🇹🇹 Trinidad & Tobago · 🇯🇴 Jordan",
+          "note": "The 13 remaining full-playbook markets, so the grid still fills. Live shows 12 chips; this shows 18 in two tiers, which the row wraps to comfortably at the same chip size"
+        },
+        {
+          "label": "Removed chips",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "🇩🇪 Germany · 🇯🇵 Japan · 🇫🇷 France · 🇨🇦 Canada · 🇳🇱 Netherlands — none appears in the 18-market playbook set or the Top-5 activation order. They were picked to look international."
+          ],
+          "leads": [
+            null
+          ]
+        },
+        {
+          "label": "Figure block",
+          "kind": "table",
+          "columns": [
+            "Value",
+            "Label",
+            "Replaces"
+          ],
+          "rows": [
+            [
+              "95",
+              "Markets Screened and Scored",
+              ""
+            ],
+            [
+              "18",
+              "Country Playbooks Written",
+              ""
+            ]
+          ],
+          "note": "The turnover figure must come off every build, vision included. A published revenue number is checkable against filings, quotable by a competitor, and load-bearing for a lender. It is the one fabrication on this page with a legal edge to it"
+        }
+      ],
+      "notes": [
+        "Flag emoji need text. Every chip must carry the country name as real text with the flag as decoration, aria-hidden=\"true\". Flag emoji render inconsistently across platforms and carry no meaning to a crawler.",
+        "GEO. Ports and transit days are the strongest generative-engine signal available — checkable, specific, and unpublished by any Indian competitor. If the design cannot fit them, keep them in a title attribute rather than dropping them.",
+        "Internal link. One, from the section to /export. Combined with the homepage and section 04, that gives the orphaned export page three inbound links.",
+        "Schema. areaServed on the homepage ContactPoint carries the country list. Do not create a second geo node.",
+        "Vision-build guard. On the buyer-facing build this H2 reads “95 markets screened. None live yet.” and the tier-1 chips are labelled opening first. The research is true today; the shipments are not."
+      ]
+    },
+    {
+      "num": "10",
+      "title": "Certifications",
+      "chip": "Rewrite",
+      "live": "LIVE H2 → Internationally Recognised Quality. · six badges and four named auditors — Bureau Veritas, TÜV SÜD, SGS India, FIEO · Margo’s certificate is issued by none of them",
+      "fields": [
+        {
+          "label": "H2 — 2 lines",
+          "kind": "heading",
+          "lines": [
+            "What We Hold,",
+            "and What Is Still Coming."
+          ],
+          "accent": [
+            "and What Is Still Coming."
+          ],
+          "value": "What We Hold, and What Is Still Coming.",
+          "note": "7 words · live is 3"
+        },
+        {
+          "label": "Cards ×5",
+          "kind": "table",
+          "columns": [
+            "Badge",
+            "Title"
+          ],
+          "rows": [
+            [
+              "ISO 9001:2015 (Approved)",
+              "Quality Management System — certificate 09111526A, Integral Certification Ltd, valid to 21 February 2027, scope covering moulded rubber components"
+            ],
+            [
+              "IATF 16949:2016 (Upgrade in progress)",
+              "Automotive Quality — quality management system being upgraded to IATF 16949:2016, certification targeted by end 2026"
+            ],
+            [
+              "NORSOK M-710 / API (Qualification in progress)",
+              "Oil & Gas Elastomer Qualification — qualification programme under way, targeted 2027"
+            ],
+            [
+              "ISO 14001:2015 (Upgrade in progress)",
+              "Environmental Management — management system being upgraded, certification targeted 2027"
+            ],
+            [
+              "ISO 45001:2018 (Upgrade in progress)",
+              "Occupational Health & Safety — management system being upgraded, certification targeted 2027"
+            ]
+          ],
+          "note": "Five badges, down from six. Build this as one shared component and render it here and on /products from a single record — two pages disagreeing about certifications is exactly the defect that put /why-margo and /certifications at odds. One row is held and four are in progress; every status is client-instructed. IATF 16949 is client-instructed, 2026-09-01 — the quality management system is being upgraded to IATF 16949:2016 with certification targeted by end 2026. The badge reads (Upgrade in progress) and the wording is identical on /products, /certifications and /industries/automotive. All four non-ISO-9001 rows are client-instructed, 2026-09-01 — IATF 16949 targeted end 2026, and ISO 14001, ISO 45001 and NORSOK/API targeted 2027. The status is inside the badge at the same type size as the standard number, never smaller and never a lighter grey, so a badge cannot be read as a held certification. Only ISO 9001:2015 carries a certificate number, which is the visual difference between held and in progress"
+        },
+        {
+          "label": "Removed badges",
+          "kind": "table",
+          "columns": [
+            "Live badge",
+            "Why"
+          ],
+          "rows": [
+            [
+              "",
+              "A declaration, not a certification. No notified body. Composition declarations are produced per part on request — that is a different sentence."
+            ],
+            [
+              "",
+              "“Certified” is the wrong word entirely; there is no RoHS certificate. Same treatment as REACH."
+            ],
+            [
+              "",
+              "Specification systems Margo quotes against, not certifications held. Correct home is section 05, card 03."
+            ],
+            [
+              "",
+              "No record of this award. Margo had no export shipments in 2023."
+            ]
+          ]
+        },
+        {
+          "label": "Auditor strip",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Replaces Bureau Veritas · TÜV SÜD · SGS India · FIEO. Naming four certification bodies that have never audited Margo is the single most exposed claim on this page. Each is a real company with a public certificate register, a legal team and a trademark. It is checkable in one search, and it is their name being used, not Margo’s."
+          ],
+          "leads": [
+            "Naming four certification bodies that have never audited Margo is the single most exposed claim on this page."
+          ]
+        }
+      ],
+      "notes": [
+        "Shared component. This table and sheet 02 section 07 render from one data source. Certification content in two hand-maintained places drifts, and drift here is what a procurement auditor finds.",
+        "Schema. Only the ISO 9001:2015 row reaches hasCredential, and only on the homepage Organization. No In Progress row is emitted as structured data in any form.",
+        "Do not use certification-body logo marks. They are trademark-controlled and licensed by the certificate. A text badge carries the same information with none of the exposure — and on the live page, four of those marks belong to bodies with no relationship to Margo at all.",
+        "Heading levels. <h2> + five <h3>. Status bracket sits in the badge <p>, not the heading."
+      ]
+    },
+    {
+      "num": "11",
+      "title": "Sustainability",
+      "chip": "Cut or rebuild",
+      "live": "LIVE H2 → Green Manufacturing For a Better Planet. · carbon neutral by 2027, 60% renewable energy, 40% water reduction, 100% recyclable packaging, bio-based compound R&D, closed-loop water recycling · six claims, zero sources",
+      "fields": [
+        {
+          "label": "Cut the section",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Nothing in this section is sourced, and one true fact does not fill a section. The only environmental claim Margo can stand behind is material utilisation improved 20% after automation — and its natural home is section 07, where the other automation gains already sit.",
+            "Sustainability copy is also the easiest kind to disprove. “60% renewable energy” is answerable from an electricity bill. “Carbon neutral by 2027” is a public commitment with a date on it. For a supplier whose buyers are procurement engineers rather than consumers, this section earns almost nothing and risks the whole page’s credibility — a reader who catches one invented number stops believing the compound table too.",
+            "If the client wants it kept, the honest version is below. It is short, and it should be short."
+          ],
+          "leads": [
+            "Nothing in this section is sourced, and one true fact does not fill a section.",
+            null,
+            "If the client wants it kept"
+          ]
+        },
+        {
+          "label": "H2 — 2 lines",
+          "kind": "heading",
+          "lines": [
+            "Less Waste per Part,",
+            "Measured Not Promised."
+          ],
+          "accent": [
+            "Measured Not Promised."
+          ],
+          "value": "Less Waste per Part, Measured Not Promised.",
+          "note": "6 words · live is 6"
+        },
+        {
+          "label": "Body",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Automating compound mixing and cure control cut scrap: material utilisation improved 20% and cycle time fell 30%, which is less rubber and less energy for the same part. The plant is fully compliant with MIDC environmental and industrial norms. We have not set a carbon target and will not publish one until we can measure against it."
+          ],
+          "leads": [
+            "The plant is fully compliant with MIDC environmental and industrial norms."
+          ],
+          "note": "55 words · live is 30 · the last sentence is the section’s whole value — it is the only line here a competitor cannot also write"
+        },
+        {
+          "label": "Bars ×2",
+          "kind": "table",
+          "columns": [
+            "Value",
+            "Label",
+            "Replaces"
+          ],
+          "rows": [
+            [
+              "20%",
+              "Better material utilisation since automation",
+              ""
+            ],
+            [
+              "30%",
+              "Less production time per cycle",
+              ""
+            ]
+          ],
+          "note": "Two bars, not three. 100% recyclable packaging — Achieved comes off: packaging is HDPE bags and corrugated cartons, and HDPE recyclability depends on the receiving municipality, not on Margo"
+        },
+        {
+          "label": "Remove badge",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Carbon Neutral · Target: 2027 — a dated public commitment with no plan, no baseline and no measurement behind it. Of everything on this page, this is the claim most likely to be quoted back to Margo."
+          ],
+          "leads": [
+            null
+          ]
+        }
+      ],
+      "notes": [
+        "No search value either way. No verified term in the keyword map routes to a sustainability page for this category. Procurement engineers sourcing moulded rubber do not search for green credentials; they search for compounds, tolerances and lead times.",
+        "Progress bars need text. If the section stays, each bar is a <p> with the figure as real text plus role=\"img\" and an aria-label on the bar. A CSS-width-only bar is invisible to a crawler and to a screen reader.",
+        "Schema. None. Do not use award or hasCredential for environmental claims.",
+        "If cut: move the 20% utilisation figure into section 07’s equipment list and delete the route. Page drops ~676px and loses nothing."
+      ]
+    },
+    {
+      "num": "12",
+      "title": "Numbers & testimonial",
+      "chip": "Rewrite",
+      "live": "LIVE H2 → The Numbers Speak Clearly. · <0.1% defect, 48 hrs sample, 400+ compounds, 27 yrs · testimonial published with “Attribution pending client sign-off” visible on the page",
+      "fields": [
+        {
+          "label": "H2 — 2 lines",
+          "kind": "heading",
+          "lines": [
+            "The Numbers",
+            "Speak Clearly."
+          ],
+          "accent": [
+            "Speak Clearly."
+          ],
+          "value": "The Numbers Speak Clearly.",
+          "note": "Unchanged — the heading is fine, all four numbers under it are not"
+        },
+        {
+          "label": "Stat cards ×4",
+          "kind": "table",
+          "columns": [
+            "Value",
+            "Label",
+            "Sub-label",
+            "Replaces"
+          ],
+          "rows": [
+            [
+              "<1%",
+              "Target Rejection Rate",
+              "Post-automation",
+              ""
+            ],
+            [
+              "48 hrs",
+              "Quotation Turnaround",
+              "Feasibility report included",
+              ""
+            ],
+            [
+              "8",
+              "Compounds Mixed In-House",
+              "AEM to natural rubber",
+              ""
+            ],
+            [
+              "95%",
+              "Repeat Order Rate",
+              "10+ year average relationship",
+              ""
+            ]
+          ],
+          "note": "48 hrs was attached to the wrong thing. Live it reads as a sample lead time; the real 48 hours is the quotation, and a sample is two weeks. Promising a 48-hour sample sets up a broken promise on the first order. 400+ compounds is off by a factor of fifty — eight polymer families, formulated per application, is the actual and better claim. Fastest in the industry is unprovable and comes off"
+        },
+        {
+          "label": "Testimonial",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Replace the whole block with a reference-check offer:",
+            "Replaces a testimonial from an unnamed “Procurement lead, European energy OEM” carrying the visible string “Attribution pending client sign-off”. This is the same wording /case-studies already uses, and the same fix Phase 3 applied to /why-margo — three places, one sentence, build it once.",
+            "A named reference offered on request is worth more to a procurement buyer than an anonymous quote, because the buyer can act on it. An anonymous quote is worth approximately nothing, and one that admits its own attribution is unsigned is worth less than nothing."
+          ],
+          "leads": [
+            "Replace the whole block with a reference-check offer:",
+            null,
+            null
+          ]
+        }
+      ],
+      "notes": [
+        "Schema. Do not emit Review or AggregateRating. An unattributed testimonial in structured data is a rich-results violation and, per the AI-citation audit, a reason to drop the source entirely.",
+        "Consistency gate. 48 hrs must mean quotation on every surface. Live, the site publishes 24 hours, 1 business day, 2 business days, 3 business days and <4 hours SLA for the same promise across five pages.",
+        "Heading levels. <h2>; stat values <p>; the reference block <h3>.",
+        "Numbers with sub-labels are more citable than numbers alone. “95% — repeat order rate — 10+ year average relationship” answers a question; “27 yrs — client trust” answers none."
+      ]
+    },
+    {
+      "num": "13",
+      "title": "Milestones",
+      "chip": "Draft — years need sign-off",
+      "live": "LIVE H2 → 27 Years of Milestones. · seven dated entries: 1997, 2002, 2008, 2013, 2018, 2022, 2024 · not one of the seven dates is verified, and the first one is wrong",
+      "fields": [
+        {
+          "label": "H2 — 2 lines",
+          "kind": "heading",
+          "lines": [
+            "Twenty Years of",
+            "Milestones."
+          ],
+          "accent": [
+            "Milestones."
+          ],
+          "value": "Twenty Years of Milestones.",
+          "note": "Live says 27 years from a 1997 founding. From 2005, it is 20 · eleven entries now, up from seven, so the two- and three-year gaps carry a continuous timeline rather than a decade-wide jump"
+        },
+        {
+          "label": "Entries ×11",
+          "kind": "table",
+          "columns": [
+            "Year",
+            "Title",
+            "Body",
+            "Status"
+          ],
+          "rows": [
+            [
+              "2005",
+              "Founded",
+              "Margo Rubber Products established in Nashik as a compression-moulding workshop.",
+              "Verified"
+            ],
+            [
+              "First ISO 9001 certification",
+              "Quality management system independently audited and certified for moulded rubber components."
+            ],
+            [
+              "First automotive OEM programme",
+              "Moulded sealing and vibration components qualified into a Tier-1 automotive supply chain."
+            ],
+            [
+              "Compound mixing brought in-house",
+              "Formulation moved off the shelf and onto our own mixing floor, across the polymer families we run today."
+            ],
+            [
+              "AEM programme with Mahindra & Mahindra",
+              "AEM formulations qualified for engine and transmission applications — still our signature compound."
+            ],
+            [
+              "In-house test laboratory commissioned",
+              "Durometer, ODR rheometer, tensile machine, ageing oven and compression-set rig brought on site, each on a calibration cycle."
+            ],
+            [
+              "Extrusion line commissioned",
+              "Continuous-cure extrusion added, widening the catalogue beyond moulded parts to profiles, cords and channels."
+            ],
+            [
+              "Twenty-four accounts across seven sectors",
+              "Customer base spanning automotive, industrial machinery, electrical, specialist vehicles, medical, chemicals and tooling."
+            ],
+            [
+              "New plant, automated during the move",
+              "From 6,000 sq ft and 200,000 parts a month to 10,000+ sq ft and five million installed — automated presses, digital curing ovens, IoT monitoring and centralised ERP."
+            ],
+            [
+              "Sponge, foam and self-adhesive tape line",
+              "Cellular elastomers and converted foam tape added as the twelfth production line, taking the website catalogue to eleven categories."
+            ],
+            [
+              "Export programme opened",
+              "Ninety-five markets screened and scored, eighteen country playbooks written, five lanes set for activation."
+            ]
+          ],
+          "note": "2008 · Proposed · 2010 · Proposed · 2013 · Proposed · 2015 · Proposed · 2018 · Proposed · 2020 · Proposed · 2023 · Proposed · 2026 · Proposed · 2026 · Proposed · 2026 · Proposed · DO NOT PUBLISH THE PROPOSED YEARS AS-IS."
+        },
+        {
+          "label": "Removed entries",
+          "kind": "table",
+          "columns": [
+            "Live entry",
+            "Why"
+          ],
+          "rows": [
+            [
+              "",
+              "Founding year is 2005. Headcount and press count unsourced."
+            ],
+            [
+              "",
+              "Margo has no completed export shipments. This entry describes something that has not happened yet."
+            ],
+            [
+              "",
+              "Solar generation, closed-loop water recycling and recyclable packaging — see section 11, none sourced."
+            ]
+          ]
+        }
+      ],
+      "notes": [
+        "Markup. <ol> — a timeline is genuinely ordered. Each <li> carries <time datetime=\"YYYY\">, which is what makes the date machine-readable rather than styled text.",
+        "Carousel crawlability. The live timeline is a 1-of-7 carousel; this one runs to eleven. All eleven entries must be in the DOM at first paint, hidden by CSS. Ten of eleven milestones vanish from the crawl otherwise — and this is the section an assistant reads to answer “how long has Margo been manufacturing?”.",
+        "Schema. foundingDate on the homepage Organization carries the only date that matters for entity resolution. Do not emit an Event node per milestone; they are not events anyone can attend.",
+        "A short true timeline beats a long invented one. Two verified entries read as a young, honest company. Eleven unverified ones read as an old, dishonest one the moment a buyer checks the ISO certificate’s issue date against the year on the page. The draft years exist to be corrected, not to fill the carousel."
+      ]
+    },
+    {
+      "num": "14",
+      "title": "Client strip",
+      "chip": "Rewrite",
+      "live": "LIVE → L&T, Tata Motors, Bosch India, BHEL, Siemens, ABB, Mahindra, Samsung Engineering · a different fabricated set from the homepage’s eleven — two pages naming two different customer lists, neither real",
+      "fields": [
+        {
+          "label": "Eyebrow",
+          "kind": "lit",
+          "value": "TWENTY-FOUR NAMED ACCOUNTS ACROSS SEVEN SECTORS"
+        },
+        {
+          "label": "Names ×8",
+          "kind": "table",
+          "columns": [
+            "Name",
+            "Sector",
+            "Replaces"
+          ],
+          "rows": [
+            [
+              "Mahindra & Mahindra",
+              "Automotive",
+              "Mahindra — corrected to the full legal name"
+            ],
+            [
+              "Tata",
+              "Automotive",
+              "Tata Motors — profile says Tata, not Tata Motors"
+            ],
+            [
+              "Hyundai",
+              "Automotive",
+              ""
+            ],
+            [
+              "Victor Reinz",
+              "Auto components",
+              ""
+            ],
+            [
+              "IDEX India",
+              "Industrial machinery",
+              ""
+            ],
+            [
+              "Shakti Mining Equipments",
+              "Heavy engineering",
+              ""
+            ],
+            [
+              "Starlite Lighting",
+              "Electrical",
+              ""
+            ],
+            [
+              "Minerva Special Purpose Vehicle",
+              "Specialist vehicles",
+              ""
+            ]
+          ]
+        },
+        {
+          "label": "Trade mark line",
+          "kind": "lit",
+          "value": "Trade marks shown are the property of their respective owners and appear\nsolely to identify commercial supply relationships.",
+          "note": "CONFIRM — logo permission per account. Text wordmarks until it lands · CONFIRM"
+        }
+      ],
+      "notes": [
+        "One source list, two presentations. The 24-account list is the single source; the homepage renders all of it as a marquee, this page renders the top eight as a grid. What must never differ is which names are allowed — live, the two pages name two entirely different fabricated sets.",
+        "Static grid, so no marquee caveat here. Eight names as real text in eight <li> elements. The marquee cloning rule applies only to the homepage strip.",
+        "Do not emit as Organization.customer. Unverifiable supply relationships in structured data are an answer-set-exclusion risk.",
+        "Naming a customer who is not one carries more than reputational risk. These are eight real companies with trademarks and legal teams, and the claim is checkable by any of them in one search."
+      ]
+    },
+    {
+      "num": "15",
+      "title": "Closing CTA",
+      "chip": "Tune",
+      "live": "LIVE H2 → Ready to Engineer Something Great? · single email field · promises a 24-hour quotation, which contradicts the 48-hour commitment used elsewhere",
+      "fields": [
+        {
+          "label": "H2 — 2 lines",
+          "kind": "heading",
+          "lines": [
+            "Send a Drawing,",
+            "or Send the Part."
+          ],
+          "accent": [
+            "or Send the Part."
+          ],
+          "value": "Send a Drawing, or Send the Part.",
+          "note": "6 words · live is 5 · names the two things Margo actually accepts, and echoes the founder quote in section 06"
+        },
+        {
+          "label": "Body",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Our engineering team replies within one business day. A full quotation and feasibility report follows inside 48 hours, with a compound recommendation and a lead time."
+          ],
+          "leads": [
+            "A full quotation and feasibility report follows inside 48 hours"
+          ],
+          "note": "27 words · live is 21"
+        },
+        {
+          "label": "Field",
+          "kind": "lit",
+          "value": "your@company.com [ Request Quotation → ]",
+          "note": "Unchanged single-field pattern — correct for a closing CTA. The full seven-field form lives on /contact and /products"
+        },
+        {
+          "label": "Assurance chips ×3",
+          "kind": "table",
+          "columns": [
+            "Replacement",
+            "Replaces"
+          ],
+          "rows": [
+            [
+              "Reply in one business day",
+              ""
+            ],
+            [
+              "Quotation and feasibility report in 48 hours",
+              ""
+            ],
+            [
+              "Design-for-manufacture review at no cost",
+              "Free technical consultation — sharpened"
+            ]
+          ],
+          "note": "No obligation is a phrase that only appears where obligation was a live question. It belongs on a consumer page, not a B2B RFQ"
+        }
+      ],
+      "notes": [
+        "Response-time consistency. The site publishes five different values for the same promise across five pages: <4 hours, 24 hours, 1 business day, 2 business days, 3 business days. One string, everywhere: reply in one business day, quotation in 48 hours.",
+        "Form. <label> bound (visually hidden is fine), type=\"email\", autocomplete=\"email\", required. The live placeholder is doing the label’s job, which fails the moment the field has content in it.",
+        "Success state. “Received. A quotation follows within 48 hours to {email}.” No form on the site has confirmation copy.",
+        "Analytics. Named conversion event on submit. Three RFQ entry points on the site, zero events wired.",
+        "Schema. None. ContactPoint lives on the homepage node."
+      ]
+    },
+    {
+      "num": "16",
+      "title": "Footer",
+      "chip": "Rewrite",
+      "live": "LIVE → 50+ countries, © 2024, and the wrong legal entity · Products column shows 9 of 11 categories · /export appears nowhere",
+      "fields": [
+        {
+          "label": "Wordmark",
+          "kind": "lit",
+          "value": "MARGO\nRUBBER PRODUCTS"
+        },
+        {
+          "label": "Description",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "ISO 9001:2015 certified manufacturer of precision moulded and extruded rubber components in Nashik, India. Sealing and anti-vibration parts to customer drawing, supplied to OEMs and distributors in 95 countries."
+          ],
+          "leads": [
+            null
+          ],
+          "note": "29 words · live is 26 · opens with the entity definition, since the footer repeats on all 40 pages"
+        },
+        {
+          "label": "NAP block",
+          "kind": "lit",
+          "value": "+91 96655 79276\ninfo@margorubber.in\nSRNO. 4494/10, behind Furniture Stop,\nopposite Samarth Dies, Vilholi,\nNashik, Maharashtra 422010, India",
+          "note": "Client-confirmed 2026-09-01 — this exact string, on all 40 pages, in the PostalAddress node and on the Google Business Profile. The landmarks are part of the address and stay in; B-12, MIDC Ambad is wrong and comes off the site. The company name is not repeated inside the address line — the wordmark above it already carries it"
+        },
+        {
+          "label": "Column 1 — Products",
+          "kind": "lit",
+          "value": "SEALING\nO-Rings · Oil Seals · Gaskets · Diaphragms · Reciprocating Seals · Leak Test Rubber\nMOUNTING & PROTECTION\nAnti-Vibration Mounts · Bushes & Bushings · Bonded Components · Bellows · Grommets · Pads, Stoppers & Caps\nSHEET & PROFILE\nExtrusion Profiles · Sponge & Foam Rubber · Rubber Lining & Skirting",
+          "note": "15 entries in three groups, up from 11. Adds Diaphragms, Bonded Components, Rubber Lining & Skirting and Reciprocating Seals (sheets 36–39), plus /products/extrusion and /products/sponge-foam-rubber, which had no sitewide inbound link at all. The column was designed for eleven and fifteen flat is not readable, so it is grouped — Sealing (6), Mounting & protection (6), Sheet & profile (3). The third group is also the commercial split: those three are quoted by length or area rather than by piece count, per sheets 18, 38 and 40. “Seals” is labelled “Reciprocating Seals” so it is not read as a parent of O-Rings and Oil Seals — sheet 39 §02 explains why. Group labels are <p> or <div>, never headings — three more phantom sections is not an improvement on one"
+        },
+        {
+          "label": "Column 2 — Industries",
+          "kind": "lit",
+          "value": "Automotive · Mining · Oil & Gas · Pumps & Valves · HVAC ·\nElectrical & Electronics · Agriculture · Medical Devices ·\nWater & Fluid Management · Construction · Transport — Rail & Marine",
+          "note": "11 entries, up from 9 — adds Construction (sheet 41) and Transport — Rail & Marine (sheet 42), the first two of the six “additional sectors” on sheet 05 to earn a URL. Automotive still leads, matching real volume. 🛑 The live footer’s four industry links all resolve to the same /industries/ The full twenty-six-row footer link map is in sheet 01_Homepage.html, footer section — fifteen product links and eleven industry links, with the three label/slug mismatches called out. — adding two entries to a column whose links are broken makes eleven broken links, so fix the routing in this same commit"
+        },
+        {
+          "label": "Column 3 — Company",
+          "kind": "lit",
+          "value": "About Us · Certifications · Export Markets · Case Studies ·\nResources · Contact Us",
+          "note": "6 entries · Export Markets is new and fixes the orphaned /export page · Why Choose Us comes out — that page is recommended for deletion, its job is done better by /certifications and /export"
+        },
+        {
+          "label": "CTA lines",
+          "kind": "lit",
+          "value": "Ready to source precision rubber components?\nQuotation from our engineering team within 48 hours.\n[ Request Quote → ]",
+          "note": "“within 24 hours” becomes 48 hours. The footer CTA is the fastest of the six response times published on this site, and it contradicts the page body on /contact, /industries and /export. One constant, rendered everywhere"
+        },
+        {
+          "label": "Legal line",
+          "kind": "lit",
+          "value": "© 2026 Margo Rubber Products. All rights reserved.\nPrivacy Policy · Terms & Conditions · Disclaimer\nISO 9001:2015 · Certificate 09111526A · Integral Certification Ltd",
+          "note": "Fixes © 2024 and Margo Rubber Industries Pvt. Ltd. — GSTIN 27AAKFM8595Q1Z1 embeds PAN AAKFM8595Q, whose 4th character F denotes a firm, not a company. Pvt. Ltd. is positively excluded. The ISO line gains the certificate number and the issuer, which makes it checkable on all 40 pages instead of decorative"
+        }
+      ],
+      "notes": [
+        "What matters on this page: the footer is where Margo Rubber Industries Pvt. Ltd. appears in the copyright line while the body copy above says Margo Rubber Products. On the About page specifically a reader is looking for exactly this — who the company legally is — and the page answers it two different ways on one screen.",
+        "The certificate number in the legal line and the certifications block in section 10 must agree. Both now read certificate 09111526A, Integral Certification Ltd. Render both from one record.",
+        "Build once, ships forty times. This is one component. The copy above is written out in full on every sheet in this set so nobody has to open two files to build one block, but it is authored once in the codebase.",
+        "Heading levels. The column labels (PRODUCTS / INDUSTRIES / COMPANY) are <h2> in the live build. As visible <h2>s they inject three phantom sections into every document outline on the site. Change to <p class=\"col-label\">.",
+        "Link equity. 26 sitewide links from here. Adding /export, /products/extrusion and /products/sponge-foam-rubber gives three orphaned or under-linked URLs a sitewide inbound link each — the cheapest internal-linking win available on this site.",
+        "NAP markup. Wrap in <address>. Phone as <a href=\"tel:+919665579276\">, email as <a href=\"mailto:info@margorubber.in\">. The visible string and the href must not diverge.",
+        "Schema. The footer emits nothing. The Organization node on the homepage is the single entity definition and every other page @id-references it. Repeating an Organization block per page creates 40 competing entities.",
+        "Copyright year. Render from new Date().getFullYear(), not a literal. It has read 2024 for eight months."
+      ]
+    }
+  ]
+}

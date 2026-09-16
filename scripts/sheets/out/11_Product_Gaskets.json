@@ -1,0 +1,779 @@
+{
+  "file": "11_Product_Gaskets.html",
+  "title": "Gaskets Page Content Sheet",
+  "kicker": "Margo Rubber Products · /products/gaskets · Vision Build · Sheet 11 of 12",
+  "head": {
+    "title": "Rubber Gasket Manufacturer India | ASME B16.21, EN 1514 | Margo",
+    "description": "Moulded and die-cut rubber gaskets from Nashik, India to ASME B16.21, EN 1514-1 and JIS B2404 in FKM, NBR, EPDM, silicone, AEM and EPDM sponge. Cut to print. Quote in 48 hours."
+  },
+  "sections": [
+    {
+      "num": "01",
+      "title": "Hero",
+      "chip": "Rewrite",
+      "live": "LIVE H1 → Custom Rubber Gaskets · no geo · the subhead names four standards, three of which are wrong · the fourth stat is an MOQ",
+      "fields": [
+        {
+          "label": "Eyebrow",
+          "kind": "lit",
+          "value": "ISO 9001:2015 CERTIFIED · NASHIK, INDIA",
+          "note": "[no change — carries certification and geo, which most eyebrows on this site do not]"
+        },
+        {
+          "label": "H1 — 2 lines",
+          "kind": "heading",
+          "lines": [
+            "Custom Rubber Gaskets,",
+            "Manufactured in India"
+          ],
+          "accent": [
+            "Manufactured in India"
+          ],
+          "value": "Custom Rubber Gaskets, Manufactured in India",
+          "note": "5 words · live is 3 · carries the verified head term. “Custom Rubber Gaskets” alone competes with every gasket cutter on the internet; the geo clause is what separates it"
+        },
+        {
+          "label": "Subhead",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Margo Rubber Products moulds and die-cuts rubber gaskets to ASME B16.21, EN 1514-1 and JIS B2404 at its ISO 9001:2015 certified plant in Nashik, India — flange, enclosure, sponge and cut-to-print profiles in eight compounds. Tolerance follows ISO 3302-1 and the section."
+          ],
+          "leads": [
+            "Margo Rubber Products moulds and die-cuts rubber gaskets to ASME B16.21, EN 1514-1 and JIS B2404 at its ISO 9001:2015 certified plant in Nashik, India"
+          ],
+          "note": "43 words · live is 21 · entity, process, standards and geo in the first clause. Every standard number changes — see the standards banner above; the live line names three that do not apply to rubber"
+        },
+        {
+          "label": "Hero CTA",
+          "kind": "lit",
+          "value": "Send a Gasket Drawing ↗ /contact",
+          "note": "The slot renders nothing on this page. The same hero component populates it on /products/o-rings, so this is filling an existing slot, not adding a component. A category page with no call to action asks the buyer to find their own way out"
+        },
+        {
+          "label": "Stats ×4",
+          "kind": "table",
+          "columns": [
+            "Value",
+            "Label",
+            "Replaces"
+          ],
+          "rows": [
+            [
+              "ASME · EN · JIS",
+              "Flange standards",
+              ""
+            ],
+            [
+              "Moulded · Die-cut",
+              "Processes",
+              "[no change]"
+            ],
+            [
+              "8 compounds",
+              "Mixed in-house",
+              ""
+            ],
+            [
+              "17.9 M",
+              "Components a year",
+              ""
+            ]
+          ],
+          "note": "Four stats, four stats — no count change. Stat 1 drops API and DIN and adds EN, so the card matches what the page actually manufactures to. Stat 3 stops listing four compounds when nine panels follow in section 03. Stat 4 replaces the MOQ, which is a barrier printed at the top of a page whose job is to open an enquiry"
+        }
+      ],
+      "notes": [
+        "Heading. The page’s only <h1>. Two <span> lines inside one <h1>, not two headings.",
+        "Head term placement. rubber gasket manufacturer India resolves across the H1 and the first clause of the subhead. Both title and H1 now carry it; the live page carries it in neither.",
+        "Breadcrumb goes above the eyebrow. Home › Products › Gaskets, marked up as BreadcrumbList. No category page has one, so every one of the eleven is currently two clicks deep with no visible path back.",
+        "Stat markup. <dl> pairs, value in <dd>, label in <dt>. Not four <div>s of loose text — the pairing is what makes them extractable.",
+        "17.9 M is a computed figure, cross-checked twice against the sector volumes in the company profile. It is the same number used on the homepage and the about page. One source, one string.",
+        "Image alt. The hero has no image. If one is added, alt describes the part, not the brand: “Moulded EPDM flange gaskets at Margo Rubber Products, Nashik”."
+      ]
+    },
+    {
+      "num": "02",
+      "title": "Specification reference",
+      "chip": "5 rows become 9",
+      "live": "LIVE H2 → Materials & Standards · five rows, four columns · three of the four standards cited are wrong for rubber · the filter chips include AS568, which is an O-ring size standard",
+      "fields": [
+        {
+          "label": "Add four rows",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "The live table renders five rows. This section specifies nine. The developer must add four rows — AEM, neoprene, SBR and natural rubber — and the component should take an arbitrary list rather than a fixed five. Columns stay at four and the filter chips stay at five, so nothing else about the component changes."
+          ],
+          "leads": [
+            "nine"
+          ]
+        },
+        {
+          "label": "Eyebrow",
+          "kind": "lit",
+          "value": "02 · SPECIFICATION REFERENCE",
+          "note": "[no change]"
+        },
+        {
+          "label": "H2",
+          "kind": "heading",
+          "lines": [
+            "Gasket Materials and Standards"
+          ],
+          "accent": [],
+          "value": "Gasket Materials and Standards",
+          "note": "4 words · live is 3 · adds the head noun, so the heading is about gaskets rather than about materials in general"
+        },
+        {
+          "label": "Intro",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Standards are named by number, not paraphrased. Select the compound by media and service temperature, then confirm the flange or enclosure standard your drawing calls out. Dimensional standards govern the gasket outline; ASTM D2000 and D1056 govern the compound itself."
+          ],
+          "leads": [
+            "Select the compound by media and service temperature, then confirm the flange or enclosure standard your drawing calls out."
+          ],
+          "note": "42 words · live is 32 · the second sentence is new and answers the question the table cannot: why two different kinds of standard appear in one column"
+        },
+        {
+          "label": "Filter chips ×5",
+          "kind": "table",
+          "columns": [
+            "Chip",
+            "Replaces"
+          ],
+          "rows": [
+            [
+              "All standards",
+              "All Standards"
+            ],
+            [
+              "ASME",
+              ""
+            ],
+            [
+              "EN",
+              ""
+            ],
+            [
+              "JIS",
+              "JIS"
+            ],
+            [
+              "ASTM",
+              ""
+            ]
+          ],
+          "note": "Five chips, five chips — no count change. AS568 is an O-ring size standard and filters nothing on a gasket page. DIN goes because the DIN standard this page cited is withdrawn. ISO goes because no row is filtered by a bare ISO number once ISO 3302-1 moves to the footnote"
+        },
+        {
+          "label": "Search field",
+          "kind": "lit",
+          "value": "Filter by compound or application",
+          "note": "Replaces Filter by ID or dimension — this table has no ID and no dimension column, so the live placeholder describes a table that is not there"
+        },
+        {
+          "label": "Table — 9 rows",
+          "kind": "table",
+          "columns": [
+            "Compound",
+            "Standard reference",
+            "Temperature range",
+            "Typical service"
+          ],
+          "rows": [
+            [
+              "AEM (Vamac®)",
+              "ASTM D2000",
+              "−40 °C to +175 °C",
+              "Engine and transmission cover joints, hot oil-side sealing"
+            ],
+            [
+              "FKM (Viton®)",
+              "ASME B16.21 · ASTM D2000",
+              "−20 °C to +250 °C\ncontinuous to +200 °C",
+              "Chemical, fuel and petrochemical flange joints"
+            ],
+            [
+              "NBR (Nitrile)",
+              "ASME B16.21 · ASTM D2000",
+              "−30 °C to +120 °C",
+              "Oil and fuel flange joints, pump and gearbox housings"
+            ],
+            [
+              "EPDM",
+              "ASME B16.21 · EN 1514-1 · JIS B2404",
+              "−40 °C to +140 °C",
+              "Water, steam, brake fluid and weather sealing"
+            ],
+            [
+              "Silicone (VMQ)",
+              "ASTM D2000",
+              "−60 °C to +220 °C",
+              "High-temperature enclosures, lighting, food-contact grades on request"
+            ],
+            [
+              "Neoprene (CR)",
+              "ASME B16.21 · ASTM D2000",
+              "−40 °C to +120 °C",
+              "HVAC, refrigerant lines, duty where flame retardancy is specified"
+            ],
+            [
+              "SBR",
+              "ASTM D2000",
+              "−30 °C to +100 °C",
+              "Water and mild-service static joints"
+            ],
+            [
+              "Natural rubber (NR)",
+              "ASTM D2000",
+              "−20 °C to +90 °C",
+              "Joints that also damp; abrasion-side covers"
+            ],
+            [
+              "EPDM sponge / hard foam",
+              "ASTM D1056",
+              "−40 °C to +140 °C",
+              "C-pillar garnish, trim, cabinet and enclosure sealing"
+            ]
+          ],
+          "note": "Nine rows, up from five. Every temperature range matches the homepage compound table, which is the single source for the site. Both were settled on the homepage sheet, 2026-09-03, and the resolution is carried here — FKM publishes +250 °C with continuous to +200 °C beneath it, AEM +175 °C with continuous to +160 °C. The peak stays the headline figure and the continuous figure is stated, so neither reads as a service rating it cannot hold. The remaining question is a grade question for Margo, not a table question"
+        },
+        {
+          "label": "Footnote",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Showing 9 of 9 entries. Dimensional conformity to ISO 3302-1, class M1 to M4 for moulded gaskets and E1 to E3 for extruded and die-cut sections, as recorded on the drawing. Ranges are typical values for the compound family and are not a specification for a particular part — see our technical disclaimer. Non-catalogue sizes and profiles made to print."
+          ],
+          "leads": [
+            "Dimensional conformity to ISO 3302-1, class M1 to M4 for moulded gaskets and E1 to E3 for extruded and die-cut sections, as recorded on the drawing."
+          ],
+          "note": "55 words · live is 26 · the live footnote says “confirm against Margo’s compound datasheet”, which is a document a visitor cannot reach. The replacement names the tolerance standard, states the qualification, and links to the disclaimer page that now carries it in full"
+        }
+      ],
+      "notes": [
+        "Real <table> markup with <caption>Gasket compounds, standards and service temperatures</caption> and scope=\"col\" on every header. All nine rows in the DOM at first paint; filter with CSS, never unmount — a filtered-out row that leaves the DOM is a row no crawler and no assistant ever sees.",
+        "This table is the page’s AEO surface. A nine-row compound-by-standard-by-temperature grid is directly extractable and answers “what temperature can an EPDM gasket take” and “which rubber gasket for steam” in one pass.",
+        "Standard numbers are the highest-value tokens on this page. ASME B16.21 gasket manufacturer and EN 1514-1 rubber gasket India are procurement-grade searches with almost no Indian supplier competing for them. The live page spends that opportunity on three standards that do not apply.",
+        "Overflow. Four columns will not fit 375 px — overflow-x:auto on the wrapper, never on the body.",
+        "Sort controls stay. They are already keyboard-reachable buttons; keep them as <button> inside <th> with aria-sort.",
+        "Link the disclaimer beneath the table, anchor text technical disclaimer → /legal/disclaimer. That page currently carries eight placeholder sections while this table publishes engineering values; the full copy is written in sheet 08."
+      ]
+    },
+    {
+      "num": "03",
+      "title": "Material selection",
+      "chip": "4 panels become 9",
+      "live": "LIVE H2 → Which Material Do I Need? · a buyer question, but it does not say what the material is for · four compounds shown, all four ranges wrong, AEM and sponge absent",
+      "fields": [
+        {
+          "label": "Add five panels",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "The live accordion renders four panels. This section specifies nine. The developer must extend the component to take an arbitrary list — five new panels: AEM, neoprene, SBR, natural rubber and EPDM sponge. This is the same shared component as the O-rings and oil seals pages, so the fix lands on all eleven categories at once. If the Figma shows four, the Figma is short by five and needs the extra panels drawn."
+          ],
+          "leads": [
+            "nine"
+          ]
+        },
+        {
+          "label": "Eyebrow",
+          "kind": "lit",
+          "value": "03 · MATERIAL SELECTION",
+          "note": "[no change]"
+        },
+        {
+          "label": "H2",
+          "kind": "heading",
+          "lines": [
+            "Which Gasket Material Do I Need?"
+          ],
+          "accent": [],
+          "value": "Which Gasket Material Do I Need?",
+          "note": "6 words · live is 5 · one word added. The live heading is a good question with no subject — adding “gasket” is what makes it match the query a buyer actually types and lets the passage be retrieved on its own"
+        },
+        {
+          "label": "Intro",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Each compound has a distinct chemical compatibility profile and temperature ceiling. Name the medium, the operating temperature and the flange or joint class, and we will tell you which to specify."
+          ],
+          "leads": [
+            "Name the medium, the operating temperature and the flange or joint class, and we will tell you which to specify."
+          ],
+          "note": "30 words · live is 27 · replaces “Select the one that matches your medium, temperature, and pressure class” with an offer to do the selection, which is what a manufacturer is for"
+        },
+        {
+          "label": "Panels ×9",
+          "kind": "table",
+          "columns": [
+            "Compound",
+            "Temp range",
+            "Hardness",
+            "Body",
+            "Live"
+          ],
+          "rows": [
+            [
+              "EPDM",
+              "−40° to +140°C",
+              "40–90 Shore A",
+              "Ethylene propylene diene rubber, the default for water, steam, coolant and weather-exposed joints, with excellent ozone and UV resistance. The compound most gasket enquiries end up specifying. Not for petroleum oils.",
+              ""
+            ],
+            [
+              "NBR (Nitrile)",
+              "−30° to +120°C",
+              "40–90 Shore A",
+              "Nitrile butadiene rubber, the general-purpose industry standard. Outstanding resistance to petroleum oils and hydraulic fluids at moderate temperature, which makes it the usual choice for oil-side flange and housing joints.",
+              ""
+            ],
+            [
+              "FKM (Viton®)",
+              "−20° to +250°C\ncontinuous to 200°C",
+              "60–90 Shore A",
+              "Fluorocarbon rubber, the first choice for aggressive chemical environments. Resists petroleum oils, fuels and many solvents at sustained high temperature, and holds a joint where NBR would harden.",
+              ""
+            ],
+            [
+              "Silicone (VMQ)",
+              "−60° to +220°C",
+              "30–80 Shore A",
+              "Vinyl methyl silicone, the widest service range of the eight. Specified for enclosure, lighting and oven-side gaskets. Food-contact and biocompatible grades on request. Poor abrasion resistance — not a wear part.",
+              ""
+            ],
+            [
+              "AEM (Vamac®)",
+              "−40° to +175°C",
+              "50–80 Shore A",
+              "Ethylene acrylic elastomer. Our signature compound, supplied to Mahindra & Mahindra for engine and transmission applications. Holds compression-set stability where oil, heat and ozone act together — the condition that ends most cover-joint gaskets.",
+              "NEW PANEL"
+            ],
+            [
+              "Neoprene (CR)",
+              "−40° to +120°C",
+              "40–90 Shore A",
+              "Polychloroprene. Balanced across weather, refrigerants and moderate oil exposure, and the family we reach for when flame retardancy is specified. Common on HVAC and refrigerant-line joints.",
+              "NEW PANEL"
+            ],
+            [
+              "SBR",
+              "−30° to +100°C",
+              "40–90 Shore A",
+              "Styrene butadiene rubber. Abrasion resistance at low cost, for static joints in water and mild service. Not for oil or fuel contact.",
+              "NEW PANEL"
+            ],
+            [
+              "Natural rubber (NR)",
+              "−20° to +90°C",
+              "30–80 Shore A",
+              "Polyisoprene. The highest resilience of the eight, specified where a gasket also has to damp or take repeated closing loads. Not for oil, fuel or sustained heat.",
+              "NEW PANEL"
+            ],
+            [
+              "EPDM sponge / hard foam",
+              "−40° to +140°C",
+              "ASTM D1056 grade to drawing",
+              "Closed-cell expanded EPDM to ASTM D1056, classified by type, class and grade rather than Shore hardness — the grade sets the force needed for 25% compression deflection. Specified where a joint has to seal against a large gap or an uneven face, as on C-pillar garnish and cabinet doors.",
+              "NEW PANEL"
+            ]
+          ],
+          "note": "Nine panels. Panel order leads with EPDM, NBR and FKM because those three cover most gasket service; the live order leads with FKM, which is the least commonly specified of the three. Every range matches the homepage compound table, which governs across all eleven category pages. Body copy for the four live panels is kept close to the original where it is accurate — only the numbers change, plus a “not for” clause on EPDM and a service note on each"
+        },
+        {
+          "label": "Panel link",
+          "kind": "lit",
+          "value": "Read more",
+          "note": "[no change to the label]. It expands the panel in place; it does not navigate. Keep it a <button>, not an <a>"
+        }
+      ],
+      "notes": [
+        "Crawlability. All nine panels render in the DOM at first paint and collapse with CSS. An accordion that mounts its body on click publishes nine paragraphs to a browser and zero to a crawler — this is the single most common way a well-written technical page scores nothing.",
+        "Heading levels. The section heading is <h2>; each compound name is <h3> inside the panel. Nine <h3>s under one question <h2> is a clean, extractable outline.",
+        "The H2 is a literal buyer question, which is the AEO pattern. The passage under it should answer in the first 40 to 60 words, before the accordion starts — which is what the rewritten intro does.",
+        "Hardness for the sponge panel is not a Shore A band. ASTM D1056 classifies cellular rubber by type, class, suffix and grade, where the grade is the force for 25% compression deflection. Publishing a Shore A figure there would be a category error, so the field carries the classification instead.",
+        "FAQ schema. This section feeds two of the four FAQPage questions: “Which rubber gasket material should I use for steam?” and “What temperature can an EPDM gasket withstand?”. Answer text must match the visible copy word for word.",
+        "Shared component. This accordion renders identically on all eleven category pages. Extending it once to take a list fixes eleven pages, and the compound data should come from one source file, not eleven hand-maintained copies."
+      ]
+    },
+    {
+      "num": "04",
+      "title": "Parts in this category",
+      "chip": "Full list, no links",
+      "live": "LIVE H2 → 3 parts we make to order · three items, one of which is a compound name and one a single automotive trim part · each carries a “View part” link to a child URL",
+      "fields": [
+        {
+          "label": "Eyebrow",
+          "kind": "lit",
+          "value": "IN THIS CATEGORY",
+          "note": "[no change]"
+        },
+        {
+          "label": "H2",
+          "kind": "heading",
+          "lines": [
+            "Gaskets We Make to Order"
+          ],
+          "accent": [],
+          "value": "Gaskets We Make to Order",
+          "note": "5 words · live is 6 · states no count, which removes the pluralisation bug permanently. The live heading is rendered from array.length, so it reads “3 parts” here, “1 parts” on O-rings and “6 parts” on oil seals — one component, eleven pages, one broken plural"
+        },
+        {
+          "label": "Intro",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Each part below is manufactured to customer drawing, to a standard flange reference, or from a worn sample. Compound, hardness, thickness and outline are set from your specification, and full dimensional data is issued with the quotation."
+          ],
+          "leads": [
+            "Compound, hardness, thickness and outline are set from your specification, and full dimensional data is issued with the quotation."
+          ],
+          "note": "37 words · live is 27"
+        },
+        {
+          "label": "Cards ×22",
+          "kind": "table",
+          "columns": [
+            "Part name",
+            "Category",
+            "Availability"
+          ],
+          "rows": [
+            [
+              "Flange Gaskets",
+              "Gaskets",
+              "Made to order"
+            ],
+            [
+              "Full Face Gaskets",
+              "Gaskets",
+              "Made to order"
+            ],
+            [
+              "Inside Bolt Circle Gaskets",
+              "Gaskets",
+              "Made to order"
+            ],
+            [
+              "Die-Cut Sheet Gaskets",
+              "Gaskets",
+              "Made to order"
+            ],
+            [
+              "Moulded Rubber Gaskets",
+              "Gaskets",
+              "Made to order"
+            ],
+            [
+              "EPDM Gaskets",
+              "Gaskets",
+              "Made to order"
+            ],
+            [
+              "NBR Gaskets",
+              "Gaskets",
+              "Made to order"
+            ],
+            [
+              "FKM Gaskets",
+              "Gaskets",
+              "Made to order"
+            ],
+            [
+              "Silicone Gaskets",
+              "Gaskets",
+              "Made to order"
+            ],
+            [
+              "Neoprene Gaskets",
+              "Gaskets",
+              "Made to order"
+            ],
+            [
+              "Foam Gaskets",
+              "Gaskets",
+              "Made to order"
+            ],
+            [
+              "Sponge Rubber Gaskets",
+              "Gaskets",
+              "Made to order"
+            ],
+            [
+              "C-Pillar Garnish EPDM Hard Foam",
+              "Gaskets",
+              "Made to order"
+            ],
+            [
+              "Enclosure & Cabinet Door Gaskets",
+              "Gaskets",
+              "Made to order"
+            ],
+            [
+              "Junction Box Gaskets",
+              "Gaskets",
+              "Made to order"
+            ],
+            [
+              "Battery Box Gaskets",
+              "Gaskets",
+              "Made to order"
+            ],
+            [
+              "Headlamp & Tail Lamp Gaskets",
+              "Gaskets",
+              "Made to order"
+            ],
+            [
+              "Manhole & Cover Gaskets",
+              "Gaskets",
+              "Made to order"
+            ],
+            [
+              "Pump Casing Gaskets",
+              "Gaskets",
+              "Made to order"
+            ],
+            [
+              "Valve Body Gaskets",
+              "Gaskets",
+              "Made to order"
+            ],
+            [
+              "Rubber-to-Metal Bonded Gaskets",
+              "Gaskets",
+              "Made to order"
+            ],
+            [
+              "Cut-to-Print Gaskets",
+              "Gaskets",
+              "Made to order"
+            ]
+          ],
+          "note": "Same three fields the live card already renders — part name, category, availability. Three items become 22, and the three live entries are all kept. No View part link on any card, and no card links anywhere"
+        }
+      ],
+      "notes": [
+        "Build note — same card component, 3 items become 22. The grid takes a longer list; the card is unchanged apart from losing its link. No new section and no new field.",
+        "Remove the link from the card. The SKU child pages are 301-redirected to this category under the architecture decision, so a card that links anywhere points at a redirect. The list exists to show range, not to route.",
+        "Twenty-two part names is the point. Each is a phrase a buyer might search — flange gasket manufacturer India, silicone enclosure gasket supplier, EPDM sponge gasket cut to size — and together they tell an assistant what this category covers. Three items, one of them a single automotive trim part, told it almost nothing.",
+        "Card titles are <h3>, not links. The second line is a <p>.",
+        "All 22 names are client-confirmed, 2026-09-01. Rubber-to-metal bonding is confirmed as an in-house process, which clears the bonded-gasket entry, and Margo confirms it can make any part in rubber. Every name on this list is therefore a promise Margo can keep — which is the standard that removed fourteen invented parts from /industries.",
+        "Schema. The list goes in additionalProperty on the single Product node. Do not emit 22 separate Product nodes — they are variants of one category."
+      ]
+    },
+    {
+      "num": "05",
+      "title": "Commercial terms",
+      "chip": "Restructure",
+      "live": "LIVE H2 → Minimum Order & Lead Time · an MOQ in the heading, an MOQ row, and “Margo is geared for volume procurement” · lead times disagree with every other page on the site",
+      "fields": [
+        {
+          "label": "Eyebrow",
+          "kind": "lit",
+          "value": "05 · COMMERCIAL TERMS",
+          "note": "[no change]"
+        },
+        {
+          "label": "H2",
+          "kind": "heading",
+          "lines": [
+            "Lead Times and How We Quote"
+          ],
+          "accent": [],
+          "value": "Lead Times and How We Quote",
+          "note": "6 words · live is 4 · “Minimum Order & Lead Time” puts a banned term in a section heading, where it is also an anchor and a table-of-contents entry"
+        },
+        {
+          "label": "Intro",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Margo produces in bulk against OEM schedules. Send the flange standard or the outline drawing, the compound and the volume, and we will quote it. Minimum run is 10,000 pieces per part number, per compound, or quoted against the part where size or complexity sets the economics. Prototype and first-article lots sit outside the minimum and are quoted separately."
+          ],
+          "leads": [
+            "Send the flange standard or the outline drawing, the compound and the volume, and we will quote it."
+          ],
+          "note": "45 words · live is 34 · replaces “Margo is geared for volume procurement. If your project requires below-MOQ qualification samples…”, which states a minimum twice by implication and tells a prototype buyer they are below the floor before they have asked. The replacement is the founder’s own phrasing from the commercial terms, with the gasket inputs named"
+        },
+        {
+          "label": "Rows ×5",
+          "kind": "table",
+          "columns": [
+            "Row",
+            "Value",
+            "Sub-label",
+            "Replaces"
+          ],
+          "rows": [
+            [
+              "Quotation",
+              "48 hrs",
+              "With feasibility report",
+              ""
+            ],
+            [
+              "Prototype",
+              "48–72 hrs",
+              "From an approved drawing",
+              ""
+            ],
+            [
+              "Die-cut and catalogue profiles",
+              "3–4 weeks",
+              "Ex-works Nashik · 2 weeks express",
+              ""
+            ],
+            [
+              "Moulded and cut-to-print",
+              "3–4 weeks + tooling",
+              "Tooling lead time quoted per part",
+              ""
+            ],
+            [
+              "Packaging",
+              "Poly bag + card label",
+              "Bulk or interleaved on request",
+              "[no change to the value]"
+            ]
+          ],
+          "note": "Five rows, five rows — no count change. Lead times are corrected to the company standard. Live says 14–21 days for catalogue and 21–35 for custom; every other page on the site says 3–4 weeks standard with 2 weeks express. Three to four weeks is 21–28 days, so the live catalogue figure promises faster than the company delivers and the custom figure promises slower. One string, sitewide. The two row labels also change from “catalogue / custom” to “die-cut / moulded”, which is the distinction that actually drives the lead time on gaskets — a die-cut profile needs a cutting die, a moulded gasket needs a tool"
+        }
+      ],
+      "notes": [
+        "The section ID changes from #commercial to #lead-times, and the anchor label with it. An anchor named after a banned term is a banned term in the URL bar.",
+        "This is the highest-converting block on a category page. A buyer who has read the spec table and picked a compound arrives here to find out whether the timeline works. Answering that with a minimum order instead of a lead time loses them at the last step.",
+        "Goes in the FAQPage node: “What is the lead time for custom rubber gaskets?” and “How is a rubber gasket order quoted?” — both verified buyer questions from the fan-out research.",
+        "Consistency gate. 48 hrs quotation, 48–72 hrs prototype, 3–4 weeks standard, 2 weeks express. These four values appear on eleven category pages, the homepage, /contact and /export. They must render from one source, not be typed per page — that is how the site arrived at six different published response times.",
+        "Row markup. <dl> pairs or a real <table>. The value is the answer and the sub-label qualifies it, so the two must be programmatically associated, not two adjacent <div>s.",
+        "Shared component. This block renders identically on all eleven category pages, so removing the minimum-order row lands eleven times from one change — eleven of the forty-four minimum-order statements published across the site."
+      ]
+    },
+    {
+      "num": "06",
+      "title": "Enquiries",
+      "chip": "Tune",
+      "live": "LIVE H2 → Request Gasket Specs · two buttons · the body promises a response “within two working days”, which is the sixth different response time published on this site",
+      "fields": [
+        {
+          "label": "Eyebrow",
+          "kind": "lit",
+          "value": "06 · ENQUIRIES",
+          "note": "[no change]"
+        },
+        {
+          "label": "H2",
+          "kind": "heading",
+          "lines": [
+            "Request Gasket Specifications"
+          ],
+          "accent": [],
+          "value": "Request Gasket Specifications",
+          "note": "3 words · live is 3 · “Specs” spelled out. It is a heading, an anchor and a schema string, and the abbreviation costs a matched term for no space saved"
+        },
+        {
+          "label": "Body",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Send your drawing, flange standard or a sample of the part you are replacing, with the compound and the volume. Our engineering team responds within 48 hours with dimensional confirmation, the compound datasheet and a quotation."
+          ],
+          "leads": [
+            "Our engineering team responds within 48 hours with dimensional confirmation, the compound datasheet and a quotation."
+          ],
+          "note": "36 words · live is 34 · “within two working days” becomes 48 hours. The site publishes six different response times; two working days is the slowest-reading of them and contradicts the 48 hours promised on the homepage, the contact page and the commercial terms directly above this block. “A sample of the part you are replacing” is added because replacement gaskets arrive as worn parts far more often than as drawings"
+        },
+        {
+          "label": "Button 1",
+          "kind": "lit",
+          "value": "Send Enquiry",
+          "href": "/contact",
+          "note": "[no change]"
+        },
+        {
+          "label": "Button 2",
+          "kind": "lit",
+          "value": "Call Technical Sales",
+          "href": "tel:+919665579276",
+          "note": "[no change to the label]. The href must be a real tel: link and the digits must match the footer and the Organization node exactly"
+        },
+        {
+          "label": "Confirmation copy",
+          "kind": "lit",
+          "value": "Enquiry received. A named engineer replies within 48 hours to {email}.",
+          "note": "New string — it fills the existing post-submit state, which currently shows nothing. Neither form on the site has confirmation copy, so a buyer who submits a drawing has no evidence it arrived"
+        }
+      ],
+      "notes": [
+        "Schema. Emit nothing here. ContactPoint lives on the homepage Organization node and every page @id-references it. A second contact node per category page creates eleven competing entities.",
+        "Analytics. Named conversion event on submit and on the tel: click. Two RFQ forms on the site and zero events wired means no page on this site can currently be shown to convert.",
+        "Heading level. <h2>. The two buttons are <a> elements, not <div>s with click handlers — a handler on a div is invisible to a crawler and unreachable by keyboard.",
+        "The 48-hour promise is the site’s single most repeated commercial claim. It renders on the homepage, /contact, /export and all eleven category pages twice each. Render it from one constant."
+      ]
+    },
+    {
+      "num": "07",
+      "title": "Footer",
+      "chip": "Rewrite",
+      "live": "LIVE → 50+ countries, © 2024, and the wrong legal entity · Products column shows 9 of 11 categories · /export appears nowhere",
+      "fields": [
+        {
+          "label": "Wordmark",
+          "kind": "lit",
+          "value": "MARGO\nRUBBER PRODUCTS"
+        },
+        {
+          "label": "Description",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "ISO 9001:2015 certified manufacturer of precision moulded and extruded rubber components in Nashik, India. Sealing and anti-vibration parts to customer drawing, supplied to OEMs and distributors in 95 countries."
+          ],
+          "leads": [
+            null
+          ],
+          "note": "29 words · live is 26 · opens with the entity definition, since the footer repeats on all 40 pages"
+        },
+        {
+          "label": "NAP block",
+          "kind": "lit",
+          "value": "+91 96655 79276\ninfo@margorubber.in\nSRNO. 4494/10, behind Furniture Stop,\nopposite Samarth Dies, Vilholi,\nNashik, Maharashtra 422010, India",
+          "note": "Client-confirmed 2026-09-01 — this exact string, on all 40 pages, in the PostalAddress node and on the Google Business Profile. The landmarks are part of the address and stay in; B-12, MIDC Ambad is wrong and comes off the site. The company name is not repeated inside the address line — the wordmark above it already carries it"
+        },
+        {
+          "label": "Column 1 — Products",
+          "kind": "lit",
+          "value": "SEALING\nO-Rings · Oil Seals · Gaskets · Diaphragms · Reciprocating Seals · Leak Test Rubber\nMOUNTING & PROTECTION\nAnti-Vibration Mounts · Bushes & Bushings · Bonded Components · Bellows · Grommets · Pads, Stoppers & Caps\nSHEET & PROFILE\nExtrusion Profiles · Sponge & Foam Rubber · Rubber Lining & Skirting",
+          "note": "15 entries in three groups, up from 11. Adds Diaphragms, Bonded Components, Rubber Lining & Skirting and Reciprocating Seals (sheets 36–39), plus /products/extrusion and /products/sponge-foam-rubber, which had no sitewide inbound link at all. The column was designed for eleven and fifteen flat is not readable, so it is grouped — Sealing (6), Mounting & protection (6), Sheet & profile (3). The third group is also the commercial split: those three are quoted by length or area rather than by piece count, per sheets 18, 38 and 40. “Seals” is labelled “Reciprocating Seals” so it is not read as a parent of O-Rings and Oil Seals — sheet 39 §02 explains why. Group labels are <p> or <div>, never headings — three more phantom sections is not an improvement on one"
+        },
+        {
+          "label": "Column 2 — Industries",
+          "kind": "lit",
+          "value": "Automotive · Mining · Oil & Gas · Pumps & Valves · HVAC ·\nElectrical & Electronics · Agriculture · Medical Devices ·\nWater & Fluid Management · Construction · Transport — Rail & Marine",
+          "note": "11 entries, up from 9 — adds Construction (sheet 41) and Transport — Rail & Marine (sheet 42), the first two of the six “additional sectors” on sheet 05 to earn a URL. Automotive still leads, matching real volume. 🛑 The live footer’s four industry links all resolve to the same /industries/ The full twenty-six-row footer link map is in sheet 01_Homepage.html, footer section — fifteen product links and eleven industry links, with the three label/slug mismatches called out. — adding two entries to a column whose links are broken makes eleven broken links, so fix the routing in this same commit"
+        },
+        {
+          "label": "Column 3 — Company",
+          "kind": "lit",
+          "value": "About Us · Certifications · Export Markets · Case Studies ·\nResources · Contact Us",
+          "note": "6 entries · Export Markets is new and fixes the orphaned /export page · Why Choose Us comes out — that page is recommended for deletion, its job is done better by /certifications and /export"
+        },
+        {
+          "label": "CTA lines",
+          "kind": "lit",
+          "value": "Ready to source precision rubber components?\nQuotation from our engineering team within 48 hours.\n[ Request Quote → ]"
+        },
+        {
+          "label": "Legal line",
+          "kind": "lit",
+          "value": "© 2026 Margo Rubber Products. All rights reserved.\nPrivacy Policy · Terms & Conditions · Disclaimer\nISO 9001:2015 · Certificate 09111526A · Integral Certification Ltd",
+          "note": "Fixes © 2024 and Margo Rubber Industries Pvt. Ltd. — GSTIN 27AAKFM8595Q1Z1 embeds PAN AAKFM8595Q, whose 4th character F denotes a firm, not a company. Pvt. Ltd. is positively excluded"
+        }
+      ],
+      "notes": [
+        "Build once. This is one component rendering on 40 pages. The copy above is the same copy specified on every other sheet in this set — it is written out in full on each so nobody has to open two files to build one block, but it ships once.",
+        "What it fixes on this page specifically: the Products column goes from 9 to 11 entries, and /products/gaskets gains sitewide sibling links to the two categories that currently have none.",
+        "Heading levels. The column labels (PRODUCTS / INDUSTRIES / COMPANY) are <h2> in the live build. As visible <h2>s they inject three phantom sections into every document outline on the site — on this page, into an outline that already has six real ones. Change to <p class=\"col-label\">.",
+        "Link equity. 26 sitewide links from here. Adding /export, /products/extrusion and /products/sponge-foam-rubber gives three orphaned or under-linked URLs a sitewide inbound link each — the cheapest internal-linking win available on this site.",
+        "NAP markup. Wrap in <address>. Phone as <a href=\"tel:+919665579276\">, email as <a href=\"mailto:info@margorubber.in\">. The visible string and the href must not diverge.",
+        "Schema. The footer emits nothing. The Organization node on the homepage is the single entity definition and every other page @id-references it. Repeating an Organization block per page creates 40 competing entities.",
+        "Copyright year. Render from new Date().getFullYear(), not a literal. It has read 2024 for eight months."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,312 @@
+{
+  "file": "33_SKU_Per_Part_Content.html",
+  "title": "SKU Per-Part Content Sheet",
+  "kicker": "Margo Rubber Products · /products/{category}/{sku} · Vision Build · Sheet 33 — per-part content, all 31 pages",
+  "head": {},
+  "sections": [
+    {
+      "num": "A",
+      "title": "Anti-Vibration Mounts — 5 parts",
+      "chip": "3 OEM decisions · natural rubber added to all 5",
+      "live": "Live compound set on all five: Neoprene, SBR · natural rubber is missing from the category it matters most in — NR is the primary anti-vibration compound and has the best abrasion resistance of the eight Margo mixes. Add it to all five, as the default on parts 3 and 5.",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "01",
+      "title": "Weight Rubber, A/C Vibration Extractor",
+      "chip": "Needs the function from Margo",
+      "live": "/products/anti-vibration-mounts/ac-vibration-weight · live compounds: Neoprene, SBR",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "02",
+      "title": "Back Light Rubber Mount (Bolero)",
+      "chip": "🛑 OEM name — both versions written",
+      "live": "/products/anti-vibration-mounts/backlight-mount · live compounds: Neoprene, SBR",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "03",
+      "title": "Bumper Stopper",
+      "chip": "Duplicate name with part 05",
+      "live": "/products/anti-vibration-mounts/bumper-stopper · live compounds: Neoprene, SBR",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "04",
+      "title": "Scorpio Footrest Rubber Mat",
+      "chip": "🛑 OEM name — both versions written",
+      "live": "/products/anti-vibration-mounts/scorpio-footrest-mat · live compounds: Neoprene, SBR · also in the wrong category",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "05",
+      "title": "Bumper Stopper for Tata",
+      "chip": "🛑 OEM name — both versions written",
+      "live": "/products/anti-vibration-mounts/tata-bumper-stopper · live compounds: Neoprene, SBR",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "B",
+      "title": "Bushes — 1 part",
+      "chip": "Well specified · add natural rubber",
+      "live": "Live compound set: AEM, NBR, Neoprene — AEM is genuinely rare and it is the reason this part exists. Say so.",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "06",
+      "title": "AEM Insulation Bush",
+      "chip": "The best-named part on the site",
+      "live": "/products/bushes/aem-insulation-bush · live compounds: AEM, NBR, Neoprene",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "C",
+      "title": "Gaskets — 3 parts",
+      "chip": "2 are foam · 1 is a material variant",
+      "live": "Live compound set on all three: Silicone, EPDM, NBR, Neoprene · two of the three are foam parts in the gaskets category, while /products/sponge-foam-rubber has no SKU pages at all.",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "07",
+      "title": "C-Pillar Garnish EPDM Hard Foam",
+      "chip": "Move to sponge & foam",
+      "live": "/products/gaskets/c-pillar-garnish · live compounds: Silicone, EPDM, NBR, Neoprene",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "08",
+      "title": "EPDM Gasket",
+      "chip": "Material variant — collapse",
+      "live": "/products/gaskets/epdm · live compounds: Silicone, EPDM, NBR, Neoprene",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "09",
+      "title": "Foam Gaskets",
+      "chip": "Move to sponge & foam · plural name",
+      "live": "/products/gaskets/foam-gaskets · live compounds: Silicone, EPDM, NBR, Neoprene",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "D",
+      "title": "Grommets — 2 parts",
+      "chip": "Both real parts · one needs a clearer name",
+      "live": "Live compound set on both: EPDM, NBR, Neoprene — correct for this category. The 3-pin-hole pad is named on the electrical & electronics industry sheet as a genuine Margo part.",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "10",
+      "title": "3 Pin Hole Pad (Electrical Pass-Through)",
+      "chip": "Keep the parenthetical — it is doing all the work",
+      "live": "/products/grommets/3-pin-hole-pad · live compounds: EPDM, NBR, Neoprene",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "11",
+      "title": "Rubber Grommet Internal Fits",
+      "chip": "Internal name · plural in a set of singulars",
+      "live": "/products/grommets/internal-fit · live compounds: EPDM, NBR, Neoprene",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "E",
+      "title": "O-Rings — 1 part",
+      "chip": "One of three filler-cap pages",
+      "live": "Live compound set: FKM, Silicone, EPDM, NBR — correct and well chosen. This part, part 28 and part 29 are all filler-cap parts in three different categories and none links to the others.",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "12",
+      "title": "Seal Filler Cap O-Rings",
+      "chip": "Singular · cross-link the assembly",
+      "live": "/products/o-rings/seal-filler-cap-o-rings · live compounds: FKM, Silicone, EPDM, NBR",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "F",
+      "title": "Oil Seals — 6 parts",
+      "chip": "4 are material variants · 2 are one part in two compounds",
+      "live": "Live compound set on all six: FKM, Silicone, NBR · this category is where the SKU structure breaks down. Four pages are the same category filtered to a compound, and two are one part offered in two materials. Six URLs describe two things.",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "13",
+      "title": "Silicone Compression Pump Inlays",
+      "chip": "Merge with part 16",
+      "live": "/products/oil-seals/compression-pump-inlays · live compounds: FKM, Silicone, NBR",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "14",
+      "title": "EPDM Oil Seals",
+      "chip": "🛑 Two errors compounding",
+      "live": "/products/oil-seals/epdm · live compounds: FKM, Silicone, NBR — EPDM is not among them",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "15",
+      "title": "FKM Oil Seals",
+      "chip": "🛑 Hero temperature wrong by 130 °C",
+      "live": "/products/oil-seals/fkm · live compounds: FKM, Silicone, NBR",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "16",
+      "title": "FKM Compression Pump Inlays",
+      "chip": "Merge into part 13",
+      "live": "/products/oil-seals/fkm-compression-pump-inlays · live compounds: FKM, Silicone, NBR",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "17",
+      "title": "NBR Oil Seals",
+      "chip": "The one variant page that is genuinely correct",
+      "live": "/products/oil-seals/nbr · live compounds: FKM, Silicone, NBR",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "18",
+      "title": "Silicone Oil Seals",
+      "chip": "🛑 The name works against the compound",
+      "live": "/products/oil-seals/silicone · live compounds: FKM, Silicone, NBR",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "G",
+      "title": "Pads, Stoppers & Caps — 13 parts",
+      "chip": "The biggest category · 5 need a function from Margo",
+      "live": "Live compound set on all thirteen: EPDM, NBR, Neoprene, SBR · natural rubber missing from every one — and five of the thirteen are impact or support parts where NR is the correct first answer. Five H1s are internal names that say nothing to a buyer: Big Support Pad, C Pad, L Pad, Rubber Plungers, Rubber Insulator Head Cover.",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "19",
+      "title": "Rubber Flap for A/C Air Extractor",
+      "chip": "Good descriptive name — a real, writable part",
+      "live": "/products/pads-stoppers-caps/ac-flaps · live compounds: EPDM, NBR, Neoprene, SBR",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "20",
+      "title": "Big Support Pad",
+      "chip": "Internal name — needs the function from Margo",
+      "live": "/products/pads-stoppers-caps/big-support-pad · live compounds: EPDM, NBR, Neoprene, SBR",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "21",
+      "title": "Support Pad for Bolero",
+      "chip": "🛑 OEM name — both versions written",
+      "live": "/products/pads-stoppers-caps/bolero-support-pad · live compounds: EPDM, NBR, Neoprene, SBR",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "22",
+      "title": "Boot Tailgate Switch",
+      "chip": "The name says the wrong thing",
+      "live": "/products/pads-stoppers-caps/boot-tailgate-switch · live compounds: EPDM, NBR, Neoprene, SBR",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "23",
+      "title": "C Pad",
+      "chip": "Internal name — unsearchable as written",
+      "live": "/products/pads-stoppers-caps/c-pad · live compounds: EPDM, NBR, Neoprene, SBR",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "24",
+      "title": "EPDM Pad",
+      "chip": "Material variant — collapse",
+      "live": "/products/pads-stoppers-caps/epdm-pad · live compounds: EPDM, NBR, Neoprene, SBR",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "25",
+      "title": "Glove Box Stopper",
+      "chip": "One of the three well-named parts on the site",
+      "live": "/products/pads-stoppers-caps/glove-box-stopper · live compounds: EPDM, NBR, Neoprene, SBR",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "26",
+      "title": "Rubber Insulator Head Cover",
+      "chip": "Ambiguous — two readings, two different parts",
+      "live": "/products/pads-stoppers-caps/insulator-head-cover · live compounds: EPDM, NBR, Neoprene, SBR",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "27",
+      "title": "L Pad",
+      "chip": "Internal name — unsearchable as written",
+      "live": "/products/pads-stoppers-caps/l-pad · live compounds: EPDM, NBR, Neoprene, SBR",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "28",
+      "title": "Oil Filler Cap",
+      "chip": "Good name · one of three filler-cap pages",
+      "live": "/products/pads-stoppers-caps/oil-filler-cap · live compounds: EPDM, NBR, Neoprene, SBR",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "29",
+      "title": "Oil Seal Filler Cap",
+      "chip": "Near-duplicate of part 28 — confirm they are two parts",
+      "live": "/products/pads-stoppers-caps/oil-seal-filler-cap · live compounds: EPDM, NBR, Neoprene, SBR",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "30",
+      "title": "Rubber Radiator Shroud Flaps",
+      "chip": "Good name · singular, and check the compound",
+      "live": "/products/pads-stoppers-caps/radiator-shroud-flaps · live compounds: EPDM, NBR, Neoprene, SBR",
+      "fields": [],
+      "notes": []
+    },
+    {
+      "num": "31",
+      "title": "Rubber Plungers",
+      "chip": "Generic — plunger for what?",
+      "live": "/products/pads-stoppers-caps/rubber-plungers · live compounds: EPDM, NBR, Neoprene, SBR",
+      "fields": [],
+      "notes": []
+    }
+  ]
+}
