@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo, useState } from "react";
 
 type Props = {
@@ -10,8 +11,13 @@ type Props = {
   controls?: boolean;
 };
 
-/** Standard families derived from the "Part / Standard ID" column. */
-const FAMILIES = ["AS568", "ISO", "JIS", "DIN"] as const;
+/**
+ * Standard families a chip can select, in chip order. Only the families that
+ * appear in the first column are offered — "a filter with nothing to select
+ * is a dead control" (sheet 09 §02), and the same component serves oil-seal,
+ * gasket and bush tables whose families differ.
+ */
+const FAMILIES = ["AS568", "ISO", "JIS", "DIN", "BS", "SAE", "ANSI"] as const;
 
 /**
  * The spec table is a real <table>, never an image — required by both AI
@@ -26,6 +32,10 @@ export function SpecTable({ columns, rows, footnote, controls = true }: Props) {
   const [family, setFamily] = useState<string>("all");
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState<{ col: number; dir: 1 | -1 } | null>(null);
+  const families = useMemo(
+    () => FAMILIES.filter((f) => rows.some((r) => r[0].toUpperCase().includes(f))),
+    [rows],
+  );
 
   const visible = useMemo(() => {
     let out = rows;
@@ -72,7 +82,7 @@ export function SpecTable({ columns, rows, footnote, controls = true }: Props) {
           <Chip active={family === "all"} onClick={() => setFamily("all")}>
             All Standards
           </Chip>
-          {FAMILIES.map((f) => (
+          {families.map((f) => (
             <Chip key={f} active={family === f} onClick={() => setFamily(f)}>
               {f}
             </Chip>
@@ -163,14 +173,33 @@ export function SpecTable({ columns, rows, footnote, controls = true }: Props) {
         </table>
 
         {footnote && (
-          <p className="text-ink-4 border-line border-t px-4 py-3 text-xs">
+          <p className="text-ink-4 border-line border-t px-4 py-3 text-xs whitespace-pre-line">
             {/* The count belongs to the filter, so it goes with it. */}
-            {controls && `Showing ${visible.length} of ${rows.length} entries · `}
-            {footnote.replace(/^Showing \d+ of \d+ entries · /, "")}
+            {controls && `Showing ${visible.length} of ${rows.length} · `}
+            {disclaimerLinked(footnote.replace(/^Showing \d+ of \d+( entries)? · /, ""))}
           </p>
         )}
       </div>
     </div>
+  );
+}
+
+/**
+ * "Typical values. See our technical disclaimer." — every technical table
+ * links the disclaimer (sheet 08, page-level). The words stay the sheet's;
+ * only the phrase becomes the link.
+ */
+function disclaimerLinked(text: string) {
+  const parts = text.split(/(technical disclaimer)/i);
+  if (parts.length === 1) return text;
+  return parts.map((part, i) =>
+    i % 2 ? (
+      <Link key={i} href="/legal/disclaimer" className="text-ink-3 underline underline-offset-2 hover:text-ink">
+        {part}
+      </Link>
+    ) : (
+      part
+    ),
   );
 }
 

@@ -29,6 +29,17 @@ export function formatRange(c: SiteSettings["compounds"][number]): string {
     : base;
 }
 
+/**
+ * The category pages' typography for the same range — "−40° to +175°C", the
+ * continuous rating on its own line (sheets 09–17 §03). Same numbers, one
+ * source; only the spacing differs from the hub's table.
+ */
+export function formatRangeCompact(c: SiteSettings["compounds"][number]): string {
+  const sign = (n: number) => (n < 0 ? `−${Math.abs(n)}` : `+${n}`);
+  const base = `${sign(c.minC)}° to ${sign(c.maxC)}°C`;
+  return c.continuousMaxC ? `${base}\ncontinuous to ${c.continuousMaxC}°C` : base;
+}
+
 /** Match by code ("FKM") or by the code in parentheses of a display name ("Viton® (FKM)"). */
 export function compoundByCode(settings: SiteSettings, code: string) {
   const key = code.trim().toUpperCase();

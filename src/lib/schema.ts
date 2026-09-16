@@ -331,8 +331,8 @@ export async function productNode(
   return {
     "@type": "Product",
     "@id": `${SITE_URL}${path}#product`,
-    name: fm.h1,
-    description: fm.seo.description,
+    name: fm.schemaProduct?.name ?? fm.h1,
+    description: fm.schemaProduct?.description ?? fm.seo.description,
     manufacturer: { "@id": ORG_ID },
     material: compounds.map((c) => c.name),
     ...(entry?.family ? { category: FAMILY_CATEGORY[entry.family] } : {}),

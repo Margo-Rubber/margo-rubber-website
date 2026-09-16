@@ -507,6 +507,14 @@ export const productCategorySchema = baseSchema.extend({
   schemaTypes: z
     .array(z.enum(["Product", "BreadcrumbList", "FAQPage", "HowTo", "Organization", "WebSite"]))
     .default(["Product", "BreadcrumbList", "FAQPage"]),
+  /**
+   * The Product node's own name and description, where the sheet writes them
+   * apart from the H1 and meta description — "Precision O-Rings" against an
+   * H1 of "Precision O-Rings, Manufactured in India" (sheet 09, page-level).
+   */
+  schemaProduct: z
+    .object({ name: z.string().min(3).optional(), description: z.string().min(20).optional() })
+    .optional(),
 });
 
 /* ── INDUSTRY SECTIONS ─────────────────────────────────────────────────────

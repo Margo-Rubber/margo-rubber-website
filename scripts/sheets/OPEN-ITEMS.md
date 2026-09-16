@@ -53,3 +53,11 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 25. **Counsel review — Terms §9 and Disclaimer §7.** The sheet marks both CLIENT CONFIRMED — COUNSEL TO REVIEW: the liability cap is settled at invoice value; a lawyer should examine it most closely, and the two sections must say the same thing. Copy is in place as written; all three pages stay `placeholder` (noindex) until counsel signs off.
 26. **Section anchors.** The sheet says anchor IDs are unchanged, so §7 of the Privacy Policy keeps its `user-rights` anchor under its new heading "Your Rights".
 27. **Cookie notice.** Privacy Policy §4 describes a cookie notice through which analytics cookies are consented to and refused; no notice exists on the site yet (Phase 7 — build one or the section over-describes).
+
+## 09 O-Rings
+
+28. **Compound ranges render from Site settings** (sheet 01 §10 governs): AEM shows "continuous to 160°C" under its +175°C peak, as sheet 01 resolved on 2026-09-03; sheet 09's panel has no continuous line. Both AEM and FKM grades still to confirm (sheet 01).
+29. **FAQPage questions.** The notes name "Which O-Ring Material Do I Need?", "What is the lead time for custom O-rings?" and "How is a custom O-ring order quoted?" for the FAQ node, but the sheet writes no answers and has no §09; only the sizing-standards question, whose answer is on the sheet, is emitted. The same holds for sheets 10–17.
+30. **Spec table sign-off.** The sheet asks that the twelve rows be checked once against the purchased SAE AS568, JIS B2401 and DIN 3771 documents before the page goes live.
+31. **PTFE-encapsulated panel** is written for encapsulated rings (elastomer core, moulded); if Margo also machines solid PTFE the copy and capability claim change.
+32. **Standards attribution footnote under §05** — the note asks for one but gives no wording; not added.

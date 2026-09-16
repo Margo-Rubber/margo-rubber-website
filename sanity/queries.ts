@@ -89,6 +89,7 @@ export const productCategoryBySlugQuery = groq`
     confirmWithMargo,
     related,
     service,
+    schemaProduct,
     seo{
       title,
       description,

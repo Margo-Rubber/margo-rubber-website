@@ -63,7 +63,9 @@ export const FORBIDDEN_CLAIMS: { pattern: RegExp; why: string }[] = [
   { pattern: /(?<!not hold\s)ISO\s*13485(?![^.]{0,80}(do not hold|not held|not hold))|FDA[- ](approved|grade|registered|compliant)/i, why: "Never as held. The medical page states plainly they are not." },
   { pattern: /WRAS[- ]approved|NSF[\/ ]?(ANSI[\/ ]?)?61\s*certified|AS\/NZS\s*4020|KTW[- ]BWGL/i, why: "Potable-water approvals attach to a formulation; Margo holds none." },
   { pattern: /ISO\s*(14001|45001)(?![^.]{0,120}(in progress|targeted|being upgraded|not (currently )?held))/i, why: "Only ever as targeted 2027, never as held." },
-  { pattern: /AS9100|CEMILAC|aerospace/i, why: "Aerospace supply needs AS9100, not held and not claimed." },
+  // AS568 is the "Aerospace Size Standard" and is described as such; naming
+  // the catalogue is not a supply claim (sheet 09 §05).
+  { pattern: /AS9100|CEMILAC|(?<!power, )aerospace(?! size standard| procurement)/i, why: "Aerospace supply needs AS9100, not held and not claimed." },
   { pattern: /Bureau Veritas|TÜV\s*SÜD|SGS India(?! pre-shipment)|FIEO/i, why: "Certification bodies that have never audited Margo. The issuer is Integral Certification Ltd." },
 
   /* ── Customers and people ────────────────────────────────────────── */

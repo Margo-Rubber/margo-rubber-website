@@ -1,11 +1,10 @@
 import { notFound } from "next/navigation";
-import { IndustryFAQ } from "@/components/sections/IndustryDetail";
 import { trail } from "@/lib/breadcrumbs";
 import { buildMetadata } from "@/lib/seo";
 import { productCategoryGraph, shouldEmitSchema } from "@/lib/schema";
 import { BlockRenderer } from "@/components/blocks/BlockRenderer";
 import { categorySlugs, getCategoryPage } from "@/lib/product-source";
-import { Container, Eyebrow, Section } from "@/components/ui/Section";
+import { Section } from "@/components/ui/Section";
 import { CategoryHero } from "@/components/sections/Blocks";
 
 /**
@@ -84,10 +83,10 @@ export default async function ProductCategoryPage(
         prose={
           // Free-form prose — passed only when the .mdx body actually has
           // any, so a structured page doesn't ship an empty padded band.
-          // The FAQ renders from the same list the FAQPage node is built
-          // from, so what Google is told is what the reader sees. It was
-          // in the graph and missing from the page — content sheet 09 §09.
-          hasBody || fm.faqs.length || fm.service?.area.length || fm.service?.exclusions.length ? (
+          // The FAQPage node carries only questions the page already
+          // answers in its own sections — a category sheet has no FAQ
+          // section, so none is drawn (sheet 09, page-level).
+          hasBody || fm.service?.area.length || fm.service?.exclusions.length ? (
             <>
               {hasBody && Content && (
                 <Section>
@@ -126,15 +125,6 @@ export default async function ProductCategoryPage(
                       </div>
                     )}
                   </div>
-                </Section>
-              )}
-              {fm.faqs.length > 0 && (
-                <Section>
-                  <Container className="!px-0">
-                    <Eyebrow variant="rule">FREQUENTLY ASKED QUESTIONS</Eyebrow>
-                    <h2 className="text-h2 mt-4 mb-10">Common questions about {fm.navLabel.toLowerCase()}.</h2>
-                  </Container>
-                  <IndustryFAQ items={fm.faqs} />
                 </Section>
               )}
             </>

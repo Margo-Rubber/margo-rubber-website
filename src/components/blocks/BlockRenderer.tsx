@@ -3,7 +3,7 @@ import Link from "next/link";
 import type { SiteSettings } from "@/content/schemas/settings";
 import {
   compoundByCode,
-  formatRange,
+  formatRangeCompact,
   getSiteSettings,
   telHref,
 } from "@/lib/settings";
@@ -253,7 +253,7 @@ function renderBlock(block: Block, ctx: Ctx): ReactNode {
               (m: { code: string; tempRange: string; hardness: string }) => {
                 const c = compoundByCode(ctx.settings, m.code);
                 return c
-                  ? { ...m, tempRange: formatRange(c), hardness: c.hardness }
+                  ? { ...m, tempRange: formatRangeCompact(c), hardness: c.hardness }
                   : m;
               },
             )}
@@ -382,10 +382,13 @@ function renderBlock(block: Block, ctx: Ctx): ReactNode {
         />
       );
 
+    // "#lead-times", not "#commercial": the anchor names what the section
+    // answers, and a table-of-contents entry named after an MOQ was one more
+    // place the term appeared (sheet 09 §06).
     case "block.propertyList":
       return (
         <Section
-          id="commercial"
+          id="lead-times"
           eyebrow={b.eyebrow}
           heading={b.heading}
           body={b.body}

@@ -366,6 +366,19 @@ export const productCategory = defineType({
     }),
     schemaTypesField,
     defineField({
+      name: "schemaProduct",
+      title: "Product record (structured data)",
+      description:
+        "How the page describes its product to search engines, where that differs from the heading and the meta description. Leave empty to use those.",
+      type: "object",
+      fields: [
+        defineField({ name: "name", title: "Product name", type: "string" }),
+        defineField({ name: "description", title: "One-line description", type: "text", rows: 2 }),
+      ],
+      options: { collapsible: true, collapsed: true },
+      group: "meta",
+    }),
+    defineField({
       name: "confirmWithMargo",
       title: "Figures still to be confirmed",
       type: "array",
