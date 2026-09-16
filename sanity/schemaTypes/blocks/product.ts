@@ -345,8 +345,8 @@ export const specifyGrid = defineType({
       title: "Closing button",
       type: "object",
       fields: [
-        defineField({ name: "label", type: "string" }),
-        defineField({ name: "href", type: "string" }),
+        defineField({ name: "label", title: "Button text", type: "string" }),
+        defineField({ name: "href", title: "Goes to", type: "string" }),
       ],
       group: "content",
     }),
