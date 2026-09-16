@@ -997,6 +997,7 @@ export const certificationsPageSchema = baseSchema.extend({
   intro: z.string().min(40),
   actions: z.array(z.object({ label: z.string(), href: z.string(), variant: z.enum(["primary", "secondary"]).default("primary") })).default([]),
 
+  /** Sheet 07 §02: "DELETE THIS ENTIRE SECTION". Optional; the page skips it when absent. */
   scope: z.object({
     ...sectionMeta.shape,
     meansHeading: z.string(),
@@ -1007,7 +1008,7 @@ export const certificationsPageSchema = baseSchema.extend({
     notLeadBody: z.string(),
     notItems: z.array(z.string()),
     footnote: z.string(),
-  }),
+  }).optional(),
 
   certificate: z.object({
     ...sectionMeta.shape,

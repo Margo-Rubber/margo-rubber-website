@@ -354,7 +354,19 @@ export async function applyDocument(opts: {
     if (!obj[seg] || typeof obj[seg] !== "object") obj[seg] = {};
     return obj[seg];
   };
+  const unsets: string[] = [];
   for (const [path, value] of Object.entries(patch)) {
+    if (value === undefined) {
+      // `undefined` removes the field — a section the sheet deletes.
+      unsets.push(path);
+      const segs = path.split(".");
+      let node: unknown = merged;
+      for (const seg of segs.slice(0, -1))
+        node = (node as Record<string, unknown>)?.[seg];
+      if (node && typeof node === "object")
+        delete (node as Record<string, unknown>)[segs[segs.length - 1]];
+      continue;
+    }
     const withKeys = keyed(
       type,
       value,
@@ -411,8 +423,16 @@ export async function applyDocument(opts: {
     );
   }
 
+  for (const p of unsets) {
+    if (get(current, p) === undefined) continue;
+    changed++;
+    console.log(`  ${p}\n     − ${short(get(current, p))}\n     + (removed)`);
+  }
+
   if (WRITE && changed) {
-    await client.patch(id).set(sets).commit();
+    let tx = client.patch(id).set(sets);
+    if (unsets.length) tx = tx.unset(unsets);
+    await tx.commit();
     console.log(`  ✓ written`);
   }
 }

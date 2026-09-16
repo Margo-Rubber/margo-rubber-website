@@ -55,22 +55,24 @@ export default async function CertificationsPage() {
         actions={fm.actions}
       />
 
-      <Section
-        id="scope"
-        className="bg-[#050505]"
-        eyebrow={fm.scope.eyebrow}
-        heading={fm.scope.heading}
-      >
-        <ScopePanel
-          meansHeading={fm.scope.meansHeading}
-          means={fm.scope.means}
-          notHeading={fm.scope.notHeading}
-          notLead={fm.scope.notLead}
-          notLeadBody={fm.scope.notLeadBody}
-          notItems={fm.scope.notItems}
-          footnote={fm.scope.footnote}
-        />
-      </Section>
+      {fm.scope && (
+        <Section
+          id="scope"
+          className="bg-[#050505]"
+          eyebrow={fm.scope.eyebrow}
+          heading={fm.scope.heading}
+        >
+          <ScopePanel
+            meansHeading={fm.scope.meansHeading}
+            means={fm.scope.means}
+            notHeading={fm.scope.notHeading}
+            notLead={fm.scope.notLead}
+            notLeadBody={fm.scope.notLeadBody}
+            notItems={fm.scope.notItems}
+            footnote={fm.scope.footnote}
+          />
+        </Section>
+      )}
 
       <Section
         id="certificate"
@@ -78,7 +80,10 @@ export default async function CertificationsPage() {
         heading={fm.certificate.heading}
         body={fm.certificate.body}
       >
-        <CertificateBlock card={fm.certificate.card} meta={fm.certificate.meta} />
+        <CertificateBlock
+          card={fm.certificate.card}
+          meta={fm.certificate.meta}
+        />
       </Section>
 
       {/* 301 target for the old /our-plants/ page. */}
@@ -101,7 +106,10 @@ export default async function CertificationsPage() {
         heading={fm.system.heading}
         body={fm.system.body}
       >
-        <QualitySystem items={fm.system.items} auditNote={fm.system.auditNote} />
+        <QualitySystem
+          items={fm.system.items}
+          auditNote={fm.system.auditNote}
+        />
       </Section>
 
       <Section className="bg-[#050505]">

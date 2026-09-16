@@ -39,3 +39,11 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 17. **Two bullets copied as written that look like sheet artefacts** — Singapore: "Transit 8–12 days, Nhava Sheva to the Port of Singapore *figure*"; Kenya & Tanzania: the ports bullet carries "CMA CGM's Swahili Express publishes 19 and 21 days … as the footnote already says". *Confirm the intended wording.*
 18. **Map pin labels and the concept-build pin layer.** The nine labels and the tooltip text are stored on the markets; the map draws pins without labels until the nine-pin map rewrite (Phase 7). The concept-build figure strip shows only on the concept build.
 19. **Trade-lane chips.** The sheet's chip list keeps "US & EU" while its block list splits it into United States and European Union; the chips follow the blocks (8 lanes: Australia, United Kingdom, UAE & Saudi, Malaysia, USA, European Union, Singapore, Kenya & Tanzania).
+
+## 07 Certifications
+
+20. **Certificate card — address.** The certificate itself carries the old B-12, MIDC Ambad line (sheet: MISMATCH); the card is a designed representation and shows the confirmed Vilholi address. Do not publish the scan until the certificate is re-issued at the new address.
+21. **Certificate card — issue date.** CONFIRM on the sheet (not yet extracted from the certificate); the card shows the number and expiry only.
+22. **Certificate PDF.** The download button stays hidden until a clean scan is uploaded (Studio → certificate card → file address).
+23. **Facility cards — press tonnage and rubber-to-metal bonding as a named line.** Both CONFIRM on the sheet; the card bodies are as written.
+24. **FMEA documentation** in the audit note — the sheet asks to confirm it exists before the line ships.
