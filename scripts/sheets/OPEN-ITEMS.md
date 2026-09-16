@@ -79,3 +79,9 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 39. **Flex-fatigue qualification offer.** The footnote says cycle life "is established by qualification testing on that part — to ISO 132, ASTM D430 or ASTM D813" and "we will qualify against it". The claims register says no fatigue rig in-house or at the partner lab, and the Disclaimer's partner-lab list (sheet 08 §3) does not include fatigue. Shipped as written; confirm who runs the test.
 40. **Chip rules.** The sheet names four service chips (Fatigue-critical, Oil contact, Water & steam, High temperature) without saying which rows each selects; they select from the table's own cells — the two "High"/"Very high" fatigue grades, service text naming oil without a "not for oil" clause, water/steam/coolant, and peaks of +175 °C and above.
 41. **Confirmation copy** (as item 36) and the three unanswered FAQ questions (as item 37).
+
+## 13 Anti-Vibration Mounts
+
+42. **Chip rules.** Bonded / Unbonded / Compression / Shear select mount types by form (bobbins, conical, plate, shear and bonded bush = bonded; buffer = unbonded; shear and bush mounts = shear, the rest compression). The sheet names the chips only; confirm the classification.
+43. **Floor mat moved out** to Pads, Stoppers & Caps — client-confirmed part, category to confirm (sheet's Moved out row).
+44. **Confirmation copy** (as item 36) and the three unanswered FAQ questions (as item 37).
