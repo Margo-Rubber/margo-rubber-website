@@ -1,0 +1,894 @@
+{
+  "file": "SKU_27_l-pad.html",
+  "title": "L Pad — the Angle Is the Specification",
+  "kicker": "Margo Rubber Products · SKU sheet 27 of 31 · /products/pads-stoppers-caps/l-pad",
+  "head": {
+    "title": "Angle Packing Pads | L-Section Rubber Corners | Margo",
+    "description": "Moulded L-section rubber pads that pack in one plane and locate in the other. Angle held to a stated tolerance. Sized on load and deflection. Nashik, India."
+  },
+  "sections": [
+    {
+      "num": "01",
+      "title": "Hero, spec block & visual reference",
+      "chip": "🛑 No angle, no legs, no load",
+      "live": "LIVE H1 → L Pad · one thickness figure on a part with two legs",
+      "fields": [
+        {
+          "label": "Badges",
+          "kind": "lit",
+          "value": "MADE TO ORDER · ISO 9001:2015 · 09111526A",
+          "note": "“IN STOCK” comes off. The ISO badge stands unqualified — a moulded pad is inside the certificate scope"
+        },
+        {
+          "label": "H1",
+          "kind": "heading",
+          "lines": [
+            "Angle Packing Pad — L-Section"
+          ],
+          "accent": [],
+          "value": "Angle Packing Pad — L-Section",
+          "note": "“Angle” is the word that makes the part findable and the letter meaningful at once. The letter stays as the section descriptor, which is what it always was"
+        },
+        {
+          "label": "Intro sentence",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "A moulded rubber pad with two legs at an angle, so it packs in one plane and locates in the other. The flat leg carries the load; the upstand stops the assembly creeping sideways and protects the corner where two faces meet. The included angle is moulded to a stated tolerance, not left to shrinkage."
+          ],
+          "leads": [
+            "packs in one plane and locates in the other"
+          ],
+          "marked": [
+            "A moulded rubber pad with two legs at an angle, so it **packs in one plane and locates in the other**. The flat leg carries the load; the upstand stops the assembly creeping sideways and protects the corner where two faces meet. **The included angle is moulded to a stated tolerance, not left to shrinkage.**"
+          ],
+          "note": "52 words · replaces the template’s “L Pad manufactured to order at our ISO 9001:2015 certified plant in Nashik”, identical on all 31 pages with the name swapped.\nThe second sentence gives each leg a job, which is the whole reason to choose this over a flat pad. The third is a manufacturing claim and it is the one a buyer of angled sections will notice"
+        },
+        {
+          "label": "Hero spec block",
+          "kind": "table",
+          "columns": [
+            "Field",
+            "Live — identical on all 31 pages",
+            "Ships as"
+          ],
+          "rows": [
+            [
+              "HARDNESS",
+              "",
+              "40–80 Shore A, set from the load and deflection required"
+            ],
+            [
+              "SHORE A",
+              "",
+              "±5 pts against the specified hardness"
+            ],
+            [
+              "TENSILE",
+              "",
+              "Per compound datasheet, tested to ASTM D412"
+            ],
+            [
+              "TEMPERATURE",
+              "",
+              "Per compound — −20 to +90 °C in natural rubber, −40 to +120 °C in neoprene"
+            ],
+            [
+              "THICKNESS",
+              "",
+              "Leg thickness — stated per leg, to your drawing"
+            ],
+            [
+              "WIDTH",
+              "",
+              ""
+            ],
+            [
+              "INCLUDED ANGLE",
+              "—",
+              "To your drawing, with tolerance stated"
+            ],
+            [
+              "LEG LENGTHS",
+              "—",
+              "Both legs, to your drawing"
+            ],
+            [
+              "LOAD PER PAD",
+              "—",
+              "To your specification"
+            ]
+          ],
+          "note": "🛑 The included angle is the field the part is named after and the live hero does not have it. Nor does it have leg lengths — and a single “thickness” figure is meaningless on a part with two legs that rarely share a section.\nHardness changes role rather than value. On a load-bearing pad it is an output Margo sets from the load and the deflection, because a thin wide leg is far stiffer than a thick narrow one of the same rubber.\nThickness survives, restated per leg, which is the correction that makes the field usable"
+        },
+        {
+          "label": "Quantity selector",
+          "kind": "lit",
+          "value": "QTY (pieces)\n− 10,000 +\nMinimum run: 10,000 pieces per part number",
+          "note": "500 becomes 10,000, client-instructed 2026-09-01, and the unit becomes pieces"
+        },
+        {
+          "label": "Visual reference",
+          "kind": "composite",
+          "parts": [
+            {
+              "kind": "table",
+              "columns": [
+                "Row",
+                "Live",
+                "Ships as"
+              ],
+              "rows": [
+                [
+                  "Cross section view",
+                  "",
+                  "Section through the angle — on request under NDA"
+                ],
+                [
+                  "Max width",
+                  "",
+                  "Overall length — to your drawing"
+                ],
+                [
+                  "Thickness",
+                  "",
+                  "Leg thickness, stated per leg"
+                ],
+                [
+                  "Run length",
+                  "",
+                  "Keep — angle sections are commonly supplied by the metre"
+                ],
+                [
+                  "Included angle",
+                  "—",
+                  "With tolerance stated on the drawing"
+                ],
+                [
+                  "Inside corner radius",
+                  "—",
+                  "Radiused, not square"
+                ],
+                [
+                  "Load per leg",
+                  "—",
+                  "Which leg carries, and which locates"
+                ],
+                [
+                  "Retention",
+                  "—",
+                  "Friction, adhesive backing, bolted or trapped by the corner"
+                ]
+              ]
+            },
+            {
+              "kind": "para",
+              "text": "Section drawing available on request. Send the angle, both leg lengths and the load each one takes — or a sample and the corner it sits in — and we will return a dimensioned section with the angle tolerance stated.",
+              "lead": "Send the angle, both leg lengths and the load each one takes",
+              "em": false
+            }
+          ],
+          "note": "🛑 The cross-section view is the right drawing on this page, unlike the flat pads where it shows nothing. An L is defined by its section, and the frame the live build already has is exactly the one this part needs filled.\n“Run length” is kept here and deleted on every other pad in the range — an angle section is commonly extruded and cut to length, which makes the field genuinely real on this page alone.\n“Which leg carries and which locates” is the question that sets the leg thicknesses, and it is the one a buyer has never been asked"
+        }
+      ],
+      "notes": [
+        "One <h1>; breadcrumb Home › Products › Pads, Stoppers & Caps › Angle Packing Pad.",
+        "🛑 The included angle must be a real field in the part record, with a tolerance. It is the defining dimension and the template has no place for it.",
+        "“Included angle”, “leg thickness” and “inside radius” are the terms to own; none is on this site.",
+        "Image alt: “Moulded L-section rubber angle packing pad, Margo Rubber Products, Nashik”."
+      ]
+    },
+    {
+      "num": "02",
+      "title": "Engineering data",
+      "chip": "The defining dimension has no row",
+      "live": "LIVE H2 → Engineering Data · 7 rows “On request” · and no angle, no legs, no load",
+      "fields": [
+        {
+          "label": "Table",
+          "kind": "table",
+          "columns": [
+            "Row",
+            "Live",
+            "Ships as"
+          ],
+          "rows": [
+            [
+              "Product Code",
+              "",
+              "Assigned on order"
+            ],
+            [
+              "Product Family",
+              "Pads, Stoppers & Caps",
+              "[no change]"
+            ],
+            [
+              "Material",
+              "",
+              "Natural rubber standard; neoprene where the pad is exposed or sees oil"
+            ],
+            [
+              "Hardness (Shore A)",
+              "",
+              "40–80 Shore A, set from the load and deflection required"
+            ],
+            [
+              "Tensile Strength",
+              "",
+              "Per compound datasheet, ASTM D412"
+            ],
+            [
+              "Elongation at Break",
+              "",
+              "Per compound datasheet, ASTM D412"
+            ],
+            [
+              "Operating Temperature",
+              "",
+              "−20 to +90 °C natural rubber; −40 to +120 °C neoprene"
+            ],
+            [
+              "Compression Set",
+              "",
+              "Tested to ASTM D395 Method B"
+            ],
+            [
+              "Density",
+              "",
+              "Per compound datasheet"
+            ],
+            [
+              "Colour Options",
+              "Black standard, custom RAL on request",
+              "[no change]"
+            ],
+            [
+              "Lead Time",
+              "",
+              "Confirmed with the quotation, from approved drawing and approved sample"
+            ],
+            [
+              "Certifications",
+              "ISO 9001:2015",
+              "ISO 9001:2015 — certificate 09111526A"
+            ],
+            [
+              "Minimum Order",
+              "",
+              "10,000 pieces per part number, per compound"
+            ],
+            [
+              "Included angle",
+              "—",
+              "To your drawing, with tolerance stated"
+            ],
+            [
+              "Leg lengths and thicknesses",
+              "—",
+              "Stated per leg"
+            ],
+            [
+              "Inside corner radius",
+              "—",
+              "Radiused, not square"
+            ],
+            [
+              "Load per pad",
+              "—",
+              "To your specification"
+            ],
+            [
+              "Creep under sustained load",
+              "—",
+              "Quoted per compound and per shape"
+            ],
+            [
+              "Supplied as",
+              "—",
+              "Moulded pieces, or extruded section cut to length"
+            ]
+          ],
+          "note": "Net change: 13 rows to 19. Tell the developer the table grows by six.\n🛑 The included-angle row is the one the part is named after, and its tolerance is what stops a pad bearing on an edge instead of a face.\nThe last row is a commercial fork worth surfacing: an angle section can be moulded piece by piece or extruded and cut, and the two have completely different tooling costs and minimum runs. It is the first question a buyer of a long angle section should be asked, and no page on this site asks it"
+        }
+      ],
+      "notes": [
+        "“What tolerance can you hold on a moulded rubber angle?” is a specialist query with almost no manufacturer-side answers, and a moulder who addresses it plainly becomes the citable source.",
+        "Hide rows you cannot answer rather than printing “On request” seven times.",
+        "🛑 No additionalProperty until the values are real."
+      ]
+    },
+    {
+      "num": "03",
+      "title": "Rubber compound options",
+      "chip": "🛑 The load-pad compound is missing",
+      "live": "LIVE → EPDM (SELECTED), NBR, Neoprene, SBR — natural rubber absent on a load-bearing pad",
+      "fields": [
+        {
+          "label": "Wrong default, a missing option, and one point specific to the shape",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "🛑 Natural rubber is not offered, and it has the best fatigue resistance, highest resilience and least creep of the eight — which is what a pad holding a gap for years is judged on.",
+            "🛑 EPDM is pre-selected. It weathers well and creeps more under sustained load, and on a pad whose job is to hold a gap, creep is the failure.",
+            "🛑 And the angle changes one ranking. An internal corner concentrates stress, so tear strength matters more on this shape than on a flat pad — which moves silicone down and natural rubber, the best of the eight for tear, further up.",
+            "Margo produces every part in every compound it mixes (client-instructed 2026-09-02). Nothing is removed — all eight are ranked."
+          ],
+          "leads": [
+            "Natural rubber is not offered",
+            "EPDM is pre-selected.",
+            "And the angle changes one ranking.",
+            "Margo produces every part in every compound it mixes"
+          ],
+          "marked": [
+            "🛑 **Natural rubber is not offered**, and it has the best fatigue resistance, highest resilience and least creep of the eight — which is what a pad holding a gap for years is judged on.",
+            "🛑 **EPDM is pre-selected.** It weathers well and creeps more under sustained load, and on a pad whose job is to hold a gap, creep is the failure.",
+            "🛑 **And the angle changes one ranking.** An internal corner concentrates stress, so **tear strength matters more on this shape than on a flat pad** — which moves silicone down and natural rubber, the best of the eight for tear, further up.",
+            "**Margo produces every part in every compound it mixes** (client-instructed 2026-09-02). **Nothing is removed — all eight are ranked.**"
+          ]
+        },
+        {
+          "label": "Selector",
+          "kind": "table",
+          "columns": [
+            "Rank",
+            "Compound",
+            "Temperature",
+            "Why, for an angled packing pad"
+          ],
+          "rows": [
+            [
+              "Recommended",
+              "Natural rubber",
+              "−20 to +90 °C",
+              "Best fatigue resistance, least creep and the best tear strength of the eight — and tear strength matters here, because an internal corner is where an angled section splits. Not for oil, and it perishes in prolonged sunlight"
+            ],
+            [
+              "Recommended",
+              "Neoprene",
+              "−40 to +120 °C",
+              "Where the pad is exposed to weather or sees oil. Good fatigue life and reasonable tear strength, with better ozone resistance than natural rubber"
+            ],
+            [
+              "Suitable",
+              "SBR",
+              "−30 to +100 °C",
+              "Low-cost enclosed packing. Fatigue and tear below natural rubber, and no oil resistance"
+            ],
+            [
+              "Suitable",
+              "EPDM",
+              "−40 to +140 °C",
+              "Weather, ozone and steam. Creeps more than natural rubber, so allow for it in the deflection"
+            ],
+            [
+              "Suitable",
+              "NBR",
+              "−30 to +120 °C",
+              "Where the pad sits in oil. Poor ozone resistance, so not for an exposed corner"
+            ],
+            [
+              "🛑 Not recommended",
+              "Silicone",
+              "−60 to +220 °C",
+              "Lowest tear strength of the eight, and an internal corner is a tear origin. Specify only where temperature leaves no choice"
+            ],
+            [
+              "🛑 Not recommended",
+              "FKM · AEM",
+              "See the compound table",
+              "Expensive sealing compounds with no fatigue, creep or tear advantage in a packing pad"
+            ]
+          ],
+          "note": "Live set: EPDM (SELECTED), NBR, Neoprene, SBR — four of eight, unranked, and the standard answer is not among them.\nThe ranking here is driven by tear strength as well as creep, which is what makes it different from the ranking on a flat pad — and it is why silicone drops to not recommended on this shape while it stays merely available on a closed one"
+        }
+      ],
+      "notes": [
+        "🛑 The compound list must be per-part data. A shape with a stress-raising internal corner needs a different ranking from a plain rectangle, and the site serves one list.",
+        "Feed material as natural rubber, neoprene and EPDM — the three genuinely recommended.",
+        "All panels in the DOM at first paint, hidden with CSS."
+      ]
+    },
+    {
+      "num": "04",
+      "title": "Why specifiers choose Margo",
+      "chip": "4 cards stay four · all four rewritten",
+      "live": "LIVE H2 → Why Specifiers Choose Margo · four generic cards · a 99.7% yield chip this page later calls “on request”",
+      "fields": [
+        {
+          "label": "Quality chip",
+          "kind": "lit",
+          "value": "ANGLE\nMoulded to tolerance\nnot left to shrinkage",
+          "note": "The production table in section 07 says first-pass yield is “On request” — the honest one is the table. The replacement puts the page’s manufacturing claim in its most prominent slot"
+        },
+        {
+          "label": "Cards ×4",
+          "kind": "table",
+          "columns": [
+            "#",
+            "Live card",
+            "Ships as — title",
+            "Ships as — body"
+          ],
+          "rows": [
+            [
+              "01",
+              "",
+              "It packs and locates at the same time",
+              "The flat leg holds the gap; the upstand stops the assembly creeping sideways and protects the corner. A flat pad does the first job only — which is the whole reason to choose this shape."
+            ],
+            [
+              "02",
+              "",
+              "🛑 Rubber does not cure at the angle you cut",
+              "Shrinkage pulls the two legs against each other, so a cavity cut at 90° does not reliably give a part at 90°. We cut the tool with compensation and give the angle a stated tolerance — because a pad two degrees out bears on an edge, not a face."
+            ],
+            [
+              "03",
+              "",
+              "The inside corner is where it fails",
+              "An internal angle concentrates stress, and a square root is where a flexing section splits first. We radius it in the tool, and we rank compounds on tear strength as well as on load."
+            ],
+            [
+              "04",
+              "",
+              "Two legs, two thicknesses",
+              "One leg carries load and the other locates — they rarely need the same section. Tell us what each leg does and we will set them independently rather than moulding a uniform angle and hoping."
+            ]
+          ],
+          "note": "Four cards, four cards — no count change and no new element.\nCard 02 is the strongest card on the page because it admits a manufacturing difficulty and then says how it is handled. A buyer who has received out-of-square angle sections before will recognise it immediately, and nobody else in this market puts it in writing.\nCard 04 offers a design freedom rather than a feature, which is the more useful thing to give an engineer"
+        }
+      ],
+      "notes": [
+        "This is the page’s AEO asset — everything else is shared with 30 other URLs.",
+        "Card 02 answers “why do moulded rubber angles come out out-of-square?” in the shape an answer engine extracts.",
+        "Process, named per part: compression moulding, or extrusion where supplied by the metre."
+      ]
+    },
+    {
+      "num": "05",
+      "title": "Global applications",
+      "chip": "6 cards become 4",
+      "live": "LIVE H2 → Global Applications · Aerospace and Marine claimed here and on all 31 pages",
+      "fields": [
+        {
+          "label": "Why industries are the right frame here",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "An angled pad is a generic corner part. Anywhere two faces meet and one has to be packed, located or protected from the other, this is the section — so the industry grid is the correct frame, listing sectors that build things with corners in them."
+          ],
+          "leads": [
+            "An angled pad is a generic corner part."
+          ],
+          "marked": [
+            "**An angled pad is a generic corner part.** Anywhere two faces meet and one has to be packed, located or protected from the other, this is the section — so the industry grid is the correct frame, listing sectors that build things with corners in them."
+          ]
+        },
+        {
+          "label": "Cards",
+          "kind": "table",
+          "columns": [
+            "Slot",
+            "Live",
+            "Ships as"
+          ],
+          "rows": [
+            [
+              "1",
+              "Heavy Industry",
+              "Heavy industry — corner packing and location under machine feet, frames and bearing housings"
+            ],
+            [
+              "2",
+              "",
+              "Automotive — corner packing on brackets and panels, and edge protection where painted faces meet"
+            ],
+            [
+              "3",
+              "",
+              "Infrastructure — plant and equipment corner packing. Not structural bearings, which are certified separately"
+            ],
+            [
+              "4",
+              "",
+              "Agriculture — implement frame and platform corner packing on equipment worked outdoors"
+            ],
+            [
+              "5",
+              "",
+              ""
+            ],
+            [
+              "6",
+              "",
+              ""
+            ]
+          ],
+          "note": "Two removed and the lead reordered. Aerospace requires AS9100, not held and claimed nowhere; marine fenders are fabricated units, not moulded components.\nHeavy industry leads because a located pad is worth more than a loose one there — on plant that vibrates, a flat pad walks and an angled one does not.\nEnergy & Oil comes off on its own reasoning: corner packing has no hydrocarbon-service application, and that sector buys against NORSOK M-710 and API qualification, which Margo does not hold.\n🛑 The infrastructure card carries its boundary inside the card, since any rubber load pad invites the structural-bearing misreading"
+        }
+      ],
+      "notes": [
+        "Link the cards to /industries/ pages — heavy industry, automotive and agriculture all exist and none links here.",
+        "🛑 Never imply EN 1337 structural bearing capability. Not held.",
+        "Do not claim a sector in Product schema."
+      ]
+    },
+    {
+      "num": "06",
+      "title": "From compound to certification",
+      "chip": "The angle compensation belongs in the process",
+      "live": "LIVE H2 → From Compound to Certification · six steps · the same text as all 31 pages",
+      "fields": [
+        {
+          "label": "Steps",
+          "kind": "table",
+          "columns": [
+            "#",
+            "Ships as"
+          ],
+          "rows": [
+            [
+              "01",
+              "Material compounding — polymer blending, additive integration and batch QC in our in-house lab. The compound is chosen for creep and tear resistance, since an angled section fails at its inside corner."
+            ],
+            [
+              "02",
+              "Mould design and CNC tool manufacture, in-house, held as a controlled record. The cavity angle is cut with shrinkage compensation, and the inside corner is radiused rather than square."
+            ],
+            [
+              "03",
+              "Compression moulding, or extrusion and cutting where the section is supplied by the metre."
+            ],
+            [
+              "04",
+              "Post-cure and trimming, with adhesive backing applied where specified."
+            ],
+            [
+              "05",
+              "Quality inspection — included angle gauged against the drawing tolerance, plus leg dimensions, hardness and load-deflection on batch samples."
+            ],
+            [
+              "06",
+              "Export packaging — industrial packing with documentation. Angle sections are packed nested and unloaded, since rubber stored under compression takes a set and the angle can be forced. ISPM-15 treated pallets where timber packaging is used."
+            ]
+          ],
+          "note": "Six steps, six kept. The live text says “ISO-certified lab” in step 01, which becomes “in-house lab”; step 03 says “Compression Moulding” alone and gains the extruded route.\n🛑 Step 02 is the engineering point of the sheet — shrinkage compensation on the cavity angle is the difference between a section that sits flat and one that rocks, and naming it as a tooling decision is what demonstrates Margo has made angled sections before.\nStep 05 gauges the angle, which turns the tolerance from a claim into a check.\nStep 06 carries a hazard specific to this shape: an angle stacked under load can be bent as well as compressed"
+        }
+      ],
+      "notes": [
+        "The process block must render from the part record, and on this page it has two possible routes.",
+        "“Shrinkage compensation” and “included angle gauged” are the credibility markers here.",
+        "Numbered steps are an <ol>."
+      ]
+    },
+    {
+      "num": "07",
+      "title": "Certified to international standards",
+      "chip": "EN 1337 is the misreading to close off",
+      "live": "LIVE H2 → Certified to International Standards · ISO 9001 only — honest",
+      "fields": [
+        {
+          "label": "Credit, an addition, a caution",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "ISO 9001:2015 claimed and nothing else — no IATF, no TÜV SÜD, no CE marking. The production table prints “On request” rather than inventing figures, and the video says “Film pending”. The scope covers a moulded pad, so the badge stands unqualified.",
+            "🛑 Any rubber load pad invites the structural-bearing misreading. Elastomeric bridge and building bearings are certified products under EN 1337, with CE marking and third-party surveillance, and Margo holds none of it. An angled section used as corner packing on a structure is exactly the enquiry that would arrive.",
+            "Add the client-instructed IATF line (2026-08-31): upgrading to IATF 16949, targeted end 2026; ISO 14001 and 45001 targeted 2027 — stated as a plan, never as held."
+          ],
+          "leads": [
+            "The scope covers a moulded pad, so the badge stands unqualified.",
+            "Any rubber load pad invites the structural-bearing misreading.",
+            "Add the client-instructed IATF line"
+          ],
+          "marked": [
+            "ISO 9001:2015 claimed and nothing else — no IATF, no TÜV SÜD, no CE marking. The production table prints “On request” rather than inventing figures, and the video says “Film pending”. **The scope covers a moulded pad, so the badge stands unqualified.**",
+            "🛑 **Any rubber load pad invites the structural-bearing misreading.** Elastomeric bridge and building bearings are **certified products under EN 1337**, with CE marking and third-party surveillance, and **Margo holds none of it.** An angled section used as corner packing on a structure is exactly the enquiry that would arrive.",
+            "**Add the client-instructed IATF line** (2026-08-31): **upgrading to IATF 16949, targeted end 2026**; ISO 14001 and 45001 targeted 2027 — **stated as a plan, never as held.**"
+          ]
+        },
+        {
+          "label": "Certificate block",
+          "kind": "lit",
+          "value": "ISO 9001:2015 · Certificate 09111526A\nIntegral Certification Ltd · Valid to 21 February 2027\nScope: rubber moulded components — quality management, not a product approval\nThese are industrial and automotive packing sections.\nWe do not supply structural bearings for bridges or buildings,\nwhich are certified separately under EN 1337.\nIATF 16949 — upgrade in progress, certification targeted by end 2026\nISO 14001 and ISO 45001 — targeted 2027",
+          "note": "The middle paragraph turns away work Margo cannot legally do, which is cheaper than being asked for an EN 1337 declaration after an order"
+        },
+        {
+          "label": "Production metrics",
+          "kind": "table",
+          "columns": [
+            "Row",
+            "Live",
+            "Ships as"
+          ],
+          "rows": [
+            [
+              "Years in operation",
+              "",
+              "Publish it once the founding year is settled"
+            ],
+            [
+              "Active clients",
+              "",
+              "60+"
+            ],
+            [
+              "First-pass yield",
+              "On request",
+              "[no change]"
+            ],
+            [
+              "Avg. lead time",
+              "",
+              "3–4 weeks from approved sample"
+            ]
+          ],
+          "note": "Three of the four can be filled from the signed company profile, p27 — and the 99.7% chip in section 04 comes off"
+        }
+      ],
+      "notes": [
+        "🛑 No hasCredential for IATF or EN 1337.",
+        "The certificate number and scope are visible text, not an image caption.",
+        "“Film pending” is fine to ship."
+      ]
+    },
+    {
+      "num": "08",
+      "title": "Technical documentation",
+      "chip": "4 dead downloads · and the section drawing is the missing one",
+      "live": "LIVE H2 → Technical Documentation · PDF, DWG, STEP, ZIP — none exists",
+      "fields": [
+        {
+          "label": "Live state",
+          "kind": "table",
+          "columns": [
+            "Offered",
+            "Reality"
+          ],
+          "rows": [
+            [
+              "PDF — Product datasheet",
+              "Marked “Pending”"
+            ],
+            [
+              "DWG — Technical drawing",
+              "Anchor labelled “Technical Drawing DWG” → /contact"
+            ],
+            [
+              "STEP — 3D CAD model",
+              "No file — a dimensioned section is more use than a solid model here"
+            ],
+            [
+              "ZIP — Product images hi-res",
+              "No file"
+            ]
+          ],
+          "note": "4 × 31 = 124 dead download affordances across the set.\n🛑 A standard-section sheet is the document this page should offer — the angle profiles Margo already has tooling for, with leg dimensions and the angle tolerance. An existing tool is far cheaper than a new one, and a buyer who can find a section close enough to their need will take it. That document sells capacity that already exists"
+        },
+        {
+          "label": "Ships as",
+          "kind": "composite",
+          "parts": [
+            {
+              "kind": "heading",
+              "lines": [
+                "Technical Documentation"
+              ],
+              "accent": []
+            },
+            {
+              "kind": "para",
+              "text": "Section drawings and load-deflection data are issued on request, under NDA where required. Send the angle, both leg dimensions and the load each leg carries, and we will return a dimensioned section with the tolerance stated.",
+              "lead": "Send the angle, both leg dimensions and the load each leg carries",
+              "em": false
+            },
+            {
+              "kind": "lit",
+              "value": "[ Request a section drawing → /contact?part=Angle%20Packing%20Pad&doc=1 ]"
+            }
+          ],
+          "note": "35 words · one honest request line replaces four fake buttons, and it asks for the three things that define the section"
+        }
+      ],
+      "notes": [
+        "Never label a control “Download” unless a file is served.",
+        "Hide the STEP slot on section parts and offer DXF instead.",
+        "🛑 A published standard-section sheet would monetise tooling Margo already owns, which no other document on this site does."
+      ]
+    },
+    {
+      "num": "09",
+      "title": "Technical & commercial questions",
+      "chip": "5 answers written",
+      "live": "LIVE H2 → Technical & Commercial Questions · the same five on all 31 pages",
+      "fields": [
+        {
+          "label": "Q1",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "We supply in bulk. The minimum run is 10,000 pieces per part number, per compound — or quoted per metre where the section is extruded, since the minimum then follows the die rather than the piece. Prototype and first-article lots sit outside the minimum."
+          ],
+          "leads": [
+            "The minimum run is 10,000 pieces per part number, per compound"
+          ],
+          "marked": [
+            "We supply in bulk. **The minimum run is 10,000 pieces per part number, per compound** — or **quoted per metre where the section is extruded**, since the minimum then follows the die rather than the piece. Prototype and first-article lots sit outside the minimum."
+          ],
+          "lits": [
+            "What is the minimum order quantity for this part?"
+          ],
+          "note": "45 words · client-instructed 2026-09-01, with the extruded route given its own commercial answer — a die and a piece minimum are not the same thing"
+        },
+        {
+          "label": "Q2",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Yes — and measure the angle on the part before you send it. Sections come out of some tools a degree or two off, and if the incumbent was out of square the assembly has usually been shimmed to suit. We work from the corner it has to sit in, not from the part that has been packing it."
+          ],
+          "leads": [
+            "and measure the angle on the part before you send it"
+          ],
+          "marked": [
+            "Yes — **and measure the angle on the part before you send it**. Sections come out of some tools a degree or two off, and if the incumbent was out of square the assembly has usually been shimmed to suit. **We work from the corner it has to sit in, not from the part that has been packing it.**"
+          ],
+          "lits": [
+            "Can you match a competitor specification or reverse-engineer an existing part?"
+          ],
+          "note": "55 words · the reverse-engineering answer in its angled-section form — and it quietly explains why the incumbent may be wrong rather than assuming it is right"
+        },
+        {
+          "label": "Q3",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "PDF, DWG and DXF. A dimensioned section is enough — angle, both leg lengths and both leg thicknesses, with the inside radius if you have a preference. Add the load on each leg and hardness becomes our output rather than your input."
+          ],
+          "leads": [
+            "A dimensioned section is enough"
+          ],
+          "marked": [
+            "PDF, DWG and DXF. **A dimensioned section is enough** — angle, both leg lengths and both leg thicknesses, with the inside radius if you have a preference. **Add the load on each leg and hardness becomes our output rather than your input.**"
+          ],
+          "lits": [
+            "What file formats do you accept for drawings?"
+          ],
+          "note": "43 words · “a dimensioned section is enough” removes the barrier, and the list tells the buyer exactly which five numbers to mark"
+        },
+        {
+          "label": "Q4",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Yes. Material test reports, dimensional inspection sheets and a certificate of conformance ship with every consignment. Hardness, tensile to ASTM D412 and compression set to ASTM D395 Method B are tested in-house, and the included angle is gauged on every batch."
+          ],
+          "leads": [
+            "ASTM D412"
+          ],
+          "marked": [
+            "Yes. Material test reports, dimensional inspection sheets and a certificate of conformance ship with every consignment. Hardness, tensile to **ASTM D412** and compression set to **ASTM D395 Method B** are tested in-house, and **the included angle is gauged on every batch**."
+          ],
+          "lits": [
+            "Do you provide material test reports with each shipment?"
+          ],
+          "note": "41 words · the angle check named alongside the material tests — on a section named after its angle, that is the dimension a customer will measure on arrival"
+        },
+        {
+          "label": "Q5",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "TT and LC accepted, discussed per order. Ex-works Nashik or FOB Nhava Sheva. Commercial invoice, packing list and certificate of origin are issued with every consignment. Sections ship nested and unloaded."
+          ],
+          "leads": [
+            "Sections ship nested and unloaded."
+          ],
+          "marked": [
+            "TT and LC accepted, discussed per order. Ex-works Nashik or FOB Nhava Sheva. Commercial invoice, packing list and certificate of origin are issued with every consignment. **Sections ship nested and unloaded.**"
+          ],
+          "lits": [
+            "What are your payment and delivery terms for international orders?"
+          ],
+          "note": "35 words · the standard terms plus the packing consequence for an angled section"
+        }
+      ],
+      "notes": [
+        "All five answers in the DOM at first paint, hidden with CSS.",
+        "Questions become <h3>, not <span>.",
+        "Q2 is the strongest passage — it questions the incumbent part rather than promising to copy it."
+      ]
+    },
+    {
+      "num": "10",
+      "title": "You may also need",
+      "chip": "3 become 4 · the pad family should read as a range",
+      "live": "LIVE H2 → You May Also Need · siblings drawn from a category of nine unrelated parts",
+      "fields": [
+        {
+          "label": "Cards",
+          "kind": "table",
+          "columns": [
+            "Slot",
+            "Part",
+            "Why it is here"
+          ],
+          "rows": [
+            [
+              "Related 1",
+              "Flat Packing Pad /pads-stoppers-caps/epdm-pad",
+              "The same job in one plane, where nothing needs locating"
+            ],
+            [
+              "Related 2",
+              "Slotted Packing Pad — C-section /pads-stoppers-caps/c-pad",
+              "Where the pad has to go around a fastener without dismantling"
+            ],
+            [
+              "Related 3",
+              "Rubber Support Pads /pads-stoppers-caps/big-support-pad",
+              "Where the pad has to isolate vibration as well as hold a gap"
+            ],
+            [
+              "Related 4",
+              "Back Light Rubber Mount /anti-vibration-mounts/backlight-mount",
+              "The other section part in the catalogue, where a profile has to hold something in a channel"
+            ]
+          ],
+          "note": "🛑 The first three cards are one product in three outlines, and the specification method is identical across them: load, gap, retention. A buyer with a packing problem is choosing a shape, not a product.\nRelated 4 is the useful cross-link — it is the only other page in the catalogue where a moulded or extruded section rather than a moulded piece is being bought, and it shares this page’s tooling questions"
+        }
+      ],
+      "notes": [
+        "🛑 Group the pad family with one comparison table — outline, section, typical use, one specification method. It is the page a buyer would bookmark and it does not exist.",
+        "With /sitemap.xml empty, these links and the category page are the only crawl route to this URL.",
+        "Anchor text is the part name, never “View part”."
+      ]
+    },
+    {
+      "num": "11",
+      "title": "Quote CTA",
+      "chip": "Keep the pre-fill · fix the response time",
+      "live": "LIVE H2 → Need this part quoted? · the quote link pre-fills the part name",
+      "fields": [
+        {
+          "label": "Body",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Send the angle, both leg dimensions and the load each leg carries — a dimensioned section if you have one, a sample if you do not. Tell us whether you want moulded pieces or extruded section by the metre, since the tooling differs. We return the section, the compound and the hardness, then quote. We respond within 48 hours."
+          ],
+          "leads": [
+            "Tell us whether you want moulded pieces or extruded section by the metre"
+          ],
+          "marked": [
+            "Send the angle, both leg dimensions and the load each leg carries — a dimensioned section if you have one, a sample if you do not. **Tell us whether you want moulded pieces or extruded section by the metre**, since the tooling differs. We return the section, the compound and the hardness, then quote. **We respond within 48 hours.**"
+          ],
+          "note": "57 words · the moulded-versus-extruded question is asked in the CTA, because it changes the tooling cost and the minimum before anything else is discussed.\n“Within 1 business day (IST)” is the sixth response commitment on this website"
+        },
+        {
+          "label": "Primary CTA",
+          "kind": "lit",
+          "value": "Request a quote",
+          "href": "/contact?part=Angle%20Packing%20Pad%20(L%20Pad)",
+          "note": "Mechanism unchanged — the single best-built control on the website. The shop name stays in brackets so the enquiry is still recognisable on the floor"
+        },
+        {
+          "label": "Secondary",
+          "kind": "lit",
+          "value": "← Back to Pads, Stoppers & Caps\n/products/pads-stoppers-caps",
+          "note": "[no change] — correct"
+        }
+      ],
+      "notes": [
+        "One response time sitewide, rendered from one constant.",
+        "Verify the ?part= value lands in the form field, and that the brackets survive encoding.",
+        "/contact?part=… must canonical to /contact."
+      ]
+    },
+    {
+      "num": "12",
+      "title": "Footer",
+      "chip": "Global component",
+      "live": "LIVE → the shared footer · the same corrections as every sheet in this set",
+      "fields": [],
+      "notes": [
+        "The Products column must list all eleven categories (twelve with sheet lining). It shows nine.",
+        "With /sitemap.xml empty, the footer is the primary crawl path for anything not linked from the homepage.",
+        "Same corrections as every sheet: legal name Margo Rubber Products · © from the current year · the Vilholi address · Export Markets replacing Why Choose Us · 48-hour response · certificate 09111526A with its scope on the ISO line.",
+        "The footer promises a quote “within 24 hours” while section 11 promises “within 1 business day”.",
+        "Column labels are <h2> in the live build, injecting three phantom sections into this page’s outline."
+      ]
+    }
+  ]
+}

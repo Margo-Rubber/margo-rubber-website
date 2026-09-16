@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { displayName } from "@/content/routes";
+import { displayName, hrefFor, industryBySlug, productBySlug } from "@/content/routes";
 import { trail } from "@/lib/breadcrumbs";
 import { getFrontmatter } from "@/lib/content";
 import { getSkuPage, skuSlugs } from "@/lib/sku-source";
@@ -93,12 +93,33 @@ export default async function SkuPage(
     // A missing category file is a content error, not a reason to 500.
   }
 
-  const relatedParts = fm.relatedParts
-    .map((r) => {
-      const s = siblings.find((x) => x.slug === r.slug);
-      return s ? { ...s, difference: r.difference } : null;
-    })
-    .filter((x): x is { slug: string; label: string; difference: string } => !!x);
+  // The sheet's four: a sibling by slug, or "category/slug" for the
+  // cross-category part that shares an assembly (sheet 32 §11). A part
+  // that does not exist is left out rather than linked to a 404.
+  const relatedParts = (
+    await Promise.all(
+      fm.relatedParts.map(async (r) => {
+        if (r.slug.includes("/")) {
+          const [cat, slug] = r.slug.split("/");
+          // "industries/pumps-valves": the sector page the part serves.
+          if (cat === "industries") {
+            const ind = industryBySlug(slug);
+            return ind ? { slug: r.slug, label: ind.label, difference: r.difference, href: hrefFor(ind) } : null;
+          }
+          const other = await getSkuPage(fileFor(cat, slug));
+          return other && other.frontmatter.category === cat
+            ? { slug: r.slug, label: other.frontmatter.h1, difference: r.difference, href: `/products/${cat}/${slug}` }
+            : null;
+        }
+        // A bare category ("o-rings"): its page.
+        const cat = productBySlug(r.slug);
+        if (cat && !siblings.some((x) => x.slug === r.slug)) return { slug: r.slug, label: cat.label, difference: r.difference, href: hrefFor(cat) };
+        // A sibling: its own document's heading, not the category file's list.
+        const sib = await getSkuPage(fileFor(category, r.slug));
+        return sib ? { slug: r.slug, label: sib.frontmatter.h1, difference: r.difference } : null;
+      }),
+    )
+  ).filter((x): x is NonNullable<typeof x> => !!x);
 
   const crumbs = trail(
     ["Products", "/products"],
@@ -156,9 +177,11 @@ export default async function SkuPage(
         properties={fm.compoundProperties}
         compounds={settings.compounds}
         ranking={fm.compoundRanking}
+        router={fm.compoundRouter}
+        h1={fm.h1}
       />
 
-      <SkuAdvantages items={fm.advantages} />
+      <SkuAdvantages items={fm.advantages} chip={fm.qualityChip} />
 
       <SkuApplications items={fm.applications} />
 
@@ -166,7 +189,7 @@ export default async function SkuPage(
 
       <SkuQuality quality={fm.quality} />
 
-      <SkuDownloads items={fm.downloads} />
+      <SkuDownloads items={fm.downloads} documentation={fm.documentation} h1={fm.h1} />
 
       <SkuFaq items={fm.faqs} />
 
@@ -179,6 +202,7 @@ export default async function SkuPage(
         categorySlug={category}
         categoryLabel={categoryLabel}
         quotation={settings.commercial.quotation}
+        body={fm.ctaBody}
       />
     </>
   );

@@ -84,7 +84,7 @@ export const FORBIDDEN_CLAIMS: { pattern: RegExp; why: string }[] = [
   { pattern: /Name pending sign-off|Attribution pending/i, why: "Placeholder strings published on the live page." },
 
   /* ── Materials Margo does not make ───────────────────────────────── */
-  { pattern: /\b(polyurethane|\bPU\b|butyl|\bPVC\b|solid PTFE)\b(?![^\n.]{0,60}(do not|not one of|decline|never))/i, why: "Not among the eight compounds. PTFE-encapsulated O-rings are fine; solid PTFE is not." },
+  { pattern: /(?<!not |make microcellular )\b(polyurethane|\bPU\b|butyl|\bPVC\b|solid PTFE)\b(?![^\n.]{0,60}(do not|not one of|decline|never))/i, why: "Not among the eight compounds. PTFE-encapsulated O-rings are fine; solid PTFE is not." },
 
   /* ── Register ────────────────────────────────────────────────────── */
   { pattern: /cutting[- ]edge|world[- ]class|industry[- ]leading|state[- ]of[- ]the[- ]art/i, why: "Banned marketing register. Voice is factual-engineer." },

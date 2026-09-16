@@ -1,0 +1,288 @@
+# SKU_31_rubber-plungers.html — Rubber Plungers — the Page Whose Name Sells the Wrong Product
+
+**<title>** Plunger Seals & Plunger Cups for Pumps | Margo
+**description** Moulded rubber plunger seals and plunger cups for dosing pumps and sprayers, bonded to your stem. Compound chosen for the fluid pumped, not pre-selected. Nashik.
+
+## 01 Hero, spec block & visual reference [🛑 A plunger has no thickness and no width]
+> live: LIVE H1 → Rubber Plungers · 70 Shore A is right, published without the tolerance that makes it useful
+- **Badges**: `MADE TO ORDER · ISO 9001:2015 · 09111526A`
+  _“IN STOCK” comes off. No stock exists behind it and the badge next to it says so_
+- **H1**: `Plunger Seals & Plunger Cups — Moulded for the Fluid You Pump`
+  _🛑 The name change is the single most valuable edit on this sheet. “Rubber Plunger” puts this page in a search results set full of drain plungers; “plunger seal” puts it in front of the person sourcing one.
+The subtitle carries the argument — on a submerged reciprocating part, the fluid decides everything_
+- **Intro sentence**:
+  > Moulded plunger seals and plunger cups for reciprocating pumps and sprayers, bonded to your stem where the design calls for it. The plunger sits inside the fluid on every stroke — so we choose the compound from what you are pumping, not from a default, and quote the diameter tolerance against the bore it runs in.
+  _54 words · replaces the template’s “Rubber Plungers manufactured to order at our ISO 9001:2015 certified plant in Nashik”, identical on all 31 pages with the name swapped.
+Three facts in three clauses: the bonding capability, the compound question, and the tolerance that has to be quoted against the bore rather than on its own_
+- **Hero spec block** (Field | Live — identical on all 31 pages | Ships as):
+  | HARDNESS | 70 Shore A | 70 Shore A typical, 60–90 available |
+  | SHORE A |  | ±5 pts — quoted with the diameter tolerance, not separately |
+  | TENSILE |  | Per compound datasheet, tested to ASTM D412 |
+  | TEMPERATURE |  | Set by the compound and the fluid pumped |
+  | THICKNESS |  |  |
+  | WIDTH |  |  |
+  | PLUNGER DIAMETER | — | To your drawing |
+  | BORE DIAMETER | — | The bore the plunger runs in |
+  | STROKE | — | Length and strokes per minute |
+  | FLUID PUMPED | — | The specification that comes before every other one |
+  | CONSTRUCTION | — | All-rubber, or bonded to a metal stem |
+  _🛑 Both sheet-rubber fields go, and here they are not merely irrelevant — they describe a geometry the part does not have. A plunger is a diameter and a stroke.
+The hardness row survives intact for the first time in thirty-one sheets, because 70 Shore A is genuinely what a dynamic seal in a bore wants. Only the tolerance line changes, to say what it has to be read against.
+“Fluid pumped” is placed in the hero deliberately. It is the first question, and the live page never asks it at all_
+- **Quantity selector**: `QTY (pieces)
+− 10,000 +
+Minimum run: 10,000 pieces per part number`
+  _Kilograms become pieces and 500 becomes 10,000, client-instructed 2026-09-01. Nobody has ever bought plungers by weight_
+- **Visual reference** (composite):
+    | Cross section view |  | Section through the plunger and its bore — on request under NDA |
+    | Max width |  |  |
+    | Thickness |  |  |
+    | Run length |  |  |
+    | Plunger diameter | — | With tolerance |
+    | Bore diameter and finish | — | Diameter, material and surface finish |
+    | Sealing length | — | The band that contacts the bore |
+    | Stem interface | — | Bonded, threaded or clamped |
+    | Working pressure | — | And whether the stroke is pressure or suction |
+  · Section drawing available on request. Send the bore diameter, the plunger diameter, the stroke and the fluid — or a sample and the pump make — and we will return a dimensioned drawing with the compound recommended for that fluid.
+  _🛑 “Bore diameter and finish” is the row that makes this page technical. A plunger seal cannot be specified alone — it is an interference fit into something, and a rough or scored bore destroys a correct plunger in weeks.
+“Pressure or suction stroke” decides which way the seal is loaded, and a cup seal fitted the wrong way round works perfectly for one stroke in two.
+All three sheet-rubber rows go, as on every page in this set_
+  <details><summary>notes (4)</summary>
+  - One <h1>; breadcrumb Home › Products › Seals › Plunger Seals after the move.
+  - 🛑 The H1 change is worth more than every other edit on this page combined, because it decides which search results the page can appear in at all.
+  - “Plunger cup”, “pump plunger” and “piston seal” belong in the body copy as the terms buyers actually type.
+  - Image alt: “Moulded rubber plunger seals for reciprocating pumps, Margo Rubber Products, Nashik” — and a real photograph here removes the ambiguity the name creates.
+  </details>
+
+## 02 Engineering data [🛑 The row a plunger buyer wants is not in the table]
+> live: LIVE H2 → Engineering Data · 7 rows “On request” · compression set present, abrasion absent
+- **Table** (Row | Live | Ships as):
+  | Product Code |  | Assigned on order |
+  | Product Family |  | Dynamic seals |
+  | Material |  | Selected from the fluid pumped — see the compound table |
+  | Hardness (Shore A) |  | 70 Shore A typical, 60–90 available |
+  | Tensile Strength |  | Per compound datasheet, ASTM D412 |
+  | Elongation at Break |  | Per compound datasheet, ASTM D412 |
+  | Operating Temperature |  | Set by the compound and the fluid — see the compound table |
+  | Compression Set |  | ASTM D395 Method B |
+  | Density |  | Per compound datasheet |
+  | Colour Options | Black standard, custom RAL on request | [no change] |
+  | Lead Time |  | Confirmed with the quotation, from approved drawing and approved sample |
+  | Certifications |  | ISO 9001:2015 — certificate 09111526A, scope: rubber moulded components |
+  | Minimum Order |  | 10,000 pieces per part number, per compound |
+  | Fluid compatibility | — | Confirmed against the fluid before the compound is fixed |
+  | Abrasion resistance | — | DIN 53516 / ISO 4649 — on request, tested externally |
+  | Plunger diameter tolerance | — | Quoted against your bore, not in isolation |
+  | Construction | — | All-rubber, or bonded to a metal stem |
+  | Rubber-to-metal bond | — | In-house, chemical bond to a prepared metal surface |
+  | Working pressure | — | To your specification |
+  _Net change: 13 rows to 19. Tell the developer the table grows by six.
+🛑 The abrasion row is marked “tested externally” deliberately. DIN 53516 is not on Margo’s in-house list — only D412 and D395 Method B are — and on a reciprocating part it is the property that decides service life. Saying so is more useful than implying a capability that would have to be subcontracted anyway.
+The compression-set row keeps its value because the number is real — but it is a static measure, and on a reciprocating plunger abrasion matters more. Card 04 in section 04 says so where a buyer will read it_
+  <details><summary>notes (3)</summary>
+  - 🛑 “Why does my pump plunger swell and jam?” is a real query with a real answer — the wrong elastomer for the fluid — and a manufacturer answering it would be a citable source.
+  - Hide rows you cannot answer rather than printing “On request” seven times.
+  - 🛑 No additionalProperty until the values are real, and never for a test Margo does not run.
+  </details>
+
+## 03 Rubber compound options [🛑 The most expensive default on the website]
+> live: LIVE → EPDM (SELECTED), NBR, Neoprene, SBR — chosen for you, on a part submerged in the fluid
+- **A pre-selected compound on a wetted part**:
+  > 🛑 The plunger is submerged in the pumped fluid on every stroke, so the compound is not a preference — it is the part. EPDM is correct for water, dosing chemicals and brake fluid, and it swells until the plunger jams in its bore in oil, fuel or grease.
+  > The live page picks EPDM for you without asking what is being pumped, and a buyer who takes the default at face value gets a part that either works for years or seizes in weeks, with nothing on the page to tell them which.
+  > The compound default bug runs the length of this site — silicone on all three gaskets pages, FKM on all six oil seals pages, EPDM on the oil filler cap. This is the page where it costs the most, because the fluid is the whole specification. Rule for the developer: on a wetted part, nothing is pre-selected until the fluid is known.
+  > Margo produces every part in every compound it mixes (client-instructed 2026-09-02). Nothing is removed — all eight are ranked by what is being pumped.
+- **Selector** (Rank | Compound | Temperature | Pump it in):
+  | Recommended | NBR | −30 to +120 °C | Oils, fuels, greases and hydraulic fluid — the majority of pumped media, and the compound most plunger seals are made from. Good abrasion resistance for a reciprocating part |
+  | Recommended | EPDM | −40 to +140 °C | Water, dosing chemicals, dilute acids and alkalis, brake fluid. Correct for those and only those — it swells and jams in oil, fuel or grease |
+  | Where needed | FKM (Viton®) | −20 to +250 °C
+continuous to +200 °C | Aggressive chemicals, solvents, hot oil. The escalation when NBR is not enough — and the cold end is the limit to watch |
+  | Suitable | Neoprene | −40 to +120 °C | Refrigerants and mild oils, with reasonable general resistance across a range of duties |
+  | Where needed | Silicone | −60 to +220 °C | High temperature only. Poor abrasion resistance — a weak choice for a reciprocating seal |
+  | Where needed | AEM | −40 to +175 °C
+continuous to +160 °C | Hot oil where NBR is at its ceiling and FKM is more than the job needs. Absent from every selector on this site |
+  | 🛑 Not recommended | SBR | −30 to +100 °C | No oil resistance at all, and it is on the live menu beside NBR with nothing to separate them |
+  | Available | Natural rubber | −20 to +90 °C | Excellent abrasion resistance for water and abrasive slurries, and useless in oil |
+  _🛑 The ranking is by fluid rather than by performance, which is the only sensible order for a wetted part and the opposite of how every selector on this site is built.
+NBR leads and EPDM sits second, reversing the live default — most pumped media in this market are oils and fuels.
+Natural rubber is listed with a genuine strength, abrasion resistance in water and slurry, and an equally genuine disqualifier. Silicone is listed with a warning that applies specifically to reciprocating duty and to no other page in this set.
+“No compound is pre-selected” is a claim the developer has to implement, not just print_
+  <details><summary>notes (3)</summary>
+  - 🛑 Ship the selector with nothing selected and a fluid question in its place. This is the page that justifies the pattern site-wide.
+  - Write FKM (Viton®) once, FKM thereafter, never in the title, meta or schema.
+  - All panels in the DOM at first paint, hidden with CSS.
+  </details>
+
+## 04 Why specifiers choose Margo [4 cards stay four · all four rewritten]
+> live: LIVE H2 → Why Specifiers Choose Margo · four generic cards · a 99.7% yield chip this page later calls “on request”
+- **Quality chip**: `COMPOUND FROM THE FLUID
+Not pre-selected
+the plunger sits in it`
+  _The production table in section 07 says first-pass yield is “On request” — the honest one is the table. The replacement puts the page’s main correction in its most prominent slot_
+- **Cards ×4** (# | Live card | Ships as — title | Ships as — body):
+  | 01 |  | 🛑 The plunger lives inside the fluid | Not near it — in it, on every stroke, for the life of the pump. Get the elastomer wrong and it swells until it jams in the bore. We fix the compound from what you pump, before anything else is decided. |
+  | 02 |  | The bore is half the specification | A plunger seals by interference against something. Send the bore diameter, its material and its surface finish — a correct plunger in a scored bore fails in weeks, and the plunger gets the blame. |
+  | 03 |  | Bonded to your stem, in-house | Most plungers are a rubber element on a metal rod. We prepare the metal and chemically bond the rubber to it in our own plant, so the joint is not a second supplier’s problem. |
+  | 04 |  | It moves, so it wears | Compression set describes a static seal. On a reciprocating plunger, abrasion resistance and friction decide service life — we specify for the stroke rate you give us, and arrange abrasion testing where the duty warrants it. |
+  _Four cards, four cards — no count change and no new element.
+Card 03 is the only card in the set that sells a capability the client has confirmed and the website never mentions. Rubber-to-metal bonding is in-house, and this is one of the few parts where it is the natural construction.
+Card 04 disowns a number the page itself publishes, which is the pattern that makes a technical page trusted_
+  <details><summary>notes (3)</summary>
+  - This is the page’s AEO asset — everything else is shared with 30 other URLs.
+  - Card 01 answers “why did my pump seal swell?” in the shape an answer engine extracts.
+  - Process, named per part — compression moulding, with bonding where specified.
+  </details>
+
+## 05 Global applications [6 cards become 4]
+> live: LIVE H2 → Global Applications · Aerospace and Marine claimed here and on all 31 pages
+- **Why industries are the right frame here**:
+  > A plunger seal is defined by the fluid it sits in, and the fluid follows the industry. So the industry grid works on this page — each sector implies a different medium and therefore a different compound, which is exactly the argument the page is making. It needs the four sectors where reciprocating pumps are ordinary equipment.
+- **Cards** (Slot | Live | Ships as):
+  | 1 |  | Agricultural sprayers — knapsack and power sprayer pumps, where the plunger runs in a chemical solution all season |
+  | 2 |  | Dosing and water treatment — metering pumps handling dilute acids and alkalis, the duty EPDM is genuinely right for |
+  | 3 | Automotive | Automotive and workshop equipment — hand and hydraulic pumps, greasing equipment, oil dispensers |
+  | 4 |  | General industrial pumps — reciprocating and diaphragm pumps across process plant, on oils, fuels and hydraulic fluid |
+  | 5 |  |  |
+  | 6 |  |  |
+  _Two removed and the lead reordered. Aerospace requires AS9100, not held and claimed nowhere; marine fenders are fabricated units, not moulded components.
+Agricultural sprayers lead deliberately. Knapsack and power sprayer pumps are ordinary equipment across India, the plunger is a wearing part replaced every season, and it is the one duty on this list where a wrong compound shows up within a single crop cycle.
+The dosing card names the case EPDM is right for, which keeps the compound argument honest — the live default is not wrong everywhere, it is wrong when nobody asks_
+  <details><summary>notes (3)</summary>
+  - Link the cards to /industries/ pages where they exist — agriculture and automotive both do, and neither links here.
+  - 🛑 No potable-water, food-contact or pharmaceutical claim on a dosing card. Margo holds no such approval, and a metering pump is exactly where a reader would assume one.
+  - Do not claim a sector in Product schema.
+  </details>
+
+## 06 From compound to certification [Bonding is a step and the page omits it]
+> live: LIVE H2 → From Compound to Certification · six steps · no mention of the metal side
+- **Steps** (# | Ships as):
+  | 01 | Material compounding — polymer blending, additive integration and batch QC in our in-house lab. The compound is chosen from the fluid the pump moves, since the plunger is submerged in it on every stroke. |
+  | 02 | Mould design and manufacture in-house, held as a controlled record. Plunger cavities are cut to the diameter tolerance quoted against your bore. |
+  | 03 | Metal preparation and bonding agent application, where the plunger is bonded to a stem. Degrease, abrade, prime — the bond is made during cure, not afterwards. |
+  | 04 | Compression moulding, cure and deflash. The sealing band is the critical surface and is finished accordingly. |
+  | 05 | Quality inspection — plunger diameter and sealing length against the drawing, hardness to the specified tolerance, and bond integrity checked on bonded parts. |
+  | 06 | Export packaging — industrial packing with documentation. Plungers are packed so the sealing band is not deformed in transit, since a flat spot on that band is a leak on arrival. ISPM-15 treated pallets where timber packaging is used. |
+  _🛑 Step 03 is the addition, and it is a capability rather than a rewording. Rubber-to-metal bonding is confirmed in-house and this page never mentions the metal side of the part at all, even though most plungers have one.
+Step 05 names bond integrity separately, because a bonded plunger has two ways to fail and the moulding is only one of them.
+Step 06 matters here — the sealing band is a precision surface, and a flat spot pressed into it during shipping arrives as a leak_
+  <details><summary>notes (3)</summary>
+  - The process block must render from the part record, so bonded parts show step 03 and all-rubber parts do not.
+  - “Rubber-to-metal bonding” is a searched capability and appears nowhere on this website.
+  - Numbered steps are an <ol>.
+  </details>
+
+## 07 Certified to international standards [Honest · add the scope and the IATF line]
+> live: LIVE H2 → Certified to International Standards · ISO 9001 only — honest
+- **Credit, an addition, a caution**:
+  > ISO 9001:2015 claimed and nothing else — no IATF, no TÜV SÜD, no CE marking. The production table prints “On request” rather than inventing figures, and the video says “Film pending”. Four honest calls in one section, on the last page as on the first.
+  > The scope line is needed here for a different reason than on most pages. A plunger seal for a dosing pump invites the reader to assume a potable-water or pharmaceutical approval. Margo holds none, and 09111526A covers quality management for rubber moulded components — not the product, and not the fluid it touches. Say so where a metering-pump buyer will read it.
+  > Add the client-instructed IATF line (2026-08-31): upgrading to IATF 16949, targeted end 2026; ISO 14001 and 45001 targeted 2027 — stated as a plan, never as held.
+- **Certificate block**: `ISO 9001:2015 · Certificate 09111526A
+Integral Certification Ltd · Valid to 21 February 2027
+Scope: rubber moulded components — quality management, not a product approval
+No potable-water, food-contact or pharmaceutical approval is held.
+IATF 16949 — upgrade in progress, certification targeted by end 2026
+ISO 14001 and ISO 45001 — targeted 2027`
+  _The negative line earns its place on this page specifically, because dosing and metering pumps are on the applications list and a reader will otherwise assume the approval exists_
+- **Production metrics** (Row | Live | Ships as):
+  | Years in operation |  | Publish it once the founding year is settled |
+  | Active clients |  | 60+ |
+  | First-pass yield | On request | [no change] |
+  | Avg. lead time |  | 3–4 weeks from approved sample |
+  _Three of the four can be filled from the signed company profile, p27 — and the 99.7% chip in section 04 comes off. Same on all 31 pages; fix it once in the template_
+  <details><summary>notes (3)</summary>
+  - 🛑 No hasCredential for IATF.
+  - The certificate number and scope are visible text, not an image caption.
+  - “Film pending” is fine to ship.
+  </details>
+
+## 08 Technical documentation [4 dead downloads]
+> live: LIVE H2 → Technical Documentation · PDF, DWG, STEP, ZIP — none exists
+- **Live state** (Offered | Reality):
+  | PDF — Product datasheet | Marked “Pending” |
+  | DWG — Technical drawing | Anchor labelled “Technical Drawing DWG” → /contact |
+  | STEP — 3D CAD model | No file — genuinely useful on a plunger, unlike on most parts here |
+  | ZIP — Product images hi-res | No file |
+  _4 × 31 = 124 dead download affordances across the set — the largest single defect on this website, and the last time this sheet series will say so.
+🛑 A fluid compatibility chart is the document this page should offer — medium against compound, with the swell failures marked. It is the single most useful document Margo could publish, it applies to every sealing part in the catalogue, and it answers the question this page currently answers with a default_
+- **Ships as** (composite):
+  · H: “Technical Documentation”
+  · Compound compatibility data and sealing profiles are issued on request, under NDA where required. Tell us what the pump moves, the bore diameter and the stroke, and we will recommend a compound and return a dimensioned drawing.
+  · `[ Request compatibility data → /contact?part=Plunger%20Seals&doc=1 ]`
+  _37 words · one honest request line replaces four fake buttons, and it asks for the fluid first — consistent with every other section on this page_
+  <details><summary>notes (3)</summary>
+  - Never label a control “Download” unless a file is served.
+  - Keep the STEP slot on this part and hide it elsewhere — a plunger is a solid of revolution and a model is genuinely useful.
+  - 🛑 A fluid compatibility chart would serve the whole catalogue, and would be the first genuinely citable asset on this domain.
+  </details>
+
+## 09 Technical & commercial questions [5 answers written]
+> live: LIVE H2 → Technical & Commercial Questions · the same five on all 31 pages
+- **Q1**:
+  > We supply in bulk. The minimum run is 10,000 pieces per part number, per compound. A plunger in two compounds is two part numbers — and on this part that is common, since the same pump body is sold for water and for oil. Prototype and first-article lots sit outside the minimum.
+  `What is the minimum order quantity for this part?`
+  _52 words · client-instructed 2026-09-01, with the two-compound case spelled out because it is the normal situation for a pump maker rather than an edge case_
+- **Q2**:
+  > Yes — send the plunger and tell us what the pump moves. A swollen plunger measures larger than it was made, and a worn one measures smaller, so a used sample copied dimensionally reproduces the failure rather than the part. The fluid tells us what happened to it.
+  `Can you match a competitor specification or reverse-engineer an existing part?`
+  _50 words · the sharpest reverse-engineering answer in the set, because on this part a used sample is actively misleading in two opposite directions_
+- **Q3**:
+  > PDF, DWG, DXF and STEP. A plunger drawing needs the bore it runs in — diameter, material and surface finish — along with the stroke, the strokes per minute and the fluid. Without the bore, the diameter tolerance cannot be set.
+  `What file formats do you accept for drawings?`
+  _43 words · STEP is accepted here and declined on flat parts, and the answer explains what a drawing has to contain rather than only which format carries it_
+- **Q4**:
+  > Yes. Material test reports, dimensional inspection sheets and a certificate of conformance ship with every consignment. Hardness and tensile to ASTM D412 and compression set to ASTM D395 Method B, tested in-house. Abrasion testing to DIN 53516 is arranged externally where the duty warrants it.
+  `Do you provide material test reports with each shipment?`
+  _46 words · the in-house list and the external one, separated. On a reciprocating part the external test is the more relevant of the two, and saying so is worth more than implying it is in-house_
+- **Q5**:
+  > TT and LC accepted, discussed per order. Ex-works Nashik or FOB Nhava Sheva. Commercial invoice, packing list and certificate of origin are issued with every consignment. Plungers ship so the sealing band is not deformed in transit.
+  `What are your payment and delivery terms for international orders?`
+  _37 words · the standard terms plus the packing consequence for a precision sealing surface_
+  <details><summary>notes (3)</summary>
+  - All five answers in the DOM at first paint, hidden with CSS.
+  - Questions become <h3>, not <span>.
+  - Q2 is the strongest passage on the page — it explains why the obvious approach produces the wrong part.
+  </details>
+
+## 10 You may also need [3 become 4 · hand-picked across categories]
+> live: LIVE H2 → You May Also Need · siblings drawn from a category this part should leave
+- **Cards** (Slot | Part | Why it is here):
+  | Related 1 | Compression Pump Inlays /pads-stoppers-caps/compression-pump-inlays | The other pump part in the catalogue, and the other one specified on the fluid rather than on load |
+  | Related 2 | O-Rings /o-rings | The static seals in the same pump head — usually ordered on the same drawing |
+  | Related 3 | Oil Seals /oil-seals | The rotating-shaft equivalent, for the drive end of the same machine |
+  | Related 4 | Rubber-to-Metal Bonded Components /products/bonded-components | The capability behind a bonded plunger, applied across the range |
+  _🛑 Related 4 points at a page that does not exist, and that is the recommendation. Rubber-to-metal bonding is a confirmed in-house capability with no page on this website — and it is a stronger commercial asset than several categories that do have one.
+The other three assemble a pump. A buyer sourcing a plunger is usually rebuilding a pump head, and the O-rings and the shaft seal are on the same list_
+  <details><summary>notes (3)</summary>
+  - With /sitemap.xml empty, these links and the category page are the only crawl route to this URL.
+  - 🛑 After the move to Seals, this page’s siblings change entirely — and they become relevant for the first time.
+  - Anchor text is the part name, never “View part”.
+  </details>
+
+## 11 Quote CTA [Pre-fill and response time]
+> live: LIVE H2 → Need this part quoted? · the quote link pre-fills “Rubber Plungers”
+- **Body**:
+  > Tell us what the pump moves, the bore diameter, the plunger diameter and the stroke — a drawing if you have one, the pump make and a sample if you do not. We confirm the compound against the fluid before quoting anything, then price against your annual quantity. We respond within 48 hours.
+  _53 words · the fluid is asked for first and the compound is confirmed before the price, which is the page’s whole argument stated once more at the point of action.
+“The pump make” is a realistic ask for a buyer holding a worn part and no drawing.
+“Within 1 business day (IST)” is the sixth response commitment on this website — the footer 350 px below says 24 hours_
+- **Primary CTA**: `Request a quote` → /contact?part=Plunger%20Seals
+  _🛑 The pre-fill follows the rename. Leaving it as “Rubber Plungers” drops that string into the CRM on every enquiry, and the sales team then searches for a part name the catalogue no longer uses_
+- **Secondary**: `← Back to Seals
+/products/seals`
+  _Follows the category move — the last of the six places on this page where the recategorisation has to be applied_
+  <details><summary>notes (3)</summary>
+  - One response time sitewide, rendered from one constant.
+  - Verify the ?part= value lands in the form field — it is the CRM record.
+  - /contact?part=… must canonical to /contact.
+  </details>
+
+## 12 Footer [Global component]
+> live: LIVE → the shared footer · the same corrections as every sheet in this set
+  <details><summary>notes (5)</summary>
+  - The Products column must list all eleven categories (twelve with sheet lining). It shows nine.
+  - With /sitemap.xml empty, the footer is the primary crawl path for anything not linked from the homepage.
+  - Same corrections as every sheet: legal name Margo Rubber Products · © from the current year · the Vilholi address · Export Markets replacing Why Choose Us · 48-hour response · certificate 09111526A with its scope on the ISO line.
+  - The footer promises a quote “within 24 hours” while section 11 promises “within 1 business day”.
+  - Column labels are <h2> in the live build, injecting three phantom sections into this page’s outline — on all 31 pages, and this is the last of them.
+  </details>

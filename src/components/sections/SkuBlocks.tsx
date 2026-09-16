@@ -29,97 +29,98 @@ import {
  * Google manual-action risk. The route emits no Product/aggregateRating JSON-LD.
  */
 
-/* ── SAMPLE reference data ──────────────────────────────────────────────
-   Used only where a SKU file has no real values. Defined once here rather
-   than copied into 31 content files, so deleting the block removes every
-   placeholder at a stroke. */
+/* ── TEMPLATE defaults — sheet 32 ─────────────────────────────────────
+   What a SKU page shows where its own document is silent: the template
+   copy from sheet 32, section for section. Every one of the 31 part sheets
+   (34) overrides most of it; the fallback is here so nothing older than the
+   sheets can ever render. No metalworking photographs (sheet 32 §02): the
+   one tray-of-mouldings plate serves until Margo shoots the parts. */
 const SAMPLE = {
-  /* The three plates supplied with the design. Shared across every SKU until
-     Margo shoots the real parts; a SKU file with its own `gallery` overrides. */
-  gallery: {
-    main: "sku.product",
-    thumbs: ["sku.product", "sku.finishing", "sku.machining", "sku.product"],
-  },
-  advantageImages: { main: "sku.finishing", inset: "sku.machining" },
-  qualityBadge: { value: "99.7%", label: "QUALITY RATE", note: "first-pass yield avg." },
-  faqImage: "sku.finishing",
-  overlay: [
-    { label: "SHORE A", value: "70", note: "±5 pts tolerance" },
-    { label: "TENSILE", value: "18", note: "MPa" },
-  ],
+  gallery: { main: "sku.product", thumbs: [] as string[] },
+  advantageImages: { main: "sku.product" },
+  qualityChip: { label: "QUALITY SYSTEM", value: "ISO 9001:2015 certificate 09111526A" },
   quickSpecs: [
-    { label: "HARDNESS", value: "70 Shore A" },
-    { label: "TEMPERATURE", value: "-40 to +120°C" },
-    { label: "THICKNESS", value: "1mm - 50mm" },
-    { label: "WIDTH", value: "Up to 2,000mm" },
+    { label: "HARDNESS", value: "To your drawing" },
+    { label: "TEMPERATURE", value: "Compound dependent — see section 04" },
   ],
-  order: { unit: "kg", defaultQty: "1,000", minNote: "Min: 500 kg" },
-  assurances: ["ISO 9001:2015", "100% QC Tested", "Made to drawing"],
+  order: { unit: "pieces", defaultQty: "10,000", minNote: "Minimum run: 10,000 pieces" },
+  assurances: ["MADE TO ORDER", "ISO 9001:2015"],
   specs: [
     { label: "Material", value: "Compound dependent, see options below" },
-    { label: "Hardness (Shore A)", value: "On request" },
-    { label: "Tensile Strength", value: "On request" },
-    { label: "Elongation at Break", value: "On request" },
+    { label: "Hardness (Shore A)", value: "To your drawing, 40–90 Shore A typical" },
+    { label: "Tensile Strength", value: "Per compound datasheet — tested to ASTM D412" },
+    { label: "Elongation at Break", value: "Per compound datasheet — tested to ASTM D412" },
     { label: "Operating Temperature", value: "Compound dependent" },
-    { label: "Compression Set", value: "On request" },
-    { label: "Density", value: "On request" },
+    { label: "Compression Set", value: "Tested to ASTM D395 Method B" },
+    { label: "Density", value: "Per compound datasheet" },
     { label: "Colour Options", value: "Black standard, custom RAL on request" },
-    { label: "Lead Time", value: "On request" },
+    { label: "Lead Time", value: "Confirmed with the quotation, from approved drawing and approved sample" },
   ],
   dimensional: {
-    caption: "DIMENSIONAL REFERENCE",
-    widthNote: "W: to drawing",
-    thicknessNote: "T: to drawing",
+    caption: "Cross section view",
+    note: "Drawing on request under NDA",
     tiles: [
-      { value: "To drawing", label: "Max width" },
-      { value: "To drawing", label: "Thickness" },
-      { value: "On request", label: "Run length" },
+      { value: "To your drawing or sample", label: "Overall dimensions" },
+      { value: "ISO 3302-1, class agreed per part", label: "Tolerance class" },
+      { value: "Rubber-to-metal bonding in-house where the part requires it", label: "Bonded insert" },
     ],
+    footnote:
+      "Drawing available on request under NDA. Send your part number or a sample and we will return a dimensioned drawing for approval before tooling.",
   },
   advantages: [
-    { icon: "shield", name: "Superior Durability", body: "Engineered for long service life under continuous mechanical stress and UV exposure." },
-    { icon: "bolt", name: "Precision Tolerance", body: "Dimensional accuracy held under ISO-controlled compression moulding." },
-    { icon: "globe", name: "Global Compliance", body: "Manufactured against the international standard applicable to your market." },
-    { icon: "layers", name: "Custom Formulation", body: "In-house compounding delivers bespoke rubber blends for unique operating conditions." },
+    { icon: "shield", name: "Superior Durability", body: "Compound and geometry selected for the service life your application needs — continuous mechanical stress, UV exposure or fluid contact." },
+    { icon: "bolt", name: "Precision Tolerance", body: "Dimensional conformity to ISO 3302-1, class agreed per part — injection, compression or transfer moulded to suit the geometry." },
+    { icon: "globe", name: "Global Compliance", body: "Produced against the standard your drawing calls out. Tell us the specification and we confirm what we can supply against it." },
+    { icon: "layers", name: "Custom Formulation", body: "In-house compounding across the eight rubbers we mix, blended to your operating conditions." },
   ],
   applications: [
     { icon: "gear", name: "Automotive", body: "Seals, mounts, vibration dampers" },
     { icon: "factory", name: "Heavy Industry", body: "Conveyor liners, impact buffers" },
-    { icon: "plane", name: "Aerospace", body: "Precision gaskets, O-rings" },
-    { icon: "bolt", name: "Energy & Oil", body: "Pipeline seals, valve packing" },
-    { icon: "ship", name: "Marine", body: "Hatch covers, fender systems" },
-    { icon: "crane", name: "Construction", body: "Expansion joints, bearings" },
+    { icon: "bolt", name: "Oil & Gas", body: "Static seals and gaskets for surface equipment" },
+    { icon: "crane", name: "Infrastructure", body: "Sealing profiles, pads and gaskets for plant and building services" },
   ],
   process: [
-    { name: "Material Compounding", body: "Raw polymer blending, additive integration, and batch QC testing in our ISO-certified lab." },
+    { name: "Material Compounding", body: "Raw polymer blending, additive integration and batch QC testing in our in-house lab." },
     { name: "Mould Design & CNC", body: "Precision steel tooling manufactured in-house and held as a controlled record." },
-    { name: "Compression Moulding", body: "Hydraulic press cycles at controlled temperature and pressure profiles per product spec." },
+    { name: "Moulding", body: "Injection, compression or transfer, selected for the part geometry, at controlled temperature and pressure profiles." },
     { name: "Post-Cure & Trimming", body: "Oven post-cure for dimensional stability, followed by flash trimming." },
-    { name: "Quality Inspection", body: "Dimensional check, hardness testing, and batch sampling before release." },
-    { name: "Export Packaging", body: "Industrial packing with documentation for international shipping compliance." },
+    { name: "Quality Inspection", body: "Dimensional check, hardness testing and batch sampling before release." },
+    { name: "Export Packaging", body: "Industrial packing with documentation for international shipping. ISPM-15 treated pallets where timber packaging is used." },
   ],
   quality: {
     heading: "Certified to International Standards",
-    body: "Every product leaves our facility with a documentation package: material test reports, dimensional inspection sheets, and a certificate of conformance, giving traceability from raw material to finished part.",
+    body: "Every product leaves our facility with a documentation package — material test reports, dimensional inspection sheets and a certificate of conformance — giving traceability from raw material to finished part.",
     certificates: [
-      { name: "ISO 9001:2015", issuer: "Accredited certification body", validity: "Current" },
+      { name: "ISO 9001:2015 · Certificate 09111526A", issuer: "Integral Certification Ltd", validity: "Valid to 21 February 2027 · Scope: rubber moulded components" },
     ],
     metrics: [
       { value: "On request", label: "Years in operation" },
-      { value: "On request", label: "Active clients" },
+      { value: "60+", label: "Active clients" },
       { value: "On request", label: "First-pass yield" },
-      { value: "On request", label: "Avg. lead time" },
+      { value: "3–4 weeks from approved sample", label: "Avg. lead time" },
     ],
     tour: { title: "Facility walkthrough", note: "Film pending" },
   },
+  documentation: {
+    body: "Datasheets, dimensioned drawings and 3D models are issued per part on request, under NDA where required. Tell us the part and the format you work in — PDF, DWG, DXF or STEP — and we will send what we hold.",
+    ctaLabel: "Request documentation",
+  },
   faqs: [
-    { q: "What is the minimum order quantity for this part?", a: "Standard minimum order is 500 pieces per SKU. Prototype and qualification quantities are accepted for sample development, and the exact figure for your part is confirmed at quotation." },
-    { q: "Can you match a competitor specification or reverse-engineer an existing part?", a: "Yes. Send a sample or a drawing and our team will identify the compound, hardness and geometry, then quote against a matched specification. Tooling cost, if any, is quoted upfront." },
-    { q: "What file formats do you accept for drawings?", a: "DXF, DWG, PDF and STEP. A dimensioned PDF is sufficient to quote; a CAD file speeds up tooling design where a new mould is required." },
-    { q: "Do you provide material test reports with each shipment?", a: "Yes. Every shipment carries batch-level traceability to the raw material lot, along with a material test report and a certificate of conformance prepared for procurement and audit requirements." },
-    { q: "What are your payment and delivery terms for international orders?", a: "FOB Mumbai is standard, with CIF, EXW and DAP available on request. Payment is T/T in advance for new accounts, with open terms or L/C available for established buyers." },
+    { q: "What is the minimum order quantity for this part?", a: "We supply in bulk. The minimum run is 10,000 pieces per part number, per compound, or quoted against the part where geometry or tooling makes that unrealistic. Prototype and first-article lots sit outside the minimum." },
+    { q: "Can you match a competitor specification or reverse-engineer an existing part?", a: "Yes. Send the physical sample or the drawing and we will produce a dimensioned drawing and confirm compound selection before tooling. A worn part measures smaller than it was made — we dimension to the original intent, not to the wear, and confirm with you first." },
+    { q: "What file formats do you accept for drawings?", a: "PDF, DWG, DXF and STEP. A dimensioned 2D drawing with tolerances is enough to quote; a 3D model helps with tooling. If you only have a sample, send the sample — we will produce the drawing." },
+    { q: "Do you provide material test reports with each shipment?", a: "Yes. Material test reports, dimensional inspection sheets and a certificate of conformance ship with every consignment, and batch records are retained per shipment. Hardness, tensile to ASTM D412 and compression set to ASTM D395 Method B are tested in-house." },
+    { q: "What are your payment and delivery terms for international orders?", a: "TT and LC accepted, discussed per order. Ex-works Nashik or FOB Nhava Sheva, with sea and air freight via established forwarders. Commercial invoice, packing list and certificate of origin are issued with every consignment." },
   ],
+  ctaBody: "Send your drawing or a sample. We confirm compound, hardness and tolerance, then quote against your annual quantity. We respond within 48 hours.",
 } as const;
+
+/** "2027-02-21" → "21 February 2027", as the sheets write the expiry; anything else as is. */
+function longDate(iso?: string): string {
+  if (!iso || !/^\d{4}-\d{2}-\d{2}$/.test(iso)) return iso ?? "";
+  const [y, m, d] = iso.split("-").map(Number);
+  return `${d} ${["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][m - 1]} ${y}`;
+}
 
 /* ── icons ──────────────────────────────────────────────────────────────── */
 const ICONS: Record<string, React.ReactNode> = {
@@ -297,7 +298,9 @@ export function SkuHero({
   assurances: readonly string[];
   breadcrumb?: readonly Crumb[];
 }) {
-  const overlay = gallery.overlay.length ? gallery.overlay : SAMPLE.overlay;
+  // No overlay card without values: the design's "70 / 18 MPa" were one
+  // figure for eight compounds (sheet 32 §01).
+  const overlay = gallery.overlay;
   const specs = quickSpecs.length ? quickSpecs : SAMPLE.quickSpecs;
   const ord = order ?? SAMPLE.order;
   const trust = assurances.length ? assurances : SAMPLE.assurances;
@@ -320,17 +323,19 @@ export function SkuHero({
               {/* Floating spec card over the lower-right of the plate. */}
               {/* Overlay card. Sized down on small screens: at desktop scale it
                   covered most of the plate on a 375px viewport. */}
+              {overlay.length > 0 && (
               <dl className="rounded-card border-line absolute right-3 bottom-3 max-w-[58%] border bg-[#0D0F12]/95 px-3.5 py-3 backdrop-blur sm:right-4 sm:bottom-4 sm:max-w-none sm:px-5 sm:py-4">
                 {overlay.map((o) => (
                   <div key={o.label} className="not-first:mt-2.5 not-first:border-line not-first:border-t not-first:pt-2.5 sm:not-first:mt-4 sm:not-first:pt-4">
                     <dt className="text-eyebrow text-ink-4 font-mono uppercase">{o.label}</dt>
-                    <dd className="text-ink mt-0.5 text-lg leading-none font-semibold sm:mt-1 sm:text-2xl">
+                    <dd className={`text-ink mt-0.5 font-semibold sm:mt-1 ${o.value.length > 12 ? "text-sm leading-snug" : "text-lg leading-none sm:text-2xl"}`}>
                       {o.value}
                       {o.note && <span className="text-ink-4 ml-1.5 text-xs font-normal">{o.note}</span>}
                     </dd>
                   </div>
                 ))}
               </dl>
+              )}
             </div>
 
             <ul className="mt-4 grid grid-cols-5 gap-3">
@@ -404,12 +409,14 @@ export function SkuHero({
                 Request Quote
                 <Arrow />
               </Link>
+              {/* No "Download Datasheet" that opens the contact form (sheet
+                  32 §09): documentation is requested in its own section. */}
               <Link
-                href="/contact"
+                href={`/contact?part=${encodeURIComponent(h1)}&doc=1`}
                 className="border-line-2 text-ink hover:border-accent-400/60 rounded-pill inline-flex items-center gap-2.5 border px-6 py-3.5 text-sm font-semibold transition-colors"
               >
-                <Icon name="download" className="size-4" />
-                Download Datasheet
+                <Icon name="doc" className="size-4" />
+                Request documentation
               </Link>
             </div>
 
@@ -436,15 +443,23 @@ export function SkuGallery({
   gallery: { main?: string; thumbs: readonly string[] };
   dimensional?: {
     caption: string;
-    widthNote: string;
-    thicknessNote: string;
+    widthNote?: string;
+    thicknessNote?: string;
+    note?: string;
     tiles: readonly { value: string; label: string }[];
     footnote?: string;
   };
 }) {
-  const dim = dimensional ?? SAMPLE.dimensional;
+  const dim: {
+    caption: string;
+    widthNote?: string;
+    thicknessNote?: string;
+    note?: string;
+    tiles: readonly { value: string; label: string }[];
+    footnote?: string;
+  } = dimensional ?? SAMPLE.dimensional;
   const main = gallery.main ?? SAMPLE.gallery.main;
-  const thumbs = gallery.thumbs.length ? gallery.thumbs : SAMPLE.gallery.thumbs;
+  const thumbs = gallery.thumbs;
 
   return (
     <section className="bg-band border-line border-t py-[70px]">
@@ -466,19 +481,26 @@ export function SkuGallery({
           <Plate k={main} ratio="aspect-[16/10]" sizes="(min-width:1024px) 58vw, 100vw" />
 
           <div className="grid gap-5">
-            <ul className="grid grid-cols-2 gap-4">
-              {thumbs.slice(0, 4).map((t, i) => (
-                <li key={i}>
-                  <Plate k={t} ratio="aspect-[4/3]" label="" sizes="200px" />
-                </li>
-              ))}
-            </ul>
+            {/* Thumbnails only when the part has been photographed; the
+                three stock plates that stood in are off (sheet 32 §02). */}
+            {thumbs.length > 0 && (
+              <ul className="grid grid-cols-2 gap-4">
+                {thumbs.slice(0, 4).map((t, i) => (
+                  <li key={i}>
+                    <Plate k={t} ratio="aspect-[4/3]" label="" sizes="200px" />
+                  </li>
+                ))}
+              </ul>
+            )}
 
             {/* Cross-section panel. */}
             <div className="rounded-card border-line border bg-[#0D0F12] p-6">
-              <p className="text-eyebrow text-ink-4 font-mono uppercase">Cross section view</p>
+              <p className="text-eyebrow text-ink-4 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 font-mono uppercase">
+                {dim.caption}
+                {dim.note && <span className="text-ink-4/70 normal-case">{dim.note}</span>}
+              </p>
               <svg viewBox="0 0 260 120" className="mt-5 h-auto w-full" role="img" aria-label="Cross section reference diagram">
-                <text x="130" y="12" textAnchor="middle" fill="var(--color-ink-4)" fontSize="8" fontFamily="var(--font-mono)">{dim.widthNote}</text>
+                {dim.widthNote && <text x="130" y="12" textAnchor="middle" fill="var(--color-ink-4)" fontSize="8" fontFamily="var(--font-mono)">{dim.widthNote}</text>}
                 <line x1="20" y1="22" x2="240" y2="22" stroke="var(--color-accent-400)" strokeWidth="0.8" strokeDasharray="3 3" opacity="0.6" />
                 <rect x="20" y="34" width="220" height="52" rx="3" fill="none" stroke="var(--color-accent-400)" strokeWidth="1.2" />
                 <g stroke="var(--color-accent-400)" strokeWidth="0.6" opacity="0.35">
@@ -487,16 +509,21 @@ export function SkuGallery({
                 <circle cx="130" cy="60" r="7" fill="none" stroke="var(--color-accent-400)" strokeWidth="0.8" />
                 <path d="M130 51v18M121 60h18" stroke="var(--color-accent-400)" strokeWidth="0.8" />
                 <line x1="250" y1="34" x2="250" y2="86" stroke="var(--color-accent-400)" strokeWidth="0.8" strokeDasharray="3 3" opacity="0.6" />
-                <text x="130" y="104" textAnchor="middle" fill="var(--color-ink-4)" fontSize="8" fontFamily="var(--font-mono)">{dim.thicknessNote}</text>
+                {dim.thicknessNote && <text x="130" y="104" textAnchor="middle" fill="var(--color-ink-4)" fontSize="8" fontFamily="var(--font-mono)">{dim.thicknessNote}</text>}
               </svg>
-              <dl className="mt-5 grid grid-cols-3 gap-3">
+              {/* The part's own rows — bore, sleeve, tolerance class — not
+                  the sheet-stock trio the template shipped with. */}
+              <dl className="mt-5 grid grid-cols-2 gap-3">
                 {dim.tiles.map((t) => (
-                  <div key={t.label} className="rounded border border-[#1B2026] bg-[#111418] px-3 py-3 text-center">
-                    <dd className="text-ink text-sm font-semibold">{t.value}</dd>
-                    <dt className="text-ink-4 mt-0.5 text-xs">{t.label}</dt>
+                  <div key={t.label} className="rounded border border-[#1B2026] bg-[#111418] px-3 py-3">
+                    <dt className="text-ink-4 text-xs">{t.label}</dt>
+                    <dd className="text-ink mt-1 text-sm font-semibold">{t.value}</dd>
                   </div>
                 ))}
               </dl>
+              {dim.footnote && (
+                <p className="text-ink-4 mt-5 text-sm leading-relaxed">{dim.footnote}</p>
+              )}
             </div>
           </div>
         </div>
@@ -524,23 +551,27 @@ export function SkuSpecs({
   settings: SiteSettings;
 }) {
   const held = settings.certifications.items.find((c) => c.standing === "held");
+  const specRows = specs.length ? specs : SAMPLE.specs;
   const rows = [
-    { label: "Product Code", value: productCode ?? "On request" },
+    // A part page whose part number is "on request" is the one thing a
+    // buyer will notice (sheet 32 §03): no code, no row.
+    ...(productCode ? [{ label: "Product Code", value: productCode }] : []),
     { label: "Product Family", value: categoryLabel },
     ...(hardness ? [{ label: "Hardness", value: hardness }] : []),
     ...(dimensions ? [{ label: "Dimensions", value: dimensions }] : []),
     // Per-part rows only; a row with nothing behind it is not shown.
-    ...specs.filter((r) => r.value.trim()),
+    ...specRows.filter((r) => r.value.trim()),
     {
       label: "Certifications",
       value: held
-        ? `${held.code} — certificate ${held.identifier}, valid to ${held.validThrough}`
+        ? `${held.code} — certificate ${held.identifier}, valid to ${longDate(held.validThrough)}`
         : settings.certifications.line,
     },
     // One constant, three places: the hero selector, this row and the FAQ.
     { label: "Minimum Order", value: settings.commercial.minimumRunMoulded },
   ];
   const tiles = dimensional?.tiles.length ? dimensional.tiles : SAMPLE.dimensional.tiles;
+
 
   return (
     <section className="bg-canvas border-line border-t py-[70px]">
@@ -575,27 +606,18 @@ export function SkuSpecs({
               <line x1="226" y1="40" x2="226" y2="96" stroke="var(--color-accent-400)" strokeWidth="0.8" strokeDasharray="3 3" opacity="0.6" />
               <text x="120" y="116" textAnchor="middle" fill="var(--color-ink-4)" fontSize="8" fontFamily="var(--font-mono)">To customer drawing</text>
             </svg>
-            <dl className="mt-6 grid grid-cols-3 gap-3">
+            <dl className="mt-6 grid grid-cols-2 gap-3">
               {tiles.map((t) => (
-                <div key={t.label} className="rounded border border-[#1B2026] bg-[#111418] px-2 py-3 text-center">
-                  <dd className="text-ink text-xs font-semibold">{t.value}</dd>
-                  <dt className="text-ink-4 mt-1 text-xs">{t.label}</dt>
+                <div key={t.label} className="rounded border border-[#1B2026] bg-[#111418] px-3 py-3">
+                  <dt className="text-ink-4 text-xs">{t.label}</dt>
+                  <dd className="text-ink mt-1 text-xs font-semibold">{t.value}</dd>
                 </div>
               ))}
             </dl>
           </div>
         </div>
-
-        <div className="mt-6 flex flex-wrap gap-3">
-          <Link href="/contact" className="border-accent-400/40 text-accent-400 hover:bg-accent-400/8 inline-flex items-center gap-2.5 rounded-md border px-5 py-3 text-sm font-medium transition-colors">
-            <Icon name="download" className="size-4" />
-            Download Full Datasheet PDF
-          </Link>
-          <Link href="/contact" className="border-line-2 text-ink-2 hover:border-accent-400/60 inline-flex items-center gap-2.5 rounded-md border px-5 py-3 text-sm font-medium transition-colors">
-            <Icon name="doc" className="size-4" />
-            Technical Drawing DWG
-          </Link>
-        </div>
+        {/* The two "download" buttons that opened the contact form are gone;
+            documentation is requested in its own section (sheet 32 §09). */}
       </Container>
     </section>
   );
@@ -607,6 +629,8 @@ export function SkuCompounds({
   properties,
   compounds,
   ranking = [],
+  router,
+  h1,
 }: {
   codes: readonly string[];
   properties: Record<string, string[]>;
@@ -614,7 +638,19 @@ export function SkuCompounds({
   compounds: readonly CompoundRow[];
   /** Sheet 33: all eight ranked for this part, with the reason. When present
       it decides the order and the note; `codes` is the older subset. */
-  ranking?: readonly { code: string; rank: number; reason: string }[];
+  ranking?: readonly {
+    code: string;
+    rank: number;
+    reason: string;
+    rankLabel?: string;
+    temperature?: string;
+    hardness?: string;
+    name?: string;
+  }[];
+  /** A compound-variant page routes instead of ranking (sheet 34). */
+  router?: { columns: readonly string[]; rows: readonly (readonly string[])[] };
+  /** Pre-fills the "Not sure?" link with the part. */
+  h1?: string;
 }) {
   // Part documents name compounds either by code (FKM) or by display name
   // (Silicone, Natural Rubber); accept both so no existing record goes dark.
@@ -624,14 +660,20 @@ export function SkuCompounds({
   const source = ranking.length
     ? [...compounds].filter(rankOf).sort((a, b) => rankOf(a)!.rank - rankOf(b)!.rank)
     : compounds.filter(wanted);
-  const items: Compound[] = source.map((c) => ({
-    code: c.name,
-    name: c.fullName,
-    tempC: [c.minC, c.maxC] as const,
-    note: rankOf(c)?.reason ?? c.descriptor,
-    properties: properties[c.code] ?? properties[c.name] ?? [],
-  }));
-  if (!items.length) return null;
+  const items: Compound[] = source.map((c) => {
+    const r = rankOf(c);
+    return {
+      code: r?.name ?? c.name,
+      name: c.fullName,
+      tempC: [c.minC, c.maxC] as const,
+      note: r?.reason ?? c.descriptor,
+      properties: properties[c.code] ?? properties[c.name] ?? [],
+      rankLabel: r?.rankLabel,
+      temperature: r?.temperature,
+      hardness: r?.hardness,
+    };
+  });
+  if (!items.length && !router) return null;
 
   return (
     <section className="bg-band border-line border-t py-[70px]">
@@ -646,7 +688,47 @@ export function SkuCompounds({
             application requirements.
           </p>
         </div>
-        <SkuCompoundPicker items={items} />
+        {router ? (
+          /* "A compound page needs a router, not a menu": when to leave this
+             compound and what to specify instead, as the sheet writes it. */
+          <div className="rounded-card border-line overflow-x-auto border">
+            <table className="w-full border-collapse text-sm">
+              <thead>
+                <tr>
+                  {router.columns.map((c) => (
+                    <th key={c} scope="col" className="bg-accent-400 text-canvas px-4 py-3 text-left font-semibold whitespace-nowrap">
+                      {c}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {router.rows.map((r, i) => (
+                  <tr key={i} className="odd:bg-surface-2/40">
+                    {r.map((cell, j) => (
+                      <td
+                        key={j}
+                        className={`border-line border-t px-4 py-3 align-top whitespace-pre-line ${j === 0 ? "text-ink font-medium whitespace-nowrap" : "text-ink-2"}`}
+                      >
+                        {cell}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ) : (
+          <SkuCompoundPicker items={items} />
+        )}
+        {/* "Not sure? Send the medium, temperature and load" — the same
+            request the industry pages make (sheet 32 §04). */}
+        <p className="text-ink-4 mt-6 text-sm">
+          Not sure?{" "}
+          <Link href={h1 ? `/contact?part=${encodeURIComponent(h1)}` : "/contact"} className="text-accent-400 hover:opacity-80">
+            Send the medium, temperature and load
+          </Link>
+        </p>
       </Container>
     </section>
   );
@@ -655,10 +737,14 @@ export function SkuCompounds({
 /* ══ 05 · KEY ADVANTAGES ══════════════════════════════════════════════════ */
 export function SkuAdvantages({
   items,
+  chip,
 }: {
   items: readonly { icon: string; name: string; body: string }[];
+  /** The figure over the plate — the part's own service temperature, or the quality system. */
+  chip?: { label: string; value: string; note?: string };
 }) {
   const list = items.length ? items : SAMPLE.advantages;
+  const badge: { label: string; value: string; note?: string } = chip ?? SAMPLE.qualityChip;
   return (
     <section className="bg-canvas border-line border-t py-[70px]">
       <Container>
@@ -670,23 +756,12 @@ export function SkuAdvantages({
               className="w-[86%]"
               sizes="(min-width:1024px) 40vw, 90vw"
             />
-            {/* Quality-rate badge sits over the lower-left of the main plate. */}
-            <div className="border-accent-400 absolute top-[58%] left-0 border-l-2 bg-[#0D0F12]/95 px-5 py-4 backdrop-blur">
-              <p className="text-eyebrow text-accent-400 font-mono uppercase">
-                {SAMPLE.qualityBadge.label}
-              </p>
-              <p className="text-ink mt-1.5 text-3xl leading-none font-semibold">
-                {SAMPLE.qualityBadge.value}
-              </p>
-              <p className="text-ink-4 mt-1 text-xs">{SAMPLE.qualityBadge.note}</p>
-            </div>
-            <div className="absolute right-0 bottom-0 w-[52%]">
-              <Plate
-                k={SAMPLE.advantageImages.inset}
-                ratio="aspect-[4/3]"
-                label=""
-                sizes="(min-width:1024px) 22vw, 45vw"
-              />
+            {/* The chip over the lower-left of the plate: no yield figure
+                (sheet 32 §05) — the certificate, or the part's own number. */}
+            <div className="border-accent-400 absolute top-[58%] left-0 max-w-[80%] border-l-2 bg-[#0D0F12]/95 px-5 py-4 backdrop-blur">
+              <p className="text-eyebrow text-accent-400 font-mono uppercase">{badge.label}</p>
+              <p className="text-ink mt-1.5 text-lg leading-snug font-semibold">{badge.value}</p>
+              {badge.note && <p className="text-ink-4 mt-1 text-xs">{badge.note}</p>}
             </div>
           </div>
 
@@ -732,7 +807,7 @@ export function SkuApplications({
                 <Icon name={a.icon} className="size-4" />
               </span>
               <h3 className="text-ink mt-5 text-base font-semibold">{a.name}</h3>
-              <p className="text-ink-4 mt-1.5 text-sm">{a.body}</p>
+              {a.body && <p className="text-ink-4 mt-1.5 text-sm">{a.body}</p>}
             </li>
           ))}
         </ul>
@@ -789,9 +864,17 @@ export function SkuQuality({
     certificates: readonly { name: string; issuer: string; validity: string }[];
     metrics: readonly { value: string; label: string }[];
     tour?: { title: string; note: string };
+    note?: string;
   };
 }) {
-  const q = quality ?? SAMPLE.quality;
+  const q: {
+    heading: string;
+    body: string;
+    certificates: readonly { name: string; issuer: string; validity: string }[];
+    metrics: readonly { value: string; label: string }[];
+    tour?: { title: string; note: string };
+    note?: string;
+  } = quality ?? SAMPLE.quality;
   return (
     <section className="bg-band border-line border-t py-[70px]">
       <Container>
@@ -806,15 +889,18 @@ export function SkuQuality({
                 <li key={c.name} className="rounded-card border-line border bg-[#0D0F12] p-5">
                   <Icon name="ribbon" className="text-accent-400 size-4" />
                   <p className="text-ink mt-3 text-sm font-semibold">{c.name}</p>
-                  <p className="text-ink-4 mt-0.5 text-xs">{c.issuer}</p>
-                  <p className="text-accent-400 mt-2 text-xs">{c.validity}</p>
+                  {c.issuer && <p className="text-ink-4 mt-0.5 text-xs">{c.issuer}</p>}
+                  {c.validity && <p className="text-accent-400 mt-2 text-xs">{c.validity}</p>}
                 </li>
               ))}
             </ul>
+            {q.note && <p className="text-ink-4 mt-5 max-w-[52ch] text-sm leading-relaxed">{q.note}</p>}
 
+            {/* A page, not a file — so not labelled as a download. */}
             <Link href="/certifications" className="border-accent-400/40 text-accent-400 hover:bg-accent-400/8 mt-7 inline-flex items-center gap-2.5 rounded-md border px-5 py-3 text-sm font-medium transition-colors">
-              <Icon name="download" className="size-4" />
-              Download Quality Certificates
+              <Icon name="ribbon" className="size-4" />
+              Certification detail
+              <Arrow />
             </Link>
           </div>
 
@@ -846,39 +932,57 @@ export function SkuQuality({
   );
 }
 
-/* ══ 09 · DOWNLOADS ═══════════════════════════════════════════════════════ */
+/* ══ 09 · DOCUMENTATION ══════════════════════════════════════════════════ */
 export function SkuDownloads({
   items,
+  documentation,
+  h1,
 }: {
   items: readonly { name: string; format: string; size: string; icon: string; href?: string }[];
+  /** The request line and button that stand in until files exist (sheet 32 §09). */
+  documentation?: { body: string; cta: { label: string; href: string } };
+  h1: string;
 }) {
-  // Only rows with a file behind them. No file, no section — a card that
+  // Only rows with a file behind them. No file, no card — a card that
   // names a datasheet nobody can open is a promise the page cannot keep.
   const list = items.filter((d) => isFileHref(d.href));
-  if (!list.length) return null;
+  const doc = documentation ?? {
+    body: SAMPLE.documentation.body,
+    cta: { label: SAMPLE.documentation.ctaLabel, href: `/contact?part=${encodeURIComponent(h1)}&doc=1` },
+  };
   return (
     <section className="bg-canvas border-line border-t py-[70px]">
       <Container>
         <Eyebrow>Downloads</Eyebrow>
         <h2 className="text-h2 mt-3">Technical Documentation</h2>
-        <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {list.map((d) => (
-            <li key={d.name} className="rounded-card border-line relative border bg-[#0D0F12] p-6">
-              <span className="border-accent-400/25 bg-accent-400/10 text-accent-400 grid size-9 place-items-center rounded border">
-                <Icon name={d.icon} className="size-4" />
-              </span>
-              <span className="text-eyebrow border-line-2 text-ink-4 absolute top-6 right-6 rounded border px-2 py-0.5 font-mono">
-                {d.format}
-              </span>
-              <p className="text-ink mt-6 text-sm font-semibold">
-                <a href={d.href} download className="hover:text-accent-400 transition-colors after:absolute after:inset-0">
-                  {d.name}
-                </a>
-              </p>
-              <p className="text-ink-4 mt-1.5 text-xs">{d.size}</p>
-            </li>
-          ))}
-        </ul>
+        {list.length > 0 && (
+          <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {list.map((d) => (
+              <li key={d.name} className="rounded-card border-line relative border bg-[#0D0F12] p-6">
+                <span className="border-accent-400/25 bg-accent-400/10 text-accent-400 grid size-9 place-items-center rounded border">
+                  <Icon name={d.icon} className="size-4" />
+                </span>
+                <span className="text-eyebrow border-line-2 text-ink-4 absolute top-6 right-6 rounded border px-2 py-0.5 font-mono">
+                  {d.format}
+                </span>
+                <p className="text-ink mt-6 text-sm font-semibold">
+                  <a href={d.href} download className="hover:text-accent-400 transition-colors after:absolute after:inset-0">
+                    {d.name}
+                  </a>
+                </p>
+                <p className="text-ink-4 mt-1.5 text-xs">{d.size}</p>
+              </li>
+            ))}
+          </ul>
+        )}
+        {/* One honest request line in place of four dead buttons. */}
+        <div className="rounded-card border-line mt-8 flex flex-wrap items-center justify-between gap-6 border bg-[#0D0F12] p-6 md:p-8">
+          <p className="text-ink-3 max-w-[60ch] text-sm leading-relaxed">{doc.body}</p>
+          <Link href={doc.cta.href} className="border-accent-400/40 text-accent-400 hover:bg-accent-400/8 inline-flex items-center gap-2.5 rounded-md border px-5 py-3 text-sm font-medium transition-colors">
+            {doc.cta.label}
+            <Arrow />
+          </Link>
+        </div>
       </Container>
     </section>
   );
@@ -898,7 +1002,6 @@ export function SkuFaq({ items }: { items: readonly { q: string; a: string }[] }
               Answers to the most common questions from engineering teams and
               procurement managers worldwide.
             </p>
-            <Plate k={SAMPLE.faqImage} ratio="aspect-[4/3]" className="mt-8" label="" sizes="(min-width:1024px) 22vw, 100vw" />
           </div>
 
           {/* Native <details>: answers are in the HTML whether open or not. */}
@@ -928,7 +1031,8 @@ export function SkuRelated({
   items,
   categorySlug,
 }: {
-  items: readonly { slug: string; label: string; difference?: string }[];
+  /** `href` set: a part in another category (sheet 32 §11); else a sibling. */
+  items: readonly { slug: string; label: string; difference?: string; href?: string }[];
   categorySlug: string;
 }) {
   if (!items.length) return null;
@@ -949,7 +1053,7 @@ export function SkuRelated({
         <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {items.slice(0, 4).map((r) => (
             <li key={r.slug} data-lift="" className="rounded-card border-line hover:border-accent-400/40 overflow-hidden border bg-[#0D0F12]">
-              <Link href={`/products/${categorySlug}/${r.slug}`}>
+              <Link href={r.href ?? `/products/${categorySlug}/${r.slug}`}>
                 <Plate k={SAMPLE.gallery.main} ratio="aspect-[16/9]" label="" className="rounded-none border-0 border-b" sizes="(min-width:1024px) 32vw, 100vw" />
                 <span className="block p-6">
                   <span className="text-ink block text-base font-semibold">{r.label}</span>
@@ -974,12 +1078,15 @@ export function SkuCta({
   categorySlug,
   categoryLabel,
   quotation,
+  body,
 }: {
   h1: string;
   categorySlug: string;
   categoryLabel: string;
   /** "within 48 hours" — from site settings, the one figure everywhere. */
   quotation: string;
+  /** The part's own line where the sheet writes one (sheet 34 §11). */
+  body?: string;
 }) {
   return (
     <section className="bg-band border-line border-t py-[70px]">
@@ -988,9 +1095,7 @@ export function SkuCta({
           <div>
             <h2 className="text-ink text-2xl font-semibold">Need this part quoted?</h2>
             <p className="text-ink-4 mt-3 max-w-[52ch] text-sm leading-relaxed">
-              Send your drawing or a sample. We confirm compound, hardness and
-              tolerance, then quote against your annual quantity. We respond{" "}
-              {quotation}.
+              {body ?? SAMPLE.ctaBody.replace("within 48 hours", quotation)}
             </p>
           </div>
           <div className="flex flex-wrap gap-3">

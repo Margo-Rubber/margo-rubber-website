@@ -1,0 +1,271 @@
+# SKU_09_foam-gaskets.html — Foam Gaskets — Closed-Cell Sponge for Low-Closing-Force Seals
+
+**<title>** Foam Gasket Manufacturer India | Closed-Cell Sponge | Margo
+**description** Closed-cell foam gaskets die-cut to ASTM D1056 type, class and grade. Seal enclosures and light housings at low closing force. EPDM, neoprene and silicone sponge. Nashik, India.
+
+## 01 Hero, spec block & visual reference [🛑 Every hero figure is a solid-rubber figure]
+> live: LIVE H1 → Foam Gaskets · 70 Shore A · 18 MPa tensile · none of it applies to sponge
+- **Badges**: `MADE TO ORDER · ISO 9001:2015 · 09111526A`
+  _“IN STOCK” comes off — everything else describes a made-to-order part_
+- **H1**: “Foam Gaskets — Closed-Cell Sponge for Low-Closing-Force Seals”
+  _Six words added, and they carry the two things a buyer filters on: closed cell, and the reason foam exists. “Foam Gaskets” alone does not distinguish a seal from a packing pad_
+- **Intro sentence**:
+  > Closed-cell foam gaskets for enclosures, covers and light housings — they seal under light, uneven clamp, where a solid gasket would need bolt load the panel cannot give. Die-cut or moulded to ASTM D1056 type, class and grade, at our plant in Nashik.
+  _45 words · replaces the template’s “Foam Gaskets manufactured to order at our ISO 9001:2015 certified plant in Nashik”, identical on all 31 pages with the name swapped.
+The middle clause is the whole product. Nobody buys foam because it is soft — they buy it because their panel cannot generate clamp, and no page on this site says so_
+- **Hero spec block** (Field | Live — identical on all 31 pages | Ships as):
+  | HARDNESS |  | Not applicable to sponge. Replace with CFD — compression force deflection at 25% |
+  | SHORE A |  |  |
+  | TENSILE |  |  |
+  | TEMPERATURE |  | Per sponge grade — see section 03. Neoprene sponge is about +75 °C continuous |
+  | THICKNESS |  | Sheet or bun thickness |
+  | WIDTH |  | Maximum blank size |
+  | CELL STRUCTURE | — | Closed cell |
+  | DENSITY | — | Per grade, kg/m³ |
+  | ASTM D1056 | — | Type, class and grade — e.g. 2C1 |
+  _🛑 Three of the six live fields do not apply to this product and two of them should be deleted rather than corrected. Publishing 18 MPa tensile on a foam gasket tells an engineer the supplier does not work in foam.
+Thickness and width survive, because a die-cut sponge gasket really is cut from sheet.
+The three added rows are the specification. Cell structure, density and a D1056 code are what a foam gasket is bought on, and the page currently gives a buyer nothing to specify against_
+- **Quantity selector**: `QTY (pieces)
+− 10,000 +
+Minimum run: 10,000 pieces per part number`
+  _Kilograms are especially wrong on foam — low density means a large order weighs very little, and a kg figure understates the run by an order of magnitude_
+- **Visual reference** (composite):
+    | Cross section view |  | Gasket profile on request under NDA |
+    | Max width |  | Maximum blank size — to your drawing |
+    | Thickness |  | Uncompressed thickness — to your drawing |
+    | Run length |  | Keep here — extruded sponge cord and strip are supplied by the metre |
+    | Working compression | — | Typically 25–50% of free thickness |
+    | Adhesive backing | — | Plain, or self-adhesive with a peel liner |
+    | Form | — | Die-cut, moulded or extruded |
+  · Gasket profile available on request. Send the groove or flange dimensions and the gap you need to close, and we will return a dimensioned drawing with the compression stated.
+  _Run length is the one row that belongs on this page and is empty on all 31. Sponge is commonly supplied as extruded cord and strip by the metre, so the field is real here even though it is meaningless on a moulded part.
+Adhesive backing is the most-asked question on foam gaskets and appears nowhere on the site.
+“The gap you need to close” is how a foam-gasket buyer thinks — not in hardness, but in how much space has to be sealed and how much force is available to do it_
+  <details><summary>notes (4)</summary>
+  - One <h1>; breadcrumb Home › Products › Sponge & Foam Rubber › Foam Gaskets.
+  - 🛑 The hero must render from the part record, with foam fields for foam parts. Two sheets in a row have now found solid-rubber units on a foam page — it is a template problem, not a copy problem.
+  - “Closed cell”, “compression force deflection” and “ASTM D1056” are the terms this page should own. No page on the site carries any of them.
+  - Image alt: “Closed-cell foam gaskets die-cut at Margo Rubber Products, Nashik”.
+  </details>
+
+## 02 Engineering data [Density is in the table and blank]
+> live: LIVE H2 → Engineering Data · 7 rows say “On request”, and one of them is the sponge specification itself
+- **Table** (Row | Live | Ships as):
+  | Product Code |  | Assigned on order |
+  | Product Family |  | Sponge & Foam Rubber |
+  | Material |  | Closed-cell sponge — EPDM, neoprene, silicone or NBR |
+  | Hardness (Shore A) |  | Replace the row: Compression force deflection (CFD) — force to compress 25%, per ASTM D1056 grade |
+  | Tensile Strength |  |  |
+  | Elongation at Break |  |  |
+  | Operating Temperature |  | Per sponge grade — see section 03. Lower than the solid equivalent in every case except silicone |
+  | Compression Set |  | Tested to ASTM D1056, not ASTM D395 — D395 is the solid-rubber method |
+  | Density |  | Per grade, kg/m³ |
+  | Colour Options | Black standard, custom RAL on request |  |
+  | Lead Time |  | Confirmed with the quotation, from approved drawing and approved sample |
+  | Certifications |  | ISO 9001:2015 — certificate 09111526A, scope: rubber moulded components. Die-cut sponge falls outside it |
+  | Minimum Order |  | 10,000 pieces per part number, per compound |
+  | Cell structure | — | Closed cell. Open-cell sponge does not seal against liquid or air |
+  | ASTM D1056 designation | — | Type 2 (closed cell), class per oil exposure, grade per CFD |
+  | Working compression | — | 25–50% of free thickness, typical |
+  | Adhesive backing | — | Plain or self-adhesive with peel liner |
+  _🛑 Two rows come out, four go in, and the table finally describes the product it is on. Tensile strength and elongation are solid-rubber properties printed on a foam page; density and cell structure are the foam properties, and one of them is already there, unanswered.
+Tell the developer this is a net change of +2 rows — the table grows from 13 to 15.
+The compression-set method matters commercially. A foam gasket that takes a permanent set stops sealing, and quoting the wrong test standard is the kind of detail a technical buyer uses to score a supplier_
+  <details><summary>notes (3)</summary>
+  - 🛑 “Density: On request” is the worst single line on this page. An answer engine asked “what density foam gaskets does Margo supply?” finds the question refused on the page built to answer it.
+  - The D1056 row is the AEO asset. “What is ASTM D1056 2C1?” is a real query, and a supplier page that explains type, class and grade earns the citation.
+  - Hide rows you cannot answer rather than printing “On request” seven times.
+  </details>
+
+## 03 Rubber compound options [🛑 Defaults to silicone · and publishes solid-rubber ranges]
+> live: LIVE → Silicone (SELECTED), EPDM, NBR, Neoprene — the dearest option, pre-selected, at solid-rubber temperatures
+- **Both are commercial, not cosmetic**:
+  > 🛑 Silicone opens pre-selected. It is the most expensive of the four and the right answer only for high-temperature work. Most foam gaskets are EPDM or neoprene sponge, and a buyer who does not change the selection is quoted the dearest material for a job that did not need it.
+  > 🛑 The ranges shown are solid-rubber ranges. Sponge does not reach its solid equivalent’s service temperature — the cell walls are thin and the material oxidises faster. Publishing +120 °C for neoprene sponge overstates it by around 45 °C, the same error the sponge category sheet already recorded.
+  > Margo produces every part in every compound it mixes (client-instructed 2026-09-02). Nothing is removed — the eight are ranked, and the ranges are corrected to sponge values.
+- **Selector** (Rank | Compound | As sponge | Why):
+  | Recommended | EPDM sponge | −40 to +100 °C | The default foam gasket. Weather, ozone, UV and water — the outdoor and enclosure compound, and the cheapest of the sensible options. This is what should be pre-selected |
+  | Recommended | Neoprene sponge | −40 to +75 °C continuous, +90 intermittent | Where the gasket sees oil mist or fuel vapour. 🛑 The live page says +120 °C — a 45 °C overstatement |
+  | Suitable | Silicone sponge | −60 to +200 °C | The high-temperature answer — ovens, lighting, exhaust-adjacent enclosures. 🛑 Correct product, wrong default: it is the most expensive of the four |
+  | Suitable | NBR sponge | −30 to +100 °C | Direct liquid oil contact, where neoprene is not enough |
+  | Available | SBR sponge | −30 to +80 °C | Low-cost indoor packing and cushioning — not a weather seal |
+  | Available | Natural rubber sponge | −20 to +70 °C | Impact cushioning. Poor ozone resistance — perishes outdoors |
+  | 🛑 Not recommended | FKM | — | Not normally produced as sponge, and the cost is not justified in a gasket |
+  | 🛑 Not recommended | AEM | — | Not normally produced as sponge — specified as a solid for hot oil-mist service |
+  _Live set: Silicone (SELECTED), EPDM, NBR, Neoprene — four of eight, unranked, at solid-rubber temperatures.
+Two changes matter more than the ranking. The default moves from silicone to EPDM sponge, which is what most of these gaskets actually are; and every temperature is restated as a sponge value, because a cellular material does not hold its solid equivalent’s range.
+Nothing is removed. FKM and AEM are marked not recommended as sponge, with the reason — they remain available as solids_
+  <details><summary>notes (4)</summary>
+  - 🛑 Publishing a solid range on a sponge page is a factual error, and a specifier who catches it stops trusting the rest of the table.
+  - “What temperature can neoprene sponge take?” is a genuine query with a lot of wrong answers in circulation. A correct one, with the intermittent figure separated out, is a strong AEO passage.
+  - Feed material as the sponge grades, not the solid polymer names.
+  - All panels in the DOM at first paint, hidden with CSS.
+  </details>
+
+## 04 Why specifiers choose Margo [4 cards stay four · all four rewritten]
+> live: LIVE H2 → Why Specifiers Choose Margo · four generic cards · a 99.7% yield chip this page later calls “on request”
+- **Quality chip**: `CELL STRUCTURE
+Closed cell
+seals against air and water`
+  _The production table in section 07 says first-pass yield is “On request” — the honest one is the table. The replacement puts the field that decides whether this product works into the page’s most prominent slot_
+- **Cards ×4** (# | Live card | Ships as — title | Ships as — body):
+  | 01 |  | Seals without clamp load | A sheet-metal cover or plastic housing cannot generate the bolt force a solid gasket needs. Closed-cell sponge seals at a fraction of it, and takes up the gap variation a pressed panel always has. |
+  | 02 |  | Closed cell, not open cell | Open-cell foam absorbs water and passes air — it cushions, it does not seal. Every gasket grade we supply is closed cell unless you specify otherwise. |
+  | 03 |  | Specified to ASTM D1056 | Type for cell structure, class for oil resistance, grade for compression force deflection. Give us the code and we will match it; give us the gap and the force, and we will name it. |
+  | 04 |  | Sponge runs cooler than solid | A sponge grade does not reach its solid equivalent’s temperature — neoprene sponge is about +75 °C continuous, not +120 °C. We quote the sponge figure, which is the one your gasket will actually see. |
+  _Four cards, four cards — no count change and no new element.
+Card 01 is the product’s reason to exist, stated on the site for the first time.
+Card 04 turns Margo’s own error into the differentiator. The live page publishes the solid figure; correcting it in public, and saying why, is a stronger trust signal than any of the four adjectives it replaces — and it is the mistake most sponge suppliers leave uncorrected_
+  <details><summary>notes (3)</summary>
+  - This is the page’s AEO asset — everything else is shared with 30 other URLs.
+  - Card 02 answers “open cell or closed cell for gaskets?” in two sentences, which is exactly the shape an answer engine extracts.
+  - Process, named per part: die-cut, moulded or extruded — not “compression moulding”.
+  </details>
+
+## 05 Global applications [6 cards become 4]
+> live: LIVE H2 → Global Applications · Aerospace and Marine claimed here and on all 31 pages
+- **Cards** (Card | Decision):
+  | Electrical & Enclosures [new lead] | Promote this to first. Enclosure sealing is the largest single use of foam gaskets — control panels, junction boxes, outdoor cabinets, and the gasket is what carries the enclosure’s IP rating under IEC 60529. Not a card today |
+  | Automotive | Keep and narrow to body and trim sealing, lamp housings, HVAC ducting joints — where light clamp is all that is available |
+  | Heavy Industry | Keep and narrow: machine guards, access covers, acoustic and dust sealing on plant enclosures |
+  | Construction → Infrastructure | Keep and narrow to expansion-gap, window and cladding sealing |
+  | Energy & Oil | 🛑 Remove — a foam gasket is not a hydrocarbon-pressure product, and the sector implies duties this part cannot take |
+  | Aerospace | 🛑 Remove — requires AS9100, not held and claimed nowhere |
+  | Marine | 🛑 Remove — marine fenders are fabricated units, not moulded components |
+  _Three removed and one added — still four cards, a different four.
+The IP-rating point is the commercially useful one and it is worth stating plainly. An enclosure is certified to IP54, IP65 or IP66 as a whole assembly, and the gasket is the part that decides whether it passes. A buyer chasing an IP rating is looking for a supplier who knows that, and this page currently reads as though it does not_
+  <details><summary>notes (3)</summary>
+  - IP65 and IEC 60529 are search strings that no page on this site carries, and they belong on this one.
+  - 🛑 Say the gasket contributes to the rating — never that Margo certifies an IP rating. The rating belongs to the finished enclosure and is tested by its manufacturer.
+  - Do not claim a sector in Product schema.
+  </details>
+
+## 06 From compound to certification [Foam is a different process from step 03 on]
+> live: LIVE H2 → From Compound to Certification · six steps · step 03 says compression moulding; foam gaskets are die-cut from bun stock
+- **Steps** (# | Ships as):
+  | 01 | Material compounding — polymer blending with the blowing agent that forms the cell structure, and batch QC in our in-house lab. |
+  | 02 | Tool or die design — cutting dies for flat gaskets, moulds for shaped ones, made in-house and held as a controlled record. |
+  | 03 | Expansion cure — the compound is cured as sheet or bun and expands to the specified density. This is the step that makes it sponge, and it is the step the live page omits. |
+  | 04 | Die-cutting or skiving — bun stock skived to thickness, gaskets cut to profile, self-adhesive backing applied where specified. |
+  | 05 | Quality inspection — density and compression force deflection checked against the D1056 grade, plus dimensional check and batch sampling. |
+  | 06 | Export packaging — industrial packing with documentation. Sponge is packed uncompressed; stacking under load takes a set that does not recover. ISPM-15 treated pallets where timber is used. |
+  _Six steps, six kept — but four of them describe a different process from the live text. Foam is not made by compression moulding a solid; it is expanded during cure and then cut, and the live sequence skips the step that defines the product.
+Step 06 is worth the sentence. Sponge shipped under compression arrives set and does not seal — a real failure mode that a buyer who has been burned by it will read as evidence the supplier works in foam_
+  <details><summary>notes (3)</summary>
+  - The process block must render from the part record. “Compression moulding” is stated on all 31 pages and is wrong on this one from step 03 onward.
+  - “Expansion cure”, “bun stock” and “skiving” are foam-industry vocabulary, and none of it appears on this site.
+  - Numbered steps are an <ol>.
+  </details>
+
+## 07 Certified to international standards [Die-cut sponge is outside the certificate scope]
+> live: LIVE H2 → Certified to International Standards · ISO 9001 only — honest · but the scope says moulded components
+- **Credit first**:
+  > This section claims ISO 9001:2015 and nothing else — no IATF, no TÜV SÜD, no CE marking. The production-metrics table prints “On request” rather than inventing figures, and the facility video says “Film pending”. Four honest calls in one section.
+  > 🛑 Scope. Certificate 09111526A covers rubber moulded components. A die-cut sponge gasket is not one, and on this page that is the likely production route — so an unqualified badge claims cover the certificate does not give. Fourth page in the set with this issue, after SKUs 02, 07 and 08.
+  > The pattern is now clear enough to fix once rather than page by page: the badge should render with its scope line wherever the part’s process is not moulding, and Margo should decide whether to extend the certificate scope at the next surveillance audit.
+- **Certificate block**: `ISO 9001:2015 · Certificate 09111526A
+Integral Certification Ltd · Valid to 21 February 2027
+Scope: rubber moulded components — quality management, not a product approval`
+  _Number, body, expiry and scope — four facts replacing three vague lines, and all four are verifiable_
+- **Production metrics** (Row | Live | Ships as):
+  | Years in operation |  | Publish it once the founding year is settled |
+  | Active clients |  | 60+ — signed company profile p27 |
+  | First-pass yield | On request |  |
+  | Avg. lead time |  | 3–4 weeks from approved sample — company profile p27 |
+  _Three of the four can be filled from documents Margo has already signed off_
+  <details><summary>notes (3)</summary>
+  - 🛑 No hasCredential from this page.
+  - The certificate number and scope are visible text, not an image caption.
+  - “Film pending” is fine to ship — better than stock footage of someone else’s factory.
+  </details>
+
+## 08 Technical documentation [4 dead downloads]
+> live: LIVE H2 → Technical Documentation · PDF, DWG, STEP, ZIP — none exists; two labelled “Download” open the contact form
+- **Live state** (Offered | Reality):
+  | PDF — Product datasheet | Marked “Pending” — and a sponge grade table is the one document this buyer wants |
+  | DWG — Technical drawing | Anchor labelled “Technical Drawing DWG” → /contact |
+  | STEP — 3D CAD model | No file — largely irrelevant for a die-cut flat gasket |
+  | ZIP — Product images hi-res | No file |
+  _4 × 31 = 124 dead download affordances across the set.
+A one-page sponge grade table — compound, D1056 designation, density, CFD, temperature — would be the most downloaded document on this website, and Margo mixes the compounds, so it can produce one from its own records_
+- **Ships as** (composite):
+  · H: “Technical Documentation”
+  · Sponge grade tables and gasket profiles are issued on request, under NDA where required. Tell us the gap, the closing force available and the medium — DXF or PDF for the profile — and we will send the grade that fits.
+  · `[ Request the sponge grade table → /contact?part=Foam%20Gaskets&doc=1 ]`
+  _41 words · one honest request line replaces four fake buttons, and it names the document this buyer actually wants_
+  <details><summary>notes (3)</summary>
+  - Never label a control “Download” unless a file is served.
+  - A published sponge grade table is an indexable asset and would be the natural landing page for D1056 searches.
+  - Keep the STEP slot hidden where the part is die-cut rather than moulded.
+  </details>
+
+## 09 Technical & commercial questions [5 answers written]
+> live: LIVE H2 → Technical & Commercial Questions · five well-chosen questions · the same five on all 31 pages
+- **Q1**:
+  > We supply in bulk. The minimum run is 10,000 pieces per part number, per compound, or quoted against the part where geometry or tooling makes that unrealistic. Prototype and first-article lots sit outside the minimum.
+  `What is the minimum order quantity for this part?`
+  _36 words · client-instructed 2026-09-01. Must match the hero selector and the Engineering Data row on this same page_
+- **Q2**:
+  > Yes. Send the sample or the ASTM D1056 code. Measure a sponge sample uncompressed and off the panel — a gasket that has been clamped for a year measures thinner than it was cut, and matching the compressed thickness gives you a gasket that will not seal.
+  `Can you match a competitor specification or reverse-engineer an existing part?`
+  _47 words · the compression-set point in its foam form, and it is sharper here than on any solid part — sponge takes far more set than solid rubber_
+- **Q3**:
+  > PDF, DWG and DXF. For a die-cut gasket a flat DXF outline is ideal. Mark the free thickness, the compressed thickness you need, and whether the part needs self-adhesive backing. A 3D model is not required.
+  `What file formats do you accept for drawings?`
+  _38 words · the three annotations a foam gasket drawing needs, none of which a buyer would think to add unprompted_
+- **Q4**:
+  > Yes. Material test reports, dimensional inspection sheets and a certificate of conformance ship with every consignment. For sponge grades we report density and compression force deflection against the ASTM D1056 designation — not Shore A hardness, which is not a sponge measurement.
+  `Do you provide material test reports with each shipment?`
+  _44 words · naming the right test on a page whose live copy names the wrong one is the clearest possible demonstration that Margo works in foam_
+- **Q5**:
+  > TT and LC accepted, discussed per order. Ex-works Nashik or FOB Nhava Sheva. Commercial invoice, packing list and certificate of origin are issued with every consignment. Sponge is shipped uncompressed, which affects volumetric freight.
+  `What are your payment and delivery terms for international orders?`
+  _36 words · the standard terms plus the one freight consequence unique to foam — it is light and bulky, so shipping is charged on volume, and an importer needs to know before they cost the landed price_
+  <details><summary>notes (3)</summary>
+  - All five answers in the DOM at first paint, hidden with CSS. Verify with curl, not devtools.
+  - Questions become <h3>, not <span>.
+  - Q4 is the strongest AEO passage on the page — it answers “how is sponge rubber specified?” in 44 words with the standard named.
+  </details>
+
+## 10 You may also need [3 become 4 · reselected after the category move]
+> live: LIVE H2 → You May Also Need · siblings drawn from Gaskets — a category this part is leaving
+- **Cards** (Slot | Part | Why it is here):
+  | Related 1 | C-Pillar Garnish Seal — EPDM Hard Foam /sponge-foam-rubber/c-pillar-garnish-seal | The other foam part moving out of Gaskets — same material family, automotive application |
+  | Related 2 | EPDM Gaskets — Weather, Steam and Water Service /gaskets/epdm | The solid alternative. A buyer whose joint can generate clamp load should be on that page, not this one |
+  | Related 3 | Sponge & Foam Rubber /products/sponge-foam-rubber | The new parent category — and the route to every other sponge form |
+  | Cross-category | Sheet Rubber /products/sheet-rubber | Where a buyer goes when the requirement is solid sheet cut to profile rather than sponge |
+  _Related 2 is the important one and it runs against the grain. It sends a buyer to the solid gasket page when a solid gasket is the right answer — and pointing away from the page they are on is what makes a technical site trusted.
+Do not leave the live selection in place after the category move, or the block will list parts from a category this page no longer belongs to_
+  <details><summary>notes (2)</summary>
+  - With /sitemap.xml empty, these links are most of the crawl path. After the 301, the old category link must be updated rather than left to redirect.
+  - Anchor text is the part name, never “View part”.
+  </details>
+
+## 11 Quote CTA [Keep the pre-fill · fix the response time]
+> live: LIVE H2 → Need this part quoted? · the quote link pre-fills the part name — the best-built control on the site
+- **Body**:
+  > Send your drawing, a sample, or just the gap and the closing force you have. We confirm the grade, density and thickness, then quote against your annual quantity. We respond within 48 hours.
+  _33 words · “hardness and tolerance” becomes “grade, density and thickness”, because hardness is not how this part is specified.
+“Just the gap and the closing force” is the lowest-friction entry point available — it is how the buyer already thinks about the problem.
+“Within 1 business day (IST)” is the sixth response commitment on this website_
+- **Primary CTA**: `Request a quote` → /contact?part=Foam%20Gaskets
+  _[no change to the mechanism] — the single best-built control on the website_
+- **Secondary**: `← Back to Sponge & Foam Rubber
+/products/sponge-foam-rubber`
+  _Follows the category move — and this link is currently the only one on the page pointing to the category it is leaving_
+  <details><summary>notes (3)</summary>
+  - One response time sitewide, rendered from one constant.
+  - Verify the ?part= value actually lands in the form field.
+  - /contact?part=… must canonical to /contact.
+  </details>
+
+## 12 Footer [Global component]
+> live: LIVE → the shared footer · and it is missing the category this part is moving to
+  <details><summary>notes (5)</summary>
+  - 🛑 The Products column shows nine of eleven categories, and Sponge & Foam Rubber is one of the two missing — the category this part, the C-pillar garnish seal and every other foam part are moving into. Fix the footer before the move, not after, or the new parent category has no sitewide link at all.
+  - With /sitemap.xml empty, the footer is the primary crawl path for anything not linked from the homepage.
+  - Same corrections as every sheet: legal name Margo Rubber Products · © from the current year · the Vilholi address · Export Markets replacing Why Choose Us · 48-hour response · certificate 09111526A with its scope on the ISO line.
+  - The footer promises a quote “within 24 hours” while section 11 promises “within 1 business day”, about 350 px apart.
+  - Column labels are <h2> in the live build, injecting three phantom sections into this page’s outline.
+  </details>
