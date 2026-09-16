@@ -150,7 +150,7 @@ export function SpecTable({ columns, rows, footnote, controls = true }: Props) {
                 {r.map((cell, ci) => (
                   <td
                     key={ci}
-                    className={`border-line border-t px-4 py-3 whitespace-nowrap ${
+                    className={`border-line border-t px-4 py-3 whitespace-pre ${
                       ci === 0 ? "text-ink font-medium" : "text-ink-2"
                     } ${columns[ci]?.includes("FKM") ? "text-accent-400" : ""}`}
                   >

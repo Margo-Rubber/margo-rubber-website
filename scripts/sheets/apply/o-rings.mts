@@ -73,7 +73,8 @@ const MATERIAL_FOOTNOTE =
 
 /* ── 04 Parts in this category ───────────────────────────────────────────── */
 const parts = s("04");
-const items = rows(parts, "Cards").map((r) => ({ name: E(r[0]), availability: E(r[2]) }));
+// Card: number, name, then "O-Rings · Made to order" — the sheet's three fields.
+const items = rows(parts, "Cards").map((r) => ({ name: E(r[0]), availability: E(`${r[1]} · ${r[2]}`) }));
 
 /* ── 05 Sizing standards ─────────────────────────────────────────────────── */
 const std = s("05");
@@ -128,10 +129,14 @@ const patch = {
   'sections[_key=="cta"].primary': { label: E(primary.label), href: primary.href },
   'sections[_key=="cta"].secondary': { label: E(secondary.label), href: secondary.href },
 
-  // FAQPage: only the question the sheet answers in its own words (§05).
-  // The lead-time and material questions the notes name have no written
-  // answers on the sheet — OPEN-ITEMS.
-  faqs: [{ q: heading(std, "H2").value, a: paragraph(std, "Answer paragraph") }],
+  // FAQPage: the questions the sheet answers in its own words — §05's
+  // heading and answer, and "How is a custom O-ring order quoted?" (named in
+  // §06's notes), answered by §06's intro. The material and lead-time
+  // questions the notes also name have no written answers — OPEN-ITEMS.
+  faqs: [
+    { q: heading(std, "H2").value, a: paragraph(std, "Answer paragraph") },
+    { q: "How is a custom O-ring order quoted?", a: paragraph(com, "Intro") },
+  ],
   // Page-level structured data — the Product node, verbatim.
   schemaProduct: {
     name: "Precision O-Rings",

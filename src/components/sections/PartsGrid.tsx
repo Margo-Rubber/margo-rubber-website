@@ -53,16 +53,20 @@ export function PartsGrid({
   categoryLabel: string;
   categorySlug: string;
 }) {
+  // The sheets' card: number, part name as <h3>, category and order basis
+  // as a <p> — the live card's three lines with the "View part" link gone
+  // (sheet 10 §04). Nothing here links anywhere.
   if (items.length > 0) {
     return (
-      <ul className="grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
-        {items.map((it) => (
-          <li key={it.name} className="border-line text-ink-2 flex items-baseline justify-between gap-4 border-b py-3 text-sm">
-            <span>{it.name}</span>
-            {it.availability && <span className="text-ink-4 shrink-0 font-mono text-xs">{it.availability}</span>}
+      <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {items.map((it, i) => (
+          <li key={it.name} className="rounded-card border-line border bg-[#080808] p-6">
+            <p className="text-eyebrow text-ink-4 font-mono">{String(i + 1).padStart(2, "0")}</p>
+            <h3 className="text-ink mt-3 text-base leading-snug font-semibold">{it.name}</h3>
+            {it.availability && <p className="text-ink-4 mt-2 text-sm">{it.availability}</p>}
           </li>
         ))}
-      </ul>
+      </ol>
     );
   }
   if (parts.length === 0) return null;

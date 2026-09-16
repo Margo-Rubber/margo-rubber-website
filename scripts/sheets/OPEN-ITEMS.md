@@ -61,3 +61,9 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 30. **Spec table sign-off.** The sheet asks that the twelve rows be checked once against the purchased SAE AS568, JIS B2401 and DIN 3771 documents before the page goes live.
 31. **PTFE-encapsulated panel** is written for encapsulated rings (elastomer core, moulded); if Margo also machines solid PTFE the copy and capability claim change.
 32. **Standards attribution footnote under §05** — the note asks for one but gives no wording; not added.
+
+## 10 Oil Seals
+
+33. **Silicone panel wording.** The panel table ships "Biocompatible grades available." while the sheet's Remove note asks for "Biocompatible grades available; we do not hold FDA registration or ISO 13485." — the table is what is applied; confirm which line.
+34. **Six live parts removed** (four compound variants, two non-seals) — the sheet's "CONFIRM which" on the two that belong under Leak Test Rubber or Pads, Stoppers & Caps.
+35. **FAQ "What is the lead time for custom oil seals?"** — named for the FAQPage node; the sheet writes the quoting answer (§05 intro, emitted) but no lead-time answer.
