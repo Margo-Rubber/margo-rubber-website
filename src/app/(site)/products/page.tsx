@@ -5,7 +5,7 @@ import { trail } from "@/lib/breadcrumbs";
 import { getSitePage } from "@/lib/page-source";
 import { productsHubSchema } from "@/content/schemas";
 import { buildMetadata } from "@/lib/seo";
-import { itemListNode, pageGraph } from "@/lib/schema";
+import { CATALOG_ID, pageGraph } from "@/lib/schema";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Container, Eyebrow, Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
@@ -46,15 +46,8 @@ export default async function ProductsHubPage() {
           name: fm.seo.title,
           description: fm.seo.description,
           crumbs,
-          extra: [
-            itemListNode(
-              fm.range.cards.map((c) => ({
-                name: c.title,
-                path: `/products/${c.slug}`,
-              })),
-              "/products",
-            ),
-          ],
+          faqs: fm.faqs,
+          mainEntity: { "@id": CATALOG_ID },
         })}
       />
 

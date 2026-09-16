@@ -1717,6 +1717,8 @@ export const exportPageSchema = baseSchema.extend({
     facts: z.array(z.object({ label: z.string(), value: z.string() })).min(1),
   }),
 
+  /** The six process steps and the Incoterms, phrased as questions — content sheet 06 §07. */
+  faqs: z.array(faqSchema).default([]),
   schemaTypes: z
     .array(
       z.enum([

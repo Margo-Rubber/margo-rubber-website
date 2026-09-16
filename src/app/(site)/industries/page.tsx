@@ -1,7 +1,8 @@
 import { getSitePage } from "@/lib/page-source";
+import { SITE_URL } from "@/lib/seo";
 import { trail } from "@/lib/breadcrumbs";
 import { buildMetadata } from "@/lib/seo";
-import { pageGraph } from "@/lib/schema";
+import { industriesListNode, pageGraph } from "@/lib/schema";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { industriesHubSchema } from "@/content/schemas";
 import {
@@ -31,6 +32,8 @@ export default async function IndustriesHubPage() {
           name: fm.seo.title,
           description: fm.seo.description,
           crumbs,
+          mainEntity: { "@id": `${SITE_URL}/industries#list` },
+          extra: [industriesListNode()],
         })}
       />
 

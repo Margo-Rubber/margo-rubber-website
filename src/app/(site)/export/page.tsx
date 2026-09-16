@@ -1,8 +1,10 @@
 import { ExportLaneSequence } from "@/components/sections/ExportLaneSequence";
+import { Section } from "@/components/ui/Section";
+import { FAQAccordion } from "@/components/sections/HubBlocks";
 import { trail } from "@/lib/breadcrumbs";
 import { getSitePage } from "@/lib/page-source";
 import { buildMetadata } from "@/lib/seo";
-import { pageGraph } from "@/lib/schema";
+import { incotermsTermSetNode, pageGraph } from "@/lib/schema";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { exportPageSchema } from "@/content/schemas";
 import {
@@ -44,6 +46,10 @@ export default async function ExportPage() {
           name: fm.seo.title,
           description: fm.seo.description,
           crumbs,
+          faqs: fm.faqs,
+          extra: incotermsTermSetNode(
+            fm.markets.find((m) => m.panel?.terms?.length)?.panel?.terms ?? [],
+          ),
         })}
       />
 
@@ -79,6 +85,17 @@ export default async function ExportPage() {
         body={fm.documents.body}
         items={fm.documents.items}
       />
+
+      {/* The FAQPage node is built from this same list, so what Google is
+          told is exactly what the reader sees. Nothing renders while the
+          list is empty. */}
+      {fm.faqs.length > 0 && (
+        <Section eyebrow="EXPORT QUESTIONS" eyebrowVariant="rule" heading="Common questions about exporting from Nashik">
+          <div className="mx-auto max-w-[860px]">
+            <FAQAccordion items={fm.faqs} />
+          </div>
+        </Section>
+      )}
 
       <ExportQuote
         heading={fm.quote.heading}

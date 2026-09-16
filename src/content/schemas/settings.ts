@@ -76,6 +76,22 @@ export const siteSettingsSchema = z.object({
     gstin: z.string().optional(),
     /** LinkedIn, IndiaMART, Google Business Profile — empty until confirmed. */
     sameAs: z.array(z.string().url()).default([]),
+    /** One sentence for the Organization node. Content sheet 01 §entity graph. */
+    description: z.string().default(""),
+    /** Organization.knowsAbout — the vocabulary the entity is tied to. */
+    knowsAbout: z.array(z.string()).default([]),
+    /** ISO 3166-1 alpha-2 codes for contactPoint.areaServed — the 18 export markets. */
+    areaServed: z.array(z.string().length(2)).default([]),
+    /** The named people on /about; each becomes a Person node and Organization.founder. */
+    founders: z
+      .array(
+        z.object({
+          name: z.string().min(3),
+          role: z.string().min(3),
+          knowsAbout: z.array(z.string()).default([]),
+        }),
+      )
+      .default([]),
   }),
 
   commercial: z.object({

@@ -1,7 +1,7 @@
 import { getSitePage } from "@/lib/page-source";
 import { getSiteSettings } from "@/lib/settings";
 import { buildMetadata } from "@/lib/seo";
-import { pageGraph } from "@/lib/schema";
+import { pageGraph, processListNode } from "@/lib/schema";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { homePageSchema } from "@/content/schemas";
 import {
@@ -50,6 +50,8 @@ export default async function HomePage() {
           name: fm.seo.title,
           description: fm.seo.description,
           isHome: true,
+          heroSlot: fm.hero.image,
+          extra: [processListNode(fm.process.steps, "/", fm.process.lines.join(" "))],
         })}
       />
 
