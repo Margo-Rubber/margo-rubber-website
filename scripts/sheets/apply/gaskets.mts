@@ -11,7 +11,6 @@ await applyStandardCategory({
   id: "productCategory-gaskets",
   heroAlt: "Moulded EPDM flange gaskets at Margo Rubber Products, Nashik",
   codes: { "EPDM sponge / hard foam": "EPDM-SPONGE" },
-  faq: [{ q: "How is a rubber gasket order quoted?", from: "commercial" }],
   schemaProduct: {
     name: "Custom Rubber Gaskets",
     description:

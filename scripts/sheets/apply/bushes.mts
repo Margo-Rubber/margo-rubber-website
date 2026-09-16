@@ -11,7 +11,6 @@ await applyStandardCategory({
   id: "productCategory-bushes",
   heroAlt: "Bonded rubber silent-block bushes at Margo Rubber Products, Nashik",
   // The four chips are words in the table's construction and type cells.
-  faq: [{ q: "How is a bonded rubber bush quoted?", from: "commercial" }],
   schemaProduct: {
     name: "Rubber Bushes and Bushings",
     description:

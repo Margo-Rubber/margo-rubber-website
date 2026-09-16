@@ -201,8 +201,9 @@ const patch = {
   'sections[_key=="cta"].primary': { label: E(b1.label), href: b1.href },
   'sections[_key=="cta"].secondary': { label: E(b2.label), href: b2.href },
 
-  // "How is rubber extrusion priced?" — answered by §08's intro, verbatim.
-  faqs: [{ q: "How is rubber extrusion priced?", a: paragraph(com, "Intro") }],
+  // No FAQ section on the sheet, so no FAQPage node: a question that is not
+  // on the page cannot be in the graph — OPEN-ITEMS.
+  faqs: [],
   schemaProduct: {
     name: "Rubber Extrusion Profiles",
     description:

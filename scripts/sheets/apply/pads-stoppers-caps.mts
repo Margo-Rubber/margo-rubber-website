@@ -23,7 +23,6 @@ await applyStandardCategory({
     "Stoppers & plungers": "(Stopper|Plunger)",
     "Flaps & covers": "(Flap|Cover)",
   },
-  faq: [{ q: "Can I order a catalogue rubber component without a drawing?", from: "commercial" }],
   schemaProduct: {
     name: "Rubber Pads, Stoppers and Caps",
     description:

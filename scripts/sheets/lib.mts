@@ -303,6 +303,19 @@ export function forbidden(patch: unknown): string[] {
 
 /* ── Diff, validate, write ──────────────────────────────────────────────── */
 
+/** The same value without Sanity's `_key`s and with keys sorted, so a list compares by content. */
+function stripKeys(v: unknown): unknown {
+  if (Array.isArray(v)) return v.map(stripKeys);
+  if (v && typeof v === "object")
+    return Object.fromEntries(
+      Object.entries(v as Record<string, unknown>)
+        .filter(([k]) => k !== "_key")
+        .sort(([a], [b]) => a.localeCompare(b))
+        .map(([k, val]) => [k, stripKeys(val)]),
+    );
+  return v;
+}
+
 function short(v: unknown): string {
   if (v === undefined) return "(none)";
   const s = typeof v === "string" ? v : JSON.stringify(v);
@@ -455,11 +468,20 @@ export async function applyDocument(opts: {
   let changed = 0;
   console.log(`\n══ ${id} ${WRITE ? "(writing)" : "(dry run)"}`);
   for (const [path, value] of Object.entries(sets)) {
+    let leafChanges = 0;
     for (const [leaf, nv] of leaves(value, path)) {
       const ov = get(current, leaf);
       if (JSON.stringify(ov) === JSON.stringify(nv)) continue;
       changed++;
+      leafChanges++;
       console.log(`  ${leaf}\n     − ${short(ov)}\n     + ${short(nv)}`);
+    }
+    // A list that only lost items has no new leaf to differ, but it is a
+    // change all the same — an emptied FAQ list, a shortened related list.
+    const ov = get(current, path);
+    if (!leafChanges && JSON.stringify(stripKeys(ov)) !== JSON.stringify(stripKeys(value))) {
+      changed++;
+      console.log(`  ${path}\n     − ${short(ov)}\n     + ${short(value)}`);
     }
   }
   console.log(`  ${changed} leaf value(s) change.`);

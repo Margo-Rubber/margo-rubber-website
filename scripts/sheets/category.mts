@@ -91,8 +91,6 @@ export type StandardCategory = {
   specFootnote?: string;
   /** Trade-mark attribution under the material panels, where the notes give it. */
   materialFootnote?: string;
-  /** FAQPage entries: the quoting question the notes name, answered by the commercial intro. */
-  faq?: { q: string; from: "commercial" }[];
   schemaProduct: { name: string; description: string; material?: string[]; components?: string[]; componentsName?: string; componentsAnchor?: string };
   related: string[];
 };
@@ -215,7 +213,6 @@ export async function applyStandardCategory(o: StandardCategory): Promise<void> 
   patch[`${cp}.heading`] = E(heading(com, "H2").value);
   patch[`${cp}.body`] = E(paragraph(com, "Intro"));
   patch[`${cp}.rows`] = rows(com, "Rows").map((r) => ({ label: E(r[0]), value: E(r[1]), note: E(r[2]) }));
-  for (const f of o.faq ?? []) faqs.push({ q: f.q, a: paragraph(com, "Intro") });
 
   /* Enquiries */
   const enq = s(num.enquiries);
@@ -229,6 +226,9 @@ export async function applyStandardCategory(o: StandardCategory): Promise<void> 
   patch[`${ep}.primary`] = { label: E(primary.label), href: primary.href };
   patch[`${ep}.secondary`] = { label: E(secondary.label), href: secondary.href };
 
+  // Only a question the page itself shows (O-Rings §05's heading) can be
+  // in the FAQPage node; the questions the notes name for the other pages
+  // are not on any page — OPEN-ITEMS.
   patch.faqs = faqs;
 
   await applyDocument({ id: o.id, type: "productCategory", schema: categorySchema, patch, expect });

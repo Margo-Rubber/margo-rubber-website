@@ -15,10 +15,6 @@ await applyStandardCategory({
   heroAlt: "Profiled leak-test sealing rubber for alloy wheel rigs, made at Margo Rubber Products, Nashik",
   // Three chips are words in the application cells; "SUV & premium" selects on SUV.
   chipRules: { "SUV & premium": "SUV" },
-  // Neither named question ("Can I reorder leak test rubber in small
-  // quantities?", "What is the lead time for a replacement rig seal?") has a
-  // written answer on the sheet — OPEN-ITEMS. No FAQ node until it does.
-  faq: [],
   schemaProduct: {
     name: "Leak Test Rubber for Alloy Wheel Rigs",
     description:

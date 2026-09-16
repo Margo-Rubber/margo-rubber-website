@@ -21,7 +21,6 @@ await applyStandardCategory({
     "Water & steam": String.raw`\b(water|steam|coolant)\b`,
     "High temperature": String.raw`\+(1[7-9]\d|2\d\d) °C`,
   },
-  faq: [{ q: "How is a rubber bellows order quoted?", from: "commercial" }],
   schemaProduct: {
     name: "Rubber Bellows and Protective Boots",
     description:

@@ -21,7 +21,6 @@ await applyStandardCategory({
     Compression: "^(Cylindrical bobbin|Conical|Plate|Buffer)",
     Shear: "^(Shear|Bonded bush)",
   },
-  faq: [{ q: "How is a bonded rubber mount quoted?", from: "commercial" }],
   schemaProduct: {
     name: "Anti-Vibration Mounts",
     description:

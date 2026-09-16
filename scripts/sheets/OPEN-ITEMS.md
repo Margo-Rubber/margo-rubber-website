@@ -57,7 +57,7 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 ## 09 O-Rings
 
 28. **Compound ranges render from Site settings** (sheet 01 §10 governs): AEM shows "continuous to 160°C" under its +175°C peak, as sheet 01 resolved on 2026-09-03; sheet 09's panel has no continuous line. Both AEM and FKM grades still to confirm (sheet 01).
-29. **FAQPage questions.** The notes name "Which O-Ring Material Do I Need?", "What is the lead time for custom O-rings?" and "How is a custom O-ring order quoted?" for the FAQ node, but the sheet writes no answers and has no §09; only the sizing-standards question, whose answer is on the sheet, is emitted. The same holds for sheets 10–17.
+29. **FAQPage questions.** The notes name "Which O-Ring Material Do I Need?", "What is the lead time for custom O-rings?" and "How is a custom O-ring order quoted?" for the FAQ node, but the sheet writes no answers and has no §09. A question that is not visible on the page cannot be in the graph, so only the sizing-standards question — the §05 heading, with its answer — is emitted. Sheets 10–19 name questions the same way and emit no FAQPage node until a FAQ section is written.
 30. **Spec table sign-off.** The sheet asks that the twelve rows be checked once against the purchased SAE AS568, JIS B2401 and DIN 3771 documents before the page goes live.
 31. **PTFE-encapsulated panel** is written for encapsulated rings (elastomer core, moulded); if Margo also machines solid PTFE the copy and capability claim change.
 32. **Standards attribution footnote under §05** — the note asks for one but gives no wording; not added.
@@ -66,12 +66,12 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 
 33. **Silicone panel wording.** The panel table ships "Biocompatible grades available." while the sheet's Remove note asks for "Biocompatible grades available; we do not hold FDA registration or ISO 13485." — the table is what is applied; confirm which line.
 34. **Six live parts removed** (four compound variants, two non-seals) — the sheet's "CONFIRM which" on the two that belong under Leak Test Rubber or Pads, Stoppers & Caps.
-35. **FAQ "What is the lead time for custom oil seals?"** — named for the FAQPage node; the sheet writes the quoting answer (§05 intro, emitted) but no lead-time answer.
+35. **FAQ questions** "What is the lead time for custom oil seals?" and "How is a custom oil seal quoted?" — named for the FAQPage node, not on the page; no node until a FAQ section is written (as item 29).
 
 ## 11 Gaskets
 
 36. **Confirmation copy** "Enquiry received. A named engineer replies within 48 hours to {email}." is the contact form's post-submit state — Phase 7 (forms), not this page.
-37. **FAQ answers.** "Which rubber gasket material should I use for steam?", "What temperature can an EPDM gasket withstand?" and "What is the lead time for custom rubber gaskets?" are named for the FAQPage node with no written answers; only the quoting question (answered by §05's intro) is emitted.
+37. **FAQ questions.** "Which rubber gasket material should I use for steam?", "What temperature can an EPDM gasket withstand?", "What is the lead time for custom rubber gaskets?" and "How is a rubber gasket order quoted?" are named for the FAQPage node with no written answers and no FAQ section; no node until one is written (as item 29).
 38. **Hero image.** The sheet says the hero has no image; the slot keeps the existing photograph with the sheet's alt text for when one is chosen.
 
 ## 12 Bellows
@@ -100,7 +100,7 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 
 49. **Four table rows carry derived values** (Big Support Pad, Oil Seal Filler Cap, Rubber Insulator Head Cover, Boot Tailgate Switch) — the sheet shows its working in "Where the four new rows come from"; the plant should confirm the sizes and compounds.
 50. **Scorpio Footrest Rubber Mat** moved in from Anti-Vibration Mounts (same CONFIRM as item 43).
-51. **Confirmation copy** (as item 36); FAQ "What is the lead time for moulded rubber components?" unanswered on the sheet (as item 37).
+51. **Confirmation copy** (as item 36); the two named FAQ questions are not on the page (as item 29).
 
 ## 17 Leak Test Rubber
 
@@ -112,7 +112,7 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 54. **Sector card icons.** Mining, Oil & gas and Agriculture take the nearest strokes in the icon set (layers, droplet, cycle) until drawn.
 55. **Construction card** links through the route registry to /contact?industry=Construction until the Construction page (sheet 41) is live.
 56. **Confirmation copy** "Drawing received. A named engineer replies within 48 hours to {email} with a compound recommendation, hardness grade and indicative pricing." — contact form post-submit state, Phase 7.
-57. **FAQ "Can Margo extrude a profile to my own cross-section drawing?"** (live) dropped — no written answer on the sheet; "How is rubber extrusion priced?" stays, answered by §08's intro.
+57. **FAQ node empty.** The two live questions had no written answers on the sheet and no FAQ section exists; none emitted (as item 29).
 
 ## 19 Sponge & Foam Rubber
 

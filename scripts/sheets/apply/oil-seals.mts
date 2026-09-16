@@ -15,7 +15,6 @@ await applyStandardCategory({
   controls: false,
   // "Link the disclaimer beneath the table" — the notes give the line verbatim.
   specFootnote: "Typical values. See our technical disclaimer.",
-  faq: [{ q: "How is a custom oil seal quoted?", from: "commercial" }],
   schemaProduct: {
     name: "Rotary and Static Oil Seals",
     description:

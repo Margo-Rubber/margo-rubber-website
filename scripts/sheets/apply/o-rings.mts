@@ -20,7 +20,6 @@ await applyStandardCategory({
     "Viton is a registered trade mark of The Chemours Company. Vamac is a registered trade mark of DuPont. Teflon is a registered trade mark of The Chemours Company.",
   // Not a compound in Site settings: the panel keeps its own figures.
   codes: { "PTFE-encapsulated": "PTFE" },
-  faq: [{ q: "How is a custom O-ring order quoted?", from: "commercial" }],
   schemaProduct: {
     name: "Precision O-Rings",
     description: "Custom and catalogue O-rings moulded to AS568, ISO 3601, JIS B2401 and DIN 3771 in eight compounds.",

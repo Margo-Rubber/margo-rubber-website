@@ -11,7 +11,6 @@ await applyStandardCategory({
   id: "productCategory-grommets",
   heroAlt: "Moulded rubber cable grommets at Margo Rubber Products, Nashik",
   // The four configuration chips are words in the table's own cells.
-  faq: [{ q: "How is a custom grommet order quoted?", from: "commercial" }],
   schemaProduct: {
     name: "Custom Rubber Grommets",
     description:
