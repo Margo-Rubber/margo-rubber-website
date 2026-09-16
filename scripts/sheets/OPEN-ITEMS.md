@@ -110,7 +110,7 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 ## 18 Extrusion Profiles
 
 54. **Sector card icons.** Mining, Oil & gas and Agriculture take the nearest strokes in the icon set (layers, droplet, cycle) until drawn.
-55. **Construction card** links through the route registry to /contact?industry=Construction until the Construction page (sheet 41) is live.
+55. ~~**Construction card** links through the route registry to /contact?industry=Construction until the Construction page (sheet 41) is live.~~ Resolved — the page is built (Phase 7) and the card resolves to /industries/construction.
 56. **Confirmation copy** "Drawing received. A named engineer replies within 48 hours to {email} with a compound recommendation, hardness grade and indicative pricing." — contact form post-submit state, Phase 7.
 57. **FAQ node empty.** The two live questions had no written answers on the sheet and no FAQ section exists; none emitted (as item 29).
 
@@ -130,7 +130,7 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 
 ## 21–26 Mining, Oil & Gas, Medical Devices, Pumps & Valves, HVAC, Electrical & Electronics
 
-66. **Diaphragms card** (sheets 23, 24) links through the route registry to /contact?product=Diaphragms until the Diaphragms page (sheet 36) is live; its photograph is the page's own slot until the category has one.
+66. **Diaphragms card** (sheets 23, 24) ~~links through the route registry to /contact?product=Diaphragms until the Diaphragms page (sheet 36) is live~~ — resolved, the page is built (Phase 7); its photograph is still the page's own slot until the category has one (item 93).
 67. **Component bullets, quality-link fallbacks, export card title/subtitle where the sheet gives none, confirmation copy** — as items 62–65.
 68. **Sheet 23 §02 CONFIRM** (diaphragms, resolved 2026-09-03 per the sheet) — listed as written.
 
@@ -171,3 +171,24 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 90. **PDF.** The meta strip's "Download · PDF · same content" row is not shown until the file exists; "Rev 1 · publication date" is shown as written.
 91. **Hub listing.** The datasheet is in the "datasheets" category the build instructions add, reached from the Sponge & Foam page; the /resources hub lists the seven guides only (sheet 31 has no datasheet group).
 92. **Meta description cap** widened to 220 (the sheet's 217-character description).
+
+## 36–39 Diaphragms, Bonded Components, Rubber Lining & Skirting, Reciprocating Seals (new pages)
+
+93. **Hero photographs.** None of the four categories has an image slot; the heroes ship without a photograph. The sheets give the alt text to use when one is added — "Fabric-reinforced rubber diaphragms moulded at Margo Rubber Products, Nashik" (36), "Rubber-to-metal bonded mounts and bushes moulded at Margo Rubber Products, Nashik" (37), "Natural rubber chute lining and conveyor skirting cut at Margo Rubber Products, Nashik" (38), "Moulded rubber plunger cups and rod seals produced at Margo Rubber Products, Nashik" (39).
+94. **/products hub cards.** The hub grid (sheet 02) has eleven cards with their own kicker, tag, chips and image; the four new categories need the same before they can be added. Sheet 38 also asks for a third group on the grid — "sheet and lining products" — to be raised with the design before its card is built. Until then the four are reachable from the header menu, the footer, the industry pages and the sitemap.
+95. **Seals slug** — the sheet's one decision for Ayaz: /products/seals (recommended, and what SKU 31 canonicalises to) or /products/reciprocating-seals. Built at /products/seals with §02 as the router, as recommended; the nav label is "Reciprocating Seals".
+96. **Plunger cups card (39 §03)** links to the part's live URL, /products/pads-stoppers-caps/rubber-plungers, until the SKU moves to /products/seals/plunger-seals (sheet 33's category move — a later Phase 7 branch, with the 301).
+97. **Lining service area (38 §07).** Fitting is client-confirmed and Version B ships. The sheet also asks for a Service node and "a named geographic service area"; no area is named, so neither is emitted. The "not included" line ships as the three items the note lists (scaffolding, confined-space entry, plant shutdown coordination) under a "Not included" heading — *confirm the wording and name the area*.
+98. **"See sheet 37"** (38 §06, the adhesion-to-steel row) is the sheet's own cross-reference; it ships as written, linked to /products/bonded-components. *Reword if wanted* — e.g. "See bonded components".
+99. **In-page cross-references** — "See section 04", "see section 06", "See section 05" — ship as written, each linked to the section it names.
+100. **Certification block** (36–42 §07/08) is one string in Site settings (Certifications → "Certification block"), placed by a block on each page; edit it once.
+101. **FAQ block heading.** The sheets give no eyebrow or heading for the questions section; the page uses the sheet's section title "Technical & commercial questions" and the block's standard eyebrow.
+102. **/products compound anchors.** Each compound name in a router table links to its panel on /products (`#hub-compound-epdm` …), which now opens that tab on arrival.
+
+## 41–42 Construction, Transport — Rail & Marine (new pages)
+
+103. **Hero photographs** — as item 93; alt text "EPDM glazing gaskets and expansion joint seals extruded at Margo Rubber Products, Nashik" (41) and "Extruded EPDM window and hatch seals produced at Margo Rubber Products, Nashik" (42).
+104. **/industries hub cards.** Sheet 05's grid has nine sector cards with body, products supplied, typical clients and an image; Construction and Transport need the same to move out of "additional sectors" (where "Construction & glazing" still links to /products/extrusion). Both are already in the hub's ItemList structured data.
+105. **Download buttons** (41–42 §07) render only once the hosted ISO certificate and quality policy exist — the same rule as the nine original industry pages (item 63).
+106. **RDSO vendor approval** (42 §05) ships as the sheet writes it — "Application in process — not yet held" — client-confirmed 2026-09-03. The sheet's business question stands: whether to pursue it, and if so the target date for the line.
+107. **Contact dropdown labels.** The sheets ask for "Seals — reciprocating" and "Transport — rail & marine" as dropdown options; the form offers the registry labels "Reciprocating Seals" and "Transport — Rail & Marine". Query prefills (`?part=`, `?industry=`) are the forms branch of Phase 7.

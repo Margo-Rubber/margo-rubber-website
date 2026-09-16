@@ -1,3 +1,4 @@
+import { emphasised } from "@/components/ui/Emphasis";
 import type { ReactNode } from "react";
 
 export function Container({
@@ -55,6 +56,27 @@ export function Eyebrow({
  * on the section keeps it from bleeding into the neighbour above, and the
  * Container is `relative` so the copy sits in front without a z-index.
  */
+/**
+ * The three short facts under a hero subhead — "ISO 9001:2015 ·
+ * 8 COMPOUNDS IN-HOUSE · FABRIC-REINFORCED" (sheets 36–42). List items,
+ * not headings; uppercase is set here, not typed.
+ */
+export function HeroChips({ chips }: { chips: readonly string[] }) {
+  if (!chips.length) return null;
+  return (
+    <ul className="mt-7 flex flex-wrap gap-2">
+      {chips.map((c) => (
+        <li
+          key={c}
+          className="text-eyebrow border-line-2 text-ink-2 bg-surface-2/60 rounded-pill border px-3.5 py-1.5 font-mono uppercase"
+        >
+          {c}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 export function SectionGlow() {
   return (
     <span
@@ -171,7 +193,7 @@ export function Section({
                   align === "center" ? "mx-auto max-w-[62ch]" : ""
                 }`}
               >
-                {body}
+                {emphasised(body)}
               </p>
             )}
           </header>

@@ -64,7 +64,8 @@ export default async function ProductCategoryPage(
       )}
 
       <CategoryHero
-        badge="ISO 9001:2015 Certified · Nashik, India"
+        badge={fm.heroEyebrow ?? "ISO 9001:2015 Certified · Nashik, India"}
+        chips={fm.heroChips}
         headingLead={headingLead}
         headingAccent={headingAccent}
         intro={fm.intro}

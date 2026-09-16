@@ -117,6 +117,8 @@ export const siteSettingsSchema = z.object({
     line: z.string().min(10),
     /** Scope caveat that travels with the badge everywhere it appears. */
     scopeNote: z.string().min(20),
+    /** The five-line certification block shared by sheets 36–42, one line per entry. */
+    strip: z.array(z.string()).default([]),
   }),
 
   compounds: z.array(compoundSchema).length(8),

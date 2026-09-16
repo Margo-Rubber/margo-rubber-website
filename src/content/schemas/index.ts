@@ -34,6 +34,8 @@ const seoSchema = z.object({
  * the MDX body.
  */
 const sectionMeta = z.object({
+  /** The section id, from the Studio "Anchor" field — "#skirting" (sheet 38 §05). */
+  id: z.string().regex(/^[a-z0-9-]+$/).optional(),
   /** e.g. "02 — SPECIFICATION REFERENCE" */
   eyebrow: z.string().min(2),
   heading: z.string().min(4),
@@ -123,9 +125,19 @@ export const cardGridSchema = z.object({
         shape: z.string().optional(),
         /** Where the card's link goes — a sector's industry page (sheet 18 §07). */
         href: z.string().optional(),
+        /** A third line under the body — "Typical use" or the compound (sheets 36–42). */
+        note: z.string().optional(),
       }),
     )
     .min(1),
+  /** What the cards' `note` is — set once for the grid, e.g. "Typical use". */
+  noteLabel: z.string().optional(),
+  /**
+   * A grid that is one half of a section: "Rail" and "Marine" under one
+   * heading (sheet 42 §03). Rendered as an <h3> over the cards, whose own
+   * titles step down to <h4>.
+   */
+  group: z.string().optional(),
   /**
    * The link on every card: "Quote this section" (→ /contact?profile=CODE)
    * on the profile library; "Rubber components for {sector}" on the
@@ -156,6 +168,8 @@ export const cardGridSchema = z.object({
 export const specSectionSchema = z
   .object({
     ...sectionMeta.shape,
+    /** A table written under an H2 alone (sheet 41 §05) has no eyebrow. */
+    eyebrow: z.string().min(2).optional(),
     caption: z.string().optional(),
     /** Filter chips + search. Off for short reference tables. */
     controls: z.boolean().default(true),
@@ -165,6 +179,8 @@ export const specSectionSchema = z
     columns: z.array(z.string()).min(2),
     rows: z.array(z.array(z.string())).min(1),
     footnote: z.string().optional(),
+    /** A paragraph after the table, at body size — "Ships with every consignment" (sheet 36 §06). */
+    closing: z.string().optional(),
   })
   .refine((t) => t.rows.every((r) => r.length === t.columns.length), {
     message: "Every spec-table row must have exactly as many cells as there are columns",
@@ -259,7 +275,13 @@ export const commercialSectionSchema = z
  * The extrusion comp's profile library; the nine tiles with EXT- codes.
  */
 export const profileSectionSchema = z
-  .object({ ...sectionMeta.shape, ...cardGridSchema.shape });
+  .object({
+    ...sectionMeta.shape,
+    /** The second of two grouped grids (sheet 42 §03 "Marine") sits under the first's heading, without eyebrow or heading of its own. */
+    eyebrow: z.string().min(2).optional(),
+    heading: z.string().min(4).optional(),
+    ...cardGridSchema.shape,
+  });
 
 
 /** How the part is made, in ordered stages. Numbered in the render, so the
@@ -470,6 +492,13 @@ export const productCategorySchema = baseSchema.extend({
   heroLink: z.object({ label: z.string(), href: z.string() }).optional(),
   /** Breadcrumb above the H1 — "Products › Sponge & Foam Rubber". */
   heroBreadcrumb: z.boolean().default(false),
+  /**
+   * The line above the H1 where a sheet writes its own — "01 · DIAPHRAGMS"
+   * (sheets 36–39). The eleven older pages show the certification badge.
+   */
+  heroEyebrow: z.string().optional(),
+  /** Three uppercase chips under the subhead — "8 COMPOUNDS IN-HOUSE" (sheets 36–42). */
+  heroChips: z.array(z.string()).default([]),
   /** The nine older pages centre nothing; Extrusion centres its stat panel,
    *  Sponge & Foam sets the same panel left. */
   heroStatsAlign: z.enum(["left", "center"]).default("center"),
@@ -650,6 +679,8 @@ export const industrySchema = baseSchema.extend({
   h1Lines: z.array(z.string()).min(1),
   h1AccentLines: z.array(z.number()).default([]),
   badge: z.string(),
+  /** Three uppercase chips under the subhead (sheets 41–42). */
+  heroChips: z.array(z.string()).default([]),
   /** True only where the hero source is already faded to black (the mining
    *  crop lifted out of the design PNG). Normal photos must not be boosted. */
   heroBoost: z.boolean().default(false),
@@ -678,6 +709,12 @@ export const industrySchema = baseSchema.extend({
   related: relatedSchema,
   /** Mandatory verbatim non-claim sentences (e.g. NORSOK/API on oil-gas). */
   nonClaims: z.array(z.string()).default([]),
+  /**
+   * The Service node's own name and description, where the sheet writes
+   * them apart from the H1 and meta description — "Rubber Components for
+   * Construction and Infrastructure" (sheet 41, page-level).
+   */
+  schemaService: z.object({ name: z.string().min(3).optional(), description: z.string().min(20).optional() }).optional(),
   schemaTypes: z
     .array(z.enum(["Product", "BreadcrumbList", "FAQPage", "HowTo", "Organization", "WebSite"]))
     .default(["BreadcrumbList", "FAQPage"]),

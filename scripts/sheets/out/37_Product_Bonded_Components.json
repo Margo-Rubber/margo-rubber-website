@@ -503,9 +503,9 @@
               "In-house"
             ],
             [
-              "",
-              "",
-              ""
+              "Dynamic fatigue / cycles to failure",
+              "ISO 132 · ASTM D430",
+              "not held"
             ]
           ],
           "note": "ANSWERED 2026-09-03 — destructive adhesion testing runs at the NABL partner laboratory.\nClient-confirmed: at the NABL partner laboratory. The row now reads “sample per batch, NABL partner laboratory”, which puts D429 on the same footing as tear, fluid immersion and ozone — tested, and tested somewhere nameable.\nMargo’s published test list — hardness, tensile, compression set, ozone, fluid immersion, brittleness, abrasion, tear, rebound, flammability — does not include D429. Every moulder doing bonded work destroys a sample per batch and reads the failure mode; that is ordinary practice, not a capability claim. The row now says where it happens. That matters more than the method name: a buyer qualifying a bonded-part supplier checks whether the adhesion test is real or asserted, and a named laboratory is the difference.\nThe struck row stays struck. Dynamic fatigue is not held anywhere, exactly as on the bellows and diaphragms pages, and a bonded mount is precisely the part a buyer will ask cycle life about"

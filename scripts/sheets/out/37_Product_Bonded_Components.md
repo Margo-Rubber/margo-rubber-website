@@ -135,7 +135,7 @@ The silicone row is the same refusal as the diaphragms page makes, for a differe
   | Compression set | ASTM D395 Method B | In-house |
   | Tear strength | ASTM D624 | NABL partner laboratory |
   | Dimensional conformity | ISO 3302-1 class M1 | In-house |
-  |  |  |  |
+  | Dynamic fatigue / cycles to failure | ISO 132 · ASTM D430 | not held |
   _ANSWERED 2026-09-03 — destructive adhesion testing runs at the NABL partner laboratory.
 Client-confirmed: at the NABL partner laboratory. The row now reads “sample per batch, NABL partner laboratory”, which puts D429 on the same footing as tear, fluid immersion and ozone — tested, and tested somewhere nameable.
 Margo’s published test list — hardness, tensile, compression set, ozone, fluid immersion, brittleness, abrasion, tear, rebound, flammability — does not include D429. Every moulder doing bonded work destroys a sample per batch and reads the failure mode; that is ordinary practice, not a capability claim. The row now says where it happens. That matters more than the method name: a buyer qualifying a bonded-part supplier checks whether the adhesion test is real or asserted, and a named laboratory is the difference.

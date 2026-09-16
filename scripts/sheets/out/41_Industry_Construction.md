@@ -106,8 +106,8 @@ EPDM leads and natural rubber is second, which is the fifth different ranking ac
   | ASTM D2000 | Line-callout classification for the compound itself | We quote against a callout if you have one |
   | ISO 3302-1 | Dimensional tolerances — class E1–E3 extruded, M1–M4 moulded | Tolerance follows the section |
   | ISO 1431-1 | Ozone resistance test method | Tested at our NABL partner laboratory |
-  |  |  |  |
-  |  |  |  |
+  | IRC:83 · IS 15462 · EN 1337-3 | Structural elastomeric bearings | 🛑 Not held. See section 06 |
+  | IS 3809 · BS 476 · EN 1366 | Fire resistance of building elements | 🛑 Not held. See section 06 |
   _Eight standards worked to and two struck, in the same table. Putting the refusals inside the standards list rather than in a separate disclaimer is the strongest form — a specifier scanning for IRC:83 finds it, finds the answer, and does not have to enquire to learn it.
 ASTM C864, C509 and C1115 verified 2026-09-03 against ASTM’s own catalogue. These are the three architectural glazing gasket standards and none of them appears anywhere on margorubber.in today, on a site that sells extruded EPDM profile.
 The IS 5382 row cross-links rather than duplicating. Two industry pages sharing a buyer should point at each other, not repeat each other_
@@ -147,8 +147,8 @@ IATF 16949 — upgrade in progress, certification targeted by end 2026
 ISO 14001 and ISO 45001 — targeted 2027`
   _The exact string used across the set, client-instructed 2026-08-31 and 2026-09-01. Nothing is added. The scope line matters on this sector: the certificate covers rubber moulded components, and extruded profile is not a moulding — the same observation sheets 38 and 40 make about lining and sponge_
 - **Download buttons ×2** (Button | State on all nine industry pages | On this page):
-  | Download ISO Certificate |  | Renders only once the hosted PDF exists |
-  | Download Quality Policy |  | Renders only once the document exists |
+  | Download ISO Certificate | Wired to nothing — dead on 9 pages | Renders only once the hosted PDF exists |
+  | Download Quality Policy | Wired to nothing — dead on 9 pages | Renders only once the document exists |
   _🛑 This is the eighteen-dead-downloads defect and this page must not make it twenty. The build checklist tracks it as a Gate 3 item, blocked on Gate 2 — the ISO certificate scan has never been supplied as a hosted PDF, and it appears zero times across all thirty-six live pages despite being the only real credential Margo holds.
 The rule from sheet 02 applies: “a dead download on a quality page costs more than the missing asset.” On a supplier-qualification block read by a main contractor’s procurement team, a certificate button that does nothing is worse than no button — it is the one place a buyer is actively checking whether the claim is real_
   <details><summary>notes (2)</summary>

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/Button";
 import { hrefFor, industryBySlug, productBySlug } from "@/content/routes";
 import { Container, Eyebrow, SectionGlow } from "@/components/ui/Section";
 import { Icon, ProfileDrawing, type IconName, type ProfileShape } from "@/components/ui/Icon";
+import { emphasised } from "@/components/ui/Emphasis";
 
 /**
  * CATEGORY PAGE BLOCKS — the sections drawn by the two new category comps in
@@ -401,6 +402,55 @@ export function SectorCards({
         </li>
       ))}
     </ul>
+  );
+}
+
+/* ── Plain cards ─────────────────────────────────────────────────────────── */
+
+/**
+ * The card grid of sheets 36–42: no graphic, the name as the link where the
+ * card has one ("on the part names, never on 'read more'"), and a labelled
+ * third line — the typical use, or the compound. Every card is in the DOM.
+ * Under a group heading the titles step down a level, so "Rail" and
+ * "Marine" (sheet 42 §03) each own their four.
+ */
+export function PlainCards({
+  items,
+  noteLabel,
+  group,
+}: {
+  items: readonly { name: string; body: string; href?: string; note?: string; code?: string }[];
+  noteLabel?: string;
+  group?: string;
+}) {
+  const T = group ? "h4" : "h3";
+  return (
+    <>
+      {group && <h3 className="text-ink mb-5 text-lg font-semibold">{group}</h3>}
+      <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {items.map((c) => (
+          <li key={c.name} className="border-line bg-surface-3 rounded-card flex flex-col border p-6">
+            <T className="text-ink text-base font-semibold">
+              {c.href ? (
+                <Link href={liveHref(c.href)} className="hover:text-accent-400 inline-flex items-center gap-1.5">
+                  {c.name} <span aria-hidden className="text-accent-400">›</span>
+                </Link>
+              ) : (
+                c.name
+              )}
+            </T>
+            {c.code && <p className="text-accent-400 mt-1.5 font-mono text-[11px] tracking-[0.1em]">{c.code}</p>}
+            <p className="text-ink-4 mt-3 text-sm leading-relaxed">{emphasised(c.body, "text-ink-2 font-semibold")}</p>
+            {c.note && (
+              <p className="text-ink-3 border-line mt-auto border-t pt-3 text-sm leading-relaxed">
+                {noteLabel && <span className="text-ink-4 mr-2 font-mono text-[11px] uppercase tracking-[0.1em]">{noteLabel}</span>}
+                {emphasised(c.note, "text-ink font-semibold")}
+              </p>
+            )}
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }
 

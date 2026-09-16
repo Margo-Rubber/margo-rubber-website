@@ -161,7 +161,7 @@ The silicone row is the fourth refusal in four new pages, again for a duty-speci
   | Abrasion loss | ISO 4649 · ASTM D5963 | NABL partner laboratory |
   | Fluid immersion / volume swell | ASTM D471 | NABL partner laboratory |
   | Dimensional conformity | ISO 3302-1 class M1 | In-house |
-  |  |  |  |
+  | Dynamic seal life / cycles to failure | — | no test rig |
   _The struck row is the same refusal the bellows and diaphragms pages make, and on this category it is the one buyers most want. There is no reciprocating test rig in-house and none at the NABL partner. A seal-life figure would be read as a warranty and there is nothing behind it.
 Compression set and abrasion are the two rows that matter here and both are real: compression set predicts whether the lip recovers between strokes, abrasion predicts wear against the rod. They are the closest honest proxies for seal life and the page offers them instead of the number it cannot give.
 Housing standards are dimensional, not approvals. ISO 5597, ISO 6547 and ISO 6195 define groove geometry. Say so on the page, the way the oil-seal sheets say it for DIN 3760 and ISO 6194_

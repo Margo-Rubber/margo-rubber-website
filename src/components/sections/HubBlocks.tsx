@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { withoutDeadDownloads } from "@/lib/downloads";
 import { PRODUCTS, hrefFor } from "@/content/routes";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
@@ -458,6 +458,17 @@ export function CompoundSelector({ items }: { items: Compound[] }) {
   // Every panel stays in the DOM, hidden rather than unmounted: a panel that mounts on click does not exist for a crawler, and these are the passages an assistant lifts.
   const panelId = (k: string) =>
     `hub-compound-${k.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+  // A link to a panel — the compound routers on the category pages link
+  // each compound name here (sheets 36–42) — opens that panel's tab.
+  useEffect(() => {
+    const fromHash = () => {
+      const idx = items.findIndex((m) => `#${panelId(m.code)}` === window.location.hash);
+      if (idx >= 0) setI(idx);
+    };
+    fromHash();
+    window.addEventListener("hashchange", fromHash);
+    return () => window.removeEventListener("hashchange", fromHash);
+  }, [items]);
 
   return (
     <div>

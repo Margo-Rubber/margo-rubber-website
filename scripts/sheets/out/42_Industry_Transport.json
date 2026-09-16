@@ -401,19 +401,19 @@
               "Application in process — not yet held, and never to be stated as held until it is granted. See section 06"
             ],
             [
-              "",
-              "",
-              ""
+              "EN 45545-2",
+              "Fire behaviour of railway vehicle materials — hazard levels HL1, HL2, HL3",
+              "🛑 Not held. See section 06"
             ],
             [
-              "",
-              "",
-              ""
+              "DNV · Lloyd’s Register · ABS · Bureau Veritas · IRS",
+              "Class society type approval for components in a surveyed scope",
+              "🛑 Not held. See section 06"
             ],
             [
-              "",
-              "",
-              ""
+              "IMO FTP Code",
+              "Fire test procedures for marine materials",
+              "🛑 Not held. See section 06"
             ]
           ],
           "note": "Five held, four struck, in one table. That ratio is unusual and it is the truthful one for this sector — and a specifier scanning for RDSO or EN 45545 finds the row, finds the answer, and does not have to enquire to learn it.\nThe five held rows are not filler. ASTM D2000, ISO 3302-1 and ISO 1431-1 are exactly what a builder’s drawing calls up for a non-safety-critical seal, and they are the standards the work on this page is actually done to.\n🛑 If RDSO approval is pursued, the struck row becomes a targeted line in the same form as the IATF statement — in progress, targeted [date], never as held, never as structured data. Do not write it speculatively"
@@ -465,23 +465,23 @@
           "rows": [
             [
               "Window, door, gangway, hatch and porthole seals to the builder’s drawing",
-              ""
+              "Anything requiring EN 45545-2 HL1, HL2 or HL3 classification"
             ],
             [
               "Acoustic and thermal insulation cut to the builder’s development",
-              ""
+              "Direct supply to Indian Railways or any RDSO-gated item"
             ],
             [
               "Gaskets, grommets and vibration mounts for auxiliary and services positions",
-              ""
+              "Components inside a class society’s surveyed hull or machinery scope"
             ],
             [
               "Aftermarket and MRO supply for privately operated fleets",
-              ""
+              "Brake, suspension, stern tube or any safety-critical sealing element"
             ],
             [
               "Export supply where the OEM holds the approval",
-              ""
+              "Fire-barrier or fire-stopping products of any kind"
             ]
           ],
           "note": "Five and five, side by side, in one table. Reading down the right column tells a buyer in ten seconds whether to stop, and the left column tells them what is still worth an enquiry. That is a faster qualification than any form\nThe fourth right-hand row is the one that matters most technically. Brake, suspension and stern tube seals are where a rubber failure is a safety event, and they are exactly the parts a general rubber supplier is most tempted to quote. Naming them removes the temptation from both sides\nSeventh boundary section in seven new sheets — and the only one where the boundary is commercial rather than technical. Diaphragms refused cycle life, bonded components refused bond strength, lining refused polyurethane and butyl, seals refused polyurethane, the datasheet refused food contact and a flame rating, construction refused bridge bearings. Here the refusal is about who Margo is allowed to sell to"
@@ -516,12 +516,12 @@
           "rows": [
             [
               "Download ISO Certificate",
-              "",
+              "Wired to nothing — dead on 9 pages",
               "Renders only once the hosted PDF exists"
             ],
             [
               "Download Quality Policy",
-              "",
+              "Wired to nothing — dead on 9 pages",
               "Renders only once the document exists"
             ]
           ],

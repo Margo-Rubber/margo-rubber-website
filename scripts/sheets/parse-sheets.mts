@@ -10,7 +10,9 @@
  *   .lit            a literal — eyebrow, badge, CTA ("Label → /href")
  *   .h1lit / .h2lit a heading; newlines are line breaks, <em> is the accent
  *   p.body-copy     a paragraph; <b> is a lead-in the page may set bold
- *   table           rows of cells; a .strike cell is the OLD copy, dropped
+ *   table           rows of cells; a .strike cell is the OLD copy, dropped —
+ *                   except on a NEW PAGE sheet (36–42), where there is no old
+ *                   copy and a struck row is one the page shows as "not held"
  *
  * Everything else — .wc word counts, .strike, notes, scores — is guidance
  * for the developer and never reaches a page. That distinction is the
@@ -114,6 +116,9 @@ function text(el: HTMLElement | null | undefined): string {
  * sheets break lines. Set while one of them is being read.
  */
 let columnBreaks = false;
+/** Set while a NEW PAGE sheet is read: struck table cells are copy, not the old page. */
+let keepStrike = false;
+const cell = (td: HTMLElement) => (td.classList.contains("strike") && !keepStrike ? "" : text(td));
 function clean(s: string): string {
   return (columnBreaks ? s.replace(/[ \t]{3,}/g, "\n") : s)
     .replace(/[ \t\r\f\v]+/g, " ")
@@ -207,7 +212,7 @@ function readRow(dl: HTMLElement): Field | null {
         const rows = t.querySelectorAll("tbody tr").map((tr, ri) =>
           tr.querySelectorAll("td, th").map((td, ci) => {
             if (td.classList.contains("confirm")) confirm.push([ri, ci]);
-            return td.classList.contains("strike") ? "" : text(td);
+            return cell(td);
           }),
         );
         parts.push({
@@ -242,7 +247,7 @@ function readRow(dl: HTMLElement): Field | null {
     const rows = table.querySelectorAll("tbody tr").map((tr, ri) =>
       tr.querySelectorAll("td, th").map((td, ci) => {
         if (td.classList.contains("confirm")) confirm.push([ri, ci]);
-        return td.classList.contains("strike") ? "" : text(td);
+        return cell(td);
       }),
     );
     return withNote({
@@ -361,6 +366,7 @@ export function parseSheet(file: string): Sheet {
     'src=""',
   );
   const root = parse(html);
+  keepStrike = /NEW PAGE/.test(text(root.querySelector("header.mast .kicker")));
 
   const head: Sheet["head"] = {};
   const codes = root.querySelectorAll("section.pagelevel pre.code");

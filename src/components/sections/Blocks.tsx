@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/Button";
 import type { Crumb } from "@/lib/breadcrumbs";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
-import { Container, Eyebrow } from "@/components/ui/Section";
+import { Container, Eyebrow, HeroChips } from "@/components/ui/Section";
 import { Img } from "@/components/ui/Img";
+import { emphasised } from "@/components/ui/Emphasis";
 
 /**
  * The 40–60 word direct answer rendered BEFORE elaboration — the AEO pattern
@@ -105,7 +106,7 @@ export function CTABand({
               ),
             )}
           </h2>
-          <p className="text-ink-3 mt-4 max-w-[60ch] leading-relaxed">{body}</p>
+          <p className="text-ink-3 mt-4 max-w-[60ch] leading-relaxed">{emphasised(body)}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button href={primary.href}>{primary.label}</Button>
             {secondary && (
@@ -133,6 +134,7 @@ export function CategoryHero({
   eyebrowVariant = "badge",
   breadcrumb,
   statsAlign = "center",
+  chips = [],
 }: {
   badge: string;
   headingLead: string;
@@ -140,6 +142,8 @@ export function CategoryHero({
   intro: string;
   link?: { label: string; href: string };
   stats: { value: string; label: string }[];
+  /** Short uppercase facts under the subhead (sheets 36–39). */
+  chips?: readonly string[];
   image?: string;
   /** Hero buttons. The UI-changes2 comps open with two; the nine older
    *  category pages have none and pass nothing. */
@@ -187,12 +191,16 @@ export function CategoryHero({
         )}
 
         <h1 className="text-display mt-6">
-          {headingLead}
+          {/* The space before the break is invisible but keeps the two lines
+              two words apart for a crawler reading the text. */}
+          {headingLead}{" "}
           <br />
           <span className="text-accent-400">{headingAccent}</span>
         </h1>
 
-        <p className="text-ink-3 mt-6 max-w-[52ch] leading-relaxed">{intro}</p>
+        <p className="text-ink-3 mt-6 max-w-[52ch] leading-relaxed">{emphasised(intro)}</p>
+
+        <HeroChips chips={chips} />
 
         {link && (
           <a

@@ -175,6 +175,13 @@ export const siteSettings = defineType({
         str("line", "Footer line", "e.g. “ISO 9001:2015 · Certificate 09111526A · Integral Certification Ltd”"),
         text("scopeNote", "Scope note", "Travels with the badge everywhere it appears."),
         defineField({
+          name: "strip",
+          title: "Certification block",
+          type: "array",
+          of: [defineArrayMember({ type: "string" })],
+          description: "The five lines the newer category and industry pages show, one per entry. Typed once; every page that places the block reads it.",
+        }),
+        defineField({
           name: "items",
           title: "Certification record",
           description: "Held and in-progress, each with its status stated on the badge. Only held rows reach structured data.",

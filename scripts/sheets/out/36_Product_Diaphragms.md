@@ -143,7 +143,7 @@ Natural rubber is ranked sixth and flagged best-in-class in the same table, whic
   | Fluid immersion / volume swell | ASTM D471 | NABL partner laboratory |
   | Ozone resistance | ISO 1431-1 | NABL partner laboratory |
   | Dimensional conformity | ISO 3302-1 class M1 | In-house |
-  |  |  |  |
+  | Pressure-cycle life | ISO 132 · ASTM D430 · ASTM D813 | not held |
   _The struck row is the point of the table. Dynamic fatigue is the test a diaphragm buyer cares about most and Margo does not have the rig — not in-house and not at the partner laboratory. Listing it as not held, next to seven tests that are, is worth more than quietly omitting it: a procurement engineer reading a test list checks for the gap, and finding it declared is the difference between a supplier who measured and a supplier who guessed.
 Tear strength is on the list deliberately. It is the property that governs diaphragm life at the clamp, and it is the one that disqualifies silicone in section 04_
 - **Ships with every consignment**:

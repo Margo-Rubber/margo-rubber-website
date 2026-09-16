@@ -13,12 +13,16 @@ import { industrySchema } from "../../src/content/schemas/index.ts";
 import { parseBlock, stripNullsDeep } from "../../src/content/blocks.ts";
 import { applyDocument, client, field, heading, lit, litHref, loadSheet, paragraph, paragraphs, rows, section } from "./lib.mts";
 import type { Section } from "./lib.mts";
-import { arrowLink } from "./category.mts";
+import { arrowLink, projectBlocks } from "./category.mts";
+type RawBlock = Record<string, unknown> & { _type?: string; rows?: unknown[] };
 import { PRODUCTS } from "../../src/content/routes.ts";
 import { IMAGES } from "../../src/content/images.ts";
 
 export const industryDocSchema = z.preprocess(
-  (raw) => stripNullsDeep(raw),
+  (raw) => {
+    const d = stripNullsDeep(raw) as { sections?: RawBlock[] };
+    return { ...d, sections: projectBlocks(d) };
+  },
   industrySchema.passthrough().superRefine((doc, ctx) => {
     const sections = (doc as { sections?: unknown[] }).sections ?? [];
     sections.forEach((b, i) => {

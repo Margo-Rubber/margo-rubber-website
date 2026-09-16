@@ -94,6 +94,19 @@ const accordionSchema = z.object({
   heading: z.string().min(3),
   intro: z.string().optional(),
   panels: z.array(z.object({ title: z.string().min(3), body: z.string().min(20) })).min(1),
+  /** A paragraph after the panels — "Tooling is cut in-house…" (sheet 36 §05). */
+  closing: z.string().optional(),
+});
+
+/**
+ * The certification block sheets 36–42 share word for word. The lines live
+ * once, in Site settings; the block only places them. "Do not retype it,
+ * do not add to it."
+ */
+const certificationStripSchema = z.object({
+  id: z.string().regex(/^[a-z0-9-]+$/).optional(),
+  eyebrow: z.string().optional(),
+  heading: z.string().optional(),
 });
 
 /** "If your condition is X, you need Y" — sheet 39 §02. Emitted as an ItemList. */
@@ -122,6 +135,7 @@ export const BLOCK_SCHEMAS = {
   "block.accordion": accordionSchema,
   "block.routerList": routerListSchema,
   "block.richText": richTextSchema,
+  "block.certificationStrip": certificationStripSchema,
   "block.partsGrid": partsGridSchema,
   "block.specTable": specSectionSchema,
   "block.materialCards": materialSectionSchema,

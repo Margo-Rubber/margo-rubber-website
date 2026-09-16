@@ -14,12 +14,14 @@ import { PartsGrid } from "@/components/sections/PartsGrid";
 import { Prose } from "@/components/blocks/Prose";
 import {
   CtaPanel,
+  PlainCards,
   ProcessTimeline,
   ProfileGrid,
   QualityPanel,
   SectorCards,
   SpecifyCards,
 } from "@/components/sections/CategoryBlocks";
+import { emphasised } from "@/components/ui/Emphasis";
 import {
   ApplicationCards,
   ComparePanels,
@@ -148,19 +150,22 @@ function renderBlock(block: Block, ctx: Ctx): ReactNode {
        the LIST, not of this file. */
     case "block.cardGrid": {
       const sectors = block.layout === "sectors";
+      const plain = block.layout === "plain";
       return (
         <Section
-          id={sectors ? "sectors" : "profiles"}
+          id={b.id ?? (sectors ? "sectors" : plain ? "cards" : "profiles")}
           eyebrow={b.eyebrow}
           heading={b.heading}
           body={b.body}
-          align="center"
+          align={plain ? "left" : "center"}
           eyebrowVariant="rule"
           className={band}
-          glow
+          glow={!plain}
         >
           {sectors ? (
             <SectorCards items={b.items} cardCta={b.cardCta} />
+          ) : plain ? (
+            <PlainCards items={b.items} noteLabel={b.noteLabel} group={b.group} />
           ) : (
             <ProfileGrid items={b.items} cardCta={b.cardCta} />
           )}
@@ -203,7 +208,7 @@ function renderBlock(block: Block, ctx: Ctx): ReactNode {
     case "block.specTable":
       return (
         <Section
-          id="specifications"
+          id={b.id ?? "specifications"}
           eyebrow={b.eyebrow}
           heading={b.heading}
           body={b.body}
@@ -220,6 +225,9 @@ function renderBlock(block: Block, ctx: Ctx): ReactNode {
             chips={b.chips}
             searchPlaceholder={b.searchPlaceholder}
           />
+          {b.closing && (
+            <p className="text-ink-3 mt-6 max-w-[68ch] text-sm leading-relaxed">{emphasised(b.closing)}</p>
+          )}
         </Section>
       );
 
@@ -559,12 +567,30 @@ function renderBlock(block: Block, ctx: Ctx): ReactNode {
                     +
                   </span>
                 </summary>
-                <div className="text-ink-3 px-5 pb-5 text-sm leading-relaxed whitespace-pre-line">{p.body}</div>
+                <div className="text-ink-3 px-5 pb-5 text-sm leading-relaxed whitespace-pre-line">{emphasised(p.body)}</div>
               </details>
+            ))}
+            {b.closing && <p className="text-ink-3 pt-3 text-sm leading-relaxed">{emphasised(b.closing)}</p>}
+          </div>
+        </Section>
+      );
+
+    case "block.certificationStrip": {
+      // The lines are Site settings' — one place, every page (sheets 36–42).
+      const lines = ctx.settings.certifications.strip;
+      if (!lines.length) return null;
+      return (
+        <Section id={b.id ?? "certification"} eyebrow={b.eyebrow} eyebrowVariant="rule" heading={b.heading}>
+          <div className="border-line bg-surface-3 rounded-card mx-auto max-w-[860px] border p-6 md:p-8">
+            {lines.map((l, i) => (
+              <p key={l} className={`text-sm leading-relaxed ${i === 0 ? "text-ink font-semibold" : "text-ink-3"} ${i ? "mt-2" : ""}`}>
+                {l}
+              </p>
             ))}
           </div>
         </Section>
       );
+    }
 
     case "block.routerList":
       return (

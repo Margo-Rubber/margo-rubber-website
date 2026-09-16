@@ -38,6 +38,7 @@ const ALLOWED_BLOCKS = [
   "block.cardGrid",
   "block.richText",
   "block.accordion",
+  "block.certificationStrip",
 ];
 
 export const industry = defineType({
@@ -118,6 +119,15 @@ export const industry = defineType({
       description:
         "The same heading as below, written as a single sentence. Used by Google, not shown on the page — so it should read naturally without the line break.",
       validation: (r) => r.required().min(8),
+      group: "hero",
+    }),
+    defineField({
+      name: "heroChips",
+      title: "Chips under the subhead",
+      type: "array",
+      of: [defineArrayMember({ type: "string" })],
+      description: 'Three short facts, shown uppercase — "EPDM · OZONE & UV" (content sheets 41–42).',
+      options: { layout: "tags" },
       group: "hero",
     }),
     defineField({
@@ -249,6 +259,17 @@ export const industry = defineType({
       description:
         "Sentences that must appear verbatim — the NORSOK/API disclaimers on oil & gas, for example. Rendered at the foot of the page exactly as written. Do not paraphrase these.",
       group: "meta",
+    }),
+    defineField({
+      name: "schemaService",
+      title: "Structured data — Service",
+      type: "object",
+      group: "meta",
+      description: "The Service node's own name and description, where they differ from the heading and the meta description (content sheet 41, page-level).",
+      fields: [
+        defineField({ name: "name", title: "Service name", type: "string" }),
+        defineField({ name: "description", title: "One-line description", type: "text", rows: 2 }),
+      ],
     }),
     /**
      * INTERNAL LINKING, as data.

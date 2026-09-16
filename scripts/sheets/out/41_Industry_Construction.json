@@ -395,14 +395,14 @@
               "Tested at our NABL partner laboratory"
             ],
             [
-              "",
-              "",
-              ""
+              "IRC:83 · IS 15462 · EN 1337-3",
+              "Structural elastomeric bearings",
+              "🛑 Not held. See section 06"
             ],
             [
-              "",
-              "",
-              ""
+              "IS 3809 · BS 476 · EN 1366",
+              "Fire resistance of building elements",
+              "🛑 Not held. See section 06"
             ]
           ],
           "note": "Eight standards worked to and two struck, in the same table. Putting the refusals inside the standards list rather than in a separate disclaimer is the strongest form — a specifier scanning for IRC:83 finds it, finds the answer, and does not have to enquire to learn it.\nASTM C864, C509 and C1115 verified 2026-09-03 against ASTM’s own catalogue. These are the three architectural glazing gasket standards and none of them appears anywhere on margorubber.in today, on a site that sells extruded EPDM profile.\nThe IS 5382 row cross-links rather than duplicating. Two industry pages sharing a buyer should point at each other, not repeat each other"
@@ -506,12 +506,12 @@
           "rows": [
             [
               "Download ISO Certificate",
-              "",
+              "Wired to nothing — dead on 9 pages",
               "Renders only once the hosted PDF exists"
             ],
             [
               "Download Quality Policy",
-              "",
+              "Wired to nothing — dead on 9 pages",
               "Renders only once the document exists"
             ]
           ],
