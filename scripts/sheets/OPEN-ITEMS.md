@@ -90,3 +90,8 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 
 45. **Two CONFIRMs in the parts list** — Edge Protection Grommet Strip (extruded and cut; may belong under Extrusion Profiles) and Metal-Reinforced Grommets (needs insert loading; resolves with the bonding CONFIRM). Both listed as written.
 46. **Confirmation copy** (as item 36) and the unanswered FAQ questions (as item 37).
+
+## 15 Bushes
+
+47. **Two CONFIRMs in the parts list** — Torque Rod Bushes (heavy-commercial duty class) and Double-Sleeve Bonded Bushes (two inserts in one tool; resolves with the bonding CONFIRM). Both listed as written.
+48. **Confirmation copy** (as item 36) and the unanswered FAQ questions (as item 37).
