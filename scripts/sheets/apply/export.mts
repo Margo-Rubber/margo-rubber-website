@@ -36,6 +36,22 @@ const h1 = heading(hero, "H1");
 /* ── 03 Map ──────────────────────────────────────────────────────────────── */
 const map = s("03");
 const tooltip = lit(map, "Pin tooltip").split("\n"); // AUSTRALIA / Melbourne, Sydney, Brisbane · 18–22 days · FCL or LCL
+// "NASHIK, IN (origin)" then the nine destinations, in the sheet's order.
+const pinLines = lit(map, "Pin labels").split("\n");
+const hubLabel = E(pinLines[0].replace(/\s*\(origin\)$/, ""));
+const PIN_LABELS = pinLines.slice(1).flatMap((l) => l.split(" · ")).map((l) => E(l.trim()));
+if (PIN_LABELS.length !== 9) throw new Error(`nine pin labels expected, sheet has ${PIN_LABELS.length}`);
+/** Market slug → [its pin's label, its further pins' labels…]. The EU block has no pin of its own on the sheet's map. */
+const PIN_FOR: Record<string, string[]> = {
+  australia: ["AUSTRALIA"],
+  uk: ["UNITED KINGDOM"],
+  "uae-saudi": ["UNITED ARAB EMIRATES", "SAUDI ARABIA"],
+  malaysia: ["MALAYSIA"],
+  usa: ["UNITED STATES"],
+  singapore: ["SINGAPORE"],
+  "east-africa": ["KENYA", "TANZANIA"],
+};
+for (const l of Object.values(PIN_FOR).flat()) if (!PIN_LABELS.includes(l)) throw new Error(`pin label "${l}" is not on the sheet`);
 
 /* ── 04 Market blocks ────────────────────────────────────────────────────── */
 const blocks = s("04");
@@ -138,7 +154,8 @@ const markets = blocks.fields
       body: E(standfirst.text),
       image: meta.image,
       pin: meta.pin,
-      ...(meta.pins ? { pins: meta.pins } : {}),
+      ...(PIN_FOR[meta.slug] ? { pinLabel: PIN_FOR[meta.slug][0] } : {}),
+      ...(meta.pins ? { pins: meta.pins.map((p, i) => ({ ...p, label: PIN_FOR[meta.slug]?.[i + 1] ?? p.label })) } : {}),
       ...(meta.slug === "australia" ? { pinNote: E(tooltip[1]) } : {}),
       points: part("list").items.map((i) => E(i)),
       ...(caveat ? { caveat: E(caveat.text) } : {}),
@@ -201,7 +218,7 @@ const patch = {
   "hero.h1Lines": h1.lines.map((l) => E(l)),
   "hero.intro": E(paragraph(hero, "Subhead")),
   "hero.visionStrip": lit(hero, "Vision-build addition"),
-  "hero.hub": { label: E("NASHIK, IN"), x: 650, y: 200 },
+  "hero.hub": { label: hubLabel, x: 650, y: 200 },
   markets,
 
   incoterms: {

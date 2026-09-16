@@ -1,6 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState, type ReactNode } from "react";
+import { readPrefill, useSearch } from "@/lib/contact-prefill";
+import { PRODUCTS } from "@/content/routes";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import type { Crumb } from "@/lib/breadcrumbs";
 import { Img } from "@/components/ui/Img";
@@ -10,6 +12,7 @@ import {
   EnquiryForm,
   EnquiryStatus,
   EnquirySubmit,
+  useEnquiry,
 } from "@/components/forms/EnquiryForm";
 
 /* ── HERO ─────────────────────────────────────────────────────────────── */
@@ -199,7 +202,15 @@ const REGISTRY_OPTIONS: Record<string, { groups: { label: string | null; options
   },
 };
 
-function FieldControl({ f }: { f: Field }) {
+function FieldControl({
+  f,
+  value,
+  onChange,
+}: {
+  f: Field;
+  value: string;
+  onChange: (v: string) => void;
+}) {
   if (f.type === "textarea") {
     return (
       <textarea
@@ -207,6 +218,8 @@ function FieldControl({ f }: { f: Field }) {
         rows={5}
         required={f.required}
         placeholder={f.placeholder}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
         className={inputCls}
       />
     );
@@ -216,8 +229,9 @@ function FieldControl({ f }: { f: Field }) {
       <select
         name={f.name}
         required={f.required}
-        defaultValue=""
-        className={`${inputCls} text-ink-4`}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className={`${inputCls} ${value ? "text-ink" : "text-ink-4"}`}
       >
         <option value="" disabled>
           {f.placeholder}
@@ -259,8 +273,41 @@ function FieldControl({ f }: { f: Field }) {
       type={f.type}
       required={f.required}
       placeholder={f.placeholder}
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
       className={inputCls}
     />
+  );
+}
+
+/**
+ * The post-submit state — "Enquiry received. A named engineer replies within
+ * 48 hours to {email}." (sheets 11–28 §Enquiries), with the address the
+ * buyer gave. A page that asked for something specific says what is coming
+ * back: the variant keyed by the product category chosen.
+ */
+function Received({
+  text,
+  variants,
+  children,
+}: {
+  text?: string;
+  variants: readonly { product: string; text: string }[];
+  children: ReactNode;
+}) {
+  const { status, submitted } = useEnquiry();
+  if (!text || status !== "success") return <>{children}</>;
+  const chosen = PRODUCTS.find((p) => p.label === submitted.productCategory);
+  const line = variants.find((v) => v.product === chosen?.slug)?.text ?? text;
+  const [before, after] = line.split("{email}");
+  return (
+    <div role="status" className="border-accent-400/40 rounded-card border bg-[#0B1416] p-6 md:p-8">
+      <p className="text-ink text-base leading-relaxed">
+        {before}
+        {after !== undefined && <strong className="text-accent-400 font-semibold">{submitted.email}</strong>}
+        {after}
+      </p>
+    </div>
   );
 }
 
@@ -274,6 +321,8 @@ export function RfqForm({
   responsePromise,
   attachLabel,
   attachHint,
+  confirmation,
+  confirmations = [],
 }: {
   steps: string[];
   step1: Field[];
@@ -284,8 +333,28 @@ export function RfqForm({
   responsePromise: string;
   attachLabel?: string;
   attachHint?: string;
+  /** The post-submit line, with `{email}` where the address goes. */
+  confirmation?: string;
+  /** The line for a page that asked for something specific, by product-category slug. */
+  confirmations?: readonly { product: string; text: string }[];
 }) {
   const [step, setStep] = useState(0);
+  // What the buyer has typed. A field the buyer has not touched shows what
+  // the link that brought them here already said — the part, the industry,
+  // the request — read from the address (the visitor's, not the server's)
+  // and put where the buyer would have typed it. The raw parameters travel
+  // with the enquiry as hidden fields.
+  const [values, setValues] = useState<Record<string, string>>({});
+  const search = useSearch();
+  const arrived = useMemo(() => readPrefill(search), [search]);
+  const defaults: Record<string, string> = {
+    ...(arrived.product ? { productCategory: arrived.product } : {}),
+    ...(arrived.industry ? { industry: arrived.industry } : {}),
+    ...(arrived.lines.length ? { details: `${arrived.lines.join("\n")}\n\n` } : {}),
+  };
+  const context = arrived.context;
+  const valueOf = (name: string) => values[name] ?? defaults[name] ?? "";
+  const setValue = (name: string) => (v: string) => setValues((cur) => ({ ...cur, [name]: v }));
 
   // BOTH steps stay mounted, the inactive one hidden. Unmounting step one when
   // step two appears would remove its inputs from the DOM, and FormData reads
@@ -327,6 +396,7 @@ export function RfqForm({
 
       <EnquiryForm
         source="contact"
+        redirectTo={confirmation ? null : "/thank-you"}
         onBeforeSubmit={() => {
           // Step one advances rather than submitting. Only step two posts.
           if (step === 0) {
@@ -336,6 +406,7 @@ export function RfqForm({
           return true;
         }}
       >
+        <Received text={confirmation} variants={confirmations}>
 
         {fieldSets.map((set, i) => (
           <div
@@ -351,7 +422,7 @@ export function RfqForm({
                 <span className="text-eyebrow text-ink-4 font-mono uppercase">
                   {f.label}
                 </span>
-                <FieldControl f={f} />
+                <FieldControl f={f} value={valueOf(f.name)} onChange={setValue(f.name)} />
               </label>
             ))}
             {/* The attachment field (sheet 04 §02). Same inert affordance as
@@ -365,6 +436,12 @@ export function RfqForm({
               </div>
             )}
           </div>
+        ))}
+
+        {/* The parameters the buyer arrived with, as they arrived — under
+            their own names so they never shadow the field they pre-filled. */}
+        {Object.entries(context).map(([k, v]) => (
+          <input key={k} type="hidden" name={`via_${k}`} value={v} />
         ))}
 
         <div className="mt-7 flex flex-wrap items-center gap-3">
@@ -387,6 +464,7 @@ export function RfqForm({
 
         {/* No competitor in the teardown states any response time. */}
         <p className="text-ink-4 mt-4 text-xs">{responsePromise}</p>
+        </Received>
       </EnquiryForm>
     </div>
   );
@@ -410,6 +488,8 @@ export function QuoteSection({
   responsePromise,
   attachLabel,
   attachHint,
+  confirmation,
+  confirmations,
 }: {
   eyebrow: string;
   heading: string;
@@ -427,6 +507,8 @@ export function QuoteSection({
   responsePromise: string;
   attachLabel?: string;
   attachHint?: string;
+  confirmation?: string;
+  confirmations?: readonly { product: string; text: string }[];
 }) {
   return (
     <section className="py-[70px]">
@@ -458,8 +540,10 @@ export function QuoteSection({
             backLabel={backLabel}
             submitLabel={submitLabel}
             responsePromise={responsePromise}
-          attachLabel={attachLabel}
-          attachHint={attachHint}
+            attachLabel={attachLabel}
+            attachHint={attachHint}
+            confirmation={confirmation}
+            confirmations={confirmations}
           />
         </div>
       </Container>

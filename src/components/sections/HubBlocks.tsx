@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { withoutDeadDownloads } from "@/lib/downloads";
-import { PRODUCTS, hrefFor } from "@/content/routes";
+import { PRODUCTS, PRODUCT_GROUPS, hrefFor } from "@/content/routes";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import type { Crumb } from "@/lib/breadcrumbs";
 import Link from "next/link";
@@ -912,11 +912,14 @@ export function QuoteBand({
   contacts: { icon: string; label: string; value: string; note?: string }[];
   promiseHeading: string;
   promises: string[];
-  fields: { label: string; placeholder: string; type: string; full: boolean }[];
+  fields: { name: string; label: string; placeholder: string; type: string; full: boolean }[];
   submitLabel: string;
 }) {
   const words = heading.split(" ");
   const accent = words.pop();
+  // The product dropdown, from the route registry: the fifteen categories
+  // in their three groups, then "Not sure / other".
+  const [product, setProduct] = useState("");
 
   return (
     <Container>
@@ -1010,24 +1013,43 @@ export function QuoteBand({
                 <span className="text-eyebrow text-ink-4 font-mono uppercase">
                   {f.label}
                 </span>
+                {/* Every control carries its field name: FormData reads the
+                    DOM, and an input without a name posts nothing. */}
                 {f.type === "textarea" ? (
                   <textarea
+                    name={f.name}
                     rows={4}
+                    required
                     placeholder={f.placeholder}
                     className="border-line text-ink placeholder:text-ink-4 focus:border-accent-400 mt-2 w-full rounded-lg border bg-[#0F1116] px-4 py-3 text-sm"
                   />
                 ) : f.type === "select" ? (
                   <select
-                    defaultValue=""
-                    className="border-line text-ink-4 focus:border-accent-400 mt-2 w-full rounded-lg border bg-[#0F1116] px-4 py-3 text-sm"
+                    name={f.name}
+                    required
+                    value={product}
+                    onChange={(e) => setProduct(e.target.value)}
+                    className={`border-line focus:border-accent-400 mt-2 w-full rounded-lg border bg-[#0F1116] px-4 py-3 text-sm ${product ? "text-ink" : "text-ink-4"}`}
                   >
                     <option value="" disabled>
                       {f.placeholder}
                     </option>
+                    {PRODUCT_GROUPS.map((g) => (
+                      <optgroup key={g.label} label={g.label}>
+                        {g.items.map((p) => (
+                          <option key={p.slug} value={p.label}>
+                            {p.label}
+                          </option>
+                        ))}
+                      </optgroup>
+                    ))}
+                    <option value="Not sure / other">Not sure / other</option>
                   </select>
                 ) : (
                   <input
+                    name={f.name}
                     type={f.type}
+                    required={f.name !== "phone" && f.name !== "quantity"}
                     placeholder={f.placeholder}
                     className="border-line text-ink placeholder:text-ink-4 focus:border-accent-400 mt-2 w-full rounded-lg border bg-[#0F1116] px-4 py-3 text-sm"
                   />

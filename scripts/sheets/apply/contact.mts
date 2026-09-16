@@ -16,6 +16,10 @@ import {
   accentLines,
 } from "../lib.mts";
 
+/** "Confirmation copy" on another sheet, its line break closed up. */
+const confirmationFrom = (stem: string, num: string) =>
+  lit(section(loadSheet(stem), num), "Confirmation copy").replace(/\s*\n\s*/g, " ");
+
 const sheet = loadSheet("04_Contact");
 const s = (n: string) => section(sheet, n);
 const expect: string[] = [];
@@ -97,6 +101,15 @@ const patch = {
     return { "quote.attachLabel": E(m[1]), "quote.attachHint": E(m[2]) };
   })(),
   "quote.submitLabel": E(submit[2]),
+  // The post-submit state. Sheet 04 has none; the category and industry
+  // sheets each give the same line for the form their CTA leads to (12 §05
+  // is the reference), and two pages say what is coming back (18 §09, 19
+  // §10). Not in `expect`: the state exists only after a submission.
+  "quote.confirmation": confirmationFrom("12_Product_Bellows", "05"),
+  "quote.confirmations": [
+    { product: "extrusion", text: confirmationFrom("18_Product_Extrusion_Profiles", "09") },
+    { product: "sponge-foam-rubber", text: confirmationFrom("19_Product_Sponge_Foam_Rubber", "10") },
+  ],
   // Step-2 selects: country and volume options from the sheet; product
   // category and industry come from the route registry at render time.
   'quote.step2[name=="country"].options': countries,

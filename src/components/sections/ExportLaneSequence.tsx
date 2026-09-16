@@ -5,6 +5,7 @@ import {
   MapBase,
   MapDefs,
   MapPin,
+  PinLabel,
   laneFor,
 } from "@/components/sections/WorldMapArt";
 
@@ -47,6 +48,7 @@ export function ExportLaneSequence({
     chip: string;
     heading: string;
     pin: { x: number; y: number };
+    pinLabel?: string;
     pins?: readonly { label: string; x: number; y: number }[];
     pinNote?: string;
   }[];
@@ -108,10 +110,10 @@ export function ExportLaneSequence({
                         )}
                         <g className="lane-pin" data-lane={i}>
                           {/* The tooltip is the pin's <title>: port · days · FCL/LCL. */}
-                          {m.pinNote && <title>{`${m.chip}: ${m.pinNote}`}</title>}
-                          <MapPin x={m.pin.x} y={m.pin.y} />
+                          {m.pinNote && <title>{`${m.pinLabel ?? m.chip}: ${m.pinNote}`}</title>}
+                          <MapPin x={m.pin.x} y={m.pin.y} label={m.pinLabel} />
                           {(m.pins ?? []).map((p) => (
-                            <MapPin key={p.label} x={p.x} y={p.y} />
+                            <MapPin key={p.label} x={p.x} y={p.y} label={p.label} />
                           ))}
                         </g>
                       </g>
@@ -123,6 +125,13 @@ export function ExportLaneSequence({
                       <MapPin x={p.x} y={p.y} />
                     </g>
                   ))}
+                  {/* The origin, named — the sheet's tenth label (06 §03). */}
+                  <g>
+                    <title>{`${hub.label} (origin)`}</title>
+                    <circle cx={hub.x} cy={hub.y} r="5" fill="#2BBCC4" />
+                    <circle cx={hub.x} cy={hub.y} r="14" stroke="#2BBCC4" opacity="0.35" />
+                    <PinLabel x={hub.x} y={hub.y} label={hub.label} strong />
+                  </g>
                 </g>
                 <MapDefs />
               </svg>

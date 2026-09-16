@@ -34,12 +34,15 @@ type Ctx = {
   status: Status;
   message: string | null;
   errors: Record<string, string>;
+  /** What was sent, once it has been — for a confirmation that names the address it replies to. */
+  submitted: Record<string, string>;
 };
 
 const EnquiryContext = createContext<Ctx>({
   status: "idle",
   message: null,
   errors: {},
+  submitted: {},
 });
 
 export function useEnquiry() {
@@ -50,8 +53,8 @@ export function EnquiryForm({
   source,
   children,
   className = "",
-  /** Where to send the visitor on success. */
-  redirectTo = "/thank-you",
+  /** Where to send the visitor on success; `null` stays on the page and shows the form's own confirmation. */
+  redirectTo = "/thank-you" as string | null,
   /**
    * Return false to cancel this submit. Exists for the multi-step RFQ form on
    * /contact, where the same button advances a step before it ever submits.
@@ -61,13 +64,14 @@ export function EnquiryForm({
   source: string;
   children: ReactNode;
   className?: string;
-  redirectTo?: string;
+  redirectTo?: string | null;
   onBeforeSubmit?: () => boolean;
 }) {
   const router = useRouter();
   const [status, setStatus] = useState<Status>("idle");
   const [message, setMessage] = useState<string | null>(null);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [submitted, setSubmitted] = useState<Record<string, string>>({});
 
   // When the form first rendered. The endpoint rejects submissions faster than
   // a person can type, and this is how it knows. Set in an effect so it is the
@@ -126,9 +130,10 @@ export function EnquiryForm({
       };
 
       if (body.ok) {
+        setSubmitted(fields);
         setStatus("success");
         form.reset();
-        router.push(redirectTo);
+        if (redirectTo) router.push(redirectTo);
         return;
       }
 
@@ -147,7 +152,7 @@ export function EnquiryForm({
   }
 
   return (
-    <EnquiryContext.Provider value={{ status, message, errors }}>
+    <EnquiryContext.Provider value={{ status, message, errors, submitted }}>
       <form onSubmit={onSubmit} noValidate className={className}>
         {/* Honeypot. Hidden from people, irresistible to bots. `display:none`
             rather than `type="hidden"`, which better bots skip. Also removed

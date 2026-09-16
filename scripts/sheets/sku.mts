@@ -299,10 +299,19 @@ const EXTRA_SPECS: Record<string, { after: string; label: string; value: string 
  * those moves land (Phase 7) the links resolve to where the parts are.
  */
 const RELATED_ALIAS: Record<string, string> = {
-  "/sponge-foam-rubber/c-pillar-garnish-seal": "/gaskets/c-pillar-garnish",
-  "/sponge-foam-rubber/foam-gasket": "/gaskets/foam-gaskets",
-  "/sponge-foam-rubber/foam-gaskets": "/gaskets/foam-gaskets",
+  // Sheets written before the moves name the old paths; the parts now live
+  // where their own sheets put them (src/content/redirects.ts).
+  "/anti-vibration-mounts/backlight-mount": "/extrusion/rear-windscreen-glazing-rubber",
+  "/anti-vibration-mounts/scorpio-footrest-mat": "/pads-stoppers-caps/side-step-pad",
+  "/anti-vibration-mounts/tata-bumper-stopper": "/anti-vibration-mounts/cv-suspension-bump-stop",
+  "/gaskets/c-pillar-garnish": "/sponge-foam-rubber/c-pillar-garnish-seal",
+  "/gaskets/foam-gaskets": "/sponge-foam-rubber/foam-gaskets",
+  "/pads-stoppers-caps/rubber-plungers": "/seals/plunger-seals",
+  // Two sheets write the singular; the page is /foam-gaskets.
+  "/sponge-foam-rubber/foam-gasket": "/sponge-foam-rubber/foam-gaskets",
   "/pads-stoppers-caps/compression-pump-inlays": "/oil-seals/compression-pump-inlays",
+  // "Sheet rubber" is the lining page.
+  "/products/sheet-rubber": "/products/rubber-lining",
 };
 
 export type SkuOptions = {
