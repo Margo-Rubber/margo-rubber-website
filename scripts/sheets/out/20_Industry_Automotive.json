@@ -613,42 +613,82 @@
         },
         {
           "label": "Q1",
-          "kind": "heading",
-          "lines": [
-            "Do you hold IATF 16949 certification?"
+          "kind": "composite",
+          "parts": [
+            {
+              "kind": "heading",
+              "lines": [
+                "Do you hold IATF 16949 certification?"
+              ],
+              "accent": []
+            },
+            {
+              "kind": "para",
+              "text": "Margo Rubber Products holds ISO 9001:2015 certification, certificate 09111526A, issued by Integral Certification Ltd. We are actively upgrading our quality management system to IATF 16949:2016 and are targeting certification by the end of 2026. Today we supply automotive OEMs and Tier 1 suppliers against controlled drawing revisions, with first-article approval, batch-level traceability and material certificates issued per shipment.",
+              "lead": "We are actively upgrading our quality management system to IATF 16949:2016 and are targeting certification by the end of 2026.",
+              "em": false
+            }
           ],
-          "accent": [],
-          "value": "Do you hold IATF 16949 certification?",
           "note": "59 words · live is 41 · the live answer’s closing sentence comes off — it told an automotive buyer Margo was not the right supplier, which is not the position. The replacement answers the question asked, states the upgrade with a target date, and then spends its last sentence on what a buyer gets today: controlled drawing revisions, first-article approval, batch traceability and material certificates. A buyer with no IATF mandate reads that and has everything they need; a buyer with one reads a timeframe and a reason to keep talking. That is a better outcome than either the live version or a flat no"
         },
         {
           "label": "Q2",
-          "kind": "heading",
-          "lines": [
-            "What is AEM and why do you use it?"
+          "kind": "composite",
+          "parts": [
+            {
+              "kind": "heading",
+              "lines": [
+                "What is AEM and why do you use it?"
+              ],
+              "accent": []
+            },
+            {
+              "kind": "para",
+              "text": "AEM, ethylene acrylic elastomer, holds a −40 °C to +175 °C service range, continuous to about +160 °C, with strong resistance to engine oils and heat ageing. It is Margo’s signature compound and is supplied to Mahindra & Mahindra for engine and transmission applications. It is specified where oil, heat and ozone act together — the condition under a bonnet, and the one that ends a natural rubber or nitrile part.",
+              "lead": "−40 °C to +175 °C",
+              "em": false
+            }
           ],
-          "accent": [],
-          "value": "What is AEM and why do you use it?",
           "note": "62 words · live is 44 · the live answer is kept and two things are added: the temperature figure, which the live version omits everywhere on this page, and the closing sentence explaining when to specify it. An engineer reading “why do you use it” wants the selection rule, not the marketing reason"
         },
         {
           "label": "Q3 — recommended",
-          "kind": "heading",
-          "lines": [
-            "Can you produce to our drawing and OEM sample?"
+          "kind": "composite",
+          "parts": [
+            {
+              "kind": "heading",
+              "lines": [
+                "Can you produce to our drawing and OEM sample?"
+              ],
+              "accent": []
+            },
+            {
+              "kind": "para",
+              "text": "Yes. Send the controlled drawing, an existing part, or the vehicle make and model. We cut tooling in-house, propose a compound and hardness against the mounting position, and produce a first-article sample for your approval before volume release. Quotation with a feasibility report within 48 hours of receiving the drawing.",
+              "lead": "Quotation with a feasibility report within 48 hours of receiving the drawing.",
+              "em": false
+            }
           ],
-          "accent": [],
-          "value": "Can you produce to our drawing and OEM sample?",
           "note": "51 words · new question. It is the single most common automotive enquiry and the page answers it in section 05 without ever putting it as a question. Making it an FAQ entry puts it in the FAQPage node, where it can be returned on its own"
         },
         {
           "label": "Q4 — recommended",
-          "kind": "heading",
-          "lines": [
-            "Do you supply aftermarket as well as OEM?"
+          "kind": "composite",
+          "parts": [
+            {
+              "kind": "heading",
+              "lines": [
+                "Do you supply aftermarket as well as OEM?"
+              ],
+              "accent": []
+            },
+            {
+              "kind": "para",
+              "text": "Yes. We supply Indian OEMs and Tier 1 suppliers directly, and export aftermarket volumes with full documentation. Named parts including the Bolero back light rubber mount, bumper stoppers for Tata and Scorpio footrest mats are produced against controlled drawings and are available for both channels.",
+              "lead": "Named parts including the Bolero back light rubber mount, bumper stoppers for Tata and Scorpio footrest mats are produced against controlled drawings",
+              "em": false
+            }
           ],
-          "accent": [],
-          "value": "Do you supply aftermarket as well as OEM?",
           "note": "46 words · new question, and it is the one that puts the real part names into the FAQ node. Those three strings are the most valuable product vocabulary on the whole site — a fitter or an aftermarket buyer types them verbatim — and they currently sit only in a card grid two clicks away on the anti-vibration page"
         }
       ],

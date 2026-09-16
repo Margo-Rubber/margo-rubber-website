@@ -26,6 +26,8 @@ import { stripNullsDeep } from "../../src/content/blocks.ts";
 import { FORBIDDEN_CLAIMS } from "../../src/content/site.ts";
 import type { Sheet, Section, Field } from "./parse-sheets.mts";
 
+export type { Section, Sheet, Field };
+
 /* ── Environment ────────────────────────────────────────────────────────── */
 
 function envFromDotfile(name: string): string | undefined {

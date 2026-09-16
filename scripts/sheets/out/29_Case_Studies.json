@@ -101,12 +101,20 @@
       "fields": [
         {
           "label": "Eyebrow · H2",
-          "kind": "heading",
-          "lines": [
-            "What Our Case Studies Will Cover"
+          "kind": "composite",
+          "parts": [
+            {
+              "kind": "lit",
+              "value": "02 · METHODOLOGY PREVIEW"
+            },
+            {
+              "kind": "heading",
+              "lines": [
+                "What Our Case Studies Will Cover"
+              ],
+              "accent": []
+            }
           ],
-          "accent": [],
-          "value": "What Our Case Studies Will Cover",
           "note": "[no change to either]"
         },
         {
@@ -256,12 +264,20 @@
         },
         {
           "label": "Eyebrow · H2",
-          "kind": "heading",
-          "lines": [
-            "In the Meantime"
+          "kind": "composite",
+          "parts": [
+            {
+              "kind": "lit",
+              "value": "03 · EXISTING TRUST PROOF"
+            },
+            {
+              "kind": "heading",
+              "lines": [
+                "In the Meantime"
+              ],
+              "accent": []
+            }
           ],
-          "accent": [],
-          "value": "In the Meantime",
           "note": "[no change to either] — three words that do exactly the right job at exactly the right point in the page"
         },
         {
@@ -337,15 +353,23 @@
       "fields": [
         {
           "label": "Eyebrow · H2",
-          "kind": "heading",
-          "lines": [
-            "Be Our First Documented",
-            "Partner."
+          "kind": "composite",
+          "parts": [
+            {
+              "kind": "lit",
+              "value": "AN HONEST INVITATION"
+            },
+            {
+              "kind": "heading",
+              "lines": [
+                "Be Our First Documented",
+                "Partner."
+              ],
+              "accent": [
+                "Partner."
+              ]
+            }
           ],
-          "accent": [
-            "Partner."
-          ],
-          "value": "Be Our First Documented Partner.",
           "note": "[no change to either]"
         },
         {
@@ -433,15 +457,23 @@
       "fields": [
         {
           "label": "Eyebrow · H2",
-          "kind": "heading",
-          "lines": [
-            "Request a Quote.",
-            "No Commitment Required."
+          "kind": "composite",
+          "parts": [
+            {
+              "kind": "lit",
+              "value": "READY TO START"
+            },
+            {
+              "kind": "heading",
+              "lines": [
+                "Request a Quote.",
+                "No Commitment Required."
+              ],
+              "accent": [
+                "No Commitment Required."
+              ]
+            }
           ],
-          "accent": [
-            "No Commitment Required."
-          ],
-          "value": "Request a Quote. No Commitment Required.",
           "note": "[no change to either] — “no commitment required” is the correct closing offer for a page aimed at a buyer who has not bought yet"
         },
         {

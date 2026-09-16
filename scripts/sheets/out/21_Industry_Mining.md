@@ -185,13 +185,21 @@ Western Australia · Queensland · New South Wales · Northern Territory · Sout
 > live: LIVE H2 → Questions from Australian buyers. · the lead-time answer is wrong twice and omits freight transit · no certification question
 - **H2**: “Questions from Australian buyers.”
   _[no change] — it says who is asking, and on this page that is the whole positioning_
-- **Q1**: “What is the typical lead time for components shipped to Australia?”
+- **Q1** (composite):
+  · H: “What is the typical lead time for components shipped to Australia?”
+  · Three to four weeks ex-works Nashik from drawing approval, or two weeks on an express basis where we have confirmed capacity. A new component with tooling to cut adds the tooling lead time, quoted per part. Sea freight to major Australian ports runs a further three to five weeks depending on the lane and the sailing; air freight is quoted where a shutdown date requires it.
   _70 words · live is 39 · the live answer is wrong twice and incomplete once. It says 14–21 days for catalogue and 21–35 for custom; every other page says 3–4 weeks standard with 2 weeks express, and 3–4 weeks is 21–28 days — so the live first figure promises faster than the company delivers. And it stops at “before freight transit to Australian ports” without saying how long that is, which is the number an Australian buyer planning a shutdown actually needs. Adding it is the single most useful edit on this page_
-- **Q2**: “Can we request a sample or pre-production prototype before a full order?”
+- **Q2** (composite):
+  · H: “Can we request a sample or pre-production prototype before a full order?”
+  · Yes. Prototype within 48 to 72 hours of an approved drawing, and a pre-production sample approval step is part of our standard custom tooling process. Tell us the quantity you need for evaluation and we will price that run — there is no minimum on a qualification lot.
   _52 words · live is 38 · the live answer says samples are “available on request” and refers the reader to technical sales, which is a deferral rather than an answer. The replacement gives the actual turnaround — 48 to 72 hours, the figure published on every product page — and removes the minimum-order implication_
-- **Q3 — new**: “What certifications does Margo hold?”
+- **Q3 — new** (composite):
+  · H: “What certifications does Margo hold?”
+  · Margo Rubber Products holds ISO 9001:2015, certificate 09111526A, issued by Integral Certification Ltd and valid to 21 February 2027. We are actively upgrading our quality management system to IATF 16949:2016, with certification targeted by the end of 2026, and ISO 14001 and ISO 45001 certification targeted for 2027. Material test reports and batch certificates are issued with every shipment.
   _60 words · new question — and on an export page it is the second thing a buyer wants after price. The page currently states the certification position nowhere in its FAQ, and this is the canonical wording carried from the automotive sheet. It must render from the same constant as the other four pages that carry it_
-- **Q4 — new**: “Do you supply rubber lining and conveyor skirting?”
+- **Q4 — new** (composite):
+  · H: “Do you supply rubber lining and conveyor skirting?”
+  · Yes. Alongside moulded and extruded components we supply rubber sheet lining and conveyor skirting — chute, hopper and tank lining, and skirting cut to size — in natural rubber, which has the best abrasion resistance of the eight compounds we mix. Send the surface area, the thickness and the duty, and tell us whether you need it supplied cut or supplied and fitted.
   _63 words · new question, and it is the most valuable one on the page. Mining buyers bundle lining and components into one enquiry as a matter of course, and the live abrasion card invites it without answering it. Answering yes, with the two inputs and the supplied-versus-fitted question, converts an enquiry the site currently loses. The supplied-or-fitted question is the one that decides the quote and it is the one nobody asks up front_
   <details><summary>notes (5)</summary>
   - Crawlability. All four answers in the DOM at first paint, collapsed with CSS.

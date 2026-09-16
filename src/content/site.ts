@@ -58,7 +58,8 @@ export const FORBIDDEN_CLAIMS: { pattern: RegExp; why: string }[] = [
   /* ── Certifications ──────────────────────────────────────────────── */
   { pattern: /IATF\s*16949(?![^.]{0,120}(in progress|upgrade|targeted|being upgraded|roadmap|not (yet )?held|not certified))/i, why: "IATF 16949 is stated only as an upgrade in progress, targeted end 2026 — never as held." },
   { pattern: /\bCE[- ](mark|certif)/i, why: "CE marking is not held." },
-  { pattern: /RoHS[- ](certified|compliant|2\.0)|REACH[- ](certified|compliant|SVHC)/i, why: "Declarations, not certifications, and not made. Composition declarations are produced per part on request." },
+  // A REACH screen may be named as a roadmap item (sheet 06 §04 EU block), never as held.
+  { pattern: /RoHS[- ](certified|compliant|2\.0)|REACH[- ](certified|compliant|SVHC)(?![^.]{0,120}(roadmap|not (yet )?held|on request))/i, why: "Declarations, not certifications, and not made. Composition declarations are produced per part on request." },
   { pattern: /(?<!not hold\s)ISO\s*13485(?![^.]{0,80}(do not hold|not held|not hold))|FDA[- ](approved|grade|registered|compliant)/i, why: "Never as held. The medical page states plainly they are not." },
   { pattern: /WRAS[- ]approved|NSF[\/ ]?(ANSI[\/ ]?)?61\s*certified|AS\/NZS\s*4020|KTW[- ]BWGL/i, why: "Potable-water approvals attach to a formulation; Margo holds none." },
   { pattern: /ISO\s*(14001|45001)(?![^.]{0,120}(in progress|targeted|being upgraded|not (currently )?held))/i, why: "Only ever as targeted 2027, never as held." },

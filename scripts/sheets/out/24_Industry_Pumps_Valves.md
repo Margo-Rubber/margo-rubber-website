@@ -178,15 +178,25 @@ Australia · United Kingdom · United Arab Emirates · United States · Singapor
 > live: LIVE H2 → Questions from pump and valve buyers. · one answer carries a banned piece count and two wrong lead times · no certification question
 - **H2**: “Questions from pump and valve buyers.”
   _[no change]_
-- **Q1**: “Can you produce diaphragms to our drawing?”
+- **Q1** (composite):
+  · H: “Can you produce diaphragms to our drawing?”
+  · Yes. Diaphragms are moulded against your controlled drawing revision, with the compound selected for the medium in contact and the duty expected. We do not publish a cycle figure — we qualify against your stroke, working pressure and target cycle life, and have samples tested at a named laboratory. Send the fabric reinforcement specification with the drawing if the part is reinforced — it changes the tooling and the cure.
   _46 words · live is 26 · the live answer is good and the addition is the question it raises. A metering-pump diaphragm is usually fabric-reinforced, and reinforcement is the difference between a straightforward moulding and a two-material one. Asking for it here is what makes the quotation right first time_
-- **Q2**: “Which compound suits potable water service?”
+- **Q2** (composite):
+  · H: “Which compound suits potable water service?”
+  · EPDM is the usual choice for potable water and steam. Potable-water approval is a compound-level approval held by the compound supplier — the common schemes are WRAS in the UK, NSF/ANSI 61 in North America and KTW-BWGL in Germany. Tell us which scheme your market requires and we will confirm what is available; we do not hold these approvals ourselves.
   _62 words · live is 28 · the live answer raises potable-water approval and defers entirely, which leaves the buyer no better off. Naming the three schemes tells them what to ask for, and the closing clause states plainly that the approval sits with the compound supplier rather than with Margo. Same structure as the medical page’s biocompatibility answer — name the standard, place the responsibility, offer to confirm_
-- **Q3 — heading kept, answer rewritten**: “Is there a minimum order quantity?”
+- **Q3 — heading kept, answer rewritten** (composite):
+  · H: “Is there a minimum order quantity?”
+  · No. Quantity is priced against the part and its tooling — tell us the part and the volume and we will quote it. Existing tooling ships in three to four weeks ex-works Nashik, or two weeks express where we have confirmed capacity; a new part adds the tooling lead time, quoted per part. Prototype within 48 to 72 hours of an approved drawing.
   _66 words · live is 32 · the live answer carries three errors in two sentences: a banned piece count, and two lead times that contradict every other page — 14 to 21 days against a 3–4 week standard, and 21 to 35 against 3–4 weeks plus tooling. It sits in the FAQPage node, which is what an assistant returns when asked either question. Second industry page with a dedicated minimum-order FAQ; on this sector it lands on a buyer replacing a seal kit, which is a handful of parts_
-- **Q4**: “Do you supply impeller wear components and pump lining?”
+- **Q4** (composite):
+  · H: “Do you supply impeller wear components and pump lining?”
+  · Yes to both. Moulded to drawing — wear covers, impeller facings and slurry-duty seals — and rubber sheet lining for casings, sumps and pipework, in natural rubber, which has the best abrasion resistance of the eight compounds we mix. Send the geometry and the duty, and tell us whether you need the lining supplied cut or supplied and fitted.
   _60 words · live is truncated in capture · the question grows to cover lining and the answer is now yes on both counts (client-confirmed 2026-09-02). The mining sheet answers the same way, so the two pages agree. The supplied-versus-fitted question is the one that decides the quote and a pump engineer usually has not thought about it before being asked_
-- **Q5 — new**: “What certifications does Margo hold?”
+- **Q5 — new** (composite):
+  · H: “What certifications does Margo hold?”
+  · Margo Rubber Products holds ISO 9001:2015, certificate 09111526A, issued by Integral Certification Ltd and valid to 21 February 2027. We are actively upgrading our quality management system to IATF 16949:2016, with certification targeted by the end of 2026, and ISO 14001 and ISO 45001 certification targeted for 2027. Material test reports and batch certificates are issued with every shipment.
   _60 words · new question, carrying the canonical wording settled across the set. It must render from the same constant as the automotive, mining, oil-gas, medical, about, products and certifications pages_
   <details><summary>notes (5)</summary>
   - Crawlability. All five answers in the DOM at first paint, collapsed with CSS.

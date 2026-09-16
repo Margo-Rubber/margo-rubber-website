@@ -197,13 +197,21 @@ and are targeting certification by the end of 2026.`
   _[no change]_
 - **H2**: “Questions from automotive buyers.”
   _[no change — it says who is asking, which is better than “FAQ” and better than a generic question label]_
-- **Q1**: “Do you hold IATF 16949 certification?”
+- **Q1** (composite):
+  · H: “Do you hold IATF 16949 certification?”
+  · Margo Rubber Products holds ISO 9001:2015 certification, certificate 09111526A, issued by Integral Certification Ltd. We are actively upgrading our quality management system to IATF 16949:2016 and are targeting certification by the end of 2026. Today we supply automotive OEMs and Tier 1 suppliers against controlled drawing revisions, with first-article approval, batch-level traceability and material certificates issued per shipment.
   _59 words · live is 41 · the live answer’s closing sentence comes off — it told an automotive buyer Margo was not the right supplier, which is not the position. The replacement answers the question asked, states the upgrade with a target date, and then spends its last sentence on what a buyer gets today: controlled drawing revisions, first-article approval, batch traceability and material certificates. A buyer with no IATF mandate reads that and has everything they need; a buyer with one reads a timeframe and a reason to keep talking. That is a better outcome than either the live version or a flat no_
-- **Q2**: “What is AEM and why do you use it?”
+- **Q2** (composite):
+  · H: “What is AEM and why do you use it?”
+  · AEM, ethylene acrylic elastomer, holds a −40 °C to +175 °C service range, continuous to about +160 °C, with strong resistance to engine oils and heat ageing. It is Margo’s signature compound and is supplied to Mahindra & Mahindra for engine and transmission applications. It is specified where oil, heat and ozone act together — the condition under a bonnet, and the one that ends a natural rubber or nitrile part.
   _62 words · live is 44 · the live answer is kept and two things are added: the temperature figure, which the live version omits everywhere on this page, and the closing sentence explaining when to specify it. An engineer reading “why do you use it” wants the selection rule, not the marketing reason_
-- **Q3 — recommended**: “Can you produce to our drawing and OEM sample?”
+- **Q3 — recommended** (composite):
+  · H: “Can you produce to our drawing and OEM sample?”
+  · Yes. Send the controlled drawing, an existing part, or the vehicle make and model. We cut tooling in-house, propose a compound and hardness against the mounting position, and produce a first-article sample for your approval before volume release. Quotation with a feasibility report within 48 hours of receiving the drawing.
   _51 words · new question. It is the single most common automotive enquiry and the page answers it in section 05 without ever putting it as a question. Making it an FAQ entry puts it in the FAQPage node, where it can be returned on its own_
-- **Q4 — recommended**: “Do you supply aftermarket as well as OEM?”
+- **Q4 — recommended** (composite):
+  · H: “Do you supply aftermarket as well as OEM?”
+  · Yes. We supply Indian OEMs and Tier 1 suppliers directly, and export aftermarket volumes with full documentation. Named parts including the Bolero back light rubber mount, bumper stoppers for Tata and Scorpio footrest mats are produced against controlled drawings and are available for both channels.
   _46 words · new question, and it is the one that puts the real part names into the FAQ node. Those three strings are the most valuable product vocabulary on the whole site — a fitter or an aftermarket buyer types them verbatim — and they currently sit only in a card grid two clicks away on the anti-vibration page_
   <details><summary>notes (5)</summary>
   - Crawlability. All answers in the DOM at first paint, collapsed with CSS. An FAQ accordion that mounts answers on click publishes the questions and none of the answers — and the answers are the whole value here.

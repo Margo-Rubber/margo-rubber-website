@@ -99,12 +99,22 @@
       "fields": [
         {
           "label": "H2 · intro",
-          "kind": "heading",
-          "lines": [
-            "Material Comparison"
+          "kind": "composite",
+          "parts": [
+            {
+              "kind": "heading",
+              "lines": [
+                "Material Comparison"
+              ],
+              "accent": []
+            },
+            {
+              "kind": "para",
+              "text": "Compound-level analysis to inform your material specification decisions. 3 guides",
+              "lead": null,
+              "em": false
+            }
           ],
-          "accent": [],
-          "value": "Material Comparison",
           "note": "[no change] — and this is the strongest of the three categories: compound selection is the question Margo is asked most and the one the site already answers best"
         },
         {
@@ -169,12 +179,22 @@
       "fields": [
         {
           "label": "H2 · intro",
-          "kind": "heading",
-          "lines": [
-            "Sizing & Spec"
+          "kind": "composite",
+          "parts": [
+            {
+              "kind": "heading",
+              "lines": [
+                "Sizing & Spec"
+              ],
+              "accent": []
+            },
+            {
+              "kind": "para",
+              "text": "Dimensional standards, tolerances and design guidelines for sealing elements. 2 guides",
+              "lead": null,
+              "em": false
+            }
           ],
-          "accent": [],
-          "value": "Sizing & Spec",
           "note": "[no change] — and “tolerances” is a word this site needs to get right, since it currently publishes four different tolerance figures across four pages"
         },
         {
@@ -225,12 +245,22 @@
       "fields": [
         {
           "label": "H2 · intro",
-          "kind": "heading",
-          "lines": [
-            "Sourcing & Buyer Decision"
+          "kind": "composite",
+          "parts": [
+            {
+              "kind": "heading",
+              "lines": [
+                "Sourcing & Buyer Decision"
+              ],
+              "accent": []
+            },
+            {
+              "kind": "para",
+              "text": "Procurement strategy and supplier evaluation for engineered rubber parts. 2 guides",
+              "lead": null,
+              "em": false
+            }
           ],
-          "accent": [],
-          "value": "Sourcing & Buyer Decision",
           "note": "[no change]"
         },
         {
@@ -339,12 +369,22 @@
       "fields": [
         {
           "label": "H2 · body",
-          "kind": "heading",
-          "lines": [
-            "This guide is being written"
+          "kind": "composite",
+          "parts": [
+            {
+              "kind": "heading",
+              "lines": [
+                "This guide is being written"
+              ],
+              "accent": []
+            },
+            {
+              "kind": "para",
+              "text": "We publish technical guides only once the engineering content has been reviewed by our team in Nashik. This one is in preparation. Rather than fill the page with generic material, we would rather answer your specific question directly.",
+              "lead": null,
+              "em": false
+            }
           ],
-          "accent": [],
-          "value": "This guide is being written",
           "note": "[no change to either] — and that is the point of this section. 38 words that decline to publish filler and route the reader to a person. It is the same decision /case-studies made, and between them these are the two page families on this website that got the editorial call right without being asked.\nThe only thing wrong with these pages is the hub in front of them"
         },
         {

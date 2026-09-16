@@ -448,12 +448,20 @@
       "fields": [
         {
           "label": "Eyebrow · H2",
-          "kind": "heading",
-          "lines": [
-            "Every batch. Every shipment."
+          "kind": "composite",
+          "parts": [
+            {
+              "kind": "lit",
+              "value": "QUALITY & CERTIFICATION"
+            },
+            {
+              "kind": "heading",
+              "lines": [
+                "Every batch. Every shipment."
+              ],
+              "accent": []
+            }
           ],
-          "accent": [],
-          "value": "Every batch. Every shipment.",
           "note": "[no change to either]"
         },
         {
@@ -643,12 +651,20 @@
       "fields": [
         {
           "label": "Eyebrow · H2",
-          "kind": "heading",
-          "lines": [
-            "Questions from water sector buyers."
+          "kind": "composite",
+          "parts": [
+            {
+              "kind": "lit",
+              "value": "FREQUENTLY ASKED QUESTIONS"
+            },
+            {
+              "kind": "heading",
+              "lines": [
+                "Questions from water sector buyers."
+              ],
+              "accent": []
+            }
           ],
-          "accent": [],
-          "value": "Questions from water sector buyers.",
           "note": "[no change to either]"
         },
         {

@@ -37,7 +37,9 @@ Certified Quality Management · certificate 09111526A`
 
 ## 02 Methodology preview [4 cards stay four · two stats corrected]
 > live: LIVE H2 → What Our Case Studies Will Cover · a genuinely good four-stage structure · two of the four stat chips contradict the rest of the site
-- **Eyebrow · H2**: “What Our Case Studies Will Cover”
+- **Eyebrow · H2** (composite):
+  · `02 · METHODOLOGY PREVIEW`
+  · H: “What Our Case Studies Will Cover”
   _[no change to either]_
 - **Intro**:
   > When we publish our first documented case study, it will follow this four-part structure. We are sharing the format now so prospective buyers understand the rigour behind what we will report — and what you can hold us accountable to.
@@ -77,7 +79,9 @@ The label is a scope correction. Certificate 09111526A covers rubber moulded com
   | Why Margo | /why-margo | Remove. /why-margo is recommended for deletion across this set — its job is done better by /certifications and /export. A card that survives the page it points at becomes a 404 in the middle of this section |
   | Quality Philosophy | no page exists | Merge into the certifications card. The content is real and worth keeping; the destination never existed |
   | Technical Specs | no file | Keep the card, change the button from a download to /products, where the compound data lives on-page |
-- **Eyebrow · H2**: “In the Meantime”
+- **Eyebrow · H2** (composite):
+  · `03 · EXISTING TRUST PROOF`
+  · H: “In the Meantime”
   _[no change to either] — three words that do exactly the right job at exactly the right point in the page_
 - **Intro**:
   > Case studies are one form of evidence. Our certification scope, our compound data and our delivery record are available now — these are the signals buyers typically verify before a first order.
@@ -113,7 +117,9 @@ Compound & Material Data`
 
 ## 04 First partner invitation [Keep · one sentence changed]
 > live: LIVE H2 → Be Our First Documented Partner. · the strongest section on the entire website · do not rewrite it
-- **Eyebrow · H2**: “Be Our First Documented” / “Partner.”  (accent: Partner.)
+- **Eyebrow · H2** (composite):
+  · `AN HONEST INVITATION`
+  · H: “Be Our First Documented” / “Partner.”
   _[no change to either]_
 - **Body — para 1**:
   > If you place a trial order with us, we will publish a full case study on this page — with your approval — that documents the process from specification to delivery. No embellishment. No invented outcomes.
@@ -143,7 +149,9 @@ Compound & Material Data`
 
 ## 05 Closing CTA [Response time · dead download]
 > live: LIVE H2 → Request a Quote. No Commitment Required. · “within one business day” here, “within 24 hours” in the footer 763 px below
-- **Eyebrow · H2**: “Request a Quote.” / “No Commitment Required.”  (accent: No Commitment Required.)
+- **Eyebrow · H2** (composite):
+  · `READY TO START`
+  · H: “Request a Quote.” / “No Commitment Required.”
   _[no change to either] — “no commitment required” is the correct closing offer for a page aimed at a buyer who has not bought yet_
 - **Body**:
   > Share your component drawing, tolerance requirements, and target volume. We will respond within one business day with a detailed quotation and lead time estimate.

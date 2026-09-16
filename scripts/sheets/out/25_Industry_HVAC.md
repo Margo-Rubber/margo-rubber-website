@@ -174,18 +174,30 @@ Australia · United Kingdom · United Arab Emirates · United States · Malaysia
 > live: LIVE H2 → Questions from HVAC buyers. · the best-chosen question set on any industry page · one answer carries a piece count and a wrong lead time
 - **H2**: “Questions from HVAC buyers.”
   _[no change]_
-- **Q1**: “Which compound do you recommend for outdoor duct sealing?”
+- **Q1** (composite):
+  · H: “Which compound do you recommend for outdoor duct sealing?”
+  · EPDM, rated −40 to +140 °C, for its UV and ozone resistance — ozone attack is what ends most outdoor seals and EPDM resists it better than anything else we mix. Silicone to +220 °C where the duty runs hotter. Not nitrile outdoors, whatever its oil resistance — it hardens in sunlight.
   _58 words · live is 27 · the live answer is correct and gains three things: the two temperature figures, the reason EPDM wins outdoors, and the exclusion. “Not nitrile outdoors” is the useful half — nitrile is the default reach for a general-purpose seal and it is the wrong one here_
-- **Q2**: “Can you supply flame-retardant grommets?”
+- **Q2** (composite):
+  · H: “Can you supply flame-retardant grommets?”
+  · Flame-retardant compounds are available on request — neoprene is the family we reach for, and formulated grades can be specified against a flammability rating. Send your standard reference with the enquiry — UL 94, BS 476 or your own OEM specification — and we will confirm what the compound supplier can evidence. We do not hold a flammability listing ourselves.
   _62 words · live is 24 · the live answer says compounds are “available on request” and asks for a standard reference without naming any. Naming the compound family and two common standards tells a buyer what to ask for; the closing sentence places the listing with the compound supplier, which is where it sits. Same structure as the pumps page’s potable-water answer and the medical page’s biocompatibility answer — name the standard, place the responsibility, offer to confirm.
 “Low-smoke” comes out of the live answer. Low-smoke and zero-halogen is a cable-compound classification with its own test regime, and claiming it alongside flame retardancy without a named standard is a claim the site cannot support_
-- **Q3**: “How are anti-vibration mounts specified?”
+- **Q3** (composite):
+  · H: “How are anti-vibration mounts specified?”
+  · By static load rating and deflection at that load, plus mounting geometry and durometer. Send the machine mass, the number of mounting points and the running speed — the mount and the mass form a spring-mass system, and isolation only begins above about 1.4 times its natural frequency, which is why a mount that is too stiff for its load does nothing at all.
   _64 words · live is 27 · the live answer asks for machine mass and mounting pattern, which is right, and then stops. Adding the running speed and the isolation criterion turns a request into an explanation — and it answers the question behind the question, which on this sector is usually “why is the unit still noisy?”_
-- **Q4 — heading kept, answer rewritten**: “Is there a minimum order quantity?”
+- **Q4 — heading kept, answer rewritten** (composite):
+  · H: “Is there a minimum order quantity?”
+  · Yes — we are a volume manufacturer. Margo produces in bulk against OEM schedules rather than in small lots. Minimum run is 10,000 pieces per part number, per compound, and on larger or more complex parts the minimum is quoted against the part, because the economics are set by tooling and cure time rather than by piece count. Existing tooling ships in three to four weeks ex-works Nashik, or two weeks express where we have confirmed capacity; a new part adds the tooling lead time, quoted per part. Prototype within 48 to 72 hours of an approved drawing.
   _66 words · live is 26 · the live answer carries a banned piece count and a lead time that contradicts every other page. Third industry page with a dedicated minimum-order FAQ, after medical devices and pumps & valves. It sits in the FAQPage node and it is what an assistant returns when asked. The question is kept and the answer inverted, matching the other two sheets word for word_
-- **Q5**: “Do you supply foam as well as solid profiles?”
+- **Q5** (composite):
+  · H: “Do you supply foam as well as solid profiles?”
+  · Yes — closed-cell foam for weatherseals and duct liner, open-cell for acoustic lining, and solid profiles where the joint carries load. The choice is driven by the gap to be sealed and the closing force available: foam fills an uneven gap at low force, solid holds a defined compression. Send the gap and the closing force and we will tell you which.
   _62 words · live is 26 · this is the best question on the page and the live answer half-answers it. It says both are available and selected “by the compression set and sealing force your application requires”, which is true and not actionable. The replacement gives the selection rule — foam for an uneven gap at low force, solid for defined compression — and asks for the two inputs, which is the same request the sponge product page’s CTA makes_
-- **Q6 — new**: “What certifications does Margo hold?”
+- **Q6 — new** (composite):
+  · H: “What certifications does Margo hold?”
+  · Margo Rubber Products holds ISO 9001:2015, certificate 09111526A, issued by Integral Certification Ltd and valid to 21 February 2027. We are actively upgrading our quality management system to IATF 16949:2016, with certification targeted by the end of 2026, and ISO 14001 and ISO 45001 certification targeted for 2027. Material test reports and batch certificates are issued with every shipment.
   _60 words · new question, carrying the canonical wording settled across the set. It must render from the same constant as the other pages that carry it_
   <details><summary>notes (5)</summary>
   - Crawlability. All six answers in the DOM at first paint, collapsed with CSS.

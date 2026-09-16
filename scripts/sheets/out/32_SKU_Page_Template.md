@@ -85,7 +85,9 @@ The rest should be hidden until populated, not shown empty. And the minimum cont
 
 ## 04 Rubber compound options [Show all eight · rank them per part]
 > live: LIVE H2 → Rubber Compound Options · a real selector with real temperature ranges · but the list is a category default and natural rubber is on none of the 31 pages
-- **H2 · intro**: “Rubber Compound Options”
+- **H2 · intro** (composite):
+  · H: “Rubber Compound Options”
+  · Select the compound best suited to your operating environment and application requirements.
   _[no change to either] — and the ranges in the cards are correct against the locked homepage table, which is more than most sections on this site manage_
 - **Compound sets — live** (Category | Compounds offered | Pages):
   | Anti-Vibration Mounts | Neoprene, SBR | 5 |
@@ -175,7 +177,9 @@ Step 01 loses “ISO-certified lab” — the certificate scope covers rubber mo
 > live: LIVE H2 → Certified to International Standards · ISO 9001 only, no invented credentials, metrics marked “On request” — the most honest section on the site
 - **This section got it right four times**:
   > After /why-margo, which lists five certifications and holds one, this template deserves saying plainly: it claims ISO 9001:2015 and nothing else. No IATF. No TÜV SÜD. No CE marking. The production-metrics table prints “On request” where it has no figure rather than inventing one, and the facility video says “Film pending” instead of showing a stock clip. Whoever built this component made the honest call four times in one section. Do not let a rewrite undo that.
-- **H2 · body**: “Certified to International Standards”
+- **H2 · body** (composite):
+  · H: “Certified to International Standards”
+  · Every product leaves our facility with a documentation package — material test reports, dimensional inspection sheets and a certificate of conformance — giving traceability from raw material to finished part.
   _[no change] — 30 words, three named documents, one checkable promise. This is how the rest of the site should read_
 - **Certificate block**: `ISO 9001:2015
 Accredited certification body
@@ -204,7 +208,10 @@ First-pass yield stays “on request” because no verified number exists, and t
   | ZIP — Product images hi-res | No file |
   | Anchor: “Download Full Datasheet PDF” | → /contact |
   _4 × 31 = 124 dead download affordances, on top of the 22 counted across the rest of the site. A control labelled “Download” that opens a contact form is worse than no control — the buyer has been told a file exists, and discovering it does not is the moment they start discounting everything else on the page_
-- **Ships as — until files exist**: “Technical Documentation”
+- **Ships as — until files exist** (composite):
+  · H: “Technical Documentation”
+  · Datasheets, dimensioned drawings and 3D models are issued per part on request, under NDA where required. Tell us the part and the format you work in — PDF, DWG, DXF or STEP — and we will send what we hold.
+  · `[ Request documentation → /contact?part={Part Name}&doc=1 ]`
   _41 words · one honest request line replaces four fake buttons. It still captures the intent — and it captures it better, because the buyer now tells you which format they use, which is information the download never gave you.
 The pre-filled part parameter is copied from section 12, which already does this correctly_
   <details><summary>notes (4)</summary>

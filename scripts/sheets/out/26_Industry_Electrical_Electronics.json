@@ -547,62 +547,122 @@
         },
         {
           "label": "Q1",
-          "kind": "heading",
-          "lines": [
-            "Can you supply flame-retardant compounds?"
+          "kind": "composite",
+          "parts": [
+            {
+              "kind": "heading",
+              "lines": [
+                "Can you supply flame-retardant compounds?"
+              ],
+              "accent": []
+            },
+            {
+              "kind": "para",
+              "text": "Yes, on request — neoprene is the family we reach for, and formulated grades can be specified against a flammability rating. Send your standard reference with the enquiry — UL 94, IEC 60695 or your own OEM specification — and we will confirm what the compound supplier can evidence. We do not hold a flammability listing ourselves.",
+              "lead": "neoprene is the family we reach for",
+              "em": false
+            }
           ],
-          "accent": [],
-          "value": "Can you supply flame-retardant compounds?",
           "note": "62 words · live is 27 · “low-smoke” comes out. Low-smoke and zero-halogen is a cable-compound classification with its own test regime, and claiming it alongside flame retardancy without a named standard is not supportable — the HVAC page carries the same claim and the same correction. The replacement names the compound family and two standards a buyer would actually specify, and places the listing with the compound supplier"
         },
         {
           "label": "Q2",
-          "kind": "heading",
-          "lines": [
-            "Which compound suits enclosure gaskets?"
+          "kind": "composite",
+          "parts": [
+            {
+              "kind": "heading",
+              "lines": [
+                "Which compound suits enclosure gaskets?"
+              ],
+              "accent": []
+            },
+            {
+              "kind": "para",
+              "text": "Silicone, −60 to +220 °C, for elevated temperature and the widest service range. EPDM, −40 to +140 °C, for weather-exposed enclosures — and it is the better choice outdoors, because ozone attack is what ends most exterior seals. Neoprene where flame retardancy is specified. Selection is driven by temperature, exposure and the compression set your design allows.",
+              "lead": "Silicone, −60 to +220 °C",
+              "em": false
+            }
           ],
-          "accent": [],
-          "value": "Which compound suits enclosure gaskets?",
           "note": "61 words · live is 30 · the live answer is correct and gains the two temperature figures, the reason EPDM wins outdoors, and neoprene as the third option — which the page offers elsewhere and this answer omits"
         },
         {
           "label": "Q3",
-          "kind": "heading",
-          "lines": [
-            "Do you make grommets to non-standard panel thicknesses?"
+          "kind": "composite",
+          "parts": [
+            {
+              "kind": "heading",
+              "lines": [
+                "Do you make grommets to non-standard panel thicknesses?"
+              ],
+              "accent": []
+            },
+            {
+              "kind": "para",
+              "text": "Yes. Grommets are specified by panel hole diameter, panel thickness and groove width, and produced against your drawing. The groove width is your panel thickness — measure the sheet, not the hole — and the bore is set by the cable or conduit passing through.",
+              "lead": "The groove width is your panel thickness",
+              "em": false
+            }
           ],
-          "accent": [],
-          "value": "Do you make grommets to non-standard panel thicknesses?",
           "note": "48 words · live is 25 · the closing clauses are lifted from the grommets product sheet, where they answer the two questions that come back on almost every grommet enquiry. Repeating them here removes a round trip from the quotation"
         },
         {
           "label": "Q4 — heading kept, answer corrected",
-          "kind": "heading",
-          "lines": [
-            "Is there a minimum order quantity?"
+          "kind": "composite",
+          "parts": [
+            {
+              "kind": "heading",
+              "lines": [
+                "Is there a minimum order quantity?"
+              ],
+              "accent": []
+            },
+            {
+              "kind": "para",
+              "text": "Yes — we are a volume manufacturer. Margo produces in bulk against OEM schedules rather than in small lots. Minimum run is 10,000 pieces per part number, per compound, and on larger or more complex parts the minimum is quoted against the part. Prototype and first-article lots sit outside the minimum and are quoted separately, with a prototype within 48 to 72 hours of an approved drawing. Existing tooling ships in three to four weeks ex-works Nashik, or two weeks express where we have confirmed capacity.",
+              "lead": "Yes — we are a volume manufacturer.",
+              "em": false
+            }
           ],
-          "accent": [],
-          "value": "Is there a minimum order quantity?",
           "note": "88 words · live is 27 · the live answer is wrong in both halves. The piece count is 500, and the real position is bulk from 10,000 — client instruction, 2026-09-01. The lead time says 14 to 21 days against the 3–4 weeks published everywhere else. Fourth industry page with a dedicated minimum-order FAQ, and it sits in the FAQPage node, which is what an assistant returns when asked either question"
         },
         {
           "label": "Q5",
-          "kind": "heading",
-          "lines": [
-            "Can you match an existing part we currently buy?"
+          "kind": "composite",
+          "parts": [
+            {
+              "kind": "heading",
+              "lines": [
+                "Can you match an existing part we currently buy?"
+              ],
+              "accent": []
+            },
+            {
+              "kind": "para",
+              "text": "Yes. Send a physical sample and we will produce a drawing, confirm compound selection and quote tooling where required. Tell us how the current part fails if it does — whether it hardens, splits or takes a set — because that decides the compound more reliably than the sample does.",
+              "lead": "Tell us how the current part fails if it does",
+              "em": false
+            }
           ],
-          "accent": [],
-          "value": "Can you match an existing part we currently buy?",
           "note": "52 words · live is 26 · the live answer is good and the addition is what makes a reverse-engineered part better than the one it replaces. A sample tells us the geometry; the failure mode tells us the compound"
         },
         {
           "label": "Q6 — new",
-          "kind": "heading",
-          "lines": [
-            "What certifications does Margo hold?"
+          "kind": "composite",
+          "parts": [
+            {
+              "kind": "heading",
+              "lines": [
+                "What certifications does Margo hold?"
+              ],
+              "accent": []
+            },
+            {
+              "kind": "para",
+              "text": "Margo Rubber Products holds ISO 9001:2015, certificate 09111526A, issued by Integral Certification Ltd and valid to 21 February 2027. We are actively upgrading our quality management system to IATF 16949:2016, with certification targeted by the end of 2026, and ISO 14001 and ISO 45001 certification targeted for 2027. Material test reports and batch certificates are issued with every shipment.",
+              "lead": "ISO 9001:2015",
+              "em": false
+            }
           ],
-          "accent": [],
-          "value": "What certifications does Margo hold?",
           "note": "60 words · new question, carrying the canonical wording settled across the set"
         }
       ],

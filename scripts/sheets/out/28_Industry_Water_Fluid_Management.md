@@ -150,7 +150,9 @@ ISO 9001:2015 certified manufacturing facility · certificate 09111526A`
 
 ## 06 Quality & certification [3 cards · certificate number + IATF position]
 > live: LIVE H2 → Every batch. Every shipment. · two of the three buttons are dead links
-- **Eyebrow · H2**: “Every batch. Every shipment.”
+- **Eyebrow · H2** (composite):
+  · `QUALITY & CERTIFICATION`
+  · H: “Every batch. Every shipment.”
   _[no change to either]_
 - **Body**:
   > Margo Rubber Products holds ISO 9001:2015 certification — certificate 09111526A, issued by Integral Certification Ltd and valid to 21 February 2027. Our quality management system covers incoming raw material inspection, in-process control and outgoing batch documentation. An IATF 16949:2016 upgrade is in progress, targeted for completion by the end of 2026; ISO 14001 and ISO 45001 are targeted for 2027.
@@ -215,7 +217,9 @@ The addition maps each named market to its scheme, which is the work a buyer wou
 
 ## 08 FAQ [5 questions stay five · three rewritten]
 > live: LIVE H2 → Questions from water sector buyers. · Q2 is a dedicated question about the cycle claim, and it promises test documentation · the minimum-order answer is wrong
-- **Eyebrow · H2**: “Questions from water sector buyers.”
+- **Eyebrow · H2** (composite):
+  · `FREQUENTLY ASKED QUESTIONS`
+  · H: “Questions from water sector buyers.”
   _[no change to either]_
 - **Q1**:
   > EPDM is our standard polymer for potable water service. Approval is granted to a specific compound formulation, not to a polymer, so tell us the scheme your project requires — WRAS, NSF/ANSI/CAN 61, AS/NZS 4020 or KTW-BWGL with DVGW W270 — and we will confirm what we can supply against it.

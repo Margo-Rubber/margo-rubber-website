@@ -192,17 +192,29 @@ One scope note is worth making here, in the rationale rather than on the page: t
 
 ## 09 Technical & commercial questions [New]
 > live: NO LIVE SECTION → FAQ accordion, six questions, from the /products/bellows component · these six are the FAQPage mainEntity, verbatim
-- **Q1**: “Can you bond rubber to aluminium and stainless steel?”
+- **Q1** (composite):
+  · H: “Can you bond rubber to aluminium and stainless steel?”
+  · Yes to both, with the right preparation and primer. Aluminium needs an etch or conversion coat and stainless needs a different primer from mild steel, so tell us the alloy or the grade with the drawing. The two things that will stop us are anodising and plating — bond to the bare substrate and finish the exposed metal afterwards, or supply the insert unplated.
   _64 words · the highest-volume qualifying question in this category, answered yes with the condition attached rather than yes with a caveat buried in a datasheet_
-- **Q2**: “How strong is the bond?”
+- **Q2** (composite):
+  · H: “How strong is the bond?”
+  · We do not publish a peel or tensile figure, because a number from a test specimen tells you nothing about your part — bond strength scales with area, geometry and compound, and a headline figure is read as a guarantee for parts it was never measured on. The criterion we work to is the failure mode. A sound bond tears through the rubber and leaves the metal covered; a poor one separates clean and leaves it bare. ASTM D429 calls the first 100% R, and that is what we qualify to on your part, on your insert, with the report in your name.
   _104 words · the most important answer on the page and the direct counterpart to the diaphragms page refusing cycle life. Refusing the number and offering the criterion is a stronger commercial position, because the number would be read as a warranty and the criterion is read as competence_
-- **Q3**: “Do you bond during moulding or glue the parts afterwards?”
+- **Q3** (composite):
+  · H: “Do you bond during moulding or glue the parts afterwards?”
+  · During moulding, always. The prepared and primed insert goes into the tool and the rubber is moulded onto it, so heat and pressure cure the compound and complete the bond in the same cycle. The part leaves the tool as one component. Nothing is glued, clamped or pressed together afterwards — there is no assembly joint, because there is no assembly.
   _61 words · the question a buyer asks when a previous supplier’s part delaminated. Answering it as a flat process fact, not a selling point, is what makes it land_
-- **Q4**: “Can you supply the metal inserts, or do we send them?”
+- **Q4** (composite):
+  · H: “Can you supply the metal inserts, or do we send them?”
+  · Either. Send your inserts and we bond to them, or send the drawing and we source and prepare them here. Sourcing them here is usually the better route on a new part, because insert design, tool design and bond area are one decision rather than three, and our toolroom is in the same building.
   _55 words · a commercial question with a technical answer, and it surfaces the in-house toolroom for the second time without repeating the earlier sentence_
-- **Q5**: “What is the minimum order quantity for bonded components?”
+- **Q5** (composite):
+  · H: “What is the minimum order quantity for bonded components?”
+  · We supply in bulk. The minimum run is 10,000 pieces per part number, per compound, or quoted against the part where geometry or tooling makes that unrealistic. Prototype and first-article lots sit outside the minimum. On a bonded part with a bought-in insert the insert lead time usually sets the schedule rather than the moulding, so tell us your call-off pattern with the volume.
   _64 words · the standard answer, client-instructed 2026-09-01, with one part-specific sentence appended — the same pattern the SKU sheets use. The standard sentences are not reworded_
-- **Q6**: “What are your payment and delivery terms for international orders?”
+- **Q6** (composite):
+  · H: “What are your payment and delivery terms for international orders?”
+  · TT and LC accepted, discussed per order. Ex-works Nashik or FOB Nhava Sheva. Commercial invoice, packing list and certificate of origin are issued with every consignment. Production is three to four weeks from drawing approval, or two weeks on an express basis where we have confirmed capacity.
   _48 words · the standard commercial string, unchanged, with the sitewide 3–4 week lead time_
   <details><summary>notes (3)</summary>
   - All six panels in the DOM at first paint. FAQPage schema whose answers are not in the HTML is a structured-data mismatch.

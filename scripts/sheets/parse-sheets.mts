@@ -58,7 +58,16 @@ export type Field =
       note?: string;
     }
   | { label: string; kind: "list"; items: string[]; note?: string }
-  | { label: string; kind: "text"; value: string; note?: string };
+  | { label: string; kind: "text"; value: string; note?: string }
+  /** A cell holding several kinds in sequence — a market block: eyebrow, H2, standfirst, bullets, caveat, links. */
+  | { label: string; kind: "composite"; parts: Part[]; note?: string };
+
+export type Part =
+  | { kind: "lit"; value: string }
+  | { kind: "heading"; lines: string[]; accent: string[] }
+  | { kind: "para"; text: string; lead: string | null; em: boolean }
+  | { kind: "list"; items: string[] }
+  | { kind: "table"; columns: string[]; rows: string[][] };
 
 export type Section = {
   num: string;
@@ -122,6 +131,40 @@ function readRow(dl: HTMLElement): Field | null {
   if (!dd0) return null;
   const { note, dd } = stripNotes(dd0);
   const withNote = (f: Field): Field => (note ? { ...f, note } : f);
+
+  // Several kinds in one cell → keep them all, in order.
+  const kinds = new Set<string>();
+  for (const el of dd.childNodes as unknown as HTMLElement[]) {
+    if (!el.tagName) continue;
+    if (el.classList?.contains("h1lit") || el.classList?.contains("h2lit")) kinds.add("heading");
+    else if (el.tagName === "P") kinds.add("para");
+    else if (el.tagName === "UL" || el.tagName === "OL") kinds.add("list");
+    else if (el.classList?.contains("tbl") || el.tagName === "TABLE") kinds.add("table");
+    else if (el.classList?.contains("lit")) kinds.add("lit");
+  }
+  if (kinds.size > 1 && (kinds.has("heading") || (kinds.has("list") && kinds.has("para")))) {
+    const parts: Part[] = [];
+    for (const el of dd.childNodes as unknown as HTMLElement[]) {
+      if (!el.tagName) continue;
+      if (el.classList?.contains("h1lit") || el.classList?.contains("h2lit")) {
+        parts.push({ kind: "heading", lines: headingLines(el), accent: el.querySelectorAll("em, b").map((e) => text(e)) });
+      } else if (el.tagName === "P") {
+        parts.push({ kind: "para", text: text(el), lead: el.querySelector("b") ? text(el.querySelector("b")) : null, em: !!el.querySelector("em") && text(el.querySelector("em")) === text(el) });
+      } else if (el.tagName === "UL" || el.tagName === "OL") {
+        parts.push({ kind: "list", items: el.querySelectorAll("li").map((li) => text(li)) });
+      } else if (el.classList?.contains("tbl") || el.tagName === "TABLE") {
+        const t = el.tagName === "TABLE" ? el : el.querySelector("table")!;
+        parts.push({
+          kind: "table",
+          columns: t.querySelectorAll("thead th").map((th) => text(th)),
+          rows: t.querySelectorAll("tbody tr").map((tr) => tr.querySelectorAll("td, th").map((td) => (td.classList.contains("strike") ? "" : text(td)))),
+        });
+      } else if (el.classList?.contains("lit")) {
+        parts.push({ kind: "lit", value: text(el) });
+      }
+    }
+    return withNote({ label, kind: "composite" as const, parts });
+  }
 
   const heading = dd.querySelector(".h1lit, .h2lit");
   if (heading) {
@@ -274,6 +317,16 @@ function toMarkdown(s: Sheet): string {
           break;
         case "text":
           out.push(`- **${f.label}**: ${f.value}`);
+          break;
+        case "composite":
+          out.push(`- **${f.label}** (composite):`);
+          for (const p of f.parts) {
+            if (p.kind === "lit") out.push(`  · \`${p.value}\``);
+            else if (p.kind === "heading") out.push(`  · H: ${p.lines.map((l) => `“${l}”`).join(" / ")}`);
+            else if (p.kind === "para") out.push(`  · ${p.em ? "_" : ""}${p.text}${p.em ? "_" : ""}`);
+            else if (p.kind === "list") for (const i of p.items) out.push(`    - ${i}`);
+            else if (p.kind === "table") for (const r of p.rows) out.push(`    | ${r.join(" | ")} |`);
+          }
       }
       if (f.note) out.push(`  _${f.note}_`);
     }

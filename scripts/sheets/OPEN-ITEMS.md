@@ -32,3 +32,10 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 13. **Direct contact — phone.** The sheet publishes +91 96655 79276 for both WhatsApp and Phone and asks: should a separate landline be published?
 14. **Attachment field.** Shown with the sheet's label and hint; inert until the upload backend exists (Phase 7 — needs the storage account).
 15. **Map still.** Links to Google Maps at the confirmed coordinates; the picture in the slot is the hero photograph until a map image is uploaded in the Studio (Photographs → "Contact page — map still").
+
+## 06 Export
+
+16. **European Union block.** New, split from "US & EU"; the sheet asks: is the EU a target market at all? If not, delete rather than split. In place as written.
+17. **Two bullets copied as written that look like sheet artefacts** — Singapore: "Transit 8–12 days, Nhava Sheva to the Port of Singapore *figure*"; Kenya & Tanzania: the ports bullet carries "CMA CGM's Swahili Express publishes 19 and 21 days … as the footnote already says". *Confirm the intended wording.*
+18. **Map pin labels and the concept-build pin layer.** The nine labels and the tooltip text are stored on the markets; the map draws pins without labels until the nine-pin map rewrite (Phase 7). The concept-build figure strip shows only on the concept build.
+19. **Trade-lane chips.** The sheet's chip list keeps "US & EU" while its block list splits it into United States and European Union; the chips follow the blocks (8 lanes: Australia, United Kingdom, UAE & Saudi, Malaysia, USA, European Union, Singapore, Kenya & Tanzania).

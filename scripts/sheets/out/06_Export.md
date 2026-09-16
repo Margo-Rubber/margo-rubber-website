@@ -67,21 +67,98 @@ Melbourne, Sydney, Brisbane · 18–22 days · FCL or LCL`
 - **Structure**:
   > Eight blocks become nine. The live US & EU block duplicates the USA block and bundles two markets with entirely different rules. Split into United States and European Union; the Incoterms table living inside it moves out to section 05. Nine blocks for nine countries, which reconciles the hero’s “eight markets” against the closing summary’s nine codes.
   > Every block keeps the live four-part shape: eyebrow · H2 · standfirst · four bullets, then a caveat line and two internal links. Standfirsts run 38–46 words, matching live.
-- **01 — Australia**: “Supplying Australian Industrial Buyers”
+- **01 — Australia** (composite):
+  · `AUSTRALIA`
+  · H: “Supplying Australian Industrial Buyers”
+  · Australian manufacturers and mining-equipment OEMs source precision moulded rubber components from Margo Rubber Products in Nashik. Anti-vibration mounts, O-rings, bushes and sealing gaskets for abrasive, high-load plant — precision components, not wear linings. FCL or LCL from Nhava Sheva.
+    - Transit 18–22 days to Melbourne, Sydney and Brisbane
+    - ISPM-15 heat-treated pallets on every consignment — Australian biosecurity rejects untreated timber at the wharf, and a rejection is the buyer’s cost
+    - SGS pre-shipment inspection available on request
+    - Certificate of Origin issued by the Nashik Chamber of Commerce
+  · _Australia applies standard import duties under the Customs Tariff Act 1995. Verify current duty and GST treatment with your Australian customs broker._
+  · `→ Rubber components for mining & resources /industries/mining
+→ Seals & gaskets catalogue /products/gaskets`
   _Standfirst 41 words · live is 38 · the mining positioning line is added because the hub card and the mining page both make it and this block did not_
-- **02 — United Kingdom**: “Export to the United Kingdom”
+- **02 — United Kingdom** (composite):
+  · `UNITED KINGDOM`
+  · H: “Export to the United Kingdom”
+  · UK importers and distributors buy moulded and extruded rubber components from Margo Rubber Products under an ISO 9001:2015 quality system. Post-Brexit import procedure follows the UK Global Tariff, separate from EU rules, and we work with forwarders experienced in that regime.
+    - Transit 22–28 days FCL to Felixstowe or Southampton
+    - UK Global Tariff applies — commodity code and origin declaration on every commercial invoice
+    - UKCA marking: where a rubber component forms part of a product requiring UKCA, the conformity assessment obligation rests with the UK importer or manufacturer, not with us
+    - Non-preferential Certificate of Origin issued by the Nashik Chamber of Commerce
+  · _India and the UK are in active Free Trade Agreement negotiations. Check current duty status with your UK customs broker before placing orders on anticipated preferential treatment._
+  · `→ Seals & gaskets catalogue /products/gaskets
+→ Extrusion profiles /products/extrusion`
   _Standfirst 40 words · the UKCA bullet is the strongest line in this block — correctly assigning the obligation to the importer is what a buyer’s compliance team checks first_
-- **03 — UAE & Saudi Arabia**: “Gulf Region Export, UAE & Saudi Arabia”
+- **03 — UAE & Saudi Arabia** (composite):
+  · `UAE & SAUDI ARABIA`
+  · H: “Gulf Region Export, UAE & Saudi Arabia”
+  · Margo Rubber Products ships to buyers in the UAE and the Kingdom of Saudi Arabia serving oil and gas, petrochemical, water treatment and general industrial sectors. FKM seals rated to 250 °C for hydrocarbon service. Nhava Sheva to Jebel Ali is the shortest and most frequently served lane we run.
+    - Transit 5–8 days, Nhava Sheva to Jebel Ali — the fastest lane on this page
+    - Saudi Arabia: goods may require a Certificate of Conformity from an approved body. Tell your freight forwarder at order stage, not at the port
+    - Material and composition declarations available where required by the customer
+    - LCL and FCL for both UAE and KSA consignments
+  · _NORSOK M-710 and API elastomer qualification are not held today. The qualification programme is under way and is targeted for 2027. Where a specification calls for either, tell us at enquiry stage and we will confirm the current position on that programme before you commit engineering time._
+  · `→ Rubber components for oil & gas /industries/oil-gas
+→ FKM and NBR seal specifications /products/oil-seals#fkm`
   _Standfirst 45 words · live is 42 · the NORSOK/API caveat is new — it appears on /industries/oil-gas but not here, on the block where a Gulf oil-and-gas buyer actually lands. “Halal declarations” is dropped: halal certification for industrial rubber is not a category that exists, and offering it invites a question with no good answer_
-- **04 — Malaysia**: “Supplying Malaysian Manufacturers”
+- **04 — Malaysia** (composite):
+  · `MALAYSIA`
+  · H: “Supplying Malaysian Manufacturers”
+  · Malaysian manufacturers and palm oil processors source seals, gaskets and custom moulded components from Margo Rubber Products. Nhava Sheva to Port Klang is a short, well-served lane with frequent sailings and groupage available for smaller consignments.
+    - Transit 10–14 days, Nhava Sheva to Port Klang
+    - FCL and LCL; groupage consolidation for smaller orders
+    - ASEAN–India FTA may offer preferential duty — verify HS code and Form AI eligibility with your customs agent
+    - Eight compounds available: AEM, FKM, silicone, EPDM, NBR, neoprene, SBR and natural rubber
+  · `→ Rubber components for palm oil processing /industries/water-fluid-management
+→ Full compound range /products#compounds`
   _Standfirst 37 words · live is 36 · the compound bullet is corrected from five to eight — live lists “NR, SBR, NBR, EPDM and Silicone” and omits AEM, FKM and neoprene_
-- **05 — United States**: “Exporting to the United States”
+- **05 — United States** (composite):
+  · `UNITED STATES`
+  · H: “Exporting to the United States”
+  · US industrial buyers evaluating Indian-origin rubber components as part of supply-chain diversification work with Margo Rubber Products, a Made-in-India manufacturer with the documentation infrastructure US customs and procurement teams require. All goods are manufactured at our Nashik plant.
+    - Transit 18–22 days to West Coast ports, 22–28 days to East Coast, FCL or LCL
+    - Commercial invoices state HTS heading, unit price and total value in USD
+    - Importer Security Filing (ISF 10+2) data provided to your US customs broker on request
+    - Payment: T/T in advance for new accounts; open terms or L/C for established buyers
+  · _Compound composition declarations are produced per part on request. We do not hold FDA registration; food-contact qualification rests with the buyer._
+  · `→ Technical rubber compounds overview /products#compounds
+→ Anti-vibration mounts /products/anti-vibration-mounts`
   _Standfirst 42 words · live is 40 · the FDA caveat replaces “FDA-grade compound documentation available for food-contact applications”. Margo holds no FDA registration and /industries/medical-devices says so plainly_
-- **06 — European Union**: “Export to the European Union”
+- **06 — European Union** (composite):
+  · `EUROPEAN UNION`
+  · H: “Export to the European Union”
+  · EU importers buy moulded and extruded rubber components from Margo Rubber Products under preferential origin schemes where they apply. We are familiar with EU documentation requirements and issue the origin paperwork your broker will ask for before the container sails.
+    - EUR.1 movement certificate or GSP Form A available for preferential origin claims
+    - Customs value declared per the transaction value method — no invoice manipulation, on any lane
+    - Compound composition declarations on request. A full REACH SVHC screen across all product families is a roadmap item
+    - ISPM-15 heat-treated pallets on all wooden packaging
+  · _Verify current India-to-EU duty treatment with your broker. Preferential schemes change, and eligibility depends on your commodity code._
+  · `→ Seals & gaskets catalogue /products/gaskets
+→ Certifications and test standards /certifications`
   _New block, split from US & EU. CONFIRM — is the EU a target market at all? It appears in no Top-5 or 18-market playbook, which suggests the original block existed to look complete. If it is not a target, delete rather than split. The no invoice manipulation line is retained verbatim and moved here: it is the single most trust-building sentence on the page and almost no supplier writes it · CONFIRM_
-- **07 — Singapore**: “Singapore, Distribution Hub & Direct Supply”
+- **07 — Singapore** (composite):
+  · `SINGAPORE`
+  · H: “Singapore, Distribution Hub & Direct Supply”
+  · Singapore buyers order from Margo Rubber Products both for local plant use and for onward distribution across South-East Asia. Marine, process and general industrial applications, with the same ISO 9001:2015 release documentation on every despatch lot.
+    - Transit 8–12 days, Nhava Sheva to the Port of Singapore figure
+    - ASEAN–India FTA may offer preferential duty — verify Form AI eligibility with your customs agent
+    - Re-export documentation supported where Singapore is a distribution point rather than the end market
+    - FCL, LCL and air freight for urgent replenishment
+  · `→ Pumps & valves components /industries/pumps-valves
+→ O-rings and seals /products/o-rings`
   _Transit 8–12 days, Nhava Sheva to the Port of Singapore. Published carrier schedules on this lane run from about 6 days on the fastest direct service to 13 on a transhipped one, so 8–12 is the honest working range and matches the format every other block on this page uses — the missing figure is more conspicuous here than anywhere, because the eight blocks are read as a set_
-- **08 — Kenya & Tanzania**: “East Africa, Kenya & Tanzania”
+- **08 — Kenya & Tanzania** (composite):
+  · `EAST AFRICA`
+  · H: “East Africa, Kenya & Tanzania”
+  · Kenyan and Tanzanian industrial buyers source rubber seals, gaskets and moulded components from Margo Rubber Products for water infrastructure, agriculture and general plant. Pre-shipment inspection is mandatory into both markets and we arrange it at quotation stage rather than at the port.
+    - PVoC pre-shipment inspection is required for both Kenya and Tanzania — arranged through an approved body before departure
+    - Ports and transit: Mombasa for Kenya, 10–19 days from Nhava Sheva · Dar es Salaam for Tanzania, 14–21 days. CMA CGM’s Swahili Express publishes 19 and 21 days on its scheduled service; faster direct sailings run nearer the bottom of each range. Confirm the booked figure with the forwarder at quotation stage, as the footnote already says
+    - Sealing rings to IS 5382 for water, gas and sewer mains
+    - Certificate of Origin issued by the Nashik Chamber of Commerce
+  · `→ Water & fluid management /industries/water-fluid-management
+→ Agriculture components /industries/agriculture`
   _Two countries in one block, which is why the page says eight markets and the summary lists nine codes. Keep them together — the PVoC requirement and the buyer profile are the same — but say “nine countries across eight lane blocks” in the hero_
   <details><summary>notes (37)</summary>
   - Transit 18–22 days to Melbourne, Sydney and Brisbane

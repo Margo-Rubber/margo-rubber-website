@@ -42,7 +42,9 @@ A structured decision framework for selecting between rubber compounds — tempe
 
 ## 03 Material comparison — 3 guides [3 cards stay three · read times out]
 > live: LIVE H2 → Material Comparison · “Compound-level analysis to inform your material specification decisions.” · three read times on three unwritten guides
-- **H2 · intro**: “Material Comparison”
+- **H2 · intro** (composite):
+  · H: “Material Comparison”
+  · Compound-level analysis to inform your material specification decisions. 3 guides
   _[no change] — and this is the strongest of the three categories: compound selection is the question Margo is asked most and the one the site already answers best_
 - **Card 1**:
   > Compares silicone and EPDM across thermal stability, weathering and fluid compatibility — silicone −60 to +220 °C, EPDM −40 to +140 °C — and the trade-off that decides most specifications: EPDM resists ozone and weather, silicone survives the higher temperature, and neither tolerates mineral oil.
@@ -74,7 +76,9 @@ The three standards are the addition and they are the reason this guide should s
 
 ## 04 Sizing & spec — 2 guides [2 cards stay two · ISO 3601-1 added]
 > live: LIVE H2 → Sizing & Spec · the O-ring card names BS 1806 without noting it has been superseded
-- **H2 · intro**: “Sizing & Spec”
+- **H2 · intro** (composite):
+  · H: “Sizing & Spec”
+  · Dimensional standards, tolerances and design guidelines for sealing elements. 2 guides
   _[no change] — and “tolerances” is a word this site needs to get right, since it currently publishes four different tolerance figures across four pages_
 - **Card 1**:
   > Cross-references the international sizing standards with tolerance and groove-dimension guidance. ISO 3601-1 is the current standard and its size code matches the AS568 dash number; BS 1806 was superseded by BS ISO 3601 but is still widely quoted, so a working chart has to carry all three.
@@ -100,7 +104,9 @@ Rubber-to-Metal Bonded Parts: Design & Specification Guide`
 
 ## 05 Sourcing & buyer decision — 2 guides [2 cards stay two · both need care]
 > live: LIVE H2 → Sourcing & Buyer Decision · the two topics on this list where an unsupported claim is easiest to make
-- **H2 · intro**: “Sourcing & Buyer Decision”
+- **H2 · intro** (composite):
+  · H: “Sourcing & Buyer Decision”
+  · Procurement strategy and supplier evaluation for engineered rubber parts. 2 guides
   _[no change]_
 - **Card 1**:
   > Sets out a due-diligence checklist for quality systems, tooling ownership, capacity and documentation — including the three structural questions that separate a manufacturer from a trading house: who mixes the compound, who owns the tooling, and whose name is on the batch record.
@@ -145,7 +151,9 @@ The 48-hour response time is the sitewide constant, and this page publishes none
 
 ## 07 The article template — ships 7 times [Keep the copy · add noindex and a reviewer]
 > live: LIVE → “This guide is being written” · the honest half of this page family · identical on all seven URLs
-- **H2 · body**: “This guide is being written”
+- **H2 · body** (composite):
+  · H: “This guide is being written”
+  · We publish technical guides only once the engineering content has been reviewed by our team in Nashik. This one is in preparation. Rather than fill the page with generic material, we would rather answer your specific question directly.
   _[no change to either] — and that is the point of this section. 38 words that decline to publish filler and route the reader to a person. It is the same decision /case-studies made, and between them these are the two page families on this website that got the editorial call right without being asked.
 The only thing wrong with these pages is the hub in front of them_
 - **Buttons ×2**: `[ Ask our engineers → /contact ] [ Back to all guides → /resources ]`

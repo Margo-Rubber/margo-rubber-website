@@ -195,18 +195,30 @@ Do not write “ISO 9001:2015 certified lining” anywhere on this page. The com
 
 ## 09 Technical & commercial questions [New]
 > live: NO LIVE SECTION → FAQ accordion, six questions · these six are the FAQPage mainEntity, verbatim
-- **Q1**: “Do you supply rubber lining and conveyor skirting?”
+- **Q1** (composite):
+  · H: “Do you supply rubber lining and conveyor skirting?”
+  · Yes. Alongside moulded and extruded components we supply rubber sheet lining and conveyor skirting — chute, hopper, tank and pipework lining, and skirting cut to size — in natural rubber, which has the best abrasion resistance of the eight compounds we mix. Send the surface area, the thickness and the duty, and tell us whether you need it supplied cut or supplied and fitted.
   _65 words · this is sheet 21’s FAQ answer, reused verbatim to the comma. The mining page and the product page must give the same answer in the same words — two pages on one domain answering the same question differently is the defect this whole content set exists to remove.
 🛑 The final clause depends on section 07. If Version A ships, it becomes “and we will cut to your development” — and sheets 21, 24 and 28 change with it_
-- **Q2**: “Which rubber lasts longest in an abrasive chute?”
+- **Q2** (composite):
+  · H: “Which rubber lasts longest in an abrasive chute?”
+  · Natural rubber, in almost every case. It has the best abrasion resistance of the eight compounds we mix and the best resilience under impact, which is why a soft grade outlasts a hard one where material is dropping. SBR is close on sliding wear and cheaper. The exception is oil or grease in the stream, where both swell and nitrile becomes the answer even though it wears faster.
   _68 words · answers the category’s highest-volume question with a compound, a mechanism and an exception. The exception is what makes it trustworthy — an answer with no boundary reads as a sales line_
-- **Q3**: “How thick should the lining be?”
+- **Q3** (composite):
+  · H: “How thick should the lining be?”
+  · Thickness is a service-interval decision, not a quality one. Six to eight millimetres suits light sliding wear, ten to twelve is the general case, and fifteen to twenty-five goes where material impacts. If you are replacing an existing lining, the most useful thing you can tell us is how long the last one lasted — that sizes the next one better than any specification.
   _64 words · repeats the section 03 framing for a reader who skipped to the FAQ, which is deliberate house practice across this set_
-- **Q4**: “Can you line a tank for acid service?”
+- **Q4** (composite):
+  · H: “Can you line a tank for acid service?”
+  · It depends on the acid and the concentration, and there is a boundary we will not cross. EPDM handles water, dilute acids and alkalis well and we supply it as sheet. We do not mix butyl, which is the compound most often specified for concentrated acid tanks, so for that duty we are not the right supplier and will say so rather than substitute. Send the medium, the concentration and the temperature and we will tell you honestly which side of that line you are on.
   _85 words · the refusal that makes the rest of the page believable. Butyl is the obvious ninth compound to claim on a lining page and this site has had a ninth compound offered before — it was struck. Naming the gap, naming the compound, and declining the work is worth more than the enquiry it costs_
-- **Q5**: “What is the minimum order for lining and skirting?”
+- **Q5** (composite):
+  · H: “What is the minimum order for lining and skirting?”
+  · We deal in bulk, and on sheet product the minimum is quoted against the job rather than as a piece count — by area for lining and by total length for skirting, since a hopper wall and a chute liner are not comparable quantities. Send the area or the metreage with the duty and we will quote it.
   _58 words · the bulk position adapted to a product that is not sold in pieces, exactly as sheet 18 does on extrusion: “the minimum is quoted per profile against total length”. This is the escape clause the client instruction of 2026-09-01 already contains — “or quoted against the part where geometry or tooling makes that unrealistic”. A 10,000-piece minimum on a chute liner would be meaningless, and publishing one would be worse than publishing none_
-- **Q6**: “What are your payment and delivery terms for international orders?”
+- **Q6** (composite):
+  · H: “What are your payment and delivery terms for international orders?”
+  · TT and LC accepted, discussed per order. Ex-works Nashik or FOB Nhava Sheva. Commercial invoice, packing list and certificate of origin are issued with every consignment. Lining sheet is rolled for transport; tell us the container type and we will pack to suit.
   _44 words · the standard commercial string with one part-specific sentence appended, the same pattern the SKU sheets use_
   <details><summary>notes (3)</summary>
   - All six panels in the DOM at first paint. FAQPage answers not present in the HTML are a structured-data mismatch.

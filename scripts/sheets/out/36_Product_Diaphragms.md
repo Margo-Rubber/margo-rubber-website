@@ -171,17 +171,29 @@ Only the ISO 9001:2015 row goes into hasCredential, and only on the homepage Org
 
 ## 08 Technical & commercial questions [New]
 > live: NO LIVE SECTION → FAQ accordion, six questions, from the /products/bellows component · these six are the FAQPage mainEntity, verbatim
-- **Q1**: “What is the minimum order quantity for diaphragms?”
+- **Q1** (composite):
+  · H: “What is the minimum order quantity for diaphragms?”
+  · We supply in bulk. The minimum run is 10,000 pieces per part number, per compound, or quoted against the part where geometry or tooling makes that unrealistic. Prototype and first-article lots sit outside the minimum.
   _36 words · client-instructed 2026-09-01, the standard answer used across the set. Do not reword it and do not add a second number — the live site states an MOQ about ninety times, including twice in one FAQ answer in two different figures_
-- **Q2**: “How long will the diaphragm last?”
+- **Q2** (composite):
+  · H: “How long will the diaphragm last?”
+  · We do not publish a cycle figure, because we do not own a fatigue rig and a number without a test behind it is worthless to you. What we will do is qualify against your duty: give us the stroke, the working pressure and the target cycle life, and we will propose a compound and construction, run samples, and have them tested at a named laboratory to ISO 132, ASTM D430 or ASTM D813 — with the report in your name.
   _78 words · the most important answer on the page. Cycle life is the first thing a pump engineer asks and the easiest claim to fabricate; the bellows page had four invented cycle ratings removed for exactly this reason. Refusing the number and offering the test is a stronger commercial position than a published figure, because a published figure is read as a warranty and this offer is read as competence. It is also the only honest answer available_
-- **Q3**: “Can you reverse-engineer a diaphragm from a failed sample?”
+- **Q3** (composite):
+  · H: “Can you reverse-engineer a diaphragm from a failed sample?”
+  · Yes. Send the old diaphragm and tell us how it failed. We size from the housing and the stroke rather than from the worn part, and the failure tells us what to change — hardened and cracked means heat, swollen and distorted means the wrong compound for the medium, split at the clamp line means the stroke or the housing rather than the rubber.
   _64 words · the same diagnostic framing as section 03, which is deliberate: a buyer who skips to the FAQ gets the same answer as one who reads the page_
-- **Q4**: “Do you supply fabric-reinforced diaphragms?”
+- **Q4** (composite):
+  · H: “Do you supply fabric-reinforced diaphragms?”
+  · Yes. Nylon, polyester and aramid are all bonded in-house during cure, with ply count and orientation specified against your pressure and stroke. Metal inserts — steel, stainless or brass — are moulded in the same way, so there is no adhesive joint to fail.
   _45 words · answers the qualifying question a pressure application turns on, and surfaces the bonding capability that appears nowhere else on the site_
-- **Q5**: “Are your diaphragms approved for drinking water or food contact?”
+- **Q5** (composite):
+  · H: “Are your diaphragms approved for drinking water or food contact?”
+  · No, and we will not imply otherwise. Potable-water approval is granted to a specific compound formulation held by the compound supplier, not to a polymer and not to us — the schemes are WRAS to BS 6920 in the UK, NSF/ANSI/CAN 61 in North America, AS/NZS 4020 in Australia and New Zealand, and KTW-BWGL with DVGW W270 in Germany. Tell us which scheme your market requires and we will confirm what we can supply against it. We hold no food-contact or pharmaceutical approvals.
   _82 words · the exact position from sheets 24 and 28, and the reason it belongs on this page specifically: dosing and metering pumps are a water-treatment product, so this is the page where a buyer will assume approval unless told. Answering “no” first and then being useful is what makes the rest of the page credible_
-- **Q6**: “What are your payment and delivery terms for international orders?”
+- **Q6** (composite):
+  · H: “What are your payment and delivery terms for international orders?”
+  · TT and LC accepted, discussed per order. Ex-works Nashik or FOB Nhava Sheva. Commercial invoice, packing list and certificate of origin are issued with every consignment. Production is three to four weeks from drawing approval, or two weeks on an express basis where we have confirmed capacity.
   _48 words · the standard commercial string, unchanged. The lead time matches every other page — 3–4 weeks standard, 2 weeks express. Not 14–21 days, which is the live site’s figure and promises faster than the company delivers_
   <details><summary>notes (3)</summary>
   - All six panels open in the DOM at first paint. An unmounted accordion panel does not exist for a crawler, and FAQPage schema whose answers are not in the HTML is a structured-data mismatch.

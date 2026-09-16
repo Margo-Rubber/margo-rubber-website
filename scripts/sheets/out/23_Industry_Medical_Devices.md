@@ -176,17 +176,27 @@ Australia · United Kingdom · United States · Singapore · United Arab Emirate
 > live: LIVE H2 → Questions from device manufacturers. · Q1 is the best certification answer on the site · but one question is headed “What is the minimum order quantity?”
 - **H2**: “Questions from device manufacturers.”
   _[no change]_
-- **Q1**: “Do you hold FDA or ISO 13485 approval?”
+- **Q1** (composite):
+  · H: “Do you hold FDA or ISO 13485 approval?”
+  · Margo Rubber Products holds ISO 9001:2015 certification, certificate 09111526A. We are working toward ISO 13485 certification, targeted for 2027. We are not FDA registered. We supply biocompatible silicone components as a moulding capability; regulatory responsibility for the finished device remains with the manufacturer, and we provide the material certificates, batch records and drawing-revision documentation your device file requires.
   _63 words · live is 38 · the second sentence of the live answer is the most important on this website and it is kept in substance. Three changes: the certificate number is added; ISO 13485 gains the upgrade-and-target framing carried across the whole set, targeted 2027; and the answer closes on what Margo supplies rather than on what it does not hold.
 FDA is deliberately stated as a plain fact with no target date. It is not a certification — it is an establishment registration tied to US market entry and device listing, and a target date on it would be a stronger and less supportable claim than anything else on this site. If US registration is genuinely intended it can be added; it should not be inferred from the ISO instruction_
-- **Q2**: “Which compounds are available for fluid-path components?”
+- **Q2** (composite):
+  · H: “Which compounds are available for fluid-path components?”
+  · Biocompatible silicone (VMQ) is the usual choice, −60 to +220 °C and assessed to ISO 10993. Send your biocompatibility standard reference and sterilisation method — autoclave, gamma or ethylene oxide — and we will confirm the compound and what the supplier can evidence.
   _46 words · live is 27 · the live answer asks the right two questions and states nothing. Adding the range, the standard and the three sterilisation methods turns it into an answer_
-- **Q3**: “Can you support clean-room packaging?”
+- **Q3** (composite):
+  · H: “Can you support clean-room packaging?”
+  · Clean-room-compatible handling and packaging is available on request. Confirm the class and the bagging requirement with your enquiry so we can quote it — it is a per-order arrangement rather than a standing capability.
   _36 words · live is 21 · the closing clause is the honest addition. “Clean-room compatible” is not a clean-room, and saying so plainly prevents a device buyer assuming a controlled environment exists on site. It is the same discipline as the mining page’s wear-liner answer_
-- **Q4 — heading kept, answer rewritten**: “Is there a minimum order quantity?”
+- **Q4 — heading kept, answer rewritten** (composite):
+  · H: “Is there a minimum order quantity?”
+  · Yes — we are a volume manufacturer. Margo produces in bulk against OEM schedules rather than in small lots. Minimum run is 10,000 pieces per part number, per compound, and on larger or more complex parts the minimum is quoted against the part, because the economics are set by tooling and cure time rather than by piece count. Prototype and first-article lots sit outside the minimum and are quoted separately, with a prototype within 48 to 72 hours of an approved drawing.
   _54 words · live is 22 · the live answer is “500 pieces per part number, per material”, in a dedicated FAQ entry. That is the strongest possible way to publish a barrier: it sits in the FAQPage node and it is the answer an assistant returns when asked about minimums. On this sector it is also the most damaging — a diagnostic instrument builds in dozens, and a device manufacturer reading a 500-piece floor concludes the supplier is not set up for them.
 The question is kept and the answer inverted. A buyer asking about minimums deserves an answer, and the honest one is better news than the live one. Standing founder instruction, 2026-08-19_
-- **Q5**: “Can you produce to our validated drawing revision?”
+- **Q5** (composite):
+  · H: “Can you produce to our validated drawing revision?”
+  · Yes. Every component is produced against a controlled drawing revision with no substitutions without approval, and the revision is recorded on the despatch documentation. A change to compound, hardness or geometry is quoted and approved as a change, never made silently.
   _42 words · live is truncated in capture · the closing sentence is the addition, and on this sector it is the one that passes supplier qualification. “Never made silently” is the promise a device quality engineer is looking for and almost no component supplier states it_
   <details><summary>notes (5)</summary>
   - Crawlability. All five answers in the DOM at first paint, collapsed with CSS.

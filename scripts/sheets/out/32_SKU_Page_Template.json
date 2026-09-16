@@ -283,12 +283,22 @@
       "fields": [
         {
           "label": "H2 · intro",
-          "kind": "heading",
-          "lines": [
-            "Rubber Compound Options"
+          "kind": "composite",
+          "parts": [
+            {
+              "kind": "heading",
+              "lines": [
+                "Rubber Compound Options"
+              ],
+              "accent": []
+            },
+            {
+              "kind": "para",
+              "text": "Select the compound best suited to your operating environment and application requirements.",
+              "lead": null,
+              "em": false
+            }
           ],
-          "accent": [],
-          "value": "Rubber Compound Options",
           "note": "[no change to either] — and the ranges in the cards are correct against the locked homepage table, which is more than most sections on this site manage"
         },
         {
@@ -572,12 +582,22 @@
         },
         {
           "label": "H2 · body",
-          "kind": "heading",
-          "lines": [
-            "Certified to International Standards"
+          "kind": "composite",
+          "parts": [
+            {
+              "kind": "heading",
+              "lines": [
+                "Certified to International Standards"
+              ],
+              "accent": []
+            },
+            {
+              "kind": "para",
+              "text": "Every product leaves our facility with a documentation package — material test reports, dimensional inspection sheets and a certificate of conformance — giving traceability from raw material to finished part.",
+              "lead": null,
+              "em": false
+            }
           ],
-          "accent": [],
-          "value": "Certified to International Standards",
           "note": "[no change] — 30 words, three named documents, one checkable promise. This is how the rest of the site should read"
         },
         {
@@ -664,12 +684,26 @@
         },
         {
           "label": "Ships as — until files exist",
-          "kind": "heading",
-          "lines": [
-            "Technical Documentation"
+          "kind": "composite",
+          "parts": [
+            {
+              "kind": "heading",
+              "lines": [
+                "Technical Documentation"
+              ],
+              "accent": []
+            },
+            {
+              "kind": "para",
+              "text": "Datasheets, dimensioned drawings and 3D models are issued per part on request, under NDA where required. Tell us the part and the format you work in — PDF, DWG, DXF or STEP — and we will send what we hold.",
+              "lead": "Tell us the part and the format you work in",
+              "em": false
+            },
+            {
+              "kind": "lit",
+              "value": "[ Request documentation → /contact?part={Part Name}&doc=1 ]"
+            }
           ],
-          "accent": [],
-          "value": "Technical Documentation",
           "note": "41 words · one honest request line replaces four fake buttons. It still captures the intent — and it captures it better, because the buyer now tells you which format they use, which is information the download never gave you.\nThe pre-filled part parameter is copied from section 12, which already does this correctly"
         }
       ],

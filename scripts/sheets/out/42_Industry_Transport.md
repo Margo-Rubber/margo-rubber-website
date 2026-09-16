@@ -162,17 +162,29 @@ On this sector it is the most expensive dead link on the site. A rail or marine 
 
 ## 08 Technical & commercial questions [New]
 > live: NO LIVE SECTION → FAQ accordion, six questions · these six are the FAQPage mainEntity, verbatim
-- **Q1**: “Are you an RDSO-approved vendor?”
+- **Q1** (composite):
+  · H: “Are you an RDSO-approved vendor?”
+  · No. RDSO vendor approval is item-specific and we do not hold it, so we cannot supply rubber components directly into an Indian Railways project. We supply rolling stock builders, integrators and private fleet operators who buy to their own drawings under their own approvals. If your enquiry is for an RDSO-gated item, we will tell you at enquiry rather than at qualification.
   _64 words · the first question on the page, because it is the first question in the buyer’s head. Answering it before anything else is what makes the other five credible. The last clause is the commercial argument — a supplier who declines early is a supplier worth keeping on file_
-- **Q2**: “Can you supply material classified to EN 45545-2?”
+- **Q2** (composite):
+  · H: “Can you supply material classified to EN 45545-2?”
+  · Not as classified material. EN 45545-2 hazard levels — HL1, HL2 and HL3 — are tested classifications covering flame spread, ignitability, heat release, smoke opacity and toxicity, awarded on a specific material by a testing house. We hold no classification. We do supply flame-retardant neoprene grades where a specification asks for a compound property, and we will arrange third-party testing on request. We will not describe a flame-retardant compound as EN 45545 compliant.
   _75 words · the same structure as the construction sheet’s fire answer and deliberately so — two industry pages giving the same answer to the same class of question in the same voice is a house position. Naming the five tested parameters shows the refusal is informed rather than reflexive_
-- **Q3**: “Do you have class society type approval for marine components?”
+- **Q3** (composite):
+  · H: “Do you have class society type approval for marine components?”
+  · No — not from DNV, Lloyd’s Register, ABS, Bureau Veritas, ClassNK or the Indian Register of Shipping. Components inside a surveyed hull or machinery scope need type approval from the vessel’s society and we hold none. We supply shipyards and marine equipment builders for accommodation, interior and auxiliary positions outside that scope, made to their drawing.
   _57 words · names all six societies rather than saying “class approval”, because a buyer searches the society name. A named absence is checkable; a vague one reads as evasion_
-- **Q4**: “Which rubber lasts longest on an external vehicle seal?”
+- **Q4** (composite):
+  · H: “Which rubber lasts longest on an external vehicle seal?”
+  · EPDM. Rolling stock and vessels are outdoor assets with thirty-year lives, washed regularly and exposed continuously, and seals fail by ozone cracking and UV embrittlement rather than by reaching a temperature limit. Neoprene is the answer where salt air, some oil and a flame-retardant grade are wanted together. Nitrile is the common cheap substitute on external positions and it crazes within a season in sunlight.
   _66 words · the technical answer that earns the page its keep, and it is the same mechanism the construction sheet explains for facades. The nitrile warning appears on both pages because the mistake is made on both sectors_
-- **Q5**: “Can you make a non-standard section for our door or hatch?”
+- **Q5** (composite):
+  · H: “Can you make a non-standard section for our door or hatch?”
+  · Yes — that is most of what we do on this sector. Dies are cut in-house, so a section drawn for your vehicle is a drawing rather than a compromise, and corner mouldings can be vulcanised to the profile so the joint is not a butt splice on assembly. Send the section drawing and the annual metreage and we will quote the die with it.
   _65 words · the qualifying answer for a builder, and the vulcanised-corner detail is what separates a component maker from a stockist on both this sector and construction_
-- **Q6**: “What is the minimum order for a build programme?”
+- **Q6** (composite):
+  · H: “What is the minimum order for a build programme?”
+  · We deal in bulk, and this sector buys both ways on one purchase order. Extruded profile is quoted per section against total length; moulded components carry the standard minimum of 10,000 pieces per part number, per compound, or are quoted against the part where tooling makes that unrealistic. Send the drawing package with the build quantity and we will price it as a package.
   _64 words · the bulk position adapted to a sector that buys metres and pieces together, matching sheets 18, 38 and 41. “Price it as a package” is the right commercial answer for a builder issuing a drawing set rather than a part enquiry_
   <details><summary>notes (3)</summary>
   - All six panels in the DOM at first paint.

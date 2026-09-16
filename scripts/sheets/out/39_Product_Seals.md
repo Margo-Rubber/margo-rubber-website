@@ -190,17 +190,29 @@ ISO 5597, ISO 6547 and ISO 6195 are named in sections 03 and 07 and must never a
 
 ## 09 Technical & commercial questions [New]
 > live: NO LIVE SECTION → FAQ accordion, six questions · these six are the FAQPage mainEntity, verbatim
-- **Q1**: “What is the difference between an oil seal and a reciprocating seal?”
+- **Q1** (composite):
+  · H: “What is the difference between an oil seal and a reciprocating seal?”
+  · Motion. An oil seal is designed for a rotating shaft — it has a garter spring holding the lip against the shaft, and the lip is shaped to pump fluid back as the shaft turns. A reciprocating seal works a stroke: no garter spring, a section that is energised by pressure rather than by a spring, and a lip that has to survive being dragged along the rod. Fitting one where the other belongs is the most common specification error we see. Rotary duty is on our oil seals page; this page is reciprocating.
   _92 words · the extractable answer and the anti-cannibalisation answer at the same time. It wins a real informational query, it corrects the error the whole page exists to correct, and its last sentence routes rotary intent to /products/oil-seals from inside the FAQ schema_
-- **Q2**: “My seal is leaking after a few weeks. What is wrong?”
+- **Q2** (composite):
+  · H: “My seal is leaking after a few weeks. What is wrong?”
+  · Usually the housing rather than the seal. Look at the failed part: a glazed, hardened lip means heat or a rod too smooth to carry a lubricating film; a lip nibbled along one edge means it is extruding into the clearance gap under pressure; scoring across the lip means the rod is too rough, or the wiper in front of it has failed and is letting grit through. Send us the part and the rod finish and we will tell you which of the three you have.
   _88 words · the highest-intent question in this category and the one that converts a maintenance engineer holding a failed part. Three failures, three causes, each identifiable by eye — and the answer ends in an offer rather than a product_
-- **Q3**: “Do you work to ISO 5597 and ISO 6195 housings?”
+- **Q3** (composite):
+  · H: “Do you work to ISO 5597 and ISO 6195 housings?”
+  · Yes. Where your design follows the standard we mould to the standard groove; where it does not, we mould to your drawing. These are dimensional standards for the housing, not certifications, and we hold no product approval against them — send the groove dimensions either way and we will confirm the section.
   _52 words · answers a qualifying question and closes the standards-as-credentials door in the same breath. The phrasing mirrors sheet SKU 14 on DIN 3760, which is the house position on dimensional standards_
-- **Q4**: “Can you supply polyurethane hydraulic seals?”
+- **Q4** (composite):
+  · H: “Can you supply polyurethane hydraulic seals?”
+  · No. Polyurethane is the usual material for high-pressure hydraulic rod and piston seals and we do not mould it — we compound and mould vulcanised rubber, in eight compounds. Our reciprocating seals suit pump, sprayer, dosing and lower-pressure cylinder duty. If your specification calls for polyurethane we will say so rather than substitute a nitrile section that will not hold the pressure.
   _62 words · the refusal that makes the page trustworthy, and the third page in this run to decline work by naming a material Margo does not mix — polyurethane on mining and lining, butyl on lining, polyurethane again here. Substituting a nitrile section into a polyurethane application is exactly the failure this answer prevents, and it would be an easy sale to make_
-- **Q5**: “What is the minimum order quantity for seals?”
+- **Q5** (composite):
+  · H: “What is the minimum order quantity for seals?”
+  · We supply in bulk. The minimum run is 10,000 pieces per part number, per compound, or quoted against the part where geometry or tooling makes that unrealistic. Prototype and first-article lots sit outside the minimum.
   _36 words · the standard answer, client-instructed 2026-09-01, unchanged. Do not reword it_
-- **Q6**: “What are your payment and delivery terms for international orders?”
+- **Q6** (composite):
+  · H: “What are your payment and delivery terms for international orders?”
+  · TT and LC accepted, discussed per order. Ex-works Nashik or FOB Nhava Sheva. Commercial invoice, packing list and certificate of origin are issued with every consignment. Seals are packed to protect the sealing lip.
   _38 words · the standard commercial string, matching the oil-seal sheets exactly_
   <details><summary>notes (3)</summary>
   - All six panels in the DOM at first paint.

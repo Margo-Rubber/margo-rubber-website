@@ -822,10 +822,12 @@ export function IncotermsSection({
   return (
     <section id="incoterms" className="bg-surface scroll-mt-24 py-[70px]">
       <Container>
-        <p className="text-eyebrow text-accent-400 flex items-center gap-3 font-mono uppercase">
-          <span aria-hidden className="bg-accent-400 inline-block h-px w-8" />
-          {eyebrow}
-        </p>
+        {eyebrow && (
+          <p className="text-eyebrow text-accent-400 flex items-center gap-3 font-mono uppercase">
+            <span aria-hidden className="bg-accent-400 inline-block h-px w-8" />
+            {eyebrow}
+          </p>
+        )}
         <h2 className="text-h2 mt-4">{heading}</h2>
         {body && <p className="text-ink-3 mt-4 max-w-[62ch] leading-relaxed">{body}</p>}
         <dl className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">

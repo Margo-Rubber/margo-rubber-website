@@ -158,17 +158,29 @@ The rule from sheet 02 applies: “a dead download on a quality page costs more 
 
 ## 08 Technical & commercial questions [New]
 > live: NO LIVE SECTION → FAQ accordion, six questions · these six are the FAQPage mainEntity, verbatim
-- **Q1**: “Which rubber lasts longest on an external facade?”
+- **Q1** (composite):
+  · H: “Which rubber lasts longest on an external facade?”
+  · EPDM, and it is not close. External seals fail by ozone cracking and UV embrittlement rather than by reaching a temperature limit, and EPDM resists both better than anything else we mix. Nitrile is the common cheap substitute and it crazes within a season in direct sun. We test ozone resistance to ISO 1431-1 at our NABL partner laboratory and will report it on the compound supplied.
   _67 words · the extractable answer for this page. It names the compound, the failure mechanism, the wrong answer buyers are offered, and the test — in that order. Naming nitrile as the substitute to avoid is what makes it useful rather than promotional_
-- **Q2**: “Do you supply elastomeric bearings for bridges?”
+- **Q2** (composite):
+  · H: “Do you supply elastomeric bearings for bridges?”
+  · No. Laminated elastomeric bridge bearings are a structural product, type-tested and load-certified to IRC:83 Section IX, IS 15462 or EN 1337-3, and we hold no structural product approval. We do supply plain rubber bearing pads and acoustic isolation pads for non-structural duty, quoted against your load and area — but if your specification calls up a laminated bearing, we are not your supplier and will say so at enquiry rather than at qualification.
   _76 words · the most important answer on the page. Bridge bearings are the largest rubber market in Indian construction and the easiest thing on this list to imply. Answering it as a flat no, with the standards named and the adjacent product offered, is the whole argument of section 06 in one FAQ_
-- **Q3**: “Can you supply sealing rings for concrete pipes and manholes?”
+- **Q3** (composite):
+  · H: “Can you supply sealing rings for concrete pipes and manholes?”
+  · Yes. Sealing rings to IS 5382 for water mains, gas mains and sewers, and to EN 681-1 for water supply and drainage pipe joints. Send the pipe standard, the joint type and the ring section — those are on our water and fluid management page, and the same team quotes both.
   _52 words · routes a real construction enquiry to the page that owns it, without duplicating the content. “The same team quotes both” removes the friction a cross-link would otherwise add_
-- **Q4**: “Are your seals fire rated?”
+- **Q4** (composite):
+  · H: “Are your seals fire rated?”
+  · No, and the distinction matters. A fire rating is certified against a specific tested assembly by a third-party laboratory to IS 3809, BS 476 or EN 1366 — it belongs to the assembly, not to the rubber. We supply flame-retardant neoprene grades where a specification asks for a compound property, and we will arrange third-party testing on request. We will not describe a flame-retardant compound as a fire-rated seal.
   _70 words · the second refusal, and the sentence in bold is the one that protects both parties. Sheet 19’s live copy currently names “fire-rated seals” as a construction application — this answer is what stops that becoming a claim_
-- **Q5**: “What is the minimum order for extruded profile on a project?”
+- **Q5** (composite):
+  · H: “What is the minimum order for extruded profile on a project?”
+  · We deal in bulk, and on extruded profile the minimum is quoted per profile against total length rather than as a piece count — a curtain-wall package and a window run are not comparable quantities. Moulded components carry the standard minimum of 10,000 pieces per part number, per compound. Send the section and the metreage with the drawing and we will quote it.
   _62 words · the bulk position adapted to a sector that buys both ways, matching sheet 18 on extrusion and sheet 38 on lining. Construction is the clearest case for the escape clause in the 2026-09-01 instruction — a project buys metres of profile and pieces of moulding on one purchase order_
-- **Q6**: “Can you make a non-standard profile for a facade system?”
+- **Q6** (composite):
+  · H: “Can you make a non-standard profile for a facade system?”
+  · Yes — that is most of what we do on this sector. Dies are cut in-house, so a section drawn for your system is a drawing rather than a compromise, and corner mouldings can be vulcanised to the profile so the joint is not a butt splice on site. Send the section drawing and the annual metreage and we will quote the die with it.
   _65 words · the qualifying answer for a facade contractor, and the vulcanised-corner detail is the one that separates a component supplier from a stockist. In-house tooling is the differentiator on this sector more than on any other_
   <details><summary>notes (3)</summary>
   - All six panels in the DOM at first paint. FAQPage answers not present in the HTML are a structured-data mismatch.

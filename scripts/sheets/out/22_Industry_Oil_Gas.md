@@ -178,17 +178,29 @@ United Arab Emirates · Saudi Arabia · Oman · Qatar · Kuwait`
 > live: LIVE H2 → Questions from Gulf buyers. · four questions, none about qualification · the lead-time answer is wrong twice and omits transit
 - **H2**: “Questions from Gulf buyers.”
   _[no change]_
-- **Q1 — new, and it leads**: “Do you hold NORSOK M-710 or API elastomer qualification?”
+- **Q1 — new, and it leads** (composite):
+  · H: “Do you hold NORSOK M-710 or API elastomer qualification?”
+  · Not today. The qualification programme is under way and is targeted for 2027. Margo holds ISO 9001:2015, certificate 09111526A, and supplies hydrocarbon-service sealing against controlled drawing revisions with material certificates and batch records issued per shipment. Where your specification calls for NORSOK or API qualification, tell us at enquiry stage and we will confirm the current position on that programme before you commit engineering time.
   _72 words · new question, and it belongs first. It is the qualifying question in hydrocarbon service and the live page never raises it — four FAQ questions, none about certification, on a page written for oil and gas buyers. Silence is the worst of the three possible answers, because a buyer who cannot find the position assumes the least favourable one. The closing sentence is the same construction the automotive page uses for IATF: state the position, then say what happens next_
-- **Q2 — new**: “What certifications does Margo hold?”
+- **Q2 — new** (composite):
+  · H: “What certifications does Margo hold?”
+  · Margo Rubber Products holds ISO 9001:2015, certificate 09111526A, issued by Integral Certification Ltd and valid to 21 February 2027. We are actively upgrading our quality management system to IATF 16949:2016, with certification targeted by the end of 2026, and ISO 14001, ISO 45001 and NORSOK/API qualification targeted for 2027. Material test reports and batch certificates are issued with every shipment.
   _61 words · new question, carrying the canonical wording settled across the set. It must render from the same constant as the automotive, mining, about, products and certifications pages_
-- **Q3**: “What is the typical lead time for components shipped to the UAE?”
+- **Q3** (composite):
+  · H: “What is the typical lead time for components shipped to the UAE?”
+  · Three to four weeks ex-works Nashik from drawing approval, or two weeks on an express basis where we have confirmed capacity. A new component with tooling to cut adds the tooling lead time, quoted per part. Nhava Sheva to Jebel Ali runs a further five to nine days port to port — one of the shortest lanes out of India — with air freight quoted where a shutdown date requires it.
   _72 words · live is 37 · the live answer is wrong twice and stops short once. 14–21 and 21–35 days against the 3–4 weeks published everywhere else; and it ends on “before sea freight transit to Jebel Ali” without the figure. The transit number is a selling point on this lane, not a caveat — five to nine days is faster than almost any alternative origin and the live page declines to say so_
-- **Q4**: “Which compounds do you recommend for hydrocarbon service?”
+- **Q4** (composite):
+  · H: “Which compounds do you recommend for hydrocarbon service?”
+  · FKM is the usual choice where petroleum oils, fuels or solvents are present at sustained temperature, rated to +250 °C. NBR suits moderate-temperature oil contact to +120 °C. EPDM is specified for water, steam and desalination duty but must not be used in petroleum service. Send your media, service temperature and pressure class and we will confirm the compound and hardness.
   _62 words · live is 40 · the live answer is correct and gains three figures plus one warning. The EPDM exclusion is the addition that prevents a failure — EPDM is the compound most often mis-specified into oil service, and on a hydrocarbon page saying so is worth more than another capability claim_
-- **Q5**: “Can you supply against our own drawings and standards?”
+- **Q5** (composite):
+  · H: “Can you supply against our own drawings and standards?”
+  · Yes. Components are produced against your controlled drawing revision, with no substitutions without approval. Standards are named by number on the documentation — AS568, ISO 3601, JIS B2401 and DIN 3771 for O-rings; ASME B16.21, EN 1514-1 and JIS B2404 for flange gaskets.
   _48 words · live is 26 · the live answer says “standards are named by number” and then names none. Listing the seven turns a promise into evidence, and every one is on a product sheet in this set_
-- **Q6**: “Do you provide material certificates with shipments?”
+- **Q6** (composite):
+  · H: “Do you provide material certificates with shipments?”
+  · Yes. Raw material certificates and batch records are retained and issued per shipment, together with the inspection release data for the despatch lot. For Saudi consignments we also supply the technical file your conformity body needs for the SABER submission.
   _41 words · live is truncated in capture · the closing sentence connects the FAQ to the conformity process named in section 07, which is where a Saudi buyer’s next question goes_
   <details><summary>notes (5)</summary>
   - Crawlability. All six answers in the DOM at first paint, collapsed with CSS.

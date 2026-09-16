@@ -110,6 +110,15 @@ for (let i = 0; i < args.length; i += 2) {
         }
         case "text":
           check(sec.num, f.label, f.value);
+          break;
+        case "composite":
+          for (const p of f.parts) {
+            if (p.kind === "lit") for (const line of p.value.split("\n")) check(sec.num, f.label, line.replace(/^→\s*/, "").replace(/\s*\/\S+$/, ""));
+            else if (p.kind === "heading") for (const l of p.lines) check(sec.num, f.label, l);
+            else if (p.kind === "para") check(sec.num, f.label, p.text);
+            else if (p.kind === "list") for (const it of p.items) check(sec.num, f.label, it);
+            else if (p.kind === "table") for (const r of p.rows) for (const c of r) check(sec.num, f.label, c);
+          }
       }
     }
   }

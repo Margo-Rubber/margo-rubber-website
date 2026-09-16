@@ -176,17 +176,29 @@ Australia · United Kingdom · United Arab Emirates · Singapore · Malaysia`
 > live: LIVE H2 → Questions from electrical buyers. · five well-chosen questions · the minimum-order answer carries a piece count and a wrong lead time · the flame-retardant answer offers low-smoke
 - **H2**: “Questions from electrical buyers.”
   _[no change]_
-- **Q1**: “Can you supply flame-retardant compounds?”
+- **Q1** (composite):
+  · H: “Can you supply flame-retardant compounds?”
+  · Yes, on request — neoprene is the family we reach for, and formulated grades can be specified against a flammability rating. Send your standard reference with the enquiry — UL 94, IEC 60695 or your own OEM specification — and we will confirm what the compound supplier can evidence. We do not hold a flammability listing ourselves.
   _62 words · live is 27 · “low-smoke” comes out. Low-smoke and zero-halogen is a cable-compound classification with its own test regime, and claiming it alongside flame retardancy without a named standard is not supportable — the HVAC page carries the same claim and the same correction. The replacement names the compound family and two standards a buyer would actually specify, and places the listing with the compound supplier_
-- **Q2**: “Which compound suits enclosure gaskets?”
+- **Q2** (composite):
+  · H: “Which compound suits enclosure gaskets?”
+  · Silicone, −60 to +220 °C, for elevated temperature and the widest service range. EPDM, −40 to +140 °C, for weather-exposed enclosures — and it is the better choice outdoors, because ozone attack is what ends most exterior seals. Neoprene where flame retardancy is specified. Selection is driven by temperature, exposure and the compression set your design allows.
   _61 words · live is 30 · the live answer is correct and gains the two temperature figures, the reason EPDM wins outdoors, and neoprene as the third option — which the page offers elsewhere and this answer omits_
-- **Q3**: “Do you make grommets to non-standard panel thicknesses?”
+- **Q3** (composite):
+  · H: “Do you make grommets to non-standard panel thicknesses?”
+  · Yes. Grommets are specified by panel hole diameter, panel thickness and groove width, and produced against your drawing. The groove width is your panel thickness — measure the sheet, not the hole — and the bore is set by the cable or conduit passing through.
   _48 words · live is 25 · the closing clauses are lifted from the grommets product sheet, where they answer the two questions that come back on almost every grommet enquiry. Repeating them here removes a round trip from the quotation_
-- **Q4 — heading kept, answer corrected**: “Is there a minimum order quantity?”
+- **Q4 — heading kept, answer corrected** (composite):
+  · H: “Is there a minimum order quantity?”
+  · Yes — we are a volume manufacturer. Margo produces in bulk against OEM schedules rather than in small lots. Minimum run is 10,000 pieces per part number, per compound, and on larger or more complex parts the minimum is quoted against the part. Prototype and first-article lots sit outside the minimum and are quoted separately, with a prototype within 48 to 72 hours of an approved drawing. Existing tooling ships in three to four weeks ex-works Nashik, or two weeks express where we have confirmed capacity.
   _88 words · live is 27 · the live answer is wrong in both halves. The piece count is 500, and the real position is bulk from 10,000 — client instruction, 2026-09-01. The lead time says 14 to 21 days against the 3–4 weeks published everywhere else. Fourth industry page with a dedicated minimum-order FAQ, and it sits in the FAQPage node, which is what an assistant returns when asked either question_
-- **Q5**: “Can you match an existing part we currently buy?”
+- **Q5** (composite):
+  · H: “Can you match an existing part we currently buy?”
+  · Yes. Send a physical sample and we will produce a drawing, confirm compound selection and quote tooling where required. Tell us how the current part fails if it does — whether it hardens, splits or takes a set — because that decides the compound more reliably than the sample does.
   _52 words · live is 26 · the live answer is good and the addition is what makes a reverse-engineered part better than the one it replaces. A sample tells us the geometry; the failure mode tells us the compound_
-- **Q6 — new**: “What certifications does Margo hold?”
+- **Q6 — new** (composite):
+  · H: “What certifications does Margo hold?”
+  · Margo Rubber Products holds ISO 9001:2015, certificate 09111526A, issued by Integral Certification Ltd and valid to 21 February 2027. We are actively upgrading our quality management system to IATF 16949:2016, with certification targeted by the end of 2026, and ISO 14001 and ISO 45001 certification targeted for 2027. Material test reports and batch certificates are issued with every shipment.
   _60 words · new question, carrying the canonical wording settled across the set_
   <details><summary>notes (5)</summary>
   - Crawlability. All six answers in the DOM at first paint, collapsed with CSS.
