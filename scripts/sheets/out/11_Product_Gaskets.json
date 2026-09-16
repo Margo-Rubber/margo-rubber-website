@@ -41,6 +41,9 @@
           "leads": [
             "Margo Rubber Products moulds and die-cuts rubber gaskets to ASME B16.21, EN 1514-1 and JIS B2404 at its ISO 9001:2015 certified plant in Nashik, India"
           ],
+          "marked": [
+            "**Margo Rubber Products moulds and die-cuts rubber gaskets to ASME B16.21, EN 1514-1 and JIS B2404 at its ISO 9001:2015 certified plant in Nashik, India** — flange, enclosure, sponge and cut-to-print profiles in eight compounds. Tolerance follows ISO 3302-1 and the section."
+          ],
           "note": "43 words · live is 21 · entity, process, standards and geo in the first clause. Every standard number changes — see the standards banner above; the live line names three that do not apply to rubber"
         },
         {
@@ -105,6 +108,9 @@
           ],
           "leads": [
             "nine"
+          ],
+          "marked": [
+            "The live table renders five rows. This section specifies **nine**. The developer must add four rows — AEM, neoprene, SBR and natural rubber — and the component should take an arbitrary list rather than a fixed five. **Columns stay at four and the filter chips stay at five**, so nothing else about the component changes."
           ]
         },
         {
@@ -131,6 +137,9 @@
           ],
           "leads": [
             "Select the compound by media and service temperature, then confirm the flange or enclosure standard your drawing calls out."
+          ],
+          "marked": [
+            "Standards are named by number, not paraphrased. **Select the compound by media and service temperature, then confirm the flange or enclosure standard your drawing calls out.** Dimensional standards govern the gasket outline; ASTM D2000 and D1056 govern the compound itself."
           ],
           "note": "42 words · live is 32 · the second sentence is new and answers the question the table cannot: why two different kinds of standard appear in one column"
         },
@@ -247,6 +256,9 @@
           "leads": [
             "Dimensional conformity to ISO 3302-1, class M1 to M4 for moulded gaskets and E1 to E3 for extruded and die-cut sections, as recorded on the drawing."
           ],
+          "marked": [
+            "Showing 9 of 9 entries. **Dimensional conformity to ISO 3302-1, class M1 to M4 for moulded gaskets and E1 to E3 for extruded and die-cut sections, as recorded on the drawing.** Ranges are typical values for the compound family and are not a specification for a particular part — see our technical disclaimer. Non-catalogue sizes and profiles made to print."
+          ],
           "note": "55 words · live is 26 · the live footnote says “confirm against Margo’s compound datasheet”, which is a document a visitor cannot reach. The replacement names the tolerance standard, states the qualification, and links to the disclaimer page that now carries it in full"
         }
       ],
@@ -273,6 +285,9 @@
           ],
           "leads": [
             "nine"
+          ],
+          "marked": [
+            "The live accordion renders four panels. This section specifies **nine**. The developer must extend the component to take an arbitrary list — five new panels: **AEM, neoprene, SBR, natural rubber and EPDM sponge**. This is the same shared component as the O-rings and oil seals pages, so the fix lands on all eleven categories at once. If the Figma shows four, the Figma is short by five and needs the extra panels drawn."
           ]
         },
         {
@@ -299,6 +314,9 @@
           ],
           "leads": [
             "Name the medium, the operating temperature and the flange or joint class, and we will tell you which to specify."
+          ],
+          "marked": [
+            "Each compound has a distinct chemical compatibility profile and temperature ceiling. **Name the medium, the operating temperature and the flange or joint class, and we will tell you which to specify.**"
           ],
           "note": "30 words · live is 27 · replaces “Select the one that matches your medium, temperature, and pressure class” with an offer to do the selection, which is what a manufacturer is for"
         },
@@ -425,6 +443,9 @@
           ],
           "leads": [
             "Compound, hardness, thickness and outline are set from your specification, and full dimensional data is issued with the quotation."
+          ],
+          "marked": [
+            "Each part below is manufactured to customer drawing, to a standard flange reference, or from a worn sample. **Compound, hardness, thickness and outline are set from your specification, and full dimensional data is issued with the quotation.**"
           ],
           "note": "37 words · live is 27"
         },
@@ -591,6 +612,9 @@
           "leads": [
             "Send the flange standard or the outline drawing, the compound and the volume, and we will quote it."
           ],
+          "marked": [
+            "Margo produces in bulk against OEM schedules. **Send the flange standard or the outline drawing, the compound and the volume, and we will quote it.** **Minimum run is 10,000 pieces per part number, per compound**, or quoted against the part where size or complexity sets the economics. Prototype and first-article lots sit outside the minimum and are quoted separately."
+          ],
           "note": "45 words · live is 34 · replaces “Margo is geared for volume procurement. If your project requires below-MOQ qualification samples…”, which states a minimum twice by implication and tells a prototype buyer they are below the floor before they have asked. The replacement is the founder’s own phrasing from the commercial terms, with the gasket inputs named"
         },
         {
@@ -677,6 +701,9 @@
           "leads": [
             "Our engineering team responds within 48 hours with dimensional confirmation, the compound datasheet and a quotation."
           ],
+          "marked": [
+            "Send your drawing, flange standard or a sample of the part you are replacing, with the compound and the volume. **Our engineering team responds within 48 hours with dimensional confirmation, the compound datasheet and a quotation.**"
+          ],
           "note": "36 words · live is 34 · “within two working days” becomes 48 hours. The site publishes six different response times; two working days is the slowest-reading of them and contradicts the 48 hours promised on the homepage, the contact page and the commercial terms directly above this block. “A sample of the part you are replacing” is added because replacement gaskets arrive as worn parts far more often than as drawings"
         },
         {
@@ -726,6 +753,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "ISO 9001:2015 certified manufacturer of precision moulded and extruded rubber components in Nashik, India. Sealing and anti-vibration parts to customer drawing, supplied to OEMs and distributors in 95 countries."
           ],
           "note": "29 words · live is 26 · opens with the entity definition, since the footer repeats on all 40 pages"
         },

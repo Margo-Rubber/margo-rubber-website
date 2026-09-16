@@ -41,6 +41,9 @@
           "leads": [
             "Margo Rubber Products moulds rubber-to-metal bonded and unbonded anti-vibration mounts at its ISO 9001:2015 certified plant in Nashik, India"
           ],
+          "marked": [
+            "**Margo Rubber Products moulds rubber-to-metal bonded and unbonded anti-vibration mounts at its ISO 9001:2015 certified plant in Nashik, India** — bobbin, conical, sandwich and buffer forms in natural rubber, neoprene and NBR. Engineered to your load rating, deflection and mounting geometry, to OEM drawing rather than off the shelf."
+          ],
           "note": "48 words · live is 24 · entity, process, form types, compounds and geo. The live line’s best phrase — “to OEM drawing, not off the shelf” — is kept and moved to the end, where it lands. Natural rubber is named first, which is the single most important word on this page and appears nowhere on it today"
         },
         {
@@ -107,6 +110,10 @@
           "leads": [
             "eight",
             "Why the deflection column goes."
+          ],
+          "marked": [
+            "The live table renders four rows. This section specifies **eight**, so the developer must add four and the component should take an arbitrary list. **One column heading changes**: Deflection at Load becomes **Typical service**. **The column count stays at four and the chip count stays at five**, so nothing else about the component changes.",
+            "**Why the deflection column goes.** “2–6 mm deflection at load” against a load range of “5–150 kg” does not state which load. Deflection is a property of a specific mount at a specific load, and a band spanning a 30× load range describes nothing an engineer can specify against. The information a buyer actually needs — how a mount is selected — moves into the footnote, where it can be stated correctly."
           ]
         },
         {
@@ -133,6 +140,9 @@
           ],
           "leads": [
             "A mount is specified by the static load it carries and the stiffness that load has to sit on, not by dimension alone."
+          ],
+          "marked": [
+            "**A mount is specified by the static load it carries and the stiffness that load has to sit on, not by dimension alone.** Send the supported mass, the number of mounting points, the disturbing frequency and the mounting geometry with the drawing, and we will select and quote it."
           ],
           "note": "48 words · live is 28 · the live intro says “send your equipment’s vibration profile”, which most buyers cannot produce. The replacement asks for the four things they can produce, and the fourth — disturbing frequency — is usually just the machine’s running speed"
         },
@@ -243,6 +253,9 @@
           "leads": [
             "How a mount is selected:"
           ],
+          "marked": [
+            "Showing 8 of 8 entries. **How a mount is selected:** the mount and the mass it carries form a spring-mass system with a natural frequency. Isolation only begins once the disturbing frequency is more than about 1.4 times that natural frequency, and is worth having at a ratio of three or more — which is why a softer mount usually isolates better, and why a mount that is too stiff for its load does nothing at all. **Give us the supported mass per mounting point and the running speed of the machine and we will size it.** Load and hardness bands are typical for the mount type and are not a specification for a particular part; see our technical disclaimer."
+          ],
           "note": "102 words · live is 26 · the longest footnote in the set. It replaces a deflection column that could not be defended with the selection method itself, stated in plain language — and it is the only place on this site, or on any competing Indian supplier site checked, where the isolation criterion is explained rather than assumed"
         }
       ],
@@ -271,6 +284,10 @@
           "leads": [
             "eight",
             "Order matters more here than anywhere else in the set."
+          ],
+          "marked": [
+            "The live accordion renders four panels. This section specifies **eight**, and the order is not the order on any other category page. The developer must extend the component to take an arbitrary list — four new panels: **natural rubber, neoprene, SBR and AEM** — and the panel order must be per-page data, not a fixed sequence in the component. This is the same shared component as the other category pages; extending it once lands on all eleven.",
+            "**Order matters more here than anywhere else in the set.** On a sealing page the wrong order is a missed opportunity. On this page the first panel a buyer opens should be natural rubber, and today it is FKM."
           ]
         },
         {
@@ -297,6 +314,9 @@
           ],
           "leads": [
             "Natural rubber is the default and the right answer most of the time; the others are what you move to when oil, heat or weather rules it out."
+          ],
+          "marked": [
+            "On a mount the compound is chosen for how it behaves under repeated load, not for what it resists chemically. **Natural rubber is the default and the right answer most of the time; the others are what you move to when oil, heat or weather rules it out.**"
           ],
           "note": "50 words · live is 27 · the live intro says “chemical compatibility profile… medium, temperature, and pressure class”, which is the sealing-page intro rendered unchanged on a page where none of it applies. A mount does not have a medium and does not have a pressure class"
         },
@@ -416,6 +436,9 @@
           ],
           "leads": [
             "Load rating, hardness, insert geometry and bonding are set from your specification, and full dimensional data is issued with the quotation."
+          ],
+          "marked": [
+            "Each part below is manufactured to customer drawing or to our standard tooling. **Load rating, hardness, insert geometry and bonding are set from your specification, and full dimensional data is issued with the quotation.**"
           ],
           "note": "35 words · live is 27 · “insert geometry and bonding” replaces “compound and dimensions”, because on a bonded mount the steel is half the part"
         },
@@ -586,6 +609,9 @@
           "leads": [
             "Send the drawing with the supported load, the mounting geometry and the insert specification, plus the compound and the volume, and we will quote it."
           ],
+          "marked": [
+            "Margo produces in bulk against OEM schedules. **Send the drawing with the supported load, the mounting geometry and the insert specification, plus the compound and the volume, and we will quote it.** **Minimum run is 10,000 pieces per part number, per compound**, or quoted against the part where size or complexity sets the economics. Prototype and first-article lots sit outside the minimum and are quoted separately."
+          ],
           "note": "52 words · live is 34 · replaces “Margo is geared for volume procurement. If your project requires below-MOQ qualification samples…”, which states a minimum twice by implication and tells a prototype buyer they are below the floor before they have asked. “Insert specification” is the addition that matters here — on a bonded mount the steel insert has its own drawing, its own supplier and its own lead time, and a buyer who does not send it gets a quotation that changes later"
         },
         {
@@ -672,6 +698,9 @@
           "leads": [
             "Our engineering team responds within 48 hours with a recommended type and hardness, dimensional confirmation and a quotation."
           ],
+          "marked": [
+            "Send your drawing with the supported load per mount and the mounting geometry, or a sample of the mount you are replacing, together with the insert specification and the volume. **Our engineering team responds within 48 hours with a recommended type and hardness, dimensional confirmation and a quotation.**"
+          ],
           "note": "47 words · live is 34 · “within two working days” becomes 48 hours. The site publishes six different response times; two working days contradicts the 48 hours promised on the homepage, the contact page and the commercial terms directly above. “A recommended type and hardness” replaces “material datasheets” — on this category the buyer usually does not know which mount they need, and offering the selection is worth more than offering a document"
         },
         {
@@ -722,6 +751,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "ISO 9001:2015 certified manufacturer of precision moulded and extruded rubber components in Nashik, India. Sealing and anti-vibration parts to customer drawing, supplied to OEMs and distributors in 95 countries."
           ],
           "note": "29 words · live is 26 · opens with the entity definition, since the footer repeats on all 40 pages"
         },

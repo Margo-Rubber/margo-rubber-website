@@ -41,6 +41,9 @@
           "leads": [
             "Margo Rubber Products ships precision moulded and extruded rubber components from Nashik, India under an ISO 9001:2015 quality system, FOB Nhava Sheva or CIF to your port."
           ],
+          "marked": [
+            "**Margo Rubber Products ships precision moulded and extruded rubber components from Nashik, India under an ISO 9001:2015 quality system, FOB Nhava Sheva or CIF to your port.** Nine markets have a country-level sourcing playbook below — duty treatment, certificate requirements, transit time and destination port. Click a lane to jump to yours."
+          ],
           "note": "50 words · live is 27 · entity, process, geo and Incoterm in the first clause. “Nine” corrects the live count — the page has eight lane blocks but Kenya/Tanzania is two countries, which is why the closing summary lists nine codes"
         },
         {
@@ -165,6 +168,9 @@
           ],
           "leads": [
             "13 remaining playbook markets"
+          ],
+          "marked": [
+            "Add a second, dimmer pin class for the **13 remaining playbook markets** — South Korea, Kenya, South Africa, Singapore, Norway, Chile, Zambia, Tanzania, Ghana, Peru, Trinidad & Tobago, Jordan — and a faint dot layer for the balance of the 95 screened. Three visual tiers on one map is the clearest possible statement of the research, and it is the slide the whole vision build exists to produce."
           ]
         }
       ],
@@ -192,6 +198,10 @@
           "leads": [
             "Eight blocks become nine.",
             "eyebrow · H2 · standfirst · four bullets"
+          ],
+          "marked": [
+            "**Eight blocks become nine.** The live US & EU block duplicates the USA block and bundles two markets with entirely different rules. Split into **United States** and **European Union**; the Incoterms table living inside it moves out to section 05. Nine blocks for nine countries, which reconciles the hero’s “eight markets” against the closing summary’s nine codes.",
+            "Every block keeps the live four-part shape: **eyebrow · H2 · standfirst · four bullets**, then a caveat line and two internal links. Standfirsts run 38–46 words, matching live."
           ]
         },
         {
@@ -575,6 +585,9 @@
           ],
           "leads": [
             "Move it out of the US & EU block to its own section"
+          ],
+          "marked": [
+            "**Move it out of the US & EU block to its own section**, directly after the map and before the market blocks. Incoterms apply to all nine lanes; burying them inside one regional block means a buyer reading the Australia block never sees them, and the anchor nav offers no way to reach them."
           ]
         },
         {
@@ -666,6 +679,9 @@
           ],
           "leads": [
             "Quotation in 48 hours, prototype in 48 to 72, production in three to four weeks."
+          ],
+          "marked": [
+            "Six stages, and at each one it is clear what we owe you and what we need from you. **Quotation in 48 hours, prototype in 48 to 72, production in three to four weeks.**"
           ],
           "note": "34 words · live is 16 · the live intro promises “what we need from you” and then the six steps never say it. This version delivers on that promise and puts the three timings in the opening block, where an export buyer is looking for them"
         },
@@ -806,6 +822,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "Every shipment leaves with a standard document set. Market-specific additions — PVoC, SGS, MSDS — are arranged at quotation stage."
+          ],
           "note": "Unchanged — 20 words, and it states both the default and the exception"
         }
       ],
@@ -840,6 +859,9 @@
           ],
           "leads": [
             "We respond with pricing, lead time and a recommended Incoterm within 48 hours."
+          ],
+          "marked": [
+            "Send component drawings, quantities and destination country. **We respond with pricing, lead time and a recommended Incoterm within 48 hours.**"
           ],
           "note": "21 words · live is 25 · 3 business days corrected to 48 hours, matching section 06 and the rest of the site"
         },
@@ -919,6 +941,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "Every shipment leaves our Nashik plant under the same ISO 9001:2015 quality system, regardless of destination. Incoterm, freight mode and documentation are agreed per order."
+          ],
           "note": "Unchanged — 26 words, accurate, and it says the one thing a first-time export buyer needs to hear"
         },
         {
@@ -990,6 +1015,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "ISO 9001:2015 certified manufacturer of precision moulded and extruded rubber components in Nashik, India. Sealing and anti-vibration parts to customer drawing, supplied to OEMs and distributors in 95 countries."
           ],
           "note": "29 words · live is 26 · opens with the entity definition, since the footer repeats on all 40 pages"
         },

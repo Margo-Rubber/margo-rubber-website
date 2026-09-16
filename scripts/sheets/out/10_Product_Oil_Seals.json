@@ -41,6 +41,9 @@
           "leads": [
             "Margo Rubber Products moulds rotary and static oil seals to your shaft diameter, housing bore and width at its ISO 9001:2015 certified plant in Nashik, India"
           ],
+          "marked": [
+            "**Margo Rubber Products moulds rotary and static oil seals to your shaft diameter, housing bore and width at its ISO 9001:2015 certified plant in Nashik, India** — in AEM, FKM, NBR, EPDM and silicone, to DIN 3760 and ISO 6194 profiles or cut to print. AEM seals go to Mahindra & Mahindra for transmission applications."
+          ],
           "note": "50 words · live is 30 · “one page, four compounds” comes out — it describes the website rather than the product, and understates the compound range by half"
         },
         {
@@ -97,6 +100,9 @@
           ],
           "leads": [
             "Delete all five chips."
+          ],
+          "marked": [
+            "**Delete all five chips.** All Standards · AS568 · ISO · JIS · DIN are O-ring dimensional catalogues. They filter a four-row table that has no standard column, so they do nothing, and they tell an engineer the page was templated rather than written. The free-text filter also comes out until there is a table long enough to need it."
           ]
         },
         {
@@ -117,6 +123,9 @@
           ],
           "leads": [
             "Figures are indicative ranges for the compound family — confirm against the datasheet for your application."
+          ],
+          "marked": [
+            "Compare service temperature and media resistance before specifying. **Figures are indicative ranges for the compound family — confirm against the datasheet for your application.**"
           ],
           "note": "24 words · live is 26 · the hedging in the live copy is correct and is kept"
         },
@@ -265,6 +274,9 @@
           ],
           "leads": [
             "AEM, FKM and NBR lead"
+          ],
+          "marked": [
+            "**AEM, FKM and NBR lead**, because those three cover almost all rotary sealing. EPDM and silicone follow. Neoprene, SBR and natural rubber sit last and each carries “rarely specified for rotary service” in its body — a specifying engineer needs to know they exist, and needs to know not to pick them for a shaft seal."
           ]
         },
         {
@@ -275,6 +287,9 @@
           ],
           "leads": [
             "Food-grade implies FDA compliance, which Margo does not hold"
+          ],
+          "marked": [
+            "“Food-grade and medical compounds available on request” in the silicone panel. **Food-grade implies FDA compliance, which Margo does not hold**, and /industries/medical-devices states plainly that ISO 13485 and FDA registration are not held. Replace with: “Biocompatible grades available; we do not hold FDA registration or ISO 13485.”"
           ]
         }
       ],
@@ -315,6 +330,9 @@
           ],
           "leads": [
             "Compound, hardness and dimensions are set from your specification; full dimensional data is issued with the quotation."
+          ],
+          "marked": [
+            "Every seal below is moulded to a customer drawing, a standard profile reference, or a worn sample. **Compound, hardness and dimensions are set from your specification; full dimensional data is issued with the quotation.**"
           ],
           "note": "38 words · live is 27"
         },
@@ -449,6 +467,9 @@
           ],
           "leads": [
             "View part → comes off every card."
+          ],
+          "marked": [
+            "**View part → comes off every card.** Nothing in this section links anywhere. The child URLs are 301-redirected to this category under the architecture decision, and the list exists to show range, not to route."
           ]
         }
       ],
@@ -491,6 +512,9 @@
           ],
           "leads": [
             "Margo produces in bulk against OEM schedules. Tell us the shaft, the bore, the width and the volume and we will quote it."
+          ],
+          "marked": [
+            "**Margo produces in bulk against OEM schedules. Tell us the shaft, the bore, the width and the volume and we will quote it.** **Minimum run is 10,000 pieces per part number, per compound**, or quoted against the part where size or complexity sets the economics. Prototype and first-article lots sit outside the minimum and are quoted separately."
           ],
           "note": "46 words · live is 34 · replaces “Margo is geared for volume procurement. If your project requires below-MOQ qualification samples…”, which states an MOQ twice by implication and tells a prototype buyer they are below the floor before they have asked. The replacement is the founder’s own phrasing from the commercial terms, with the three oil-seal dimensions named"
         },
@@ -587,6 +611,9 @@
           "leads": [
             "We reply within one business day, and a quotation with a compound recommendation follows inside 48 hours."
           ],
+          "marked": [
+            "Shaft diameter, housing bore, width and the fluid it runs in. That is enough to quote. **We reply within one business day, and a quotation with a compound recommendation follows inside 48 hours.** No drawing? Send the worn seal."
+          ],
           "note": "40 words · live is 33 · “within two working days” corrected — the sixth value the site publishes for this promise"
         },
         {
@@ -608,6 +635,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "ISO 9001:2015 certified manufacturer of precision moulded and extruded rubber components in Nashik, India. Sealing and anti-vibration parts to customer drawing, supplied to OEMs and distributors in 95 countries."
           ],
           "note": "29 words · live is 26 · opens with the entity definition, since the footer repeats on all 40 pages"
         },

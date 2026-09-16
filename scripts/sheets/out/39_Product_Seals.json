@@ -40,6 +40,9 @@
           "leads": [
             "Plunger cups, U-cups, rod and piston seals, V-packings and wipers — moulded to your stroke, working pressure and clearance gap at our ISO 9001:2015 plant in Nashik."
           ],
+          "marked": [
+            "**Plunger cups, U-cups, rod and piston seals, V-packings and wipers — moulded to your stroke, working pressure and clearance gap at our ISO 9001:2015 plant in Nashik.** A reciprocating seal is not an oil seal with a different name: it has no garter spring, it works a stroke rather than a rotation, and the rod finish matters more than the compound."
+          ],
           "note": "57 words · the second sentence is the page’s editorial spine and it corrects the single most common specification error in this category. Buyers order “oil seals” for reciprocating duty constantly, because both are lip seals and both live in a bore. Correcting it in the subhead is worth more than any product list"
         },
         {
@@ -107,6 +110,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "What a seal has to do is decided by how the parts move against each other. Get that right and the rest — compound, hardness, section — follows. Below is where each family lives on this site."
           ],
           "note": "36 words · short on purpose. This section is a signpost and a long intro would keep a reader on the wrong page"
         },
@@ -184,6 +190,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "These are pressure-energised sections: the medium pushes the lip against the sealing surface, so the seal grips harder as pressure rises and runs light when it falls. Which section suits depends on the pressure, whether the duty is single or double acting, and how much clearance the housing leaves."
           ],
           "note": "49 words · explains the operating principle once, so six cards do not each have to. Pressure energisation is what distinguishes this family from static seals and it is the mechanism section 06 builds on"
         },
@@ -328,6 +337,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "Send a drawing in PDF, DWG, DXF or STEP — or send the seal you are replacing and tell us how it failed. A hardened, glazed lip means heat or a rod finish that is too smooth to carry a film; a lip nibbled on one edge means extrusion into the clearance; scoring across the lip means the rod is too rough or the wiper has failed."
+          ],
           "note": "63 words · the house diagnostic paragraph, and here it names three failure modes that map onto the three inputs buyers omit. Every failure named is one a buyer can see on the part in their hand, which is what makes the paragraph convert rather than impress"
         }
       ],
@@ -366,6 +378,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "A reciprocating seal is submerged in the medium and dragged across a surface thousands of times an hour, so the compound is chosen for the fluid and the hardness for the pressure. Every compound we mix is available. These are ranked for reciprocating duty."
           ],
           "note": "45 words · carries the client instruction of 2026-09-02 — every part in every compound, nothing removed, only ranked"
         },
@@ -439,6 +454,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "For high-pressure hydraulic rod and piston seals, polyurethane is usually the correct material and we do not mould it. Our reciprocating seals are rubber, for pump, sprayer, dosing and lower-pressure cylinder duty. If your specification calls for polyurethane, we will tell you rather than substitute."
+          ],
           "note": "46 words · the scope limit, on the page rather than in a footnote. Polyurethane is the default for hydraulic rod seals and Margo cannot make it — it is not one of the eight, it appears nowhere else on this site, and it is not a vulcanised rubber, the same three reasons sheet 21 struck it from mining and sheet 38 excludes it from lining. Stating it here stops an entire class of enquiry that was never going to close"
         }
       ],
@@ -478,6 +496,9 @@
           "leads": [
             "Too rough and the surface abrades the lip; too smooth and there is nothing for the film to sit in, so the lip runs dry and glazes."
           ],
+          "marked": [
+            "A reciprocating seal needs a thin film of the medium under the lip to survive, and the rod finish is what holds it. **Too rough and the surface abrades the lip; too smooth and there is nothing for the film to sit in, so the lip runs dry and glazes.** Ra 0.1 to 0.4 µm is the usual window for a hard chrome-plated rod. Tell us the finish and the plating — if the rod is ground rather than plated, or has been polished during a rebuild, that changes our recommendation more than the compound does."
+          ],
           "note": "94 words · the extractable answer for this page. “Too smooth is as bad as too rough” is genuinely surprising to most buyers and it is correct. The rebuild-polishing detail is the kind of specific that only comes from having seen the failure — a rebuilt cylinder with a mirror rod eats seals, and nobody warns the maintenance team"
         },
         {
@@ -488,6 +509,9 @@
           ],
           "leads": [
             "Three things fix it and they trade against each other:"
+          ],
+          "marked": [
+            "Under pressure a rubber section is pushed towards the clearance between rod and housing. If the gap is too wide for the pressure and the hardness, the seal extrudes into it and the extruded edge is nibbled away on every stroke — the classic bitten-lip failure. **Three things fix it and they trade against each other:** close the gap, raise the hardness, or fit a back-up ring behind the seal. That is why we ask for the clearance and the pressure together, and why a harder compound is sometimes the answer to a leak rather than a softer one."
           ],
           "note": "98 words · explains the 70–90 Shore A band in section 04 without cross-referencing it, names the failure a buyer can identify on the part, and ends on a counter-intuitive but correct piece of advice. Together with panel 1 this section is the reason a specifier would choose this supplier over a catalogue"
         }
@@ -579,6 +603,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "Material test reports, dimensional inspection sheets and a certificate of conformance ship with every consignment. Batch records are retained per shipment and are available on request under NDA. Seals are packed so the lip is not deformed in transit."
           ],
           "note": "40 words · the standard string with a part-specific packing sentence, matching the oil-seal sheets’ sealing-lip note"
         }
@@ -769,6 +796,9 @@
           ],
           "leads": [
             "Our engineering team responds within 48 hours with a section and compound recommendation, dimensional confirmation and a quotation."
+          ],
+          "marked": [
+            "Send the rod or bore diameter, the groove, the clearance and the working pressure — or send the seal that failed and the rod finish, and we will tell you what killed it. **Our engineering team responds within 48 hours with a section and compound recommendation, dimensional confirmation and a quotation.**"
           ],
           "note": "51 words · both entry points at the point of conversion, and the second is the one that converts. 48 hours is the sitewide figure"
         },

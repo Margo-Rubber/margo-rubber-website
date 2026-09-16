@@ -35,6 +35,9 @@
           "leads": [
             "Margo Rubber Products operates a documented Quality Management System audited and certified to ISO 9001:2015 under certificate 09111526A, issued by Integral Certification Ltd and valid to 21 February 2027."
           ],
+          "marked": [
+            "**Margo Rubber Products operates a documented Quality Management System audited and certified to ISO 9001:2015 under certificate 09111526A, issued by Integral Certification Ltd and valid to 21 February 2027.** The certified scope covers the manufacture of moulded rubber components."
+          ],
           "note": "40 words · live is 26 · certificate number, issuing body, expiry and scope all in the first two sentences. These are the four things a supplier-qualification auditor is looking for, and live they appear either as placeholders or not at all"
         },
         {
@@ -77,6 +80,12 @@
             "No replacement copy is written for it and none should be invented.",
             "One consequence to carry forward, because it does not go away with the section:",
             "moulded"
+          ],
+          "marked": [
+            "DELETE THIS ENTIRE SECTION FROM THE WEBSITE.",
+            "Remove the whole block — the eyebrow, the H2, both sub-headings, all seven bullets, the IATF paragraph and the closing audit note. **No replacement copy is written for it and none should be invented.** The page runs hero → certificate → manufacturing → quality system → documentation request, and loses roughly 877px.",
+            "**One consequence to carry forward, because it does not go away with the section:** this block is currently the only place on the site that addresses IATF 16949, ISO 14001 and ISO 45001 at all. Deleting it does **not** license those claims elsewhere as held certifications — each now carries a client-instructed status with a target year, identical on all four pages. The IATF, ISO 14001, ISO 45001, RoHS and REACH entries on /products and /about must still be corrected to In Progress or removed, exactly as sheets 02 and 03 specify. Otherwise the site goes from stating a truth and contradicting it, to simply making the false claim.",
+            "The scope limit itself — certificate 09111526A covers **moulded** components only — is still required, and is carried in section 03 below as a correction to the certificate block, where an auditor reads it."
           ]
         }
       ],
@@ -196,6 +205,9 @@
           "leads": [
             "does a clean PDF scan exist"
           ],
+          "marked": [
+            "The button is wired to nothing and labelled with an invented file size. Two questions: **does a clean PDF scan exist**, and **does the certificate carry the old MIDC Ambad address?** If it does, publishing the scan next to a Vilholi letterhead creates the exact mismatch this section is meant to close. Resolve the address question first, then publish. A certifications page whose certificate download does not work is worse than one with no download at all."
+          ],
           "lits": [
             "ISO 9001:2015 · Certificate 09111526A · Integral Certification Ltd\n[ ↓ Download PDF ]"
           ],
@@ -223,6 +235,9 @@
           ],
           "leads": [
             "Process parameters are controlled and recorded per batch under the ISO 9001:2015 QMS, with cure records retrievable per production batch."
+          ],
+          "marked": [
+            "Our Nashik plant runs compression and transfer moulding, injection moulding, continuous-cure extrusion and rubber-to-metal bonding. **Process parameters are controlled and recorded per batch under the ISO 9001:2015 QMS, with cure records retrievable per production batch.**"
           ],
           "note": "36 words · live is 26 · injection moulding added — it is on every other capability list on the site and missing from this one"
         },
@@ -303,6 +318,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "ISO 9001:2015 is a framework. Below is how it operates on the floor at Margo Rubber Products — no marketing language, just the actual process."
+          ],
           "note": "Unchanged. 25 words, and the page delivers on it"
         },
         {
@@ -341,6 +359,9 @@
           "leads": [
             "For supplier qualification audits:"
           ],
+          "marked": [
+            "**For supplier qualification audits:** we can provide our Quality Manual, process flow diagrams, control plans and FMEA documentation on request, under NDA where required. On-site quality and supply-chain audits are welcomed, not negotiated around."
+          ],
           "note": "35 words · live is 40 · the closing clause is lifted from the company profile and is a stronger statement than anything else in this block. CONFIRM that FMEA documentation exists — it is named in the live copy and appears in no source document · CONFIRM"
         }
       ],
@@ -378,6 +399,9 @@
           ],
           "leads": [
             "We respond within one business day."
+          ],
+          "marked": [
+            "For supplier qualification, second-party audits or quoting, tell us what you need. **We respond within one business day.**"
           ],
           "note": "19 words · live is 20 · one business day is correct here — this is a document request, not a quotation, and the 48-hour rule does not apply"
         },
@@ -452,6 +476,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "ISO 9001:2015 certified manufacturer of precision moulded and extruded rubber components in Nashik, India. Sealing and anti-vibration parts to customer drawing, supplied to OEMs and distributors in 95 countries."
           ],
           "note": "29 words · live is 26 · opens with the entity definition, since the footer repeats on all 40 pages"
         },

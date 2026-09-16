@@ -47,6 +47,9 @@
           "leads": [
             "Closed-cell and open-cell cellular elastomers moulded, extruded and die-cut at our ISO 9001:2015 certified plant in Nashik, India"
           ],
+          "marked": [
+            "**Closed-cell and open-cell cellular elastomers moulded, extruded and die-cut at our ISO 9001:2015 certified plant in Nashik, India** — engineered for thermal insulation, acoustic damping and precision sealing, from EPDM weatherstripping to silicone medical-grade profiles."
+          ],
           "note": "41 words · live is 30 · the live sentence is strong and its second half is kept intact. What is added is the entity, the geo and the three processes. “VMQ medical-grade” becomes “silicone medical-grade” — the polymer abbreviation means nothing to a procurement search and the full word is what people type"
         },
         {
@@ -133,6 +136,9 @@
           ],
           "leads": [
             "It controls water absorption, compression set, thermal resistance and acoustic performance simultaneously"
+          ],
+          "marked": [
+            "Specifying cell structure is the first decision in foam engineering. **It controls water absorption, compression set, thermal resistance and acoustic performance simultaneously** — which is why it comes before compound, not after it."
           ],
           "note": "35 words · live is 26 · the live sentence is excellent and is kept whole. The closing clause is added because it states the ordering principle the section is demonstrating and never says out loud"
         },
@@ -250,6 +256,9 @@
           "leads": [
             "Pick the tab that matches your environment; the full comparison is in the table below."
           ],
+          "marked": [
+            "Five elastomer families, each optimised for distinct thermal, chemical and mechanical operating envelopes. **Pick the tab that matches your environment; the full comparison is in the table below.**"
+          ],
           "note": "29 words · live is 17 · the addition tells a visitor the two blocks are the same data in two views, which stops them reading the tabs one at a time looking for something the table does not have"
         },
         {
@@ -260,6 +269,9 @@
           ],
           "leads": [
             "the same five fields as the table row in section 04."
+          ],
+          "marked": [
+            "Each panel shows the compound code, full name, hardness range, service temperature and key applications — **the same five fields as the table row in section 04.** Use one data source for both. **The corrected temperature values in section 04 must render here too**, or the page will show two different figures for the same compound depending on which block a visitor reads."
           ],
           "note": "No copy is written separately for this section on purpose. Duplicating the compound copy into a second block is how the site ended up with a hero, a table and an accordion naming three different compound sets on the bushes page. One record, two views"
         }
@@ -350,6 +362,9 @@
           ],
           "leads": [
             "Sponge grades carry lower service temperatures than the same compound in solid rubber."
+          ],
+          "marked": [
+            "**Sponge grades carry lower service temperatures than the same compound in solid rubber.** The cell structure degrades before the polymer does, so a closed-cell EPDM sponge is rated below a solid EPDM moulding — the figures above are cellular ratings to ASTM D1056 and are not the same as the solid-compound table published elsewhere on this site. **Constant service is the figure to design to; intermittent covers short excursions, not duty.** Density and cell structure both shift these limits, so confirm against the grade quoted for your part."
           ],
           "note": "83 words · live has no footnote at all · this paragraph is what stops the next consistency audit reading this table as drift. Nine category pages disagree with the homepage compound table by accident; this one disagrees on purpose, and until now nothing on the page said so. It also teaches the constant-versus-intermittent distinction, which is the single most misread thing in a rubber datasheet"
         }
@@ -473,6 +488,9 @@
           "leads": [
             "The assembly step it removes is the one that causes most field failures"
           ],
+          "marked": [
+            "Pre-applied pressure-sensitive adhesive converts any foam compound into an instant-bond sealing tape. **The assembly step it removes is the one that causes most field failures** — a separately applied adhesive cures at whatever rate the line allows, on whatever surface preparation the operator had time for. A factory-laminated tape arrives with the bond already made."
+          ],
           "note": "56 words · live is 30 · “reducing assembly time by up to 40%” comes off. It is an up to percentage with no study, no customer and no measurement, and it is the only marketing-style claim on an otherwise expert page. The replacement argues the same benefit from the mechanism instead, which is both true and more persuasive to the engineer who has actually watched a hand-applied bead fail"
         },
         {
@@ -537,6 +555,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "Surface energy of the substrate determines adhesive selection. For low-surface-energy substrates such as PP, PE or powder-coated panels, specify acrylic adhesive with a primer or corona pre-treatment. For metals and glass, either system performs; rubber adhesive delivers superior initial grab."
+          ],
           "note": "[no change] — the most specialised paragraph on this website. Surface energy is the actual reason foam tapes fail in the field, it is understood by almost nobody outside the adhesives trade, and no competing Indian supplier page mentions it. It should be given its own <h3> so it can be retrieved on its own"
         }
       ],
@@ -578,6 +599,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "Margo foam compounds installed across four critical industrial environments."
           ],
           "note": "[no change]"
         },
@@ -658,6 +682,9 @@
           "leads": [
             "within 48 hours"
           ],
+          "marked": [
+            "Our engineers can size a compound and a density from four operating parameters. No lengthy RFQ forms — just these four data points, and a recommendation back **within 48 hours**."
+          ],
           "note": "31 words · live is 28 · three words added. The live block asks the buyer to assemble four parameters and never says what they get or when. 48 hours is the site constant and it belongs in the sentence that asks for effort — the same edit made to the extrusion page’s version"
         },
         {
@@ -736,6 +763,9 @@
           ],
           "leads": [
             "Each card links through to the industry page for the moulded and extruded parts we make alongside the foam."
+          ],
+          "marked": [
+            "Nine sectors served, each with its own compound preference. **Each card links through to the industry page for the moulded and extruded parts we make alongside the foam.**"
           ],
           "note": "28 words · live is 9 · the count changes from eight to nine and the linking sentence is added. This page currently has no outbound links in its body at all"
         },
@@ -854,6 +884,9 @@
           "leads": [
             "our engineers respond within 48 hours with a compound, a density and a cut form"
           ],
+          "marked": [
+            "Those two numbers decide density and cell structure before anything else is discussed. Send them with the temperature range and what the foam will contact, and **our engineers respond within 48 hours with a compound, a density and a cut form** — or send a sample of the foam you are replacing, which answers all four at once."
+          ],
           "note": "57 words · new copy — the live block has a heading and buttons but no body paragraph carrying the promise. It explains why those two inputs are the ones asked for, states the turnaround, and offers the shortcut a maintenance buyer will actually take"
         },
         {
@@ -896,6 +929,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "ISO 9001:2015 certified manufacturer of precision moulded and extruded rubber components in Nashik, India. Sealing and anti-vibration parts to customer drawing, supplied to OEMs and distributors in 95 countries."
           ],
           "note": "29 words · live is 26 · opens with the entity definition, since the footer repeats on all 40 pages"
         },

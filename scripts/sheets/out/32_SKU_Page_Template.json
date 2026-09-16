@@ -38,6 +38,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "{Part Name} manufactured to order at our ISO 9001:2015 certified plant in Nashik. Compound, hardness and dimensions are set from your drawing or sample."
+          ],
           "note": "[no change] — this is the best sentence on the template. It is true, it is specific, and every defect on this page is a contradiction of it. The spec block below contradicts “set from your drawing”; the IN STOCK badge contradicts “to order”; the kilogram selector contradicts both"
         },
         {
@@ -164,6 +167,10 @@
           "leads": [
             "All 31 pages share three images and none shows the part.",
             "One phone photograph per part on a plain background fixes this"
+          ],
+          "marked": [
+            "**All 31 pages share three images and none shows the part.** Two of the three are metalworking photographs — their own alt text reads “Grinding and finishing work throwing sparks in the workshop” and “Operator setting up a machining pass on the shop floor”. **A rubber moulding plant has neither.** The third is a generic tray of mouldings repeated 266 times across the set.",
+            "**One phone photograph per part on a plain background fixes this**, and it is the highest-value hour anyone could spend on this website. Until then the two metalworking images should come off every page — **a wrong photograph is worse than no photograph.**"
           ]
         },
         {
@@ -174,6 +181,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "Drawing available on request under NDA. Send your part number or a sample and we will return a dimensioned drawing for approval before tooling."
           ],
           "note": "24 words · replaces the empty frame until real cross-sections exist. It is honest, it is an offer rather than an apology, and “before tooling” is the reassurance an OEM buyer is actually looking for. A part drawing is also the single most valuable asset this template could carry — see section 09"
         }
@@ -408,6 +418,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "Compound and geometry selected for the service life your application needs — continuous mechanical stress, UV exposure or fluid contact."
+          ],
           "note": "20 words · live is 15 · “Engineered for long service life” is an adjective, not a claim. Naming the three failure modes says the same thing and tells the buyer what to send"
         },
         {
@@ -418,6 +431,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "Dimensional conformity to ISO 3302-1, class agreed per part — injection, compression or transfer moulded to suit the geometry."
           ],
           "note": "19 words · live is 8 · two fixes in one line. ISO 3302-1 replaces the vague “ISO-controlled”, which names no standard.\nAnd “compression moulding” is wrong on a third of these pages. Six oil seals and an O-ring are injection or transfer moulded — a seal engineer knows that on sight. Margo runs all three processes; the template just names one"
         },
@@ -430,6 +446,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "Produced against the standard your drawing calls out. Tell us the specification and we confirm what we can supply against it."
+          ],
           "note": "21 words · live is 9 · “the international standard applicable to your market” is not a thing — there is no single standard, and the sentence implies Margo already meets whatever it is. The replacement is the same position the water and medical sheets take on approvals"
         },
         {
@@ -440,6 +459,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "In-house compounding across the eight rubbers we mix, blended to your operating conditions."
           ],
           "note": "14 words · live is 13 · “bespoke rubber blends” becomes a number. Eight is checkable against the homepage table and it is the claim that separates a compounder from a trading house"
         }
@@ -574,6 +596,9 @@
           ],
           "leads": [
             "it claims ISO 9001:2015 and nothing else."
+          ],
+          "marked": [
+            "After /why-margo, which lists five certifications and holds one, this template deserves saying plainly: **it claims ISO 9001:2015 and nothing else.** No IATF. No TÜV SÜD. No CE marking. **The production-metrics table prints “On request” where it has no figure rather than inventing one**, and the facility video says “Film pending” instead of showing a stock clip. **Whoever built this component made the honest call four times in one section.** Do not let a rewrite undo that."
           ]
         },
         {
@@ -725,6 +750,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "Answers to the most common questions from engineering teams and procurement managers worldwide."
+          ],
           "note": "[no change] — and the five questions are genuinely the right five. Whoever chose them understood the buyer"
         },
         {
@@ -735,6 +763,9 @@
           ],
           "leads": [
             "The minimum run is 10,000 pieces per part number, per compound"
+          ],
+          "marked": [
+            "We supply in bulk. **The minimum run is 10,000 pieces per part number, per compound**, or quoted against the part where geometry or tooling makes that unrealistic. Prototype and first-article lots sit outside the minimum."
           ],
           "lits": [
             "What is the minimum order quantity for this part?"
@@ -750,6 +781,9 @@
           "leads": [
             "A worn part measures smaller than it was made"
           ],
+          "marked": [
+            "Yes. Send the physical sample or the drawing and we will produce a dimensioned drawing and confirm compound selection before tooling. **A worn part measures smaller than it was made** — we dimension to the original intent, not to the wear, and confirm with you first."
+          ],
           "lits": [
             "Can you match a competitor specification or reverse-engineer an existing part?"
           ],
@@ -763,6 +797,9 @@
           ],
           "leads": [
             "If you only have a sample, send the sample"
+          ],
+          "marked": [
+            "PDF, DWG, DXF and STEP. A dimensioned 2D drawing with tolerances is enough to quote; a 3D model helps with tooling. **If you only have a sample, send the sample** — we will produce the drawing."
           ],
           "lits": [
             "What file formats do you accept for drawings?"
@@ -778,6 +815,9 @@
           "leads": [
             "ASTM D412"
           ],
+          "marked": [
+            "Yes. Material test reports, dimensional inspection sheets and a certificate of conformance ship with every consignment, and batch records are retained per shipment. Hardness, tensile to **ASTM D412** and compression set to **ASTM D395 Method B** are tested in-house."
+          ],
           "lits": [
             "Do you provide material test reports with each shipment?"
           ],
@@ -791,6 +831,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "TT and LC accepted, discussed per order. Ex-works Nashik or FOB Nhava Sheva, with sea and air freight via established forwarders. Commercial invoice, packing list and certificate of origin are issued with every consignment."
           ],
           "lits": [
             "What are your payment and delivery terms for international orders?"
@@ -877,6 +920,9 @@
           "leads": [
             "We respond within 48 hours."
           ],
+          "marked": [
+            "Send your drawing or a sample. We confirm compound, hardness and tolerance, then quote against your annual quantity. **We respond within 48 hours.**"
+          ],
           "note": "23 words · live is 24 · only the response time changes. “Quote against your annual quantity” is exactly right for a bulk moulder and it is the phrase that tells an OEM buyer this is a programme supplier, not a catalogue.\n“Within 1 business day (IST)” is the sixth response commitment on this website — and multiplied across 31 pages it is by far the most-published. 48 hours is the figure this set standardises on and the only one that survives a bad week"
         },
         {
@@ -928,6 +974,10 @@
           "leads": [
             "compound variants of a category",
             "These are not SKUs and they should not be SKU pages."
+          ],
+          "marked": [
+            "/oil-seals/epdm, /oil-seals/fkm, /oil-seals/nbr, /oil-seals/silicone, /gaskets/epdm and /pads-stoppers-caps/epdm-pad are **compound variants of a category** sitting in the same URL space as actual parts like Glove Box Stopper. **Their content is otherwise identical to each other**, which makes four near-duplicate oil-seal pages whose only difference is a heading.",
+            "**These are not SKUs and they should not be SKU pages.** Compound choice already has a dedicated selector in section 04 of every page. The four oil-seal variants collapse into the /products/oil-seals category page as filter states, or become one page each with genuinely different content — a real application, a real dimension range, a real reason to exist separately."
           ]
         },
         {
@@ -940,6 +990,10 @@
           "leads": [
             "The page titled “EPDM Oil Seals” offers FKM, Silicone and NBR in its compound selector. EPDM is not among them.",
             "This is the clearest possible demonstration of why compound lists have to be per-part."
+          ],
+          "marked": [
+            "**The page titled “EPDM Oil Seals” offers FKM, Silicone and NBR in its compound selector. EPDM is not among them.** The compound list is inherited from the oil-seals category default, and nobody checked it against a page whose entire identity is that compound.",
+            "**This is the clearest possible demonstration of why compound lists have to be per-part.** It is a two-line fix and it is currently live."
           ]
         }
       ],

@@ -38,6 +38,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "Technical reference library for engineers and procurement teams specifying precision rubber seals, gaskets and moulded components."
+          ],
           "note": "17 words · live is 17 · serial comma removed for house style. “Engineers and procurement teams” is the correct dual audience and the seven topics genuinely serve both"
         },
         {
@@ -126,6 +129,9 @@
           "leads": [
             "silicone −60 to +220 °C, EPDM −40 to +140 °C"
           ],
+          "marked": [
+            "Compares silicone and EPDM across thermal stability, weathering and fluid compatibility — **silicone −60 to +220 °C, EPDM −40 to +140 °C** — and the trade-off that decides most specifications: EPDM resists ozone and weather, silicone survives the higher temperature, and neither tolerates mineral oil."
+          ],
           "lits": [
             "MATERIAL COMPARISON · 5 min read\nSilicone vs EPDM: Selecting the Right Elastomer for High-Temperature Seals",
             "[ Read Guide → /resources/silicone-vs-epdm-high-temperature-seals ]"
@@ -141,6 +147,9 @@
           "leads": [
             "FKM −20 to +250 °C, NBR −30 to +120 °C"
           ],
+          "marked": [
+            "Compares fluorocarbon and nitrile across temperature, chemical resistance and cost-in-use — **FKM −20 to +250 °C, NBR −30 to +120 °C**. FKM is the answer where temperature or aggressive media demand it; NBR is the answer everywhere else, and it costs a fraction as much."
+          ],
           "lits": [
             "MATERIAL COMPARISON · 6 min read\nFKM vs NBR: Which Rubber Is Right for Your Application?",
             "[ Read Guide → /resources/fkm-vs-nbr-oil-seal-guide ]"
@@ -155,6 +164,9 @@
           ],
           "leads": [
             "ASME B16.21"
+          ],
+          "marked": [
+            "Sets out a decision framework across the compounds we mix — FKM, NBR, EPDM, silicone and neoprene — with temperature ranges, hardness bands and chemical compatibility, and the flange standards a gasket is drawn to: **ASME B16.21** for nonmetallic flat gaskets, **EN 1514-1**, **AWWA C111/A21.11** for water."
           ],
           "lits": [
             "MATERIAL COMPARISON · 8 min read\nGasket Material Selection Guide",
@@ -206,6 +218,9 @@
           "leads": [
             "ISO 3601-1 is the current standard and its size code matches the AS568 dash number; BS 1806 was superseded by BS ISO 3601 but is still widely quoted"
           ],
+          "marked": [
+            "Cross-references the international sizing standards with tolerance and groove-dimension guidance. **ISO 3601-1 is the current standard and its size code matches the AS568 dash number; BS 1806 was superseded by BS ISO 3601 but is still widely quoted**, so a working chart has to carry all three."
+          ],
           "lits": [
             "SIZING & SPEC · 5 min read\nO-Ring Size Chart: AS568, ISO 3601-1 and BS 1806 Explained",
             "[ Read Guide → /resources/o-ring-size-chart ]"
@@ -220,6 +235,9 @@
           ],
           "leads": [
             "We bond in-house"
+          ],
+          "marked": [
+            "Covers bond geometry, surface preparation and the failure modes that decide whether a bonded part lasts — across the five applications where the bond is the part. No load-rating table: a load rating belongs to a part, not to a bond. **We bond in-house** — bushes, mounts and bonded seals — so the guide is written from the tooling and the process rather than from a textbook."
           ],
           "lits": [
             "SIZING & SPEC · 7 min read\nRubber-to-Metal Bonded Parts: Design & Specification Guide",
@@ -271,6 +289,9 @@
           "leads": [
             "the three structural questions that separate a manufacturer from a trading house: who mixes the compound, who owns the tooling, and whose name is on the batch record."
           ],
+          "marked": [
+            "Sets out a due-diligence checklist for quality systems, tooling ownership, capacity and documentation — including **the three structural questions that separate a manufacturer from a trading house: who mixes the compound, who owns the tooling, and whose name is on the batch record.**"
+          ],
           "lits": [
             "SOURCING & BUYER DECISION · 5 min read\nHow to Evaluate a Precision Rubber Manufacturer: 8 Questions to Ask",
             "[ Read Guide → /resources/how-to-evaluate-a-rubber-manufacturer ]"
@@ -285,6 +306,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "Compares lead time, quality systems, minimum order and total landed cost for procurement managers assessing supply-chain risk."
           ],
           "lits": [
             "SOURCING & BUYER DECISION · 6 min read\nIndia vs China: Sourcing Rubber Seals & Gaskets for Export Markets",
@@ -327,6 +351,9 @@
           ],
           "leads": [
             "We answer specification questions whether or not there is an order behind them"
+          ],
+          "marked": [
+            "Our technical team in Nashik is available for application review, compound selection and custom moulding enquiries. **We answer specification questions whether or not there is an order behind them** — and we respond within 48 hours."
           ],
           "note": "37 words · live is 17 · two additions. The first is the offer that makes a reference library work: answering a specification question with no order attached is how a supplier earns the enquiry that follows, and Margo already does it — the seven placeholders all say so.\nThe 48-hour response time is the sitewide constant, and this page publishes none today"
         },
@@ -401,6 +428,9 @@
           "leads": [
             "{name}, {role}"
           ],
+          "marked": [
+            "Technical guides are reviewed before publication by **{name}, {role}**, at our Nashik works."
+          ],
           "note": "13 words · new line, and it is the E-E-A-T lever for the whole library. The stub already promises review “by our team in Nashik” — naming the reviewer converts a claim into a credential. A named engineer at the works is a signal almost no competitor library carries, and it costs one sentence. who reviews · who reviews"
         },
         {
@@ -438,6 +468,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "ISO 9001:2015 certified manufacturer of precision moulded and extruded rubber components in Nashik, India. Sealing and anti-vibration parts to customer drawing, supplied to OEMs and distributors in 95 countries."
           ],
           "note": "29 words · live is 26 · opens with the entity definition, since the footer repeats on all 40 pages"
         },

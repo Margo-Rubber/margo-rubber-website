@@ -41,6 +41,9 @@
           "leads": [
             "Margo Rubber Products moulds convoluted bellows and protective boots to your stroke, convolution count and service temperature at its ISO 9001:2015 certified plant in Nashik, India"
           ],
+          "marked": [
+            "**Margo Rubber Products moulds convoluted bellows and protective boots to your stroke, convolution count and service temperature at its ISO 9001:2015 certified plant in Nashik, India** — in natural rubber, neoprene, NBR, EPDM, AEM, FKM and silicone. Made to your drawing, direct from the factory, with no trading margin."
+          ],
           "note": "48 words · live is 24 · the MOQ comes out of the subhead, which is the second sentence a buyer reads on this page and the only category page that puts a piece count there. “Factory-direct, no trading margin” is kept — it is a real differentiator against the distributors this page competes with, and it belongs in prose rather than in a stat tile"
         },
         {
@@ -105,6 +108,9 @@
           ],
           "leads": [
             "eight"
+          ],
+          "marked": [
+            "The live table renders four rows. This section specifies **eight**, so the developer must add four and the component should take an arbitrary list. **All four column headings change**, and the size range moves out of the table into the intro, because a diameter limit is a tooling question rather than a property of the compound — publishing a different diameter range per material implies a constraint that does not exist. **The column count stays at four and the chip count stays at five**, so nothing else about the component changes."
           ]
         },
         {
@@ -131,6 +137,9 @@
           ],
           "leads": [
             "A bellows is specified by convolution count, free length, compressed length and stroke as well as diameter"
+          ],
+          "marked": [
+            "**A bellows is specified by convolution count, free length, compressed length and stroke as well as diameter** — send those with the drawing and we will quote it. We mould from **Ø10 mm to Ø150 mm** across all eight compounds; the diameter limit is set by tooling, not by the material."
           ],
           "note": "51 words · live is 30 · the second sentence is new and carries the size range the table used to fragment across four rows. The Ø10–Ø150 mm figure aggregates the four diameter bands the live table already publishes, so it states nothing the site has not already said"
         },
@@ -241,6 +250,9 @@
           "leads": [
             "Flex-fatigue resistance is a relative ranking between compound families, not a cycle count."
           ],
+          "marked": [
+            "Showing 8 of 8 entries. **Flex-fatigue resistance is a relative ranking between compound families, not a cycle count.** Cycle life for a given part depends on stroke, convolution geometry, wall thickness, installed pre-load and temperature as much as on the compound, and is established by qualification testing on that part — to ISO 132, ASTM D430 or ASTM D813 — not read off a table. **Tell us the stroke and the target cycle life and we will qualify against it.** Ranges are typical values for the compound family and are not a specification for a particular part; see our technical disclaimer."
+          ],
           "note": "84 words · live is 26 · the longest footnote in the set, and the one doing the most work. It is what converts an unsupportable number into a defensible position, and the offer in bold is the part that opens an enquiry. This is the paragraph that removes the rubric cap on this section"
         }
       ],
@@ -267,6 +279,9 @@
           ],
           "leads": [
             "eight"
+          ],
+          "marked": [
+            "The live accordion renders four panels. This section specifies **eight**. The developer must extend the component to take an arbitrary list — four new panels: **natural rubber, neoprene, AEM and SBR**. This is the same shared component as the O-rings, oil seals and gaskets pages, so extending it once lands on all eleven categories. If the Figma shows four, the Figma is short by four and needs the extra panels drawn."
           ]
         },
         {
@@ -293,6 +308,9 @@
           ],
           "leads": [
             "Name the medium, the operating temperature and the stroke, and we will tell you which to specify."
+          ],
+          "marked": [
+            "On a bellows the compound is chosen for two things at once: what it touches, and how many times it has to flex. **Name the medium, the operating temperature and the stroke, and we will tell you which to specify.**"
           ],
           "note": "42 words · live is 27 · the live intro says “pressure class”, which is a flange-gasket concept inherited from the template. On a bellows the second axis is stroke and cycle count, and naming it correctly is what tells an engineer the page was written by someone who has made one"
         },
@@ -413,6 +431,9 @@
           "leads": [
             "Send the drawing with the stroke, convolution count and free length, plus the compound and the volume, and we will quote it."
           ],
+          "marked": [
+            "Margo produces in bulk against OEM schedules. **Send the drawing with the stroke, convolution count and free length, plus the compound and the volume, and we will quote it.** **Minimum run is 10,000 pieces per part number, per compound**, or quoted against the part where size or complexity sets the economics. Prototype and first-article lots sit outside the minimum and are quoted separately."
+          ],
           "note": "50 words · live is 34 · replaces “Margo is geared for volume procurement. If your project requires below-MOQ qualification samples…”, which states a minimum twice by implication and tells a prototype buyer they are below the floor before they have asked. The founder’s own phrasing from the commercial terms, with the bellows inputs named"
         },
         {
@@ -499,6 +520,9 @@
           "leads": [
             "Our engineering team responds within 48 hours with dimensional confirmation, the compound datasheet and a quotation."
           ],
+          "marked": [
+            "Send your drawing with the stroke, convolution count and free length, or a sample of the bellows you are replacing, with the compound and the volume. **Our engineering team responds within 48 hours with dimensional confirmation, the compound datasheet and a quotation.**"
+          ],
           "note": "42 words · live is 34 · “within two working days” becomes 48 hours. The site publishes six different response times; two working days is the slowest-reading of them and contradicts the 48 hours promised on the homepage, the contact page and the commercial terms directly above this block. “A sample of the bellows you are replacing” is added because replacement boots arrive as worn parts far more often than as drawings, and a worn boot is the one thing that tells us the stroke"
         },
         {
@@ -548,6 +572,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "ISO 9001:2015 certified manufacturer of precision moulded and extruded rubber components in Nashik, India. Sealing and anti-vibration parts to customer drawing, supplied to OEMs and distributors in 95 countries."
           ],
           "note": "29 words · live is 26 · opens with the entity definition, since the footer repeats on all 40 pages"
         },

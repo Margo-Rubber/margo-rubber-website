@@ -40,6 +40,9 @@
           "leads": [
             "Window, door and hatch seals in extruded EPDM, cellular acoustic insulation, gaskets and vibration mounts — made to the builder’s drawing at our ISO 9001:2015 plant in Nashik."
           ],
+          "marked": [
+            "**Window, door and hatch seals in extruded EPDM, cellular acoustic insulation, gaskets and vibration mounts — made to the builder’s drawing at our ISO 9001:2015 plant in Nashik.** We supply rolling stock builders, integrators and shipyards who hold their own approvals and buy components to their own specification."
+          ],
           "note": "48 words · the second sentence is the most important on the page and it is deliberately in the subhead rather than buried in section 06. It scopes the offer, sets the customer type, and pre-empts the qualification conversation before a buyer has scrolled once"
         },
         {
@@ -269,6 +272,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "Rolling stock and vessels are outdoor assets with thirty-year lives, washed regularly and exposed continuously. Seals fail by ozone cracking, UV embrittlement and salt attack long before they reach a temperature limit. Every compound we mix is available; these are ranked for transport duty."
+          ],
           "note": "45 words · same mechanism-first framing as the construction sheet, because the failure mode is the same one. “Washed regularly” is the sector-specific addition — detergent and high-pressure washing is a real ageing input on both trains and ships, and almost nobody mentions it"
         },
         {
@@ -443,6 +449,9 @@
           ],
           "leads": [
             "We hold neither, and we will not imply otherwise."
+          ],
+          "marked": [
+            "Rail and marine are approval-gated sectors. Supplying rubber components directly into an Indian Railways project requires RDSO vendor approval for the item; supplying into a classification society’s surveyed scope requires type approval from that society. **We hold neither, and we will not imply otherwise.** What we do is supply the builders, integrators and shipyards who hold their own approvals and buy components made to their own drawings — which is most of the rubber on a train or a vessel, and all of it in non-safety-critical positions."
           ],
           "note": "85 words · the extractable answer for this page. It names both gates, states the position, and immediately reframes it as a defined role rather than an absence. “Which is most of the rubber on a train” is true and it is the sentence that keeps the enquiry alive"
         },
@@ -686,6 +695,9 @@
           ],
           "leads": [
             "Our engineering team responds within 48 hours with a compound recommendation, dimensional confirmation and a quotation."
+          ],
+          "marked": [
+            "Send the section and moulding drawings with the build quantity, and tell us which positions are inside your approval scope and which are not — that answer shapes what we can quote. **Our engineering team responds within 48 hours with a compound recommendation, dimensional confirmation and a quotation.**"
           ],
           "note": "48 words · asking which positions sit inside the buyer’s approval scope is the single best qualifying question on this page. It is a question only a supplier who understands the gate would ask, and the answer tells us immediately whether the enquiry is winnable. 48 hours is the sitewide figure"
         },

@@ -35,6 +35,9 @@
           "leads": [
             "Precision moulded and extruded rubber components, manufactured in Nashik, India under ISO 9001:2015, supplied to demanding sectors across nine core industries."
           ],
+          "marked": [
+            "Precision moulded and extruded rubber components, manufactured in Nashik, India under ISO 9001:2015, supplied to demanding sectors across nine core industries."
+          ],
           "note": "22 words · unchanged — entity, process, geo, certification and scope in one sentence. One of the best-written strings on the site"
         },
         {
@@ -251,6 +254,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "These sectors do not have a dedicated page yet. Browse the relevant product category, or send the drawing and we will quote it."
+          ],
           "note": "23 words · live is 15 · keeps the honest framing and adds the route that actually converts"
         },
         {
@@ -348,6 +354,9 @@
           "leads": [
             "We will recommend the compound, the form factor and the product category, and quote inside 48 hours."
           ],
+          "marked": [
+            "Tell us what you are sealing, containing or dampening. **We will recommend the compound, the form factor and the product category, and quote inside 48 hours.**"
+          ],
           "note": "26 words · live is 23 · No obligation comes off: it is a phrase that only appears where obligation was a live question, and this is a B2B RFQ, not a consumer sign-up"
         },
         {
@@ -418,6 +427,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "ISO 9001:2015 certified manufacturer of precision moulded and extruded rubber components in Nashik, India. Sealing and anti-vibration parts to customer drawing, supplied to OEMs and distributors in 95 countries."
           ],
           "note": "29 words · live is 26 · opens with the entity definition, since the footer repeats on all 40 pages"
         },

@@ -44,6 +44,8 @@ export type Field =
       kind: "paragraphs";
       paragraphs: string[];
       leads: (string | null)[];
+      /** The same paragraphs with any bold runs kept as `**…**`, for copy that ships with its emphasis. */
+      marked: string[];
       /** Literals set beside the paragraphs (a boxed value under an instruction). */
       lits?: string[];
       note?: string;
@@ -255,6 +257,9 @@ function readRow(dl: HTMLElement): Field | null {
       leads: paras.map((p) =>
         p.querySelector("b") ? text(p.querySelector("b")) : null,
       ),
+      // In a sheet's prose <b> is emphasis; in the legal documents <b> marks
+      // a confirmed token and only <strong> is emphasis.
+      marked: paras.map((p) => strongMarked(p, "b, strong")),
       ...(lits.length ? { lits } : {}),
     });
   }
@@ -291,15 +296,18 @@ function readRow(dl: HTMLElement): Field | null {
  * into the field note, never into a block.
  */
 /**
- * A paragraph whose lead-in is `<strong>` ("Legal basis. Under DPDP…") keeps
- * the emphasis as `**…**`, which LegalBlocks renders back to <strong>. Plain
- * text otherwise.
+ * A paragraph whose lead-in is emphasised ("Legal basis. Under DPDP…") keeps
+ * the emphasis as `**…**`, which the renderers turn back into <strong>.
+ * Plain text otherwise.
  */
-function strongMarked(el: HTMLElement): string {
-  const strongs = el.querySelectorAll("strong");
-  if (!strongs.length) return text(el);
+function strongMarked(el: HTMLElement, selector = "strong"): string {
+  if (!el.querySelectorAll(selector).length) return text(el);
   const clone = el.clone() as HTMLElement;
-  for (const st of clone.querySelectorAll("strong")) st.replaceWith(`**${text(st)}**`);
+  for (const st of clone.querySelectorAll(selector)) {
+    // A run that is the whole paragraph is emphasis of the block, not of a phrase.
+    if (text(st) === text(el)) continue;
+    st.replaceWith(`**${text(st)}**`);
+  }
   return text(clone);
 }
 

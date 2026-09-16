@@ -41,6 +41,9 @@
           "leads": [
             "ISO 9001:2015 facility in Nashik, India"
           ],
+          "marked": [
+            "Every component we supply is engineered to your equipment specification — tooled, compounded and certified at our **ISO 9001:2015 facility in Nashik, India**. We manufacture to OEM drawings. Not off the shelf."
+          ],
           "note": "33 words · live is 36 · almost unchanged — the live sentence is strong, carries the certification and the geo, and ends on a three-word sentence that lands. Only the comma splice becomes a dash"
         },
         {
@@ -82,6 +85,10 @@
           "leads": [
             "eight",
             "Every one of the eight has a product page in this content set"
+          ],
+          "marked": [
+            "Same change as the automotive page. The live section renders three component tabs and hard-codes the word “Three” in the heading. This specifies **eight**, with the count rendered from the list or dropped entirely.",
+            "**Every one of the eight has a product page in this content set**, and the mining parts named in each card are taken from those pages. This page currently links to none of them."
           ]
         },
         {
@@ -108,6 +115,9 @@
           ],
           "leads": [
             "Each component is produced against your drawing or an OEM sample"
+          ],
+          "marked": [
+            "We don’t stock generic parts. **Each component is produced against your drawing or an OEM sample** — compound, hardness and geometry matched to the duty rather than picked from a catalogue."
           ],
           "note": "32 words · live is 31 · “your equipment” becomes “the duty”, matching section 04’s language"
         },
@@ -298,6 +308,9 @@
           "leads": [
             "Compound selection, hardness and bonding method are chosen specifically for the application, not from a catalogue."
           ],
+          "marked": [
+            "Mining environments are hostile. **Compound selection, hardness and bonding method are chosen specifically for the application, not from a catalogue.**"
+          ],
           "note": "[no change — 21 words and it states the section’s whole argument]"
         },
         {
@@ -365,6 +378,9 @@
           "leads": [
             "Send us your OEM drawing, an existing part, or the equipment make and model"
           ],
+          "marked": [
+            "Margo operates dedicated tooling capability for custom rubber components. **Send us your OEM drawing, an existing part, or the equipment make and model** — we reverse-engineer and produce to your specification."
+          ],
           "note": "32 words · live is 34 · comma splice becomes a dash; otherwise unchanged. “Or the equipment make and model” is the clause that matters on a mining page — a maintenance planner rarely has a drawing and always has the machine"
         },
         {
@@ -407,6 +423,9 @@
           ],
           "leads": [
             "Margo Rubber Products holds ISO 9001:2015 certification, certificate 09111526A, issued by Integral Certification Ltd and valid to 21 February 2027."
+          ],
+          "marked": [
+            "**Margo Rubber Products holds ISO 9001:2015 certification, certificate 09111526A, issued by Integral Certification Ltd and valid to 21 February 2027.** Our quality management system covers incoming raw material inspection, in-process control and outgoing batch documentation."
           ],
           "note": "37 words · live is 33 · the certificate number, issuer and expiry are added, matching the automotive sheet and the footer legal line. On an export page this matters more than anywhere else — an Australian buyer verifying an Indian supplier starts with the certificate and a number turns a claim into a lookup"
         },
@@ -505,6 +524,10 @@
             null,
             "Buyers retain full control of their preferred logistics arrangements."
           ],
+          "marked": [
+            "Margo Rubber Products exports precision rubber components directly to Australian buyers. We manage international documentation including commercial invoices, packing lists, certificates of origin and material compliance records suitable for Australian customs requirements.",
+            "We work with established freight forwarders for sea and air freight routes to major Australian ports. **Buyers retain full control of their preferred logistics arrangements.**"
+          ],
           "note": "54 words · live is 56 · almost unchanged. “Country of origin certificates” becomes “certificates of origin”, which is the document’s actual name and what a freight forwarder calls it. The second paragraph is untouched — letting the buyer keep their own forwarder is a real concession and it is the kind of thing an export buyer notices"
         },
         {
@@ -553,6 +576,9 @@
           ],
           "leads": [
             "Timber packaging is heat-treated and marked to ISPM-15 as standard."
+          ],
+          "marked": [
+            "Australian buyers are responsible for confirming applicable import duties and biosecurity requirements for their specific order. **Timber packaging is heat-treated and marked to ISPM-15 as standard.** Contact us for documentation support."
           ],
           "note": "31 words · live is 21 · the added sentence is the one an Australian buyer is actually worried about. Australia’s biosecurity regime catches the pallet long before it catches the rubber, and a consignment held at the border on untreated timber costs weeks. Stating ISPM-15 compliance turns a disclaimer into a reassurance — and /export already publishes ISPM-15 as a standard practice, so this is consistent rather than new"
         }
@@ -696,6 +722,9 @@
           "leads": [
             "Our engineering team responds within 48 hours with a compound and hardness recommendation, dimensional confirmation and a quotation"
           ],
+          "marked": [
+            "Send the drawing, an existing part, or the equipment make and model, with the duty and your volume. **Our engineering team responds within 48 hours with a compound and hardness recommendation, dimensional confirmation and a quotation** — and an indicative freight transit for your port."
+          ],
           "note": "47 words · new copy — the live block has a heading and buttons and no body paragraph. The closing clause is specific to this page: an Australian buyer needs the landed timeline, not just the production one, and offering it at the point of enquiry is a differentiator no competitor page makes"
         },
         {
@@ -737,6 +766,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "ISO 9001:2015 certified manufacturer of precision moulded and extruded rubber components in Nashik, India. Sealing and anti-vibration parts to customer drawing, supplied to OEMs and distributors in 95 countries."
           ],
           "note": "29 words · live is 26 · opens with the entity definition, since the footer repeats on all 40 pages"
         },

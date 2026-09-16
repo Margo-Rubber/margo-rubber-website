@@ -40,6 +40,9 @@
           "leads": [
             "Mounts, bushes, rollers, plungers and sealing elements with rubber vulcanised directly onto steel, stainless, aluminium or brass — prepared, primed and cured as one part at our ISO 9001:2015 plant in Nashik."
           ],
+          "marked": [
+            "**Mounts, bushes, rollers, plungers and sealing elements with rubber vulcanised directly onto steel, stainless, aluminium or brass — prepared, primed and cured as one part at our ISO 9001:2015 plant in Nashik.** There is no adhesive joint to fail, because there is no joint: the bond forms while the rubber cures."
+          ],
           "note": "52 words · the final clause is the technical claim the whole page rests on and it is true of co-cured bonding. It is also the reason this page converts — a post-cure adhesive assembly is what most low-cost suppliers ship, and it is what fails in service"
         },
         {
@@ -107,6 +110,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "Most of what we already supply is bonded. These six are the families where the metal and the rubber have to work as one component, and where a bond that separates is a failure of the whole assembly rather than a cosmetic defect."
           ],
           "note": "42 words · “most of what we already supply is bonded” is the honest framing and it is the argument for this page existing at all"
         },
@@ -189,6 +195,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "Every bond failure we have ever seen started here. The metal is degreased, grit-blasted to a controlled profile and chemically treated, then bonded within a defined window before the surface re-oxidises. A part that sits overnight between blasting and priming is a part that will delaminate in service, so preparation and priming run as one operation, not two shifts."
+          ],
           "note": "60 words · the most persuasive paragraph on the page and it costs nothing to state. Every experienced buyer knows surface preparation is where bonds are won and lost; saying it first, and naming the failure mode we design against, reads as a supplier who has debugged this rather than one who has read about it"
         },
         {
@@ -199,6 +208,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "A primer goes onto the prepared metal and a cover coat over it, matched to the compound being bonded. The primer grips the metal; the cover coat co-vulcanises with the rubber. The two are a system — a cover coat chosen for natural rubber will not hold FKM — so the bonding system is selected with the compound, not after it."
           ],
           "note": "58 words · describes the standard two-coat architecture without naming a brand. No adhesive supplier is named, which keeps the page accurate whichever system a given part uses and avoids implying an approval Margo does not hold"
         },
@@ -211,6 +223,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "The prepared insert is loaded into the tool and the rubber is moulded onto it. Heat and pressure cure the compound and complete the bond in the same cycle, so the finished part comes out of the tool as one component. Nothing is glued, clamped or pressed together afterwards, and there is no assembly joint to inspect, because there is no assembly."
+          ],
           "note": "61 words · the payoff for the two panels above. This is the sentence that should be quoted back to us in an enquiry, and it is written to be extractable on its own"
         },
         {
@@ -221,6 +236,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "Tooling is cut in-house, so the insert location, the flash line and the bond area are designed together rather than negotiated between a toolroom and a moulder. First samples come back 48 to 72 hours from an approved drawing."
           ],
           "note": "39 words · the in-house toolroom matters more on a bonded part than on any other category, because insert location is a tooling decision and a bonding decision at the same time. 48–72 hours is the figure used on every page in this set"
         }
@@ -332,6 +350,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "Every compound we mix can be bonded, and the bonding system changes with each one. These are ranked for bonded parts — tell us the load, the medium and the temperature and we will confirm the pairing."
+          ],
           "note": "38 words · carries the client instruction of 2026-09-02 — every part in every compound, nothing removed, only ranked"
         },
         {
@@ -432,6 +453,9 @@
           "leads": [
             "ASTM D429 puts a notation on that"
           ],
+          "marked": [
+            "Bond quality is judged by where the part breaks, not by how hard it was to break. Pull a sound bonded component apart and the tear runs through the rubber, leaving a rubber-covered metal face; a poor bond separates cleanly at the interface and the metal comes back bare. **ASTM D429 puts a notation on that** — **R** for failure in the rubber, **RC** at the rubber-to-cover-coat line, **CP** between cover coat and primer, **M** at the metal. **The target is 100% R, and anything else is a rejected process, not a weaker part.**"
+          ],
           "note": "98 words · this is the page. It gives a specifier something to write into a drawing note, it is the real language of bonded-part qualification, and it lets Margo make a rigorous claim without publishing a single number. Competitor pages in this category publish a peel strength and nothing else — a figure from a specimen that says nothing about their part"
         },
         {
@@ -494,6 +518,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "Material test reports, dimensional inspection sheets and a certificate of conformance ship with every consignment. Batch records are retained per shipment and are available on request under NDA. Bonded parts are packed so the bond line is not loaded in transit."
           ],
           "note": "42 words · the standard string used across the set, with a part-specific packing sentence, the way the oil-seal sheets add the sealing-lip note"
         }
@@ -595,6 +622,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "Or send the failed part. A bond that separated cleanly and left bare metal is a preparation or primer problem; rubber left on the metal with a tear through the section means the bond held and the compound or the geometry did not. The two failures have different fixes, and we can usually tell which you have from the part."
           ],
           "note": "58 words · the diagnostic paragraph, and on this page it is the strongest one in the set. It converts a buyer holding a failed bonded part from a competitor, it demonstrates the failure-mode literacy section 06 sets up, and it claims nothing that cannot be shown. The oil-seals and diaphragms sheets carry the same structure — this is the house pattern"
         }
@@ -784,6 +814,9 @@
           ],
           "leads": [
             "Our engineering team responds within 48 hours with a compound and bonding-system recommendation, dimensional confirmation and a quotation."
+          ],
+          "marked": [
+            "Send the insert drawing and the rubber section, and tell us the insert finish, the load direction and the medium. Or send the part that failed and we will tell you whether the bond or the compound let go. **Our engineering team responds within 48 hours with a compound and bonding-system recommendation, dimensional confirmation and a quotation.**"
           ],
           "note": "58 words · both entry points — the drawing and the failed part — offered at the point of conversion. 48 hours is the sitewide figure"
         },

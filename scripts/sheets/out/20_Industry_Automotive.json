@@ -41,6 +41,9 @@
           "leads": [
             "Margo’s largest sector by volume."
           ],
+          "marked": [
+            "**Margo’s largest sector by volume.** Moulded rubber components for powertrain, chassis, body and under-bonnet assemblies, produced to your drawing at our ISO 9001:2015 certified plant in Nashik — **including AEM, the compound we supply to Mahindra & Mahindra.**"
+          ],
           "note": "42 words · live is 33 · the opening and closing clauses are the live copy and both are kept word for word. “Margo’s largest sector by volume” is a real positioning statement and the Mahindra clause is the strongest sentence on any industry page — specific, checkable, and it names a customer. Only the plant, the geo and “body” are inserted; body and interior is one of the four application groups in section 03 and the live subhead omits it"
         },
         {
@@ -82,6 +85,10 @@
           "leads": [
             "eight",
             "The eight are not invented."
+          ],
+          "marked": [
+            "The live section renders three component tabs. This specifies **eight**. The developer must extend the component to take an arbitrary list, and **the heading must stop hard-coding the word “Three”** — render it from list.length or, better, drop the count entirely, which is the same fix applied to the product pages’ parts grids.",
+            "**The eight are not invented.** Every one is a category Margo already has a product page for, and the automotive parts named in each card are taken from those pages — transmission oil seals, under-bonnet O-rings, C-pillar garnish foam, firewall grommets, dust boots. **This page currently links to none of them.**"
           ]
         },
         {
@@ -108,6 +115,9 @@
           ],
           "leads": [
             "Each component is produced against your drawing or an OEM sample"
+          ],
+          "marked": [
+            "We don’t stock generic parts. **Each component is produced against your drawing or an OEM sample** — compound, hardness and geometry matched to the mounting position rather than picked from a catalogue."
           ],
           "note": "33 words · live is 31 · the live sentence is good and mostly kept. “Your equipment” becomes “the mounting position”, which is the automotive way of saying it and matches section 04’s language"
         },
@@ -171,6 +181,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "Each card keeps the live three-bullet format. For bushes, the live bullets are correct and stay:"
           ],
           "lits": [
             "AEM signature compound\nBonded and unbonded variants\nBore, OD and durometer to drawing\nSupplied to Mahindra & Mahindra"
@@ -285,6 +298,9 @@
           "leads": [
             "Compound and geometry are selected for the specific mounting position rather than from a generic catalogue."
           ],
+          "marked": [
+            "Automotive duty combines heat, oil, vibration and volume. **Compound and geometry are selected for the specific mounting position rather than from a generic catalogue.**"
+          ],
           "note": "[no change — 24 words and it states the whole argument of the section]"
         },
         {
@@ -358,6 +374,9 @@
           "leads": [
             "Send us your OEM drawing, an existing part, or the equipment make and model"
           ],
+          "marked": [
+            "Margo operates dedicated tooling capability for custom rubber components. **Send us your OEM drawing, an existing part, or the equipment make and model** — we reverse-engineer and produce to your specification."
+          ],
           "note": "32 words · live is 34 · almost unchanged. The comma splice in the live sentence becomes a dash, which is the only edit"
         },
         {
@@ -417,6 +436,9 @@
           ],
           "leads": [
             "Margo Rubber Products holds ISO 9001:2015 certification, certificate 09111526A, issued by Integral Certification Ltd and valid to 21 February 2027."
+          ],
+          "marked": [
+            "**Margo Rubber Products holds ISO 9001:2015 certification, certificate 09111526A, issued by Integral Certification Ltd and valid to 21 February 2027.** Our quality management system covers incoming raw material inspection, in-process control and outgoing batch documentation."
           ],
           "note": "37 words · live is 33 · the certificate number, issuer and expiry are added. The live sentence says “holds ISO 9001:2015 certification” and stops, which is what every competitor page says. A number, an issuer and a date turn the same claim into something a sourcing team can verify in a minute — and on an automotive page that is exactly what happens to it"
         },
@@ -514,6 +536,10 @@
           "leads": [
             null,
             null
+          ],
+          "marked": [
+            "Margo supplies automotive components to Indian OEMs and Tier 1 suppliers directly from Nashik, and exports with full documentation to buyers in our active markets.",
+            "Components are produced against your controlled drawing revision, with pre-production sample approval before volume release."
           ],
           "note": "41 words · live is 45 · “across our active markets” becomes “in our active markets” and the sentence is tightened. The second paragraph is unchanged and it is the one a sourcing engineer reads twice"
         },
@@ -726,6 +752,9 @@
           "leads": [
             "Our engineering team responds within 48 hours with a compound and hardness recommendation, dimensional confirmation and a quotation."
           ],
+          "marked": [
+            "Send the controlled drawing, an existing part, or the vehicle make and model, with the mounting position and your volume. **Our engineering team responds within 48 hours with a compound and hardness recommendation, dimensional confirmation and a quotation.**"
+          ],
           "note": "41 words · new copy — the live block has a heading and buttons and no body paragraph. Every product page in this set promises 48 hours at the point of enquiry; the nine industry pages promise nothing, which is the last thing a buyer reads before deciding whether to bother"
         },
         {
@@ -767,6 +796,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "ISO 9001:2015 certified manufacturer of precision moulded and extruded rubber components in Nashik, India. Sealing and anti-vibration parts to customer drawing, supplied to OEMs and distributors in 95 countries."
           ],
           "note": "29 words · live is 26 · opens with the entity definition, since the footer repeats on all 40 pages"
         },

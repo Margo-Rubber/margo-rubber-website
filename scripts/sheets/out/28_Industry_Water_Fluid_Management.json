@@ -41,6 +41,9 @@
           "leads": [
             "produced to your drawing at our ISO 9001:2015 facility in Nashik, India"
           ],
+          "marked": [
+            "EPDM seals, gaskets and rubber lining for treatment, distribution and pump equipment, **produced to your drawing at our ISO 9001:2015 facility in Nashik, India**."
+          ],
           "note": "23 words · live is 18 · one removal, one addition. The cycle claim comes out of the first sentence a buyer reads — see the note at the top of this sheet; it is the first of four placements and the one that sets the reader’s expectation for everything after it.\n“Lining” stays and is promoted (client-confirmed 2026-09-02) — it is a second product line, and on a water page it is the bigger line item. “Moulded” becomes “produced” for the same reason: lining is not moulded, and a hero that says “moulded” quietly excludes half the offer"
         },
         {
@@ -80,6 +83,9 @@
           ],
           "leads": [
             "Section 03 already names five things that have no card"
+          ],
+          "marked": [
+            "Same change as the other eight industry pages, with one extra card. **Section 03 already names five things that have no card** — check valve seats, meter seals, hatch seals, manway gaskets and tank lining — so the expansion is filling in parts the page itself has already promised."
           ]
         },
         {
@@ -100,6 +106,9 @@
           ],
           "leads": [
             "Each component is produced against your drawing or an OEM sample"
+          ],
+          "marked": [
+            "We don’t stock generic parts. **Each component is produced against your drawing or an OEM sample** — compound, hardness and geometry matched to the water chemistry and duty cycle rather than picked from a catalogue."
           ],
           "note": "37 words · live is 27 · comma splice fixed. “Your equipment” becomes “the water chemistry and duty cycle”, which is what actually drives selection here and what section 04 goes on to describe"
         },
@@ -290,6 +299,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "Water infrastructure runs continuously for years. Compound and geometry are selected for long-cycle durability and potable-water compatibility rather than short-run performance."
+          ],
           "note": "[no change] — 22 words that state the selection logic correctly"
         },
         {
@@ -301,6 +313,9 @@
           "leads": [
             "Potable-water approval is granted to a specific compound formulation, not to a polymer"
           ],
+          "marked": [
+            "EPDM is our standard polymer for potable water service. **Potable-water approval is granted to a specific compound formulation, not to a polymer** — tell us the scheme your market requires and we will confirm what we can supply against it. The common schemes are **WRAS** to BS 6920 in the UK, **NSF/ANSI/CAN 61** in North America, **AS/NZS 4020** in Australia and New Zealand, and **KTW-BWGL with DVGW W270** in Germany."
+          ],
           "note": "67 words · live is 19 · over the usual budget, and it earns it — this is the question every buyer on this page asks.\nThe live card is already careful: it asks the buyer to confirm their standard rather than claiming one, which is better than the medical or electrical pages managed. What it misses is why the question matters. Two EPDM compounds from the same factory, one approved and one not, is the normal case; a buyer who knows that reads “EPDM for potable water” as a supplier who has not been through the process. Naming the four schemes as things the buyer specifies — never as things Margo holds — turns the weakest sentence on the page into the most useful one"
         },
         {
@@ -311,6 +326,9 @@
           ],
           "leads": [
             "ASTM D395 Method B"
+          ],
+          "marked": [
+            "Compound and geometry are chosen for continuous running rather than intermittent duty — compression set to **ASTM D395 Method B**, which we test in-house, is the property that decides whether a static seal still seals after a year. **A cycle count comes from your rig or a third-party laboratory, and we will support that test.**"
           ],
           "lits": [
             "Long-Cycle Durability"
@@ -326,6 +344,9 @@
           "leads": [
             "EN 681-1 sets the service bands water equipment is written to: cold potable to 50 °C, hot potable and non-potable to 110 °C, drainage at 45 °C continuous and 95 °C intermittent."
           ],
+          "marked": [
+            "Compounds chosen for the disinfection chemistry and temperature range of your process, not generic water service. **EN 681-1 sets the service bands water equipment is written to: cold potable to 50 °C, hot potable and non-potable to 110 °C, drainage at 45 °C continuous and 95 °C intermittent.** Send the disinfectant and its residual — chlorine, chloramine and ozone attack elastomers differently."
+          ],
           "note": "57 words · live is 17 · a card headed “Temperature” that contained no temperature now contains four. The bands are EN 681-1’s own, which is the framing a water engineer already works in, and they cost nothing to state because they describe the standard, not Margo.\nThe disinfectant request is the same shape as the agrochemical request on the agriculture page: the three oxidants behave differently and the residual decides it"
         },
         {
@@ -336,6 +357,9 @@
           ],
           "leads": [
             "We supply moulded components — gaskets, seals and O-rings — and rubber sheet lining for tanks, sumps and pipework, in the same compounds."
+          ],
+          "marked": [
+            "Sealed geometries and natural rubber compounds for raw-water and sediment-laden duty. **We supply moulded components — gaskets, seals and O-rings — and rubber sheet lining for tanks, sumps and pipework, in the same compounds.**"
           ],
           "note": "36 words · live is 14 · naming the compound is the change. “Abrasion-resistant compounds” is a category, not a claim; natural rubber with a reason is more useful and more defensible. Word for word the same range statement as the mining, pumps & valves and agriculture sheets (lining client-confirmed 2026-09-02), so four pages describe one capability identically"
         }
@@ -378,6 +402,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "Margo operates dedicated tooling capability for custom rubber components. Send us your OEM drawing, existing part, or equipment make and model — we reverse-engineer and produce to your specification."
           ],
           "note": "29 words · live is 29 · comma splice fixed to a dash"
         },
@@ -470,6 +497,9 @@
           "leads": [
             "certificate 09111526A, issued by Integral Certification Ltd and valid to 21 February 2027"
           ],
+          "marked": [
+            "Margo Rubber Products holds ISO 9001:2015 certification — **certificate 09111526A, issued by Integral Certification Ltd and valid to 21 February 2027**. Our quality management system covers incoming raw material inspection, in-process control and outgoing batch documentation. **An IATF 16949:2016 upgrade is in progress, targeted for completion by the end of 2026; ISO 14001 and ISO 45001 are targeted for 2027.**"
+          ],
           "note": "58 words · live is 30 · certificate identity and the certification roadmap are the additions. ISO 14001 belongs on this page more than on any other in the set — a water utility tendering to a supplier asks for an environmental management system as a matter of course"
         },
         {
@@ -480,6 +510,9 @@
           ],
           "leads": [
             "Certificate 09111526A, valid to 21 February 2027"
+          ],
+          "marked": [
+            "Certified quality management covering all production and inspection processes. **Certificate 09111526A, valid to 21 February 2027**; documentation available on request."
           ],
           "lits": [
             "ISO 9001:2015\nQuality Management System"
@@ -495,6 +528,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "Every component produced against a controlled drawing revision. No substitutions without approval."
+          ],
           "lits": [
             "OEM Compliance\nDrawing-Matched Production"
           ],
@@ -508,6 +544,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "Raw material certificates and batch records retained per shipment. Available to water & fluid management buyers on request."
           ],
           "lits": [
             "Batch Traceability\nFull Material Traceability"
@@ -580,6 +619,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "Margo Rubber Products exports sealing components directly to pump, treatment and distribution equipment manufacturers, with full export documentation managed from Nashik. Components are produced against your controlled drawing revision, with pre-production sample approval available before volume release."
+          ],
           "note": "[no change] — 36 words, and naming the three customer types rather than “OEMs” is what makes it read as written for this sector"
         },
         {
@@ -629,6 +671,9 @@
           "leads": [
             "WRAS in the United Kingdom, AS/NZS 4020 in Australia, and NSF/ANSI/CAN 61 or a WRAS certificate where Kenya, Tanzania and the UAE accept one."
           ],
+          "marked": [
+            "Buyers are responsible for confirming potable-water approval requirements applicable in their market — **WRAS in the United Kingdom, AS/NZS 4020 in Australia, and NSF/ANSI/CAN 61 or a WRAS certificate where Kenya, Tanzania and the UAE accept one.** Contact us for documentation support."
+          ],
           "note": "42 words · live is 18 · the live note is the best compliance line of the nine industry pages and it is kept. It asks the correct question, it places responsibility correctly, and it offers help — a direct contrast with the agriculture page, which asks about phytosanitary requirements that do not apply to rubber at all.\nThe addition maps each named market to its scheme, which is the work a buyer would otherwise do themselves. Every scheme is named as something the buyer requires, never as something Margo holds — the sentence is grammatically about the buyer’s obligation, and it must stay that way"
         }
       ],
@@ -673,6 +718,9 @@
           "leads": [
             "Approval is granted to a specific compound formulation, not to a polymer"
           ],
+          "marked": [
+            "EPDM is our standard polymer for potable water service. **Approval is granted to a specific compound formulation, not to a polymer**, so tell us the scheme your project requires — WRAS, NSF/ANSI/CAN 61, AS/NZS 4020 or KTW-BWGL with DVGW W270 — and we will confirm what we can supply against it."
+          ],
           "lits": [
             "Are your compounds approved for potable water?"
           ],
@@ -686,6 +734,9 @@
           ],
           "leads": [
             "A cycle count comes from your rig or a third-party laboratory, and we will support that test."
+          ],
+          "marked": [
+            "Send the shaft speed, the medium, the temperature and the duty profile. We hold the geometry, the compound and the dimensional record, and we test compression set to ASTM D395 Method B in-house. **A cycle count comes from your rig or a third-party laboratory, and we will support that test.**"
           ],
           "lits": [
             "How do you specify a seal for continuous-duty pump service?"
@@ -701,6 +752,9 @@
           "leads": [
             "The minimum run is 10,000 pieces per part number, per compound"
           ],
+          "marked": [
+            "We supply in bulk. **The minimum run is 10,000 pieces per part number, per compound**, or quoted against the part where geometry or tooling makes that unrealistic. Prototype and first-article lots sit outside the minimum. **Lead time is confirmed with the quotation**, from approved drawing and approved sample."
+          ],
           "lits": [
             "What is the minimum order quantity?"
           ],
@@ -715,6 +769,9 @@
           "leads": [
             "rubber sheet lining"
           ],
+          "marked": [
+            "Yes. We supply **rubber sheet lining** for tanks, sumps, chutes and pipework, and **moulded** manway gaskets and hatch seals to go with it, in compounds selected for the service medium. Send the surface area, the thickness and the medium — and tell us whether you need the lining **supplied cut or supplied and fitted**, because that decides the quote."
+          ],
           "lits": [
             "Can you supply tank linings?"
           ],
@@ -728,6 +785,9 @@
           ],
           "leads": [
             "We hold ISO 9001:2015 — certificate 09111526A, issued by Integral Certification Ltd, valid to 21 February 2027. An IATF 16949:2016 upgrade is in progress, targeted for completion by the end of 2026, and ISO 14001 and ISO 45001 are targeted for 2027."
+          ],
+          "marked": [
+            "Yes. Raw material certificates and batch records are retained per shipment and available on request. **We hold ISO 9001:2015 — certificate 09111526A, issued by Integral Certification Ltd, valid to 21 February 2027. An IATF 16949:2016 upgrade is in progress, targeted for completion by the end of 2026, and ISO 14001 and ISO 45001 are targeted for 2027.**"
           ],
           "lits": [
             "Do you provide material certificates, and are you certified?"
@@ -760,6 +820,10 @@
             "It has it.",
             "Four of the nine industry pages carry this CTA variant with both fields unfilled"
           ],
+          "marked": [
+            "The HVAC, electrical & electronics and agriculture sheets each flagged this block and each ended by naming water as the last page unchecked. **It has it.**",
+            "**Four of the nine industry pages carry this CTA variant with both fields unfilled** — HVAC, electrical & electronics, agriculture and water. The other five use the plain shared CTA. **That is one component that was never wired to its data, not four copywriting slips**, and the correct values sit in the footer of each of the four pages, roughly 600 px below the placeholder. **Fix the component once and all four are fixed.**"
+          ],
           "lits": [
             "✆ +91 (Nashik), Contact for number\n✉ Contact for email"
           ]
@@ -791,6 +855,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "Send us your drawing, part number, or equipment make and model. Our team will confirm compound selection, tooling status, and lead time."
           ],
           "note": "[no change] — 22 words, three accepted inputs, three things that come back"
         },
@@ -849,6 +916,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "ISO 9001:2015 certified manufacturer of precision moulded and extruded rubber components in Nashik, India. Sealing and anti-vibration parts to customer drawing, supplied to OEMs and distributors in 95 countries."
           ],
           "note": "29 words · live is 26 · opens with the entity definition, since the footer repeats on all 40 pages"
         },

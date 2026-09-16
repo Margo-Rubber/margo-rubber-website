@@ -41,6 +41,9 @@
           "leads": [
             "Margo Rubber Products moulds compression sealing rubber for alloy-wheel leak-test rigs at its ISO 9001:2015 certified plant in Nashik, India"
           ],
+          "marked": [
+            "**Margo Rubber Products moulds compression sealing rubber for alloy-wheel leak-test rigs at its ISO 9001:2015 certified plant in Nashik, India** — profiled to your rim diameter and bead-seat geometry, 12″ to 24″ and cut to print, for test pressures of 2 to 6 bar in NBR and EPDM."
+          ],
           "note": "46 words · live is 22 · the live sentence is good and its structure is kept; what is added is the entity, the geo, the size range and the pressure range. “Rated for repeated high-cycle sealing” is removed — it is the same unsupportable claim as the cycle counts in the table, in adjective form"
         },
         {
@@ -109,6 +112,11 @@
             "six",
             "The cycle-life column comes out and is replaced by a typical-application column.",
             "The material column stops naming one compound per size band."
+          ],
+          "marked": [
+            "The live table renders three rows. This section specifies **six**, so the developer must add three and the component should take an arbitrary list. **The column count stays at four** and the chip count stays at five; two headings change.",
+            "**The cycle-life column comes out and is replaced by a typical-application column.** The service-life question does not disappear — it moves to the footnote, where it can be answered with the property that actually governs it and with a test standard Margo genuinely runs. A column of unsupportable numbers is replaced by a paragraph of supportable reasoning.",
+            "**The material column stops naming one compound per size band.** Rim diameter does not decide compound; the test medium does. Every row now reads the same pair, which is the correction stated in the place the buyer is looking."
           ]
         },
         {
@@ -135,6 +143,9 @@
           ],
           "leads": [
             "Send the rim drawing and the test pressure with the enquiry, and tell us what the rig runs on — air, water, or a line where oil or release agent reaches the seal."
+          ],
+          "marked": [
+            "Leak-test rubber is profiled to the rim diameter and bead-seat geometry of the wheel under test. **Send the rim drawing and the test pressure with the enquiry, and tell us what the rig runs on — air, water, or a line where oil or release agent reaches the seal.** That last answer is what decides the compound, not the wheel size."
           ],
           "note": "58 words · live is 27 · the live intro’s first two sentences are accurate and are kept. What is added is the third question and the reason for it — it removes the table’s implication that rim diameter picks the compound, and it asks for the one piece of information a rig operator can give without a drawing"
         },
@@ -233,6 +244,9 @@
           "leads": [
             "How long a rig seal lasts is a question of compression set, not of a cycle count."
           ],
+          "marked": [
+            "Showing 6 of 6 entries. **How long a rig seal lasts is a question of compression set, not of a cycle count.** A compression seal fails when it has taken enough permanent set that it no longer fills the bead seat — not after a counted number of closings. Compression set is measured to **ASTM D395** and **ISO 815-1**, both of which we run in-house. **Tell us the rig, the pressure and the duty and we will state the compression set of the compound we propose**, so the replacement interval is yours to calculate rather than ours to promise. Values are typical for the rim band and are not a specification for a particular part; see our technical disclaimer."
+          ],
           "note": "108 words · live is 26 · the longest footnote in the set and the one carrying the most weight. It replaces three cycle-life figures with the mechanism behind them, names two test standards that are on Margo’s own in-house list rather than at the partner laboratory, and closes with an offer no competitor in this niche is making. This paragraph is what lifts the rubric cap on the section"
         }
       ],
@@ -260,6 +274,9 @@
           ],
           "leads": [
             "eight"
+          ],
+          "marked": [
+            "The live accordion renders four panels. This section specifies **eight**. The developer must extend the component to take an arbitrary list — four new panels: **neoprene, natural rubber, SBR and AEM** — and **panel order must be per-page data**. On this page EPDM leads, because most wheel rigs run on air and water. This is the same shared component as the other category pages; extending it once lands on all eleven."
           ]
         },
         {
@@ -286,6 +303,9 @@
           ],
           "leads": [
             "what the rig runs on, and how well the compound recovers after being held compressed."
+          ],
+          "marked": [
+            "A rig seal is chosen for two things: **what the rig runs on, and how well the compound recovers after being held compressed.** Air and water rigs take EPDM; a line where oil, coolant or release agent reaches the seal takes nitrile. Name the medium and we will tell you which to specify."
           ],
           "note": "53 words · live is 27 · the live intro asks for “medium, temperature, and pressure class”, which is the flange-gasket intro rendered unchanged — a wheel rig has a test pressure but no pressure class. The replacement names the two axes that actually apply and answers the common case in the same breath"
         },
@@ -406,6 +426,9 @@
           "leads": [
             "Send the rim drawing, the test pressure and what the rig runs on, with your volume, and we will quote it."
           ],
+          "marked": [
+            "Margo produces in bulk against OEM schedules. **Send the rim drawing, the test pressure and what the rig runs on, with your volume, and we will quote it.** **Repeat orders against an existing profile ship from the same tool**, which is where the lead time drops — tell us the part reference and the annual volume and we will schedule against it."
+          ],
           "note": "57 words · live is 34 · replaces “Margo is geared for volume procurement. If your project requires below-MOQ qualification samples…”. The second bold sentence exists only on this page and it is the most commercially useful line in the whole set: a rig seal is a consumable, the buyer will reorder it many times, and telling them the tool is already cut and the reorder is scheduled against their annual usage is what a rig operator needs to hear"
         },
         {
@@ -491,6 +514,9 @@
           "leads": [
             "Our engineering team responds within 48 hours with a recommended compound, its compression set, and a quotation."
           ],
+          "marked": [
+            "Send the rim drawing and the test pressure, tell us what the rig runs on, and send the worn seal if you have one — it tells us more about the duty than a drawing does. **Our engineering team responds within 48 hours with a recommended compound, its compression set, and a quotation.**"
+          ],
           "note": "54 words · live is 34 · “within two working days” becomes 48 hours. The site publishes six different response times; two working days contradicts the 48 hours promised on the homepage, the contact page and the commercial terms directly above. Two additions are page-specific: asking for the worn seal, which on a consumable is the single most informative thing a buyer can send — how it failed says whether the compound, the profile or the pressure was wrong — and promising the compression set figure, which is the offer made in section 02 and must be repeated at the point of enquiry"
         },
         {
@@ -540,6 +566,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "ISO 9001:2015 certified manufacturer of precision moulded and extruded rubber components in Nashik, India. Sealing and anti-vibration parts to customer drawing, supplied to OEMs and distributors in 95 countries."
           ],
           "note": "29 words · live is 26 · opens with the entity definition, since the footer repeats on all 40 pages"
         },

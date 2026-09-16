@@ -41,6 +41,9 @@
           "leads": [
             "Margo Rubber Products moulds silent-block, bonded and insulation bushes to your bore, outer diameter and durometer at its ISO 9001:2015 certified plant in Nashik, India"
           ],
+          "marked": [
+            "**Margo Rubber Products moulds silent-block, bonded and insulation bushes to your bore, outer diameter and durometer at its ISO 9001:2015 certified plant in Nashik, India** — including AEM, the compound Margo supplies to Mahindra & Mahindra."
+          ],
           "note": "37 words · live is 25 · the closing clause is the live sentence, kept word for word. It is the strongest sentence on any product page on this site: specific, checkable, and it names a customer. The only change is adding the entity, the process, the bush types and the geo in front of it — the live line opens with “Silent-block and insulation bushes” and never says who makes them or where"
         },
         {
@@ -107,6 +110,10 @@
           "leads": [
             "eight",
             "The material column becomes a construction column, and hardness moves to the footnote."
+          ],
+          "marked": [
+            "The live table renders four rows. This section specifies **eight**, so the developer must add four and the component should take an arbitrary list. **All four column headings change**, but **the column count stays at four** and the chip count stays at five.",
+            "**The material column becomes a construction column, and hardness moves to the footnote.** Construction — unbonded, inner sleeve, inner and outer sleeve — is what a bush buyer specifies after the dimensions, and it appears nowhere on the live page despite the hero claiming both bonded and unbonded. Hardness moves out because the live bands are tied to compound, not to type; carrying them across as if they were type properties would be inventing data. The full range is stated once in the footnote instead."
           ]
         },
         {
@@ -133,6 +140,9 @@
           ],
           "leads": [
             "inner bore, outer diameter, length and durometer"
+          ],
+          "marked": [
+            "A bush is specified by **inner bore, outer diameter, length and durometer**, and a bonded bush additionally by the metal insert drawing. Send those and we will quote it. **Compound is a separate choice — any of our eight is available at any size and in any construction below.**"
           ],
           "note": "51 words · live is 21 · the live intro is accurate and specific, including the insert-drawing clause, so it is kept almost intact. The closing sentence is added, and it is the one removing the coupling"
         },
@@ -243,6 +253,9 @@
           "leads": [
             "Durometer across the range is 45 to 75 Shore A"
           ],
+          "marked": [
+            "Showing 8 of 8 entries. **Durometer across the range is 45 to 75 Shore A**, set on your drawing — it is what sets the rate, so a bush that is too hard transmits and one that is too soft wanders. **A bonded bush needs the metal insert drawing with the rubber drawing**; the bond line and the insert finish decide whether the part survives, and we cannot quote one without the other. Dimensional conformity to ISO 3302-1, class M1 to M4, as recorded on the drawing. Values are typical for the type and are not a specification for a particular part; see our technical disclaimer."
+          ],
           "note": "96 words · live is 26 · the hardness sentence carries the column that came out of the table, and states what hardness is for, which the live table never did. The insert sentence expands the live intro’s best clause into the reason behind it"
         }
       ],
@@ -271,6 +284,10 @@
           "leads": [
             "eight",
             "This page proves the point better than any other."
+          ],
+          "marked": [
+            "The live accordion renders four panels. This section specifies **eight**, and the order is not the order on any other category page. The developer must extend the component to take an arbitrary list — four new panels: **natural rubber, AEM, neoprene and SBR** — and **panel order must be per-page data**, not a fixed sequence in the component.",
+            "**This page proves the point better than any other.** Its own hero and its own table both lead with AEM and natural rubber. The accordion, three hundred pixels below, shows neither — because it is hard-coded to the same four panels that render on every category. Fix the component once and seven pages stop contradicting themselves."
           ]
         },
         {
@@ -297,6 +314,9 @@
           ],
           "leads": [
             "Natural rubber and AEM cover most of what we make here; the others are what you move to when oil, weather or temperature rules them out."
+          ],
+          "marked": [
+            "A bush is chosen for how it behaves under repeated load and what surrounds it. **Natural rubber and AEM cover most of what we make here; the others are what you move to when oil, weather or temperature rules them out.** Name the duty and the environment and we will tell you which to specify."
           ],
           "note": "55 words · live is 27 · the live intro says “chemical compatibility profile… medium, temperature, and pressure class”, which is the sealing-page intro rendered unchanged. A bush has no medium and no pressure class. The middle sentence also makes the accordion agree with the hero in words, not only in panel order"
         },
@@ -416,6 +436,9 @@
           ],
           "leads": [
             "Bore, outer diameter, length, durometer and insert geometry are set from your specification, and full dimensional data is issued with the quotation."
+          ],
+          "marked": [
+            "Each part below is manufactured to customer drawing or to our standard tooling. **Bore, outer diameter, length, durometer and insert geometry are set from your specification, and full dimensional data is issued with the quotation.**"
           ],
           "note": "36 words · live is 27 · the five inputs named are the five the section 02 intro asks for, so the page asks for the same information twice in the same words rather than twice in different ones"
         },
@@ -580,6 +603,9 @@
           "leads": [
             "Send the bore, outer diameter, length and durometer with your volume — and for a bonded bush, the metal insert drawing."
           ],
+          "marked": [
+            "Margo produces in bulk against OEM schedules. **Send the bore, outer diameter, length and durometer with your volume — and for a bonded bush, the metal insert drawing.** **Minimum run is 10,000 pieces per part number, per compound**, or quoted against the part where size or complexity sets the economics. Prototype and first-article lots sit outside the minimum and are quoted separately."
+          ],
           "note": "50 words · live is 34 · replaces “Margo is geared for volume procurement. If your project requires below-MOQ qualification samples…”, which states a minimum twice by implication and tells a prototype buyer they are below the floor before they have asked. The insert clause is the addition that matters here — the section 02 intro already says a bonded bush needs it, and then the commercial block, which is where the quotation is actually requested, never mentions it again"
         },
         {
@@ -666,6 +692,9 @@
           "leads": [
             "Our engineering team responds within 48 hours with dimensional confirmation, a recommended compound and hardness, and a quotation."
           ],
+          "marked": [
+            "Send your drawing with the bore, outer diameter, length and durometer — plus the metal insert drawing for a bonded bush — or the bush you are replacing, with a note of how it failed. **Our engineering team responds within 48 hours with dimensional confirmation, a recommended compound and hardness, and a quotation.**"
+          ],
           "note": "52 words · live is 34 · “within two working days” becomes 48 hours. The site publishes six different response times; two working days contradicts the 48 hours promised on the homepage, the contact page and the commercial terms directly above. “How it failed” is the addition — a bush comes back split, perished, or with the bond broken away from the sleeve, and which of the three it was decides both the compound and whether the bond process needs changing"
         },
         {
@@ -715,6 +744,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "ISO 9001:2015 certified manufacturer of precision moulded and extruded rubber components in Nashik, India. Sealing and anti-vibration parts to customer drawing, supplied to OEMs and distributors in 95 countries."
           ],
           "note": "29 words · live is 26 · opens with the entity definition, since the footer repeats on all 40 pages"
         },

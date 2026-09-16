@@ -36,6 +36,9 @@
           "leads": [
             "Margo Rubber Products is an ISO 9001:2015 certified manufacturer of moulded and extruded rubber components in Nashik, Maharashtra."
           ],
+          "marked": [
+            "**Margo Rubber Products is an ISO 9001:2015 certified manufacturer of moulded and extruded rubber components in Nashik, Maharashtra.** Compound formulation, mould tooling, moulding, finishing and testing all happen under one roof, for 24 named accounts across seven sectors."
+          ],
           "note": "38 words · live is 19 · entity definition in the first clause"
         },
         {
@@ -58,6 +61,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "WATCH FILM — there is no film, and the live control goes nowhere. A dead play button on the first screen of the About page is the first thing a buyer clicks and the first thing that fails."
           ]
         }
       ],
@@ -148,6 +154,9 @@
           "leads": [
             "Margo Rubber Products was founded in Nashik in 2005."
           ],
+          "marked": [
+            "**Margo Rubber Products was founded in Nashik in 2005.** The previous works ran 6,000 sq ft and about 200,000 parts a month. Moving to a purpose-built 10,000+ sq ft plant, and automating during the move, took installed capacity to five million parts a month — twenty-five times the old works."
+          ],
           "note": "50 words · live is 36"
         },
         {
@@ -158,6 +167,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "The plant is built for a single linear workflow: raw material in at one end, finished goods out at the other, with no cross-traffic between clean and flash-generating areas. Today it supplies 24 named accounts across automotive, industrial machinery, electrical, specialist vehicles, medical, chemicals and tooling."
           ],
           "note": "46 words · live is 41"
         },
@@ -299,6 +311,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "Six commitments, each with a number behind it that we will show you on an audit."
+          ],
           "note": "16 words · live is 17"
         },
         {
@@ -373,6 +388,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "“A large share of our work arrives as a worn part in an envelope, not a CAD file. Somebody needs that part to exist again, and it has to fit.”"
+          ],
           "note": "29 words · live is 20 · replaces “We did not set out to build a factory. We set out to build trust, one component at a time.” — a sentence that could belong to any manufacturer in any industry"
         },
         {
@@ -383,6 +401,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "Reverse engineering is a standard route to a first order here. We measure the part, identify the compound family, and quote against the sample. It is also the clearest test of whether a supplier actually formulates compound or simply buys it in."
           ],
           "note": "42 words · live is 43"
         },
@@ -427,6 +448,9 @@
           ],
           "leads": [
             "Automated presses hold cure temperature and pressure closed-loop, which takes operator variation out of the part."
+          ],
+          "marked": [
+            "A 10,000+ sq ft plant in the Nashik industrial belt, laid out for a single linear workflow with compression, transfer and injection moulding plus continuous-cure extrusion. **Automated presses hold cure temperature and pressure closed-loop, which takes operator variation out of the part.**"
           ],
           "note": "42 words · live is 26"
         },
@@ -582,6 +606,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "Margo is run by the two people who started it. Neither sits between you and the plant."
+          ],
           "note": "17 words · live is 16"
         },
         {
@@ -676,6 +703,9 @@
           "leads": [
             "Each playbook carries duty treatment, certificate requirements, transit time and destination port — not a flag on a map."
           ],
+          "marked": [
+            "We screened and scored 95 countries across seven regions, wrote country-level sourcing playbooks for 18, and set an activation order of five. **Each playbook carries duty treatment, certificate requirements, transit time and destination port — not a flag on a map.**"
+          ],
           "note": "42 words · live is 33"
         },
         {
@@ -698,6 +728,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "🇩🇪 Germany · 🇯🇵 Japan · 🇫🇷 France · 🇨🇦 Canada · 🇳🇱 Netherlands — none appears in the 18-market playbook set or the Top-5 activation order. They were picked to look international."
           ]
         },
         {
@@ -816,6 +849,9 @@
           "leads": [
             "Naming four certification bodies that have never audited Margo is the single most exposed claim on this page."
           ],
+          "marked": [
+            "Replaces Bureau Veritas · TÜV SÜD · SGS India · FIEO. **Naming four certification bodies that have never audited Margo is the single most exposed claim on this page.** Each is a real company with a public certificate register, a legal team and a trademark. It is checkable in one search, and it is their name being used, not Margo’s."
+          ],
           "lits": [
             "CERTIFIED BY\nIntegral Certification Ltd"
           ]
@@ -846,6 +882,11 @@
             "Nothing in this section is sourced, and one true fact does not fill a section.",
             null,
             "If the client wants it kept"
+          ],
+          "marked": [
+            "**Nothing in this section is sourced, and one true fact does not fill a section.** The only environmental claim Margo can stand behind is material utilisation improved 20% after automation — and its natural home is section 07, where the other automation gains already sit.",
+            "Sustainability copy is also the easiest kind to disprove. “60% renewable energy” is answerable from an electricity bill. “Carbon neutral by 2027” is a public commitment with a date on it. For a supplier whose buyers are procurement engineers rather than consumers, this section earns almost nothing and risks the whole page’s credibility — a reader who catches one invented number stops believing the compound table too.",
+            "**If the client wants it kept**, the honest version is below. It is short, and it should be short."
           ]
         },
         {
@@ -869,6 +910,9 @@
           ],
           "leads": [
             "The plant is fully compliant with MIDC environmental and industrial norms."
+          ],
+          "marked": [
+            "Automating compound mixing and cure control cut scrap: material utilisation improved 20% and cycle time fell 30%, which is less rubber and less energy for the same part. **The plant is fully compliant with MIDC environmental and industrial norms.** We have not set a carbon target and will not publish one until we can measure against it."
           ],
           "note": "55 words · live is 30 · the last sentence is the section’s whole value — it is the only line here a competitor cannot also write"
         },
@@ -902,6 +946,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "Carbon Neutral · Target: 2027 — a dated public commitment with no plan, no baseline and no measurement behind it. Of everything on this page, this is the claim most likely to be quoted back to Margo."
           ]
         }
       ],
@@ -980,6 +1027,11 @@
             "Replace the whole block with a reference-check offer:",
             null,
             null
+          ],
+          "marked": [
+            "Replace the whole block with a reference-check offer:",
+            "Replaces a testimonial from an unnamed “Procurement lead, European energy OEM” carrying the visible string “Attribution pending client sign-off”. This is the same wording /case-studies already uses, and the same fix Phase 3 applied to /why-margo — three places, one sentence, build it once.",
+            "A named reference offered on request is worth more to a procurement buyer than an anonymous quote, because the buyer can act on it. An anonymous quote is worth approximately nothing, and one that admits its own attribution is unsigned is worth less than nothing."
           ],
           "lits": [
             "REFERENCES\nWe will name contacts at our customers during a vendor audit or\nqualification, on request. Volumes and part numbers are commercially\nconfidential and disclosed under NDA."
@@ -1353,6 +1405,9 @@
           "leads": [
             "A full quotation and feasibility report follows inside 48 hours"
           ],
+          "marked": [
+            "Our engineering team replies within one business day. **A full quotation and feasibility report follows inside 48 hours**, with a compound recommendation and a lead time."
+          ],
           "note": "27 words · live is 21"
         },
         {
@@ -1412,6 +1467,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "ISO 9001:2015 certified manufacturer of precision moulded and extruded rubber components in Nashik, India. Sealing and anti-vibration parts to customer drawing, supplied to OEMs and distributors in 95 countries."
           ],
           "note": "29 words · live is 26 · opens with the entity definition, since the footer repeats on all 40 pages"
         },

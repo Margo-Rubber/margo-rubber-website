@@ -41,6 +41,9 @@
           "leads": [
             "Margo Rubber Products moulds support pads, buffers, filler caps, plungers, stoppers and air-extractor flaps at its ISO 9001:2015 certified plant in Nashik, India"
           ],
+          "marked": [
+            "**Margo Rubber Products moulds support pads, buffers, filler caps, plungers, stoppers and air-extractor flaps at its ISO 9001:2015 certified plant in Nashik, India** — thirteen catalogue components, listed with their sizes and compounds in the table below, and anything else cut to your print."
+          ],
           "note": "44 words · live is 25 · “each with its own section below” is removed and replaced with “listed with their sizes and compounds in the table below”, which is a promise the page keeps. The live sentence describes thirteen per-component sections that were never built — a visitor who scrolls looking for them finds a table and a card grid"
         },
         {
@@ -109,6 +112,11 @@
             "thirteen",
             "Four rows are new and carry standard values for the component type.",
             "The two combined rows are split."
+          ],
+          "marked": [
+            "The live table renders seven rows. This section specifies **thirteen** — one per catalogue component, which is what the page’s own copy already promises. The developer must add six rows and the component should take an arbitrary list. **The column count stays at four** and the chip count stays at five; two headings change.",
+            "**Four rows are new and carry standard values for the component type.** Big Support Pad, Oil Seal Filler Cap, Rubber Insulator Head Cover and Boot Tailgate Switch had no published dimensions anywhere on the site. Two are taken from the sibling component they are a variant of; two from published practice for that type of part. The derivation for each is shown in the block below the table, so the developer and the plant can both see the working.",
+            "**The two combined rows are split.** Live merges “L Pad / C Pad” into one row and “A/C & Radiator Flaps” into another, while the card grid lists all four separately. The table and the grid must name the same thirteen things."
           ]
         },
         {
@@ -135,6 +143,9 @@
           ],
           "leads": [
             "Each is listed below with its size range, the compound it is supplied in, and its hardness."
+          ],
+          "marked": [
+            "This category covers thirteen distinct catalogue components. **Each is listed below with its size range, the compound it is supplied in, and its hardness.** All thirteen are moulded to drawing, and anything not listed is quoted cut to print."
           ],
           "note": "41 words · live is 31 · the removed clause is the important edit. Live says “each is listed below with its own specification block and jump-link from the Products menu” — there are no specification blocks, no jump-links, and the Products menu does not link to any anchor on this page. The replacement describes the table that is actually there"
         },
@@ -307,6 +318,9 @@
           "leads": [
             "“As supplied” is the compound each catalogue component is normally moulded in, chosen for its duty"
           ],
+          "marked": [
+            "Showing 13 of 13 entries. **“As supplied” is the compound each catalogue component is normally moulded in, chosen for its duty** — the Oil Filler Cap is nitrile because it sits in oil, the air-extractor flap is EPDM because it lives behind a grille in the weather. **A cut-to-print variant can be moulded in any of our eight compounds.** Size ranges describe the family of that component across the variants we have tooled, not a single part. Dimensional conformity to ISO 3302-1, class M1 to M4, as recorded on the drawing. Values are typical and are not a specification for a particular part; see our technical disclaimer."
+          ],
           "note": "99 words · live is 26 · the first two sentences explain why each part is the compound it is, which turns a lookup table into engineering reasoning — and the third removes the “only available in EPDM” reading that cost the grommets and bushes tables so much"
         }
       ],
@@ -334,6 +348,9 @@
           ],
           "leads": [
             "eight"
+          ],
+          "marked": [
+            "The live accordion renders four panels. This section specifies **eight**. The developer must extend the component to take an arbitrary list — four new panels: **natural rubber, neoprene, SBR and AEM** — and **panel order must be per-page data**. On this page EPDM leads, because nine of the thirteen catalogue components are EPDM parts. This is the same shared component as the other category pages; extending it once lands on all eleven."
           ]
         },
         {
@@ -360,6 +377,9 @@
           ],
           "leads": [
             "EPDM where the part sees weather, water or coolant, nitrile where it sees oil, natural rubber where it takes repeated impact."
+          ],
+          "marked": [
+            "Each catalogue component is moulded in the compound its duty calls for: **EPDM where the part sees weather, water or coolant, nitrile where it sees oil, natural rubber where it takes repeated impact.** A cut-to-print part can be any of the eight below — name the medium, the temperature and the duty and we will tell you which to specify."
           ],
           "note": "59 words · live is 27 · the live intro says “chemical compatibility profile… medium, temperature, and pressure class”, which is the sealing-page intro rendered unchanged. None of these thirteen parts has a pressure class. The three-clause rule in bold is the actual selection logic behind the table above, stated once"
         },
@@ -479,6 +499,9 @@
           ],
           "leads": [
             "The thirteen catalogue components are listed first, with their dimensions in the table above; the rest are made to print."
+          ],
+          "marked": [
+            "Each part below is manufactured to customer drawing or to our standard tooling. **The thirteen catalogue components are listed first, with their dimensions in the table above; the rest are made to print.** Full dimensional and compound data is issued with the quotation."
           ],
           "note": "43 words · live is 27 · the middle sentence is added and it does two jobs: it links the grid back to the table, and it tells a visitor which of the 22 names are tooled today and which are a capability statement"
         },
@@ -660,6 +683,9 @@
           "leads": [
             "Name the catalogue component you need, or send a drawing for anything else, with your volume — and we will quote it."
           ],
+          "marked": [
+            "Margo produces in bulk against OEM schedules. **Name the catalogue component you need, or send a drawing for anything else, with your volume — and we will quote it.** **Minimum run is 10,000 pieces per part number, per compound**, or quoted against the part where size or complexity sets the economics. Prototype and first-article lots sit outside the minimum and are quoted separately."
+          ],
           "note": "50 words · live is 34 · replaces “Margo is geared for volume procurement. If your project requires below-MOQ qualification samples…”, which states a minimum twice by implication and tells a prototype buyer they are below the floor before they have asked. “Name the catalogue component” is the addition — on this page alone, a buyer can order without a drawing at all, and no other page in the set can say that"
         },
         {
@@ -746,6 +772,9 @@
           "leads": [
             "Our engineering team responds within 48 hours with dimensional confirmation, the compound datasheet and a quotation."
           ],
+          "marked": [
+            "Name the catalogue component you need, or send a drawing or a sample of the part you are replacing, with the compound and the volume. **Our engineering team responds within 48 hours with dimensional confirmation, the compound datasheet and a quotation.**"
+          ],
           "note": "41 words · live is 34 · “within two working days” becomes 48 hours. The site publishes six different response times; two working days contradicts the 48 hours promised on the homepage, the contact page and the commercial terms directly above. “Name the catalogue component” leads, because it is the lowest-friction way to open an enquiry anywhere on this site and it exists on no other page"
         },
         {
@@ -795,6 +824,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "ISO 9001:2015 certified manufacturer of precision moulded and extruded rubber components in Nashik, India. Sealing and anti-vibration parts to customer drawing, supplied to OEMs and distributors in 95 countries."
           ],
           "note": "29 words · live is 26 · opens with the entity definition, since the footer repeats on all 40 pages"
         },

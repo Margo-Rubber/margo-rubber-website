@@ -40,6 +40,9 @@
           "leads": [
             "Abrasion-resistant sheet lining for chutes, hoppers, tanks, sumps and pump casings, and skirting cut to length for conveyor load points — in the same compounds we mix for moulded components, at our ISO 9001:2015 plant in Nashik."
           ],
+          "marked": [
+            "**Abrasion-resistant sheet lining for chutes, hoppers, tanks, sumps and pump casings, and skirting cut to length for conveyor load points — in the same compounds we mix for moulded components, at our ISO 9001:2015 plant in Nashik.** Natural rubber has the best abrasion resistance of the eight, and on a lining that is usually the whole specification."
+          ],
           "note": "57 words · “the same compounds we mix for moulded components” is the differentiator and it is true. A lining supplier who buys sheet in has no control over the compound; Margo mixes it. That sentence is the reason this page belongs on this domain rather than reading as a bolt-on"
         },
         {
@@ -107,6 +110,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "Lining is not a coating. It is a wear part in sheet form, sacrificial by design, sized so it fails before the steel does and can be replaced without taking the structure apart."
           ],
           "note": "33 words · “sacrificial by design” is the framing that stops a buyer treating lining as a paint alternative, and it makes the thickness table in section 03 read as a design decision rather than a price list"
         },
@@ -232,6 +238,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "Send the surface area and the duty — what the material is, how far it drops, and how abrasive it is. A drawing or a development helps but is not needed to quote. If you are replacing an existing lining, tell us how long the last one lasted; that single number sizes the next one better than any specification."
+          ],
           "note": "58 words · the last sentence is the most useful thing on this page. Wear life is empirical, and a buyer who knows their current service interval has already done the engineering. Asking for it reads as experience and it shortens the quotation loop.\nThe two inputs match sheet 21’s FAQ exactly — “send the surface area, the thickness and the duty” — so the industry page and the product page ask for the same things in the same words"
         }
       ],
@@ -270,6 +279,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "Every compound we mix is available as sheet. These are ranked for lining — and unlike every other page in this catalogue, the answer here is usually the cheapest one on the list."
           ],
           "note": "33 words · carries the client instruction of 2026-09-02, and the second clause is an honest and disarming thing for a manufacturer to say. On lining, natural rubber genuinely does win, and it is not the premium option"
         },
@@ -371,6 +383,9 @@
           "leads": [
             "It has to be softer than the belt’s top cover."
           ],
+          "marked": [
+            "Skirting seals the gap between the belt and the skirtboard at a load point, containing fines and dust where the material lands. **It has to be softer than the belt’s top cover.** A skirting strip harder than the cover does not wear — the belt does, and a grooved belt costs several orders of magnitude more than the strip that grooved it. We supply skirting at 40 to 60 Shore A for that reason, and we will ask what belt you are running before we quote a hardness."
+          ],
           "note": "86 words · this is the expert paragraph that wins the enquiry. It names a real, expensive, common failure; it explains the mechanism; it justifies a hardness range; and it ends with a qualifying question rather than a product. Nothing else on this page needs to be read for a maintenance engineer to believe the supplier has done this before"
         },
         {
@@ -424,6 +439,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "We supply skirting rubber and dust curtain sheet. We do not supply skirtboard steelwork, clamps or sealing systems."
+          ],
           "note": "18 words · a scope boundary stated before it is asked about. Skirting is usually bought as part of a sealing system and the systems are a different trade — saying so stops an enquiry that was never going to close and protects the ones that are"
         }
       ],
@@ -462,6 +480,9 @@
           ],
           "leads": [
             "ISO 4649"
+          ],
+          "marked": [
+            "Abrasion resistance is measured as volume loss to **ISO 4649** (equivalently **ASTM D5963**) — a rotating drum test that reports how many cubic millimetres a standard specimen loses over a fixed path. Lower is better, and it is the one number that ranks lining compounds meaningfully. **We report it on the compound supplied, per batch, rather than publishing a figure here** — a headline number belongs to a specific formulation, and quoting one on a category page is how a buyer ends up designing around a compound they were never sent."
           ],
           "note": "92 words · the same discipline as the other two new pages, but with a different outcome: the test exists, Margo has access to it, and the offer is a real report rather than a qualification programme. Publishing the method and withholding the headline number is the honest position and it still ranks for rubber lining abrasion resistance"
         },
@@ -526,6 +547,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "Material test reports, dimensional inspection sheets and a certificate of conformance ship with every consignment. Batch records are retained per shipment and are available on request under NDA. Sheet is rolled and packed so the bonding face is not contaminated in transit."
+          ],
           "note": "44 words · the standard string used across the set, with a part-specific packing sentence — and on lining the packing note matters, because a contaminated bonding face is a lining that does not stick"
         }
       ],
@@ -550,6 +574,9 @@
           "leads": [
             "Client-confirmed 2026-09-03: Margo fits lining."
           ],
+          "marked": [
+            "**Client-confirmed 2026-09-03: Margo fits lining.** Ship **Version B** below. Version A stays in this sheet as a record of the decision, not as an option."
+          ],
           "note": "The client confirmation of 2026-09-02 was that Margo supplies rubber sheet lining and conveyor skirting. It said nothing about installation, and the two are different businesses — fitting means adhesive systems, site crews, surface preparation on the customer’s steel, and either cold bonding or autoclave vulcanising.\nSheets 21, 24 and 28 already publish the phrase “tell us whether you need the lining supplied or fitted”, which offers both — and with fitting confirmed, those three sheets are now correct as written and need no edit. That was the risk this CONFIRM was raised to catch, and it has landed the right way.\nThree things follow from the answer and none of them is copy: the page needs a Service node in its schema, a named geographic service area, and a stated exclusions line — scaffolding, confined-space entry and plant shutdown coordination. A service claim carries obligations a product page does not, and Version B shipping without a service area promises national on-site installation by implication. Those three are listed under Version B below"
         },
         {
@@ -570,6 +597,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "We supply lining as sheet, cut and prepared to your development or template, with the bonding face ready for your applicator’s adhesive system. Skirting ships cut to length. What we do not do is fit — site installation is an applicator’s trade with its own crews, surface preparation and vulcanising equipment, and we would rather tell you that now than on site."
+          ],
           "note": "62 words · a refusal stated as competence. “We would rather tell you now than on site” is the sentence that keeps a buyer who needed fitting warm for the next enquiry that does not"
         },
         {
@@ -580,6 +610,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "Send a development, a template or the dimensions of the surface and we will cut to it. If your applicator has a preferred adhesive system, tell us and we will supply the compound with a bonding face prepared for it."
           ],
           "note": "40 words · makes the applicator an ally rather than a competitor, which is how the supply-only model actually wins work"
         },
@@ -601,6 +634,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "Lining is supplied cut and prepared to your development, or supplied and fitted — tell us which when you enquire, because it changes the specification as well as the price. A fitted lining is bonded to prepared steel; a supplied one arrives ready for your applicator’s system."
+          ],
           "note": "47 words · if fitting is confirmed, this is the framing — the choice offered as a specification question rather than an upsell"
         },
         {
@@ -612,6 +648,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "Where we fit, the steel is degreased and grit-blasted to a controlled profile before priming, and the lining is bonded within a defined window before the surface re-oxidises — the same discipline described on our bonded components page, at a larger scale."
+          ],
           "note": "42 words · reuses the surface-preparation argument from sheet 37 section 03, which is the strongest paragraph in this run. Only ships if fitting is confirmed"
         },
         {
@@ -622,6 +661,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "A Service node in the page schema, a named geographic service area, and a line on what is not included — scaffolding, confined-space entry, plant shutdown coordination."
           ],
           "note": "A service claim brings obligations a product page does not. If Version B ships without a service area and an exclusions line, the page promises national on-site installation by implication"
         }
@@ -808,6 +850,9 @@
           ],
           "leads": [
             "Our engineering team responds within 48 hours with a compound and thickness recommendation and a quotation."
+          ],
+          "marked": [
+            "Send the surface area or the metreage and tell us the duty — what the material is, how far it drops, and how abrasive it is. If you are replacing a worn lining, tell us how long it lasted. **Our engineering team responds within 48 hours with a compound and thickness recommendation and a quotation.**"
           ],
           "note": "55 words · the two inputs from section 03 and the wear-life question repeated at the point of conversion. 48 hours is the sitewide figure"
         },

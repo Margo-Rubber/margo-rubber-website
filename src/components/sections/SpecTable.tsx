@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { emphasised } from "@/components/ui/Emphasis";
 
 type Props = {
   columns: string[];
@@ -21,8 +22,22 @@ type Props = {
  * gasket and bush tables whose families differ.
  */
 const FAMILIES = ["AS568", "ISO", "JIS", "DIN", "ASME", "EN", "ASTM", "BS", "SAE"];
-const mentions = (row: string[], f: string) =>
-  row.some((cell) => new RegExp(`(^|[^A-Z0-9])${f}(?![A-Z0-9])`, "i").test(cell));
+
+/**
+ * A chip is a standard's name, matched as a whole word in any cell — or, for
+ * a table filtered by service rather than by standard (the bellows page's
+ * "Fatigue-critical", "Oil contact"), `Label :: pattern`, a regular
+ * expression a cell must match.
+ */
+const chipLabel = (chip: string) => chip.split(" :: ")[0];
+const chipTest = (chip: string): RegExp => {
+  const [label, pattern] = chip.split(" :: ");
+  return pattern ? new RegExp(pattern, "i") : new RegExp(`(^|[^A-Z0-9])${label}(?![A-Z0-9])`, "i");
+};
+const mentions = (row: string[], chip: string) => {
+  const re = chipTest(chip);
+  return row.some((cell) => re.test(cell));
+};
 
 /**
  * The spec table is a real <table>, never an image — required by both AI
@@ -91,7 +106,7 @@ export function SpecTable({ columns, rows, footnote, controls = true, chips, sea
           </Chip>
           {families.map((f) => (
             <Chip key={f} active={family === f} onClick={() => setFamily(f)}>
-              {f}
+              {chipLabel(f)}
             </Chip>
           ))}
         </div>
@@ -208,14 +223,13 @@ function withCount(footnote: string, shown: number, total: number, controls: boo
  */
 function disclaimerLinked(text: string) {
   const parts = text.split(/(technical disclaimer)/i);
-  if (parts.length === 1) return text;
   return parts.map((part, i) =>
     i % 2 ? (
       <Link key={i} href="/legal/disclaimer" className="text-ink-3 underline underline-offset-2 hover:text-ink">
         {part}
       </Link>
     ) : (
-      part
+      <span key={i}>{emphasised(part, "text-ink-2 font-semibold")}</span>
     ),
   );
 }

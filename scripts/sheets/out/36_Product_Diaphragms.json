@@ -41,6 +41,9 @@
           "leads": [
             "Flat, rolling and convoluted diaphragms for metering pumps, valves, regulators and sprayers — plain or fabric-reinforced, moulded to your drawing at our ISO 9001:2015 plant in Nashik."
           ],
+          "marked": [
+            "**Flat, rolling and convoluted diaphragms for metering pumps, valves, regulators and sprayers — plain or fabric-reinforced, moulded to your drawing at our ISO 9001:2015 plant in Nashik.** The diaphragm sits in the medium on every stroke, so we choose the compound from what you are pumping, not from a default."
+          ],
           "note": "48 words · the last clause is the page’s editorial spine and it appears again in section 04. The compound-default bug runs the length of this site — silicone pre-selected on all three gaskets pages, FKM on all six oil-seal pages, EPDM on the oil filler cap. On a diaphragm it is the most expensive version of that mistake, because the medium is the whole specification"
         },
         {
@@ -109,6 +112,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "The shape follows the stroke. A short stroke can run on a flat diaphragm; a long one needs the sidewall to roll or the convolution to unfold, or the rubber works in tension and tears at the clamp."
           ],
           "note": "38 words · the failure mode is named in the intro because it is the mistake buyers actually make — specifying a flat diaphragm for a stroke that needs a rolling one"
         },
@@ -243,6 +249,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "Send a drawing in PDF, DWG, DXF or STEP — or send the diaphragm you are replacing and tell us how it failed. A hardened, cracked diaphragm means heat; a swollen one that has lost its shape means the wrong compound for the medium; a split at the clamp line means the stroke or the housing, not the rubber."
+          ],
           "note": "58 words · this is the highest-value paragraph on the page. It converts a buyer who has a failed part and no drawing, which is most of them, and it demonstrates diagnostic competence in three clauses without claiming anything untestable. The same failure-mode framing appears on the oil-seals sheets and it is the most-copied paragraph in this set"
         }
       ],
@@ -281,6 +290,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "A diaphragm is submerged in the medium on every stroke, so the compound is not a preference — it is the part. EPDM is right for water, dosing chemicals and brake fluid, and it swells until the diaphragm loses its shape in oil, fuel or grease. Every compound we mix is available on every part. These are ranked for a diaphragm."
           ],
           "note": "62 words · the last two sentences carry the client instruction of 2026-09-02 — Margo produces every part in every compound it mixes, so nothing is removed from the list, only ranked. Saying “ranked” rather than “available” is what makes an eight-row table useful instead of a menu"
         },
@@ -354,6 +366,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "Not sure which applies? Send the fluid, the temperature and the pressure and we will recommend the compound with the datasheet, before you commit to a drawing."
+          ],
           "note": "27 words · a second, lower-commitment conversion path for a buyer who is still specifying. This is the enquiry a competitor with a catalogue cannot answer"
         }
       ],
@@ -394,6 +409,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "Above roughly 3 bar, or wherever a stretching diaphragm would change the dose, the rubber alone is not the structure. We bond nylon, polyester or aramid fabric into the moulding: the fabric takes the pressure load and holds the effective area constant through the stroke, and the elastomer seals and carries the chemical duty. Ply count, weave and orientation follow your pressure and stroke — send both and we will specify them."
+          ],
           "note": "72 words · this is the capability that separates a diaphragm supplier from a moulder, and it is a real Margo capability: rubber-to-fabric and rubber-to-metal bonding is done in-house at Nashik, client-confirmed. No pressure rating is published — the 3 bar figure is stated as the point where reinforcement enters the conversation, not as a limit of any part"
         },
         {
@@ -404,6 +422,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "Where the diaphragm drives a stem or seats against a plate, the metal is moulded in rather than assembled after. The bond is made during cure, so there is no adhesive joint to fail and no stack of tolerances between two parts. Send the insert material and its finish — steel, stainless and brass all bond, and the surface preparation differs for each."
           ],
           "note": "63 words · rubber-to-metal bonding appears nowhere on margorubber.in today despite being an in-house capability. It has its own guide at /resources/rubber-to-metal-bonded-parts-guide — link the phrase moulded in to it. This panel and that guide are the two places the capability finally surfaces"
         },
@@ -416,6 +437,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "Below the pressure where reinforcement earns its cost, a plain moulded diaphragm is lighter, more flexible and cheaper to tool. Most regulator and pressure-switch diaphragms are plain. We will tell you which side of that line your part sits on when we see the pressure and the diameter."
+          ],
           "note": "48 words · the panel that talks a buyer out of the more expensive construction. Three panels where the third recommends the cheapest option reads as engineering rather than selling, and it is true"
         },
         {
@@ -426,6 +450,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "Tooling is cut in-house. A new diaphragm tool runs alongside the compound trial, so first samples come back in 48 to 72 hours from an approved drawing."
           ],
           "note": "27 words · in-house toolroom is the differentiator that shortens the loop, and 48–72 hours for a prototype is the figure used on every other page in this set"
         }
@@ -517,6 +544,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "Material test reports, dimensional inspection sheets and a certificate of conformance ship with every consignment. Batch records are retained per shipment and are available on request under NDA. Diaphragms are packed flat and unloaded, so the sealing bead is not set before installation."
           ],
           "note": "44 words · the first sentence is the standard string used on all 31 SKU pages — do not reword it. The packing sentence is part-specific, the way the oil-seal sheets add the sealing-lip note and the pad sheets add “ship flat and unloaded”"
         }
@@ -707,6 +737,9 @@
           ],
           "leads": [
             "Our engineering team responds within 48 hours with a compound recommendation, dimensional confirmation and a quotation."
+          ],
+          "marked": [
+            "Send your drawing with the effective diameter, stroke and working pressure, or the diaphragm you are replacing with a note of how it failed. Tell us the medium and the cycle rate. **Our engineering team responds within 48 hours with a compound recommendation, dimensional confirmation and a quotation.**"
           ],
           "note": "48 words · the three inputs from section 03 repeated at the point of conversion. 48 hours is the sitewide figure — not “two working days”, not “within 24 hours”, both of which appear on the live site"
         },

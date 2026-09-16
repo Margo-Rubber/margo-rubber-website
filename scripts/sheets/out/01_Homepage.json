@@ -42,6 +42,9 @@
           "leads": [
             "Margo Rubber Products is an ISO 9001:2015 certified rubber component manufacturer in Nashik, India"
           ],
+          "marked": [
+            "**Margo Rubber Products is an ISO 9001:2015 certified rubber component manufacturer in Nashik, India**, moulding and extruding O-rings, oil seals, gaskets and bellows to customer drawing in eight compounds. Five million components a month, FOB Nhava Sheva. Quotation in 48 hours."
+          ],
           "note": "44 words · live subhead is 22 · the four product nouns are inline links, not extra UI"
         },
         {
@@ -170,6 +173,9 @@
           ],
           "leads": [
             "continuous marquee"
+          ],
+          "marked": [
+            "24 names will not sit on one 1440px row. Build as a **continuous marquee**, single row, paused on hover and on prefers-reduced-motion, sector order as above so Automotive leads. Alternative if motion is unwanted: two static rows of 12 at a smaller type size — the band has 139px of height and can take 200px without disturbing the sections either side."
           ]
         },
         {
@@ -180,6 +186,9 @@
           ],
           "leads": [
             "text wordmarks, not logos"
+          ],
+          "marked": [
+            "— logo use needs written permission per account. Until it lands, run this strip as **text wordmarks, not logos**. Mahindra & Mahindra and IDEX are the two independently corroborated names; the other 22 come from Margo’s own profile p28 and are safe to name but not to badge. Footer line, verbatim from the profile: Trade marks shown are the property of their respective owners and appear solely to identify commercial supply relationships."
           ],
           "note": "CONFIRM"
         }
@@ -235,6 +244,9 @@
           "leads": [
             "moulded"
           ],
+          "marked": [
+            "Certificate 09111526A, issued by Integral Certification Ltd, valid to 21 February 2027. Scope covers the manufacture of **moulded** rubber components; extension to the extruded and cellular lines is in hand."
+          ],
           "note": "30 words · live is 8 · names the issuing body, which the live site leaves blank"
         },
         {
@@ -246,6 +258,9 @@
           "leads": [
             "Margo Rubber Products has manufactured precision rubber components in Nashik, Maharashtra since 2005."
           ],
+          "marked": [
+            "**Margo Rubber Products has manufactured precision rubber components in Nashik, Maharashtra since 2005.** The works moved from a 6,000 sq ft plant running 200,000 parts a month to a purpose-built 10,000+ sq ft facility built around one linear flow — raw material in at one end, finished goods out at the other."
+          ],
           "note": "50 words · live is 44"
         },
         {
@@ -256,6 +271,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "Compound formulation, mould tooling, moulding, finishing and testing all happen under that roof. When a part fails a fitment check there is no three-way argument between a compounder, a toolroom and a moulder — there is one team and one corrective action."
           ],
           "note": "42 words · live is 29"
         },
@@ -609,6 +627,9 @@
           "leads": [
             "Quotation comes back in 48 hours, a prototype in 48 to 72 hours from approval, and production in three to four weeks — two on express."
           ],
+          "marked": [
+            "Send a drawing, a specification or a worn part in an envelope. **Quotation comes back in 48 hours, a prototype in 48 to 72 hours from approval, and production in three to four weeks — two on express.**"
+          ],
           "note": "40 words · live is 25 · second sentence is the extractable answer block"
         },
         {
@@ -694,6 +715,9 @@
           ],
           "leads": [
             "10,000+ sq ft plant in the Nashik industrial belt"
+          ],
+          "marked": [
+            "A **10,000+ sq ft plant in the Nashik industrial belt**, built for a single linear workflow: raw material in at one end, finished goods out at the other, with no cross-traffic between clean and flash-generating areas. Automating during the move took installed capacity to **five million parts a month**. Output today is 1.5 million."
           ],
           "note": "52 words · live is 42"
         },
@@ -786,6 +810,9 @@
           "leads": [
             "Margo Rubber Products ships precision rubber components from Nashik, India to 95 countries, FOB Nhava Sheva or CIF to your port."
           ],
+          "marked": [
+            "**Margo Rubber Products ships precision rubber components from Nashik, India to 95 countries, FOB Nhava Sheva or CIF to your port.** Every market carries a country-level sourcing playbook — duty treatment, certificate requirements, transit time and port."
+          ],
           "note": "36 words · the section has no standfirst today; this is where the entity definition goes"
         },
         {
@@ -835,6 +862,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "Incoterms FOB Nhava Sheva as standard; CIF, EXW and DAP by agreement at quotation stage. ISPM-15 heat-treated pallets on every consignment. See all 95 markets and their trade lanes →"
+          ],
           "note": "30 words · live is 19 · footnote gains the section’s only outbound link"
         }
       ],
@@ -880,6 +910,9 @@
           ],
           "leads": [
             "Name the fluid, the temperature and the duty cycle and we will tell you which of the eight to specify."
+          ],
+          "marked": [
+            "Temperature service range per compound — the same table our engineers use for material selection, not a marketing simplification. **Name the fluid, the temperature and the duty cycle and we will tell you which of the eight to specify.**"
           ],
           "note": "40 words · live is 24"
         },
@@ -944,6 +977,9 @@
           "leads": [
             "Dimensional conformity to ISO 3302-1, classes M1–M4 moulded and E1–E3 extruded — tolerance follows the section."
           ],
+          "marked": [
+            "Shore A hardness to ASTM D2240 · tensile to D412 · compression set to D395 · ageing to D573 · cure curve to ISO 6502-2. **Dimensional conformity to ISO 3302-1, classes M1–M4 moulded and E1–E3 extruded — tolerance follows the section.**"
+          ],
           "note": "Replaces Tolerances held to ±0.01mm — ±0.01 mm is the resolution of the inspection instrument, not a part tolerance. Physically unachievable in moulded rubber and an instant credibility loss with any procurement engineer"
         },
         {
@@ -954,6 +990,9 @@
           ],
           "leads": [
             "This table is the one source for compound temperature ranges across the whole site."
+          ],
+          "marked": [
+            "**This table is the one source for compound temperature ranges across the whole site.** Every category page, the products hub, the industry pages and the export pages must carry these eight values and no others. Where a page disagrees, this table wins."
           ]
         },
         {
@@ -1040,6 +1079,11 @@
             "This matters more than the other seven combined.",
             "If it is a peak, publish both:"
           ],
+          "marked": [
+            "**Published FKM continuous service is 200 to 210 °C across the industry. The 250 °C figure in Margo’s locked facts is 40 to 50 degrees above that**, which is the pattern of a peak or intermittent rating rather than a continuous one. Both numbers can be true of the same compound — they answer different questions.",
+            "**This matters more than the other seven combined.** FKM is the compound specified precisely because something runs hot, so it is the one a buyer selects on the top number. An engineer who designs to 250 °C continuous on a compound rated 200 gets a seal that hardens and cracks in service — and the site said 250.",
+            "is 250 °C a continuous or a peak rating, and is it a specific high-temperature FKM grade Margo mixes? **If it is a peak, publish both:** “−20 °C to +200 °C continuous, peaks to 250 °C”. That is more useful than either number alone and it is what a datasheet would say."
+          ],
           "note": "Ask Ayaz two questions:"
         },
         {
@@ -1050,6 +1094,9 @@
           ],
           "leads": [
             "Label the column Continuous service, not Temperature range."
+          ],
+          "marked": [
+            "**Label the column Continuous service, not Temperature range.** Every figure in this table is a continuous rating, and saying so removes the ambiguity that produced the FKM question in the first place. If peak figures are confirmed for any compound, they get their own column rather than being folded into one range."
           ]
         }
       ],
@@ -1105,6 +1152,9 @@
           "leads": [
             "A full quotation and feasibility report follows inside 48 hours."
           ],
+          "marked": [
+            "Our engineering team replies within one business day with a compound recommendation, an indicative price and a lead time. **A full quotation and feasibility report follows inside 48 hours.** No drawing? Send the part — a large share of our work starts as a worn component in an envelope."
+          ],
           "note": "48 words · live is 29"
         },
         {
@@ -1159,6 +1209,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "— rfq@margorubber.com is published on /contact and is the wrong TLD. If that mailbox does not exist, quote requests from the primary contact page are bouncing or vanishing right now. This is the only defect on the site that loses money today."
+          ],
           "lits": [
             "Reply within one business day · info@margorubber.in · +91 96655 79276"
           ],
@@ -1193,6 +1246,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "ISO 9001:2015 certified manufacturer of precision moulded and extruded rubber components in Nashik, India. Sealing and anti-vibration parts to customer drawing, supplied to OEMs and distributors in 95 countries."
           ],
           "note": "29 words · live is 26 · opens with the entity definition, since the footer repeats on all 40 pages"
         },

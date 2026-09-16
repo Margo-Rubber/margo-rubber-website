@@ -41,6 +41,9 @@
           "leads": [
             "Margo Rubber Products moulds cable and panel pass-through grommets at its ISO 9001:2015 certified plant in Nashik, India"
           ],
+          "marked": [
+            "**Margo Rubber Products moulds cable and panel pass-through grommets at its ISO 9001:2015 certified plant in Nashik, India** — open, blind, multi-hole, oval and bulkhead configurations from 6 mm panel hole upward, cut to print above that. **Any of our eight compounds, at any size in the range.**"
+          ],
           "note": "44 words · live is 22 · entity, process, configurations, size and geo. The closing sentence is the correction from the banner above stated in the buyer’s own terms, on the first screen — it is the single most useful sentence on this page and it costs nine words"
         },
         {
@@ -107,6 +110,10 @@
           "leads": [
             "six",
             "The material column does not gain more materials — it stops being a material column."
+          ],
+          "marked": [
+            "The live table renders three rows. This section specifies **six**, so the developer must add three and the component should take an arbitrary list. **All four column headings change**, but **the column count stays at four** and the chip count stays at five.",
+            "**The material column does not gain more materials — it stops being a material column.** Every row reads any of the eight, because size and compound are independent. Repeating the same value down a column is deliberate: it is the correction, stated six times, in the place the buyer is looking."
           ]
         },
         {
@@ -133,6 +140,9 @@
           ],
           "leads": [
             "the panel hole it sits in, the thickness of that panel, and the cable or bore it has to pass."
+          ],
+          "marked": [
+            "A grommet is specified by three dimensions: **the panel hole it sits in, the thickness of that panel, and the cable or bore it has to pass.** Send those with the drawing and we will quote it. **Compound is a separate choice — any of our eight is available at any size in the range.**"
           ],
           "note": "54 words · live is 25 · the live intro is technically correct and usefully specific, which is rare on this site, so its structure is kept. The closing sentence is added, and it is the one doing the work"
         },
@@ -231,6 +241,9 @@
           "leads": [
             "Groove width is the thickness of your panel"
           ],
+          "marked": [
+            "Showing 6 of 6 entries. **Groove width is the thickness of your panel** — measure the sheet, not the hole. **The bore is set by the cable or pipe passing through**, and is quoted from your drawing rather than fixed by the panel hole. Dimensional conformity to ISO 3302-1, class M1 to M4, as recorded on the drawing. Values are typical for the size band and are not a specification for a particular part; see our technical disclaimer."
+          ],
           "note": "72 words · live is 26 · the first two sentences answer the two questions that come back on almost every grommet enquiry, and answering them here removes a round trip from the quotation. The live footnote points at a “compound datasheet” a visitor cannot reach"
         }
       ],
@@ -259,6 +272,10 @@
           "leads": [
             "eight",
             "Panel order is page data, not a fixed sequence."
+          ],
+          "marked": [
+            "The live accordion renders four panels. This section specifies **eight**. The developer must extend the component to take an arbitrary list — four new panels: **neoprene, AEM, SBR and natural rubber**. This is the same shared component as the O-rings, oil seals, gaskets, bellows and anti-vibration pages, so extending it once lands on all eleven categories. If the Figma shows four, the Figma is short by four and needs the extra panels drawn.",
+            "**Panel order is page data, not a fixed sequence.** On this page EPDM leads; on the anti-vibration page natural rubber leads; on O-rings AEM leads. The live build renders the same four in the same order everywhere, which is why FKM — a specialist compound on almost every category — is the first panel a buyer opens on six pages."
           ]
         },
         {
@@ -285,6 +302,9 @@
           ],
           "leads": [
             "Name those and we will tell you which to specify — and every compound below is available at every size we make."
+          ],
+          "marked": [
+            "A grommet is chosen for what it sits in and what it touches: the panel environment, the temperature at the aperture, and whether there is oil, fuel or weather on either side. **Name those and we will tell you which to specify — and every compound below is available at every size we make.**"
           ],
           "note": "54 words · live is 27 · the live intro says “chemical compatibility profile… medium, temperature, and pressure class”, which is the sealing-page intro rendered unchanged. A grommet has no pressure class. The closing clause repeats the decoupling once more, here, because this is the section where a buyer is choosing a compound and would otherwise carry the table’s implication with them"
         },
@@ -404,6 +424,9 @@
           ],
           "leads": [
             "Panel hole, panel thickness, bore and compound are set from your specification, and full dimensional data is issued with the quotation."
+          ],
+          "marked": [
+            "Each part below is manufactured to customer drawing or to our standard tooling. **Panel hole, panel thickness, bore and compound are set from your specification, and full dimensional data is issued with the quotation.**"
           ],
           "note": "35 words · live is 27 · the three dimensions named are the three the section 02 intro asks for, so the page asks for the same information twice in the same words rather than twice in different ones"
         },
@@ -568,6 +591,9 @@
           "leads": [
             "Send the panel hole, the panel thickness, the bore and the compound with your volume, and we will quote it."
           ],
+          "marked": [
+            "Margo produces in bulk against OEM schedules. **Send the panel hole, the panel thickness, the bore and the compound with your volume, and we will quote it.** **Minimum run is 10,000 pieces per part number, per compound**, or quoted against the part where size or complexity sets the economics. Prototype and first-article lots sit outside the minimum and are quoted separately."
+          ],
           "note": "48 words · live is 34 · replaces “Margo is geared for volume procurement. If your project requires below-MOQ qualification samples…”, which states a minimum twice by implication and tells a prototype buyer they are below the floor before they have asked. The founder’s own phrasing from the commercial terms, with the grommet inputs named"
         },
         {
@@ -654,6 +680,9 @@
           "leads": [
             "Our engineering team responds within 48 hours with dimensional confirmation, a recommended compound and a quotation."
           ],
+          "marked": [
+            "Send your panel drawing with the hole diameter, the panel thickness and the cable or pipe passing through — or the grommet you are replacing, with a note of what failed. **Our engineering team responds within 48 hours with dimensional confirmation, a recommended compound and a quotation.**"
+          ],
           "note": "47 words · live is 34 · “within two working days” becomes 48 hours. The site publishes six different response times; two working days contradicts the 48 hours promised on the homepage, the contact page and the commercial terms directly above. “With a note of what failed” is the addition — a replacement grommet almost always means the last one perished, split or was pushed out, and which of the three it was decides the compound"
         },
         {
@@ -703,6 +732,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "ISO 9001:2015 certified manufacturer of precision moulded and extruded rubber components in Nashik, India. Sealing and anti-vibration parts to customer drawing, supplied to OEMs and distributors in 95 countries."
           ],
           "note": "29 words · live is 26 · opens with the entity definition, since the footer repeats on all 40 pages"
         },

@@ -42,6 +42,9 @@
           "leads": [
             "Margo Rubber Products moulds and extrudes eleven lines of precision rubber components at its ISO 9001:2015 certified plant in Nashik, India"
           ],
+          "marked": [
+            "**Margo Rubber Products moulds and extrudes eleven lines of precision rubber components at its ISO 9001:2015 certified plant in Nashik, India** — sealing, anti-vibration, protection, continuous profile and cellular. Compound, hardness and dimensions set from your drawing or a physical sample."
+          ],
           "note": "41 words · live is 19 · entity, category and location in the first clause — this is the page’s AEO surface"
         },
         {
@@ -130,6 +133,9 @@
           ],
           "leads": [
             "Standard catalogue sizes to AS568, ISO 3601 and metric series, or fully bespoke from your drawing."
+          ],
+          "marked": [
+            "Nine moulded lines, one continuous-profile line and one cellular line. **Standard catalogue sizes to AS568, ISO 3601 and metric series, or fully bespoke from your drawing.** Tooling is designed and cut in-house."
           ],
           "note": "32 words · live is 15"
         },
@@ -309,6 +315,9 @@
           ],
           "leads": [
             "Current output is 1.5 million a month, so a volume ramp gets press time rather than a queue position."
+          ],
+          "marked": [
+            "Automated presses with closed-loop temperature and pressure control, digital curing ovens with a retrievable cure record per batch, and IoT line monitoring. **Current output is 1.5 million a month, so a volume ramp gets press time rather than a queue position.**"
           ],
           "note": "42 words · live is 20 · second sentence is the extractable answer to “can they take my volume?”"
         },
@@ -506,6 +515,9 @@
           "leads": [
             "Name the fluid, the temperature and the load and we will tell you which of the eight to specify."
           ],
+          "marked": [
+            "We mix our own compound rather than buying it in, which is why the formulation can be written for your duty cycle instead of pulled off a shelf. **Name the fluid, the temperature and the load and we will tell you which of the eight to specify.**"
+          ],
           "note": "47 words · live is 22"
         },
         {
@@ -661,6 +673,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "The same eleven lines serve nine sectors. What changes between them is the compound, the tolerance class and the documentation that ships with the part."
+          ],
           "note": "25 words · live is 17"
         },
         {
@@ -798,6 +813,9 @@
           "leads": [
             "A supplier who names that boundary is one you can plan around."
           ],
+          "marked": [
+            "One list, with the status of each certification stated on the badge rather than implied. **A supplier who names that boundary is one you can plan around.** Compound composition declarations are produced per part on request."
+          ],
           "note": "36 words · live is 18"
         },
         {
@@ -910,6 +928,9 @@
           "leads": [
             "Instruments sit on a scheduled calibration cycle, which is what makes a result traceable rather than merely recorded."
           ],
+          "marked": [
+            "Every compound batch and every despatch lot is tested before it ships. **Instruments sit on a scheduled calibration cycle, which is what makes a result traceable rather than merely recorded.** Anything outside our bench goes to a NABL-accredited partner laboratory, on request."
+          ],
           "note": "42 words · live is 26"
         },
         {
@@ -996,6 +1017,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "— does this PDF exist? The live button is wired to nothing. If there is no document, the button comes off; a dead download on a quality page costs more than the missing asset."
+          ],
           "lits": [
             "Download the test capability statement ↓"
           ],
@@ -1035,6 +1059,9 @@
           "leads": [
             "One PDF, no login."
           ],
+          "marked": [
+            "Twelve production lines across eleven website categories, with material data, dimensional tables and application notes. **One PDF, no login.**"
+          ],
           "note": "20 words · live is 25 · “nine product families” corrected to the real count; the 2026 catalogue reconciles to 12 lines and 11 categories, self-adhesive foam tape being a section inside Sponge & Foam rather than a URL of its own"
         },
         {
@@ -1062,6 +1089,9 @@
           ],
           "leads": [
             "Consider removing the gate."
+          ],
+          "marked": [
+            "**Consider removing the gate.** The catalogue is the single strongest citable asset Margo has, and a gate makes it invisible to every crawler and every assistant. The trade is a handful of email addresses against being the only Indian rubber manufacturer whose full spec catalogue is indexable. If the gate stays, publish an ungated HTML version of the same tables at /products/catalogue and gate only the PDF."
           ]
         }
       ],
@@ -1185,6 +1215,9 @@
           "leads": [
             "Our engineering team replies within one business day, and a full quotation with a feasibility report follows inside 48 hours."
           ],
+          "marked": [
+            "Share the part and the volume. **Our engineering team replies within one business day, and a full quotation with a feasibility report follows inside 48 hours.**"
+          ],
           "note": "26 words · live is 20 · the live “within 24 hours with pricing” conflicts with the 48-hour quote commitment used everywhere else"
         },
         {
@@ -1250,6 +1283,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "ISO 9001:2015 certified manufacturer of precision moulded and extruded rubber components in Nashik, India. Sealing and anti-vibration parts to customer drawing, supplied to OEMs and distributors in 95 countries."
           ],
           "note": "29 words · live is 26 · opens with the entity definition, since the footer repeats on all 40 pages"
         },

@@ -41,6 +41,9 @@
           "leads": [
             "Continuous-length seals, channels and structural profiles extruded to drawing at our ISO 9001:2015 certified plant in Nashik, India."
           ],
+          "marked": [
+            "**Continuous-length seals, channels and structural profiles extruded to drawing at our ISO 9001:2015 certified plant in Nashik, India.** Five compounds, eight standard sections, and per-metre pricing quoted against your total run length."
+          ],
           "note": "34 words · live is 30 · the live sentence is kept almost intact, because it is the best product subhead on the site: it states the format, the count, the pricing model and the commercial position in one line. Only the entity and geo are inserted. “no minimum run on repeat orders” comes out and the pricing model stays. Client instruction, 2026-09-01: Margo deals in bulk, so the live line is a superseded position rather than a mistake — and on this page the unit is length, not pieces, so the honest equivalent is a minimum run quoted per profile against total length"
         },
         {
@@ -128,6 +131,9 @@
           ],
           "leads": [
             "every profile is available in any compound from the specification table below."
+          ],
+          "marked": [
+            "Clean 2D cross-section drawings — **every profile is available in any compound from the specification table below.** Dimensional conformity to ISO 3302-1, class E1 to E3 as recorded on the drawing; **±0.2 mm held on critical dimensions**, with the tolerance on any one dimension set by the section rather than applied across the profile."
           ],
           "note": "50 words · live is 25 · the first clause is kept because it is the decoupling statement the grommets and bushes tables were missing. The addition is the standard. ±0.2 mm on its own is a number without a frame; naming ISO 3302-1 and its E classes turns it into a claim an engineer can check, and the closing clause is the honest qualifier — a thin wall and a large hollow section cannot hold the same tolerance"
         },
@@ -235,6 +241,9 @@
           "leads": [
             "Five polymers covering −60 °C to +250 °C"
           ],
+          "marked": [
+            "Every compound blended in-house. **Five polymers covering −60 °C to +250 °C** and the full chemical exposure spectrum."
+          ],
           "note": "18 words · live is 18 · one number. Live reads “−60°C to +200°C” while the FKM row directly beneath it reads −20 to +250 °C. The table is right and the sentence is 50 °C short, on the same screen, one line apart. It is the smallest correction in this sheet and the most embarrassing one to leave"
         },
         {
@@ -289,6 +298,9 @@
           "leads": [
             "Extrusion hardness bands are narrower than our moulding range on purpose"
           ],
+          "marked": [
+            "Hardness and temperature ranges are stated as standard blends; custom formulations available on request. **Extrusion hardness bands are narrower than our moulding range on purpose** — a profile has to hold its section coming off the die and through cure, which rules out the softest and hardest ends. **Natural rubber, SBR and AEM are available on extruded profiles to order** and are not part of the standard library. All compounds tested to the ISO and ASTM methods listed in the quality section below."
+          ],
           "note": "72 words · live is 22 · three additions, each doing a job. The hardness sentence stops the next consistency audit reading this table as drift against the homepage — it is a deliberate, correct narrowing and the page should say so. The three extra compounds answer the buyer who arrives wanting an NR profile and would otherwise leave. “Tested to the methods listed below” replaces the vaguer “tested to ISO / ASTM as standard” and points at the section that names them"
         }
       ],
@@ -330,6 +342,9 @@
           ],
           "leads": [
             "Each is monitored in-process and logged against the batch record"
+          ],
+          "marked": [
+            "Every extrusion follows four tightly controlled stages. **Each is monitored in-process and logged against the batch record**, so a length delivered eighteen months from now can be traced back to the mix that made it."
           ],
           "note": "36 words · live is 22 · the live sentence is kept and one clause added. Traceability is the claim the batch record implies and never states, and it is what an OEM quality auditor is actually asking about — it also connects directly to the “full batch traceability” badge in section 06, which currently sits on the page unsupported by any explanation"
         },
@@ -403,6 +418,9 @@
           ],
           "leads": [
             "within 48 hours"
+          ],
+          "marked": [
+            "These four parameters fully define any rubber extrusion. Provide them and our engineers will return a compound recommendation, hardness grade and dimensional tolerance **within 48 hours**, in a single technical pass — no back-and-forth."
           ],
           "note": "35 words · live is 34 · two words added. The live sentence promises a single technical pass but never says how fast, and this is the one block on the site where a buyer is being asked to do work before they get anything back. 48 hours is the site constant and it belongs in the sentence that asks for effort"
         },
@@ -488,6 +506,9 @@
           ],
           "leads": [
             "Every production batch is tested for hardness, tensile strength and compression set before despatch"
+          ],
+          "marked": [
+            "**Every production batch is tested for hardness, tensile strength and compression set before despatch**, and the results travel with the delivery. Compound qualification tests — ozone, heat ageing and low-temperature flexibility — are run once per formulation through our NABL-accredited partner laboratory and issued on request. Reports are supplied as standard with export orders."
           ],
           "note": "54 words · live is 31 · this is the correction that matters. Live says “every production batch is tested to international standards” above a list that includes ozone resistance to ISO 1431-1 and heat ageing to ISO 188 — neither is a per-batch test. Ozone testing runs for 72 hours or more; nobody holds a despatch for it. The replacement says exactly what happens per batch and what happens per formulation, which is both true and more impressive, because it shows the difference is understood"
         },
@@ -610,6 +631,9 @@
           "leads": [
             "Each card links to the industry page for the parts we make alongside the profile."
           ],
+          "marked": [
+            "From construction curtain wall to industrial fluid systems — our extrusions solve the same fundamental sealing problem across every sector. **Each card links to the industry page for the parts we make alongside the profile.**"
+          ],
           "note": "37 words · live is 24 · the live sentence is kept. The addition turns nine dead cards into nine internal links — this page currently has no outbound links in its body at all"
         },
         {
@@ -716,6 +740,9 @@
           "leads": [
             "Minimum run is quoted per profile against total length, because a thin cord and a large hollow section are not the same job."
           ],
+          "marked": [
+            "Extrusion is priced by the metre rather than by the piece, so a run is quoted against total length, section complexity and compound. **Minimum run is quoted per profile against total length, because a thin cord and a large hollow section are not the same job.**"
+          ],
           "note": "34 words · live is 24 · the live sentence is kept intact — it explains the pricing model in one line, which no other category page manages. The addition states the commercial position the hero already promises and the rows below currently contradict"
         },
         {
@@ -807,6 +834,9 @@
           "leads": [
             "within 48 hours"
           ],
+          "marked": [
+            "Send a CAD file, a section drawing, or a physical sample of the profile you are replacing — our engineers will respond with a compound recommendation, a hardness grade and indicative pricing **within 48 hours**."
+          ],
           "note": "36 words · live is 27 · “within 48 hours” is already there and it is the only CTA on the site that has it right. Every other category page says “within two working days”. Two additions only: “of the profile you are replacing”, because a worn length tells us the duty better than a drawing does, and “a hardness grade”, matching what section 05 promises to return"
         },
         {
@@ -884,6 +914,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "ISO 9001:2015 certified manufacturer of precision moulded and extruded rubber components in Nashik, India. Sealing and anti-vibration parts to customer drawing, supplied to OEMs and distributors in 95 countries."
           ],
           "note": "29 words · live is 26 · opens with the entity definition, since the footer repeats on all 40 pages"
         },

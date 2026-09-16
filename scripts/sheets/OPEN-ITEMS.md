@@ -73,3 +73,9 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 36. **Confirmation copy** "Enquiry received. A named engineer replies within 48 hours to {email}." is the contact form's post-submit state — Phase 7 (forms), not this page.
 37. **FAQ answers.** "Which rubber gasket material should I use for steam?", "What temperature can an EPDM gasket withstand?" and "What is the lead time for custom rubber gaskets?" are named for the FAQPage node with no written answers; only the quoting question (answered by §05's intro) is emitted.
 38. **Hero image.** The sheet says the hero has no image; the slot keeps the existing photograph with the sheet's alt text for when one is chosen.
+
+## 12 Bellows
+
+39. **Flex-fatigue qualification offer.** The footnote says cycle life "is established by qualification testing on that part — to ISO 132, ASTM D430 or ASTM D813" and "we will qualify against it". The claims register says no fatigue rig in-house or at the partner lab, and the Disclaimer's partner-lab list (sheet 08 §3) does not include fatigue. Shipped as written; confirm who runs the test.
+40. **Chip rules.** The sheet names four service chips (Fatigue-critical, Oil contact, Water & steam, High temperature) without saying which rows each selects; they select from the table's own cells — the two "High"/"Very high" fatigue grades, service text naming oil without a "not for oil" clause, water/steam/coolant, and peaks of +175 °C and above.
+41. **Confirmation copy** (as item 36) and the three unanswered FAQ questions (as item 37).

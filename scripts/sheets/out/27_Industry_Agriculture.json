@@ -41,6 +41,9 @@
           "leads": [
             "moulded to your drawing at our ISO 9001:2015 facility in Nashik, India"
           ],
+          "marked": [
+            "Weather- and UV-resistant rubber components for farm equipment and irrigation systems, **moulded to your drawing at our ISO 9001:2015 facility in Nashik, India**."
+          ],
           "note": "23 words · live is 22 · the ISO reference is the addition. Live reads “moulded to your drawing in Nashik, India” — this and the HVAC page are the only two industry heroes that leave the certification out"
         },
         {
@@ -80,6 +83,9 @@
           ],
           "leads": [
             "Diaphragms are on this list"
+          ],
+          "marked": [
+            "Same change as the other industry pages. **Diaphragms are on this list** because the page already names sprayer diaphragms twice in section 03. The product page behind them is now written (sheet 36) — route the entry to /products/diaphragms."
           ]
         },
         {
@@ -100,6 +106,9 @@
           ],
           "leads": [
             "Each component is produced against your drawing or an OEM sample"
+          ],
+          "marked": [
+            "We don’t stock generic parts. **Each component is produced against your drawing or an OEM sample** — compound, hardness and geometry matched to outdoor service and the contamination it sees rather than picked from a catalogue."
           ],
           "note": "38 words · live is 31 · “your equipment” becomes “outdoor service and the contamination it sees”, matching section 04"
         },
@@ -283,6 +292,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "Agricultural machinery sits outdoors year-round. Compound choice is driven by UV and ozone exposure, chemical contact and abrasive contamination rather than indoor service assumptions."
+          ],
           "note": "[no change] — 26 words that state the selection logic correctly. The cards below are where the figures go"
         },
         {
@@ -293,6 +305,9 @@
           ],
           "leads": [
             "−40 °C to +140 °C, 40 to 90 Shore A"
+          ],
+          "marked": [
+            "EPDM for components in continuous outdoor exposure — **−40 °C to +140 °C, 40 to 90 Shore A** — where general-purpose rubber perishes. **Ozone resistance is one of the tests we run in-house**, so a weathering specification can be checked before release rather than after a season in the field."
           ],
           "note": "44 words · live is 20 · the temperature range and the in-house ozone test are the additions. Ozone is on the published test list; naming it here is the difference between a claim and a capability. “Weather-grade compounds” is dropped — it is not a grade of anything"
         },
@@ -305,6 +320,9 @@
           "leads": [
             "We supply moulded components — bushes, boots, seals and mounts — and rubber sheet lining for hoppers, chutes and tanks."
           ],
+          "marked": [
+            "Natural rubber — the best abrasion resistance of the eight compounds we mix — with sealed geometries for soil, grit and organic contamination. **We supply moulded components — bushes, boots, seals and mounts — and rubber sheet lining for hoppers, chutes and tanks.**"
+          ],
           "note": "40 words · live is 14 · naming the compound is the point. “High-abrasion compounds” is a category, not a claim; natural rubber with a reason is both more useful and more defensible. Word for word the same range statement as the mining and pumps & valves sheets (lining client-confirmed 2026-09-02), so three pages describe one capability identically"
         },
         {
@@ -316,6 +334,9 @@
           "leads": [
             "EPDM −40 to +140 °C, neoprene −40 to +120 °C, natural rubber −20 to +90 °C"
           ],
+          "marked": [
+            "Compounds selected to stay flexible across seasonal extremes rather than a narrow operating band — **EPDM −40 to +140 °C, neoprene −40 to +120 °C, natural rubber −20 to +90 °C**. Below −20 °C natural rubber stiffens, and a linkage bush that was compliant in summer will not be on a cold start."
+          ],
           "note": "50 words · live is 17 · three ranges, then the consequence. Figures match the homepage compound table. The cold-start sentence is what makes the card useful — it names the failure a buyer in a cold climate will actually see"
         },
         {
@@ -326,6 +347,9 @@
           ],
           "leads": [
             "Send the supported mass, the mounting orientation and the disturbing frequency"
+          ],
+          "marked": [
+            "Mount geometry tuned for rough-terrain shock loading rather than smooth-running industrial duty. **Send the supported mass, the mounting orientation and the disturbing frequency** — rate is set by geometry and hardness together, and a mount specified from hardness alone is a guess."
           ],
           "note": "42 words · live is 15 · adds the three inputs and why they are asked for. Same request as the anti-vibration mounts product sheet, so the two pages ask for the same things in the same order"
         }
@@ -368,6 +392,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "Margo operates dedicated tooling capability for custom rubber components. Send us your OEM drawing, existing part, or equipment make and model — we reverse-engineer and produce to your specification."
           ],
           "note": "29 words · live is 29 · comma splice fixed to a dash. “Equipment make and model” is the right third input for agriculture, where the part number is often long gone and the machine is not"
         },
@@ -460,6 +487,9 @@
           "leads": [
             "certificate 09111526A, issued by Integral Certification Ltd and valid to 21 February 2027"
           ],
+          "marked": [
+            "Margo Rubber Products holds ISO 9001:2015 certification — **certificate 09111526A, issued by Integral Certification Ltd and valid to 21 February 2027**. Our quality management system covers incoming raw material inspection, in-process control and outgoing batch documentation. **An IATF 16949:2016 upgrade is in progress, targeted for completion by the end of 2026.**"
+          ],
           "note": "51 words · live is 30 · certificate identity and the IATF position are the additions. Agricultural OEMs run automotive-style supplier audits, and a stated upgrade with a date is what an auditor files. Same wording as the other eight industry sheets"
         },
         {
@@ -470,6 +500,9 @@
           ],
           "leads": [
             "Certificate 09111526A, valid to 21 February 2027"
+          ],
+          "marked": [
+            "Certified quality management covering all production and inspection processes. **Certificate 09111526A, valid to 21 February 2027**; documentation available on request."
           ],
           "lits": [
             "ISO 9001:2015\nQuality Management System"
@@ -485,6 +518,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "Every component produced against a controlled drawing revision. No substitutions without approval."
+          ],
           "lits": [
             "OEM Compliance\nDrawing-Matched Production"
           ],
@@ -498,6 +534,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "Raw material certificates and batch records retained per shipment. Available to agriculture buyers on request."
           ],
           "lits": [
             "Batch Traceability\nFull Material Traceability"
@@ -570,6 +609,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "Margo Rubber Products exports agricultural machinery components directly to equipment manufacturers, with full export documentation managed from Nashik. Components are produced against your controlled drawing revision, with pre-production sample approval available before volume release."
+          ],
           "note": "[no change] — 34 words across two paragraphs, and the sample-approval sentence is the one that matters to an importer buying from 6,000 km away"
         },
         {
@@ -619,6 +661,9 @@
           "leads": [
             "Where timber packaging is used, consignments are shipped with ISPM-15 treated and marked pallets and a fumigation certificate."
           ],
+          "marked": [
+            "Buyers are responsible for confirming applicable import duties for their specific order. **Where timber packaging is used, consignments are shipped with ISPM-15 treated and marked pallets and a fumigation certificate.** **Kenya and Tanzania both require pre-shipment verification of conformity (PVoC) through an approved inspection body before departure** — we supply the technical file and arrange inspection at the Nashik facility."
+          ],
           "note": "59 words · live is 16 · this is the correction the page most needs. Phytosanitary certification applies to plants and plant products — seeds, timber, produce, soil. A moulded rubber bush is none of those and will never need one. The word is on the page because the sector is agriculture, which is the kind of association error a knowledgeable importer notices immediately.\nThe two requirements that do apply are named instead: ISPM-15 on the wooden pallet, not on the rubber — the same standard the mining sheet raises for Australia — and PVoC for Kenya and Tanzania, which the export sheet already documents. A wrong word becomes the two most useful sentences on the page"
         }
       ],
@@ -663,6 +708,9 @@
           "leads": [
             "−40 °C to +140 °C"
           ],
+          "marked": [
+            "EPDM is the usual choice for weather-exposed components, for its UV and ozone resistance across **−40 °C to +140 °C**. Natural rubber blends are used where abrasion resistance matters more than weathering, at **−20 °C to +90 °C**. **Ozone resistance is tested in-house before release.**"
+          ],
           "lits": [
             "Which compound suits continuous outdoor exposure?"
           ],
@@ -676,6 +724,9 @@
           ],
           "leads": [
             "Send the concentrate as well as the diluted spray — a compound that holds against a field dilution may not hold in the mixing tank."
+          ],
+          "marked": [
+            "Compound selection is driven by the specific chemistry in contact. Send the chemical, concentration and service temperature and we will recommend a compound. **Send the concentrate as well as the diluted spray — a compound that holds against a field dilution may not hold in the mixing tank.**"
           ],
           "lits": [
             "Can you supply components resistant to agricultural chemicals?"
@@ -691,6 +742,9 @@
           "leads": [
             "The minimum run is 10,000 pieces per part number, per compound"
           ],
+          "marked": [
+            "We supply in bulk. **The minimum run is 10,000 pieces per part number, per compound**, or quoted against the part where geometry or tooling makes that unrealistic. Prototype and first-article lots sit outside the minimum. **Lead time is confirmed with the quotation**, from approved drawing and approved sample."
+          ],
           "lits": [
             "What is the minimum order quantity?"
           ],
@@ -704,6 +758,9 @@
           ],
           "leads": [
             "We hold the geometry and the compound; the cycle life is proved by your rig or a third-party laboratory, and we will support that test."
+          ],
+          "marked": [
+            "Yes. Bellows and boots are quoted against convolution count, free and compressed length, diameter, flex-cycle target and service temperature. **We hold the geometry and the compound; the cycle life is proved by your rig or a third-party laboratory, and we will support that test.**"
           ],
           "lits": [
             "Do you produce protective boots and bellows?"
@@ -719,6 +776,9 @@
           "leads": [
             "A worn part measures smaller than it was made"
           ],
+          "marked": [
+            "Yes. Send the physical sample or the equipment make and model and we will produce a drawing and confirm compound selection. **A worn part measures smaller than it was made** — we dimension to the original intent, not to the wear, and confirm the result with you before tooling."
+          ],
           "lits": [
             "Can you match an existing worn part?"
           ],
@@ -732,6 +792,9 @@
           ],
           "leads": [
             "An IATF 16949:2016 upgrade is in progress, targeted for completion by the end of 2026."
+          ],
+          "marked": [
+            "We hold ISO 9001:2015 — certificate 09111526A, issued by Integral Certification Ltd, valid to 21 February 2027. **An IATF 16949:2016 upgrade is in progress, targeted for completion by the end of 2026.** ISO 14001 and ISO 45001 are targeted for 2027. Documentation is available on request."
           ],
           "lits": [
             "Are you certified, and do you meet automotive-style supplier requirements?"
@@ -764,6 +827,10 @@
             "Both contact fields are unfilled on all three.",
             "The correct values are in the footer of this same page"
           ],
+          "marked": [
+            "Three of the eight industry pages written so far use this block — an eyebrow, a heading, a body line, two buttons and a contact strip — where the other five use the plain shared CTA. **Both contact fields are unfilled on all three.**",
+            "**The correct values are in the footer of this same page**, which is what makes it a component-wiring problem rather than a copy problem: the data exists, the block was never connected to it. Fix the component once and three pages are fixed together. **Water & fluid management is the last page unchecked.**"
+          ],
           "lits": [
             "✆ +91 (Nashik), Contact for number\n✉ Contact for email"
           ]
@@ -795,6 +862,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "Send us your drawing, part number, or equipment make and model. Our team will confirm compound selection, tooling status, and lead time."
           ],
           "note": "[no change] — 22 words naming three accepted inputs and three things that come back. It is the correct shape for a closing CTA"
         },
@@ -853,6 +923,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "ISO 9001:2015 certified manufacturer of precision moulded and extruded rubber components in Nashik, India. Sealing and anti-vibration parts to customer drawing, supplied to OEMs and distributors in 95 countries."
           ],
           "note": "29 words · live is 26 · opens with the entity definition, since the footer repeats on all 40 pages"
         },

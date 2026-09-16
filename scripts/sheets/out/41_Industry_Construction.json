@@ -40,6 +40,9 @@
           "leads": [
             "Extruded EPDM glazing and weatherseal profiles, cellular expansion joint seals, building-services gaskets and vibration mounts for plant — extruded and moulded to your drawing at our ISO 9001:2015 plant in Nashik."
           ],
+          "marked": [
+            "**Extruded EPDM glazing and weatherseal profiles, cellular expansion joint seals, building-services gaskets and vibration mounts for plant — extruded and moulded to your drawing at our ISO 9001:2015 plant in Nashik.** Compounded in-house, so the ozone and UV resistance a facade needs for twenty years is formulated rather than bought in."
+          ],
           "note": "50 words · the last clause is the sector-specific differentiator. A facade seal fails by ozone cracking and UV embrittlement long before it fails mechanically, and in-house compounding is what lets that be specified rather than assumed — which matters more here than on any other industry page"
         },
         {
@@ -253,6 +256,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "External seals fail by ozone cracking and UV embrittlement, not by reaching a temperature limit. A twenty-year facade seal spends its life between −5 and +65 °C and still perishes, because sunlight and atmospheric ozone attack the polymer backbone. Every compound we mix is available; these are ranked for building duty."
+          ],
           "note": "52 words · explains the failure mode rather than asserting the choice, which is what makes the EPDM recommendation credible instead of promotional. The temperature range given is deliberately unremarkable — the point is that the seal fails within it"
         },
         {
@@ -432,6 +438,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "Rubber appears in parts of a building where the product is not really rubber, it is a certified assembly. We would rather tell you now than at qualification."
           ],
           "note": "28 words · one sentence, and the second half is the commercial argument. Every hour spent qualifying a supplier who cannot do the work is an hour both sides lose"
         },
@@ -677,6 +686,9 @@
           "leads": [
             "Our engineering team responds within 48 hours with a compound recommendation, dimensional confirmation and a quotation."
           ],
+          "marked": [
+            "Send the section drawing and the annual metreage, or the moulded part drawing and the quantity. Tell us whether the position is external or protected — that single answer decides the compound before anything else does. **Our engineering team responds within 48 hours with a compound recommendation, dimensional confirmation and a quotation.**"
+          ],
           "note": "53 words · the external-or-protected question is the page’s selection rule restated at the point of conversion, and it qualifies the enquiry in one line. 48 hours is the sitewide figure — not “two working days”, not “within 24 hours”"
         },
         {
@@ -712,6 +724,9 @@
           ],
           "leads": [
             "Unchanged at fifteen."
+          ],
+          "marked": [
+            "**Unchanged at fifteen.** This is an industry page and adds nothing to the Products column."
           ],
           "note": "Confirms the count from sheet 40: fifteen is final, and only /industries/transport remains to move the Industries column"
         },

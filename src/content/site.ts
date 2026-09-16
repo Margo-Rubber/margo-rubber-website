@@ -51,7 +51,9 @@ export const FORBIDDEN_CLAIMS: { pattern: RegExp; why: string }[] = [
   { pattern: /99\.7\s*%|98\.[57]\s*%|<\s*0\.1\s*%\s*defect/i, why: "Invented quality figures. Target rejection is <1%; on-time is >99%." },
   { pattern: /80,?000\s*sq|400\+?\s*(team|employees|staff)|1,?200\+?\s*(clients|customers)|(25|27|30|35|50)\+?\s*(countries|years|nations)/i, why: "Fabricated scale figures. See the sheets' verified values." },
   { pattern: /\b60\s*(M|million)\s*\+?\s*(pcs|pieces)?\s*(\/|per)?\s*(yr|year)/i, why: "Capacity typo. Installed is 5 million a month; current 1.5 million." },
-  { pattern: /cycle\s*life|100,?000[- ]cycle|fatigue[- ]tested/i, why: "No cycle-life or fatigue claim anywhere: no rig in-house or at the partner lab. The 100,000-cycle figure is parked." },
+  // Sheet 12 §02 may say what cycle life depends on and offer to qualify a
+  // part against a target; it may not state a figure.
+  { pattern: /cycle\s*life(?! for a given part depends| and we will qualify)|100,?000[- ]cycle|fatigue[- ]tested/i, why: "No cycle-life or fatigue claim anywhere: no rig in-house or at the partner lab. The 100,000-cycle figure is parked." },
   { pattern: /B16\.20\b/, why: "Rubber flange gaskets cite ASME B16.21; B16.20 is the metallic standard." },
   { pattern: /Kammprofile|Spiral[- ]wound/i, why: "Metallic gasket types Margo does not make." },
 

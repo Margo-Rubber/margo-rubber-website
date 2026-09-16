@@ -41,6 +41,9 @@
           "leads": [
             "FKM, NBR and EPDM sealing components for upstream, petrochemical and desalination service"
           ],
+          "marked": [
+            "**FKM, NBR and EPDM sealing components for upstream, petrochemical and desalination service**, manufactured to your drawing at our ISO 9001:2015 facility in Nashik, India."
+          ],
           "note": "[no change] — 26 words, three compounds, three end markets, the certification and the geo. It is the most efficient subhead on the site and “desalination” is the word worth protecting: it is a large Gulf market and no competing Indian supplier page names it"
         },
         {
@@ -82,6 +85,10 @@
           "leads": [
             "eight",
             "Every one of the eight has a product page in this content set."
+          ],
+          "marked": [
+            "Same change as the automotive and mining pages: the live section renders three tabs and hard-codes “Three” in the heading. This specifies **eight**, with the count rendered from the list or dropped.",
+            "**Every one of the eight has a product page in this content set.** The oil and gas parts named in each card are taken from those pages, and this page currently links to none of them."
           ]
         },
         {
@@ -108,6 +115,9 @@
           ],
           "leads": [
             "Each component is produced against your drawing or an OEM sample"
+          ],
+          "marked": [
+            "We don’t stock generic parts. **Each component is produced against your drawing or an OEM sample** — compound, hardness and geometry matched to the media and service conditions rather than picked from a catalogue."
           ],
           "note": "35 words · live is 31 · “your equipment” becomes “the media and service conditions”, matching section 04’s framing"
         },
@@ -286,6 +296,9 @@
           "leads": [
             "Compound selection is driven by the media, service temperature and pressure class of your application, not by catalogue availability."
           ],
+          "marked": [
+            "Hydrocarbon service is unforgiving. **Compound selection is driven by the media, service temperature and pressure class of your application, not by catalogue availability.**"
+          ],
           "note": "[no change] — the ordering is right: media first, then temperature, then pressure class. That is how a process engineer specifies and it is the reverse of how a catalogue is organised"
         },
         {
@@ -353,6 +366,9 @@
           "leads": [
             "Send us your OEM drawing, an existing part, or the equipment make and model"
           ],
+          "marked": [
+            "Margo operates dedicated tooling capability for custom rubber components. **Send us your OEM drawing, an existing part, or the equipment make and model** — we reverse-engineer and produce to your specification."
+          ],
           "note": "32 words · live is 34 · comma splice becomes a dash; otherwise unchanged"
         },
         {
@@ -395,6 +411,9 @@
           ],
           "leads": [
             "Margo Rubber Products holds ISO 9001:2015 certification, certificate 09111526A, issued by Integral Certification Ltd and valid to 21 February 2027."
+          ],
+          "marked": [
+            "**Margo Rubber Products holds ISO 9001:2015 certification, certificate 09111526A, issued by Integral Certification Ltd and valid to 21 February 2027.** Our quality management system covers incoming raw material inspection, in-process control and outgoing batch documentation."
           ],
           "note": "37 words · live is 33 · certificate number, issuer and expiry added. On a hydrocarbon page this is the block a buyer screenshots and sends to their QA department, so a verifiable number matters more here than on any other industry page"
         },
@@ -488,6 +507,10 @@
             null,
             "Nhava Sheva to Jebel Ali is one of the shortest and most frequent lanes out of India, typically five to nine days port to port"
           ],
+          "marked": [
+            "Margo Rubber Products exports precision sealing components directly to buyers in the United Arab Emirates and the Kingdom of Saudi Arabia. We manage international documentation including commercial invoices, packing lists and certificates of origin.",
+            "**Nhava Sheva to Jebel Ali is one of the shortest and most frequent lanes out of India, typically five to nine days port to port**, with both LCL and FCL options. Buyers retain full control of their preferred logistics arrangements."
+          ],
           "note": "65 words · live is 57 · “country of origin certificates” becomes “certificates of origin”, the document’s actual name. The transit figure is the addition. The live copy says the lane is frequent and never says it is fast — five to nine days is a genuine competitive advantage against a European supplier and the page currently leaves it on the table. It is a lane figure, not a Margo commitment, and the footnote already frames transit that way"
         },
         {
@@ -536,6 +559,9 @@
           ],
           "leads": [
             "Saudi consignments clear through the SABER platform, which requires a product certificate of conformity and a shipment certificate of conformity against the correct HS code for every consignment"
+          ],
+          "marked": [
+            "Buyers are responsible for confirming import duties and conformity requirements for their specific order. **Saudi consignments clear through the SABER platform, which requires a product certificate of conformity and a shipment certificate of conformity against the correct HS code for every consignment**; UAE consignments clear under the Emirates conformity scheme. **We supply the technical file, material certificates and origin documentation your conformity body will ask for.** Contact us for documentation support."
           ],
           "note": "70 words · live is 22 · the live note raises conformity requirements and explains nothing, which leaves the buyer with a worry and no answer. Saudi Arabia’s SABER platform, run by SASO, issues a product certificate and a per-shipment certificate, and no shipment clears without the second one. Naming the process and offering the documents is the single most useful thing this page can say to a Saudi buyer, and no competing Indian supplier page mentions SABER at all. Deliberately not claimed: that Margo holds a SABER certificate, or that these components sit in a regulated category — that is per-product and per-importer, and stating the process without claiming the outcome is the defensible version"
         }
@@ -719,6 +745,9 @@
           "leads": [
             "Our engineering team responds within 48 hours with a compound and hardness recommendation, dimensional confirmation and a quotation"
           ],
+          "marked": [
+            "Send the drawing, an existing part, or the equipment make and model — with the media, the service temperature and the pressure class. **Our engineering team responds within 48 hours with a compound and hardness recommendation, dimensional confirmation and a quotation**, and an indicative Jebel Ali transit for your consignment."
+          ],
           "note": "50 words · new copy — the live block has a heading and buttons and no body paragraph. The three inputs asked for are the three section 04 names as the selection basis, so the page asks for the same information in the same order it explained"
         },
         {
@@ -760,6 +789,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "ISO 9001:2015 certified manufacturer of precision moulded and extruded rubber components in Nashik, India. Sealing and anti-vibration parts to customer drawing, supplied to OEMs and distributors in 95 countries."
           ],
           "note": "29 words · live is 26 · opens with the entity definition, since the footer repeats on all 40 pages"
         },

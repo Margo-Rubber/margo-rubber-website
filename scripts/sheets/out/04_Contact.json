@@ -42,6 +42,9 @@
           "leads": [
             "Margo Rubber Products quotes moulded and extruded rubber components from a drawing, a specification or a worn sample."
           ],
+          "marked": [
+            "**Margo Rubber Products quotes moulded and extruded rubber components from a drawing, a specification or a worn sample.** Acknowledgement within one business day; quotation and feasibility report inside 48 hours, with a compound recommendation and a lead time."
+          ],
           "note": "39 words · live is 21 · entity in the first clause, and the promise stated once with two timings that do not contradict each other"
         },
         {
@@ -104,6 +107,9 @@
           ],
           "leads": [
             null
+          ],
+          "marked": [
+            "Two steps, about ninety seconds. Or reach the engineering desk directly — the same team answers both."
           ],
           "note": "17 words · live is 14 · setting the time cost measurably lifts multi-step form completion"
         },
@@ -271,6 +277,9 @@
           "leads": [
             null
           ],
+          "marked": [
+            "ISO 9001:2015 certified manufacturer of precision moulded and extruded rubber components in Nashik, India. Sealing and anti-vibration parts to customer drawing, supplied to OEMs and distributors in 95 countries."
+          ],
           "note": "29 words · live is 26 · opens with the entity definition, since the footer repeats on all 40 pages"
         },
         {
@@ -341,6 +350,9 @@
           ],
           "leads": [
             "19.93214315, 73.73324186"
+          ],
+          "marked": [
+            "A static map image linking out to Google Maps at coordinates **19.93214315, 73.73324186** — confirmed. A static image, not an embedded iframe: an embed loads third-party JavaScript on the page most sensitive to load time, and adds a consent obligation under DPDP."
           ]
         },
         {
