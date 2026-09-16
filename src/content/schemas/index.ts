@@ -959,6 +959,9 @@ export const contactPageSchema = baseSchema.extend({
     submitLabel: z.string(),
     /** Stated directly under submit. No competitor states any response time. */
     responsePromise: z.string(),
+    /** The drawing/spec attachment — sheet 04 §02 "Add: file field". Inert until the upload backend exists. */
+    attachLabel: z.string().optional(),
+    attachHint: z.string().optional(),
   }),
 
   /* ── The five blocks after the form — content sheet 04 §05. Each renders

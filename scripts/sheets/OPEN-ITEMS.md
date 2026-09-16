@@ -26,3 +26,9 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 10. **Sustainability section.** The sheet's first recommendation is to cut it; its "honest version" copy is in place with the section switched on. *Decide: keep or cut (a toggle in the Studio).*
 11. **Certifications record.** Sheets 02 and 03 both say render the five rows from one shared record; sheet 02's fuller card bodies are the record, sheet 03's one-line titles are not shown separately.
 12. **Client strip — logos.** Text wordmarks until permission letters exist (sheet: CONFIRM per account).
+
+## 04 Contact
+
+13. **Direct contact — phone.** The sheet publishes +91 96655 79276 for both WhatsApp and Phone and asks: should a separate landline be published?
+14. **Attachment field.** Shown with the sheet's label and hint; inert until the upload backend exists (Phase 7 — needs the storage account).
+15. **Map still.** Links to Google Maps at the confirmed coordinates; the picture in the slot is the hero photograph until a map image is uploaded in the Studio (Photographs → "Contact page — map still").

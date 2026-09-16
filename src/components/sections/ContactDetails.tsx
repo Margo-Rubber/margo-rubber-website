@@ -54,12 +54,14 @@ export function ContactDetails({
 
   return (
     <>
-      {has(addressSection) && (
+      {/* Each block shows on its data; the heading rows are optional — the
+          sheet (04 §05) gives none for three of the five. */}
+      {(has(addressSection) || map?.image) && (
         <Section
           id="address"
-          eyebrow={addressSection.eyebrow}
+          eyebrow={has(addressSection) ? addressSection.eyebrow : undefined}
           eyebrowVariant="rule"
-          heading={addressSection.heading}
+          heading={has(addressSection) ? addressSection.heading : undefined}
         >
           <div className="grid gap-8 lg:grid-cols-2">
             <address className="rounded-card border-line bg-surface-3 border p-8 text-sm not-italic">
@@ -114,7 +116,7 @@ export function ContactDetails({
                   className="object-cover"
                 />
                 <span className="bg-canvas/80 text-ink absolute right-4 bottom-4 rounded-pill px-4 py-2 text-sm font-medium backdrop-blur group-hover:text-accent-400">
-                  {map.label} <span aria-hidden>↗</span>
+                  {map.label || "Google Maps"} <span aria-hidden>↗</span>
                 </span>
               </a>
             )}
@@ -122,13 +124,13 @@ export function ContactDetails({
         </Section>
       )}
 
-      {has(logisticsSection) && logistics.length > 0 && (
+      {logistics.length > 0 && (
         <Section
           id="logistics"
           className="bg-surface"
-          eyebrow={logisticsSection.eyebrow}
+          eyebrow={has(logisticsSection) ? logisticsSection.eyebrow : undefined}
           eyebrowVariant="rule"
-          heading={logisticsSection.heading}
+          heading={has(logisticsSection) ? logisticsSection.heading : undefined}
         >
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
@@ -164,12 +166,12 @@ export function ContactDetails({
         </Section>
       )}
 
-      {has(nextStepsSection) && nextSteps.length > 0 && (
+      {nextSteps.length > 0 && (
         <Section
           id="next"
-          eyebrow={nextStepsSection.eyebrow}
+          eyebrow={has(nextStepsSection) ? nextStepsSection.eyebrow : undefined}
           eyebrowVariant="rule"
-          heading={nextStepsSection.heading}
+          heading={has(nextStepsSection) ? nextStepsSection.heading : undefined}
         >
           <ol className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
             {nextSteps.map((st, i) => (
@@ -190,12 +192,14 @@ export function ContactDetails({
         </Section>
       )}
 
-      {has(faqSection) && faqs.length > 0 && (
+      {faqs.length > 0 && (
         <Section className="bg-surface">
-          <Container className="!px-0">
-            <Eyebrow variant="rule">{faqSection.eyebrow}</Eyebrow>
-            <h2 className="text-h2 mt-4 mb-10">{faqSection.heading}</h2>
-          </Container>
+          {has(faqSection) && (
+            <Container className="!px-0">
+              <Eyebrow variant="rule">{faqSection.eyebrow}</Eyebrow>
+              <h2 className="text-h2 mt-4 mb-10">{faqSection.heading}</h2>
+            </Container>
+          )}
           <IndustryFAQ items={[...faqs]} />
         </Section>
       )}

@@ -537,6 +537,8 @@ export const contactPage = defineType({
             "Stated directly under Submit. No competitor states any response time — this is the page's strongest differentiator, so it should be one Margo can actually keep.",
           validation: (r) => r.required(),
         }),
+        defineField({ name: "attachLabel", title: "Attachment field — label", type: "string", description: "e.g. ATTACH DRAWING / SPEC (OPTIONAL). The control is shown but inert until file upload is wired." }),
+        defineField({ name: "attachHint", title: "Attachment field — hint", type: "string", description: "e.g. PDF, DWG, DXF or image, max 10MB" }),
       ],
       group: "body",
     }),

@@ -272,6 +272,8 @@ export function RfqForm({
   backLabel,
   submitLabel,
   responsePromise,
+  attachLabel,
+  attachHint,
 }: {
   steps: string[];
   step1: Field[];
@@ -280,6 +282,8 @@ export function RfqForm({
   backLabel: string;
   submitLabel: string;
   responsePromise: string;
+  attachLabel?: string;
+  attachHint?: string;
 }) {
   const [step, setStep] = useState(0);
 
@@ -350,21 +354,32 @@ export function RfqForm({
                 <FieldControl f={f} />
               </label>
             ))}
+            {/* The attachment field (sheet 04 §02). Same inert affordance as
+                the homepage form until the upload backend exists. */}
+            {i === 0 && attachLabel && (
+              <div className="sm:col-span-2">
+                <span className="text-eyebrow text-ink-4 font-mono uppercase">{attachLabel}</span>
+                <p className="border-line-2 text-ink-4 mt-2 rounded-lg border border-dashed bg-[#16191E] px-4 py-3.5 text-sm">
+                  {attachHint}
+                </p>
+              </div>
+            )}
           </div>
         ))}
 
         <div className="mt-7 flex flex-wrap items-center gap-3">
-          {step === 1 && (
-            <button
-              type="button"
-              onClick={() => setStep(0)}
-              className="border-line text-ink-2 hover:text-ink rounded-pill border px-5 py-3 text-sm font-medium transition-colors"
-            >
-              ← {backLabel}
-            </button>
-          )}
+          {/* Both step labels are in the DOM; the step decides which shows. */}
+          <button
+            type="button"
+            hidden={step !== 1}
+            onClick={() => setStep(0)}
+            className="border-line text-ink-2 hover:text-ink rounded-pill border px-5 py-3 text-sm font-medium transition-colors"
+          >
+            ← {backLabel}
+          </button>
           <EnquirySubmit className="bg-accent-400 text-ink hover:opacity-90 flex-1 rounded-cta px-6 py-3.5 text-sm font-semibold transition-colors sm:flex-none sm:px-10">
-            {step === 0 ? continueLabel : submitLabel} <span aria-hidden>→</span>
+            <span hidden={step !== 0}>{continueLabel}</span>
+            <span hidden={step !== 1}>{submitLabel}</span> <span aria-hidden>→</span>
           </EnquirySubmit>
         </div>
 
@@ -393,6 +408,8 @@ export function QuoteSection({
   backLabel,
   submitLabel,
   responsePromise,
+  attachLabel,
+  attachHint,
 }: {
   eyebrow: string;
   heading: string;
@@ -408,6 +425,8 @@ export function QuoteSection({
   backLabel: string;
   submitLabel: string;
   responsePromise: string;
+  attachLabel?: string;
+  attachHint?: string;
 }) {
   return (
     <section className="py-[70px]">
@@ -439,6 +458,8 @@ export function QuoteSection({
             backLabel={backLabel}
             submitLabel={submitLabel}
             responsePromise={responsePromise}
+          attachLabel={attachLabel}
+          attachHint={attachHint}
           />
         </div>
       </Container>

@@ -285,16 +285,18 @@ function* leaves(v: unknown, path = ""): Generator<[string, unknown]> {
 }
 
 function get(obj: unknown, path: string): unknown {
-  return path
-    .replace(/\[(\d+)\]/g, ".$1")
-    .split(".")
-    .reduce<unknown>(
-      (a, k) =>
-        a && typeof a === "object"
-          ? (a as Record<string, unknown>)[k]
-          : undefined,
-      obj,
-    );
+  const segs =
+    path.replace(/\[(\d+)\]/g, ".$1").match(/[^.[\]]+(?:\[[^\]]+\])?/g) ?? [];
+  return segs.reduce<unknown>((a, k) => {
+    if (!a || typeof a !== "object") return undefined;
+    const m = k.match(/^([^[]+)\[(\w+)=="([^"]+)"\]$/);
+    if (m)
+      return (
+        (a as Record<string, unknown>)[m[1]] as
+          Record<string, unknown>[] | undefined
+      )?.find((it) => it[m[2]] === m[3]);
+    return (a as Record<string, unknown>)[k];
+  }, obj);
 }
 
 /** Every document, as NDJSON, before anything is written. The CLI export needs a browser login; the API token does not. */
@@ -332,19 +334,38 @@ export async function applyDocument(opts: {
   > | null;
   if (!current) throw new Error(`no document ${id}`);
 
-  // Merge dotted paths over the live document.
+  // Merge dotted paths over the live document. A segment may address an
+  // array item by a field value — `step2[name=="country"]` — as Sanity's
+  // own patch paths do.
   const merged: Record<string, unknown> = structuredClone(current);
   const sets: Record<string, unknown> = {};
-  for (const [path, value] of Object.entries(patch)) {
-    const withKeys = keyed(type, value, path.split("."));
-    sets[path] = withKeys;
-    const segs = path.split(".");
-    let node = merged;
-    for (const seg of segs.slice(0, -1)) {
-      if (!node[seg] || typeof node[seg] !== "object") node[seg] = {};
-      node = node[seg] as Record<string, unknown>;
+  const FILTER = /^([^[]+)\[(\w+)=="([^"]+)"\]$/;
+  const step = (node: unknown, seg: string): unknown => {
+    const obj = node as Record<string, unknown>;
+    const m = seg.match(FILTER);
+    if (m) {
+      const arr = obj[m[1]] as Record<string, unknown>[] | undefined;
+      const hit = arr?.find((it) => it[m[2]] === m[3]);
+      if (!hit) throw new Error(`no item with ${m[2]}=="${m[3]}" in ${m[1]}`);
+      return hit;
     }
-    node[segs[segs.length - 1]] = withKeys;
+    if (!obj[seg] || typeof obj[seg] !== "object") obj[seg] = {};
+    return obj[seg];
+  };
+  for (const [path, value] of Object.entries(patch)) {
+    const withKeys = keyed(
+      type,
+      value,
+      path.replace(/\[[^\]]+\]/g, "").split("."),
+    );
+    sets[path] = withKeys;
+    const segs = path.match(/[^.[\]]+(?:\[[^\]]+\])?/g) ?? [];
+    let node: unknown = merged;
+    for (const seg of segs.slice(0, -1)) node = step(node, seg);
+    const last = segs[segs.length - 1];
+    if (FILTER.test(last))
+      throw new Error(`a filtered segment cannot be last: ${path}`);
+    (node as Record<string, unknown>)[last] = withKeys;
   }
 
   // Validate exactly as the route does.

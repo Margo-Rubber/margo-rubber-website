@@ -36,6 +36,8 @@ const textOf = (html: string) =>
     html
       .replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, "")
       .replace(/<!-- -->/g, "")
+      // Form placeholders are copy too; lift them out of the attribute.
+      .replace(/<(input|textarea)\b[^>]*\bplaceholder="([^"]*)"[^>]*>/g, " $2 ")
       .replace(INLINE, "")
       .replace(/<[^>]+>/g, " "),
   );

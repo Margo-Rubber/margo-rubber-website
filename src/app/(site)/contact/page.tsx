@@ -68,6 +68,8 @@ export default async function ContactPage() {
         backLabel={fm.quote.backLabel}
         submitLabel={fm.quote.submitLabel}
         responsePromise={fm.quote.responsePromise}
+        attachLabel={fm.quote.attachLabel}
+        attachHint={fm.quote.attachHint}
       />
 
       <ContactDetails
