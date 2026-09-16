@@ -85,3 +85,8 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 42. **Chip rules.** Bonded / Unbonded / Compression / Shear select mount types by form (bobbins, conical, plate, shear and bonded bush = bonded; buffer = unbonded; shear and bush mounts = shear, the rest compression). The sheet names the chips only; confirm the classification.
 43. **Floor mat moved out** to Pads, Stoppers & Caps — client-confirmed part, category to confirm (sheet's Moved out row).
 44. **Confirmation copy** (as item 36) and the three unanswered FAQ questions (as item 37).
+
+## 14 Grommets
+
+45. **Two CONFIRMs in the parts list** — Edge Protection Grommet Strip (extruded and cut; may belong under Extrusion Profiles) and Metal-Reinforced Grommets (needs insert loading; resolves with the bonding CONFIRM). Both listed as written.
+46. **Confirmation copy** (as item 36) and the unanswered FAQ questions (as item 37).
