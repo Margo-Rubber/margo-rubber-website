@@ -15,11 +15,11 @@ export const statusSchema = z
 export const imageRefSchema = z.string().min(1);
 
 /** Meta lengths are enforced, not suggested — the briefs specify exact budgets. */
-// Ceilings are the content sheets' own longest values (65 / 184), not the
+// Ceilings are the content sheets' own longest values (70 / 217), not the
 // SERP display widths — Google truncates, it does not reject.
 const seoSchema = z.object({
   title: z.string().min(10).max(70),
-  description: z.string().min(50).max(200),
+  description: z.string().min(50).max(220),
   keywords: z
     .object({
       primary: z.string().min(3),
@@ -697,6 +697,12 @@ export const resourceSchema = baseSchema.extend({
   featured: z.boolean().default(false),
   /** The shorter blurb the "Start here" card carries (sheet 31 §02); the card list uses `intro`. */
   featuredBlurb: z.string().optional(),
+  /** Replaces the "category · read time" line above the heading — "TECHNICAL DATASHEET · SPONGE & FOAM RUBBER" (sheet 40). */
+  eyebrow: z.string().optional(),
+  /** The article's own opening paragraph (sheet 35); `intro` stays the hub card's blurb (sheet 31). */
+  standfirst: z.string().min(40).optional(),
+  /** The closing band — an offer and a button (sheet 35, "Closing CTA"). */
+  closing: z.object({ body: z.string().min(20), cta: z.object({ label: z.string(), href: z.string() }) }).optional(),
   readingMinutes: z.number().int().positive(),
   intro: z.string().min(40),
   faqs: z.array(faqSchema).default([]),
@@ -2142,10 +2148,42 @@ export const skuSchema = baseSchema.extend({
   dimensions: z.string().optional(),
   /** How the part is made — the process block reads this when the per-part steps are empty. */
   processType: z.enum(["compression", "injection", "transfer", "extrusion", "bonded", "cut"]).optional(),
-  /** The eight compounds ranked for this part, best first, each with the reason (sheet 33). */
+  /**
+   * The eight compounds ranked for this part, best first, each with the
+   * reason (sheet 33); the per-part sheets (34) add the rank label the buyer
+   * sees ("Recommended", "Not recommended"), the range as written and the
+   * hardness band.
+   */
   compoundRanking: z
-    .array(z.object({ code: z.string().min(2), rank: z.number().int().positive(), reason: z.string().min(3) }))
+    .array(
+      z.object({
+        code: z.string().min(2),
+        rank: z.number().int().positive(),
+        reason: z.string().min(3),
+        rankLabel: z.string().optional(),
+        temperature: z.string().optional(),
+        hardness: z.string().optional(),
+        /** Display name where it is not the compound's own — "EPDM closed-cell" on a foam part. */
+        name: z.string().optional(),
+      }),
+    )
     .default([]),
+  /**
+   * A compound-variant page (EPDM Gaskets, FKM Oil Seals) routes rather
+   * than ranks: "Leave FKM if … the medium is steam → specify EPDM". The
+   * sheet's table, as written (sheet 34, e.g. SKU 08/14–18).
+   */
+  compoundRouter: z
+    .object({ columns: z.array(z.string()).min(2), rows: z.array(z.array(z.string())).min(1) })
+    .optional(),
+  /** The chip over the advantages plate — "SERVICE TEMPERATURE / −40 to +160 °C continuous, in AEM" (sheet 34 §04). */
+  qualityChip: z.object({ label: z.string().min(2), value: z.string().min(2), note: z.string().optional() }).optional(),
+  /** One honest request line in place of four dead downloads (sheet 32 §09). */
+  documentation: z
+    .object({ body: z.string().min(20), cta: z.object({ label: z.string(), href: z.string() }) })
+    .optional(),
+  /** The closing band's line, where the sheet writes a part-specific one (sheet 34 §11). */
+  ctaBody: z.string().optional(),
   /** The WooCommerce URL this part replaces — the 301 source (sheet 34). */
   legacyUrl: z.string().optional(),
 
@@ -2173,8 +2211,11 @@ export const skuSchema = baseSchema.extend({
   dimensional: z
     .object({
       caption: z.string(),
-      widthNote: z.string(),
-      thicknessNote: z.string(),
+      /** The sheet-stock labels; a moulded part has neither (sheet 32 §02). */
+      widthNote: z.string().optional(),
+      thicknessNote: z.string().optional(),
+      /** "Drawing on request under NDA" — beside the cross-section label. */
+      note: z.string().optional(),
       tiles: z.array(z.object({ value: z.string(), label: z.string() })).default([]),
       footnote: z.string().optional(),
     })
@@ -2204,6 +2245,8 @@ export const skuSchema = baseSchema.extend({
         .default([]),
       metrics: z.array(z.object({ value: z.string(), label: z.string() })).default([]),
       tour: z.object({ title: z.string(), note: z.string() }).optional(),
+      /** Under the certificate cards — a scope or non-claim line the sheet writes for this part. */
+      note: z.string().optional(),
     })
     .optional(),
 
@@ -2223,9 +2266,13 @@ export const skuSchema = baseSchema.extend({
   faqs: z.array(faqSchema).default([]),
 
   related: relatedSchema,
-  /** "You may also need" — up to four sibling parts with the one-line difference (sheet 32 §11). */
+  /**
+   * "You may also need" — up to four parts (sheet 32 §11). A sibling by its
+   * slug, or a part in another category as "category/slug"; the difference
+   * line where the sheet writes one.
+   */
   relatedParts: z
-    .array(z.object({ slug: z.string().min(1), difference: z.string().min(3) }))
+    .array(z.object({ slug: z.string().min(1), difference: z.string().optional() }))
     .max(4)
     .default([]),
   schemaTypes: z

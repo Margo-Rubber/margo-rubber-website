@@ -32,7 +32,7 @@ export const seo = defineType({
       type: "text",
       rows: 3,
       description: "The grey text under the headline. Between 50 and 160 characters.",
-      validation: (r) => r.required().min(50).max(200),
+      validation: (r) => r.required().min(50).max(220),
     }),
     defineField({
       name: "primaryKeyword",

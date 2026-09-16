@@ -116,7 +116,7 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 
 ## 19 Sponge & Foam Rubber
 
-58. **Datasheet button.** The sheet links "Download Datasheet ↓ /resources/sponge-foam-datasheet.pdf"; no PDF exists yet (sheet 40, Phase 6). Both buttons ship as the sheet's own fallback, "Request Datasheet" → /contact?request=datasheet. Restore the label and href when the file is published.
+58. **Datasheet button.** The sheet links "Download Datasheet ↓ /resources/sponge-foam-datasheet.pdf"; the datasheet is a page (sheet 40, Phase 6) and the PDF is not yet produced. Both buttons open the page under its own title, "Sponge & Foam Rubber Datasheet". Restore the sheet's label and href when the file is published.
 59. **Construction and Transport cards** link through the route registry to /contact until those pages (sheets 41, 42) are live.
 60. **FAQ node empty.** The two live questions have no written answers on the sheet; a HowTo node carries the four-line specification guide instead, as the sheet's graph asks.
 61. **Confirmation copy** "Enquiry received. A named engineer replies within 48 hours to {email} with a compound, a density and a recommended cut form." — Phase 7 forms.
@@ -139,3 +139,35 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 69. **Quality buttons.** These two sheets point "View ISO Certificate" at /certifications#iso-9001 (an anchor now on the certificate card) and remove "Download Quality Policy" until the PDF exists; sheets 20–26 use the request-form fallback (item 63). Two conventions on nine pages — settle which when the PDFs arrive.
 70. **Contact strip.** Sheet 27 writes the certification line as "ISO 9001:2015 Certified · 09111526A"; sheet 25 as "ISO 9001:2015 · Certificate 09111526A". The shared strip renders the sheet-25 form from Site settings.
 71. **Bold figures** in the FAQ answers and quality cards are highlights for the sheet's reader and ship as plain text, as on sheets 20–26.
+
+# Phase 6
+
+## 32–34 SKU pages (31 parts)
+
+72. **Six parts need one sentence from Margo** — what the part does and where it fits: 01, 13, 20, 23, 27, 31; and 26, where two readings are possible (engine cylinder-head cover insulator or electrical terminal head cover). Shipped from the sheets as written.
+73. **Four OEM-name pages** (02, 04, 05, 21) are written twice; version A ships (platform class, fitment in the body) per the sheets' "ship A unless a supply agreement exists". Sheet 21's spec rows still name "Mahindra Bolero" in Fitment — confirm.
+74. **Three confirmations**: are 03 and 05 the same bump stop? Are 28 and 29 the same filler cap? Is 14 a water/steam seal mislabelled as an oil seal?
+75. **Category moves and renames** proposed by sheet 33 (07 and 09 to Sponge & Foam; 08, 14, 24 as material variants to collapse; 13/16 to merge; 11, 22 renamed) are Phase 7 — the pages stay at their current URLs; the sheets' related-part links to the proposed URLs resolve to the current ones.
+76. **Application cards left out** because the sheet describes the card without writing it: SKU 16 Water & Fluid Management (flag FKM as wrong for hot water), SKU 17 Agriculture ("add, with the caveat"), SKU 18 Food & Beverage ("must say Margo holds no food-contact approval"). Two lead cards (13, 16 Pumps & Valves) ship with a title only.
+77. **Cycle-life rows on SKU 22** ("To your specification, tested at the minimum temperature") held back — a fatigue-testing claim the build instructions rule out.
+78. **Pre-format-rule cells** (sheets 01–20) carried reasoning after their value; each was set down as the rule reads (`CELL` in scripts/sheets/sku.mts). Worth a read by the author.
+79. **Card titles beginning 🛑** on sheets 21–31 ship without the glyph; sentences addressed to the developer inside selector reasons ("currently offered on this page") are dropped.
+80. **"You may also need" difference lines** — the sheets give rationale ("Why it is here"), not the one-line difference sheet 32 asks for; cards show the part name only.
+81. **Years in operation** stays "On request" until the founding year is settled (sheet 32 §08); active clients 60+ and 3–4 weeks lead time ship from the sheets.
+82. **No product photography** — the tray-of-mouldings plate serves every page; the two metalworking stock images are off (sheet 32 §02). Thirty-one phone photographs on a plain background is the sheets' first ask.
+83. **Certification row date** renders "21 February 2027" from Site settings where a sheet writes "21 Feb 2027".
+84. **"Download Quality Certificates"** → "Certification detail" (a page, not a file); the hero's "Download Datasheet" → "Request documentation" — the sheets remove the dead downloads but do not name these two controls.
+
+## 35 Resource articles (7 guides)
+
+85. **Byline.** "Reviewed at our works in Nashik by [name], [title] · Published [date]" — the reviewer's name and title (Site settings → guide reviewer) and each guide's publication date are blank until Margo names them; the byline renders when they are set.
+86. **Related-link anchor text.** The sheets give anchor text per link ("Silicone vs EPDM guide", "About Margo"); the related strip renders the target's own short name and carries categories, industries and guides only — /about and /certifications links in two sheets are not shown.
+87. **The full AS568 chart** (RES_04 §12) — the sheet says the 369-row table is the one download worth building; not built.
+88. **Hub blurb vs standfirst.** Sheet 31's card blurbs stay on `intro`; the articles' opening paragraphs are on the new `standfirst` field.
+
+## 40 Sponge & Foam datasheet
+
+89. **The twelve figures** the sheet lists at its foot (nominal density and CFD at 25% for the five cellular compounds, the full D1056 designation supplied against, and whether NR is open or closed cell) — the sheet records §04 as resolved to the standard's Type/Class with "quoted per grade", and ships; the compounding team's stocked grades would let the table name them.
+90. **PDF.** The meta strip's "Download · PDF · same content" row is not shown until the file exists; "Rev 1 · publication date" is shown as written.
+91. **Hub listing.** The datasheet is in the "datasheets" category the build instructions add, reached from the Sponge & Foam page; the /resources hub lists the seven guides only (sheet 31 has no datasheet group).
+92. **Meta description cap** widened to 220 (the sheet's 217-character description).

@@ -32,11 +32,12 @@ const keepAccent = (key: string, text: string) => {
 };
 
 /**
- * The datasheet PDF does not exist yet (sheet 40, Phase 6). The sheet's own
- * fallback: "change the button to Request Datasheet, which routes to the
- * form". Restore the sheet's label and href once the file is published.
+ * The datasheet is a page (sheet 40) — the PDF the sheet links does not
+ * exist yet, so the button carries the document's own title and opens it.
+ * Restore "Download Datasheet ↓ /resources/sponge-foam-datasheet.pdf" once
+ * the file is published.
  */
-const DATASHEET = { label: "Request Datasheet", href: "/contact?request=datasheet" };
+const DATASHEET = { label: "Sponge & Foam Rubber Datasheet", href: "/resources/sponge-foam-datasheet" };
 
 /* ── 01 Hero ─────────────────────────────────────────────────────────────── */
 const hero = s("01");

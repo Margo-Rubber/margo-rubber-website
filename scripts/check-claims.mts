@@ -80,7 +80,12 @@ if (!noSanity) {
   const strings = (v: unknown, out: string[]): string[] => {
     if (typeof v === "string") out.push(v);
     else if (Array.isArray(v)) v.forEach((x) => strings(x, out));
-    else if (v && typeof v === "object") for (const [k, x] of Object.entries(v)) if (!k.startsWith("_") && k !== "confirmWithMargo") strings(x, out);
+    else if (v && typeof v === "object") {
+      // A Portable Text block is one sentence, however many marks it carries.
+      const b = v as { _type?: string; children?: { text?: string }[] };
+      if (b._type === "block" && Array.isArray(b.children)) out.push(b.children.map((c) => c.text ?? "").join(""));
+      else for (const [k, x] of Object.entries(v)) if (!k.startsWith("_") && k !== "confirmWithMargo") strings(x, out);
+    }
     return out;
   };
   for (const d of docs) scanText(`sanity:${String(d._id)}`, strings(d, []).join("\n"));

@@ -93,7 +93,9 @@ const components: PortableTextComponents = {
                         {cell}
                       </th>
                     ) : (
-                      <td key={j}>{cell}</td>
+                      <td key={j} className="whitespace-pre-line">
+                        {cell}
+                      </td>
                     ),
                   )}
                 </tr>

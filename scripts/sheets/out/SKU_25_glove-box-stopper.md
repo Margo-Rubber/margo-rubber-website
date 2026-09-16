@@ -1,0 +1,279 @@
+# SKU_25_glove-box-stopper.html — Glove Box Stopper — the First Cabin-Interior Part in the Catalogue
+
+**<title>** Glove Box Stoppers | Interior Closure Bumpers | Margo
+**description** Moulded rubber glove box stoppers and interior closure bumpers — damped shut feel, no rattle, low fogging and odour for cabin use. Bulk supply from Nashik, India.
+
+## 01 Hero, spec block & visual reference [🛑 Hardness too high · nothing about feel or fogging]
+> live: LIVE H1 → Glove Box Stopper · correct name · 70 Shore A on a part bought for how it sounds
+- **Badges**: `MADE TO ORDER · ISO 9001:2015 · 09111526A`
+  _“IN STOCK” comes off. The ISO badge stands unqualified — a moulded stopper is inside the certificate scope_
+- **H1**: `Glove Box Stopper — Damped Interior Closure Bumper`
+  _The live H1 is kept, not replaced. It is the first correct product name in this stretch of the catalogue, and a subtitle is all it needs — “damped” states what the part does and “closure bumper” widens it past one application_
+- **Intro sentence**:
+  > A small moulded rubber stopper that takes the shock out of a closing lid and keeps it from rattling afterwards. It sets how the glove box sounds when it shuts, and it holds that feel for the life of the car — which is a compression-set problem, not a strength one. Compounded for low fogging and low odour, because it lives in the cabin.
+  _57 words · replaces the template’s “Glove Box Stopper manufactured to order at our ISO 9001:2015 certified plant in Nashik”, identical on all 31 pages with the name swapped.
+Three claims, three different buyers: the NVH engineer reads the first sentence, the durability engineer reads the second, and the interior-materials engineer reads the third_
+- **Hero spec block** (Field | Live — identical on all 31 pages | Ships as):
+  | HARDNESS |  | 50–60 Shore A typical, to your closing feel |
+  | SHORE A |  | ±5 pts against the specified hardness |
+  | TENSILE |  | Per compound datasheet, tested to ASTM D412 |
+  | TEMPERATURE |  | Cabin service — specified to your soak temperature |
+  | THICKNESS |  |  |
+  | WIDTH |  |  |
+  | COMPRESSION SET | — | Tested to ASTM D395 Method B |
+  | INTERIOR EMISSIONS | — | Fogging and odour to your specification |
+  | RETENTION | — | Barbed push-in stem, adhesive foot or moulded-in |
+  _🛑 Both sheet-rubber fields are deleted rather than relabelled. Unlike the pads, nothing about a glove box stopper is measured in sheet thickness or 2,000 mm of width, and there is no honest field to salvage.
+🛑 The temperature row is reframed rather than renumbered. A cabin part is not specified against weather — the number that matters is the soak temperature of a car parked in the sun, which the OEM states and which is far above ambient. Printing −40 °C on an interior part is answering the wrong question.
+The emissions row is the one that would win an OEM enquiry, and it appears on no page of this website_
+- **Quantity selector**: `QTY (pieces)
+− 10,000 +
+Minimum run: 10,000 pieces per part number`
+  _500 becomes 10,000, client-instructed 2026-09-01, and the unit becomes pieces — a stopper weighs about a gram, so 500 kg is an order in the hundreds of thousands_
+- **Visual reference** (composite):
+    | Cross section view |  | Section through the stopper and its mounting — on request under NDA |
+    | Max width |  | Head diameter — to your drawing |
+    | Thickness |  | Free height — to your drawing |
+    | Run length |  |  |
+    | Interference | — | Compression at the closed position |
+    | Mounting hole | — | Diameter and panel thickness for a push-in stem |
+    | Retention | — | Barbed stem, adhesive foot or moulded-in |
+    | Visibility | — | Seen or hidden when the lid is open |
+  · Section drawing available on request. Send the mounting hole size, the free height and how far the lid compresses the stopper at the closed position — or a sample stopper and the panel it fits — and we will return a dimensioned drawing.
+  _Interference is the specification and it has no row on the live page. The free height matters only in relation to how far the lid squashes it — that compression is what sets both the shut feel and how much set the part can afford before the rattle starts.
+The visibility row is a small commercial question — a stopper seen every time the glove box opens needs a consistent finish, and one hidden behind the lid does not. They are different prices_
+  <details><summary>notes (4)</summary>
+  - One <h1>; breadcrumb Home › Products › Pads, Stoppers & Caps › Glove Box Stopper.
+  - 🛑 Temperature must render as cabin soak, not weather range, on interior parts. It is a different field with a different meaning, and the template has one.
+  - “Fogging”, “odour” and “interior closure bumper” are the terms to own. None appears on this site.
+  - Image alt: “Moulded rubber glove box stopper, Margo Rubber Products, Nashik”.
+  </details>
+
+## 02 Engineering data [The interior requirements are entirely absent]
+> live: LIVE H2 → Engineering Data · 7 rows “On request” · including the one that decides the rattle
+- **Table** (Row | Live | Ships as):
+  | Product Code |  | Assigned on order |
+  | Product Family | Pads, Stoppers & Caps | [no change] |
+  | Material |  | EPDM standard; silicone where the cabin soak temperature is high |
+  | Hardness (Shore A) |  | 50–60 Shore A typical, set from the closing feel required |
+  | Tensile Strength |  | Per compound datasheet, ASTM D412 |
+  | Elongation at Break |  | Per compound datasheet, ASTM D412 |
+  | Operating Temperature |  | Cabin soak temperature, to your specification |
+  | Compression Set |  | Tested to ASTM D395 Method B |
+  | Density |  | Per compound datasheet |
+  | Colour Options | Black standard, custom RAL on request | Black standard; matched to trim where the stopper is visible |
+  | Lead Time |  | Confirmed with the quotation, from approved drawing and approved sample |
+  | Certifications | ISO 9001:2015 | ISO 9001:2015 — certificate 09111526A |
+  | Minimum Order |  | 10,000 pieces per part number, per compound |
+  | Fogging | — | To DIN 75201 or your OEM equivalent |
+  | Odour | — | To VDA 270 or your OEM equivalent |
+  | Interference at closed position | — | To your drawing |
+  | Retention | — | Barbed push-in stem, adhesive foot or moulded-in |
+  | Mounting hole | — | Diameter and panel thickness |
+  | Visibility | — | Seen or hidden when the lid is open |
+  _Net change: 13 rows to 19. Tell the developer the table grows by six.
+🛑 Fogging and odour are the two rows that would separate this page from every competitor in the market. They are the qualification an interior buyer opens with, they tie directly into the PPAP submission an IATF-certified supplier is expected to handle, and they appear nowhere on this website.
+🛑 Compression set is the failure mode, not a datasheet nicety. A stopper that flattens loses the interference and the lid rattles — and Margo already runs the test_
+  <details><summary>notes (3)</summary>
+  - 🛑 Name the test methods, never claim a result. Fogging and odour figures belong to a tested compound and a submitted part, not to a supplier.
+  - “What causes windscreen fogging from interior plastics?” is a real query with almost no manufacturer-side answers. A moulder explaining it plainly would be an unusual and citable source.
+  - Hide rows you cannot answer rather than printing “On request” seven times.
+  </details>
+
+## 03 Rubber compound options [The selection driver changes completely on an interior part]
+> live: LIVE → EPDM (SELECTED), NBR, Neoprene, SBR — ranked as if this were an exterior part
+- **Weather is not the question here**:
+  > On every other part in this catalogue the compound is chosen for what it must survive — oil, ozone, heat, water. On a cabin part the deciding properties are different: low fogging, low odour, and a compression set that holds the interference for a decade at cabin soak temperature.
+  > 🛑 And fogging is not a property of the polymer alone. It comes largely from plasticisers, processing aids and residual volatiles — which makes it a compounding and curing decision, exactly the thing Margo does in-house and could sell.
+  > Margo produces every part in every compound it mixes (client-instructed 2026-09-02). Nothing is removed — all eight are ranked on interior criteria rather than weathering.
+- **Selector** (Rank | Compound | Cabin service | Why, for an interior closure stop):
+  | Recommended | EPDM | Good | The general-purpose interior answer and correctly pre-selected. Low compression set, stable at cabin soak temperature, and it can be compounded for low fogging and odour |
+  | Recommended | Silicone | Excellent | The best compression set of the eight at temperature, and physiologically inert. Post-curing drives off residual volatiles, which is what makes it pass fogging. Higher cost, and it tears more easily |
+  | Suitable | Neoprene | Acceptable | Reasonable set and damping. Compound and cure system decide whether it meets the fogging and odour limits |
+  | Suitable | Natural rubber | Acceptable | Excellent damping and resilience, which suits a closure stop. Ozone resistance is irrelevant inside the cabin |
+  | Available | SBR | Check | Low cost, and the fogging and odour result depends entirely on the compound |
+  | 🛑 Not recommended | NBR | Check | An oil-seal compound with no advantage in a dry cabin, and the one most likely to carry an odour a panel will mark down |
+  | 🛑 Not recommended | FKM · AEM | — | Expensive sealing compounds. Nothing they offer is useful in a closure stop |
+  _Live set: EPDM (SELECTED), NBR, Neoprene, SBR — four of eight, unranked, and ranked on the wrong criteria.
+The column heading changes from temperature to cabin service, because a service range is not what selects an interior compound.
+The silicone entry connects two facts already established elsewhere in this set: silicone has the best compression set at temperature, and post-curing drives off its volatiles. Those two together are exactly what an interior stopper needs, and they make silicone a genuine recommendation here rather than the specialist it is on most other pages_
+  <details><summary>notes (3)</summary>
+  - Fifth page in the set needing no default correction — note it so the developer does not change it.
+  - 🛑 Do not publish fogging or odour claims per compound. The result belongs to a specific formulation and a tested batch.
+  - All panels in the DOM at first paint, hidden with CSS.
+  </details>
+
+## 04 Why specifiers choose Margo [4 cards stay four · all four rewritten]
+> live: LIVE H2 → Why Specifiers Choose Margo · four generic cards · a 99.7% yield chip this page later calls “on request”
+- **Quality chip**: `CABIN SPEC
+Low fogging & odour
+DIN 75201 · VDA 270`
+  _The production table in section 07 says first-pass yield is “On request” — the honest one is the table. The replacement puts the interior qualification in the page’s most prominent slot_
+- **Cards ×4** (# | Live card | Ships as — title | Ships as — body):
+  | 01 |  | It has to still be quiet at year five | A stopper that flattens loses its interference and the lid starts to rattle. Compression set is the property this part is really bought on, and we test it in-house to ASTM D395 Method B rather than quoting it from a supplier datasheet. |
+  | 02 |  | 🛑 It must not fog your windscreen | Interior rubber releases volatiles when a parked car heats up, and they condense as a haze on the glass. Fogging is a compounding decision, not a polymer one — send your limit to DIN 75201 or your own method and we compound to it. |
+  | 03 |  | And it must not smell | Cabin odour is assessed by a trained panel under heat and humidity, to VDA 270 or your OEM method. Both odour and fogging are normally part of the PPAP submission for an interior part, and we build them into the compound rather than discovering them at approval. |
+  | 04 |  | A thud, not a clack | Hardness and interference decide how the lid sounds when it shuts. Too hard and the dashboard sounds hollow; too soft and the lid sits proud. Tell us the feel you want and we will set both. |
+  _Four cards, four cards — no count change and no new element.
+Cards 02 and 03 are the strongest pair on any sheet in this set, because they name a requirement the buyer has and the competition does not mention. “We build them into the compound rather than discovering them at approval” is the line that wins an interior enquiry.
+Card 04 sells feel, which is what the part is actually for and what no datasheet captures_
+  <details><summary>notes (3)</summary>
+  - This is the page’s AEO asset — everything else is shared with 30 other URLs.
+  - Card 02 answers “what causes fogging on the inside of a windscreen?” in the shape an answer engine extracts.
+  - 🛑 Name the methods, never claim to hold them. DIN 75201 and VDA 270 are tests, not certificates.
+  </details>
+
+## 05 Global applications [6 cards become 4]
+> live: LIVE H2 → Global Applications · Aerospace and Marine claimed here and on all 31 pages
+- **Why industries are the right frame here**:
+  > A damped closure stop is not tied to one vehicle. The same part quiets any hinged lid that a person opens and shuts — and wherever that lid is in an occupied space, the fogging and odour requirements travel with it. So the industry grid is the correct frame, listing sectors where a cabin or an enclosed interior exists.
+- **Cards** (Slot | Live | Ships as):
+  | 1 | Automotive | Automotive interiors — glove box and console lids, armrests, cup-holder and ashtray covers, boot trim |
+  | 2 |  | Commercial vehicles — bus, truck and tractor cab lockers and lids, where the same emissions limits apply |
+  | 3 |  | Rail and public transport — enclosed cabins, luggage bins and cabinet doors in occupied spaces |
+  | 4 |  | Electrical and enclosures — equipment doors and lids that must close quietly |
+  | 5 |  |  |
+  | 6 |  |  |
+  _Two removed and four reframed as interior markets. Aerospace requires AS9100, not held and claimed nowhere; marine fenders are fabricated units, not moulded components.
+Energy & Oil comes off on its own reasoning: a cabin closure stop has no hydrocarbon-service application at all.
+Rail is the addition worth flagging to Margo. Rolling stock interiors carry emissions and fire requirements at least as strict as automotive, they are bought in long production runs, and a supplier who already meets automotive fogging and odour limits is most of the way there_
+  <details><summary>notes (3)</summary>
+  - Link the automotive card to the automotive industry page and the enclosures card to its own.
+  - 🛑 Do not claim rail fire certification. Rolling-stock interiors also carry fire and smoke requirements, and none is held — the card names the market, not a qualification.
+  - Do not claim a sector in Product schema.
+  </details>
+
+## 06 From compound to certification [Fogging and odour belong in the process]
+> live: LIVE H2 → From Compound to Certification · six steps · the same text as all 31 pages
+- **Steps** (# | Ships as):
+  | 01 | Material compounding — polymer blending, additive integration and batch QC in our in-house lab. On an interior part the plasticiser and processing-aid package is selected for low fogging and low odour, not only for the physical properties. |
+  | 02 | Mould design and CNC tool manufacture, in-house, held as a controlled record. Free height and the retaining barb are cut together, since one sets the shut feel and the other keeps the stopper in the panel. |
+  | 03 | Compression moulding. |
+  | 04 | Post-cure and deflashing. Post-curing drives off residual volatiles, which is what keeps an interior part inside its fogging and odour limits. |
+  | 05 | Quality inspection — dimensional check, hardness, and compression set on batch samples. Fogging and odour are tested against the customer specification at approval. |
+  | 06 | Export packaging — industrial packing with documentation. Stoppers are bagged loose and uncompressed, since a part stored squashed arrives with the set already in it. ISPM-15 treated pallets where timber packaging is used. |
+  _Six steps, six kept. The live text says “ISO-certified lab” in step 01, which becomes “in-house lab”; step 04 is “Post-Cure & Trimming” and gains the volatiles detail.
+🛑 Step 04 is where the interior argument becomes a production fact. Post-curing costs oven time and is invisible on delivery, and it is the first thing a cheap supplier drops — then the part fails fogging at approval and nobody knows why.
+Step 05 is deliberately careful: it says fogging and odour are tested against the customer specification, not that Margo tests them in-house. That is the honest wording until the testing route is confirmed_
+  <details><summary>notes (3)</summary>
+  - The process block must render from the part record.
+  - “Post-cure drives off residual volatiles” is the credibility line on an interior part.
+  - Numbered steps are an <ol>.
+  </details>
+
+## 07 Certified to international standards [🛑 Say which interior tests are subcontracted]
+> live: LIVE H2 → Certified to International Standards · ISO 9001 only — honest
+- **Credit, an addition, a caution**:
+  > ISO 9001:2015 claimed and nothing else — no IATF, no TÜV SÜD, no CE marking. The production table prints “On request” rather than inventing figures, and the video says “Film pending”. The scope covers a moulded stopper, so the badge stands unqualified.
+  > 🛑 Fogging and odour testing is not on Margo’s published in-house list, which is ASTM D412 and ASTM D395 Method B. Both interior tests need laboratory equipment and, for odour, a trained panel — so the page must say whether they are run in-house or at an accredited laboratory. Naming the method while leaving the route vague is the one thing that would read as a claim.
+  > Add the client-instructed IATF line (2026-08-31): upgrading to IATF 16949, targeted end 2026; ISO 14001 and 45001 targeted 2027 — stated as a plan, never as held. It carries more weight on this page than most: interior parts go through PPAP, and PPAP is the framework IATF assumes.
+- **Certificate block**: `ISO 9001:2015 · Certificate 09111526A
+Integral Certification Ltd · Valid to 21 February 2027
+Scope: rubber moulded components — quality management, not a product approval
+Interior emissions testing — fogging to DIN 75201 and odour to VDA 270, or
+your OEM equivalent — is carried out at an accredited laboratory and
+reported with the approval submission.
+IATF 16949 — upgrade in progress, certification targeted by end 2026
+ISO 14001 and ISO 45001 — targeted 2027`
+  _🛑 The middle paragraph is written for the subcontracted route and must be confirmed before it ships. If Margo tests in-house, say so instead — it is a stronger claim. What must not happen is naming the standards without saying who runs them_
+- **Production metrics** (Row | Live | Ships as):
+  | Years in operation |  | Publish it once the founding year is settled |
+  | Active clients |  | 60+ |
+  | First-pass yield | On request | [no change] |
+  | Avg. lead time |  | 3–4 weeks from approved sample |
+  _Three of the four can be filled from the signed company profile, p27 — and the 99.7% chip in section 04 comes off_
+  <details><summary>notes (3)</summary>
+  - 🛑 No hasCredential for IATF, DIN 75201 or VDA 270. One is targeted; the other two are test methods.
+  - The certificate number and scope are visible text, not an image caption.
+  - “Film pending” is fine to ship.
+  </details>
+
+## 08 Technical documentation [4 dead downloads]
+> live: LIVE H2 → Technical Documentation · PDF, DWG, STEP, ZIP — none exists
+- **Live state** (Offered | Reality):
+  | PDF — Product datasheet | Marked “Pending” |
+  | DWG — Technical drawing | Anchor labelled “Technical Drawing DWG” → /contact |
+  | STEP — 3D CAD model | No file — genuinely useful here; the stopper has to clear the lid and the panel |
+  | ZIP — Product images hi-res | No file |
+  _4 × 31 = 124 dead download affordances across the set.
+🛑 An interior compound statement is the document this page should offer — the compounds Margo mixes for cabin use, with the fogging and odour methods they are submitted against. It is the first document an interior buyer asks for, it applies to every cabin part Margo makes, and nothing like it exists on this website_
+- **Ships as** (composite):
+  · H: “Technical Documentation”
+  · Interior compound data and dimensioned drawings are issued on request, under NDA where required. Send your fogging and odour limits, the mounting hole size and the closing feel you want, and we will return a drawing and a compound proposal.
+  · `[ Request interior compound data → /contact?part=Glove%20Box%20Stopper&doc=1 ]`
+  _38 words · one honest request line replaces four fake buttons, and it asks for the two limits an interior buyer already has written down_
+  <details><summary>notes (3)</summary>
+  - Never label a control “Download” unless a file is served.
+  - Keep the STEP slot visible on this part — clearance to the lid and panel is a real design question.
+  - 🛑 An interior compound statement would serve every cabin part Margo makes, not just this one.
+  </details>
+
+## 09 Technical & commercial questions [5 answers written]
+> live: LIVE H2 → Technical & Commercial Questions · the same five on all 31 pages
+- **Q1**:
+  > We supply in bulk. The minimum run is 10,000 pieces per part number, per compound, or quoted against the part where geometry or tooling makes that unrealistic. Prototype and first-article lots sit outside the minimum.
+  `What is the minimum order quantity for this part?`
+  _36 words · client-instructed 2026-09-01. Must match the hero selector and the Engineering Data row on this same page_
+- **Q2**:
+  > Yes — and send an unused one if you can. A stopper taken out of a car has taken a set and measures shorter than it was moulded, so copying it reproduces a part that already rattles. We work back from the mounting hole and how far the lid closes onto it.
+  `Can you match a competitor specification or reverse-engineer an existing part?`
+  _51 words · the compression-set point in its closure-stop form — and on this part the used sample is not just misleading, it is the failure itself_
+- **Q3**:
+  > PDF, DWG, DXF and STEP. Mark the mounting hole, the free height and the closed position — and send your fogging and odour limits with them. Those limits change the compound, so they are worth stating before the geometry.
+  `What file formats do you accept for drawings?`
+  _40 words · putting the emissions limits ahead of the geometry is the right order for an interior part, and no competitor page asks for them at all_
+- **Q4**:
+  > Yes. Material test reports, dimensional inspection sheets and a certificate of conformance ship with every consignment. Hardness, tensile to ASTM D412 and compression set to ASTM D395 Method B are tested in-house. Fogging to DIN 75201 and odour to VDA 270 are reported at approval, against your specification.
+  `Do you provide material test reports with each shipment?`
+  _47 words · the in-house tests and the approval-stage tests are separated deliberately — claiming both as routine consignment testing would be false_
+- **Q5**:
+  > TT and LC accepted, discussed per order. Ex-works Nashik or FOB Nhava Sheva. Commercial invoice, packing list and certificate of origin are issued with every consignment. Stoppers ship bagged loose and uncompressed.
+  `What are your payment and delivery terms for international orders?`
+  _36 words · the standard terms plus the packing consequence for a part whose failure mode is compression set_
+  <details><summary>notes (3)</summary>
+  - All five answers in the DOM at first paint, hidden with CSS.
+  - Questions become <h3>, not <span>.
+  - Q4 is the most careful answer in the set — it separates what ships with every consignment from what is done once at approval.
+  </details>
+
+## 10 You may also need [3 become 4 · and there is an interior group worth building]
+> live: LIVE H2 → You May Also Need · siblings drawn from a category of nine unrelated parts
+- **Cards** (Slot | Part | Why it is here):
+  | Related 1 | Bumper Stopper /anti-vibration-mounts/bumper-stopper | The same job on a larger closure — doors, panels and lids elsewhere on the vehicle |
+  | Related 2 | Tailgate Switch Boot /pads-stoppers-caps/boot-tailgate-switch | The other small moulded part a trim buyer specifies on the same programme |
+  | Related 3 | C-Pillar Garnish Seal /sponge-foam-rubber/c-pillar-garnish-seal | Interior trim sealing, subject to the same cabin emissions limits |
+  | Related 4 | Foam Gaskets — closed-cell sponge /sponge-foam-rubber/foam-gaskets | Anti-rattle and gap-filling foam inside the same trim assemblies |
+  _🛑 There is an interior-trim group here that the site does not have. Everything a cabin buyer needs is scattered across three categories, and all of it shares one qualification — fogging and odour.
+A single interior page would be worth more than these four pages separately: it is the page an interior-trim engineer would bookmark, and it is the only context in which the emissions story can be told once instead of four times_
+  <details><summary>notes (3)</summary>
+  - 🛑 Consider an interior-trim landing page grouping every cabin part with the fogging and odour statement. Nothing like it exists and it is the strongest untapped page on the site.
+  - With /sitemap.xml empty, these links and the category page are the only crawl route to this URL.
+  - Anchor text is the part name, never “View part”.
+  </details>
+
+## 11 Quote CTA [Keep the pre-fill · fix the response time]
+> live: LIVE H2 → Need this part quoted? · the quote link pre-fills the part name
+- **Body**:
+  > Send your drawing or an unused sample, with the mounting hole size and the closing feel you want. Include your fogging and odour limits — they decide the compound. We confirm hardness, interference and material, then quote against your annual quantity. We respond within 48 hours.
+  _46 words · the emissions limits are asked for in the CTA, because on a cabin part they precede everything else.
+“Within 1 business day (IST)” is the sixth response commitment on this website_
+- **Primary CTA**: `Request a quote` → /contact?part=Glove%20Box%20Stopper
+  _[no change] — the part name is already correct, which makes this one of the few quote links in the set that needs nothing done to it_
+- **Secondary**: `← Back to Pads, Stoppers & Caps
+/products/pads-stoppers-caps`
+  _[no change] — correct_
+  <details><summary>notes (3)</summary>
+  - One response time sitewide, rendered from one constant.
+  - Verify the ?part= value lands in the form field.
+  - /contact?part=… must canonical to /contact.
+  </details>
+
+## 12 Footer [Global component]
+> live: LIVE → the shared footer · the same corrections as every sheet in this set
+  <details><summary>notes (5)</summary>
+  - The Products column must list all eleven categories (twelve with sheet lining). It shows nine.
+  - With /sitemap.xml empty, the footer is the primary crawl path for anything not linked from the homepage.
+  - Same corrections as every sheet: legal name Margo Rubber Products · © from the current year · the Vilholi address · Export Markets replacing Why Choose Us · 48-hour response · certificate 09111526A with its scope on the ISO line.
+  - The footer promises a quote “within 24 hours” while section 11 promises “within 1 business day”.
+  - Column labels are <h2> in the live build, injecting three phantom sections into this page’s outline.
+  </details>

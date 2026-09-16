@@ -54,8 +54,9 @@ export const FORBIDDEN_CLAIMS: { pattern: RegExp; why: string }[] = [
   // Sheet 12 §02 may say what cycle life depends on and offer to qualify a
   // part against a target; it may not state a figure.
   { pattern: /(?<!target )cycle\s*life(?! for a given part depends| and we will qualify| is proved by your rig)|100,?000[- ]cycle|fatigue[- ]tested/i, why: "No cycle-life or fatigue claim anywhere: no rig in-house or at the partner lab. The 100,000-cycle figure is parked." },
-  { pattern: /B16\.20\b/, why: "Rubber flange gaskets cite ASME B16.21; B16.20 is the metallic standard." },
-  { pattern: /Kammprofile|Spiral[- ]wound/i, why: "Metallic gasket types Margo does not make." },
+  // The gasket guide (sheet 35) names B16.20 to say it does not apply.
+  { pattern: /(?<!does not apply is ASME )B16\.20\b(?![^.]{0,120}(does not apply|metallic|Rubber is B16\.21|for a rubber gasket|wrong standard))/, why: "Rubber flange gaskets cite ASME B16.21; B16.20 is the metallic standard." },
+  { pattern: /Kammprofile|(?<!ring-joint, )Spiral[- ]wound/i, why: "Metallic gasket types Margo does not make." },
 
   /* ── Certifications ──────────────────────────────────────────────── */
   // "Do you hold IATF 16949 certification?" is a question the page answers
@@ -74,7 +75,9 @@ export const FORBIDDEN_CLAIMS: { pattern: RegExp; why: string }[] = [
   { pattern: /ISO\s*(14001|45001)(?![^.]{0,120}(in progress|targeted|being upgraded|not (currently )?held))/i, why: "Only ever as targeted 2027, never as held." },
   // AS568 is the "Aerospace Size Standard" and is described as such; naming
   // the catalogue is not a supply claim (sheet 09 §05).
-  { pattern: /AS9100|CEMILAC|(?<!power, )aerospace(?! size standard| procurement)/i, why: "Aerospace supply needs AS9100, not held and not claimed." },
+  // The guides may say what aerospace needs and that Margo holds no such
+  // approval; ISO 3601-3's Grade S is described as it is written.
+  { pattern: /(?<!needs |requires )AS9100|CEMILAC|(?<!power, |hold no |industrial and |to cover |do not supply )aerospace(?! size standard| procurement| needs AS9100)/i, why: "Aerospace supply needs AS9100, not held and not claimed." },
   { pattern: /Bureau Veritas|TÜV\s*SÜD|SGS India(?! pre-shipment)|FIEO/i, why: "Certification bodies that have never audited Margo. The issuer is Integral Certification Ltd." },
 
   /* ── Customers and people ────────────────────────────────────────── */
@@ -84,7 +87,7 @@ export const FORBIDDEN_CLAIMS: { pattern: RegExp; why: string }[] = [
   { pattern: /Name pending sign-off|Attribution pending/i, why: "Placeholder strings published on the live page." },
 
   /* ── Materials Margo does not make ───────────────────────────────── */
-  { pattern: /\b(polyurethane|\bPU\b|butyl|\bPVC\b|solid PTFE)\b(?![^\n.]{0,60}(do not|not one of|decline|never))/i, why: "Not among the eight compounds. PTFE-encapsulated O-rings are fine; solid PTFE is not." },
+  { pattern: /(?<!not |make microcellular |SBR, )\b(polyurethane|\bPU\b|butyl|\bPVC\b|solid PTFE)\b(?![^\n.]{0,60}(do not|not one of|decline|never))/i, why: "Not among the eight compounds. PTFE-encapsulated O-rings are fine; solid PTFE is not." },
 
   /* ── Register ────────────────────────────────────────────────────── */
   { pattern: /cutting[- ]edge|world[- ]class|industry[- ]leading|state[- ]of[- ]the[- ]art/i, why: "Banned marketing register. Voice is factual-engineer." },

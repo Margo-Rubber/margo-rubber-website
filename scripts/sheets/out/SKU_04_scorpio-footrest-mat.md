@@ -1,0 +1,275 @@
+# SKU_04_scorpio-footrest-mat.html — Anti-Slip Side Step Pad
+
+**<title>** Anti-Slip Side Step Pad Manufacturer India | Margo
+**description** Moulded anti-slip rubber step pads for SUV side steps and running boards. UV-resistant EPDM, tread to your drawing, bonded to your frame. Nashik, India. ISO 9001:2015.
+
+## 01 Hero, spec block & visual reference [OEM name · tread depth missing]
+> live: LIVE H1 → Scorpio Footrest Rubber Mat · IN STOCK above MADE TO ORDER · quantity in kilograms · no tread specification anywhere
+- **Badges**: `MADE TO ORDER · ISO 9001:2015 · 09111526A`
+  _“IN STOCK” comes off. A procurement manager who reads it plans a delivery date against it, and everything else on the page describes a tooled, made-to-order part_
+- **H1 — version A**: “Anti-Slip Side Step Pad”
+  _Ship this unless a Mahindra supply agreement exists. It names the product and its function, which is what a buyer searches. The fitment goes in the line below, where it is a statement of fact rather than a claim of supply_
+- **H1 — version B**: “Anti-Slip Side Step Pad for Mahindra Scorpio”
+  _Only if the agreement exists. Note that even version B keeps a real product name in front of the vehicle — “Scorpio Footrest Rubber Mat” makes the model the product, which is the part that reads as an OEM claim_
+- **Intro sentence**:
+  > Moulded anti-slip rubber pad for SUV side steps and running boards — takes a person’s full weight on every entry, wet, muddy or frozen, and has to keep its grip doing it. Moulded to your drawing at our ISO 9001:2015 plant in Nashik.
+  _38 words · replaces the template’s “Scorpio Footrest Rubber Mat manufactured to order at our ISO 9001:2015 certified plant in Nashik”, identical on all 31 pages with the name swapped. “Wet, muddy or frozen” is the duty cycle, and it is the sentence that tells a buyer this page understands the part_
+- **Fitment line — version A**:
+  > Supplied to your drawing or sample. Fitments include Mahindra Scorpio and Scorpio-N, Bolero and comparable SUV side-step frames.
+  _This is how every aftermarket catalogue in the world is written, and it is a factual fitment statement rather than a supply claim. It also carries the search value that the H1 gives up — a buyer searching “Scorpio footrest rubber” still lands here_
+- **Hero spec block** (Field | Live — identical on all 31 pages | Ships as):
+  | HARDNESS |  | 60–75 Shore A typical — firm enough to carry weight, soft enough to grip |
+  | SHORE A |  | ±5 pts against the specified hardness |
+  | TENSILE |  | Per compound datasheet, tested to ASTM D412 |
+  | TEMPERATURE |  | −40 to +140 °C in EPDM |
+  | THICKNESS |  | Pad thickness to your drawing |
+  | WIDTH |  | Pad width and length to your drawing |
+  | TREAD | — | Pattern and depth to your drawing |
+  _This is one of only two pages where thickness and width are the right kind of field, because a step pad genuinely is a large flat part. They are still generic — “up to 2,000 mm” is a sheet-stock range, not a pad size.
+The real omission is tread. An anti-slip pad is specified by its pattern and depth, and neither the hero nor the data table mentions either. A buyer comparing two suppliers compares tread depth and wet grip; this page gives them nothing to compare_
+- **Quantity selector**: `QTY (pieces)
+− 10,000 +
+Minimum run: 10,000 pieces per part number`
+  _Moulded parts are ordered in pieces. 500 becomes 10,000, client-instructed 2026-09-01 — and on this part the figure qualifies buyers in: an accessory brand fitting two pads per vehicle across a model line reaches 10,000 easily_
+- **Visual reference** (composite):
+    | Cross section view |  | Tread pattern view |
+    | Max width |  | Pad width — to your drawing |
+    | Thickness |  | Pad thickness — to your drawing |
+    | Run length |  | Pad length — to your drawing |
+    | Tread pattern | — | Moulded to your drawing, or matched from a sample |
+    | Fixing | — | Bonded to the step frame, or moulded with push-in studs — rubber-to-metal bonding in-house |
+    | Tolerance class | — | ISO 3302-1, class agreed per part |
+  · Drawing and tread pattern available on request. Send your step frame or a sample pad and we will return a dimensioned drawing for approval before tooling.
+  _🛑 Of the 31 pages, this is the one where the missing photograph hurts most. A step pad is chosen on how the tread looks and how it fits the frame. The three stock images on this page are a tray of unrelated mouldings and two metalworking shots — a buyer cannot evaluate this part at all.
+The “fixing” row is the one accessory manufacturers ask about first, because it decides whether they bond in-house or take a pad with studs already moulded in_
+  <details><summary>notes (4)</summary>
+  - One <h1>; breadcrumb Home › Products › Pads, Stoppers & Caps › Anti-Slip Side Step Pad.
+  - The fitment line is where the vehicle names live, and it should be a real list rather than one model — every additional fitment is a search term the page can hold without making a supply claim.
+  - Do not emit availability: InStock from the badge.
+  - Image alt: “Moulded EPDM anti-slip side step pad with tread pattern, Margo Rubber Products, Nashik”.
+  </details>
+
+## 02 Engineering data [7 of 13 rows answer “On request”]
+> live: LIVE H2 → Engineering Data · the part code is “On request” · product family is wrong · minimum order contradicts the hero
+- **Table** (Row | Live | Ships as):
+  | Product Code |  | {part.code} — or remove the row |
+  | Product Family |  | Pads, Stoppers & Caps |
+  | Material | Compound dependent, see options below | [no change] |
+  | Hardness (Shore A) |  | To your drawing — 60–75 Shore A typical |
+  | Tensile Strength |  | Per compound datasheet, tested to ASTM D412 |
+  | Elongation at Break |  | Per compound datasheet, tested to ASTM D412 |
+  | Operating Temperature | Compound dependent | [no change] |
+  | Compression Set |  | Tested to ASTM D395 Method B |
+  | Density |  | Per compound datasheet |
+  | Colour Options | Black standard, custom RAL on request |  |
+  | Lead Time |  | Confirmed with the quotation, from approved drawing and approved sample |
+  | Certifications | ISO 9001:2015 | ISO 9001:2015 — certificate 09111526A, valid to 21 Feb 2027. Scope is moulded components, which covers this part |
+  | Minimum Order |  | 10,000 pieces per part number, per compound |
+  | Abrasion resistance | — | Tested in-house |
+  _Seven of thirteen rows answer “On request”, identically on all 31 pages. Three can be filled today with no new data.
+Two rows are specifically wrong here: the product family, and the missing one. Abrasion resistance is on Margo’s published test list and it is the governing property for a tread pad — adding that row costs nothing and is the most relevant technical statement this page can make.
+And the minimum contradicts the hero selector on this same page_
+  <details><summary>notes (3)</summary>
+  - Hide rows you cannot answer rather than printing “On request” seven times.
+  - The abrasion row is a genuine differentiator. Margo tests abrasion in-house; almost no competitor page on a step pad names a test at all.
+  - This table is the Product schema source. Never map an unanswered row to a schema property.
+  </details>
+
+## 03 Rubber compound options [🛑 SBR is what makes cheap step pads perish]
+> live: LIVE → Neoprene, SBR — two of the eight, presented as equals · EPDM, the UV-resistant compound the whole market advertises, is not offered
+- **All eight, always — and the market has already named the right one**:
+  > Margo produces every part in every compound it mixes (client-instructed 2026-09-02). The live selector offers two, understating the offer by six.
+  > 🛑 Every accessory brand selling this product advertises the same thing: a UV-resistant rubber step pad. They advertise it because the failure is universal and visible — a step pad goes grey, hard and cracked in two Indian summers, and the customer sees it every time they get in the car.
+  > That failure is ozone and UV attack, and EPDM is the answer. It is the compound the market is describing, and it is not offered on this page. SBR, which is offered, is what the cheap pads are made of — low cost, decent dry abrasion, and poor ozone resistance.
+  > So this page currently offers the compound that causes the market’s known failure, and omits the one that fixes it. Ranking the eight is what turns that around.
+- **Selector** (Rank | Compound | Temperature | Hardness | For this part):
+  | RECOMMENDED | EPDM | −40 to +140 °C | 40–90 Shore A | UV and ozone resistant — the compound the accessory trade means when it advertises a UV-resistant pad. Holds colour and grip through Indian summers |
+  | Suitable | Natural rubber | −20 to +90 °C | 30–80 Shore A | Best abrasion and tear resistance of the eight — longest tread life, but it perishes faster in direct sun. Specify where the step is sheltered or the pad is replaced on service |
+  | Suitable | Neoprene | −40 to +120 °C | 40–90 Shore A | The compromise — good weathering, moderate abrasion. Specify where the step also sees oil or fuel spillage |
+  | Available | NBR | −30 to +120 °C | 40–90 Shore A | Specify for workshop, plant or fuel-station duty where oil contact is constant |
+  | Available | AEM | −40 to +175 °C
+continuous to +160 °C | 50–80 Shore A | No benefit on a step pad; available if a programme standardises on it |
+  | 🛑 Not recommended | SBR | −30 to +100 °C | 40–90 Shore A | Poor ozone resistance — this is the compound that makes a step pad go grey and crack. Currently offered on this page |
+  | 🛑 Not recommended | Silicone | −60 to +220 °C | 30–80 Shore A | Low tear and abrasion resistance — a tread pattern under boots would not survive |
+  | 🛑 Not recommended | FKM | −20 to +250 °C
+continuous to +200 °C | 60–90 Shore A | Several times the cost with no benefit, and stops at −20 °C on an exterior part |
+  _Live set: Neoprene, SBR. Every compound stays selectable; the change is that the page now says which is right and why three are not.
+The EPDM-versus-natural-rubber choice is a real one and worth publishing — EPDM lasts longer in sun, natural rubber wears slower under boots. A pad that is replaced at service can be natural rubber; a fit-for-life pad should be EPDM. Ranges are from the locked homepage compound table_
+  <details><summary>notes (4)</summary>
+  - All eight panels in the DOM at first paint, hidden with CSS.
+  - “Why do rubber side step pads crack?” is a question with a real answer — ozone and UV, not wear — and it is asked by consumers and accessory brands alike. The best AEO passage this page can carry.
+  - “UV-resistant” is the phrase the market already uses. Matching it earns the query; explaining it earns the enquiry.
+  - Feed material from the recommended and suitable rows only.
+  </details>
+
+## 04 Why specifiers choose Margo [4 cards stay four · all four rewritten]
+> live: LIVE H2 → Why Specifiers Choose Margo · four cards identical on all 31 pages · a 99.7% yield chip this page later calls “on request”
+- **Quality chip**: `ABRASION
+Tested in-house
+on every compound we mix`
+  _The production table in section 07 says first-pass yield is “On request”. One of the two is wrong and the honest one is the table. The replacement puts the property this part lives on in the slot, and abrasion is on Margo’s published test list_
+- **Cards ×4** (# | Live card | Ships as — title | Ships as — body):
+  | 01 |  | It fails by cracking, not by wearing | Step pads go grey, hard and split long before the tread wears out. That is ozone and UV, not abrasion — and it is why the compound matters more than the tread depth. |
+  | 02 |  | Tread is the specification | Pattern and depth decide wet grip, and grip is the whole job. Send your frame or a sample pad — we match the pattern and the fixing centres from it. |
+  | 03 |  | Bonded to your frame, or studded | Supplied loose, bonded to your steel step, or moulded with push-in studs. Rubber-to-metal bonding is done here, so the pad and the bond are one process. |
+  | 04 |  | Eight compounds, one right answer | EPDM for sun, natural rubber for wear, neoprene for oil. We mix all eight in-house and will tell you which your step needs. |
+  _Four cards, four cards — no count change and no new element. Each live card is a title plus one line and the replacement keeps that shape.
+Card 01 is the one that sells. Every accessory brand buying this part has had a batch perish, and naming the mechanism — ozone, not wear — is the fastest way to sound like the supplier who has solved it.
+Card 03 is the commercial one. Accessory manufacturers are steel fabricators; the bonding step is the part they would rather buy in. Offering the pad bonded to their frame turns a component sale into an assembly sale._
+  <details><summary>notes (3)</summary>
+  - This is the page’s AEO asset — everything else is shared with 30 other URLs.
+  - Moulding process, named per part: compression moulded, with transfer where studs or a frame are bonded in. Correct here.
+  - Never publish a metric the same page later declines to give.
+  </details>
+
+## 05 Global applications [6 cards stay six · three markets, three applications]
+> live: LIVE H2 → Global Applications · Aerospace and Marine claimed here and on all 31 pages
+- **The heading is right; three of the six cards are not**:
+  > 🛑 This part is fitted to a named vehicle, so an industry grid claiming aerospace, marine and oil & gas is evidence the section renders from a site-wide constant rather than the part record.
+  > But the heading is correct, and the fix is not to replace it with a fitment list. Read plainly, “Global Applications” asks two things: where in the world is this sold, and what else does it fit. The section answers both, three cards each, and keeps all six.
+  > The market cards are the commercially useful half. The Scorpio exported from India in volume, and replacement demand follows the parked fleet — so these cards tell a distributor abroad that the part serves their market, and tell Margo where the aftermarket for it actually sits.
+  > The application cards are the genuine non-automotive uses — the same part, or the same profile, doing the same job on other equipment. They are what stops a single-vehicle page being a dead end.
+- **Cards** (Slot | Live | Ships as):
+  | 1 |  | Nepal — the largest export market for the Scorpio |
+  | 2 |  | Namibia and Burundi — the next two Scorpio import markets |
+  | 3 |  | Southern Africa and the Gulf — established Mahindra utility-vehicle markets |
+  | 4 |  | Vehicle accessory trade — side steps and running boards, fitted after sale as well as on the line |
+  | 5 |  | Step and walkway tread pads on plant and machinery |
+  | 6 |  | Bus and coach entrance-step treads |
+  _Six cards in, six cards out — the component and its layout are untouched, and only the data changes.
+Three markets, three applications. The split is the point: the markets say where the demand is, the applications say what else the tooling serves, and a single-vehicle part needs both to justify a page.
+🛑 Name the markets, never claim a presence in them. These are the countries the vehicles went to; whether Margo has a distributor there is a separate question the page must not answer by implication.
+Source and limits: export-shipment records read 2026-09-02, with manufacturer export statements where quoted. Parts demand is inferred from the parked fleet, not measured — the inference is sound and should be labelled as one_
+  <details><summary>notes (2)</summary>
+  - Link each surviving card to its industry page — /industries/automotive and /industries/mining are both relevant here.
+  - Do not claim a sector in Product schema.
+  </details>
+
+## 06 From compound to certification [Keep · correct process for this part]
+> live: LIVE H2 → From Compound to Certification · six steps · “compression moulding” is right on this page
+- **Steps** (# | Ships as):
+  | 01 | Material compounding — polymer blending, additive integration and batch QC in our in-house lab. Abrasion resistance and wet grip are set here — a step tread is walked on with grit underfoot. |
+  | 02 | Mould design & CNC — precision steel tooling manufactured in-house and held as a controlled record. The tread pattern is cut into the tool, so the pattern is a tooling decision, not a finishing one. |
+  | 03 | Compression moulding — hydraulic press cycles at controlled temperature and pressure. Correct for this part, with transfer moulding where studs or a frame are bonded in |
+  | 04 | Post-cure & trimming — oven post-cure for dimensional stability, followed by flash trimming. [no change] |
+  | 05 | Quality inspection — dimensional check, hardness testing and batch sampling before release. Tread depth is the dimension checked, and abrasion is tested per compound. |
+  | 06 | Export packaging — industrial packing with documentation. ISPM-15 treated pallets where timber packaging is used. Mats are packed flat — a rolled mat holds its curl and will not lie down on the step. |
+  _Six steps, six kept — the template’s process is already right on this page. Three steps gain a part-specific detail.
+Step 02 is worth expanding here specifically: a buyer who does not know rubber assumes a tread pattern is applied after moulding. It is cut into the tool — which means changing the pattern means changing the tool, and that is a cost conversation worth having before tooling rather than after_
+  <details><summary>notes (3)</summary>
+  - The process block must render from the part record even where the default is correct.
+  - Numbered steps are an <ol>.
+  - Identical on 31 pages — consider lifting it to /products and linking.
+  </details>
+
+## 07 Certified to international standards [Honest — and the scope covers this part]
+> live: LIVE H2 → Certified to International Standards · ISO 9001 only · metrics marked “On request” · video marked “Film pending”
+- **It got four calls right**:
+  > After /why-margo, which lists five certifications and holds one, this section deserves saying plainly: it claims ISO 9001:2015 and nothing else. No IATF. No TÜV SÜD. No CE marking. The production-metrics table prints “On request” rather than inventing figures, and the facility video says “Film pending”. Four honest calls in one section.
+  > The scope covers this part — it is a moulded component. State the scope anyway, because the same block ships on 31 pages and two of them are outside it.
+- **Certificate block**: `ISO 9001:2015 · Certificate 09111526A
+Integral Certification Ltd
+Valid to 21 February 2027 · Scope: rubber moulded components`
+  _A number, an issuer and an expiry are checkable; “accredited certification body” is not_
+- **Production metrics** (Row | Live | Ships as):
+  | Years in operation |  | Publish it once the founding year is settled |
+  | Active clients |  | 60+ — signed company profile p27 |
+  | First-pass yield | On request |  |
+  | Avg. lead time |  | 3–4 weeks from approved sample — company profile p27 |
+  _Three of the four can be filled from documents Margo has already signed off_
+  <details><summary>notes (3)</summary>
+  - No hasCredential on any SKU page.
+  - The certificate number and scope are visible text, not an image caption.
+  - “Film pending” is fine to ship.
+  </details>
+
+## 08 Technical documentation [4 dead downloads · and the image gap is the real one]
+> live: LIVE H2 → Technical Documentation · PDF, DWG, STEP, ZIP — none exists; two are labelled “Download” and open the contact form
+- **Live state** (Offered | Reality):
+  | PDF — Product datasheet | Marked “Pending” on the page itself |
+  | DWG — Technical drawing | Anchor labelled “Technical Drawing DWG” → /contact |
+  | STEP — 3D CAD model | No file |
+  | ZIP — Product images hi-res | No file — and on this part it is the one that matters |
+  _4 × 31 = 124 dead download affordances across the set.
+🛑 On this page the hi-res image pack is the asset with real value, and it is the one nobody would think to build. An accessory brand selling side steps needs product photography for their own listings. A supplier who ships the pad and the images is easier to buy from than one who ships only the pad_
+- **Ships as** (composite):
+  · H: “Technical Documentation”
+  · Drawings, tread-pattern artwork and product photography are issued per part on request, under NDA where required. Tell us the part and the format you work in — PDF, DWG or DXF for the drawing, and we can supply photography for your own listings.
+  · `[ Request documentation → /contact?part=Anti-Slip%20Side%20Step%20Pad&doc=1 ]`
+  _45 words · one honest request line replaces four fake buttons — and it captures more, because the buyer says which format they use.
+The photography offer is specific to this part and it is a genuine differentiator in an accessory supply chain_
+  <details><summary>notes (3)</summary>
+  - Never label a control “Download” unless a file is served.
+  - Product photography is an SEO asset here, not just a sales one — tread-pattern images earn image-search traffic from exactly the buyers who source this part.
+  - When files ship, Product schema can carry them via subjectOf; not before.
+  </details>
+
+## 09 Technical & commercial questions [5 answers written]
+> live: LIVE H2 → Technical & Commercial Questions · five well-chosen questions · the same five on all 31 pages
+- **Q1**:
+  > We supply in bulk. The minimum run is 10,000 pieces per part number, per compound, or quoted against the part where geometry or tooling makes that unrealistic. Prototype and first-article lots sit outside the minimum.
+  `What is the minimum order quantity for this part?`
+  _36 words · client-instructed 2026-09-01. Must match the hero selector and the Engineering Data row on this same page. On this part the figure qualifies buyers in — two pads per vehicle across a model line clears it easily_
+- **Q2**:
+  > Yes. Send the pad or the step frame and we will match the tread pattern, the outline and the fixing centres, then confirm compound before tooling. A used pad has worn tread and a shrunk outline — we dimension to the original, not to the worn sample.
+  `Can you match a competitor specification or reverse-engineer an existing part?`
+  _48 words · “send the step frame” is the practical answer, because the fixing centres matter as much as the pad, and an accessory manufacturer has the frame on the bench_
+- **Q3**:
+  > PDF, DWG, DXF and STEP. For a tread pad the pattern artwork matters as much as the outline — send it as a DXF or a vector PDF if you have it. If you only have a sample pad, send the sample.
+  `What file formats do you accept for drawings?`
+  _42 words · pattern artwork is the part-specific answer and it is what separates a real quote from a guess_
+- **Q4**:
+  > Yes. Material test reports, dimensional inspection sheets and a certificate of conformance ship with every consignment. Hardness, tensile to ASTM D412 and abrasion are tested in-house — on this part, abrasion is the one to ask for.
+  `Do you provide material test reports with each shipment?`
+  _40 words · abrasion is on Margo’s published test list and it is the property that predicts tread life_
+- **Q5**:
+  > TT and LC accepted, discussed per order. Ex-works Nashik or FOB Nhava Sheva. Commercial invoice, packing list and certificate of origin are issued with every consignment.
+  `What are your payment and delivery terms for international orders?`
+  _35 words · same wording as the export sheet and all nine industry pages_
+  <details><summary>notes (3)</summary>
+  - All five answers in the DOM at first paint, hidden with CSS. Verify with curl, not devtools.
+  - Questions become <h3>, not <span>.
+  - Identical FAQ content on 31 URLs is a duplication risk — and three of these five answers are genuinely different on a tread part, which argues for per-category FAQ content.
+  </details>
+
+## 10 You may also need [3 become 4 · siblings change with the category]
+> live: LIVE H2 → You May Also Need · three anti-vibration mounts — none of them related to a tread pad
+- **Cards** (Slot | Part | Why it is here):
+  | Sibling 1 | Big Support Pad /pads-stoppers-caps/big-support-pad | Nearest neighbour once this part moves — a large moulded flat pad from the same tooling family |
+  | Sibling 2 | Radiator Shroud Flap /pads-stoppers-caps/radiator-shroud-flaps | Another large exterior moulded part in EPDM, same weathering duty |
+  | Sibling 3 | EPDM Pad /pads-stoppers-caps/epdm-pad | Same compound, same outdoor case — though this one is a material variant due to be collapsed |
+  | Cross-category | Rear Windscreen Glazing Rubber /anti-vibration-mounts/backlight-mount | The other exterior EPDM part on the site — and an accessory brand fitting steps to a Scorpio is fitting glazing to the same vehicle |
+  _The live three are all anti-vibration mounts — a bumper stopper, a damper weight and a glazing rubber — because the rule is same-category and this part is in the wrong category. Nobody buying a step pad wants a bump stop.
+Selecting on function rather than category fixes this page and improves the other 30. Cards should carry the compound and a one-line difference, not just a name_
+  <details><summary>notes (3)</summary>
+  - With /sitemap.xml empty, these links and the category page are the only route a crawler has to this URL.
+  - The same-category rule is what produced three irrelevant cards here.
+  - Anchor text is the part name, never “View part”.
+  </details>
+
+## 11 Quote CTA [Keep the pre-fill · fix the response time]
+> live: LIVE H2 → Need this part quoted? · the quote link pre-fills the part name — the best-built control on the site
+- **Body**:
+  > Send your step frame or a sample pad. We confirm compound, tread pattern and fixing, then quote against your annual quantity. We respond within 48 hours.
+  _26 words · the inputs change to match the part. “Hardness and tolerance” becomes “tread pattern and fixing” — the two things that actually have to be agreed before this part can be quoted.
+“Within 1 business day (IST)” is the sixth response commitment on this website and, across 31 pages, by far the most published_
+- **Primary CTA**: `Request a quote` → /contact?part=Anti-Slip%20Side%20Step%20Pad
+  _[no change to the mechanism] — the single best-built control on the website_
+- **Secondary**: `← Back to Pads, Stoppers & Caps
+/products/pads-stoppers-caps`
+  _Follows the category move_
+  <details><summary>notes (3)</summary>
+  - One response time sitewide, rendered from one constant.
+  - Verify the ?part= value actually lands in the form field.
+  - /contact?part=… must canonical to /contact.
+  </details>
+
+## 12 Footer [Global component]
+> live: LIVE → the shared footer · the same corrections as every sheet in this set
+  <details><summary>notes (5)</summary>
+  - The footer is the only sitewide navigation this page has. With the sitemap empty, a crawler reaches this URL through the category page or the sibling links in section 10.
+  - The Products column must list all eleven categories (twelve with sheet lining). It shows nine.
+  - Same corrections as every sheet: legal name Margo Rubber Products · © from the current year · the Vilholi address · Export Markets replacing Why Choose Us · 48-hour response · certificate 09111526A with its scope on the ISO line.
+  - The footer promises a quote “within 24 hours” while section 11 promises “within 1 business day”, about 350 px apart.
+  - Column labels are <h2> in the live build, injecting three phantom sections into this page’s outline.
+  </details>

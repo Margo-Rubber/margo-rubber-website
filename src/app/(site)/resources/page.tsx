@@ -32,7 +32,10 @@ export async function generateMetadata() {
 export default async function ResourcesPage() {
   const fm = await getSitePage("resources", resourcesHubSchema);
 
+  // The hub lists the guides; a datasheet (sheet 40) is a reference
+  // document reached from the product page it applies to.
   const guides: Guide[] = (await listResources())
+    .filter((g) => g.category !== "datasheets")
     .map((g) => ({
       slug: g.slug,
       h1: g.h1,

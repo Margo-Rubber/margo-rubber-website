@@ -8,6 +8,11 @@ export type Compound = {
   tempC: readonly [number, number] | number[];
   note: string;
   properties: string[];
+  /** Sheet 34: "Recommended", "Suitable — hotter still", "Not recommended". */
+  rankLabel?: string;
+  /** The range as the sheet writes it, continuous rating on a second line. */
+  temperature?: string;
+  hardness?: string;
 };
 
 /**
@@ -43,7 +48,16 @@ export function SkuCompoundPicker({ items }: { items: readonly Compound[] }) {
                 aria-hidden
                 className="bg-accent-400 block size-8 rounded-full"
               />
-              <span className="text-ink mt-4 block text-lg font-semibold">
+              {c.rankLabel && (
+                <span
+                  className={`text-eyebrow mt-3 block font-mono uppercase ${
+                    /not recommended/i.test(c.rankLabel) ? "text-ink-4" : "text-accent-400"
+                  }`}
+                >
+                  {c.rankLabel}
+                </span>
+              )}
+              <span className="text-ink mt-2 block text-lg font-semibold">
                 {c.code}
               </span>
               <span className="text-ink-4 mt-0.5 block text-xs">{c.name}</span>
@@ -80,29 +94,35 @@ export function SkuCompoundPicker({ items }: { items: readonly Compound[] }) {
               <p className="text-eyebrow text-accent-400 font-mono uppercase">
                 Temperature range
               </p>
-              <p className="text-ink mt-3 text-2xl font-semibold">
-                {c.tempC[0]} / +{c.tempC[1]}°C
+              {/* The sheet's own wording where it gives one; the settings
+                  figures otherwise. */}
+              <p className="text-ink mt-3 text-2xl font-semibold whitespace-pre-line">
+                {c.temperature ?? `${c.tempC[0]} / +${c.tempC[1]}°C`}
               </p>
-              <p className="text-ink-4 mt-1 text-sm">{c.note}</p>
+              {c.hardness && <p className="text-ink-4 mt-1 text-sm">{c.hardness}</p>}
             </div>
             <div>
               <p className="text-eyebrow text-accent-400 font-mono uppercase">
-                Properties
+                {c.rankLabel ? "For this part" : "Properties"}
               </p>
-              <ul className="mt-3 flex flex-wrap gap-2">
-                {c.properties.length ? (
-                  c.properties.map((p) => (
-                    <li
-                      key={p}
-                      className="border-line-2 text-ink-2 rounded border px-2.5 py-1 text-xs"
-                    >
-                      {p}
-                    </li>
-                  ))
-                ) : (
-                  <li className="text-ink-4 text-xs italic">On request</li>
-                )}
-              </ul>
+              {c.rankLabel ? (
+                <p className="text-ink-2 mt-3 text-sm leading-relaxed">{c.note}</p>
+              ) : (
+                <ul className="mt-3 flex flex-wrap gap-2">
+                  {c.properties.length ? (
+                    c.properties.map((p) => (
+                      <li
+                        key={p}
+                        className="border-line-2 text-ink-2 rounded border px-2.5 py-1 text-xs"
+                      >
+                        {p}
+                      </li>
+                    ))
+                  ) : (
+                    <li className="text-ink-4 text-xs italic">On request</li>
+                  )}
+                </ul>
+              )}
             </div>
           </div>
         ))}

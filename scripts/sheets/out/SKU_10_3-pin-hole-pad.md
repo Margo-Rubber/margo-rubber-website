@@ -1,0 +1,268 @@
+# SKU_10_3-pin-hole-pad.html — 3 Pin Hole Pad — Three-Way Electrical Pass-Through Grommet
+
+**<title>** 3-Hole Cable Pass-Through Grommet | Moulded EPDM | Margo
+**description** Moulded rubber pass-through grommets with three cable holes. Sealed against water and dust, sized to your panel gauge and wire diameter. EPDM, NBR or neoprene. Nashik, India.
+
+## 01 Hero, spec block & visual reference [🛑 Hardness wrong · every fitting dimension missing]
+> live: LIVE H1 → 3 Pin Hole Pad (Electrical Pass-Through) · 70 Shore A on a part that has to stretch over a panel
+- **Badges**: `MADE TO ORDER · ISO 9001:2015 · 09111526A`
+  _“IN STOCK” comes off. The ISO badge stands unqualified here — a moulded grommet is inside the certificate scope, unlike the die-cut parts on sheets 08 and 09_
+- **H1**: “3 Pin Hole Pad — Three-Way Electrical Pass-Through Grommet”
+  _The internal name stays, and gains the words people search. “Pad” is misleading on its own — it suggests something that sits under a component, not something a harness passes through_
+- **Intro sentence**:
+  > A moulded rubber pass-through with three cable holes, for taking a harness through a panel without letting water, dust or noise follow it, and without the panel edge cutting into the cable. Sized to your panel gauge, hole pitch and wire diameter.
+  _44 words · replaces the template’s “3 Pin Hole Pad (Electrical Pass-Through) manufactured to order at our ISO 9001:2015 certified plant in Nashik”, identical on all 31 pages with the name swapped.
+The two jobs are in one sentence — sealing and cable protection — and the second is the one the live page never mentions.
+The closing clause names the three dimensions a buyer must send, which turns the intro into a specification prompt_
+- **Hero spec block** (Field | Live — identical on all 31 pages | Ships as):
+  | HARDNESS |  | 50–60 Shore A typical for a pass-through grommet, 40–90 available. The part has to stretch to fit |
+  | SHORE A |  | ±5 pts against the specified hardness |
+  | TENSILE |  | Per compound datasheet, tested to ASTM D412. Ask about tear strength too |
+  | TEMPERATURE |  | −40 to +140 °C on the default EPDM — per the locked compound table |
+  | THICKNESS |  |  |
+  | WIDTH |  |  |
+  | PANEL GAUGE | — | To your drawing — sizes the retaining groove |
+  | HOLES | — | 3 · diameters and pitch to your drawing |
+  _🛑 The hardness figure is the one to fix first, because it is the only wrong number here that reaches the production line. A 70 Shore A grommet is a part the assembly operator has to fight.
+Thickness and width are deleted rather than corrected — unlike sheets 08 and 09, where a die-cut part made them nearly real, this is a moulded part and they describe nothing.
+Panel gauge and hole count replace them, which is what a grommet is actually specified on_
+- **Quantity selector**: `QTY (pieces)
+− 10,000 +
+Minimum run: 10,000 pieces per part number`
+  _Especially misleading here — a grommet of this size weighs a few grams, so “Min: 500 kg” is an order in the high tens of thousands of pieces, presented as a modest figure_
+- **Visual reference** (composite):
+    | Cross section view |  | Sectioned profile through the retaining groove — on request under NDA |
+    | Max width |  |  |
+    | Thickness |  |  |
+    | Run length |  |  |
+    | Hole diameters | — | Three, stated individually |
+    | Hole pitch | — | Centre distances between the three holes |
+    | Interference | — | How far each hole is undersized against its wire — this is what seals it |
+    | Fitting direction | — | Which face goes to the wet side |
+  · Sectioned profile available on request. Send the panel gauge, the hole diameter in the panel, and the three wire diameters — or a sample grommet and a piece of the panel — and we will return a dimensioned drawing for approval.
+  _Three empty sheet-rubber rows are replaced by five that define the part.
+Interference is the row that earns the section. A buyer will send hole diameters equal to the wire diameters, because that is what the drawing says; the grommet then leaks. Asking the question on the page prevents a first-article rejection.
+“Or a sample grommet and a piece of the panel” is the practical route, and it is how most of these parts are actually specified_
+  <details><summary>notes (4)</summary>
+  - One <h1>; breadcrumb Home › Products › Grommets › 3 Pin Hole Pad.
+  - 🛑 The hero must render from the part record. A hardness that is wrong for the part class is worse than a blank field — it will be quoted back at Margo.
+  - “Cable pass-through grommet” and “panel gauge” are the terms to own; neither appears on this site.
+  - Image alt: “Three-hole moulded rubber cable pass-through grommet, Margo Rubber Products, Nashik”.
+  </details>
+
+## 02 Engineering data [7 rows say “On request” · tear strength missing]
+> live: LIVE H2 → Engineering Data · Product Family: Grommets — correct, and the first page where it is
+- **Table** (Row | Live | Ships as):
+  | Product Code |  | Assigned on order |
+  | Product Family | Grommets |  |
+  | Material |  | EPDM standard; NBR or neoprene where oil is present |
+  | Hardness (Shore A) |  | 50–60 typical, 40–90 available — soft enough to fit, firm enough to grip |
+  | Tensile Strength |  | Per compound datasheet, tested to ASTM D412 |
+  | Elongation at Break |  | Per compound datasheet, ASTM D412 — relevant here, the part is stretched to fit |
+  | Operating Temperature |  | −40 to +140 °C on EPDM; see section 03 for the others |
+  | Compression Set |  | Tested to ASTM D395 Method B |
+  | Density |  | Per compound datasheet |
+  | Colour Options | Black standard, custom RAL on request | [no change] |
+  | Lead Time |  | Confirmed with the quotation, from approved drawing and approved sample |
+  | Certifications | ISO 9001:2015 | ISO 9001:2015 — certificate 09111526A. |
+  | Minimum Order |  | 10,000 pieces per part number, per compound |
+  | Tear strength | — | Tested to ASTM D624 |
+  | Panel gauge range | — | To your drawing |
+  | Hole configuration | — | 3 holes; diameters, pitch and interference to your drawing |
+  _Net change: 13 rows to 16. Tell the developer the table grows.
+Tear strength is the addition that matters, and it is missing from all 31 pages. On a moulded seal it is a secondary property; on a part that is stretched over a sheet-metal edge by hand it is the property that decides scrap on the assembly line, and ASTM D624 is the method.
+Elongation at break is worth answering here rather than hiding, for the same reason — it is one of the few pages where that row is genuinely useful_
+  <details><summary>notes (3)</summary>
+  - Three named test methods on one page — D412, D395 Method B and D624 — is the density of specifics that separates a manufacturer from a trader in both search and answer engines.
+  - Hide rows you cannot answer rather than printing “On request” seven times.
+  - 🛑 Do not emit these as additionalProperty until the values are real. Structured data repeating “On request” is worse than no structured data.
+  </details>
+
+## 03 Rubber compound options [Right default · ranked, and expanded to eight]
+> live: LIVE → EPDM (SELECTED), NBR, Neoprene — correct default, three of eight compounds, unranked
+- **Selector** (Rank | Compound | Temperature | Why):
+  | Recommended | EPDM | −40 to +140 °C | The default, and correctly pre-selected. Water, weather, ozone and UV — a body or bulkhead pass-through spends its life exposed to all four |
+  | Recommended | Neoprene | −40 to +120 °C | Where the pass-through sees oil mist or fuel vapour as well as weather — the engine-bay side of a bulkhead |
+  | Suitable | NBR | −30 to +120 °C | Direct liquid oil contact. 🛑 Poor ozone resistance — do not specify it for an exposed exterior grommet |
+  | Suitable | Silicone | −60 to +220 °C | Pass-throughs near a heat source. Tears more easily than EPDM, which matters on a part fitted by hand |
+  | Suitable | SBR | −30 to +100 °C | Low-cost interior pass-throughs, no weather exposure |
+  | Available | Natural rubber | −20 to +90 °C | Best tear strength of the eight — worth considering where fitting damage is the problem, but it perishes outdoors |
+  | Available | AEM | −40 to +175 °C
+continuous to +160 °C | Hot oil-mist service. Cost is rarely justified on a grommet |
+  | Available | FKM | −20 to +250 °C
+continuous to +200 °C | Aggressive chemical or very high temperature. 2–3× the cost of the alternatives |
+  _Live set: EPDM (SELECTED), NBR, Neoprene — three of eight, unranked, but the right one first.
+Nothing is removed (client-instructed 2026-09-02): all eight are shown and ranked, with a reason on each.
+Two notes are specific to a grommet and appear on no other sheet. NBR’s ozone weakness matters here because this part is often on an exterior panel; and natural rubber’s tear strength is a genuine argument on a part that is stretched by hand — the one application in the catalogue where NR’s best property is the deciding one_
+  <details><summary>notes (3)</summary>
+  - This is the first page where the selector needs no default correction — note that explicitly so the developer does not "fix" it.
+  - Feed material as the three live compounds, not all eight — schema should describe what the page recommends.
+  - All panels in the DOM at first paint, hidden with CSS. Verify with curl.
+  </details>
+
+## 04 Why specifiers choose Margo [4 cards stay four · all four rewritten]
+> live: LIVE H2 → Why Specifiers Choose Margo · four generic cards · a 99.7% yield chip this page later calls “on request”
+- **Quality chip**: `FITTED HARDNESS
+50–60 Shore A
+soft enough to seat, firm enough to grip`
+  _The production table in section 07 says first-pass yield is “On request” — the honest one is the table. The replacement puts the page’s main correction in its most prominent slot_
+- **Cards ×4** (# | Live card | Ships as — title | Ships as — body):
+  | 01 |  | It has to fit before it can seal | A grommet is seated by hand over a cut panel edge. We specify hardness and tear strength for that moment, not just for service life — a part the operator has to force is a part that gets damaged on the line. |
+  | 02 |  | The seal is the interference | Each hole is moulded undersize against its wire. Send the wire diameters and we will set the interference — matching hole to wire exactly gives a grommet that passes inspection and leaks in service. |
+  | 03 |  | Sized to your panel, not to a catalogue | Panel gauge sets the retaining groove; hole pitch is fixed by your harness. Both are moulded in, so the part seats in one push and stays put. |
+  | 04 |  | Protecting the cable is half the job | The other half is the sheet-metal edge. A chafed harness is a short circuit, so the bore is moulded with a radius rather than cut, and the compound is chosen to stay flexible cold. |
+  _Four cards, four cards — no count change and no new element.
+Card 01 is the argument a competitor will not make, because it is about the assembly line rather than the product, and it is where grommets actually fail commercially.
+Card 04 states the part’s second job, which appears nowhere on the live site_
+  <details><summary>notes (3)</summary>
+  - This is the page’s AEO asset — everything else is shared with 30 other URLs.
+  - Card 02 answers “how much smaller should a grommet hole be than the cable?”, a real question with poor answers in circulation.
+  - Process, named per part: compression moulding — correct on this page, unlike the last two.
+  </details>
+
+## 05 Global applications [6 cards become 4]
+> live: LIVE H2 → Global Applications · Aerospace and Marine claimed here and on all 31 pages
+- **Cards** (Card | Decision):
+  | Automotive | Keep as lead and narrow: bulkhead and floor-pan harness pass-throughs, door-to-body cable transitions, lamp and switch wiring. This is the part’s home market |
+  | Electrical & Enclosures [new] | Add. Control panels, junction boxes and outdoor cabinets, where the grommet is what carries the enclosure’s IP rating under IEC 60529. A moulded multi-hole grommet is the low-cost alternative to three separate cable glands |
+  | Heavy Industry | Keep and narrow: harness entries on machine enclosures and control cabinets, where dust and washdown are the threats |
+  | Construction → Infrastructure | Keep and narrow to cable entries on roadside cabinets, pump housings and site equipment |
+  | Energy & Oil | 🛑 Remove — hazardous-area cable entry is a certified-gland product, not a moulded grommet |
+  | Aerospace | 🛑 Remove — requires AS9100, not held and claimed nowhere |
+  | Marine | 🛑 Remove — marine fenders are fabricated units, not moulded components |
+  _Three removed and one added — still four cards.
+The Energy & Oil removal is a safety point, not a marketing one. Cable entry into a hazardous area is done with certified glands; offering a moulded grommet into that sector invites a specification it must not be used for.
+The gland comparison in the new card is the commercial argument. Three cable glands cost more than one three-hole grommet and take three times as long to fit — and no page on this site makes that case_
+  <details><summary>notes (3)</summary>
+  - Link the new card to /industries/… and the automotive card to the automotive industry page.
+  - 🛑 Say the grommet contributes to an IP rating — never that Margo certifies one. The rating belongs to the finished enclosure.
+  - 🛑 Do not name an OEM. No Mahindra or Tata supply agreement is substantiated in the source documents.
+  </details>
+
+## 06 From compound to certification [Correct process for once · two steps sharpened]
+> live: LIVE H2 → From Compound to Certification · six steps · “compression moulding” is right on this page
+- **Steps** (# | Ships as):
+  | 01 | Material compounding — polymer blending, additive integration and batch QC in our in-house lab. Tear strength is set here — the grommet is stretched over a cut panel edge by hand, and that moment decides line scrap. |
+  | 02 | Mould design and CNC tool manufacture, in-house, held as a controlled record. The retaining groove and the three cores are cut to your panel gauge and hole pitch. |
+  | 03 | Compression moulding — [no change; correct on this part] |
+  | 04 | Post-cure and deflashing — flash removed from the three bores and the groove. Flash left in a bore is a leak path and a chafe point. |
+  | 05 | Quality inspection — hole diameters, pitch and groove dimension checked against the drawing, plus hardness testing and batch sampling. |
+  | 06 | Export packaging — industrial packing with documentation. ISPM-15 treated pallets where timber packaging is used. Grommets are bagged loose so the sealing lips are not deformed in transit. |
+  _Six steps, six kept, and for the first time in four sheets the process named is the process used.
+Step 04 is the one worth the extra clause. Deflashing a bore is the quality difference between a grommet that seals and one that cuts into the cable it was fitted to protect, and it is invisible on a datasheet_
+  <details><summary>notes (2)</summary>
+  - The process block must render from the part record — it happens to be right here, which is not the same as being data-driven.
+  - Numbered steps are an <ol>.
+  </details>
+
+## 07 Certified to international standards [The badge stands unqualified here]
+> live: LIVE H2 → Certified to International Standards · ISO 9001 only — honest · and the scope covers this part
+- **Credit, and one addition**:
+  > This section claims ISO 9001:2015 and nothing else — no IATF, no TÜV SÜD, no CE marking. The production-metrics table prints “On request” rather than inventing figures, and the facility video says “Film pending”.
+  > And unlike the last three sheets, no scope caveat is needed. Certificate 09111526A covers rubber moulded components, and this is one. The badge stands as written.
+  > Add the IATF line the client instructed (2026-08-31): Margo is actively upgrading to IATF 16949 and targeting certification by end 2026, with ISO 14001 and ISO 45001 targeted in 2027. It is stated as a plan, never as a held certificate. That matters on this page because a pass-through grommet is an automotive part and IATF is the first question an OEM buyer asks.
+- **Certificate block**: `ISO 9001:2015 · Certificate 09111526A
+Integral Certification Ltd · Valid to 21 February 2027
+Scope: rubber moulded components — this part is within scope
+IATF 16949 — upgrade in progress, certification targeted by end 2026
+ISO 14001 and ISO 45001 — targeted 2027`
+  _Number, body, expiry and scope replacing three vague lines, plus the client-instructed upgrade statement. “Targeted” and “in progress” are the only permitted verbs until a certificate exists_
+- **Production metrics** (Row | Live | Ships as):
+  | Years in operation |  | Publish it once the founding year is settled |
+  | Active clients |  | 60+ — signed company profile p27 |
+  | First-pass yield | On request |  |
+  | Avg. lead time |  | 3–4 weeks from approved sample — company profile p27 |
+  _Three of the four can be filled from documents Margo has already signed off_
+  <details><summary>notes (3)</summary>
+  - 🛑 No hasCredential for IATF. A targeted certification is prose, never structured data.
+  - The certificate number and scope are visible text, not an image caption.
+  - “Film pending” is fine to ship.
+  </details>
+
+## 08 Technical documentation [4 dead downloads]
+> live: LIVE H2 → Technical Documentation · PDF, DWG, STEP, ZIP — none exists; two labelled “Download” open the contact form
+- **Live state** (Offered | Reality):
+  | PDF — Product datasheet | Marked “Pending” |
+  | DWG — Technical drawing | Anchor labelled “Technical Drawing DWG” → /contact |
+  | STEP — 3D CAD model | No file — but genuinely useful on this part, unlike the flat gaskets on sheets 08 and 09 |
+  | ZIP — Product images hi-res | No file |
+  _4 × 31 = 124 dead download affordances across the set.
+The STEP slot is worth keeping here. A grommet is fitted into an assembly a design engineer is modelling, and a 3D model of the seated part is a real design aid — the first page in the set where that offer would earn its place_
+- **Ships as** (composite):
+  · H: “Technical Documentation”
+  · Dimensioned drawings and 3D models are issued on request, under NDA where required. Send the panel gauge, hole diameter and the three wire sizes — or a sample and a panel offcut — and we will return a drawing for approval.
+  · `[ Request a drawing → /contact?part=3%20Pin%20Hole%20Pad&doc=1 ]`
+  _41 words · one honest request line replaces four fake buttons, and it repeats the three dimensions the enquiry needs — the third time on the page, deliberately_
+  <details><summary>notes (2)</summary>
+  - Never label a control “Download” unless a file is served.
+  - Keep the STEP slot visible on moulded parts, hidden on die-cut ones — per-part, from the record.
+  </details>
+
+## 09 Technical & commercial questions [5 answers written]
+> live: LIVE H2 → Technical & Commercial Questions · five well-chosen questions · the same five on all 31 pages
+- **Q1**:
+  > We supply in bulk. The minimum run is 10,000 pieces per part number, per compound, or quoted against the part where geometry or tooling makes that unrealistic. Prototype and first-article lots sit outside the minimum.
+  `What is the minimum order quantity for this part?`
+  _36 words · client-instructed 2026-09-01. Must match the hero selector and the Engineering Data row on this same page_
+- **Q2**:
+  > Yes. Send the sample and a piece of the panel it fits. The groove has to match the panel gauge, and a used grommet has relaxed — we measure the panel, not the worn part, and set the hole interference from your wire sizes.
+  `Can you match a competitor specification or reverse-engineer an existing part?`
+  _44 words · the reverse-engineering answer, in its grommet form. Asking for a panel offcut is a specific, practical request no competitor page makes_
+- **Q3**:
+  > PDF, DWG, DXF and STEP. Mark the panel gauge, the panel hole diameter, the three wire diameters and the hole pitch — those four, plus the compound, are enough for us to quote and tool.
+  `What file formats do you accept for drawings?`
+  _36 words · the fourth restatement of the four dimensions, and the one a buyer will read just before they send the drawing_
+- **Q4**:
+  > Yes. Material test reports, dimensional inspection sheets and a certificate of conformance ship with every consignment. Hardness, tensile to ASTM D412, compression set to ASTM D395 Method B and tear strength to ASTM D624 are tested in-house.
+  `Do you provide material test reports with each shipment?`
+  _38 words · D624 named alongside the two Margo already publishes — the test that matters on a part fitted by hand_
+- **Q5**:
+  > TT and LC accepted, discussed per order. Ex-works Nashik or FOB Nhava Sheva. Commercial invoice, packing list and certificate of origin are issued with every consignment.
+  `What are your payment and delivery terms for international orders?`
+  _28 words · same wording as the export sheet and all nine industry pages_
+  <details><summary>notes (3)</summary>
+  - All five answers in the DOM at first paint, hidden with CSS. Verify with curl, not devtools.
+  - Questions become <h3>, not <span>.
+  - Q2 is the strongest passage — it answers a question the buyer has not thought to ask and gives them an action.
+  </details>
+
+## 10 You may also need [3 become 4 · the category has only two parts]
+> live: LIVE H2 → You May Also Need · Grommets contains two SKUs in total, so the block cannot fill from siblings alone
+- **Cards** (Slot | Part | Why it is here):
+  | Related 1 | Internal Fit Grommet /grommets/internal-fit | The only sibling in the category — the single-hole, internally seated alternative |
+  | Related 2 | Oil Filler Cap O-Ring /o-rings/seal-filler-cap-o-rings | Where the pass-through is a shaft or spout rather than a cable |
+  | Related 3 | EPDM Gaskets /gaskets/epdm | The flat-face seal for the same panel — the two are usually specified together on an enclosure |
+  | Related 4 | Foam Gaskets — Closed-Cell Sponge /sponge-foam-rubber/foam-gaskets | The low-closing-force option for the enclosure lid the harness enters |
+  _🛑 Grommets has only two SKU pages, so a sibling-only rule leaves this block nearly empty. Select on the job instead — the parts that appear on the same enclosure or panel.
+Related 3 is the useful one commercially. A buyer sealing a panel needs both the pass-through and the face gasket, and pairing them raises the order value without a single word of selling_
+  <details><summary>notes (2)</summary>
+  - With /sitemap.xml empty, these links and the category page are the only crawl route to this URL.
+  - Anchor text is the part name, never “View part”.
+  </details>
+
+## 11 Quote CTA [Keep the pre-fill · fix the response time]
+> live: LIVE H2 → Need this part quoted? · the quote link pre-fills the part name — the best-built control on the site
+- **Body**:
+  > Send your drawing, or a sample grommet with a piece of the panel. We confirm compound, hardness and the hole interference, then quote against your annual quantity. We respond within 48 hours.
+  _32 words · “tolerance” becomes “the hole interference”, which is the number this part is actually quoted on.
+“Within 1 business day (IST)” is the sixth response commitment on this website_
+- **Primary CTA**: `Request a quote` → /contact?part=3%20Pin%20Hole%20Pad
+  _[no change to the mechanism] — the single best-built control on the website_
+- **Secondary**: `← Back to Grommets
+/products/grommets`
+  _[no change] — correct_
+  <details><summary>notes (3)</summary>
+  - One response time sitewide, rendered from one constant.
+  - Verify the ?part= value actually lands in the form field.
+  - /contact?part=… must canonical to /contact.
+  </details>
+
+## 12 Footer [Global component]
+> live: LIVE → the shared footer · the same corrections as every sheet in this set
+  <details><summary>notes (5)</summary>
+  - The Products column must list all eleven categories (twelve with sheet lining). It shows nine.
+  - With /sitemap.xml empty, the footer is the primary crawl path for anything not linked from the homepage.
+  - Same corrections as every sheet: legal name Margo Rubber Products · © from the current year · the Vilholi address · Export Markets replacing Why Choose Us · 48-hour response · certificate 09111526A with its scope on the ISO line.
+  - The footer promises a quote “within 24 hours” while section 11 promises “within 1 business day”, about 350 px apart.
+  - Column labels are <h2> in the live build, injecting three phantom sections into this page’s outline.
+  </details>

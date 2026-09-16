@@ -108,8 +108,14 @@ function text(el: HTMLElement | null | undefined): string {
   if (!el) return "";
   return el.structuredText ? clean(el.textContent) : clean(el.textContent);
 }
+/**
+ * The SKU sheets (34) break a literal's columns with three spaces —
+ * "SIZE STANDARD   DIN 3760   shaft Ø × bore Ø × width" — where the page
+ * sheets break lines. Set while one of them is being read.
+ */
+let columnBreaks = false;
 function clean(s: string): string {
-  return s
+  return (columnBreaks ? s.replace(/[ \t]{3,}/g, "\n") : s)
     .replace(/[ \t\r\f\v]+/g, " ")
     .replace(/ ?\n ?/g, "\n")
     .replace(/\n{2,}/g, "\n")
@@ -482,14 +488,19 @@ function toMarkdown(s: Sheet): string {
 /* ── CLI ────────────────────────────────────────────────────────────────── */
 
 const wanted = process.argv.slice(2);
-const files = readdirSync(SRC)
-  .filter((f) => f.endsWith(".html") && !f.startsWith("00_"))
-  .filter((f) => !wanted.length || wanted.some((w) => f.startsWith(w)));
+// The 31 SKU sheets and the 7 article sheets sit in their own folders.
+const FOLDERS = ["", "34_SKU_Sheets", "35_Resource_Articles"];
+const files = FOLDERS.flatMap((dir) =>
+  readdirSync(join(SRC, dir))
+    .filter((f) => f.endsWith(".html") && !f.startsWith("00_"))
+    .map((f) => join(dir, f)),
+).filter((f) => !wanted.length || wanted.some((w) => f.split("/").pop()!.startsWith(w)));
 
 mkdirSync(OUT, { recursive: true });
 for (const f of files) {
+  columnBreaks = /\/SKU_/.test(f);
   const sheet = parseSheet(join(SRC, f));
-  const stem = f.replace(/\.html$/, "");
+  const stem = f.split("/").pop()!.replace(/\.html$/, "");
   writeFileSync(join(OUT, `${stem}.json`), JSON.stringify(sheet, null, 2));
   writeFileSync(join(OUT, `${stem}.md`), toMarkdown(sheet));
   const n = sheet.sections.reduce((a, s) => a + s.fields.length, 0);

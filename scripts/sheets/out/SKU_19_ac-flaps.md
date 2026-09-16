@@ -1,0 +1,273 @@
+# SKU_19_ac-flaps.html — Air Extractor Flap — a One-Way Valve, Not a Pad
+
+**<title>** Air Extractor Flaps | Cabin Pressure Relief Vents | Margo
+**description** Moulded rubber air extractor flaps — one-way cabin pressure relief vents that let air out and keep water, dust and noise out. EPDM, 40–50 Shore A. Nashik, India.
+
+## 01 Hero, spec block & visual reference [🛑 Hardness would stop the valve opening]
+> live: LIVE H1 → Rubber Flap for A/C Air Extractor · 70 Shore A on a part that must lift at almost no pressure
+- **Badges**: `MADE TO ORDER · ISO 9001:2015 · 09111526A`
+  _“IN STOCK” comes off. The ISO badge stands unqualified — a moulded flap is inside the certificate scope_
+- **H1**: “Air Extractor Flap — One-Way Cabin Pressure Relief”
+  _“A/C” comes out because the flap vents whenever air is pushed in or a door is closed, air conditioning or not. “One-way” is the word that changes the page — it tells a buyer in two syllables that this is a valve_
+- **Intro sentence**:
+  > A moulded rubber one-way flap that lets cabin air out and nothing back in. It relieves the pressure the HVAC blower builds, lets a slammed door close cleanly, and seals against water, dust, fumes and road noise the moment the pressure drops. Soft enough to lift at almost nothing — typically 40–50 Shore A.
+  _52 words · replaces the template’s “Rubber Flap for A/C Air Extractor manufactured to order at our ISO 9001:2015 certified plant in Nashik”, identical on all 31 pages with the name swapped.
+“Out and nothing back in” is the whole product in five words, and the closing clause puts the hardness correction where a buyer cannot miss it_
+- **Hero spec block** (Field | Live — identical on all 31 pages | Ships as):
+  | HARDNESS |  | 40–50 Shore A typical, 30–70 available |
+  | SHORE A |  | ±5 pts against the specified hardness |
+  | TENSILE |  | Per compound datasheet, ASTM D412 |
+  | TEMPERATURE |  | −40 to +140 °C (EPDM) |
+  | THICKNESS |  | Flap thickness — to your drawing |
+  | WIDTH |  |  |
+  | OPENING PRESSURE | — | To your specification |
+  | APERTURE | — | Opening size and number of flaps |
+  _🛑 The hardness correction is the largest functional change in the set so far. Everywhere else the boilerplate figure was a placeholder or a fitting nuisance; here 70 Shore A produces a flap that does not open, and the symptoms — heavy doors, weak vents, cabin boom — are exactly what an OEM tests for.
+Thickness survives, relabelled. It is the dimension that sets opening pressure, so the field is real; it is simply described as stock rather than as the part.
+Opening pressure is the specification this page is missing, and no competitor page in this market publishes it either_
+- **Quantity selector**: `QTY (pieces)
+− 10,000 +
+Minimum run: 10,000 pieces per part number`
+  _500 becomes 10,000, client-instructed 2026-09-01, and the unit becomes pieces — a flap weighs a few grams, so the kilogram figure hides an order of hundreds of thousands_
+- **Visual reference** (composite):
+    | Cross section view |  | Section through the flap and its seat — on request under NDA |
+    | Max width |  | Aperture size |
+    | Thickness |  | Flap thickness |
+    | Run length |  |  |
+    | Number of flaps | — | Two, four or six flaps in one frame — to your drawing |
+    | Opening pressure | — | To your specification, verified on first article |
+    | Sealing at rest | — | Water and dust ingress resistance with no airflow |
+    | Mounting | — | Bonded to a frame, clipped, or moulded with an integral hinge |
+  · Section drawing available on request. Send the aperture size, the number of flaps and the opening pressure you need — or a sample extractor and the vehicle it fits — and we will return a dimensioned drawing for approval.
+  _Opening pressure and sealing at rest are the two halves of the specification, and they pull against each other: a flap free enough to vent easily is a flap that can be pushed open by wind or a pressure washer. Naming both, and asking for both, is what shows the supplier has built one before.
+The mounting row matters commercially — a bonded frame assembly is a different quote from a loose moulded flap, and the live page gives no way to say which is wanted_
+  <details><summary>notes (4)</summary>
+  - One <h1>; breadcrumb Home › Products › Pads, Stoppers, Caps & Flaps › Air Extractor Flap.
+  - 🛑 Hardness must render from the part record. A figure that would prevent the part functioning is worse than a blank field, and it will be quoted back at Margo by an OEM engineer.
+  - “One-way”, “pressure relief” and “opening pressure” are the terms to own; none appears on this site.
+  - Image alt: “Moulded rubber air extractor flap for cabin pressure relief, Margo Rubber Products, Nashik”.
+  </details>
+
+## 02 Engineering data [The valve specification is entirely absent]
+> live: LIVE H2 → Engineering Data · 7 rows “On request” · nothing describes a moving part
+- **Table** (Row | Live | Ships as):
+  | Product Code |  | Assigned on order |
+  | Product Family |  | Pads, Stoppers, Caps & Flaps |
+  | Material |  | EPDM standard; neoprene where specified |
+  | Hardness (Shore A) |  | 40–50 typical, 30–70 available |
+  | Tensile Strength |  | Per compound datasheet, ASTM D412 |
+  | Elongation at Break |  | Per compound datasheet, ASTM D412 |
+  | Operating Temperature |  | −40 to +140 °C on EPDM |
+  | Compression Set |  | Tested to ASTM D395 Method B |
+  | Density |  | Per compound datasheet |
+  | Colour Options | Black standard, custom RAL on request | [no change] |
+  | Lead Time |  | Confirmed with the quotation, from approved drawing and approved sample |
+  | Certifications | ISO 9001:2015 | ISO 9001:2015 — certificate 09111526A |
+  | Minimum Order |  | 10,000 pieces per part number, per compound |
+  | Opening pressure | — | To your specification, verified on first article |
+  | Flap thickness | — | To your drawing |
+  | Number of flaps | — | To your drawing |
+  | Sealing at rest | — | Water and dust ingress with no airflow |
+  | Ozone and UV resistance | — | Required — EPDM or neoprene |
+  _Net change: 13 rows to 18. Tell the developer the table grows by five.
+🛑 The compression-set row carries a failure mode specific to this part. On a gasket a permanent set means a slow leak; on a flap it means the valve is stuck open, and water, fumes and noise come straight in. Same test, entirely different consequence, and worth saying so.
+The ozone row exists to close off the SBR and NBR options that the live selector offers without warning_
+  <details><summary>notes (3)</summary>
+  - “What is a car air extractor vent for?” is a genuinely high-volume question with mostly forum answers. A manufacturer explaining the three functions in one passage is a strong AEO asset, and no supplier page in this market carries it.
+  - Hide rows you cannot answer rather than printing “On request” seven times.
+  - 🛑 No additionalProperty until the values are real.
+  </details>
+
+## 03 Rubber compound options [Right default · but two options will perish]
+> live: LIVE → EPDM (SELECTED), NBR, Neoprene, SBR — correct default, and two compounds that crack on an exposed part
+- **The default is right; the menu is not**:
+  > EPDM is pre-selected and it is the correct compound for an exposed ventilation flap — ozone, UV and water resistance, and it stays flexible at −40 °C, which is when a flap most needs to open. Do not let the developer change it.
+  > 🛑 The problem is the other three-quarters of the menu. NBR and SBR both have poor ozone and UV resistance, and this part spends its life behind a bumper or in a quarter panel. Offering them unranked invites a buyer to choose on price and get a flap that hardens and splits within a couple of seasons.
+  > Margo produces every part in every compound it mixes (client-instructed 2026-09-02). Nothing is removed — all eight are ranked, and the two unsuitable ones are marked with the reason.
+- **Selector** (Rank | Compound | Temperature | Why, for an exposed one-way flap):
+  | Recommended | EPDM | −40 to +140 °C | Ozone, UV and water resistance, and it stays soft at −40 °C — which is when a flap most needs to open |
+  | Suitable | Neoprene | −40 to +120 °C | Reasonable weathering and ozone resistance. Stiffer cold than EPDM, so the opening pressure rises in winter |
+  | Suitable | Silicone | −60 to +220 °C | Excellent cold flexibility and weathering — a real option near a heat source. Tears more easily, which matters on a thin flap |
+  | 🛑 Not recommended | NBR | −30 to +120 °C | Cracks in ozone and UV — not for an exposed flap. Specify only where the flap is fully enclosed and sees oil mist |
+  | 🛑 Not recommended | SBR | −30 to +100 °C | Also poor in ozone and UV, and no better cold |
+  | Available | Natural rubber | −20 to +90 °C | Excellent flexibility and tear strength, but it perishes outdoors faster than any of the above |
+  | 🛑 Not recommended | FKM · AEM | See the compound table | Stiff, expensive and unnecessary for a ventilation flap |
+  _🛑 Live set: EPDM (SELECTED), NBR, Neoprene, SBR — and half of it will crack on this application.
+This is the first page in the set where the live menu is actively dangerous rather than merely incomplete, because the two unsuitable compounds are also the two cheapest, and nothing marks them.
+Silicone is added as a genuine option — its cold flexibility suits a flap, and it is the one part in the catalogue where that argument beats its tear weakness_
+  <details><summary>notes (3)</summary>
+  - Third page in the set needing no default correction — note it so the developer does not change it.
+  - 🛑 Feed material as EPDM and neoprene only, not all four live compounds.
+  - All panels in the DOM at first paint, hidden with CSS. Verify with curl.
+  </details>
+
+## 04 Why specifiers choose Margo [4 cards stay four · all four rewritten]
+> live: LIVE H2 → Why Specifiers Choose Margo · four generic cards · a 99.7% yield chip this page later calls “on request”
+- **Quality chip**: `FLAP HARDNESS
+40–50 Shore A
+soft enough to open, firm enough to seal`
+  _The production table in section 07 says first-pass yield is “On request” — the honest one is the table. The replacement puts the page’s main correction in its most prominent slot_
+- **Cards ×4** (# | Live card | Ships as — title | Ships as — body):
+  | 01 |  | Air out, nothing in | The flap lifts on cabin pressure and drops the instant it falls. Get that balance wrong and you either trap air — heavy doors, weak vents — or let water and fumes back in. We tune it with thickness and hardness, not guesswork. |
+  | 02 |  | 🛑 It has to work at −30 °C too | Rubber stiffens as it cools, and a flap that will not lift on a winter morning makes doors hard to close. EPDM is our default here because it stays soft cold — not just because it resists weather. |
+  | 03 |  | 🛑 It must not buzz | An extractor flap that flutters at speed is a warranty complaint, not a leak. Flap thickness, hardness and seat geometry decide it — tell us the airflow and we will tune the three together. |
+  | 04 |  | Exposed for the life of the vehicle | Behind a bumper the flap sees rain, road spray, sunlight and ozone. Nitrile and SBR crack in those conditions — we mix EPDM for this part, and we will say so even when a cheaper compound is asked for. |
+  _Four cards, four cards — no count change and no new element.
+Card 03 is the one an OEM engineer will recognise. Flutter noise is the complaint that comes back from the field, it is not a sealing failure, and a supplier who raises it unprompted is a supplier who has been through the loop before.
+Card 04 declines a sale in advance — it names the two compounds on Margo’s own live selector that should not be used here_
+  <details><summary>notes (3)</summary>
+  - This is the page’s AEO asset — everything else is shared with 30 other URLs.
+  - Card 01 answers “how does a car pressure relief vent work?” in the shape an answer engine extracts.
+  - Process, named per part: compression moulding — correct on this page.
+  </details>
+
+## 05 Global applications [6 cards become 4]
+> live: LIVE H2 → Global Applications · Aerospace and Marine claimed here and on all 31 pages
+- **Cards** (Card | Decision):
+  | Automotive | Keep as lead and narrow: cabin pressure relief behind the rear bumper and in quarter panels, on passenger cars, vans and buses. This is the part’s home and very nearly its only market |
+  | Electrical & Enclosures [new] | Add. The same valve does the same job on an outdoor cabinet — letting warm air out while keeping rain and dust from following it back in. A real second market and not currently a card |
+  | Heavy Industry | Keep and narrow to cab ventilation on plant and agricultural machinery — where the cab is pressurised to keep dust out and the flap is what makes that work |
+  | Construction → Infrastructure | Keep and narrow to ventilation flaps on site cabins and enclosures |
+  | Energy & Oil | 🛑 Remove — no application for a cabin ventilation flap |
+  | Aerospace | 🛑 Remove — requires AS9100, not held and claimed nowhere |
+  | Marine | 🛑 Remove — marine fenders are fabricated units, not moulded components |
+  _Three removed and one added — still four cards.
+The enclosures card is a genuine market extension rather than a stretch. An outdoor electrical cabinet has exactly this problem — it must breathe as it heats and cools without admitting rain — and it is solved with the same moulded one-way flap. Margo already makes the part; nothing on the site tells that buyer so.
+The pressurised-cab narrowing is worth the words: on a tractor or excavator the cab is deliberately held above ambient to keep dust out, and the extractor flap is what allows it_
+  <details><summary>notes (3)</summary>
+  - Link the lead card to the automotive industry page and the enclosures card to its industry page.
+  - 🛑 Do not name an OEM. No Mahindra or Tata supply agreement is substantiated in the source documents.
+  - Do not claim a sector in Product schema.
+  </details>
+
+## 06 From compound to certification [Correct process · two steps sharpened]
+> live: LIVE H2 → From Compound to Certification · six steps · “compression moulding” is right on this page
+- **Steps** (# | Ships as):
+  | 01 | Material compounding — polymer blending, additive integration and batch QC in our in-house lab. Hardness is set here, and on a flap it is the specification. |
+  | 02 | Mould design and CNC tool manufacture, in-house, held as a controlled record. The flap and its seat are cut together — the seat geometry is half of the sealing performance. |
+  | 03 | Compression moulding — [no change; correct on this part] |
+  | 04 | Post-cure and deflashing — flash removed from the flap edge and the seat. Flash on a sealing edge holds the valve open. |
+  | 05 | Quality inspection — hardness, flap thickness and opening pressure checked on batch samples, plus dimensional check. |
+  | 06 | Export packaging — industrial packing with documentation. Flaps packed flat and uncompressed — a flap stored folded takes a set and will not seal. ISPM-15 treated pallets where timber is used. |
+  _Six steps, six kept — the process is right and four steps gain the detail that makes it specific.
+Step 04 is the one worth the clause. On most mouldings flash is cosmetic; on a valve seat it holds the flap off its seat and the part leaks from new — and it is invisible unless someone is looking for it.
+Step 05 turns opening pressure from a claim into an inspection, which is what makes the rest of the sheet credible_
+  <details><summary>notes (3)</summary>
+  - The process block must render from the part record — right here by luck, not by data.
+  - “Opening pressure” named as an inspection check is the credibility marker on this page.
+  - Numbered steps are an <ol>.
+  </details>
+
+## 07 Certified to international standards [Badge stands · add the IATF line]
+> live: LIVE H2 → Certified to International Standards · ISO 9001 only — honest · and the scope covers this part
+- **Credit, and one addition**:
+  > ISO 9001:2015 claimed and nothing else — no IATF, no TÜV SÜD, no CE marking. The production table prints “On request” rather than inventing figures, and the facility video says “Film pending”. No scope caveat is needed: the part is moulded and the badge stands as written.
+  > Add the client-instructed IATF line (2026-08-31): actively upgrading to IATF 16949, certification targeted by end 2026, with ISO 14001 and ISO 45001 targeted 2027. Stated as a plan, never as a held certificate.
+  > It carries real weight on this page. An extractor flap is a body part sold to vehicle assemblers, and IATF is the first question that buyer asks — often before the drawing.
+- **Certificate block**: `ISO 9001:2015 · Certificate 09111526A
+Integral Certification Ltd · Valid to 21 February 2027
+Scope: rubber moulded components — this part is within scope
+IATF 16949 — upgrade in progress, certification targeted by end 2026
+ISO 14001 and ISO 45001 — targeted 2027`
+  _Number, body, expiry and scope replacing three vague lines, plus the client-instructed upgrade statement. “Targeted” and “in progress” are the only permitted verbs until a certificate exists_
+- **Production metrics** (Row | Live | Ships as):
+  | Years in operation |  | Publish it once the founding year is settled |
+  | Active clients |  | 60+ — signed company profile p27 |
+  | First-pass yield | On request |  |
+  | Avg. lead time |  | 3–4 weeks from approved sample — company profile p27 |
+  _Three of the four can be filled from documents Margo has already signed off_
+  <details><summary>notes (3)</summary>
+  - 🛑 No hasCredential for IATF. A targeted certification is prose, never structured data.
+  - The certificate number and scope are visible text, not an image caption.
+  - “Film pending” is fine to ship.
+  </details>
+
+## 08 Technical documentation [4 dead downloads]
+> live: LIVE H2 → Technical Documentation · PDF, DWG, STEP, ZIP — none exists; two labelled “Download” open the contact form
+- **Live state** (Offered | Reality):
+  | PDF — Product datasheet | Marked “Pending” |
+  | DWG — Technical drawing | Anchor labelled “Technical Drawing DWG” → /contact |
+  | STEP — 3D CAD model | No file — genuinely useful here; the flap fits an aperture someone is modelling |
+  | ZIP — Product images hi-res | No file |
+  _4 × 31 = 124 dead download affordances across the set.
+The useful document here is an opening-pressure versus thickness chart — flap thickness and hardness against the pressure at which it lifts. It is the design aid an OEM ventilation engineer actually needs, Margo generates the data on the first tool, and nobody in this market publishes one_
+- **Ships as** (composite):
+  · H: “Technical Documentation”
+  · Dimensioned drawings and 3D models are issued on request, under NDA where required. Send the aperture size, the number of flaps and the opening pressure you need — or a sample and the vehicle it fits — and we will return a drawing for approval.
+  · `[ Request a drawing → /contact?part=Air%20Extractor%20Flap&doc=1 ]`
+  _42 words · one honest request line replaces four fake buttons, and it repeats the three things the enquiry needs_
+  <details><summary>notes (3)</summary>
+  - Never label a control “Download” unless a file is served.
+  - Keep the STEP slot visible on this part — it is a moulded three-dimensional component fitted into an assembly.
+  - An opening-pressure chart would be an indexable asset and the natural companion to this page.
+  </details>
+
+## 09 Technical & commercial questions [5 answers written]
+> live: LIVE H2 → Technical & Commercial Questions · five well-chosen questions · the same five on all 31 pages
+- **Q1**:
+  > We supply in bulk. The minimum run is 10,000 pieces per part number, per compound, or quoted against the part where geometry or tooling makes that unrealistic. Prototype and first-article lots sit outside the minimum.
+  `What is the minimum order quantity for this part?`
+  _36 words · client-instructed 2026-09-01. Must match the hero selector and the Engineering Data row on this same page_
+- **Q2**:
+  > Yes. Send the sample and, if you can, tell us what went wrong with it — a flap that stands open has taken a compression set, a flap that buzzes is too thin or too soft, and a flap that has hardened and split was the wrong compound rather than the wrong shape.
+  `Can you match a competitor specification or reverse-engineer an existing part?`
+  _52 words · three failure modes read off the returned part, each pointing at a different fix — and it quietly explains why the compound choice on this page matters_
+- **Q3**:
+  > PDF, DWG, DXF and STEP. Mark the aperture, the flap thickness and the opening pressure — and say whether you want loose flaps or a bonded frame assembly, because they are different parts to quote.
+  `What file formats do you accept for drawings?`
+  _37 words · the assembly question asked at the drawing stage, where it saves a re-quote_
+- **Q4**:
+  > Yes. Material test reports, dimensional inspection sheets and a certificate of conformance ship with every consignment. Hardness, tensile to ASTM D412 and compression set to ASTM D395 Method B are tested in-house, and opening pressure is verified on first article.
+  `Do you provide material test reports with each shipment?`
+  _40 words · the functional check named alongside the material tests — on a valve that is what the customer will audit_
+- **Q5**:
+  > TT and LC accepted, discussed per order. Ex-works Nashik or FOB Nhava Sheva. Commercial invoice, packing list and certificate of origin are issued with every consignment. Flaps ship packed flat, since a folded flap takes a set.
+  `What are your payment and delivery terms for international orders?`
+  _38 words · the standard terms plus the packing consequence unique to this part_
+  <details><summary>notes (3)</summary>
+  - All five answers in the DOM at first paint, hidden with CSS. Verify with curl, not devtools.
+  - Questions become <h3>, not <span>.
+  - Q2 is the strongest passage — three diagnoses in one paragraph, which is the shape an answer engine extracts and a buyer remembers.
+  </details>
+
+## 10 You may also need [3 become 4 · selected on the assembly]
+> live: LIVE H2 → You May Also Need · siblings drawn from a category of nine unrelated parts
+- **Cards** (Slot | Part | Why it is here):
+  | Related 1 | 3 Pin Hole Pad — three-way cable pass-through /grommets/3-pin-hole-pad | The other body-panel part that lets something through while keeping water out — same panel, same problem, same buyer |
+  | Related 2 | Internal Fit Grommets /grommets/internal-fit | Blanking and single-cable entries on the same body panels |
+  | Related 3 | C-Pillar Garnish Seal /sponge-foam-rubber/c-pillar-garnish-seal | The quarter-panel sealing part fitted alongside it — extractors commonly sit in the same area |
+  | Related 4 | EPDM Gaskets /gaskets/epdm | The flat-face seal in the same compound, for the extractor frame itself |
+  _Selected on the assembly rather than the category, because Pads, Stoppers & Caps holds nine parts with almost nothing in common — a sibling rule there produces a random list.
+Related 1 is the strongest pairing on the page: a body engineer specifying an extractor flap is usually specifying harness pass-throughs in the same panel, and both are bought from the same supplier if the supplier makes both. Margo does, and nothing on either page says so_
+  <details><summary>notes (3)</summary>
+  - With /sitemap.xml empty, these links and the category page are the only crawl route to this URL.
+  - Anchor text is the part name, never “View part”.
+  - 🛑 A category of nine unrelated parts needs hand-picked related products, not an automated sibling rule.
+  </details>
+
+## 11 Quote CTA [Keep the pre-fill · fix the response time]
+> live: LIVE H2 → Need this part quoted? · the quote link pre-fills the part name — the best-built control on the site
+- **Body**:
+  > Send your drawing or a sample flap. Tell us the aperture, the airflow and the opening pressure you need. We confirm compound, hardness and flap thickness — and whether you want loose flaps or a bonded assembly — then quote against your annual quantity. We respond within 48 hours.
+  _48 words · “tolerance” becomes “flap thickness”, which is what this part is actually quoted on, and the assembly question is asked before the quote rather than after it.
+“Within 1 business day (IST)” is the sixth response commitment on this website_
+- **Primary CTA**: `Request a quote` → /contact?part=Air%20Extractor%20Flap
+  _Mechanism unchanged — the single best-built control on the website. 🛑 Note the live value contains an encoded slash from “A/C”, which is worth testing in the form handler — the rename removes the problem entirely_
+- **Secondary**: `← Back to Pads, Stoppers & Caps
+/products/pads-stoppers-caps`
+  _[no change to the mechanism] — the label widens to “Pads, Stoppers, Caps & Flaps”, the URL stays_
+  <details><summary>notes (3)</summary>
+  - One response time sitewide, rendered from one constant.
+  - 🛑 Test the ?part= value with the live name — the encoded slash in “A/C” is exactly the kind of thing that silently truncates a form field.
+  - /contact?part=… must canonical to /contact.
+  </details>
+
+## 12 Footer [Global component]
+> live: LIVE → the shared footer · the same corrections as every sheet in this set
+  <details><summary>notes (5)</summary>
+  - The Products column must list all eleven categories (twelve with sheet lining). It shows nine — and the label change to “Pads, Stoppers, Caps & Flaps” has to be made here too, or the footer and the breadcrumb disagree.
+  - With /sitemap.xml empty, the footer is the primary crawl path for anything not linked from the homepage.
+  - Same corrections as every sheet: legal name Margo Rubber Products · © from the current year · the Vilholi address · Export Markets replacing Why Choose Us · 48-hour response · certificate 09111526A with its scope on the ISO line.
+  - The footer promises a quote “within 24 hours” while section 11 promises “within 1 business day”, about 350 px apart.
+  - Column labels are <h2> in the live build, injecting three phantom sections into this page’s outline.
+  </details>
