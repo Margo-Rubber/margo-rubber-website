@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/Button";
+import type { Crumb } from "@/lib/breadcrumbs";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { Container, Eyebrow } from "@/components/ui/Section";
 import { Img } from "@/components/ui/Img";
-import Link from "next/link";
 
 /**
  * The 40–60 word direct answer rendered BEFORE elaboration — the AEO pattern
@@ -138,7 +139,7 @@ export function CategoryHero({
    */
   eyebrowVariant?: "badge" | "rule";
   /** Trail above the eyebrow. Only the Sponge & Foam comp draws one. */
-  breadcrumb?: readonly { label: string; href: string }[];
+  breadcrumb?: readonly Crumb[];
   /** Extrusion centres the stat panel; Sponge & Foam sets it left. */
   statsAlign?: "left" | "center";
 }) {
@@ -164,20 +165,7 @@ export function CategoryHero({
       )}
 
       <Container className="pt-32 pb-16 md:pt-48 md:pb-20">
-        {breadcrumb && breadcrumb.length > 0 && (
-          <nav aria-label="Breadcrumb" className="mb-6">
-            <ol className="text-ink-4 flex flex-wrap items-center gap-2 font-mono text-[11px]">
-              {breadcrumb.map((b, i) => (
-                <li key={b.label} className="flex items-center gap-2">
-                  {i > 0 && <span aria-hidden>&rsaquo;</span>}
-                  <Link href={b.href} className="hover:text-ink transition-colors">
-                    {b.label}
-                  </Link>
-                </li>
-              ))}
-            </ol>
-          </nav>
-        )}
+        <Breadcrumb items={breadcrumb} className="mb-6" />
 
         {eyebrowVariant === "rule" ? (
           <Eyebrow variant="rule">{badge}</Eyebrow>

@@ -1,6 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { withoutDeadDownloads } from "@/lib/downloads";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
+import type { Crumb } from "@/lib/breadcrumbs";
 import Link from "next/link";
 import { Img } from "@/components/ui/Img";
 import { Button } from "@/components/ui/Button";
@@ -67,6 +70,7 @@ export function HubHero({
   stats,
   divider,
   image,
+  breadcrumb,
 }: {
   badge: string;
   lines: string[];
@@ -76,6 +80,7 @@ export function HubHero({
   stats: { value: string; label: string; icon?: string }[];
   divider?: string;
   image?: string;
+  breadcrumb?: readonly Crumb[];
 }) {
   return (
     <header className="border-line relative isolate overflow-hidden border-b pt-28 pb-14 md:pt-40 md:pb-20">
@@ -99,6 +104,7 @@ export function HubHero({
         </>
       )}
       <Container>
+        <Breadcrumb items={breadcrumb} className="mb-6" />
         <div className="grid items-center gap-12 lg:grid-cols-[1fr_auto]">
           <div>
             <span className="text-eyebrow border-accent-400/40 text-accent-400 inline-flex items-center gap-2 rounded-pill border px-4 py-1.5 font-mono uppercase">
@@ -113,6 +119,8 @@ export function HubHero({
                   className={`block ${accentLines.includes(i) ? "text-accent-400" : ""}`}
                 >
                   {l}
+                  {/* Trailing space inside the block: invisible, but a crawler reads the lines with spaces. */}
+                  {i < lines.length - 1 ? " " : ""}
                 </span>
               ))}
             </h1>
@@ -223,8 +231,11 @@ export function ProductRange({
   cards: Card[];
 }) {
   const [active, setActive] = useState(filters[0] ?? "All Products");
-  const visible =
-    active === filters[0] ? cards : cards.filter((c) => c.tag === active);
+  // The filter decides what is SHOWN, never what is rendered: all cards are in
+  // the DOM at first paint and the others are hidden. Unmounting would take
+  // ten of eleven category links out of the crawlable page.
+  const shown = (c: Card) => active === filters[0] || c.tag === active;
+  const visible = cards;
 
   /**
    * The comp runs one uniform grid, then a labelled break, then a second
@@ -281,6 +292,7 @@ export function ProductRange({
             {g.cards.map((c) => (
               <Link
                 key={c.slug}
+                hidden={!shown(c)}
                 href={`/products/${c.slug}`}
                 data-lift=""
                 className={`group rounded-card relative isolate flex flex-col justify-end overflow-hidden p-5 ${
@@ -440,7 +452,9 @@ type Compound = {
 
 export function CompoundSelector({ items }: { items: Compound[] }) {
   const [i, setI] = useState(0);
-  const c = items[i];
+  // Every panel stays in the DOM, hidden rather than unmounted: a panel that mounts on click does not exist for a crawler, and these are the passages an assistant lifts.
+  const panelId = (k: string) =>
+    `hub-compound-${k.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
 
   return (
     <div>
@@ -449,6 +463,8 @@ export function CompoundSelector({ items }: { items: Compound[] }) {
           <button
             key={m.code}
             role="tab"
+            id={`${panelId(m.code)}-tab`}
+            aria-controls={panelId(m.code)}
             aria-selected={idx === i}
             onClick={() => setI(idx)}
             className={`rounded-card inline-flex items-center gap-2 border px-4 py-2 text-xs font-medium transition-colors ${
@@ -466,65 +482,79 @@ export function CompoundSelector({ items }: { items: Compound[] }) {
         ))}
       </div>
 
-      <div className="border-line bg-surface-3 rounded-card grid gap-8 border p-6 md:p-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)]">
-        <div>
-          <span
-            className="rounded-card inline-grid size-12 place-items-center text-sm font-bold"
-            style={{ backgroundColor: `${c.dot}22`, color: c.dot }}
-          >
-            {c.code}
-          </span>
-          <h3 className="text-h3 mt-4">{c.code}</h3>
-          <p className="text-ink-4 mt-1 text-sm">{c.name}</p>
-          <p className="text-ink-3 mt-4 text-sm leading-relaxed">{c.summary}</p>
-          <div className="mt-4 flex flex-wrap gap-2">
-            {c.tags.map((t) => (
+      {items.map((c, idx) => (
+        <div
+          key={c.code}
+          id={panelId(c.code)}
+          role="tabpanel"
+          aria-labelledby={`${panelId(c.code)}-tab`}
+          hidden={idx !== i}
+        >
+          <div className="border-line bg-surface-3 rounded-card grid gap-8 border p-6 md:p-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)]">
+            <div>
               <span
-                key={t}
-                className="text-accent-400 border-accent-400/30 rounded-pill border px-2.5 py-1 text-[11px]"
+                className="rounded-card inline-grid size-12 place-items-center text-sm font-bold"
+                style={{ backgroundColor: `${c.dot}22`, color: c.dot }}
               >
-                {t}
+                {c.code}
               </span>
-            ))}
+              <h3 className="text-h3 mt-4">{c.code}</h3>
+              <p className="text-ink-4 mt-1 text-sm">{c.name}</p>
+              <p className="text-ink-3 mt-4 text-sm leading-relaxed">
+                {c.summary}
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {c.tags.map((t) => (
+                  <span
+                    key={t}
+                    className="text-accent-400 border-accent-400/30 rounded-pill border px-2.5 py-1 text-[11px]"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <p className="text-ink text-sm font-semibold">Key Properties</p>
+              <dl className="mt-4 space-y-2.5">
+                {[
+                  ["Temperature Range", c.temp],
+                  ["Hardness Range", c.hardness],
+                  ["Best For", c.bestFor],
+                ].map(([k, v]) => (
+                  <div
+                    key={k}
+                    className="border-line bg-surface flex items-center justify-between gap-4 rounded-lg border px-4 py-3"
+                  >
+                    <dt className="text-ink-4 text-xs">{k}</dt>
+                    <dd className="text-ink text-sm font-medium">{v}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+
+            <div>
+              <p className="text-ink text-sm font-semibold">
+                Typical Applications
+              </p>
+              <ol className="mt-4 space-y-2.5">
+                {c.applications.map((a, idx) => (
+                  <li
+                    key={a}
+                    className="border-line bg-surface flex items-center gap-3 rounded-lg border px-4 py-3"
+                  >
+                    <span className="text-accent-400 font-mono text-[11px]">
+                      {String(idx + 1).padStart(2, "0")}
+                    </span>
+                    <span className="text-ink-2 text-sm">{a}</span>
+                  </li>
+                ))}
+              </ol>
+            </div>
           </div>
         </div>
-
-        <div>
-          <p className="text-ink text-sm font-semibold">Key Properties</p>
-          <dl className="mt-4 space-y-2.5">
-            {[
-              ["Temperature Range", c.temp],
-              ["Hardness Range", c.hardness],
-              ["Best For", c.bestFor],
-            ].map(([k, v]) => (
-              <div
-                key={k}
-                className="border-line bg-surface flex items-center justify-between gap-4 rounded-lg border px-4 py-3"
-              >
-                <dt className="text-ink-4 text-xs">{k}</dt>
-                <dd className="text-ink text-sm font-medium">{v}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-
-        <div>
-          <p className="text-ink text-sm font-semibold">Typical Applications</p>
-          <ol className="mt-4 space-y-2.5">
-            {c.applications.map((a, idx) => (
-              <li
-                key={a}
-                className="border-line bg-surface flex items-center gap-3 rounded-lg border px-4 py-3"
-              >
-                <span className="text-accent-400 font-mono text-[11px]">
-                  {String(idx + 1).padStart(2, "0")}
-                </span>
-                <span className="text-ink-2 text-sm">{a}</span>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </div>
+      ))}
     </div>
   );
 }
@@ -543,7 +573,9 @@ type Sector = {
 
 export function SectorSelector({ items }: { items: Sector[] }) {
   const [i, setI] = useState(0);
-  const s = items[i];
+  // Every panel stays in the DOM, hidden rather than unmounted — these nine passages are the product-to-industry crossover content, and unmounting eight of nine deletes them from the crawl.
+  const panelId = (k: string) =>
+    `hub-sector-${k.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
 
   return (
     <div className="grid gap-6 lg:grid-cols-[280px_1fr]">
@@ -551,6 +583,8 @@ export function SectorSelector({ items }: { items: Sector[] }) {
         {items.map((m, idx) => (
           <button
             key={m.name}
+            id={`${panelId(m.name)}-tab`}
+            aria-controls={panelId(m.name)}
             onClick={() => setI(idx)}
             aria-pressed={idx === i}
             className={`rounded-card border p-4 text-left transition-colors ${
@@ -568,46 +602,56 @@ export function SectorSelector({ items }: { items: Sector[] }) {
         ))}
       </div>
 
-      <div className="border-line bg-surface-3 rounded-card overflow-hidden border">
-        <div className="bg-surface relative h-48 overflow-hidden md:h-64">
-          {s.image && (
-            <>
-              <Img
-                k={s.image}
-                fill
-                sizes="(max-width: 1024px) 100vw, 60vw"
-                className="object-cover brightness-[0.8]"
-              />
-              <div className="from-surface-3 via-surface-3/35 absolute inset-0 bg-gradient-to-t from-0% via-40% to-transparent to-78%" />
-            </>
-          )}
-          <span className="text-eyebrow bg-canvas/70 text-ink absolute top-4 left-4 z-10 rounded-pill px-3 py-1 font-mono uppercase backdrop-blur">
-            {s.name}
-          </span>
-        </div>
-        <div className="p-6">
-          <p className="text-ink-2 leading-relaxed">{s.body}</p>
-          <div className="mt-5 grid gap-3 sm:grid-cols-2">
-            {[
-              ["Products Supplied", s.products],
-              ["Typical Clients", s.clients],
-            ].map(([k, v]) => (
-              <div
-                key={k}
-                className="border-line bg-surface rounded-lg border px-4 py-3"
-              >
-                <p className="text-eyebrow text-ink-4 font-mono uppercase">
-                  {k}
-                </p>
-                <p className="text-ink mt-1.5 text-sm">{v}</p>
+      {items.map((s, idx) => (
+        <div
+          key={s.name}
+          id={panelId(s.name)}
+          role="tabpanel"
+          aria-labelledby={`${panelId(s.name)}-tab`}
+          hidden={idx !== i}
+        >
+          <div className="border-line bg-surface-3 rounded-card overflow-hidden border">
+            <div className="bg-surface relative h-48 overflow-hidden md:h-64">
+              {s.image && (
+                <>
+                  <Img
+                    k={s.image}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 60vw"
+                    className="object-cover brightness-[0.8]"
+                  />
+                  <div className="from-surface-3 via-surface-3/35 absolute inset-0 bg-gradient-to-t from-0% via-40% to-transparent to-78%" />
+                </>
+              )}
+              <span className="text-eyebrow bg-canvas/70 text-ink absolute top-4 left-4 z-10 rounded-pill px-3 py-1 font-mono uppercase backdrop-blur">
+                {s.name}
+              </span>
+            </div>
+            <div className="p-6">
+              <p className="text-ink-2 leading-relaxed">{s.body}</p>
+              <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                {[
+                  ["Products Supplied", s.products],
+                  ["Typical Clients", s.clients],
+                ].map(([k, v]) => (
+                  <div
+                    key={k}
+                    className="border-line bg-surface rounded-lg border px-4 py-3"
+                  >
+                    <p className="text-eyebrow text-ink-4 font-mono uppercase">
+                      {k}
+                    </p>
+                    <p className="text-ink mt-1.5 text-sm">{v}</p>
+                  </div>
+                ))}
               </div>
-            ))}
+              <Button href={s.href} className="mt-5">
+                Find {s.name} Solutions <span aria-hidden>→</span>
+              </Button>
+            </div>
           </div>
-          <Button href={s.href} className="mt-5">
-            Find {s.name} Solutions <span aria-hidden>→</span>
-          </Button>
         </div>
-      </div>
+      ))}
     </div>
   );
 }
@@ -615,106 +659,6 @@ export function SectorSelector({ items }: { items: Sector[] }) {
 /* ────────────────────────────────────────────────────────────────────────
    CERTIFICATIONS · VALIDATION · CATALOGUE · FAQ
    ──────────────────────────────────────────────────────────────────────── */
-/** Certification icons, one per credential type. */
-const CERT_ICON: Record<string, React.ReactNode> = {
-  shield: (
-    <>
-      <path d="M12 3l8 3v6c0 4.5-3.2 7.9-8 9-4.8-1.1-8-4.5-8-9V6z" />
-      <path d="m9 12 2 2 4-4" />
-    </>
-  ),
-  award: (
-    <>
-      <circle cx="12" cy="9" r="5" />
-      <path d="M9 13.5 8 21l4-2 4 2-1-7.5" />
-    </>
-  ),
-  doc: (
-    <>
-      <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" />
-      <path d="M14 3v5h5M10 14l4 4M14 14l-4 4" />
-    </>
-  ),
-  star: (
-    <path d="m12 4 2.5 5 5.5.8-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.9L9.5 9z" />
-  ),
-};
-
-/**
- * Certification cards. Each credential carries its OWN colour, sampled from
- * the design: ISO 9001 #2BBCC4 · ISO 14001 #4CAF50 · IATF 16949 #FF9800 ·
- * RoHS #9B8FE8 · REACH #FFC107. They are deliberately not the brand accent.
- */
-export function CertGrid({
-  items,
-}: {
-  items: {
-    name: string;
-    version: string;
-    title: string;
-    body: string;
-    by: string;
-    color: string;
-    icon: string;
-  }[];
-}) {
-  return (
-    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      {items.map((c) => (
-        <div
-          key={c.name}
-          className="border-line bg-surface-3 rounded-card border p-6"
-        >
-          <div className="flex items-start justify-between gap-4">
-            <div>
-              <p className="text-ink text-2xl leading-none font-bold">
-                {c.name}
-              </p>
-              <p
-                className="mt-1.5 font-mono text-xs"
-                style={{ color: c.color }}
-              >
-                {c.version}
-              </p>
-            </div>
-            <span
-              className="grid size-11 shrink-0 place-items-center rounded-lg"
-              style={{ backgroundColor: `${c.color}1F` }}
-            >
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke={c.color}
-                strokeWidth="1.6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="size-5"
-                aria-hidden
-              >
-                {CERT_ICON[c.icon]}
-              </svg>
-            </span>
-          </div>
-
-          <p className="text-ink mt-5 text-sm font-semibold">{c.title}</p>
-          <p className="text-ink-4 mt-2 text-sm leading-relaxed">{c.body}</p>
-
-          <span
-            className="mt-5 inline-flex items-center gap-2 rounded-pill px-3 py-1.5 text-[11px] font-medium"
-            style={{ backgroundColor: `${c.color}14`, color: c.color }}
-          >
-            <span
-              className="size-1.5 rounded-full"
-              style={{ backgroundColor: c.color }}
-            />
-            {c.by}
-          </span>
-        </div>
-      ))}
-    </div>
-  );
-}
-
 export function ValidationPanel({
   items,
   cta,
@@ -734,7 +678,7 @@ export function ValidationPanel({
         <Eyebrow>{eyebrow}</Eyebrow>
         <h2 className="text-h2 mt-3">{heading}</h2>
         <p className="text-ink-4 mt-4 text-sm leading-relaxed">{body}</p>
-        {cta && (
+        {cta && withoutDeadDownloads([cta]).length > 0 && (
           <Button href={cta.href} className="mt-6">
             {cta.label}
           </Button>
@@ -858,11 +802,12 @@ export function FAQAccordion({ items }: { items: { q: string; a: string }[] }) {
               {open === i ? "−" : "+"}
             </span>
           </button>
-          {open === i && (
-            <p className="text-ink-4 px-5 pb-5 text-sm leading-relaxed">
-              {f.a}
-            </p>
-          )}
+          <p
+            hidden={open !== i}
+            className="text-ink-4 px-5 pb-5 text-sm leading-relaxed"
+          >
+            {f.a}
+          </p>
         </div>
       ))}
     </div>

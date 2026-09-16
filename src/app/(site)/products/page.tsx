@@ -1,4 +1,7 @@
 import Link from "next/link";
+import { compoundByCode, formatRange, getSiteSettings } from "@/lib/settings";
+import { CertificationBadges } from "@/components/sections/CertificationRecord";
+import { trail } from "@/lib/breadcrumbs";
 import { getSitePage } from "@/lib/page-source";
 import { productsHubSchema } from "@/content/schemas";
 import { buildMetadata } from "@/lib/seo";
@@ -10,7 +13,6 @@ import { Img } from "@/components/ui/Img";
 import {
   CapabilitiesPanel,
   CatalogueBlock,
-  CertGrid,
   CompoundSelector,
   FAQAccordion,
   HubHero,
@@ -31,6 +33,9 @@ export async function generateMetadata() {
 export default async function ProductsHubPage() {
   const fm = await getSitePage("products", productsHubSchema);
 
+  const crumbs = trail(["Products", "/products"]);
+
+  const settings = await getSiteSettings();
   return (
     <div className="bg-surface-2">
       <JsonLd
@@ -40,7 +45,7 @@ export default async function ProductsHubPage() {
           path: "/products",
           name: fm.seo.title,
           description: fm.seo.description,
-          crumbs: [{ name: "Home", path: "/" }, { name: "Products", path: "/products" }],
+          crumbs,
           extra: [
             itemListNode(
               fm.range.cards.map((c) => ({
@@ -54,6 +59,7 @@ export default async function ProductsHubPage() {
       />
 
       <HubHero
+        breadcrumb={crumbs}
         badge={fm.badge}
         lines={fm.h1Lines}
         accentLines={fm.h1AccentLines}
@@ -165,7 +171,14 @@ export default async function ProductsHubPage() {
           heading={fm.compounds.heading}
           body={fm.compounds.body}
         >
-          <CompoundSelector items={fm.compounds.items} />
+          <CompoundSelector
+            items={fm.compounds.items.map((c) => {
+              const row = compoundByCode(settings, c.code);
+              return row
+                ? { ...c, temp: formatRange(row), hardness: row.hardness }
+                : c;
+            })}
+          />
 
           {fm.compounds.cta && (
             <p className="mt-8 text-center">
@@ -202,7 +215,10 @@ export default async function ProductsHubPage() {
           heading={fm.certifications.heading}
           body={fm.certifications.body}
         >
-          <CertGrid items={fm.certifications.items} />
+          <CertificationBadges
+            items={settings.certifications.items}
+            scopeNote={settings.certifications.scopeNote}
+          />
         </Section>
       )}
 
@@ -219,7 +235,7 @@ export default async function ProductsHubPage() {
       )}
 
       {fm.catalogue && (
-        <Section className="bg-surface">
+        <Section id="catalogue" className="bg-surface">
           <CatalogueBlock
             heading={fm.catalogue.heading}
             body={fm.catalogue.body ?? ""}

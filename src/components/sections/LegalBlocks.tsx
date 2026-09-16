@@ -1,4 +1,5 @@
-import Link from "next/link";
+import type { Crumb } from "@/lib/breadcrumbs";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { Container } from "@/components/ui/Section";
 import { LegalToc } from "@/components/sections/LegalToc";
 import type { LegalBlock } from "@/content/schemas";
@@ -18,35 +19,18 @@ import type { LegalBlock } from "@/content/schemas";
  * the tonal hierarchy does.
  */
 
-function Chevron() {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className="text-ink-4 size-3.5 shrink-0"
-      aria-hidden
-    >
-      <path d="m9 5 7 7-7 7" />
-    </svg>
-  );
-}
-
 export function LegalHero({
   badge,
   h1,
   intro,
   lastUpdated,
-  crumb,
+  breadcrumb,
 }: {
   badge: string;
   h1: string;
   intro: string;
   lastUpdated: string | null;
-  crumb: string;
+  breadcrumb?: readonly Crumb[];
 }) {
   return (
     // pt-32/40 clears the FIXED site header, matching every other hero. At the
@@ -72,28 +56,7 @@ export function LegalHero({
       />
 
       <Container className="relative">
-        <nav aria-label="Breadcrumb">
-          <ol className="text-ink-3 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-sm">
-            <li>
-              <Link href="/" className="hover:text-ink-2 transition-colors">
-                Home
-              </Link>
-            </li>
-            <li aria-hidden>
-              <Chevron />
-            </li>
-            {/* Deliberately not a link: there is no /legal index route, and the
-                comp styles it the same as "Home". A crumb that 404s is worse
-                than one that does not move. */}
-            <li>Legal</li>
-            <li aria-hidden>
-              <Chevron />
-            </li>
-            <li className="text-accent-400" aria-current="page">
-              {crumb}
-            </li>
-          </ol>
-        </nav>
+        <Breadcrumb items={breadcrumb} />
 
         <p className="border-accent-400/40 bg-accent-400/10 text-accent-400 text-eyebrow mt-8 inline-flex items-center gap-2.5 rounded-pill border px-4 py-2 font-mono uppercase">
           <svg

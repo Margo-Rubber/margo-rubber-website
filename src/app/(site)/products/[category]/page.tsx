@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { trail } from "@/lib/breadcrumbs";
 import { buildMetadata } from "@/lib/seo";
 import { productCategoryGraph, shouldEmitSchema } from "@/lib/schema";
 import { BlockRenderer } from "@/components/blocks/BlockRenderer";
@@ -73,14 +74,7 @@ export default async function ProductCategoryPage(
         actions={fm.heroActions}
         eyebrowVariant={fm.heroActions.length > 0 ? "rule" : "badge"}
         statsAlign={fm.heroStatsAlign}
-        breadcrumb={
-          fm.heroBreadcrumb
-            ? [
-                { label: "Products", href: "/products" },
-                { label: fm.navLabel, href: path },
-              ]
-            : undefined
-        }
+        breadcrumb={trail(["Products", "/products"], [fm.navLabel, path])}
       />
 
       <BlockRenderer

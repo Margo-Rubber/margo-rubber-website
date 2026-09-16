@@ -1,4 +1,6 @@
 import { notFound } from "next/navigation";
+import { displayName } from "@/content/routes";
+import { trail } from "@/lib/breadcrumbs";
 import { getFrontmatter } from "@/lib/content";
 import { getSkuPage, skuSlugs } from "@/lib/sku-source";
 import { buildMetadata } from "@/lib/seo";
@@ -79,7 +81,7 @@ export default async function SkuPage(
 
   // Category display name and the sibling part list both come from the category
   // file, so the breadcrumb and "You may also need" can never drift from it.
-  let categoryLabel = category.replace(/-/g, " ");
+  let categoryLabel = displayName(category);
   let siblings: { slug: string; label: string }[] = [];
   try {
     const cat = getFrontmatter("products", category);
@@ -91,6 +93,12 @@ export default async function SkuPage(
     // A missing category file is a content error, not a reason to 500.
   }
 
+  const crumbs = trail(
+    ["Products", "/products"],
+    [categoryLabel, `/products/${category}`],
+    [fm.productCode || fm.h1, `/products/${category}/${product}`],
+  );
+
   return (
     <>
       <JsonLd
@@ -99,12 +107,7 @@ export default async function SkuPage(
           path: `/products/${category}/${product}`,
           name: fm.seo.title,
           description: fm.seo.description,
-          crumbs: [
-            { name: "Home", path: "/" },
-            { name: "Products", path: "/products" },
-            { name: categoryLabel, path: `/products/${category}` },
-            { name: fm.h1, path: `/products/${category}/${product}` },
-          ],
+          crumbs,
           extra: [
             skuNode(fm, `/products/${category}/${product}`, `/products/${category}`),
           ],
@@ -112,9 +115,8 @@ export default async function SkuPage(
       />
 
       <SkuHero
-        categorySlug={category}
+        breadcrumb={crumbs}
         categoryLabel={categoryLabel}
-        productCode={fm.productCode}
         eyebrow={fm.eyebrow}
         h1={fm.h1}
         intro={fm.intro}

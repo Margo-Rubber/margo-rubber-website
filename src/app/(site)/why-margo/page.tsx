@@ -1,4 +1,5 @@
 import { getSitePage } from "@/lib/page-source";
+import { trail } from "@/lib/breadcrumbs";
 import { buildMetadata } from "@/lib/seo";
 import { pageGraph } from "@/lib/schema";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -37,6 +38,8 @@ export async function generateMetadata() {
 export default async function WhyMargoPage() {
   const fm = await getSitePage("why-margo", whyMargoPageSchema);
 
+  const crumbs = trail(["Why Margo", "/why-margo"]);
+
   return (
     <>
       <JsonLd
@@ -45,11 +48,12 @@ export default async function WhyMargoPage() {
           path: "/why-margo",
           name: fm.seo.title,
           description: fm.seo.description,
-          crumbs: [{ name: "Home", path: "/" }, { name: "Why Margo", path: "/why-margo" }],
+          crumbs,
         })}
       />
 
       <WhyHero
+        breadcrumb={crumbs}
         eyebrow={fm.hero.eyebrow}
         h1Lines={fm.hero.h1Lines}
         intro={fm.hero.intro}

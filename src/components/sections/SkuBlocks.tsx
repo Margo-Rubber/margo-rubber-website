@@ -1,4 +1,7 @@
 import Link from "next/link";
+import type { Crumb } from "@/lib/breadcrumbs";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
+import { isFileHref } from "@/lib/downloads";
 import { Img } from "@/components/ui/Img";
 import { Container } from "@/components/ui/Section";
 import type { Compound as CompoundRow, SiteSettings } from "@/content/schemas";
@@ -110,12 +113,6 @@ const SAMPLE = {
     ],
     tour: { title: "Facility walkthrough", note: "Film pending" },
   },
-  downloads: [
-    { name: "Product datasheet", format: "PDF", size: "Pending", icon: "doc" },
-    { name: "Technical drawing", format: "DWG", size: "Pending", icon: "doc" },
-    { name: "3D CAD model", format: "STEP", size: "Pending", icon: "layers" },
-    { name: "Product images hi-res", format: "ZIP", size: "Pending", icon: "image" },
-  ],
   faqs: [
     { q: "What is the minimum order quantity for this part?", a: "Standard minimum order is 500 pieces per SKU. Prototype and qualification quantities are accepted for sample development, and the exact figure for your part is confirmed at quotation." },
     { q: "Can you match a competitor specification or reverse-engineer an existing part?", a: "Yes. Send a sample or a drawing and our team will identify the compound, hardness and geometry, then quote against a matched specification. Tooling cost, if any, is quoted upfront." },
@@ -281,9 +278,7 @@ function Plate({
 
 /* ══ 01 · HERO ════════════════════════════════════════════════════════════ */
 export function SkuHero({
-  categorySlug,
   categoryLabel,
-  productCode,
   eyebrow,
   h1,
   intro,
@@ -292,10 +287,9 @@ export function SkuHero({
   quickSpecs,
   order,
   assurances,
+  breadcrumb,
 }: {
-  categorySlug: string;
   categoryLabel: string;
-  productCode?: string;
   eyebrow?: string;
   h1: string;
   intro: string;
@@ -304,6 +298,7 @@ export function SkuHero({
   quickSpecs: readonly { label: string; value: string }[];
   order?: { unit: string; defaultQty: string; minNote: string };
   assurances: readonly string[];
+  breadcrumb?: readonly Crumb[];
 }) {
   const overlay = gallery.overlay.length ? gallery.overlay : SAMPLE.overlay;
   const specs = quickSpecs.length ? quickSpecs : SAMPLE.quickSpecs;
@@ -316,26 +311,7 @@ export function SkuHero({
     <header className="bg-canvas relative isolate overflow-hidden pt-32 pb-16 md:pt-40">
       <span aria-hidden className="bg-accent-400/10 pointer-events-none absolute -top-24 -left-32 -z-10 size-[30rem] rounded-full blur-3xl" />
       <Container>
-        {/* Sentence-case sans, matching the comp. The eyebrow treatment used
-            elsewhere (mono, uppercase, wide tracking) is far wider per
-            character and overflowed on long category names such as
-            "Pads, Stoppers & Caps". Wraps rather than truncating, so the part
-            name is never cut off. */}
-        <nav aria-label="Breadcrumb" className="mb-10">
-          <ol className="text-ink-4 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-sm">
-            <li><Link href="/" className="hover:text-ink transition-colors">Home</Link></li>
-            <li aria-hidden className="text-ink-4/50">&rsaquo;</li>
-            <li><Link href="/products" className="hover:text-ink transition-colors">Rubber Products</Link></li>
-            <li aria-hidden className="text-ink-4/50">&rsaquo;</li>
-            <li>
-              <Link href={`/products/${categorySlug}`} className="hover:text-ink transition-colors">
-                {categoryLabel}
-              </Link>
-            </li>
-            <li aria-hidden className="text-ink-4/50">&rsaquo;</li>
-            <li className="text-ink font-medium">{productCode || h1}</li>
-          </ol>
-        </nav>
+        <Breadcrumb items={breadcrumb} className="mb-10" />
 
         <div className="grid gap-12 lg:grid-cols-2">
           {/* Gallery */}
@@ -862,9 +838,12 @@ export function SkuQuality({
 export function SkuDownloads({
   items,
 }: {
-  items: readonly { name: string; format: string; size: string; icon: string }[];
+  items: readonly { name: string; format: string; size: string; icon: string; href?: string }[];
 }) {
-  const list = items.length ? items : SAMPLE.downloads;
+  // Only rows with a file behind them. No file, no section — a card that
+  // names a datasheet nobody can open is a promise the page cannot keep.
+  const list = items.filter((d) => isFileHref(d.href));
+  if (!list.length) return null;
   return (
     <section className="bg-canvas border-line border-t py-[70px]">
       <Container>
@@ -879,7 +858,11 @@ export function SkuDownloads({
               <span className="text-eyebrow border-line-2 text-ink-4 absolute top-6 right-6 rounded border px-2 py-0.5 font-mono">
                 {d.format}
               </span>
-              <p className="text-ink mt-6 text-sm font-semibold">{d.name}</p>
+              <p className="text-ink mt-6 text-sm font-semibold">
+                <a href={d.href} download className="hover:text-accent-400 transition-colors after:absolute after:inset-0">
+                  {d.name}
+                </a>
+              </p>
               <p className="text-ink-4 mt-1.5 text-xs">{d.size}</p>
             </li>
           ))}

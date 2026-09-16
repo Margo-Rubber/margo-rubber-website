@@ -1,4 +1,5 @@
 import { ExportLaneSequence } from "@/components/sections/ExportLaneSequence";
+import { trail } from "@/lib/breadcrumbs";
 import { getSitePage } from "@/lib/page-source";
 import { buildMetadata } from "@/lib/seo";
 import { pageGraph } from "@/lib/schema";
@@ -32,6 +33,8 @@ export async function generateMetadata() {
 export default async function ExportPage() {
   const fm = await getSitePage("export", exportPageSchema);
 
+  const crumbs = trail(["Export", "/export"]);
+
   return (
     <>
       <JsonLd
@@ -40,11 +43,12 @@ export default async function ExportPage() {
           path: "/export",
           name: fm.seo.title,
           description: fm.seo.description,
-          crumbs: [{ name: "Home", path: "/" }, { name: "Export", path: "/export" }],
+          crumbs,
         })}
       />
 
       <ExportHero
+        breadcrumb={crumbs}
         badge={fm.hero.badge}
         h1Lines={fm.hero.h1Lines}
         intro={fm.hero.intro}

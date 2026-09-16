@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { IS_VISION } from "@/lib/build-mode";
 import { SITE_URL } from "@/lib/seo";
 import { getPublishedSlugs } from "@/lib/content";
 
@@ -45,6 +46,8 @@ const STATIC_ROUTES: { path: string; priority: number }[] = [
 const EXCLUDED = new Set(["/thank-you"]);
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  // The vision build has nothing to offer a crawler: every page is noindex.
+  if (IS_VISION) return [];
   const entries: MetadataRoute.Sitemap = [];
 
   // Static routes are gated on the matching page file in content/pages.

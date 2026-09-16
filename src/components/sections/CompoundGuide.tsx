@@ -21,7 +21,11 @@ export function CompoundGuide({
   }[];
 }) {
   const [active, setActive] = useState(0);
-  const sel = items[active];
+  // Every panel is in the DOM at first paint and hidden with the `hidden`
+  // attribute, never unmounted: a panel that mounts on click does not exist
+  // for a crawler, and these descriptions are the passage an assistant lifts.
+  const panelId = (code: string) =>
+    `compound-${code.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
 
   return (
     <div>
@@ -35,7 +39,9 @@ export function CompoundGuide({
             key={c.code}
             type="button"
             role="tab"
+            id={`${panelId(c.code)}-tab`}
             aria-selected={i === active}
+            aria-controls={panelId(c.code)}
             onClick={() => setActive(i)}
             className={`rounded-lg px-5 py-2 font-mono text-xs tracking-[0.1em] transition-colors ${
               i === active
@@ -48,43 +54,54 @@ export function CompoundGuide({
         ))}
       </div>
 
-      <div className="mt-8 grid gap-5 lg:grid-cols-[1.6fr_1fr]">
-        <div className="border-line bg-surface-3 rounded-card border p-7">
-          <p className="text-ink-4 font-mono text-[10px] tracking-[0.16em] uppercase">
-            Selected Compound
-          </p>
-          <p className="text-accent-400 mt-3 text-2xl font-bold">{sel.code}</p>
-          <p className="text-ink-3 mt-1 font-mono text-xs">{sel.fullName}</p>
+      {items.map((sel, i) => (
+        <div
+          key={sel.code}
+          id={panelId(sel.code)}
+          role="tabpanel"
+          aria-labelledby={`${panelId(sel.code)}-tab`}
+          hidden={i !== active}
+          className="mt-8 grid gap-5 lg:grid-cols-[1.6fr_1fr]"
+        >
+          <div className="border-line bg-surface-3 rounded-card border p-7">
+            <p className="text-ink-4 font-mono text-[10px] tracking-[0.16em] uppercase">
+              Selected Compound
+            </p>
+            <p className="text-accent-400 mt-3 text-2xl font-bold">
+              {sel.code}
+            </p>
+            <p className="text-ink-3 mt-1 font-mono text-xs">{sel.fullName}</p>
 
-          <dl className="mt-7 grid gap-6 sm:grid-cols-2">
-            <div>
-              <dt className="text-ink-4 font-mono text-[10px] tracking-[0.16em] uppercase">
-                Hardness Range
-              </dt>
-              <dd className="text-ink mt-2 text-lg font-semibold">
-                {sel.hardness}
-              </dd>
-            </div>
-            <div>
-              <dt className="text-ink-4 font-mono text-[10px] tracking-[0.16em] uppercase">
-                Service Temperature
-              </dt>
-              <dd className="text-ink mt-2 text-lg font-semibold">
-                {sel.tempRange}
-              </dd>
-            </div>
-          </dl>
-        </div>
+            <dl className="mt-7 grid gap-6 sm:grid-cols-2">
+              <div>
+                <dt className="text-ink-4 font-mono text-[10px] tracking-[0.16em] uppercase">
+                  Hardness Range
+                </dt>
+                <dd className="text-ink mt-2 text-lg font-semibold">
+                  {sel.hardness}
+                </dd>
+              </div>
+              <div>
+                <dt className="text-ink-4 font-mono text-[10px] tracking-[0.16em] uppercase">
+                  Service Temperature
+                </dt>
+                <dd className="text-ink mt-2 text-lg font-semibold">
+                  {sel.tempRange}
+                </dd>
+              </div>
+            </dl>
+          </div>
 
-        <div className="border-line bg-surface-3 rounded-card border p-7">
-          <p className="text-ink-4 font-mono text-[10px] tracking-[0.16em] uppercase">
-            Key Applications
-          </p>
-          <p className="text-ink-2 mt-3 text-sm leading-relaxed">
-            {sel.applications}
-          </p>
+          <div className="border-line bg-surface-3 rounded-card border p-7">
+            <p className="text-ink-4 font-mono text-[10px] tracking-[0.16em] uppercase">
+              Key Applications
+            </p>
+            <p className="text-ink-2 mt-3 text-sm leading-relaxed">
+              {sel.applications}
+            </p>
+          </div>
         </div>
-      </div>
+      ))}
     </div>
   );
 }

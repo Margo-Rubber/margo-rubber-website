@@ -972,6 +972,8 @@ export const certificationsPageSchema = baseSchema.extend({
       barTitle: z.string(),
       barNote: z.string(),
       downloadLabel: z.string(),
+      /** The certificate PDF. The button renders only when this is a file. */
+      downloadHref: z.string().optional(),
     }),
     meta: z.array(z.object({ label: z.string(), value: z.string() })),
   }),
@@ -2012,7 +2014,16 @@ export const skuSchema = baseSchema.extend({
     .optional(),
 
   downloads: z
-    .array(z.object({ name: z.string(), format: z.string(), size: z.string(), icon: z.string() }))
+    .array(
+      z.object({
+        name: z.string(),
+        format: z.string(),
+        size: z.string(),
+        icon: z.string(),
+        /** The file itself. A row without one does not render. */
+        href: z.string().optional(),
+      }),
+    )
     .default([]),
 
   faqs: z.array(faqSchema).default([]),

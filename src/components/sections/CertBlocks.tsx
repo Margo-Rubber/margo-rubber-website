@@ -1,6 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { isFileHref } from "@/lib/downloads";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
+import type { Crumb } from "@/lib/breadcrumbs";
 import { Img } from "@/components/ui/Img";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Section";
@@ -139,12 +142,14 @@ export function CertHero({
   accentLines,
   intro,
   actions,
+  breadcrumb,
 }: {
   badge: string;
   lines: string[];
   accentLines: number[];
   intro: string;
   actions: { label: string; href: string; variant: "primary" | "secondary" }[];
+  breadcrumb?: readonly Crumb[];
 }) {
   return (
     <header className="bg-canvas relative isolate overflow-hidden pt-32 pb-20 md:pt-44 md:pb-28">
@@ -190,6 +195,7 @@ export function CertHero({
       />
 
       <Container>
+        <Breadcrumb items={breadcrumb} className="mb-6" />
         <div className="grid items-center gap-12 lg:grid-cols-[1fr_auto]">
           <div>
             <span className="text-eyebrow border-accent-400/40 text-accent-400 inline-flex items-center gap-2 rounded-pill border px-4 py-1.5 font-mono uppercase">
@@ -204,6 +210,8 @@ export function CertHero({
                   className={`block ${accentLines.includes(i) ? "text-accent-400" : ""}`}
                 >
                   {l}
+                  {/* Trailing space inside the block: invisible, but a crawler reads the lines with spaces. */}
+                  {i < lines.length - 1 ? " " : ""}
                 </span>
               ))}
             </h1>
@@ -318,6 +326,7 @@ type Card = {
   barTitle: string;
   barNote: string;
   downloadLabel: string;
+  downloadHref?: string;
 };
 
 export function CertificateBlock({
@@ -380,12 +389,15 @@ export function CertificateBlock({
             <p className="text-ink text-sm font-medium">{card.barTitle}</p>
             <p className="text-ink-4 mt-0.5 text-xs">{card.barNote}</p>
           </div>
-          <button
-            type="button"
-            className="bg-accent-400 text-ink hover:opacity-90 rounded-cta px-5 py-2.5 text-sm font-semibold transition-colors"
-          >
-            ↓ {card.downloadLabel}
-          </button>
+          {isFileHref(card.downloadHref) && (
+            <a
+              href={card.downloadHref}
+              download
+              className="bg-accent-400 text-ink hover:opacity-90 rounded-cta px-5 py-2.5 text-sm font-semibold transition-colors"
+            >
+              ↓ {card.downloadLabel}
+            </a>
+          )}
         </div>
       </div>
 

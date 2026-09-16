@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { normalizeAnchor } from "@/lib/anchors";
 
 // `active:scale-[0.97]` is the tactile press: the button gives under the
 // pointer instead of only changing colour. Transition covers transform as
@@ -34,7 +35,7 @@ export function Button({
 }) {
   return (
     <Link
-      href={href}
+      href={normalizeAnchor(href)}
       onClick={onClick}
       className={`${base} ${variants[variant]} ${className}`}
     >

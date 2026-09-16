@@ -102,6 +102,12 @@ export const certificationsPage = defineType({
             defineField({ name: "barTitle", type: "string", validation: (r) => r.required() }),
             defineField({ name: "barNote", type: "string", validation: (r) => r.required() }),
             defineField({ name: "downloadLabel", type: "string", validation: (r) => r.required() }),
+            defineField({
+              name: "downloadHref",
+              title: "Certificate file address",
+              type: "string",
+              description: "The button appears only once a PDF address is here.",
+            }),
           ],
         }),
         defineField({ name: "meta", title: "Details beside the card", type: "array", of: [labelValueMember] }),

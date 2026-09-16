@@ -103,6 +103,18 @@ const broken = new Map<string, Set<string>>();
 const planned = new Map<string, Set<string>>();
 
 for (const { href, file } of hits) {
+  // `/#id` is root-relative: it navigates to the homepage and looks for the
+  // section there. The in-page form is `#id`; the cross-page form is
+  // `/page#id`. Content sheets, Build Instructions §anchors.
+  if (href.startsWith("/#")) {
+    if (!broken.has(href)) broken.set(href, new Set());
+    broken
+      .get(href)!
+      .add(
+        `${file.replace(`${SRC}/`, "")} (root-relative anchor — use #id or /page#id)`,
+      );
+    continue;
+  }
   const path = href.split("#")[0];
   // A bare "#anchor" link has no path component; nothing to resolve.
   if (!path || path === "/") continue;

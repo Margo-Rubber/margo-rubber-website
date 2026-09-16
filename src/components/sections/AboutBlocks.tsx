@@ -1,4 +1,8 @@
 import Link from "next/link";
+import type { SiteSettings } from "@/content/schemas/settings";
+import { CertificationBadges } from "@/components/sections/CertificationRecord";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
+import type { Crumb } from "@/lib/breadcrumbs";
 import { Img } from "@/components/ui/Img";
 import { Container } from "@/components/ui/Section";
 import { TimelineSlider } from "@/components/sections/TimelineSlider";
@@ -48,13 +52,17 @@ export function Display({
         const stop = line.endsWith(".") || line.endsWith("?");
         const text = stop ? line.slice(0, -1) : line;
         return (
-          <span key={line} className={`block ${accent ? "text-accent-400" : ""}`}>
-            {text}
-            {stop && (
-              <span className={accent ? "" : "text-accent-400"}>
-                {line.slice(-1)}
-              </span>
-            )}
+          <span key={line}>
+            <span className={`block ${accent ? "text-accent-400" : ""}`}>
+              {text}
+              {stop && (
+                <span className={accent ? "" : "text-accent-400"}>
+                  {line.slice(-1)}
+                </span>
+              )}
+            </span>
+            {/* Whitespace between block lines, so the H1 reads with spaces to a crawler. */}
+            {i < lines.length - 1 ? " " : null}
           </span>
         );
       })}
@@ -338,6 +346,7 @@ export function AboutHero({
   image,
   watchLabel,
   scrollLabel,
+  breadcrumb,
 }: {
   badge: string;
   lines: readonly string[];
@@ -347,6 +356,7 @@ export function AboutHero({
   image: string;
   watchLabel: string;
   scrollLabel: string;
+  breadcrumb?: readonly Crumb[];
 }) {
   return (
     <header className="bg-surface-2 relative isolate overflow-hidden pt-36 pb-24 md:pt-52 md:pb-36">
@@ -381,6 +391,7 @@ export function AboutHero({
       />
 
       <Container>
+        <Breadcrumb items={breadcrumb} className="mb-6" />
         <div className="relative">
           <div className="max-w-[46rem]">
             <Pill>{badge}</Pill>
@@ -1005,71 +1016,39 @@ export function Presence({
 
 /* ══ 08 · CERTIFICATIONS & AWARDS ═════════════════════════════════════════ */
 
-/** Each certification keeps its own colour in the design, not one flat accent. */
-const AWARD_TINT: Record<string, string> = {
-  medal: "#E8B44A",
-  leaf: "#5FBF6A",
-  flask: "#6FA8DC",
-  check: "#4FC46B",
-  scope: "#B8BFC7",
-  trophy: "#E0A93B",
-};
-
 export function Awards({
   head,
-  items,
+  certifications,
   auditedLabel,
-  auditors,
   auditImage,
 }: {
   head: Head;
-  items: readonly { icon: string; name: string; body: string }[];
+  certifications: SiteSettings["certifications"];
   auditedLabel: string;
-  auditors: readonly string[];
   auditImage: string;
 }) {
+  // The auditor band names the bodies that actually issued something — the
+  // issuers of held rows — rather than a typed list of registrars.
+  const auditors = [
+    ...new Set(
+      certifications.items
+        .filter((c) => c.standing === "held" && c.issuer)
+        .map((c) => c.issuer as string),
+    ),
+  ];
   return (
     <section className="bg-surface-2 relative isolate overflow-hidden py-[70px]">
       <Bloom className="-top-24 left-1/2 size-[38rem] -translate-x-1/2" />
       <Container>
         <CenterHead head={head} />
 
-        <ul className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {items.map((a) => (
-            <li
-              key={a.name}
-              className="rounded-card border-line relative flex items-start gap-4 border bg-surface-3 p-6"
-            >
-              <span
-                className="grid size-9 shrink-0 place-items-center rounded-lg"
-                style={{
-                  color: AWARD_TINT[a.icon],
-                  backgroundColor: `${AWARD_TINT[a.icon]}1A`,
-                }}
-              >
-                <Icon name={a.icon} className="size-5" />
-              </span>
-              <div className="min-w-0">
-                <h3 className="text-ink text-base font-semibold">{a.name}</h3>
-                <p className="text-ink-4 mt-1 text-sm">{a.body}</p>
-              </div>
-              {/* Ribbon marker, top-right, as in the design. */}
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="text-accent-400/45 absolute top-5 right-5 size-4"
-                aria-hidden
-              >
-                <circle cx="12" cy="9" r="5" />
-                <path d="m9 13.5-1.5 6L12 17.5l4.5 2-1.5-6" />
-              </svg>
-            </li>
-          ))}
-        </ul>
+        <div className="mt-14">
+          <CertificationBadges
+            items={certifications.items}
+            scopeNote={certifications.scopeNote}
+            compact
+          />
+        </div>
       </Container>
 
       {/* Auditor band: photo dimmed almost to black and dissolved top and bottom. */}

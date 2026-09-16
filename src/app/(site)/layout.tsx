@@ -1,4 +1,5 @@
 import { SiteHeader } from "@/components/nav/SiteHeader";
+import { ConceptBand } from "@/components/nav/ConceptBand";
 import { ImageOverrideProvider } from "@/components/ui/ImageOverrideProvider";
 import { getImageOverrides } from "@/lib/image-overrides";
 import { SiteFooter } from "@/components/nav/SiteFooter";
@@ -22,6 +23,7 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
       <SiteHeader />
       <main className="flex-1">{children}</main>
       <SiteFooter />
+      <ConceptBand />
     </ImageOverrideProvider>
   );
 }

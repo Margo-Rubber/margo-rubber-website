@@ -1,6 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { withoutDeadDownloads } from "@/lib/downloads";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
+import type { Crumb } from "@/lib/breadcrumbs";
 import Link from "next/link";
 import { Img } from "@/components/ui/Img";
 import { Button } from "@/components/ui/Button";
@@ -15,6 +18,7 @@ export function IndustryHero({
   actions,
   image,
   boost = false,
+  breadcrumb,
 }: {
   badge: string;
   lines: string[];
@@ -24,6 +28,7 @@ export function IndustryHero({
   image?: string;
   /** Only for sources already faded to black; a normal photo would blow out. */
   boost?: boolean;
+  breadcrumb?: readonly Crumb[];
 }) {
   return (
     <header className="relative isolate overflow-hidden pt-28 pb-16 md:pt-44 md:pb-24">
@@ -60,6 +65,7 @@ export function IndustryHero({
         </>
       )}
       <Container>
+        <Breadcrumb items={breadcrumb} className="mb-6" />
         <span className="text-eyebrow border-accent-400/40 text-accent-400 inline-flex items-center gap-2 rounded-pill border px-4 py-1.5 font-mono uppercase">
           <span className="bg-accent-400 size-1.5 rounded-full" />
           {badge}
@@ -72,6 +78,8 @@ export function IndustryHero({
               className={`block ${accentLines.includes(i) ? "text-accent-400" : ""}`}
             >
               {l}
+              {/* Trailing space inside the block: invisible, but a crawler reads the lines with spaces. */}
+              {i < lines.length - 1 ? " " : ""}
             </span>
           ))}
         </h1>
@@ -102,7 +110,9 @@ type Component = {
 
 export function ComponentTabs({ items }: { items: Component[] }) {
   const [i, setI] = useState(0);
-  const c = items[i];
+  // Every panel stays in the DOM, hidden rather than unmounted: a tab that mounts on click does not exist for a crawler.
+  const panelId = (k: string) =>
+    `component-${k.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
 
   return (
     <div>
@@ -111,6 +121,8 @@ export function ComponentTabs({ items }: { items: Component[] }) {
           <button
             key={m.key}
             role="tab"
+            id={`${panelId(m.name)}-tab`}
+            aria-controls={panelId(m.name)}
             aria-selected={idx === i}
             onClick={() => setI(idx)}
             className={`rounded-pill px-4 py-2 text-xs font-medium transition-colors ${
@@ -124,34 +136,52 @@ export function ComponentTabs({ items }: { items: Component[] }) {
         ))}
       </div>
 
-      <div className="border-line rounded-card grid overflow-hidden border bg-[#0A0A0A] md:grid-cols-[minmax(0,42%)_1fr]">
-        <div className="relative min-h-[220px] overflow-hidden">
-          <Img
-            k={c.image}
-            fill
-            sizes="(max-width: 768px) 100vw, 42vw"
-            className="object-cover brightness-[0.85]"
-          />
-          {/* Dissolve into the panel fill: downward on mobile where the image
-              stacks above the copy, rightward on desktop where it sits beside it. */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] from-0% to-transparent to-55% md:bg-gradient-to-r md:from-transparent md:from-45% md:to-[#0A0A0A] md:to-100%" />
+      {items.map((c, idx) => (
+        <div
+          key={c.name}
+          id={panelId(c.name)}
+          role="tabpanel"
+          aria-labelledby={`${panelId(c.name)}-tab`}
+          hidden={idx !== i}
+        >
+          <div className="border-line rounded-card grid overflow-hidden border bg-[#0A0A0A] md:grid-cols-[minmax(0,42%)_1fr]">
+            <div className="relative min-h-[220px] overflow-hidden">
+              <Img
+                k={c.image}
+                fill
+                sizes="(max-width: 768px) 100vw, 42vw"
+                className="object-cover brightness-[0.85]"
+              />
+              {/* Dissolve into the panel fill: downward on mobile where the image
+                stacks above the copy, rightward on desktop where it sits beside it. */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] from-0% to-transparent to-55% md:bg-gradient-to-r md:from-transparent md:from-45% md:to-[#0A0A0A] md:to-100%" />
+            </div>
+            <div className="p-6 md:p-8">
+              <h3 className="text-h3">{c.name}</h3>
+              <p className="text-ink-4 mt-3 text-sm leading-relaxed">
+                {c.body}
+              </p>
+              <ul className="mt-5 space-y-2.5">
+                {c.bullets.map((b) => (
+                  <li
+                    key={b}
+                    className="text-ink-2 flex items-start gap-2.5 text-sm"
+                  >
+                    <span
+                      aria-hidden
+                      className="bg-accent-400 mt-1.5 size-1.5 shrink-0 rounded-full"
+                    />
+                    {b}
+                  </li>
+                ))}
+              </ul>
+              <Button href={c.cta.href} variant="secondary" className="mt-6">
+                {c.cta.label} <span aria-hidden>›</span>
+              </Button>
+            </div>
+          </div>
         </div>
-        <div className="p-6 md:p-8">
-          <h3 className="text-h3">{c.name}</h3>
-          <p className="text-ink-4 mt-3 text-sm leading-relaxed">{c.body}</p>
-          <ul className="mt-5 space-y-2.5">
-            {c.bullets.map((b) => (
-              <li key={b} className="text-ink-2 flex items-start gap-2.5 text-sm">
-                <span aria-hidden className="bg-accent-400 mt-1.5 size-1.5 shrink-0 rounded-full" />
-                {b}
-              </li>
-            ))}
-          </ul>
-          <Button href={c.cta.href} variant="secondary" className="mt-6">
-            {c.cta.label} <span aria-hidden>›</span>
-          </Button>
-        </div>
-      </div>
+      ))}
     </div>
   );
 }
@@ -258,9 +288,9 @@ export function QualityCards({
           </div>
         ))}
       </div>
-      {links.length > 0 && (
+      {withoutDeadDownloads(links).length > 0 && (
         <div className="mt-8 flex flex-wrap gap-8">
-          {links.map((l) => (
+          {withoutDeadDownloads(links).map((l) => (
             <Link
               key={l.label}
               href={l.href}
@@ -405,7 +435,7 @@ export function ClosingBand({
   accentLines: number[];
   body: string;
   actions: { label: string; href: string; variant: "primary" | "secondary" }[];
-  contacts: { icon: string; text: string }[];
+  contacts: { icon: string; text: string; href?: string }[];
 }) {
   return (
     <section className="bg-[#050505] py-[70px]">
@@ -424,6 +454,8 @@ export function ClosingBand({
                 className={`block ${accentLines.includes(i) ? "text-accent-400" : ""}`}
               >
                 {l}
+                {/* Trailing space inside the block: invisible, but a crawler reads the lines with spaces. */}
+                {i < lines.length - 1 ? " " : ""}
               </span>
             ))}
           </h2>
@@ -449,7 +481,16 @@ export function ClosingBand({
                   <span className="text-accent-400" aria-hidden>
                     {CLOSE_ICON[c.icon]}
                   </span>
-                  {c.text}
+                  {c.href ? (
+                    <a
+                      href={c.href}
+                      className="hover:text-ink transition-colors"
+                    >
+                      {c.text}
+                    </a>
+                  ) : (
+                    c.text
+                  )}
                 </li>
               ))}
             </ul>

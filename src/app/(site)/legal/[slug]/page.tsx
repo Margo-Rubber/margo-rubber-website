@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { trail } from "@/lib/breadcrumbs";
 import { getLegalPage, legalSlugs } from "@/lib/legal-source";
 import { buildMetadata } from "@/lib/seo";
 import { pageGraph } from "@/lib/schema";
@@ -45,6 +46,8 @@ export default async function LegalPage(props: PageProps<"/legal/[slug]">) {
   const fm = await getLegalPage(slug);
   if (!fm) notFound();
 
+  const crumbs = trail([fm.h1, `/legal/${slug}`]);
+
   return (
     <>
       <JsonLd
@@ -53,10 +56,7 @@ export default async function LegalPage(props: PageProps<"/legal/[slug]">) {
           path: `/legal/${slug}`,
           name: fm.seo.title,
           description: fm.seo.description,
-          crumbs: [
-            { name: "Home", path: "/" },
-            { name: fm.h1, path: `/legal/${slug}` },
-          ],
+          crumbs,
         })}
       />
 
@@ -65,7 +65,7 @@ export default async function LegalPage(props: PageProps<"/legal/[slug]">) {
         h1={fm.h1}
         intro={fm.intro}
         lastUpdated={fm.lastUpdated}
-        crumb={fm.h1}
+        breadcrumb={crumbs}
       />
       <LegalBody sections={fm.sections} pendingNote={PENDING} />
     </>
