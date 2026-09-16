@@ -60,7 +60,14 @@ export type Field =
   | { label: string; kind: "list"; items: string[]; note?: string }
   | { label: string; kind: "text"; value: string; note?: string }
   /** A cell holding several kinds in sequence — a market block: eyebrow, H2, standfirst, bullets, caveat, links. */
-  | { label: string; kind: "composite"; parts: Part[]; note?: string };
+  | { label: string; kind: "composite"; parts: Part[]; note?: string }
+  /** A whole legal document (sheet 08): standfirst, then numbered sections of sub-headings, paragraphs and lists. */
+  | { label: string; kind: "document"; lastUpdated: string; standfirst: string; sections: DocSection[]; note?: string };
+
+export type DocSection = {
+  title: string;
+  blocks: ({ kind: "p"; text: string } | { kind: "h"; text: string } | { kind: "ul"; items: string[] } | { kind: "note"; text: string })[];
+};
 
 export type Part =
   | { kind: "lit"; value: string }
@@ -275,6 +282,63 @@ function readRow(dl: HTMLElement): Field | null {
   return withNote({ label, kind: "text" as const, value: text(dd) });
 }
 
+/* ── A legal document (sheet 08) ─────────────────────────────────────────── */
+
+/**
+ * The legal sheets are whole documents: a header line with the date, a
+ * standfirst, then `<h3>` sections holding `<h4>` sub-headings, paragraphs
+ * and bulleted lists. Counsel notes are `<span class="tok">` and are lifted
+ * into the field note, never into a block.
+ */
+/**
+ * A paragraph whose lead-in is `<strong>` ("Legal basis. Under DPDP…") keeps
+ * the emphasis as `**…**`, which LegalBlocks renders back to <strong>. Plain
+ * text otherwise.
+ */
+function strongMarked(el: HTMLElement): string {
+  const strongs = el.querySelectorAll("strong");
+  if (!strongs.length) return text(el);
+  const clone = el.clone() as HTMLElement;
+  for (const st of clone.querySelectorAll("strong")) st.replaceWith(`**${text(st)}**`);
+  return text(clone);
+}
+
+function readDocument(sec: HTMLElement, doc: HTMLElement): Field {
+  const hdr = sec.querySelector(".pagehdr");
+  const lastUpdated = (hdr?.querySelectorAll("span").map((x) => text(x)).find((t) => /^LAST UPDATED:/i.test(t)) ?? "").replace(/^LAST UPDATED:\s*/i, "");
+  const notes: string[] = [];
+  for (const tok of doc.querySelectorAll(".tok")) {
+    notes.push(text(tok));
+    tok.parentNode.remove();
+  }
+  const sections: DocSection[] = [];
+  let standfirst = "";
+  let current: DocSection | null = null;
+  for (const el of doc.childNodes as unknown as HTMLElement[]) {
+    if (!el.tagName) continue;
+    const tag = el.tagName;
+    if (tag === "P" && el.classList.contains("meta")) continue;
+    if (tag === "H3") {
+      current = { title: text(el).replace(/^\d+\.\s*/, ""), blocks: [] };
+      sections.push(current);
+      continue;
+    }
+    if (!current) {
+      if (tag === "P") standfirst = text(el);
+      continue;
+    }
+    if (tag === "H4") current.blocks.push({ kind: "h", text: text(el) });
+    else if (tag === "P") {
+      const strong = el.querySelector("strong");
+      // A paragraph that is one emphasised sentence is the site's "note" block.
+      if (strong && text(strong) === text(el)) current.blocks.push({ kind: "note", text: text(el) });
+      else current.blocks.push({ kind: "p", text: strongMarked(el) });
+    } else if (tag === "UL" || tag === "OL") current.blocks.push({ kind: "ul", items: el.querySelectorAll("li").map((li) => strongMarked(li)) });
+  }
+  const sheetTitle = text(sec.querySelector("header h2"));
+  return { label: sheetTitle, kind: "document" as const, lastUpdated, standfirst, sections, ...(notes.length ? { note: notes.join(" · ") } : {}) };
+}
+
 /* ── A sheet ────────────────────────────────────────────────────────────── */
 
 export function parseSheet(file: string): Sheet {
@@ -304,6 +368,8 @@ export function parseSheet(file: string): Sheet {
         const f = readRow(dl);
         if (f) fields.push(f);
       }
+      const doc = sec.querySelector("div.doc");
+      if (doc) fields.push(readDocument(sec, doc));
       const notes = sec.querySelectorAll("ul.spec > li").map((li) => text(li));
       return {
         num: text(header?.querySelector(".num")),
@@ -367,6 +433,16 @@ function toMarkdown(s: Sheet): string {
           break;
         case "text":
           out.push(`- **${f.label}**: ${f.value}`);
+          break;
+        case "document":
+          out.push(`- **${f.label}** (document · last updated ${f.lastUpdated}):`, `  > ${f.standfirst}`);
+          for (const sct of f.sections) {
+            out.push(`  ### ${sct.title}`);
+            for (const b of sct.blocks) {
+              if (b.kind === "ul") for (const it of b.items) out.push(`    - ${it}`);
+              else out.push(`    ${b.kind === "h" ? "#### " : b.kind === "note" ? "**" : ""}${b.text}${b.kind === "note" ? "**" : ""}`);
+            }
+          }
           break;
         case "composite":
           out.push(`- **${f.label}** (composite):`);

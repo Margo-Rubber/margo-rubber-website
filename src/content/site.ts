@@ -47,7 +47,7 @@ export const FORBIDDEN_CLAIMS: { pattern: RegExp; why: string }[] = [
   { pattern: /\bCMM\b/, why: "Inspection is by vernier and micrometer. There is no CMM." },
   { pattern: /clean\s*room|ISO\s*Class\s*7/i, why: "No cleanroom. A class is a certified environment with a validation report." },
   { pattern: /six[- ]sigma|6[- ]sigma/i, why: "Six Sigma is a certifiable methodology; unclaimed." },
-  { pattern: /NABL(?![- ](accredited|partner)|\s+partner)/i, why: "Margo's lab is not NABL-accredited; it uses a NABL-accredited partner. Say so." },
+  { pattern: /\bNABL\b(?![- ](accredited|partner)|\s+partner)/i, why: "Margo's lab is not NABL-accredited; it uses a NABL-accredited partner. Say so." },
   { pattern: /99\.7\s*%|98\.[57]\s*%|<\s*0\.1\s*%\s*defect/i, why: "Invented quality figures. Target rejection is <1%; on-time is >99%." },
   { pattern: /80,?000\s*sq|400\+?\s*(team|employees|staff)|1,?200\+?\s*(clients|customers)|(25|27|30|35|50)\+?\s*(countries|years|nations)/i, why: "Fabricated scale figures. See the sheets' verified values." },
   { pattern: /\b60\s*(M|million)\s*\+?\s*(pcs|pieces)?\s*(\/|per)?\s*(yr|year)/i, why: "Capacity typo. Installed is 5 million a month; current 1.5 million." },

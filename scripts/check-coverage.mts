@@ -46,7 +46,9 @@ const args = process.argv.slice(2);
 if (args.length % 2) throw new Error("pairs of <sheet> <route>");
 
 for (let i = 0; i < args.length; i += 2) {
-  const [stem, route] = [args[i], args[i + 1]];
+  // `08_Legal_Pages#02` — one section of a sheet that spans several routes.
+  const [stem, only] = args[i].split("#");
+  const route = args[i + 1];
   const sheet = JSON.parse(
     readFileSync(`scripts/sheets/out/${stem}.json`, "utf8"),
   ) as Sheet;
@@ -57,6 +59,7 @@ for (let i = 0; i < args.length; i += 2) {
   let total = 0;
   const check = (sec: string, label: string, s: string) => {
     const v = norm(s)
+      .replace(/\*\*/g, "")
       .replace(/\s*(→|↓|↗)\s*$/, "")
       .replace(/^\[\s*|\s*\]$/g, "");
     if (!v || v.length < 3) return;
@@ -68,6 +71,7 @@ for (let i = 0; i < args.length; i += 2) {
   };
   for (const sec of sheet.sections) {
     if (SKIP_SECTIONS.test(sec.title)) continue;
+    if (only && sec.num !== only) continue;
     for (const f of sec.fields) {
       if (
         /^(remove|removed|cut|recommendation|permission note|strip build|check result|single source|fkm — the one|add a column|figure block ×0)/i.test(
@@ -110,6 +114,16 @@ for (let i = 0; i < args.length; i += 2) {
         }
         case "text":
           check(sec.num, f.label, f.value);
+          break;
+        case "document":
+          check(sec.num, "standfirst", f.standfirst);
+          for (const sct of f.sections) {
+            check(sec.num, sct.title, sct.title);
+            for (const b of sct.blocks) {
+              if (b.kind === "ul") for (const it of b.items) check(sec.num, sct.title, it);
+              else check(sec.num, sct.title, b.text);
+            }
+          }
           break;
         case "composite":
           for (const p of f.parts) {

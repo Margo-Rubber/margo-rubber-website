@@ -47,3 +47,9 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 22. **Certificate PDF.** The download button stays hidden until a clean scan is uploaded (Studio → certificate card → file address).
 23. **Facility cards — press tonnage and rubber-to-metal bonding as a named line.** Both CONFIRM on the sheet; the card bodies are as written.
 24. **FMEA documentation** in the audit note — the sheet asks to confirm it exists before the line ships.
+
+## 08 Legal
+
+25. **Counsel review — Terms §9 and Disclaimer §7.** The sheet marks both CLIENT CONFIRMED — COUNSEL TO REVIEW: the liability cap is settled at invoice value; a lawyer should examine it most closely, and the two sections must say the same thing. Copy is in place as written; all three pages stay `placeholder` (noindex) until counsel signs off.
+26. **Section anchors.** The sheet says anchor IDs are unchanged, so §7 of the Privacy Policy keeps its `user-rights` anchor under its new heading "Your Rights".
+27. **Cookie notice.** Privacy Policy §4 describes a cookie notice through which analytics cookies are consented to and refused; no notice exists on the site yet (Phase 7 — build one or the section over-describes).

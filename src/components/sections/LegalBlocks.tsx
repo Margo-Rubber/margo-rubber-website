@@ -120,7 +120,7 @@ function Block({ block }: { block: LegalBlock }) {
               aria-hidden
               className="bg-ink-4 mt-[0.62em] size-1 shrink-0 rounded-full"
             />
-            {item}
+            <span>{strong(item)}</span>
           </li>
         ))}
       </ul>
@@ -133,7 +133,26 @@ function Block({ block }: { block: LegalBlock }) {
       </p>
     );
   }
-  return <p className="text-ink-2 my-4 leading-[1.9]">{block.p}</p>;
+  return <p className="text-ink-2 my-4 leading-[1.9]">{strong(block.p)}</p>;
+}
+
+/**
+ * `**Legal basis.** Under DPDP…` — the sheet emphasises a paragraph's lead-in
+ * or a governing figure ("36 months from the date of the last order") with
+ * <strong>; the CMS keeps that as `**…**` so the paragraph stays one string.
+ */
+function strong(text: string) {
+  const parts = text.split(/\*\*([^*]+)\*\*/g);
+  if (parts.length === 1) return text;
+  return parts.map((part, i) =>
+    i % 2 ? (
+      <strong key={i} className="text-ink font-semibold">
+        {part}
+      </strong>
+    ) : (
+      part
+    ),
+  );
 }
 
 export function LegalBody({
