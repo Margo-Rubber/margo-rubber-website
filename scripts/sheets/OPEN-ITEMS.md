@@ -17,3 +17,12 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 4. **Marquee strip under the hero.** The sheet has no such element; the old one named Aerospace and Pharmaceutical. Now empty (hidden).
 5. **Testing CTA — "Download the test capability statement".** Hidden until a PDF exists (sheet: CONFIRM the file).
 6. **Certifications — ISO 14001 / ISO 45001 rows.** The sheet marks both CONFIRM before they ship; they render as "[Upgrade in progress]" from Site settings. *Needed: confirm the 2027 targets.*
+
+## 03 About
+
+7. **Leadership stat — "Team Members".** The sheet's value is CONFIRM; the card is not shown until a headcount is given.
+8. **Milestones — ten proposed years.** The sheet says "DO NOT PUBLISH THE PROPOSED YEARS AS-IS". All eleven entries are stored; only 2005 (verified) renders. Each of the other ten is marked "proposed" in the Studio and publishes the moment it is switched to "verified". *Needed: the dates.*
+9. **Founder titles.** Sheet marks both CONFIRM ("Founder & Director" / "Co-Founder & Business Development Head") and asks whether either wants a photograph published. Shown as written.
+10. **Sustainability section.** The sheet's first recommendation is to cut it; its "honest version" copy is in place with the section switched on. *Decide: keep or cut (a toggle in the Studio).*
+11. **Certifications record.** Sheets 02 and 03 both say render the five rows from one shared record; sheet 02's fuller card bodies are the record, sheet 03's one-line titles are not shown separately.
+12. **Client strip — logos.** Text wordmarks until permission letters exist (sheet: CONFIRM per account).

@@ -1152,6 +1152,7 @@ export const aboutPage = defineType({
       fields: [
         defineField({ name: "label", type: "string", validation: (r) => r.required() }),
         listField("items", "Clients", { group: null, min: 1 }),
+        listField("sectors", "Sector per client", { group: null, description: "One per client, in the same order — shown under the name." }),
       ],
       options: { collapsible: true, collapsed: true },
       group: "closing",

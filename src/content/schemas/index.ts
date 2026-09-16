@@ -1267,7 +1267,12 @@ export const aboutPageSchema = baseSchema.extend({
       .min(1),
   }),
 
-  clients: z.object({ label: z.string(), items: z.array(z.string()).min(1) }),
+  clients: z.object({
+    label: z.string(),
+    items: z.array(z.string()).min(1),
+    /** Sector per name, same order as items — sheet 03 §14. */
+    sectors: z.array(z.string()).default([]),
+  }),
 
   closing: z.object({
     eyebrow: z.string(),
