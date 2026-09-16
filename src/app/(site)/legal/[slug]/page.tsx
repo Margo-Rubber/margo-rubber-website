@@ -40,6 +40,18 @@ export async function generateMetadata(props: PageProps<"/legal/[slug]">) {
 const PENDING =
   "This section is awaiting approved wording from Margo's legal counsel. Its heading and anchor are in place so the document's structure and links are final; only the text is outstanding.";
 
+/**
+ * "01 September 2026" → "2026-09-01" for dateModified. The visible header
+ * and the schema must carry the same date (content sheet 08), so both read
+ * the one field; a value that does not parse is simply not emitted.
+ */
+function isoDate(text: string | null): string | undefined {
+  if (!text) return undefined;
+  if (/^\d{4}-\d{2}-\d{2}$/.test(text)) return text;
+  const t = Date.parse(`${text} UTC`);
+  return Number.isNaN(t) ? undefined : new Date(t).toISOString().slice(0, 10);
+}
+
 export default async function LegalPage(props: PageProps<"/legal/[slug]">) {
   const { slug } = await props.params;
 
@@ -57,6 +69,7 @@ export default async function LegalPage(props: PageProps<"/legal/[slug]">) {
           name: fm.seo.title,
           description: fm.seo.description,
           crumbs,
+          dateModified: isoDate(fm.lastUpdated),
         })}
       />
 

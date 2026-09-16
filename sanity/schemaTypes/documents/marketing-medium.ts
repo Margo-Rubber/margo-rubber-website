@@ -718,6 +718,25 @@ export const exportPage = defineType({
       group: "body",
     }),
     defineField({ name: "seo", title: "Search engine listing", type: "seo", group: "meta" }),
+    defineField({
+      name: "faqs",
+      title: "Questions & answers",
+      description:
+        "The six export steps and the Incoterms, each phrased as a question. Submitted to Google as structured data.",
+      type: "array",
+      of: [
+        defineArrayMember({
+          type: "object",
+          name: "faq",
+          fields: [
+            defineField({ name: "q", title: "Question", type: "string", validation: (r) => r.required().min(8) }),
+            defineField({ name: "a", title: "Answer", type: "text", rows: 4, validation: (r) => r.required().min(40).max(700) }),
+          ],
+          preview: { select: { title: "q" } },
+        }),
+      ],
+      group: "body",
+    }),
     schemaTypesField,
   confirmField,
   ],

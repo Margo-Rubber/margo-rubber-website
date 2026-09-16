@@ -19,6 +19,13 @@ import { SITE_URL } from "@/lib/seo";
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
+      // The answer engines, named, so a future blanket rule cannot shut them
+      // out by accident — being cited is the point of the content sheets.
+      {
+        userAgent: ["GPTBot", "OAI-SearchBot", "ClaudeBot", "PerplexityBot", "Bingbot"],
+        allow: "/",
+        disallow: ["/margo-desk", "/margo-desk/", "/api/", "/studio", "/*?q=", "/*?status=", "/*?source=", "/*?page="],
+      },
       {
         userAgent: "*",
         allow: "/",
@@ -29,6 +36,8 @@ export default function robots(): MetadataRoute.Robots {
           "/margo-desk/",
           // Endpoints, not pages. Nothing here renders.
           "/api/",
+          // The editing studio has its own login; it is not content.
+          "/studio",
           // Query-string variants of listing pages are the same content
           // reachable at many URLs, which splits ranking signals across them.
           "/*?q=",
@@ -38,7 +47,7 @@ export default function robots(): MetadataRoute.Robots {
         ],
       },
     ],
-    sitemap: `${SITE_URL}/sitemap.xml`,
+    sitemap: [`${SITE_URL}/sitemap.xml`, `${SITE_URL}/products/sitemap/0.xml`],
     host: SITE_URL,
   };
 }

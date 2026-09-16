@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { trail } from "@/lib/breadcrumbs";
 import { buildMetadata } from "@/lib/seo";
-import { breadcrumbNode, faqNode, organizationNode, shouldEmitSchema } from "@/lib/schema";
+import { industryGraph, shouldEmitSchema } from "@/lib/schema";
 import { getIndustryPage, industrySlugs } from "@/lib/industry-source";
 import { BlockRenderer } from "@/components/blocks/BlockRenderer";
 import { Section } from "@/components/ui/Section";
@@ -28,14 +28,7 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
   const path = `/industries/${slug}`;
   const crumbs = trail(["Industries", "/industries"], [fm.navLabel, path]);
 
-  const graph = {
-    "@context": "https://schema.org",
-    "@graph": [
-      await organizationNode(),
-      breadcrumbNode(crumbs),
-      ...(faqNode(fm.faqs) ? [faqNode(fm.faqs)!] : []),
-    ],
-  };
+  const graph = industryGraph(fm, path, crumbs);
 
   return (
     <>

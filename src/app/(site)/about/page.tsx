@@ -2,7 +2,7 @@ import { getSitePage } from "@/lib/page-source";
 import { getSiteSettings } from "@/lib/settings";
 import { trail } from "@/lib/breadcrumbs";
 import { buildMetadata } from "@/lib/seo";
-import { pageGraph } from "@/lib/schema";
+import { pageGraph, personNodes } from "@/lib/schema";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { aboutPageSchema } from "@/content/schemas";
 import {
@@ -54,6 +54,7 @@ export default async function AboutPage() {
           name: fm.seo.title,
           description: fm.seo.description,
           crumbs,
+          extra: await personNodes(),
         })}
       />
 

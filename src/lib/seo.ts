@@ -26,7 +26,14 @@ export function buildMetadata(fm: SeoInput, path: string): Metadata {
     metadataBase: new URL(SITE_URL),
     title: fm.seo.title,
     description: fm.seo.description,
-    alternates: { canonical: url },
+    // One language, one canonical. A parameterised variant (?product=, ?sector=,
+    // ?family=) is the same page and never gets its own canonical: `path` is
+    // the bare route, never the request URL. hreflang en + x-default, both
+    // pointing here, per content sheet 01.
+    alternates: {
+      canonical: url,
+      languages: { en: url, "x-default": url },
+    },
     robots: indexable
       ? {
           index: true,

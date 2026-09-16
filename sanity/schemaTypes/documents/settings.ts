@@ -99,6 +99,45 @@ export const siteSettings = defineType({
           type: "array",
           of: [defineArrayMember({ type: "url" })],
         }),
+        defineField({
+          name: "description",
+          title: "One-line description for search engines",
+          description: "Used only in structured data — one sentence, no claims that are not held.",
+          type: "text",
+          rows: 2,
+        }),
+        defineField({
+          name: "knowsAbout",
+          title: "Subjects the company is known for",
+          description: "Short terms, for search engines: “Rubber moulding”, “O-rings”, “FKM”.",
+          type: "array",
+          of: [defineArrayMember({ type: "string" })],
+        }),
+        defineField({
+          name: "areaServed",
+          title: "Export markets served",
+          description: "Two-letter country codes, one per market: AU, GB, AE …",
+          type: "array",
+          of: [defineArrayMember({ type: "string" })],
+        }),
+        defineField({
+          name: "founders",
+          title: "Founders",
+          description: "The named people on the About page. Each appears in structured data with their title.",
+          type: "array",
+          of: [
+            defineArrayMember({
+              type: "object",
+              name: "founder",
+              fields: [
+                str("name", "Name"),
+                str("role", "Title"),
+                defineField({ name: "knowsAbout", title: "Areas of expertise", type: "array", of: [defineArrayMember({ type: "string" })] }),
+              ],
+              preview: { select: { title: "name", subtitle: "role" } },
+            }),
+          ],
+        }),
       ],
     }),
 

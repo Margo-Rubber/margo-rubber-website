@@ -1,9 +1,11 @@
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
+import { publishedRoutes } from "@/lib/published";
+import { SITE_URL } from "@/lib/seo";
 import { trail } from "@/lib/breadcrumbs";
 import { getAllFrontmatter } from "@/lib/content";
 import { getSitePage } from "@/lib/page-source";
 import { buildMetadata } from "@/lib/seo";
-import { pageGraph } from "@/lib/schema";
+import { itemListNode, pageGraph } from "@/lib/schema";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { resourcesHubSchema } from "@/content/schemas";
 import { Container } from "@/components/ui/Section";
@@ -48,6 +50,14 @@ export default async function ResourcesPage() {
 
   const crumbs = trail(["Resources", "/resources"]);
 
+  // The ItemList names only published guides — a list of works with no
+  // works is the same class of error as a Review node with no review
+  // (content sheet 31). Empty until the first guide is signed off.
+  const live = new Set(
+    (await publishedRoutes()).filter((r) => r.type === "resource").map((r) => r.slug),
+  );
+  const listed = guides.filter((g) => live.has(g.slug));
+
   return (
     <>
       <JsonLd
@@ -58,6 +68,14 @@ export default async function ResourcesPage() {
           name: fm.seo.title,
           description: fm.seo.description,
           crumbs,
+          ...(listed.length ? { mainEntity: { "@id": `${SITE_URL}/resources#list` } } : {}),
+          extra: [
+            itemListNode(
+              listed.map((g) => ({ name: g.h1, path: `/resources/${g.slug}` })),
+              "/resources",
+              "Technical guides",
+            ),
+          ],
         })}
       />
 

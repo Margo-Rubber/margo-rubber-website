@@ -108,8 +108,14 @@ export default async function SkuPage(
           name: fm.seo.title,
           description: fm.seo.description,
           crumbs,
+          faqs: fm.faqs,
           extra: [
-            skuNode(fm, `/products/${category}/${product}`, `/products/${category}`),
+            skuNode(
+              fm,
+              `/products/${category}/${product}`,
+              `/products/${category}`,
+              siblings.map((s) => `/products/${category}/${s.slug}`),
+            ),
           ],
         })}
       />

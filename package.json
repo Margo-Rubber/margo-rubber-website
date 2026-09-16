@@ -20,7 +20,8 @@
     "revalidate": "node scripts/revalidate.mts",
     "check:cms": "node scripts/check-cms-source.mts",
     "check:groups": "node scripts/check-field-groups.mts",
-    "check:labels": "node scripts/check-labels.mts"
+    "check:labels": "node scripts/check-labels.mts",
+    "check:jsonld": "node scripts/check-jsonld.mts"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",

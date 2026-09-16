@@ -71,7 +71,7 @@ export default async function ResourceGuidePage(
           description: fm.seo.description,
           crumbs,
           faqs: fm.faqs,
-          extra: [articleNode(fm, `/resources/${slug}`)],
+          extra: [await articleNode(fm, `/resources/${slug}`)],
         })}
       />
 
