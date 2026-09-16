@@ -49,7 +49,7 @@ export default async function ResourcesPage() {
     <>
       <JsonLd
         status={fm.status}
-        graph={pageGraph({
+        graph={await pageGraph({
           type: "CollectionPage",
           path: "/resources",
           name: fm.seo.title,

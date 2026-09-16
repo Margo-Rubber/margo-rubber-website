@@ -36,7 +36,7 @@ export default async function CaseStudiesPage() {
     <>
       <JsonLd
         status={fm.status}
-        graph={pageGraph({
+        graph={await pageGraph({
           path: "/case-studies",
           name: fm.seo.title,
           description: fm.seo.description,

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Img } from "@/components/ui/Img";
 import { Container } from "@/components/ui/Section";
+import { INDUSTRIES, PRODUCT_GROUPS } from "@/content/routes";
 import {
   EnquiryForm,
   EnquiryStatus,
@@ -172,6 +173,25 @@ type Field = {
 const inputCls =
   "mt-2 w-full rounded-lg border border-[#1F242A] bg-[#16191E] px-4 py-3 text-sm text-ink placeholder:text-ink-4 focus:border-accent-400";
 
+/**
+ * The two dropdowns that name what Margo makes come from the route registry,
+ * not from the document — the same fifteen categories in three groups and
+ * eleven industries the footer, menus and sitemap use, so the RFQ form can
+ * never offer nine of fifteen. A category with a sheet but no page yet is
+ * still offered: a buyer who wants a diaphragm should be able to say so.
+ * The document's own option list still drives every other select.
+ */
+const REGISTRY_OPTIONS: Record<string, { groups: { label: string | null; options: string[] }[]; other: string }> = {
+  productCategory: {
+    groups: PRODUCT_GROUPS.map((g) => ({ label: g.label, options: g.items.map((i) => i.label) })),
+    other: "Not sure / other",
+  },
+  industry: {
+    groups: [{ label: null, options: INDUSTRIES.map((i) => i.label) }],
+    other: "Other",
+  },
+};
+
 function FieldControl({ f }: { f: Field }) {
   if (f.type === "textarea") {
     return (
@@ -195,11 +215,34 @@ function FieldControl({ f }: { f: Field }) {
         <option value="" disabled>
           {f.placeholder}
         </option>
-        {f.options?.map((o) => (
-          <option key={o} value={o}>
-            {o}
-          </option>
-        ))}
+        {REGISTRY_OPTIONS[f.name] ? (
+          <>
+            {REGISTRY_OPTIONS[f.name].groups.map((g) =>
+              g.label ? (
+                <optgroup key={g.label} label={g.label}>
+                  {g.options.map((o) => (
+                    <option key={o} value={o}>
+                      {o}
+                    </option>
+                  ))}
+                </optgroup>
+              ) : (
+                g.options.map((o) => (
+                  <option key={o} value={o}>
+                    {o}
+                  </option>
+                ))
+              ),
+            )}
+            <option value={REGISTRY_OPTIONS[f.name].other}>{REGISTRY_OPTIONS[f.name].other}</option>
+          </>
+        ) : (
+          f.options?.map((o) => (
+            <option key={o} value={o}>
+              {o}
+            </option>
+          ))
+        )}
       </select>
     );
   }

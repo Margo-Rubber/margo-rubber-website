@@ -1,7 +1,7 @@
 import { getSitePage } from "@/lib/page-source";
 import { buildMetadata } from "@/lib/seo";
 import { utilityPageSchema } from "@/content/schemas";
-import { SITE } from "@/content/site";
+import { getSiteSettings } from "@/lib/settings";
 import { UtilityPage } from "@/components/sections/UtilityPage";
 
 export async function generateMetadata() {
@@ -15,7 +15,7 @@ export async function generateMetadata() {
  * NOT YET WIRED: the /contact form has no backend, so nothing redirects here.
  * The page is built and ready to be the redirect target the moment it can be.
  *
- * The response time is rendered from SITE.responsePromise rather than written
+ * The response time is rendered from site settings rather than written
  * into content. Three pages currently state three different SLAs (24 hours,
  * 1 business day, 3 business days); when Margo settles it, this page follows
  * without an edit.
@@ -26,7 +26,10 @@ export async function generateMetadata() {
  * queries.
  */
 export default async function ThankYouPage() {
-  const fm = await getSitePage("thank-you", utilityPageSchema);
+  const [fm, settings] = await Promise.all([
+    getSitePage("thank-you", utilityPageSchema),
+    getSiteSettings(),
+  ]);
 
   return (
     <UtilityPage
@@ -38,7 +41,7 @@ export default async function ThankYouPage() {
       linksHeading={fm.linksHeading}
       links={fm.links}
       actions={fm.actions}
-      responsePromise={SITE.responsePromise}
+      responsePromise={settings.commercial.acknowledgement}
       showTick
     />
   );

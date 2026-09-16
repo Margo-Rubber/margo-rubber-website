@@ -1,4 +1,5 @@
-import { SITE, type ContentStatus } from "@/content/site";
+import type { ContentStatus } from "@/content/site";
+import { getSiteSettings } from "@/lib/settings";
 import { SITE_URL } from "./seo";
 import type { ProductCategory } from "@/content/schemas";
 
@@ -15,37 +16,63 @@ import type { ProductCategory } from "@/content/schemas";
 
 type Node = Record<string, unknown>;
 
-export function organizationNode(): Node {
+/**
+ * The entity, from site settings — name, address, contact, founding date and
+ * the ONE credential held. Nothing that is not held goes in any property,
+ * and no Offer: Margo quotes per part, and a fabricated price or minimum is
+ * a Merchant-listing violation the content sheets rule out.
+ */
+export async function organizationNode(): Promise<Node> {
+  const { entity, certifications } = await getSiteSettings();
+  const held = certifications.items.filter((c) => c.standing === "held");
   const node: Node = {
-    "@type": "Organization",
+    "@type": ["Organization", "Manufacturer"],
     "@id": `${SITE_URL}/#organization`,
-    name: SITE.legalName,
+    name: entity.legalName,
+    legalName: entity.legalName,
     url: SITE_URL,
+    foundingDate: String(entity.foundingYear),
     address: {
       "@type": "PostalAddress",
-      ...(SITE.streetAddress ? { streetAddress: SITE.streetAddress } : {}),
-      addressLocality: SITE.locality,
-      addressRegion: SITE.region,
-      postalCode: SITE.postalCode,
-      addressCountry: SITE.country,
+      streetAddress: entity.address.street,
+      addressLocality: entity.address.locality,
+      addressRegion: entity.address.region,
+      postalCode: entity.address.postalCode,
+      addressCountry: entity.address.country,
     },
-    hasCredential: {
+    email: entity.email,
+    telephone: entity.phone,
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        contactType: "sales",
+        telephone: entity.phone,
+        email: entity.email,
+        availableLanguage: ["en"],
+        hoursAvailable: {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: entity.hoursSchema.days,
+          opens: entity.hoursSchema.opens,
+          closes: entity.hoursSchema.closes,
+        },
+      },
+    ],
+    location: {
+      "@type": "Place",
+      "@id": `${SITE_URL}/#plant`,
+      name: `${entity.legalName} manufacturing plant`,
+      geo: { "@type": "GeoCoordinates", latitude: entity.geo.lat, longitude: entity.geo.lng },
+    },
+    hasCredential: held.map((c) => ({
       "@type": "EducationalOccupationalCredential",
       credentialCategory: "certification",
-      name: "ISO 9001:2015",
-    },
-    makesOffer: {
-      "@type": "Offer",
-      eligibleQuantity: {
-        "@type": "QuantitativeValue",
-        minValue: SITE.moq.value,
-        unitText: `${SITE.moq.unit} (MOQ)`,
-      },
-    },
+      name: c.code,
+      ...(c.identifier ? { identifier: c.identifier } : {}),
+      ...(c.validThrough ? { validThrough: c.validThrough } : {}),
+      ...(c.issuer ? { recognizedBy: { "@type": "Organization", name: c.issuer } } : {}),
+    })),
   };
-  if (SITE.foundingYear) node.foundingDate = String(SITE.foundingYear);
-  if (SITE.email) node.email = SITE.email;
-  if (SITE.phone) node.telephone = SITE.phone;
+  if (entity.sameAs.length) node.sameAs = entity.sameAs;
   return node;
 }
 
@@ -84,34 +111,19 @@ export function productNode(fm: ProductCategory, path: string): Node {
     name: fm.h1,
     description: fm.seo.description,
     ...(materials.length ? { material: materials } : {}),
-    brand: { "@id": `${SITE_URL}/#organization` },
-    additionalProperty: [
-      {
-        "@type": "PropertyValue",
-        name: "Minimum Order Quantity",
-        value: `${SITE.moq.value} ${SITE.moq.unit}`,
-      },
-      {
-        "@type": "PropertyValue",
-        name: "Monthly Capacity",
-        value: `${SITE.capacity.monthly.toLocaleString("en-GB")} pieces`,
-      },
-    ],
-    offers: {
-      "@type": "Offer",
-      availability: "https://schema.org/InStock",
-      areaServed: [...SITE.exportMarkets],
-    },
+    manufacturer: { "@id": `${SITE_URL}/#organization` },
+    // No Offer, no price, no availability, no minimum: Margo quotes per part.
   };
 }
 
 /** The site itself. One node, emitted once, on the homepage only. */
-export function webSiteNode(): Node {
+export async function webSiteNode(): Promise<Node> {
+  const { entity } = await getSiteSettings();
   return {
     "@type": "WebSite",
     "@id": `${SITE_URL}/#website`,
     url: SITE_URL,
-    name: SITE.legalName,
+    name: entity.legalName,
     publisher: { "@id": `${SITE_URL}/#organization` },
     inLanguage: "en",
     // No SearchAction: there is no site search, and declaring one that does
@@ -135,13 +147,10 @@ export function skuNode(
     name: fm.h1,
     description: fm.seo.description,
     ...(fm.productCode ? { sku: fm.productCode, mpn: fm.productCode } : {}),
-    brand: { "@id": `${SITE_URL}/#organization` },
+    manufacturer: { "@id": `${SITE_URL}/#organization` },
     isSimilarTo: { "@id": `${SITE_URL}${categoryPath}#product` },
-    offers: {
-      "@type": "Offer",
-      availability: "https://schema.org/InStock",
-      areaServed: [...SITE.exportMarkets],
-    },
+    // No Offer and no availability: the IN STOCK badge was a contradiction
+    // in prose; as machine-readable data it would have been a false claim.
   };
 }
 
@@ -190,7 +199,7 @@ export function itemListNode(
  * nodes actually resolve. `type` picks the page-level node; everything else
  * is opt-in.
  */
-export function pageGraph(opts: {
+export async function pageGraph(opts: {
   type?: "WebPage" | "AboutPage" | "ContactPage" | "CollectionPage";
   path: string;
   name: string;
@@ -200,9 +209,9 @@ export function pageGraph(opts: {
   extra?: (Node | null)[];
   /** The homepage, and only the homepage, declares the WebSite node. */
   isHome?: boolean;
-}) {
-  const nodes: Node[] = [organizationNode()];
-  if (opts.isHome) nodes.push(webSiteNode());
+}): Promise<Record<string, unknown>> {
+  const nodes: Node[] = [await organizationNode()];
+  if (opts.isHome) nodes.push(await webSiteNode());
 
   nodes.push({
     "@type": opts.type ?? "WebPage",
@@ -226,8 +235,8 @@ export function pageGraph(opts: {
 }
 
 /** Assembles the full @graph for a product category page. */
-export function productCategoryGraph(fm: ProductCategory, path: string) {
-  const nodes: Node[] = [organizationNode()];
+export async function productCategoryGraph(fm: ProductCategory, path: string) {
+  const nodes: Node[] = [await organizationNode()];
 
   if (fm.schemaTypes.includes("BreadcrumbList")) {
     nodes.push(

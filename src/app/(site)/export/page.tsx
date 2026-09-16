@@ -36,7 +36,7 @@ export default async function ExportPage() {
     <>
       <JsonLd
         status={fm.status}
-        graph={pageGraph({
+        graph={await pageGraph({
           path: "/export",
           name: fm.seo.title,
           description: fm.seo.description,

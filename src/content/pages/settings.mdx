@@ -1,0 +1,234 @@
+---
+# ════════════════════════════════════════════════════════════════════
+# SITE SETTINGS — the strings that must be identical on every page.
+#
+# Content sheets §08 "Strings that must be identical on every page",
+# client-confirmed 2026-09-01 / 2026-09-02. This file is the fallback the
+# site reads when the Sanity document is unavailable; the Sanity document
+# (Studio → Site settings) is what editors change.
+#
+# Anything a page prints that disagrees with a value here is a defect, and
+# `npm run check:claims` reports it.
+# ════════════════════════════════════════════════════════════════════
+
+entity:
+  legalName: Margo Rubber Products
+  shortName: Margo
+  # Verified against Margo's own catalogue and business proposal; the old site
+  # ran three other years at once.
+  foundingYear: 2005
+  address:
+    street: "SRNO. 4494/10, behind Furniture Stop, opposite Samarth Dies, Vilholi"
+    lines:
+      - "SRNO. 4494/10, behind Furniture Stop,"
+      - "opposite Samarth Dies, Vilholi,"
+      - "Nashik, Maharashtra 422010, India"
+    locality: Nashik
+    region: Maharashtra
+    postalCode: "422010"
+    country: IN
+  geo:
+    lat: 19.93214315
+    lng: 73.73324186
+  phone: "+91 96655 79276"
+  whatsapp: "+91 96655 79276"
+  email: info@margorubber.in
+  hours: "Mon–Sat · 09:30–18:30 IST"
+  hoursSchema:
+    days: [Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
+    opens: "09:30"
+    closes: "18:30"
+  gstin: 27AAKFM8595Q1Z1
+  # LinkedIn, IndiaMART and Google Business Profile URLs — CONFIRM with Margo.
+  sameAs: []
+
+commercial:
+  acknowledgement: within one business day
+  quotation: within 48 hours
+  prototype: 48 to 72 hours from an approved drawing
+  samples: inside two weeks
+  production: three to four weeks from drawing approval, two weeks express
+  minimumRunPieces: 10000
+  minimumRunMoulded: >-
+    10,000 pieces per part number, per compound, or quoted against the part
+    where geometry or tooling makes that unrealistic. Prototype and
+    first-article lots sit outside the minimum.
+  minimumRunContinuous: >-
+    Quoted against total length or area, not as a piece count.
+  terms: >-
+    TT and LC accepted, discussed per order. Ex-works Nashik or FOB Nhava Sheva.
+  documents: >-
+    Material test reports, dimensional inspection sheets and a certificate of
+    conformance ship with every consignment.
+  incoterms: >-
+    FOB Nhava Sheva as standard; CIF, EXW and DAP by agreement at quotation stage.
+  tolerance: >-
+    Dimensional conformity to ISO 3302-1, classes M1–M4 moulded and E1–E3
+    extruded — tolerance follows the section.
+  capacityInstalledMonthly: 5000000
+  capacityCurrentMonthly: 1500000
+
+certifications:
+  line: "ISO 9001:2015 · Certificate 09111526A · Integral Certification Ltd"
+  scopeNote: >-
+    Scope: rubber moulded components — quality management, not a product
+    approval.
+  items:
+    - code: "ISO 9001:2015"
+      standing: held
+      statusLabel: Approved
+      title: Quality Management System
+      identifier: 09111526A
+      issuer: Integral Certification Ltd
+      validThrough: "2027-02-21"
+      scope: rubber moulded components
+      body: >-
+        Certificate 09111526A, issued by Integral Certification Ltd, valid to
+        21 February 2027. The certified scope covers moulded rubber components;
+        extension to the extruded and cellular lines is in hand.
+    - code: "IATF 16949:2016"
+      standing: in-progress
+      statusLabel: Upgrade in progress
+      title: Automotive Quality
+      target: end 2026
+      body: >-
+        Our quality management system is being upgraded to IATF 16949:2016,
+        with certification targeted by the end of 2026. Automotive supply today
+        runs against controlled drawing revisions with first-article approval
+        and batch-level traceability.
+    - code: NORSOK M-710 / API
+      standing: in-progress
+      statusLabel: Qualification in progress
+      title: Oil & Gas Elastomer Qualification
+      target: "2027"
+      body: >-
+        The qualification programme for hydrocarbon service is under way and is
+        targeted for 2027. FKM compounds ship against published temperature and
+        fluid-resistance data in the meantime.
+    - code: "ISO 14001:2015"
+      standing: in-progress
+      statusLabel: Upgrade in progress
+      title: Environmental Management
+      target: "2027"
+      body: >-
+        Not currently held. The plant is fully compliant with MIDC environmental
+        and industrial norms, and material utilisation improved 20% after
+        automation.
+    - code: "ISO 45001:2018"
+      standing: in-progress
+      statusLabel: Upgrade in progress
+      title: Occupational Health & Safety
+      target: "2027"
+      body: >-
+        Not currently held. Industrial-grade fire extinguishers, smoke detectors
+        and ventilation throughout the plant, under MIDC industrial norms.
+
+# The eight-row compound table. Every category page, the products hub, the
+# industry pages and the export page carry these values and no others; where
+# a page disagrees, this table wins. Content sheet 01 §10.
+compounds:
+  - code: AEM
+    name: AEM
+    fullName: Ethylene Acrylic Elastomer (Vamac)
+    descriptor: Signature compound, supplied to Mahindra & Mahindra
+    minC: -40
+    maxC: 175
+    continuousMaxC: 160
+    hardness: 50–80 Shore A
+    href: /industries/automotive
+  - code: FKM
+    name: FKM
+    fullName: Fluoroelastomer (Viton)
+    descriptor: Aggressive chemical and hydrocarbon environments
+    minC: -20
+    maxC: 250
+    continuousMaxC: 200
+    hardness: 60–90 Shore A
+    href: /products/oil-seals#fkm
+  - code: VMQ
+    name: Silicone
+    fullName: Vinyl Methyl Silicone (VMQ)
+    descriptor: Widest service range; biocompatible grades available
+    minC: -60
+    maxC: 220
+    hardness: 30–80 Shore A
+    href: /industries/medical-devices
+  - code: EPDM
+    name: EPDM
+    fullName: Ethylene Propylene Diene Monomer
+    descriptor: Weather, ozone and steam resistant
+    minC: -40
+    maxC: 140
+    hardness: 40–90 Shore A
+    href: /products/sponge-foam-rubber
+  - code: NBR
+    name: NBR
+    fullName: Nitrile Butadiene Rubber
+    descriptor: Oil and fuel resistant
+    minC: -30
+    maxC: 120
+    hardness: 40–90 Shore A
+  - code: CR
+    name: Neoprene
+    fullName: Polychloroprene (CR)
+    descriptor: General purpose; flame-retardant grades
+    minC: -40
+    maxC: 120
+    hardness: 40–90 Shore A
+  - code: SBR
+    name: SBR
+    fullName: Styrene Butadiene Rubber
+    descriptor: Abrasion resistant
+    minC: -30
+    maxC: 100
+    hardness: 40–90 Shore A
+  - code: NR
+    name: Natural Rubber
+    fullName: Polyisoprene (NR)
+    descriptor: High resilience, damping
+    minC: -20
+    maxC: 90
+    hardness: 30–80 Shore A
+
+# The corrected account list, company profile p28, in sector order so
+# Automotive leads. Text wordmarks only until logo permission letters land.
+# Victor Reinz is NOT here: the 2026-07-19 reconciliation dropped it as
+# uncorroborated, and the build checklist (2026-09-02) says that removal was
+# not a permission matter and must be confirmed separately before the name
+# returns. Twenty-three names until then.
+clients:
+  trademarkLine: >-
+    Trade marks shown are the property of their respective owners and appear
+    solely to identify commercial supply relationships.
+  items:
+    - { name: Mahindra & Mahindra, sector: Automotive & auto components }
+    - { name: Tata, sector: Automotive & auto components }
+    - { name: Hyundai, sector: Automotive & auto components }
+    - { name: Neo Wheels, sector: Automotive & auto components }
+    - { name: Ukay Metal Industries, sector: Automotive & auto components }
+    - { name: Satish Injecto-Plast, sector: Automotive & auto components }
+    - { name: Abhijeet Plastics (India), sector: Automotive & auto components }
+    - { name: Abhijeet Techno-Plast, sector: Automotive & auto components }
+    - { name: Mutual Industries, sector: Automotive & auto components }
+    - { name: IDEX India, sector: Industrial machinery & heavy engineering }
+    - { name: Shakti Mining Equipments, sector: Industrial machinery & heavy engineering }
+    - { name: Amalgamated Industrial Composites, sector: Industrial machinery & heavy engineering }
+    - { name: Starlite Lighting, sector: Electrical & electronics }
+    - { name: Boost Electronics, sector: Electrical & electronics }
+    - { name: Rohini Industries, sector: Electrical & electronics }
+    - { name: Talco India, sector: Tooling, fabrication & job shops }
+    - { name: Almaas Moulding Works, sector: Tooling, fabrication & job shops }
+    - { name: Press Tool Engineering Works, sector: Tooling, fabrication & job shops }
+    - { name: Suvidh Engineering Industries, sector: Tooling, fabrication & job shops }
+    - { name: Samartha Dies, sector: Tooling, fabrication & job shops }
+    - { name: Minerva Special Purpose Vehicle (MSPV), sector: Specialist vehicles }
+    - { name: Vactech Surgical Equipment, sector: Medical equipment }
+    - { name: Shivi Chemical Technologies, sector: Chemicals & process }
+
+# "Technical guides are reviewed before publication by {name}, {role}, at our
+# Nashik works." Empty until Margo names the reviewer; the line does not render
+# while it is empty.
+guideReviewer:
+  name: ""
+  role: ""
+---

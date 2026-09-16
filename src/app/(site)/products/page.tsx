@@ -35,7 +35,7 @@ export default async function ProductsHubPage() {
     <div className="bg-surface-2">
       <JsonLd
         status={fm.status}
-        graph={pageGraph({
+        graph={await pageGraph({
           type: "CollectionPage",
           path: "/products",
           name: fm.seo.title,

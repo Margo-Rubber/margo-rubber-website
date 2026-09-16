@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Img } from "@/components/ui/Img";
 import { Container } from "@/components/ui/Section";
-import { COMPOUNDS, SITE } from "@/content/site";
+import type { Compound as CompoundRow, SiteSettings } from "@/content/schemas";
 import {
   SkuCompoundPicker,
   type Compound,
@@ -539,18 +539,27 @@ export function SkuSpecs({
   specs,
   dimensional,
   categoryLabel,
+  settings,
 }: {
   productCode?: string;
   specs: readonly { label: string; value: string }[];
   dimensional?: { tiles: readonly { value: string; label: string }[] };
   categoryLabel: string;
+  settings: SiteSettings;
 }) {
+  const held = settings.certifications.items.find((c) => c.standing === "held");
   const rows = [
     { label: "Product Code", value: productCode ?? "On request" },
     { label: "Product Family", value: categoryLabel },
     ...(specs.length ? specs : SAMPLE.specs),
-    { label: "Certifications", value: SITE.certifications.join(", ") },
-    { label: "Minimum Order", value: `${SITE.moq.value.toLocaleString()} ${SITE.moq.unit}` },
+    {
+      label: "Certifications",
+      value: held
+        ? `${held.code} — certificate ${held.identifier}, valid to ${held.validThrough}`
+        : settings.certifications.line,
+    },
+    // One constant, three places: the hero selector, this row and the FAQ.
+    { label: "Minimum Order", value: settings.commercial.minimumRunMoulded },
   ];
   const tiles = dimensional?.tiles.length ? dimensional.tiles : SAMPLE.dimensional.tiles;
 
@@ -617,16 +626,22 @@ export function SkuSpecs({
 export function SkuCompounds({
   codes,
   properties,
+  compounds,
 }: {
   codes: readonly string[];
   properties: Record<string, string[]>;
+  /** The eight rows from site settings. */
+  compounds: readonly CompoundRow[];
 }) {
-  const items: Compound[] = COMPOUNDS.filter((c) => codes.includes(c.code)).map((c) => ({
-    code: c.code,
-    name: c.name,
-    tempC: c.tempC,
-    note: c.note,
-    properties: properties[c.code] ?? [],
+  // Part documents name compounds either by code (FKM) or by display name
+  // (Silicone, Natural Rubber); accept both so no existing record goes dark.
+  const wanted = (c: CompoundRow) => codes.includes(c.code) || codes.includes(c.name);
+  const items: Compound[] = compounds.filter(wanted).map((c) => ({
+    code: c.name,
+    name: c.fullName,
+    tempC: [c.minC, c.maxC] as const,
+    note: c.descriptor,
+    properties: properties[c.code] ?? properties[c.name] ?? [],
   }));
   if (!items.length) return null;
 
@@ -962,10 +977,13 @@ export function SkuCta({
   h1,
   categorySlug,
   categoryLabel,
+  quotation,
 }: {
   h1: string;
   categorySlug: string;
   categoryLabel: string;
+  /** "within 48 hours" — from site settings, the one figure everywhere. */
+  quotation: string;
 }) {
   return (
     <section className="bg-band border-line border-t py-[70px]">
@@ -975,8 +993,8 @@ export function SkuCta({
             <h2 className="text-ink text-2xl font-semibold">Need this part quoted?</h2>
             <p className="text-ink-4 mt-3 max-w-[52ch] text-sm leading-relaxed">
               Send your drawing or a sample. We confirm compound, hardness and
-              tolerance, then quote against your annual quantity. Response within{" "}
-              {SITE.responsePromise}.
+              tolerance, then quote against your annual quantity. We respond{" "}
+              {quotation}.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">

@@ -24,6 +24,7 @@ import type { DocumentActionComponent, TemplateItem } from "sanity";
  */
 
 export const SINGLETON_TYPES = new Set([
+  "siteSettings",
   "homePage",
   "aboutPage",
   "whyMargoPage",

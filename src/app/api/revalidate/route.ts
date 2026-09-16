@@ -81,6 +81,9 @@ export async function POST(request: Request) {
     whyMargoPage: pageTag,
     aboutPage: pageTag,
     siteFooter: pageTag,
+    // Site settings feed the footer, every CTA and the compound tables, so a
+    // publish here invalidates every collection at once — see below.
+    siteSettings: pageTag,
     // Every page draws images, so a new photograph clears the whole map.
     imageOverride: imageOverrideTag,
   };
@@ -88,7 +91,12 @@ export async function POST(request: Request) {
   const tagFor = payload._type ? TAGS[payload._type] : undefined;
 
   const tags: string[] = [];
-  if (tagFor) {
+  if (payload._type === "siteSettings") {
+    // The settings are read by the footer, every CTA, the structured data
+    // and the compound tables — there is no page they do not touch. One
+    // publish here rebuilds every collection rather than guessing which.
+    tags.push(pageTag(), productTag(), industryTag(), skuTag(), resourceTag(), legalTag());
+  } else if (tagFor) {
     // The collection tag covers generateStaticParams and any list of these
     // pages; the per-slug tag covers the page itself.
     tags.push(tagFor());

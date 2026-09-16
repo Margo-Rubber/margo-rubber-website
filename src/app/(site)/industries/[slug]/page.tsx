@@ -29,7 +29,7 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
   const graph = {
     "@context": "https://schema.org",
     "@graph": [
-      organizationNode(),
+      await organizationNode(),
       breadcrumbNode([
         { name: "Home", path: "/" },
         { name: "Industries", path: "/industries" },

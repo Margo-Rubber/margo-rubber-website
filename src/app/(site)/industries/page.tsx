@@ -22,7 +22,7 @@ export default async function IndustriesHubPage() {
     <>
       <JsonLd
         status={fm.status}
-        graph={pageGraph({
+        graph={await pageGraph({
           type: "CollectionPage",
           path: "/industries",
           name: fm.seo.title,

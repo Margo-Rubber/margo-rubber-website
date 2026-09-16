@@ -10,6 +10,7 @@ import { productsHub } from "./documents/products-hub.ts";
 import { homePage } from "./documents/home.ts";
 import { LARGE_MARKETING_TYPES } from "./documents/about-why.ts";
 import { imageOverride } from "./documents/imageOverride.ts";
+import { siteSettings } from "./documents/settings.ts";
 import { legalBlock, legalSection, seo } from "./objects.ts";
 import { UNIVERSAL_BLOCKS } from "./blocks/universal.ts";
 import { PRODUCT_BLOCKS } from "./blocks/product.ts";
@@ -29,6 +30,7 @@ import { INDUSTRY_BLOCKS } from "./blocks/industry.ts";
  */
 export const schemaTypes: SchemaTypeDefinition[] = [
   // Documents
+  siteSettings,
   legal,
   productCategory,
   industry,

@@ -27,7 +27,7 @@ export default async function ContactPage() {
     <>
       <JsonLd
         status={fm.status}
-        graph={pageGraph({
+        graph={await pageGraph({
           type: "ContactPage",
           path: "/contact",
           name: fm.seo.title,

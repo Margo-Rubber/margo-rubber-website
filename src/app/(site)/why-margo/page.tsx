@@ -41,7 +41,7 @@ export default async function WhyMargoPage() {
     <>
       <JsonLd
         status={fm.status}
-        graph={pageGraph({
+        graph={await pageGraph({
           path: "/why-margo",
           name: fm.seo.title,
           description: fm.seo.description,
