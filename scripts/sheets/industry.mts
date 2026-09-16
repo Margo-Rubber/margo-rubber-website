@@ -14,6 +14,8 @@ import { parseBlock, stripNullsDeep } from "../../src/content/blocks.ts";
 import { applyDocument, client, field, heading, lit, litHref, loadSheet, paragraph, paragraphs, rows, section } from "./lib.mts";
 import type { Section } from "./lib.mts";
 import { arrowLink } from "./category.mts";
+import { PRODUCTS } from "../../src/content/routes.ts";
+import { IMAGES } from "../../src/content/images.ts";
 
 export const industryDocSchema = z.preprocess(
   (raw) => stripNullsDeep(raw),
@@ -43,10 +45,21 @@ export type IndustryOptions = {
 
 const has = (sec: Section, label: string) =>
   sec.fields.some((f) => f.label.toLowerCase().startsWith(label.toLowerCase()));
-const slugOf = (href: string) => {
+/**
+ * The category a card links to. A card written "— no product page exists"
+ * (Diaphragms, sheets 23–24) resolves by name through the route registry,
+ * which sends the click to the contact form until the page is built.
+ */
+const slugOf = (name: string, href: string) => {
   const m = href.match(/^\/products\/([a-z0-9-]+)$/);
-  if (!m) throw new Error(`not a product href: ${href}`);
-  return m[1];
+  if (m) return m[1];
+  const entry = PRODUCTS.find((p) => p.label.toLowerCase() === name.toLowerCase());
+  if (!entry) throw new Error(`not a product href and no registry entry: ${name} → ${href}`);
+  return entry.slug;
+};
+const imageFor = (slug: string, fallback: string) => {
+  const key = `products.${slug === "sponge-foam-rubber" ? "sponge-foam" : slug}.hero`;
+  return key in IMAGES ? key : fallback;
 };
 
 export async function applyIndustry(o: IndustryOptions): Promise<void> {
@@ -101,19 +114,21 @@ export async function applyIndustry(o: IndustryOptions): Promise<void> {
   if (!bullets.length) throw new Error(`${o.stem}: no bullets`);
   const cards = rows(comp, "Cards");
   if (!cards.some((r) => r[0] === o.bulletsFor)) throw new Error(`${o.stem}: no card "${o.bulletsFor}"`);
-  patch[`${cp}.items`] = cards.map((r) => {
-    const slug = slugOf(r[2]);
+  const oldImages = (block<{ items?: { image?: string }[] }>("components").items ?? []).map((it) => it.image ?? "");
+  patch[`${cp}.items`] = cards.map((r, i) => {
+    const slug = slugOf(r[0], r[2]);
     return {
       key: r[0],
       name: E(r[0]),
       body: E(r[1]),
       bullets: r[0] === o.bulletsFor ? bullets.map((b) => E(b)) : [],
-      // The linked category's own photograph, not a sector stock image.
-      image: `products.${slug === "sponge-foam-rubber" ? "sponge-foam" : slug}.hero`,
-      cta: { label: E(cardCta[1].replace("{Component}", r[0])), href: r[2] },
+      // The linked category's own photograph, not a sector stock image; a
+      // category without one keeps the page's own slot.
+      image: imageFor(slug, oldImages[i] || oldImages[0]),
+      cta: { label: E(cardCta[1].replace("{Component}", r[0])), href: `/products/${slug}` },
     };
   });
-  patch["related.products"] = cards.map((r) => slugOf(r[2]));
+  patch["related.products"] = cards.map((r) => slugOf(r[0], r[2]));
 
   /* 03 Where components are used */
   const app = s("03");

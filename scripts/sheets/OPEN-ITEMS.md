@@ -127,3 +127,9 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 63. **Quality links.** "View ISO Certificate" and "Download Quality Policy" ship as the sheet's fallback — Request ISO Certificate → /contact?request=iso and Request Quality Policy → /contact?request=quality-policy — until the PDFs exist.
 64. **Export card title/subtitle** ("Nashik → OEM Lines", "Direct supply to OEMs and Tier 1 suppliers") are live strings the sheet does not rewrite; kept.
 65. **Confirmation copy** — Phase 7 forms (as item 36).
+
+## 21–26 Mining, Oil & Gas, Medical Devices, Pumps & Valves, HVAC, Electrical & Electronics
+
+66. **Diaphragms card** (sheets 23, 24) links through the route registry to /contact?product=Diaphragms until the Diaphragms page (sheet 36) is live; its photograph is the page's own slot until the category has one.
+67. **Component bullets, quality-link fallbacks, export card title/subtitle where the sheet gives none, confirmation copy** — as items 62–65.
+68. **Sheet 23 §02 CONFIRM** (diaphragms, resolved 2026-09-03 per the sheet) — listed as written.
