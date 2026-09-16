@@ -120,3 +120,10 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 59. **Construction and Transport cards** link through the route registry to /contact until those pages (sheets 41, 42) are live.
 60. **FAQ node empty.** The two live questions have no written answers on the sheet; a HowTo node carries the four-line specification guide instead, as the sheet's graph asks.
 61. **Confirmation copy** "Enquiry received. A named engineer replies within 48 hours to {email} with a compound, a density and a recommended cut form." — Phase 7 forms.
+
+## 20 Automotive
+
+62. **Component card bullets.** The sheet writes bullets for one card (Bushes & Bushings) and says the other seven "take three bullets each … written per card from the matching product sheet" — none are written, so the seven cards ship with body copy only. The same holds for sheets 21–28.
+63. **Quality links.** "View ISO Certificate" and "Download Quality Policy" ship as the sheet's fallback — Request ISO Certificate → /contact?request=iso and Request Quality Policy → /contact?request=quality-policy — until the PDFs exist.
+64. **Export card title/subtitle** ("Nashik → OEM Lines", "Direct supply to OEMs and Tier 1 suppliers") are live strings the sheet does not rewrite; kept.
+65. **Confirmation copy** — Phase 7 forms (as item 36).

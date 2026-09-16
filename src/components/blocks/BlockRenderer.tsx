@@ -622,7 +622,9 @@ function closingContacts(settings: SiteSettings) {
       ? [
           {
             icon: "cert",
-            text: `${held.code} ${held.statusLabel}`,
+            // "ISO 9001:2015 · Certificate 09111526A" — the contact strip
+            // on the industry pages (sheet 25 §09).
+            text: held.identifier ? `${held.code} · Certificate ${held.identifier}` : `${held.code} ${held.statusLabel}`,
             href: "/certifications",
           },
         ]

@@ -58,7 +58,10 @@ export const FORBIDDEN_CLAIMS: { pattern: RegExp; why: string }[] = [
   { pattern: /Kammprofile|Spiral[- ]wound/i, why: "Metallic gasket types Margo does not make." },
 
   /* ── Certifications ──────────────────────────────────────────────── */
-  { pattern: /IATF\s*16949(?![^.]{0,120}(in progress|upgrade|targeted|being upgraded|roadmap|not (yet )?held|not certified))/i, why: "IATF 16949 is stated only as an upgrade in progress, targeted end 2026 — never as held." },
+  // "Do you hold IATF 16949 certification?" is a question the page answers
+  // with the upgrade (sheet 20 §08); "upgrading … to IATF 16949:2016 and are
+  // targeting certification" is the answer.
+  { pattern: /IATF\s*16949(?!\s*certification\?)(?![^.]{0,120}(in progress|upgrad|target|being upgraded|roadmap|not (yet )?held|not certified))/i, why: "IATF 16949 is stated only as an upgrade in progress, targeted end 2026 — never as held." },
   { pattern: /\bCE[- ](mark|certif)/i, why: "CE marking is not held." },
   // A REACH screen may be named as a roadmap item (sheet 06 §04 EU block), never as held.
   { pattern: /RoHS[- ](certified|compliant|2\.0)|REACH[- ](certified|compliant|SVHC)(?![^.]{0,120}(roadmap|not (yet )?held|on request))/i, why: "Declarations, not certifications, and not made. Composition declarations are produced per part on request." },
