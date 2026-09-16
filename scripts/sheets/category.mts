@@ -143,8 +143,9 @@ export async function applyStandardCategory(o: StandardCategory): Promise<void> 
   patch[`${sp}.rows`] = cellRows(table.rows);
   patch[`${sp}.controls`] = o.controls ?? true;
   if (has(spec, "Filter chips")) {
-    const f = field(spec, "Filter chips", spec.fields.find((x) => x.label.startsWith("Filter chips"))!.kind as "table");
-    const labels = f.kind === "table" ? f.rows.map((r) => r[0]) : (f as { value: string }).value.split(" · ");
+    // A table of Chip | Replaces (sheets 11–17) or one "A · B · C" literal (sheet 09).
+    const f = spec.fields.find((x) => x.label.startsWith("Filter chips"))!;
+    const labels = f.kind === "table" ? f.rows.map((r) => r[0]) : f.kind === "lit" ? f.value.split(" · ") : [];
     patch[`${sp}.chips`] = labels.map((l) => {
       E(l);
       const rule = o.chipRules?.[l];
