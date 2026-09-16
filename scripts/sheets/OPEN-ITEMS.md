@@ -101,3 +101,8 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 49. **Four table rows carry derived values** (Big Support Pad, Oil Seal Filler Cap, Rubber Insulator Head Cover, Boot Tailgate Switch) — the sheet shows its working in "Where the four new rows come from"; the plant should confirm the sizes and compounds.
 50. **Scorpio Footrest Rubber Mat** moved in from Anti-Vibration Mounts (same CONFIRM as item 43).
 51. **Confirmation copy** (as item 36); FAQ "What is the lead time for moulded rubber components?" unanswered on the sheet (as item 37).
+
+## 17 Leak Test Rubber
+
+52. **FAQ node empty.** "Can I reorder leak test rubber in small quantities?" and "What is the lead time for a replacement rig seal?" are named with no written answers; no FAQPage node ships until they are written (as item 37).
+53. **Confirmation copy** (as item 36).

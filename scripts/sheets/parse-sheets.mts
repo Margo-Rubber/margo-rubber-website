@@ -361,7 +361,9 @@ export function parseSheet(file: string): Sheet {
   for (const pre of codes) {
     const t = pre.textContent.replace(/<\/?[bi]>/g, "");
     const title = t.match(/<title>([^<]+)<\/title>/)?.[1];
-    const desc = t.match(/name="description" content="([^"]+)"/)?.[1];
+    // Up to the closing quote-and-bracket: a description may itself carry
+    // inch marks (12" to 24", sheet 17).
+    const desc = t.match(/name="description" content="([\s\S]*?)"\s*>/)?.[1];
     // The <pre> wraps long values for display; the tag value is one line.
     if (title) head.title = clean(title).replace(/\n/g, " ");
     if (desc) head.description = clean(desc).replace(/\n/g, " ");

@@ -1,7 +1,7 @@
 # 17_Product_Leak_Test_Rubber.html — Leak Test Rubber Page Content Sheet
 
 **<title>** Alloy Wheel Leak Test Rubber Manufacturer India | Margo
-**description** Compression sealing rubber for alloy-wheel leak-test rigs, profiled to your rim and bead seat. 12
+**description** Compression sealing rubber for alloy-wheel leak-test rigs, profiled to your rim and bead seat. 12" to 24" and cut to print, 2 to 6 bar, in NBR and EPDM from Nashik, India. Quote in 48 hours.
 
 ## 01 Hero [Rewrite]
 > live: LIVE H1 → Leak Test Rubber · no geo · the second stat claims sealing life Margo cannot evidence · the fourth is an MOQ, on the one page whose product is a consumable
