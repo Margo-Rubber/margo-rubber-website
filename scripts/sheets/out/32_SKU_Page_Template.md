@@ -221,18 +221,23 @@ The pre-filled part parameter is copied from section 12, which already does this
   _[no change] — and the five questions are genuinely the right five. Whoever chose them understood the buyer_
 - **Q1**:
   > We supply in bulk. The minimum run is 10,000 pieces per part number, per compound, or quoted against the part where geometry or tooling makes that unrealistic. Prototype and first-article lots sit outside the minimum.
+  `What is the minimum order quantity for this part?`
   _36 words · client-instructed 2026-09-01. This answer must match the hero selector and the Engineering Data row on the same page — all three currently disagree_
 - **Q2**:
   > Yes. Send the physical sample or the drawing and we will produce a dimensioned drawing and confirm compound selection before tooling. A worn part measures smaller than it was made — we dimension to the original intent, not to the wear, and confirm with you first.
+  `Can you match a competitor specification or reverse-engineer an existing part?`
   _46 words · the worn-sample point is the same one the agriculture sheet makes, and it is the thing a reverse-engineering buyer actually worries about_
 - **Q3**:
   > PDF, DWG, DXF and STEP. A dimensioned 2D drawing with tolerances is enough to quote; a 3D model helps with tooling. If you only have a sample, send the sample — we will produce the drawing.
+  `What file formats do you accept for drawings?`
   _37 words · a small, entirely factual answer that most competitor sites do not give. It also tells the buyer the minimum they need to get a quote, which removes the commonest reason an enquiry stalls_
 - **Q4**:
   > Yes. Material test reports, dimensional inspection sheets and a certificate of conformance ship with every consignment, and batch records are retained per shipment. Hardness, tensile to ASTM D412 and compression set to ASTM D395 Method B are tested in-house.
+  `Do you provide material test reports with each shipment?`
   _40 words · the named methods are the addition, and both are on Margo’s published test list. Consistent with section 08 and with /certifications_
 - **Q5**:
   > TT and LC accepted, discussed per order. Ex-works Nashik or FOB Nhava Sheva, with sea and air freight via established forwarders. Commercial invoice, packing list and certificate of origin are issued with every consignment.
+  `What are your payment and delivery terms for international orders?`
   _35 words · same wording as the export sheet and all nine industry pages, so one answer ships everywhere_
   <details><summary>notes (4)</summary>
   - All five answers in the DOM at first paint, hidden with CSS. The live accordion renders the questions as <span> with the answers not present in the sampled DOM — verify with curl, not devtools, because a hover- or click-mounted answer is invisible to a crawler on all 31 pages.

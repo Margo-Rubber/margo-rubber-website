@@ -46,13 +46,22 @@ A structured decision framework for selecting between rubber compounds — tempe
   _[no change] — and this is the strongest of the three categories: compound selection is the question Margo is asked most and the one the site already answers best_
 - **Card 1**:
   > Compares silicone and EPDM across thermal stability, weathering and fluid compatibility — silicone −60 to +220 °C, EPDM −40 to +140 °C — and the trade-off that decides most specifications: EPDM resists ozone and weather, silicone survives the higher temperature, and neither tolerates mineral oil.
+  `MATERIAL COMPARISON · 5 min read
+Silicone vs EPDM: Selecting the Right Elastomer for High-Temperature Seals`
+  `[ Read Guide → /resources/silicone-vs-epdm-high-temperature-seals ]`
   _44 words · live is 16 · Updated 2026-09-03 — all seven guides are written, so the three holding changes on this card come off: the read time is published rather than struck, the description is in the present tense because the guide exists, and Read Guide points at the article instead of deflecting to Ask an engineer. The read times are the article sheets’ own figures, not estimates.
 The two temperature ranges come from the locked homepage table and cost nothing to state now. The oil sentence is the actual answer to the question — it is the thing a buyer comparing these two compounds most often gets wrong, and putting it on the card means the card is useful even before the guide exists_
 - **Card 2**:
   > Compares fluorocarbon and nitrile across temperature, chemical resistance and cost-in-use — FKM −20 to +250 °C, NBR −30 to +120 °C. FKM is the answer where temperature or aggressive media demand it; NBR is the answer everywhere else, and it costs a fraction as much.
+  `MATERIAL COMPARISON · 6 min read
+FKM vs NBR: Which Rubber Is Right for Your Application?`
+  `[ Read Guide → /resources/fkm-vs-nbr-oil-seal-guide ]`
   _44 words · live is 15 · “cost-in-use” is the right frame and the live card already has it. The addition states the decision plainly: this comparison is almost always a cost question wearing a technical costume, and saying so is more useful than another spec table_
 - **Card 3**:
   > Sets out a decision framework across the compounds we mix — FKM, NBR, EPDM, silicone and neoprene — with temperature ranges, hardness bands and chemical compatibility, and the flange standards a gasket is drawn to: ASME B16.21 for nonmetallic flat gaskets, EN 1514-1, AWWA C111/A21.11 for water.
+  `MATERIAL COMPARISON · 8 min read
+Gasket Material Selection Guide`
+  `[ Read Guide → /resources/gasket-material-selection-guide ]`
   _49 words · live is 33 · “Includes a material matrix” becomes “will set out” — the live wording promises a document that does not exist.
 The three standards are the addition and they are the reason this guide should ship first. All three are verified in this content set, and ASME B16.21 is the correction to an error the live site makes on three pages, where B16.20 — metallic gaskets — is cited for rubber. Publishing this guide fixes a sitewide error and earns a term nobody else is targeting_
   <details><summary>notes (5)</summary>
@@ -69,10 +78,17 @@ The three standards are the addition and they are the reason this guide should s
   _[no change] — and “tolerances” is a word this site needs to get right, since it currently publishes four different tolerance figures across four pages_
 - **Card 1**:
   > Cross-references the international sizing standards with tolerance and groove-dimension guidance. ISO 3601-1 is the current standard and its size code matches the AS568 dash number; BS 1806 was superseded by BS ISO 3601 but is still widely quoted, so a working chart has to carry all three.
+  `O-Ring Size Chart: AS568, BS1806 & Metric Standards Explained`
+  `SIZING & SPEC · 5 min read
+O-Ring Size Chart: AS568, ISO 3601-1 and BS 1806 Explained`
+  `[ Read Guide → /resources/o-ring-size-chart ]`
   _48 words · live is 14 · the title changes and the reason is a credibility one. BS 1806 has been superseded by BS ISO 3601. It is not wrong to name it — it is still very widely used for cross-reference, which is exactly why it belongs on a chart — but a sizing guide for engineers that names only the withdrawn standard and omits the current one loses the reader it is aimed at.
 Naming all three, and saying which is current, is the whole value of the guide and it can be said on the card today. Verified live 2026-09-02. Note the spacing fix too: BS1806 is written BS 1806_
 - **Card 2**:
   > Covers bond geometry, surface preparation and the failure modes that decide whether a bonded part lasts — across the five applications where the bond is the part. No load-rating table: a load rating belongs to a part, not to a bond. We bond in-house — bushes, mounts and bonded seals — so the guide is written from the tooling and the process rather than from a textbook.
+  `SIZING & SPEC · 7 min read
+Rubber-to-Metal Bonded Parts: Design & Specification Guide`
+  `[ Read Guide → /resources/rubber-to-metal-bonded-parts-guide ]`
   _40 words · live is 14 · “We bond in-house” is the addition (client-confirmed) and it is what separates this guide from every generic version of it online. Of the seven topics this is the one where Margo has the strongest claim to be the author — the anti-vibration mounts and bushes product pages both depend on the capability_
   <details><summary>notes (5)</summary>
   - O-ring size chart is the highest-volume term on this entire website and it is a page that gets bookmarked and returned to, which is rare for a manufacturer. It is worth building properly — real tables, not an image — and it is the one guide here that can earn links.
@@ -88,10 +104,16 @@ Naming all three, and saying which is current, is the whole value of the guide a
   _[no change]_
 - **Card 1**:
   > Sets out a due-diligence checklist for quality systems, tooling ownership, capacity and documentation — including the three structural questions that separate a manufacturer from a trading house: who mixes the compound, who owns the tooling, and whose name is on the batch record.
+  `SOURCING & BUYER DECISION · 5 min read
+How to Evaluate a Precision Rubber Manufacturer: 8 Questions to Ask`
+  `[ Read Guide → /resources/how-to-evaluate-a-rubber-manufacturer ]`
   _45 words · live is 14 · the three questions come from the factory-versus-trading-company section already drafted for /about, so most of this guide is written.
 One sequencing warning for the developer. A guide telling buyers to “ask for the certificate, then verify it with the issuing body” cannot ship while another page of the same site claims four certifications Margo does not hold. /why-margo comes down before this guide goes up — otherwise the guide indicts its own publisher_
 - **Card 2**:
   > Compares lead time, quality systems, minimum order and total landed cost for procurement managers assessing supply-chain risk.
+  `SOURCING & BUYER DECISION · 6 min read
+India vs China: Sourcing Rubber Seals & Gaskets for Export Markets`
+  `[ Read Guide → /resources/india-vs-china-rubber-sourcing ]`
   _18 words · live is 19 · deliberately the shortest card in this sheet.
 This is the one topic of the seven where nothing should be added to the card, because everything worth saying needs a source. Duty rates, freight costs, lead times and MOQ norms all move, and every figure would date. Write it from live trade data with dated citations, or do not write it — a comparison piece by an interested party is read sceptically to begin with, and one unsupported number discredits the rest.
 Publish this one last, after the five technical guides have established that this library is a reference rather than a sales asset_

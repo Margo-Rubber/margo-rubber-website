@@ -143,12 +143,18 @@ ISO 9001:2015 certified manufacturing facility · certificate 09111526A`
   _51 words · live is 30 · certificate identity and the IATF position are the additions. Agricultural OEMs run automotive-style supplier audits, and a stated upgrade with a date is what an auditor files. Same wording as the other eight industry sheets_
 - **Card 1**:
   > Certified quality management covering all production and inspection processes. Certificate 09111526A, valid to 21 February 2027; documentation available on request.
+  `ISO 9001:2015
+Quality Management System`
   _20 words · live is 15 · the number replaces nothing, it is added_
 - **Card 2**:
   > Every component produced against a controlled drawing revision. No substitutions without approval.
+  `OEM Compliance
+Drawing-Matched Production`
   _[no change] — twelve words, and “no substitutions without approval” is the single sentence an OEM buyer most wants to read_
 - **Card 3**:
   > Raw material certificates and batch records retained per shipment. Available to agriculture buyers on request.
+  `Batch Traceability
+Full Material Traceability`
   _[no change]_
 - **Buttons ×3** (Button | Live | Ships as):
   | View ISO Certificate | no href | /certifications#iso-9001 |
@@ -200,23 +206,29 @@ The two requirements that do apply are named instead: ISPM-15 on the wooden pall
   _[no change to either]_
 - **Q1**:
   > EPDM is the usual choice for weather-exposed components, for its UV and ozone resistance across −40 °C to +140 °C. Natural rubber blends are used where abrasion resistance matters more than weathering, at −20 °C to +90 °C. Ozone resistance is tested in-house before release.
+  `Which compound suits continuous outdoor exposure?`
   _42 words · live is 32 · two ranges and the in-house test added. Sits in the 40–60 word extraction band_
 - **Q2**:
   > Compound selection is driven by the specific chemistry in contact. Send the chemical, concentration and service temperature and we will recommend a compound. Send the concentrate as well as the diluted spray — a compound that holds against a field dilution may not hold in the mixing tank.
+  `Can you supply components resistant to agricultural chemicals?`
   _49 words · live is 26 · the live answer is already the best FAQ answer in the whole set — it refuses to guess and asks for the three inputs that decide it. The addition is the one thing it misses, and it is the thing that actually fails_
 - **Q3**:
   > 500 pieces per part number, per material. Catalogue sizes ship in 14 to 21 days ex-works Nashik from drawing approval.
   > We supply in bulk. The minimum run is 10,000 pieces per part number, per compound, or quoted against the part where geometry or tooling makes that unrealistic. Prototype and first-article lots sit outside the minimum. Lead time is confirmed with the quotation, from approved drawing and approved sample.
+  `What is the minimum order quantity?`
   _48 words · live is 21 · client instruction, 2026-09-01. Fifth industry page with a dedicated minimum-order FAQ and the number was wrong in the other direction. The lead time goes too — “catalogue sizes” contradicts a page that says twice that nothing is supplied from a catalogue, and 14 to 21 days is not a promise any drawing-matched moulder can make before tooling is settled.
 On this sector the corrected answer qualifies buyers in, not out. An agricultural OEM ordering linkage bushes orders them by the tens of thousands_
 - **Q4**:
   > Yes. Bellows and boots are quoted against convolution count, free and compressed length, diameter, flex-cycle target and service temperature. We hold the geometry and the compound; the cycle life is proved by your rig or a third-party laboratory, and we will support that test.
+  `Do you produce protective boots and bellows?`
   _48 words · live is 24 · asking for the flex-cycle target is right; the addition is how it is answered. Margo publishes no fatigue rig, and De Mattia flex testing to ISO 132, ASTM D430 or ASTM D813 is what a cycle-life number would have to come from. Same position as the bellows product sheet_
 - **Q5**:
   > Yes. Send the physical sample or the equipment make and model and we will produce a drawing and confirm compound selection. A worn part measures smaller than it was made — we dimension to the original intent, not to the wear, and confirm the result with you before tooling.
+  `Can you match an existing worn part?`
   _50 words · live is 25 · the addition is the part a reverse-engineering buyer worries about and almost nobody publishes: copying a worn sample reproduces the wear. Saying it is both reassuring and true_
 - **Q6 — new**:
   > We hold ISO 9001:2015 — certificate 09111526A, issued by Integral Certification Ltd, valid to 21 February 2027. An IATF 16949:2016 upgrade is in progress, targeted for completion by the end of 2026. ISO 14001 and ISO 45001 are targeted for 2027. Documentation is available on request.
+  `Are you certified, and do you meet automotive-style supplier requirements?`
   _47 words · new sixth question — tell the developer the accordion grows by one row. Agricultural OEMs run automotive-style supplier audits and the question is asked on every one of them. Same answer as the other eight industry sheets_
   <details><summary>notes (5)</summary>
   - All six answers in the DOM at first paint, hidden with CSS. An accordion that mounts its answer on click ships a page with six questions and no answers.
@@ -231,6 +243,8 @@ On this sector the corrected answer qualifies buyers in, not out. An agricultura
 - **Same CTA variant as HVAC and electrical & electronics**:
   > Three of the eight industry pages written so far use this block — an eyebrow, a heading, a body line, two buttons and a contact strip — where the other five use the plain shared CTA. Both contact fields are unfilled on all three.
   > The correct values are in the footer of this same page, which is what makes it a component-wiring problem rather than a copy problem: the data exists, the block was never connected to it. Fix the component once and three pages are fixed together. Water & fluid management is the last page unchecked.
+  `✆ +91 (Nashik), Contact for number
+✉ Contact for email`
 - **Eyebrow**: `GET STARTED`
   _[no change]_
 - **H2 — 2 lines**: “Ready to specify agricultural components” / “from the manufacturer?”  (accent: from the manufacturer?)

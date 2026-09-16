@@ -339,6 +339,7 @@ ATTACH DRAWING / SPEC (OPTIONAL) — PDF, DWG or image, max 10MB`
 - **Submit button**: `Request Engineering Quotation →`
 - **Footnote**:
   > — rfq@margorubber.com is published on /contact and is the wrong TLD. If that mailbox does not exist, quote requests from the primary contact page are bouncing or vanishing right now. This is the only defect on the site that loses money today.
+  `Reply within one business day · info@margorubber.in · +91 96655 79276`
   _TEST TODAY_
   <details><summary>notes (6)</summary>
   - Heading levels. <h2> then <h3>. Stat values are <p>. On the live /contact, footer column labels are marked up as <h2> — that fragments the outline and must be fixed with this section.

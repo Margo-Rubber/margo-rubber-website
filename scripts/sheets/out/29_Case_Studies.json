@@ -284,6 +284,10 @@
           "leads": [
             "certificate 09111526A, Integral Certification Ltd, valid to 21 February 2027, scope: rubber moulded components"
           ],
+          "lits": [
+            "CERTIFICATIONS\nISO 9001:2015 & Quality Approach",
+            "[ View Certifications → /certifications ]"
+          ],
           "note": "50 words · live is 27 · this card absorbs the Quality Philosophy card, whose second sentence is too good to lose and whose button never had a destination. The certificate identity is added, and the scope with it — the card previously implied the certificate covers everything"
         },
         {
@@ -295,6 +299,10 @@
           "leads": [
             "60+ active customers, an average relationship of more than ten years, 95% repeat orders and over 99% on-time delivery."
           ],
+          "lits": [
+            "DELIVERY RECORD\nWhat We Have Actually Done",
+            "[ See Who We Supply → /about ]"
+          ],
           "note": "44 words · this is the card the page most needs and does not have. The section is headed “existing trust proof” and then offers three routes to documents and none to the actual trading record.\nEvery figure is from the signed company profile p27 — nothing derived, nothing rounded. It also fixes the page’s core contradiction: a buyer who reads “no case studies” in the hero now finds the reconciliation two screens later instead of discovering it by accident on /about.\nIt replaces the Why Margo card, which points at a page recommended for deletion"
         },
         {
@@ -305,6 +313,10 @@
           ],
           "leads": [
             "all eight compounds we mix"
+          ],
+          "lits": [
+            "TECHNICAL SPECS\nCompound & Material Data",
+            "[ View Compound Data → /products ]"
           ],
           "note": "35 words · live is 33 · the button changes from a download that does not exist to a page that does.\n“Published on the page, not gated behind a form” is worth saying out loud. It is true, it is unusual in this sector, and it is the same argument as “numbers, not adjectives” one section above — which makes the page consistent with itself. If the PDF is produced later, add it as a second link; do not remove the on-page route"
         }

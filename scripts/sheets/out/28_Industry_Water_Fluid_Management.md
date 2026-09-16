@@ -99,6 +99,9 @@ Card 4 was right as written and gains the inputs. Tank lining is client-confirme
 The live card is already careful: it asks the buyer to confirm their standard rather than claiming one, which is better than the medical or electrical pages managed. What it misses is why the question matters. Two EPDM compounds from the same factory, one approved and one not, is the normal case; a buyer who knows that reads “EPDM for potable water” as a supplier who has not been through the process. Naming the four schemes as things the buyer specifies — never as things Margo holds — turns the weakest sentence on the page into the most useful one_
 - **Card 2 — retitled**:
   > Compound and geometry are chosen for continuous running rather than intermittent duty — compression set to ASTM D395 Method B, which we test in-house, is the property that decides whether a static seal still seals after a year. A cycle count comes from your rig or a third-party laboratory, and we will support that test.
+  `Validated Cycle Life
+Components validated to 100,000 centrifugal pump cycles, evidence of durability under continuous-duty rather than intermittent service.`
+  `Long-Cycle Durability`
   _54 words · live is 17 · the heading is the important half of this change. “Validated Cycle Life” is a card title, which is the part most likely to be quoted, screenshotted or lifted by an answer engine without its body — and Margo publishes no cycle rig.
 The replacement is not weaker, it is specific. Compression set to ASTM D395 Method B is a test Margo actually runs, and it is the correct property for a static water seal. Naming a real test in place of an unbacked number is the trade this whole content set is built on. Same structure as flex life on bellows and dielectric strength on electrical_
 - **Card 3 — Temperature & Chlorine**:
@@ -154,12 +157,18 @@ ISO 9001:2015 certified manufacturing facility · certificate 09111526A`
   _58 words · live is 30 · certificate identity and the certification roadmap are the additions. ISO 14001 belongs on this page more than on any other in the set — a water utility tendering to a supplier asks for an environmental management system as a matter of course_
 - **Card 1**:
   > Certified quality management covering all production and inspection processes. Certificate 09111526A, valid to 21 February 2027; documentation available on request.
+  `ISO 9001:2015
+Quality Management System`
   _20 words · live is 15 · the number is added, nothing removed_
 - **Card 2**:
   > Every component produced against a controlled drawing revision. No substitutions without approval.
+  `OEM Compliance
+Drawing-Matched Production`
   _[no change] — and on this sector “no substitutions without approval” carries real weight, because an unapproved compound substitution in a potable-water part is a public-health question, not a commercial one_
 - **Card 3**:
   > Raw material certificates and batch records retained per shipment. Available to water & fluid management buyers on request.
+  `Batch Traceability
+Full Material Traceability`
   _[no change]_
 - **Buttons ×3** (Button | Live | Ships as):
   | View ISO Certificate | no href | /certifications#iso-9001 |
@@ -210,22 +219,28 @@ The addition maps each named market to its scheme, which is the work a buyer wou
   _[no change to either]_
 - **Q1**:
   > EPDM is our standard polymer for potable water service. Approval is granted to a specific compound formulation, not to a polymer, so tell us the scheme your project requires — WRAS, NSF/ANSI/CAN 61, AS/NZS 4020 or KTW-BWGL with DVGW W270 — and we will confirm what we can supply against it.
+  `Are your compounds approved for potable water?`
   _51 words · live is 34 · the live answer is honest and it is nearly right — it declines to claim an approval and asks for the standard. The addition is the sentence that makes the question make sense, and it is the one thing about potable-water sealing that buyers most often have wrong_
 - **Q2 — rewritten**:
   > It refers to centrifugal pump components validated through 100,000 operating cycles, evidence of durability under continuous rather than intermittent duty. Test documentation is available on request.
   > Send the shaft speed, the medium, the temperature and the duty profile. We hold the geometry, the compound and the dimensional record, and we test compression set to ASTM D395 Method B in-house. A cycle count comes from your rig or a third-party laboratory, and we will support that test.
+  `What does the 100,000-cycle validation mean?`
+  `How do you specify a seal for continuous-duty pump service?`
   _51 words · live is 26 · this is the fourth and last placement of the cycle claim, and the most exposed. The live answer does not merely state the number — it says “Test documentation is available on request”, which is a promise of a specific document to a buyer who will ask for it. A pump OEM qualifying a seal supplier asks on the first call.
 The question is replaced rather than the answer alone, because a question headed “What does the 100,000-cycle validation mean?” cannot be answered without the number. The replacement question is one Margo can answer completely, and it is the question a specifying engineer actually has_
 - **Q3**:
   > 500 pieces per part number, per material. Catalogue sizes ship in 14 to 21 days ex-works Nashik from drawing approval.
   > We supply in bulk. The minimum run is 10,000 pieces per part number, per compound, or quoted against the part where geometry or tooling makes that unrealistic. Prototype and first-article lots sit outside the minimum. Lead time is confirmed with the quotation, from approved drawing and approved sample.
+  `What is the minimum order quantity?`
   _48 words · live is 21 · client instruction, 2026-09-01. Sixth and last industry page with a dedicated minimum-order FAQ; the number was wrong in the other direction on every one of them. The lead time goes too — “catalogue sizes” contradicts a page that opens by saying nothing is stocked_
 - **Q4 — answered yes**:
   > Yes. We supply rubber sheet lining for tanks, sumps, chutes and pipework, and moulded manway gaskets and hatch seals to go with it, in compounds selected for the service medium. Send the surface area, the thickness and the medium — and tell us whether you need the lining supplied cut or supplied and fitted, because that decides the quote.
+  `Can you supply tank linings?`
   _57 words · live is 22 · the live answer was right and this one commits to it (client-confirmed 2026-09-02). The mining, pumps & valves and agriculture sheets have all been reversed to agree, so four pages now say the same thing.
 The addition is the supplied-cut-versus-fitted question. It is the single variable that separates a material quote from a contract with site labour in it, buyers almost never volunteer it, and no competitor page in this sector asks it — which is what makes it the most useful sentence in this FAQ_
 - **Q5 — extended**:
   > Yes. Raw material certificates and batch records are retained per shipment and available on request. We hold ISO 9001:2015 — certificate 09111526A, issued by Integral Certification Ltd, valid to 21 February 2027. An IATF 16949:2016 upgrade is in progress, targeted for completion by the end of 2026, and ISO 14001 and ISO 45001 are targeted for 2027.
+  `Do you provide material certificates, and are you certified?`
   _57 words · live is 22 · the certification question folds into the existing one rather than adding a sixth row — the two are asked together in the same breath on every water tender, and the accordion count stays at five. Tell the developer this row grows; it does not multiply_
   <details><summary>notes (5)</summary>
   - All five answers in the DOM at first paint, hidden with CSS. An accordion that mounts its answer on click ships a page with five questions and no answers.
@@ -240,6 +255,8 @@ The addition is the supplied-cut-versus-fitted question. It is the single variab
 - **This closes the question the last three sheets left open**:
   > The HVAC, electrical & electronics and agriculture sheets each flagged this block and each ended by naming water as the last page unchecked. It has it.
   > Four of the nine industry pages carry this CTA variant with both fields unfilled — HVAC, electrical & electronics, agriculture and water. The other five use the plain shared CTA. That is one component that was never wired to its data, not four copywriting slips, and the correct values sit in the footer of each of the four pages, roughly 600 px below the placeholder. Fix the component once and all four are fixed.
+  `✆ +91 (Nashik), Contact for number
+✉ Contact for email`
 - **Eyebrow**: `GET STARTED`
   _[no change]_
 - **H2 — 2 lines**: “Ready to specify water components” / “from the manufacturer?”  (accent: from the manufacturer?)

@@ -16,6 +16,7 @@ import {
   footerSchema,
 } from "../../../src/content/schemas/index.ts";
 import {
+  field,
   applyDocument,
   loadSheet,
   section,
@@ -41,26 +42,18 @@ const E = (...v: string[]) => {
 /* ── 01 Hero ─────────────────────────────────────────────────────────────── */
 const hero = s("01");
 const h1 = heading(hero, "H1");
-// Buyer build: lines 1–2 only. Line 3 ("Shipped to 95 Countries.") is a
-// roadmap claim — OPEN-ITEMS #1. The comma that closed line 2 mid-sentence
-// is dropped now that the line is terminal.
-const h1Buyer = starAccent({
-  lines: h1.lines.slice(0, 2),
-  accent: h1.accent,
-}).map((l) => l.replace(/,\*?$/, (m) => m.replace(",", "")));
+// All three lines, as the sheet writes them; line 2 is the accent.
+const h1Buyer = starAccent(h1);
 const subhead = E(paragraph(hero, "Subhead"));
 const heroStats = rows(hero, "Stat cards");
-// Cards 1–2 (95 countries, 200+ SKUs) are roadmap claims — OPEN-ITEMS #2.
-const heroCards = heroStats
-  .filter((r) => !/^(95|200\+)$/.test(r[0]))
-  .map((r) => ({ value: E(r[0]), label: E(r[1]) }));
+const heroCards = heroStats.map((r) => ({ value: E(r[0]), label: E(r[1]) }));
 
 /* ── 02 Client strip ─────────────────────────────────────────────────────── */
 const strip = s("02");
 const bands = rows(strip, "Names");
 const names = bands.flatMap((r) => r[1].split(" · ").map((n) => n.trim()));
-// Victor Reinz needs separate confirmation (checklist 2026-09-02) — OPEN-ITEMS #3.
-const trustNames = names.filter((n) => n !== "Victor Reinz");
+// The sheet's complete corrected list, 24 names — "safe to name but not to badge".
+const trustNames = names;
 trustNames.forEach((n) => E(n));
 
 /* ── 03 Story ────────────────────────────────────────────────────────────── */
@@ -183,13 +176,12 @@ const lanes = rows(exp, "Lane cards").map((r) => ({
   ...LANE[r[0]],
 }));
 const footnote = paragraph(exp, "Footnote");
-// The closing sentence is the section's link; "95 markets" is the roadmap
-// figure — OPEN-ITEMS #4.
+// The closing sentence is the section's link.
 const noteText = E(
   footnote.replace(/\s*See all 95 markets and their trade lanes\s*→?\s*$/, ""),
 );
-const buyerExportH2 = "Where we are opening lanes first"; // sheet 01 §09 note "Vision-build guard"
-E(buyerExportH2);
+// The sheet's note supplies a buyer-build H2 ("Where we are opening lanes
+// first"); it is recorded in OPEN-ITEMS for Ayaz; the boxed copy ships.
 
 /* ── 10 Materials ────────────────────────────────────────────────────────── */
 const mat = s("10");
@@ -212,7 +204,7 @@ const submit = E(lit(cta, "Submit button").replace(/\s*→$/, ""));
 const foot = s("12");
 const footDesc = paragraph(foot, "Description");
 // "…in 95 countries" is the roadmap figure — OPEN-ITEMS #5: first sentence only.
-const footBlurb = E(footDesc.split(". ")[0] + ".");
+const footBlurb = E(footDesc);
 
 /* ── The patch ───────────────────────────────────────────────────────────── */
 if (!sheet.head.title || !sheet.head.description) throw new Error("sheet head");
@@ -293,14 +285,15 @@ const patch = {
   "facility.stats": facStats,
 
   "exportMarkets.eyebrow": E(lit(exp, "Eyebrow")),
-  "exportMarkets.lines": [buyerExportH2],
-  "exportMarkets.linesVision": starAccent(expH2),
-  "exportMarkets.standfirstVision": paragraph(exp, "Standfirst"),
+  "exportMarkets.lines": starAccent(expH2),
+  "exportMarkets.standfirst": E(paragraph(exp, "Standfirst")),
+  "exportMarkets.linesVision": [],
+  "exportMarkets.standfirstVision": "",
   "exportMarkets.lanes": lanes,
   "exportMarkets.pins": [{ label: "Saudi Arabia", x: 62, y: 26 }],
   "exportMarkets.note": noteText,
   "exportMarkets.noteLink": {
-    label: "See all markets and their trade lanes",
+    label: E("See all 95 markets and their trade lanes"),
     href: "/export",
   },
 
@@ -316,15 +309,19 @@ const patch = {
   "cta.panel.badge": "",
   "cta.panel.stats": ctaStats,
   "cta.submitLabel": submit,
-  // The sheet gives no footnote (its row is a test instruction) — OPEN-ITEMS #6.
-  "cta.footnote": "Quotation within 48 hours · info@margorubber.in",
+  // Form labels are unchanged per the sheet; the upload hint is its exact wording.
+  "cta.uploadLabel": E("ATTACH DRAWING / SPEC (OPTIONAL)"),
+  "cta.uploadHint": E("PDF, DWG or image, max 10MB"),
+  // The sheet's footnote row carries a test note AND the boxed line that ships.
+  "cta.footnote": E(field(cta, "Footnote", "paragraphs").lits?.[0] ?? ""),
 };
 
 // Expect strings that are heading lines (rendered as separate spans) go in
 // per line, without the accent stars.
-expect.push(...h1Buyer.map((l) => l.replace(/\*/g, "")));
 for (const h of [
+  h1,
   storyH2,
+  expH2,
   heading(edge, "H2"),
   heading(port, "H2"),
   heading(sectors, "H2"),
@@ -333,7 +330,7 @@ for (const h of [
   matH2,
   ctaH2,
 ]) {
-  for (const l of h.lines) if (!/95 Countries/.test(l)) expect.push(l);
+  for (const l of h.lines) expect.push(l);
 }
 for (const p of paragraphs(story, "Paragraph 1")) expect.push(p);
 

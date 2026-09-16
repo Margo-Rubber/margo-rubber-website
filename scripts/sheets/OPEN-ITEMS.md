@@ -6,19 +6,14 @@ build (Build Instructions §01) or a row the sheet marks CONFIRM.
 
 ## 01 Homepage
 
-1. **Hero H1, line 3 — "Shipped to 95 Countries."** Roadmap claim (95 countries). The buyer build shows lines 1–2 only, with line 2's closing comma dropped: "Precision Rubber Components / Manufactured in India". *Needed: buyer-build wording for line 3, or confirm two lines.*
-2. **Hero stat cards 1–2 — "95 Countries Served", "200+ Catalogue SKUs".** Roadmap claims. Buyer build shows "5M Components Per Month" and "ISO 9001:2015 Certified Quality". *Needed: two buyer-build figures, or confirm two cards.*
-3. **Client strip — Victor Reinz.** On the sheet's 24-name list; the checklist (2026-09-02) says it needs separate confirmation. Shown as 23 names. *Needed: yes/no.*
-4. **Export markets — buyer build.** H2 uses the sheet's own buyer variant ("Where we are opening lanes first"); the standfirst ("…to 95 countries…") and the vision H2 are on the concept build only. The footnote link reads "See all markets and their trade lanes" — the sheet's "See all 95 markets…" minus the figure. *Needed: buyer-build standfirst, and confirm the link text.*
-5. **Footer description.** The sheet's second sentence ends "…in 95 countries". Buyer build shows the first sentence only. *Needed: buyer-build second sentence, or confirm one sentence.*
-6. **Contact panel footnote.** The sheet's footnote row is a test instruction (rfq@ mailbox), not copy. The line under the form reads "Quotation within 48 hours · info@margorubber.in", built from Site settings. *Needed: confirm or supply.*
-7. **Facility badge / contact panel badge.** The sheet gives neither; both are now empty and the pills do not render. (The old badge named MIDC Ambad.)
+Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including the three figures the Build Instructions §01 mark as concept-build only (95 countries, 200+ catalogue SKUs, named ports) and the full 24-name account list. They are in the live fields. Below is only what the sheet itself leaves open.
+
+1. **Export markets H2 — buyer-build variant.** The sheet's note says on the buyer-facing build this H2 becomes "Where we are opening lanes first" and each card reads as a target market. The boxed H2 ("95 markets screened. Eighteen playbooks. Five live lanes.") ships. *Decide whether the note applies.*
+2. **Facility badge / contact panel badge.** The sheet gives neither; both are empty and the pills do not render. (The old badge named MIDC Ambad.)
 
 ## 02 Products hub
 
-8. **Hero stat card — "200+ Catalogue SKUs".** Roadmap claim; the buyer build shows the other three cards. *Needed: a buyer-build figure, or confirm three cards.*
-9. **Sector panels — four "Typical clients" cells.** Oil & Gas, HVAC, Water and Agriculture have no named account; per the sheet the buyer type is published (e.g. "Gulf EPC and equipment suppliers"). *The sheet asks: do any of the four have an account that never reached the company profile?*
-10. **Marquee strip under the hero.** The sheet has no such element; the old one named Aerospace and Pharmaceutical. Now empty (hidden).
-11. **Testing CTA — "Download the test capability statement".** Hidden until a PDF exists (sheet: CONFIRM the file).
-12. **Catalogue bullets — "CAD drawing index with part numbers"** comes off unless the index exists (sheet: CONFIRM). Not shown.
-13. **Certifications — ISO 14001 / ISO 45001 rows.** The sheet marks both CONFIRM before they ship; they render as "[Upgrade in progress]" from Site settings. *Needed: confirm the 2027 targets.*
+3. **Sector panels — four "Typical clients" cells.** Oil & Gas, HVAC, Water and Agriculture have no named account; per the sheet the buyer type is published (e.g. "Gulf EPC and equipment suppliers"). *The sheet asks: do any of the four have an account that never reached the company profile?*
+4. **Marquee strip under the hero.** The sheet has no such element; the old one named Aerospace and Pharmaceutical. Now empty (hidden).
+5. **Testing CTA — "Download the test capability statement".** Hidden until a PDF exists (sheet: CONFIRM the file).
+6. **Certifications — ISO 14001 / ISO 45001 rows.** The sheet marks both CONFIRM before they ship; they render as "[Upgrade in progress]" from Site settings. *Needed: confirm the 2027 targets.*

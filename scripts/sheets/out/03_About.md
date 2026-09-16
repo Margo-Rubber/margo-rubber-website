@@ -248,6 +248,8 @@ Founder & Director · Margo Rubber Products`
   |  | No record of this award. Margo had no export shipments in 2023. |
 - **Auditor strip**:
   > Replaces Bureau Veritas · TÜV SÜD · SGS India · FIEO. Naming four certification bodies that have never audited Margo is the single most exposed claim on this page. Each is a real company with a public certificate register, a legal team and a trademark. It is checkable in one search, and it is their name being used, not Margo’s.
+  `CERTIFIED BY
+Integral Certification Ltd`
   <details><summary>notes (4)</summary>
   - Shared component. This table and sheet 02 section 07 render from one data source. Certification content in two hand-maintained places drifts, and drift here is what a procurement auditor finds.
   - Schema. Only the ISO 9001:2015 row reaches hasCredential, and only on the homepage Organization. No In Progress row is emitted as structured data in any form.
@@ -293,6 +295,10 @@ Founder & Director · Margo Rubber Products`
   > Replace the whole block with a reference-check offer:
   > Replaces a testimonial from an unnamed “Procurement lead, European energy OEM” carrying the visible string “Attribution pending client sign-off”. This is the same wording /case-studies already uses, and the same fix Phase 3 applied to /why-margo — three places, one sentence, build it once.
   > A named reference offered on request is worth more to a procurement buyer than an anonymous quote, because the buyer can act on it. An anonymous quote is worth approximately nothing, and one that admits its own attribution is unsigned is worth less than nothing.
+  `REFERENCES
+We will name contacts at our customers during a vendor audit or
+qualification, on request. Volumes and part numbers are commercially
+confidential and disclosed under NDA.`
   <details><summary>notes (4)</summary>
   - Schema. Do not emit Review or AggregateRating. An unattributed testimonial in structured data is a rich-results violation and, per the AI-citation audit, a reason to drop the source entirely.
   - Consistency gate. 48 hrs must mean quotation on every surface. Live, the site publishes 24 hours, 1 business day, 2 business days, 3 business days and <4 hours SLA for the same promise across five pages.

@@ -51,6 +51,8 @@ CERTIFIED · 09111526A`
   _LOCATION row folds into the address above. The expiry date replaces the generic three-year cycle — a date is checkable, a cycle is not_
 - **Download**:
   > The button is wired to nothing and labelled with an invented file size. Two questions: does a clean PDF scan exist, and does the certificate carry the old MIDC Ambad address? If it does, publishing the scan next to a Vilholi letterhead creates the exact mismatch this section is meant to close. Resolve the address question first, then publish. A certifications page whose certificate download does not work is worse than one with no download at all.
+  `ISO 9001:2015 · Certificate 09111526A · Integral Certification Ltd
+[ ↓ Download PDF ]`
   _CONFIRM before this ships._
   <details><summary>notes (4)</summary>
   - The certificate PDF should be crawlable, not gated. Serve from /downloads/margo-iso-9001-certificate.pdf, set the PDF’s own /Title metadata, and link it from here and from the footer. It is the single most requested document Margo has.

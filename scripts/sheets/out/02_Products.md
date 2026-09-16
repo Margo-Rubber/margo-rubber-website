@@ -239,6 +239,7 @@ Electrical · Medical · Water · Agriculture`
   _CMM dimensional inspection is deleted entirely — inspection is by vernier and micrometer per company profile p12. It appears on the live page in both this section and section 04_
 - **CTA**:
   > — does this PDF exist? The live button is wired to nothing. If there is no document, the button comes off; a dead download on a quality page costs more than the missing asset.
+  `Download the test capability statement ↓`
   _CONFIRM_
   <details><summary>notes (5)</summary>
   - Two named groups outrank one long list. A buyer scanning for “do they test ozone in-house?” gets a direct answer. An assistant asked the same question gets a passage with a subject, a standard number and a boundary — all three checkable.

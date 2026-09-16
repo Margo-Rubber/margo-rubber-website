@@ -116,6 +116,10 @@
           "leads": [
             "silicone −60 to +220 °C, EPDM −40 to +140 °C"
           ],
+          "lits": [
+            "MATERIAL COMPARISON · 5 min read\nSilicone vs EPDM: Selecting the Right Elastomer for High-Temperature Seals",
+            "[ Read Guide → /resources/silicone-vs-epdm-high-temperature-seals ]"
+          ],
           "note": "44 words · live is 16 · Updated 2026-09-03 — all seven guides are written, so the three holding changes on this card come off: the read time is published rather than struck, the description is in the present tense because the guide exists, and Read Guide points at the article instead of deflecting to Ask an engineer. The read times are the article sheets’ own figures, not estimates.\nThe two temperature ranges come from the locked homepage table and cost nothing to state now. The oil sentence is the actual answer to the question — it is the thing a buyer comparing these two compounds most often gets wrong, and putting it on the card means the card is useful even before the guide exists"
         },
         {
@@ -127,6 +131,10 @@
           "leads": [
             "FKM −20 to +250 °C, NBR −30 to +120 °C"
           ],
+          "lits": [
+            "MATERIAL COMPARISON · 6 min read\nFKM vs NBR: Which Rubber Is Right for Your Application?",
+            "[ Read Guide → /resources/fkm-vs-nbr-oil-seal-guide ]"
+          ],
           "note": "44 words · live is 15 · “cost-in-use” is the right frame and the live card already has it. The addition states the decision plainly: this comparison is almost always a cost question wearing a technical costume, and saying so is more useful than another spec table"
         },
         {
@@ -137,6 +145,10 @@
           ],
           "leads": [
             "ASME B16.21"
+          ],
+          "lits": [
+            "MATERIAL COMPARISON · 8 min read\nGasket Material Selection Guide",
+            "[ Read Guide → /resources/gasket-material-selection-guide ]"
           ],
           "note": "49 words · live is 33 · “Includes a material matrix” becomes “will set out” — the live wording promises a document that does not exist.\nThe three standards are the addition and they are the reason this guide should ship first. All three are verified in this content set, and ASME B16.21 is the correction to an error the live site makes on three pages, where B16.20 — metallic gaskets — is cited for rubber. Publishing this guide fixes a sitewide error and earns a term nobody else is targeting"
         }
@@ -174,6 +186,11 @@
           "leads": [
             "ISO 3601-1 is the current standard and its size code matches the AS568 dash number; BS 1806 was superseded by BS ISO 3601 but is still widely quoted"
           ],
+          "lits": [
+            "O-Ring Size Chart: AS568, BS1806 & Metric Standards Explained",
+            "SIZING & SPEC · 5 min read\nO-Ring Size Chart: AS568, ISO 3601-1 and BS 1806 Explained",
+            "[ Read Guide → /resources/o-ring-size-chart ]"
+          ],
           "note": "48 words · live is 14 · the title changes and the reason is a credibility one. BS 1806 has been superseded by BS ISO 3601. It is not wrong to name it — it is still very widely used for cross-reference, which is exactly why it belongs on a chart — but a sizing guide for engineers that names only the withdrawn standard and omits the current one loses the reader it is aimed at.\nNaming all three, and saying which is current, is the whole value of the guide and it can be said on the card today. Verified live 2026-09-02. Note the spacing fix too: BS1806 is written BS 1806"
         },
         {
@@ -184,6 +201,10 @@
           ],
           "leads": [
             "We bond in-house"
+          ],
+          "lits": [
+            "SIZING & SPEC · 7 min read\nRubber-to-Metal Bonded Parts: Design & Specification Guide",
+            "[ Read Guide → /resources/rubber-to-metal-bonded-parts-guide ]"
           ],
           "note": "40 words · live is 14 · “We bond in-house” is the addition (client-confirmed) and it is what separates this guide from every generic version of it online. Of the seven topics this is the one where Margo has the strongest claim to be the author — the anti-vibration mounts and bushes product pages both depend on the capability"
         }
@@ -221,6 +242,10 @@
           "leads": [
             "the three structural questions that separate a manufacturer from a trading house: who mixes the compound, who owns the tooling, and whose name is on the batch record."
           ],
+          "lits": [
+            "SOURCING & BUYER DECISION · 5 min read\nHow to Evaluate a Precision Rubber Manufacturer: 8 Questions to Ask",
+            "[ Read Guide → /resources/how-to-evaluate-a-rubber-manufacturer ]"
+          ],
           "note": "45 words · live is 14 · the three questions come from the factory-versus-trading-company section already drafted for /about, so most of this guide is written.\nOne sequencing warning for the developer. A guide telling buyers to “ask for the certificate, then verify it with the issuing body” cannot ship while another page of the same site claims four certifications Margo does not hold. /why-margo comes down before this guide goes up — otherwise the guide indicts its own publisher"
         },
         {
@@ -231,6 +256,10 @@
           ],
           "leads": [
             null
+          ],
+          "lits": [
+            "SOURCING & BUYER DECISION · 6 min read\nIndia vs China: Sourcing Rubber Seals & Gaskets for Export Markets",
+            "[ Read Guide → /resources/india-vs-china-rubber-sourcing ]"
           ],
           "note": "18 words · live is 19 · deliberately the shortest card in this sheet.\nThis is the one topic of the seven where nothing should be added to the card, because everything worth saying needs a source. Duty rates, freight costs, lead times and MOQ norms all move, and every figure would date. Write it from live trade data with dated citations, or do not write it — a comparison piece by an interested party is read sceptically to begin with, and one unsupported number discredits the rest.\nPublish this one last, after the five technical guides have established that this library is a reference rather than a sales asset"
         }

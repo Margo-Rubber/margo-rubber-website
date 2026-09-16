@@ -1,0 +1,118 @@
+/**
+ * SHEET COVERAGE — the other direction from check:copy.
+ *
+ * check:copy proves every string the apply script placed is on the page.
+ * This lists every deliverable string in the SHEET that is NOT on the page,
+ * so an omission in the apply script shows up rather than silently passing.
+ * Deliverable = every literal, heading line, paragraph, list item and table
+ * cell in a section's Replacement content, minus the columns that are not
+ * copy ("Replaces", "Live status", "Why", "Live …", "Watch for") and the
+ * cells the sheet strikes through.
+ *
+ *   node scripts/check-coverage.mts 01_Homepage /  [02_Products /products …]
+ */
+
+import { readFileSync } from "node:fs";
+import type { Sheet } from "./sheets/parse-sheets.mts";
+
+const BASE = process.env.BASE_URL ?? "http://localhost:3000";
+const SKIP_COLUMNS =
+  /^(replaces|live status|why|live [a-z]+|watch for|#|status|general industry continuous|verdict|published here)$/i;
+const SKIP_SECTIONS = /footer|page-level/i;
+
+const decode = (s: string) =>
+  s
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&#x27;/g, "'")
+    .replace(/&nbsp;/g, " ");
+const norm = (s: string) => decode(s).replace(/\s+/g, " ").trim();
+const INLINE = /<\/?(a|b|strong|em|i|span|u|small|abbr|code|sup|sub)\b[^>]*>/g;
+const textOf = (html: string) =>
+  norm(
+    html
+      .replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, "")
+      .replace(/<!-- -->/g, "")
+      .replace(INLINE, "")
+      .replace(/<[^>]+>/g, " "),
+  );
+
+const args = process.argv.slice(2);
+if (args.length % 2) throw new Error("pairs of <sheet> <route>");
+
+for (let i = 0; i < args.length; i += 2) {
+  const [stem, route] = [args[i], args[i + 1]];
+  const sheet = JSON.parse(
+    readFileSync(`scripts/sheets/out/${stem}.json`, "utf8"),
+  ) as Sheet;
+  const html = await (await fetch(`${BASE}${route}`)).text();
+  const text = textOf(html);
+  const lower = text.toLowerCase();
+  const misses: string[] = [];
+  let total = 0;
+  const check = (sec: string, label: string, s: string) => {
+    const v = norm(s)
+      .replace(/\s*(→|↓|↗)\s*$/, "")
+      .replace(/^\[\s*|\s*\]$/g, "");
+    if (!v || v.length < 3) return;
+    total++;
+    if (!lower.includes(v.toLowerCase()))
+      misses.push(
+        `§${sec} ${label}: “${v.length > 100 ? v.slice(0, 97) + "…" : v}”`,
+      );
+  };
+  for (const sec of sheet.sections) {
+    if (SKIP_SECTIONS.test(sec.title)) continue;
+    for (const f of sec.fields) {
+      if (
+        /^(remove|removed|cut|recommendation|permission note|strip build|check result|single source|fkm — the one|add a column|figure block ×0)/i.test(
+          f.label,
+        )
+      )
+        continue;
+      switch (f.kind) {
+        case "lit":
+          for (const line of f.value.split("\n")) {
+            const m = line.match(/^(.*?)\s*(?:→|->)\s*\S+$/);
+            check(sec.num, f.label, m ? m[1] : line);
+          }
+          break;
+        case "heading":
+          for (const l of f.lines) check(sec.num, f.label, l);
+          break;
+        case "paragraphs":
+          for (const p of f.paragraphs) check(sec.num, f.label, p);
+          for (const l of f.lits ?? []) check(sec.num, f.label, l);
+          break;
+        case "list":
+          for (const it of f.items) check(sec.num, f.label, it);
+          break;
+        case "table": {
+          const cols = f.columns;
+          f.rows.forEach((r) =>
+            r.forEach((cell, ci) => {
+              if (cols[ci] && SKIP_COLUMNS.test(cols[ci])) return;
+              if (!cell) return;
+              for (const part of cell.split(/\s·\s|\n/))
+                check(
+                  sec.num,
+                  `${f.label}[${cols[ci] ?? ci}]`,
+                  part.replace(/^\d\d\s+/, ""),
+                );
+            }),
+          );
+          break;
+        }
+        case "text":
+          check(sec.num, f.label, f.value);
+      }
+    }
+  }
+  console.log(
+    `\n══ ${stem} → ${route}: ${total - misses.length}/${total} sheet strings on the page`,
+  );
+  for (const m of misses) console.log(`  ✗  ${m}`);
+}

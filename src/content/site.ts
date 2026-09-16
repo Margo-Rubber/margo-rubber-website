@@ -67,7 +67,8 @@ export const FORBIDDEN_CLAIMS: { pattern: RegExp; why: string }[] = [
 
   /* ── Customers and people ────────────────────────────────────────── */
   { pattern: /Kirloskar|Bosch|Atlas Copco|Grundfos|Thermax|Forbes Marshall|\bKSB\b|Alfa Laval|Sulzer|Bonfiglioli|\bL&T\b|Larsen & Toubro|\bBHEL\b|Siemens|\bABB\b|Samsung Engineering/i, why: "Fabricated client names. The 23 named accounts come from company profile p28 via site settings." },
-  { pattern: /Victor\s*Reinz|Samsonite|Federal-Mogul/i, why: "Dropped in the 2026-07-19 reconciliation; Victor Reinz needs separate confirmation before it returns." },
+  // Victor Reinz is on the sheets' corrected 24-name list (sheet 01 §02, company profile p28).
+  { pattern: /Samsonite|Federal-Mogul/i, why: "Dropped in the 2026-07-19 reconciliation; Federal-Mogul owns the Victor Reinz brand already listed." },
   { pattern: /Name pending sign-off|Attribution pending/i, why: "Placeholder strings published on the live page." },
 
   /* ── Materials Margo does not make ───────────────────────────────── */

@@ -815,6 +815,9 @@
           ],
           "leads": [
             "Naming four certification bodies that have never audited Margo is the single most exposed claim on this page."
+          ],
+          "lits": [
+            "CERTIFIED BY\nIntegral Certification Ltd"
           ]
         }
       ],
@@ -977,6 +980,9 @@
             "Replace the whole block with a reference-check offer:",
             null,
             null
+          ],
+          "lits": [
+            "REFERENCES\nWe will name contacts at our customers during a vendor audit or\nqualification, on request. Volumes and part numbers are commercially\nconfidential and disclosed under NDA."
           ]
         }
       ],

@@ -463,6 +463,9 @@
           "leads": [
             "Certificate 09111526A, valid to 21 February 2027"
           ],
+          "lits": [
+            "ISO 9001:2015\nQuality Management System"
+          ],
           "note": "20 words · live is 15 · the number replaces nothing, it is added"
         },
         {
@@ -474,6 +477,9 @@
           "leads": [
             null
           ],
+          "lits": [
+            "OEM Compliance\nDrawing-Matched Production"
+          ],
           "note": "[no change] — twelve words, and “no substitutions without approval” is the single sentence an OEM buyer most wants to read"
         },
         {
@@ -484,6 +490,9 @@
           ],
           "leads": [
             null
+          ],
+          "lits": [
+            "Batch Traceability\nFull Material Traceability"
           ],
           "note": "[no change]"
         },
@@ -640,6 +649,9 @@
           "leads": [
             "−40 °C to +140 °C"
           ],
+          "lits": [
+            "Which compound suits continuous outdoor exposure?"
+          ],
           "note": "42 words · live is 32 · two ranges and the in-house test added. Sits in the 40–60 word extraction band"
         },
         {
@@ -650,6 +662,9 @@
           ],
           "leads": [
             "Send the concentrate as well as the diluted spray — a compound that holds against a field dilution may not hold in the mixing tank."
+          ],
+          "lits": [
+            "Can you supply components resistant to agricultural chemicals?"
           ],
           "note": "49 words · live is 26 · the live answer is already the best FAQ answer in the whole set — it refuses to guess and asks for the three inputs that decide it. The addition is the one thing it misses, and it is the thing that actually fails"
         },
@@ -664,6 +679,9 @@
             null,
             "The minimum run is 10,000 pieces per part number, per compound"
           ],
+          "lits": [
+            "What is the minimum order quantity?"
+          ],
           "note": "48 words · live is 21 · client instruction, 2026-09-01. Fifth industry page with a dedicated minimum-order FAQ and the number was wrong in the other direction. The lead time goes too — “catalogue sizes” contradicts a page that says twice that nothing is supplied from a catalogue, and 14 to 21 days is not a promise any drawing-matched moulder can make before tooling is settled.\nOn this sector the corrected answer qualifies buyers in, not out. An agricultural OEM ordering linkage bushes orders them by the tens of thousands"
         },
         {
@@ -674,6 +692,9 @@
           ],
           "leads": [
             "We hold the geometry and the compound; the cycle life is proved by your rig or a third-party laboratory, and we will support that test."
+          ],
+          "lits": [
+            "Do you produce protective boots and bellows?"
           ],
           "note": "48 words · live is 24 · asking for the flex-cycle target is right; the addition is how it is answered. Margo publishes no fatigue rig, and De Mattia flex testing to ISO 132, ASTM D430 or ASTM D813 is what a cycle-life number would have to come from. Same position as the bellows product sheet"
         },
@@ -686,6 +707,9 @@
           "leads": [
             "A worn part measures smaller than it was made"
           ],
+          "lits": [
+            "Can you match an existing worn part?"
+          ],
           "note": "50 words · live is 25 · the addition is the part a reverse-engineering buyer worries about and almost nobody publishes: copying a worn sample reproduces the wear. Saying it is both reassuring and true"
         },
         {
@@ -696,6 +720,9 @@
           ],
           "leads": [
             "An IATF 16949:2016 upgrade is in progress, targeted for completion by the end of 2026."
+          ],
+          "lits": [
+            "Are you certified, and do you meet automotive-style supplier requirements?"
           ],
           "note": "47 words · new sixth question — tell the developer the accordion grows by one row. Agricultural OEMs run automotive-style supplier audits and the question is asked on every one of them. Same answer as the other eight industry sheets"
         }
@@ -724,6 +751,9 @@
           "leads": [
             "Both contact fields are unfilled on all three.",
             "The correct values are in the footer of this same page"
+          ],
+          "lits": [
+            "✆ +91 (Nashik), Contact for number\n✉ Contact for email"
           ]
         },
         {

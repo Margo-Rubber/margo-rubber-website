@@ -48,6 +48,10 @@
   _Three become eight. All three live cards are kept and lead. The five added categories each have a product page in this content set and each carries automotive part names taken from that page — nothing here is new capability, it is capability the site already publishes and this page does not connect to_
 - **Card body — per card**:
   > Each card keeps the live three-bullet format. For bushes, the live bullets are correct and stay:
+  `AEM signature compound
+Bonded and unbonded variants
+Bore, OD and durometer to drawing
+Supplied to Mahindra & Mahindra`
   _Four bullets on the bushes card, unchanged. The other seven cards take three bullets each in the same shape: the compound that matters, the process or variant, and the specification basis. Written per card from the matching product sheet so the two never diverge_
 - **Card CTA**: `Request Specs for {Component} › /products/{slug}`
   _The destination changes. Live sends every card to /contact. Sending it to the product page instead gives this page eight internal links out — it currently has none in its body — and lets a buyer read the specification before enquiring, which produces a better enquiry. The contact route is already covered by two hero CTAs and section 09_

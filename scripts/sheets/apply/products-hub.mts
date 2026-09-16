@@ -5,7 +5,19 @@
  */
 
 import { productsHubSchema } from "../../../src/content/schemas/index.ts";
-import { applyDocument, loadSheet, section, lit, litHref, heading, paragraph, rows, list, starAccent } from "../lib.mts";
+import {
+  applyDocument,
+  field,
+  loadSheet,
+  section,
+  lit,
+  litHref,
+  heading,
+  paragraph,
+  rows,
+  list,
+  starAccent,
+} from "../lib.mts";
 
 const sheet = loadSheet("02_Products");
 const s = (n: string) => section(sheet, n);
@@ -21,11 +33,17 @@ const h2 = (sec: ReturnType<typeof s>, label = "H2") => {
 /* ── 01 Hero ─────────────────────────────────────────────────────────────── */
 const hero = s("01");
 const h1 = heading(hero, "H1");
-const HERO_ICON: Record<string, string> = { "Product Lines": "chart", "Compounds Mixed In-House": "award", "Certified Quality": "shield" };
-// "200+ Catalogue SKUs" is a roadmap claim — OPEN-ITEMS #8.
-const heroStats = rows(hero, "Stat cards")
-  .filter((r) => r[0] !== "200+")
-  .map((r) => ({ value: E(r[0]), label: E(r[1]), icon: HERO_ICON[r[1]] ?? "chart" }));
+const HERO_ICON: Record<string, string> = {
+  "Product Lines": "chart",
+  "Compounds Mixed In-House": "award",
+  "Catalogue SKUs": "globe",
+  "Certified Quality": "shield",
+};
+const heroStats = rows(hero, "Stat cards").map((r) => ({
+  value: E(r[0]),
+  label: E(r[1]),
+  icon: HERO_ICON[r[1]] ?? "chart",
+}));
 const secondary = lit(hero, "CTA secondary").match(/^(.*?)\s*↓\s*(#\S+)$/);
 if (!secondary) throw new Error("hero secondary");
 
@@ -33,9 +51,17 @@ if (!secondary) throw new Error("hero secondary");
 const range = s("02");
 const cardRows = rows(range, "Cards");
 const SLUG: Record<string, string> = {
-  "O-Rings": "o-rings", "Oil Seals": "oil-seals", Gaskets: "gaskets", Bellows: "bellows", Grommets: "grommets",
-  "Bushes & Bushings": "bushes", "Anti-Vibration Mounts": "anti-vibration-mounts", "Pads, Stoppers & Caps": "pads-stoppers-caps",
-  "Leak Test Rubber": "leak-test-rubber", "Extrusion Profiles": "extrusion", "Sponge & Foam Rubber": "sponge-foam-rubber",
+  "O-Rings": "o-rings",
+  "Oil Seals": "oil-seals",
+  Gaskets: "gaskets",
+  Bellows: "bellows",
+  Grommets: "grommets",
+  "Bushes & Bushings": "bushes",
+  "Anti-Vibration Mounts": "anti-vibration-mounts",
+  "Pads, Stoppers & Caps": "pads-stoppers-caps",
+  "Leak Test Rubber": "leak-test-rubber",
+  "Extrusion Profiles": "extrusion",
+  "Sponge & Foam Rubber": "sponge-foam-rubber",
 };
 const cards = cardRows.map((r, i) => {
   const slug = SLUG[r[0]];
@@ -51,7 +77,9 @@ const cards = cardRows.map((r, i) => {
     // The comp's two wide tiles, and the labelled break before the two
     // continuous-form lines (Build Instructions §09 grouping is Phase 7).
     span: i === 0 || i === 7 ? "wide" : "normal",
-    ...(slug === "extrusion" ? { groupLabel: "Continuous Profile & Cellular" } : {}),
+    ...(slug === "extrusion"
+      ? { groupLabel: "Continuous Profile & Cellular" }
+      : {}),
   };
 });
 const rangeCta = litHref(range, "Closing link");
@@ -59,22 +87,41 @@ const rangeCta = litHref(range, "Closing link");
 /* ── 03 Capacity ─────────────────────────────────────────────────────────── */
 const cap = s("03");
 const badge = lit(cap, "Capacity badge").split("\n");
-const capStats = rows(cap, "Stat cards").map((r) => ({ value: E(r[0]), label: E(r[1]), sub: E(r[2]) }));
+const capStats = rows(cap, "Stat cards").map((r) => ({
+  value: E(r[0]),
+  label: E(r[1]),
+  sub: E(r[2]),
+}));
 
 /* ── 04 Process ──────────────────────────────────────────────────────────── */
 const proc = s("04");
-const steps = rows(proc, "Steps").map((r) => ({ n: r[0], title: E(r[1]), body: E(r[2]) }));
+const steps = rows(proc, "Steps").map((r) => ({
+  n: r[0],
+  title: E(r[1]),
+  body: E(r[2]),
+}));
 const ticks = rows(proc, "Capability ticks").map((r) => E(r[0]));
 const closing = lit(proc, "Closing block").split("\n");
 // "Need a capability assessment?" / body lines / "[ Talk to an Engineer → ] /contact"
 const closingHeading = E(closing[0]);
 const closingBody = E(closing.slice(1, -1).join(" "));
-const closingCta = closing[closing.length - 1].match(/^\[\s*(.*?)\s*→\s*\]\s*(\/\S*)$/);
+const closingCta = closing[closing.length - 1].match(
+  /^\[\s*(.*?)\s*→\s*\]\s*(\/\S*)$/,
+);
 if (!closingCta) throw new Error("process closing cta");
 
 /* ── 05 Compounds ────────────────────────────────────────────────────────── */
 const comp = s("05");
-const DOT: Record<string, string> = { AEM: "#2BBCC4", FKM: "#FF9800", "Silicone (VMQ)": "#9B8FE8", EPDM: "#4CAF50", NBR: "#2BBCC4", "Neoprene (CR)": "#FFC107", SBR: "#B8BFC7", "Natural Rubber": "#E8B44A" };
+const DOT: Record<string, string> = {
+  AEM: "#2BBCC4",
+  FKM: "#FF9800",
+  "Silicone (VMQ)": "#9B8FE8",
+  EPDM: "#4CAF50",
+  NBR: "#2BBCC4",
+  "Neoprene (CR)": "#FFC107",
+  SBR: "#B8BFC7",
+  "Natural Rubber": "#E8B44A",
+};
 const compounds = rows(comp, "Tab panel").map((r) => ({
   code: E(r[0]),
   name: E(r[1]),
@@ -84,20 +131,40 @@ const compounds = rows(comp, "Tab panel").map((r) => ({
   hardness: E(r[4]),
   bestFor: E(r[5]),
   tags: r[6].split(" · ").map((t) => E(t.trim())),
-  applications: r[7].split(" · ").map((a) => E(a.replace(/^\d\d\s+/, "").trim())),
+  applications: r[7]
+    .split(" · ")
+    .map((a) => E(a.replace(/^\d\d\s+/, "").trim())),
 }));
 
 /* ── 06 Sectors ──────────────────────────────────────────────────────────── */
 const sect = s("06");
 const SECTOR: Record<string, { href: string; image?: string }> = {
-  Automotive: { href: "/industries/automotive", image: "products.sectors.automotive" },
+  Automotive: {
+    href: "/industries/automotive",
+    image: "products.sectors.automotive",
+  },
   Mining: { href: "/industries/mining", image: "products.sectors.mining" },
-  "Oil & Gas": { href: "/industries/oil-gas", image: "products.sectors.oil-gas" },
-  "Pumps & Valves": { href: "/industries/pumps-valves", image: "products.sectors.pumps-valves" },
+  "Oil & Gas": {
+    href: "/industries/oil-gas",
+    image: "products.sectors.oil-gas",
+  },
+  "Pumps & Valves": {
+    href: "/industries/pumps-valves",
+    image: "products.sectors.pumps-valves",
+  },
   HVAC: { href: "/industries/hvac", image: "products.sectors.hvac" },
-  Electrical: { href: "/industries/electrical-electronics", image: "products.sectors.electrical-electronics" },
-  Medical: { href: "/industries/medical-devices", image: "products.sectors.medical-devices" },
-  Water: { href: "/industries/water-fluid-management", image: "products.sectors.water-fluid-management" },
+  Electrical: {
+    href: "/industries/electrical-electronics",
+    image: "products.sectors.electrical-electronics",
+  },
+  Medical: {
+    href: "/industries/medical-devices",
+    image: "products.sectors.medical-devices",
+  },
+  Water: {
+    href: "/industries/water-fluid-management",
+    image: "products.sectors.water-fluid-management",
+  },
   Agriculture: { href: "/industries/agriculture" },
 };
 const sectors = rows(sect, "Tab panel").map((r) => {
@@ -110,7 +177,7 @@ const sectors = rows(sect, "Tab panel").map((r) => {
   const clients = (r[3] ?? "")
     .split(" — ")[0]
     .split(" · ")
-    .filter((c) => c && c !== "Victor Reinz")
+    .filter(Boolean)
     .map((c) => E(c))
     .join(" · ");
   return { name: E(r[0]), body: E(r[1]), products: E(r[2]), clients, ...meta };
@@ -118,14 +185,29 @@ const sectors = rows(sect, "Tab panel").map((r) => {
 
 /* ── 07 Certifications ───────────────────────────────────────────────────── */
 const cert = s("07");
-rows(cert, "Cards").forEach((r) => { E(r[1]); E(r[2]); });
+rows(cert, "Cards").forEach((r) => {
+  E(r[1]);
+  E(r[2]);
+});
 const certLink = litHref(cert, "Closing link");
 
 /* ── 08 Testing ──────────────────────────────────────────────────────────── */
 const test = s("08");
 const groups = [
-  { title: "In-house", rows: rows(test, "Group A").map((r) => ({ test: E(r[0]), standard: E(r[1]) })) },
-  { title: "Partner laboratory", rows: rows(test, "Group B").map((r) => ({ test: E(r[0]), standard: E(r[1]) })) },
+  {
+    title: "In-house",
+    rows: rows(test, "Group A").map((r) => ({
+      test: E(r[0]),
+      standard: E(r[1]),
+    })),
+  },
+  {
+    title: "Partner laboratory",
+    rows: rows(test, "Group B").map((r) => ({
+      test: E(r[0]),
+      standard: E(r[1]),
+    })),
+  },
 ];
 
 /* ── 09 Catalogue ────────────────────────────────────────────────────────── */
@@ -145,7 +227,10 @@ const direct = lit(quote, "Direct contact").split("\n");
 const phone = direct[0].match(/^PHONE\s+(\+91 \d{5} \d{5})\s+(.*)$/);
 const email = direct[1].match(/^EMAIL\s+(\S+)\s+(.*)$/);
 if (!phone || !email) throw new Error("direct contact");
-const address = direct.slice(3).join(" ");
+// "ADDRESS Margo Rubber Products" then the street lines — the whole block is the value.
+const address = [direct[2].replace(/^ADDRESS\s+/, ""), ...direct.slice(3)]
+  .map((l) => l.replace(/,$/, ""))
+  .join(", ");
 
 const patch = {
   "seo.title": sheet.head.title,
@@ -166,7 +251,9 @@ const patch = {
   "range.eyebrow": E(lit(range, "Eyebrow")),
   "range.heading": h2(range),
   "range.body": E(paragraph(range, "Intro")),
-  "range.filters": lit(range, "Filter chips").split(" · ").map((f) => E(f.trim())),
+  "range.filters": lit(range, "Filter chips")
+    .split(" · ")
+    .map((f) => E(f.trim())),
   "range.cards": cards,
   "range.cta": { label: E(rangeCta.label), href: rangeCta.href },
 
@@ -179,13 +266,21 @@ const patch = {
   "process.heading": h2(proc),
   "process.steps": steps,
   "process.capabilities.items": ticks,
-  "process.capabilities.cta": { heading: closingHeading, body: closingBody, label: E(closingCta[1]), href: closingCta[2] },
+  "process.capabilities.cta": {
+    heading: closingHeading,
+    body: closingBody,
+    label: E(closingCta[1]),
+    href: closingCta[2],
+  },
 
   "compounds.eyebrow": E(lit(comp, "Eyebrow")),
   "compounds.heading": h2(comp),
   "compounds.body": E(paragraph(comp, "Intro")),
   "compounds.items": compounds,
-  "compounds.cta": (() => { const l = litHref(comp, "Closing link"); return { label: E(l.label), href: l.href }; })(),
+  "compounds.cta": (() => {
+    const l = litHref(comp, "Closing link");
+    return { label: E(l.label), href: l.href };
+  })(),
 
   "sectors.eyebrow": E(lit(sect, "Eyebrow")),
   "sectors.heading": h2(sect),
@@ -201,6 +296,12 @@ const patch = {
   "validation.heading": h2(test),
   "validation.body": E(paragraph(test, "Intro")),
   "validation.groups": groups,
+  // Label from the sheet; the button stays hidden until a file exists.
+  "validation.cta": {
+    label:
+      field(test, "CTA", "paragraphs").lits?.[0]?.replace(/\s*↓$/, "") ?? "",
+    href: "/contact",
+  },
 
   "catalogue.heading": E(heading(cat, "H2").value),
   "catalogue.body": E(paragraph(cat, "Body")),
@@ -223,4 +324,10 @@ const patch = {
   "quote.promises": list(quote, "Quote promise").map((p) => E(p)),
 };
 
-await applyDocument({ id: "productsHub-products", type: "productsHub", schema: productsHubSchema, patch, expect });
+await applyDocument({
+  id: "productsHub-products",
+  type: "productsHub",
+  schema: productsHubSchema,
+  patch,
+  expect,
+});

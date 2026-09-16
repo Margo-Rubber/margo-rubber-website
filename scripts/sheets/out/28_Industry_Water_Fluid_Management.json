@@ -314,6 +314,10 @@
           "leads": [
             "ASTM D395 Method B"
           ],
+          "lits": [
+            "Validated Cycle Life\nComponents validated to 100,000 centrifugal pump cycles, evidence of durability under continuous-duty rather than intermittent service.",
+            "Long-Cycle Durability"
+          ],
           "note": "54 words · live is 17 · the heading is the important half of this change. “Validated Cycle Life” is a card title, which is the part most likely to be quoted, screenshotted or lifted by an answer engine without its body — and Margo publishes no cycle rig.\nThe replacement is not weaker, it is specific. Compression set to ASTM D395 Method B is a test Margo actually runs, and it is the correct property for a static water seal. Naming a real test in place of an unbacked number is the trade this whole content set is built on. Same structure as flex life on bellows and dielectric strength on electrical"
         },
         {
@@ -472,6 +476,9 @@
           "leads": [
             "Certificate 09111526A, valid to 21 February 2027"
           ],
+          "lits": [
+            "ISO 9001:2015\nQuality Management System"
+          ],
           "note": "20 words · live is 15 · the number is added, nothing removed"
         },
         {
@@ -483,6 +490,9 @@
           "leads": [
             null
           ],
+          "lits": [
+            "OEM Compliance\nDrawing-Matched Production"
+          ],
           "note": "[no change] — and on this sector “no substitutions without approval” carries real weight, because an unapproved compound substitution in a potable-water part is a public-health question, not a commercial one"
         },
         {
@@ -493,6 +503,9 @@
           ],
           "leads": [
             null
+          ],
+          "lits": [
+            "Batch Traceability\nFull Material Traceability"
           ],
           "note": "[no change]"
         },
@@ -647,6 +660,9 @@
           "leads": [
             "Approval is granted to a specific compound formulation, not to a polymer"
           ],
+          "lits": [
+            "Are your compounds approved for potable water?"
+          ],
           "note": "51 words · live is 34 · the live answer is honest and it is nearly right — it declines to claim an approval and asks for the standard. The addition is the sentence that makes the question make sense, and it is the one thing about potable-water sealing that buyers most often have wrong"
         },
         {
@@ -659,6 +675,10 @@
           "leads": [
             null,
             "A cycle count comes from your rig or a third-party laboratory, and we will support that test."
+          ],
+          "lits": [
+            "What does the 100,000-cycle validation mean?",
+            "How do you specify a seal for continuous-duty pump service?"
           ],
           "note": "51 words · live is 26 · this is the fourth and last placement of the cycle claim, and the most exposed. The live answer does not merely state the number — it says “Test documentation is available on request”, which is a promise of a specific document to a buyer who will ask for it. A pump OEM qualifying a seal supplier asks on the first call.\nThe question is replaced rather than the answer alone, because a question headed “What does the 100,000-cycle validation mean?” cannot be answered without the number. The replacement question is one Margo can answer completely, and it is the question a specifying engineer actually has"
         },
@@ -673,6 +693,9 @@
             null,
             "The minimum run is 10,000 pieces per part number, per compound"
           ],
+          "lits": [
+            "What is the minimum order quantity?"
+          ],
           "note": "48 words · live is 21 · client instruction, 2026-09-01. Sixth and last industry page with a dedicated minimum-order FAQ; the number was wrong in the other direction on every one of them. The lead time goes too — “catalogue sizes” contradicts a page that opens by saying nothing is stocked"
         },
         {
@@ -684,6 +707,9 @@
           "leads": [
             "rubber sheet lining"
           ],
+          "lits": [
+            "Can you supply tank linings?"
+          ],
           "note": "57 words · live is 22 · the live answer was right and this one commits to it (client-confirmed 2026-09-02). The mining, pumps & valves and agriculture sheets have all been reversed to agree, so four pages now say the same thing.\nThe addition is the supplied-cut-versus-fitted question. It is the single variable that separates a material quote from a contract with site labour in it, buyers almost never volunteer it, and no competitor page in this sector asks it — which is what makes it the most useful sentence in this FAQ"
         },
         {
@@ -694,6 +720,9 @@
           ],
           "leads": [
             "We hold ISO 9001:2015 — certificate 09111526A, issued by Integral Certification Ltd, valid to 21 February 2027. An IATF 16949:2016 upgrade is in progress, targeted for completion by the end of 2026, and ISO 14001 and ISO 45001 are targeted for 2027."
+          ],
+          "lits": [
+            "Do you provide material certificates, and are you certified?"
           ],
           "note": "57 words · live is 22 · the certification question folds into the existing one rather than adding a sixth row — the two are asked together in the same breath on every water tender, and the accordion count stays at five. Tell the developer this row grows; it does not multiply"
         }
@@ -722,6 +751,9 @@
           "leads": [
             "It has it.",
             "Four of the nine industry pages carry this CTA variant with both fields unfilled"
+          ],
+          "lits": [
+            "✆ +91 (Nashik), Contact for number\n✉ Contact for email"
           ]
         },
         {

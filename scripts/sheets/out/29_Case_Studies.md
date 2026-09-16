@@ -84,14 +84,23 @@ The label is a scope correction. Certificate 09111526A covers rubber moulded com
   _32 words · live is 30 · “manufacturing process and technical data sheets” becomes “compound data and delivery record”, which is what the three surviving cards actually offer_
 - **Card 1 — Certifications**:
   > Our quality management system is third-party certified — certificate 09111526A, Integral Certification Ltd, valid to 21 February 2027, scope: rubber moulded components. Our quality philosophy is not a document, it is a process: from incoming raw material inspection to final dimensional verification, every step is logged and traceable.
+  `CERTIFICATIONS
+ISO 9001:2015 & Quality Approach`
+  `[ View Certifications → /certifications ]`
   _50 words · live is 27 · this card absorbs the Quality Philosophy card, whose second sentence is too good to lose and whose button never had a destination. The certificate identity is added, and the scope with it — the card previously implied the certificate covers everything_
 - **Card 2 — Delivery record replaces Why Margo**:
   > 60+ active customers, an average relationship of more than ten years, 95% repeat orders and over 99% on-time delivery. No case study is written up yet — but the record behind them is not new, and our customers are listed on our about page.
+  `DELIVERY RECORD
+What We Have Actually Done`
+  `[ See Who We Supply → /about ]`
   _44 words · this is the card the page most needs and does not have. The section is headed “existing trust proof” and then offers three routes to documents and none to the actual trading record.
 Every figure is from the signed company profile p27 — nothing derived, nothing rounded. It also fixes the page’s core contradiction: a buyer who reads “no case studies” in the hero now finds the reconciliation two screens later instead of discovering it by accident on /about.
 It replaces the Why Margo card, which points at a page recommended for deletion_
 - **Card 3 — Technical specs**:
   > Hardness ranges, temperature profiles and chemical resistance for all eight compounds we mix — AEM, FKM, NBR, EPDM, silicone, neoprene, SBR and natural rubber — published on the page, not gated behind a form.
+  `TECHNICAL SPECS
+Compound & Material Data`
+  `[ View Compound Data → /products ]`
   _35 words · live is 33 · the button changes from a download that does not exist to a page that does.
 “Published on the page, not gated behind a form” is worth saying out loud. It is true, it is unusual in this sector, and it is the same argument as “numbers, not adjectives” one section above — which makes the page consistent with itself. If the PDF is produced later, add it as a second link; do not remove the on-page route_
   <details><summary>notes (5)</summary>

@@ -706,6 +706,9 @@
           "leads": [
             "The minimum run is 10,000 pieces per part number, per compound"
           ],
+          "lits": [
+            "What is the minimum order quantity for this part?"
+          ],
           "note": "36 words · client-instructed 2026-09-01. This answer must match the hero selector and the Engineering Data row on the same page — all three currently disagree"
         },
         {
@@ -716,6 +719,9 @@
           ],
           "leads": [
             "A worn part measures smaller than it was made"
+          ],
+          "lits": [
+            "Can you match a competitor specification or reverse-engineer an existing part?"
           ],
           "note": "46 words · the worn-sample point is the same one the agriculture sheet makes, and it is the thing a reverse-engineering buyer actually worries about"
         },
@@ -728,6 +734,9 @@
           "leads": [
             "If you only have a sample, send the sample"
           ],
+          "lits": [
+            "What file formats do you accept for drawings?"
+          ],
           "note": "37 words · a small, entirely factual answer that most competitor sites do not give. It also tells the buyer the minimum they need to get a quote, which removes the commonest reason an enquiry stalls"
         },
         {
@@ -739,6 +748,9 @@
           "leads": [
             "ASTM D412"
           ],
+          "lits": [
+            "Do you provide material test reports with each shipment?"
+          ],
           "note": "40 words · the named methods are the addition, and both are on Margo’s published test list. Consistent with section 08 and with /certifications"
         },
         {
@@ -749,6 +761,9 @@
           ],
           "leads": [
             null
+          ],
+          "lits": [
+            "What are your payment and delivery terms for international orders?"
           ],
           "note": "35 words · same wording as the export sheet and all nine industry pages, so one answer ships everywhere"
         }

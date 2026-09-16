@@ -44,6 +44,8 @@ export type Field =
       kind: "paragraphs";
       paragraphs: string[];
       leads: (string | null)[];
+      /** Literals set beside the paragraphs (a boxed value under an instruction). */
+      lits?: string[];
       note?: string;
     }
   | {
@@ -147,6 +149,7 @@ function readRow(dl: HTMLElement): Field | null {
   }
   const paras = dd.querySelectorAll("p.body-copy, p");
   if (paras.length) {
+    const lits = dd.querySelectorAll(".lit").map((l) => text(l));
     return withNote({
       label,
       kind: "paragraphs" as const,
@@ -154,6 +157,7 @@ function readRow(dl: HTMLElement): Field | null {
       leads: paras.map((p) =>
         p.querySelector("b") ? text(p.querySelector("b")) : null,
       ),
+      ...(lits.length ? { lits } : {}),
     });
   }
   const list = dd.querySelector("ul, ol");
@@ -256,6 +260,7 @@ function toMarkdown(s: Sheet): string {
         case "paragraphs":
           out.push(`- **${f.label}**:`);
           for (const p of f.paragraphs) out.push(`  > ${p}`);
+          for (const l of f.lits ?? []) out.push(`  \`${l}\``);
           break;
         case "table":
           out.push(`- **${f.label}** (${f.columns.join(" | ")}):`);

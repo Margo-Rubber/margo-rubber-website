@@ -1140,6 +1140,7 @@ export function ExportMarkets({
 }
 
 /* ══ 10 · MATERIAL ENGINEERING ════════════════════════════════════════════ */
+const deg = (n: number) => (n < 0 ? `−${Math.abs(n)}` : String(n));
 export function Materials({
   eyebrow,
   lines,
@@ -1208,8 +1209,9 @@ export function Materials({
                       style={{ left: `${lo}%`, width: `${r2(hi - lo)}%` }}
                     />
                   </div>
+                  {/* A true minus sign (U+2212), as the sheets and the compound table write it — not a hyphen. */}
                   <p className="text-ink-2 text-right text-sm whitespace-nowrap">
-                    {c.minC}° to {c.maxC}°C{c.continuousMaxC ? <span className="text-ink-4 block text-xs">continuous to {c.continuousMaxC}°C</span> : null}
+                    {deg(c.minC)}° to {deg(c.maxC)}°C{c.continuousMaxC ? <span className="text-ink-4 block text-xs">continuous to {c.continuousMaxC}°C</span> : null}
                   </p>
                 </li>
               );
