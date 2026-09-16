@@ -58,7 +58,7 @@ export default async function ResourceGuidePage(
     <article className="bg-canvas">
       <JsonLd
         status={fm.status}
-        graph={pageGraph({
+        graph={await pageGraph({
           path: `/resources/${slug}`,
           name: fm.seo.title,
           description: fm.seo.description,

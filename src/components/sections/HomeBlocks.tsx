@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Img } from "@/components/ui/Img";
 import { Container } from "@/components/ui/Section";
-import { COMPOUNDS } from "@/content/site";
+import type { Compound } from "@/content/schemas";
 import { Bloom } from "@/components/ui/Bloom";
 import {
   EnquiryForm,
@@ -1026,12 +1026,15 @@ export function Materials({
   body,
   axis,
   footnote,
+  compounds,
 }: {
   eyebrow: string;
   lines: readonly string[];
   body?: string;
   axis: { min: number; mid: number; max: number };
   footnote: string;
+  /** The eight rows from site settings — the one source every page reads. */
+  compounds: readonly Compound[];
 }) {
   const span = axis.max - axis.min;
   const pct = (v: number) => r2(((v - axis.min) / span) * 100);
@@ -1061,24 +1064,24 @@ export function Materials({
           </div>
 
           <ul>
-            {COMPOUNDS.map((c) => {
-              const lo = pct(c.tempC[0]);
-              const hi = pct(c.tempC[1]);
+            {compounds.map((c) => {
+              const lo = pct(c.minC);
+              const hi = pct(c.maxC);
               return (
                 <li
                   key={c.code}
                   className="border-line grid grid-cols-[minmax(0,10rem)_1fr_minmax(0,8rem)] items-center gap-4 border-t px-6 py-5"
                 >
                   <div className="min-w-0">
-                    <p className="text-ink text-sm font-semibold">{c.code}</p>
+                    <p className="text-ink text-sm font-semibold">{c.href ? <a href={c.href} className="hover:text-accent-400 transition-colors">{c.name}</a> : c.name}</p>
                     <p className="text-ink-4 mt-0.5 text-xs leading-snug">
-                      {c.note}
+                      {c.descriptor}
                     </p>
                   </div>
                   <div
                     className="relative h-1.5 w-full rounded-full bg-[#20242A]"
                     role="img"
-                    aria-label={`${c.code} service range ${c.tempC[0]} to ${c.tempC[1]} degrees Celsius`}
+                    aria-label={`${c.name} service range ${c.minC} to ${c.maxC} degrees Celsius${c.continuousMaxC ? `, continuous to ${c.continuousMaxC}` : ""}`}
                   >
                     <span
                       className="bg-accent-400 absolute inset-y-0 rounded-full"
@@ -1086,7 +1089,7 @@ export function Materials({
                     />
                   </div>
                   <p className="text-ink-2 text-right text-sm whitespace-nowrap">
-                    {c.tempC[0]}° to {c.tempC[1]}°C
+                    {c.minC}° to {c.maxC}°C{c.continuousMaxC ? <span className="text-ink-4 block text-xs">continuous to {c.continuousMaxC}°C</span> : null}
                   </p>
                 </li>
               );

@@ -57,7 +57,7 @@ export default async function ProductCategoryPage(
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(productCategoryGraph(fm, path)),
+            __html: JSON.stringify(await productCategoryGraph(fm, path)),
           }}
         />
       )}

@@ -43,7 +43,7 @@ export default async function AboutPage() {
     <>
       <JsonLd
         status={fm.status}
-        graph={pageGraph({
+        graph={await pageGraph({
           type: "AboutPage",
           path: "/about",
           name: fm.seo.title,

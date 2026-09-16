@@ -4,6 +4,7 @@ import { getSkuPage, skuSlugs } from "@/lib/sku-source";
 import { buildMetadata } from "@/lib/seo";
 import { pageGraph, skuNode } from "@/lib/schema";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { getSiteSettings } from "@/lib/settings";
 import {
   SkuAdvantages,
   SkuApplications,
@@ -64,7 +65,10 @@ export default async function SkuPage(
 ) {
   const { category, product } = await props.params;
 
-  const page = await getSkuPage(fileFor(category, product));
+  const [page, settings] = await Promise.all([
+    getSkuPage(fileFor(category, product)),
+    getSiteSettings(),
+  ]);
   if (!page) notFound();
 
   const fm = page.frontmatter;
@@ -91,7 +95,7 @@ export default async function SkuPage(
     <>
       <JsonLd
         status={fm.status}
-        graph={pageGraph({
+        graph={await pageGraph({
           path: `/products/${category}/${product}`,
           name: fm.seo.title,
           description: fm.seo.description,
@@ -128,9 +132,14 @@ export default async function SkuPage(
         specs={fm.specs}
         dimensional={fm.dimensional}
         categoryLabel={categoryLabel}
+        settings={settings}
       />
 
-      <SkuCompounds codes={fm.compounds} properties={fm.compoundProperties} />
+      <SkuCompounds
+        codes={fm.compounds}
+        properties={fm.compoundProperties}
+        compounds={settings.compounds}
+      />
 
       <SkuAdvantages items={fm.advantages} />
 
@@ -146,7 +155,12 @@ export default async function SkuPage(
 
       <SkuRelated items={siblings} categorySlug={category} />
 
-      <SkuCta h1={fm.h1} categorySlug={category} categoryLabel={categoryLabel} />
+      <SkuCta
+        h1={fm.h1}
+        categorySlug={category}
+        categoryLabel={categoryLabel}
+        quotation={settings.commercial.quotation}
+      />
     </>
   );
 }

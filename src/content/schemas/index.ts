@@ -2150,3 +2150,5 @@ export type Resource = z.infer<typeof resourceSchema>;
 export type Sku = z.infer<typeof skuSchema>;
 export type Legal = z.infer<typeof legalSchema>;
 export type Frontmatter<C extends Collection> = z.infer<(typeof COLLECTIONS)[C]>;
+
+export { siteSettingsSchema, type SiteSettings, type Certification, type Compound } from "./settings.ts";

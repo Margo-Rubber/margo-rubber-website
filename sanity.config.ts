@@ -222,6 +222,17 @@ export default defineConfig({
               .title("Photographs")
               .child(photographsMenu(S)),
             S.listItem()
+              .title("Site settings")
+              .child(
+                withPhotographs(
+                  S,
+                  S.document()
+                    .schemaType("siteSettings")
+                    .documentId("siteSettings-settings")
+                    .title("Site settings"),
+                ),
+              ),
+            S.listItem()
               .title("Footer")
               .child(
                 withPhotographs(S, S.document()

@@ -12,6 +12,8 @@
  * of them stops resolving.
  */
 
+import { INDUSTRIES, PRODUCTS } from "./routes.ts";
+
 /** Which mega-panel a nav item opens, if any. */
 export type MenuKey = "products" | "industries";
 
@@ -40,17 +42,13 @@ export const HEADER_NAV = [
  * category route.
  */
 export const PRODUCT_MENU = {
-  categories: [
-    { label: "O-Rings", href: "/products/o-rings" },
-    { label: "Oil Seals", href: "/products/oil-seals" },
-    { label: "Gaskets", href: "/products/gaskets" },
-    { label: "Bellows", href: "/products/bellows" },
-    { label: "Anti-Vibration Mounts", href: "/products/anti-vibration-mounts" },
-    { label: "Grommets", href: "/products/grommets" },
-    { label: "Bushes", href: "/products/bushes" },
-    { label: "Pads, Stoppers & Caps", href: "/products/pads-stoppers-caps" },
-    { label: "Leak Test Rubber", href: "/products/leak-test-rubber" },
-  ],
+  // Derived from the route registry: every built category except the two
+  // that are groups below. A category with a sheet but no page yet stays
+  // out of the header until it ships — a menu item to a contact form is
+  // not navigation.
+  categories: PRODUCTS.filter(
+    (p) => p.live && p.slug !== "extrusion" && p.slug !== "sponge-foam-rubber",
+  ).map((p) => ({ label: p.label, href: p.path })),
 
   groups: [
     {
@@ -83,14 +81,7 @@ export const PRODUCT_MENU = {
 } as const;
 
 /** The Industries mega-panel. One column, the nine sectors the site serves. */
-export const INDUSTRY_MENU = [
-  { label: "Mining", href: "/industries/mining" },
-  { label: "Oil & Gas", href: "/industries/oil-gas" },
-  { label: "Automotive", href: "/industries/automotive" },
-  { label: "Pumps & Valves", href: "/industries/pumps-valves" },
-  { label: "HVAC", href: "/industries/hvac" },
-  { label: "Electrical & Electronics", href: "/industries/electrical-electronics" },
-  { label: "Agriculture", href: "/industries/agriculture" },
-  { label: "Medical Devices", href: "/industries/medical-devices" },
-  { label: "Water & Fluid Management", href: "/industries/water-fluid-management" },
-] as const;
+export const INDUSTRY_MENU = INDUSTRIES.filter((i) => i.live).map((i) => ({
+  label: i.label,
+  href: i.path,
+}));

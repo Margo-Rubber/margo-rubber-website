@@ -49,7 +49,7 @@ export default async function LegalPage(props: PageProps<"/legal/[slug]">) {
     <>
       <JsonLd
         status={fm.status}
-        graph={pageGraph({
+        graph={await pageGraph({
           path: `/legal/${slug}`,
           name: fm.seo.title,
           description: fm.seo.description,

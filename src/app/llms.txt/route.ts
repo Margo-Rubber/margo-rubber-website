@@ -1,4 +1,4 @@
-import { SITE } from "@/content/site";
+import { getSiteSettings } from "@/lib/settings";
 import { SITE_URL } from "@/lib/seo";
 import { getFrontmatter, getPublishedSlugs } from "@/lib/content";
 
@@ -27,17 +27,6 @@ import { getFrontmatter, getPublishedSlugs } from "@/lib/content";
  * off.
  */
 
-const COUNTRY_NAMES: Record<string, string> = {
-  AU: "Australia",
-  GB: "United Kingdom",
-  AE: "United Arab Emirates",
-  SA: "Saudi Arabia",
-  MY: "Malaysia",
-  US: "United States",
-  SG: "Singapore",
-  KE: "Kenya",
-  TZ: "Tanzania",
-};
 
 /** One "- [Title](url): description" line per published page in a collection. */
 function section(
@@ -65,26 +54,25 @@ function section(
 }
 
 export async function GET() {
-  const markets = SITE.exportMarkets
-    .map((c) => COUNTRY_NAMES[c] ?? c)
-    .join(", ");
+  const { entity, commercial, certifications } = await getSiteSettings();
+  const held = certifications.items.filter((c) => c.standing === "held").map((c) => c.code);
 
   const parts: (string | null)[] = [
-    `# ${SITE.legalName}`,
+    `# ${entity.legalName}`,
     "",
-    `> ${SITE.certifications.join(", ")} certified manufacturer of precision moulded and extruded rubber components, based in ${SITE.locality}, ${SITE.region}, India. Supplies OEMs and distributors directly from the factory.`,
+    `> ${held.join(", ")} certified manufacturer of precision moulded and extruded rubber components, based in ${entity.address.locality}, ${entity.address.region}, India. Supplies OEMs and distributors directly from the factory.`,
     "",
     "## Company",
     "",
     [
-      `- Location: ${SITE.locality}, ${SITE.region}, India`,
-      `- Certification: ${SITE.certifications.join(", ")}`,
-      `- Minimum order: ${SITE.moq.value} ${SITE.moq.unit}`,
-      `- Monthly capacity: ${SITE.capacity.monthly.toLocaleString("en-GB")} pieces`,
-      `- Enquiry response: ${SITE.responsePromise}`,
-      `- Export markets: ${markets}`,
-      `- Incoterms: ${SITE.incoterms}`,
-      SITE.email ? `- Contact: ${SITE.email}` : null,
+      `- Location: ${entity.address.locality}, ${entity.address.region}, India`,
+      `- Certification: ${certifications.line}`,
+      `- Minimum run: ${commercial.minimumRunMoulded}`,
+      `- Installed capacity: ${commercial.capacityInstalledMonthly.toLocaleString("en-GB")} pieces a month; current output ${commercial.capacityCurrentMonthly.toLocaleString("en-GB")}`,
+      `- Quotation: ${commercial.quotation}; acknowledgement ${commercial.acknowledgement}`,
+      `- Incoterms: ${commercial.incoterms}`,
+      `- Terms: ${commercial.terms}`,
+      `- Contact: ${entity.email} · ${entity.phone} · ${entity.hours}`,
     ]
       .filter(Boolean)
       .join("\n"),

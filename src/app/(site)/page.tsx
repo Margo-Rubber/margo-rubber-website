@@ -1,4 +1,5 @@
 import { getSitePage } from "@/lib/page-source";
+import { getSiteSettings } from "@/lib/settings";
 import { buildMetadata } from "@/lib/seo";
 import { pageGraph } from "@/lib/schema";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -35,13 +36,16 @@ export async function generateMetadata() {
  * confirmWithMargo block in home.mdx.
  */
 export default async function HomePage() {
-  const fm = await getSitePage("home", homePageSchema);
+  const [fm, settings] = await Promise.all([
+    getSitePage("home", homePageSchema),
+    getSiteSettings(),
+  ]);
 
   return (
     <>
       <JsonLd
         status={fm.status}
-        graph={pageGraph({
+        graph={await pageGraph({
           path: "/",
           name: fm.seo.title,
           description: fm.seo.description,
@@ -122,6 +126,7 @@ export default async function HomePage() {
         body={fm.materials.body}
         axis={fm.materials.axis}
         footnote={fm.materials.footnote}
+        compounds={settings.compounds}
       />
 
       <HomeCta

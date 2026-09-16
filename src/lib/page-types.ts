@@ -11,6 +11,7 @@ import {
   industriesHubSchema,
   resourcesHubSchema,
   utilityPageSchema,
+  siteSettingsSchema,
 } from "../content/schemas/index.ts";
 
 /**
@@ -42,4 +43,6 @@ export const COLLECTIONS_FOR_PAGES: Record<
   "why-margo": { type: "whyMargoPage", schema: whyMargoPageSchema },
   about: { type: "aboutPage", schema: aboutPageSchema },
   footer: { type: "siteFooter", schema: footerSchema },
+  // The strings every page shares. Slug "settings", one document, no route.
+  settings: { type: "siteSettings", schema: siteSettingsSchema },
 };

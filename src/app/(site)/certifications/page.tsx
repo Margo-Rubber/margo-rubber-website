@@ -35,7 +35,7 @@ export default async function CertificationsPage() {
     <>
       <JsonLd
         status={fm.status}
-        graph={pageGraph({
+        graph={await pageGraph({
           path: "/certifications",
           name: fm.seo.title,
           description: fm.seo.description,
