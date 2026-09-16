@@ -212,6 +212,12 @@ export const qualityPanel = defineType({
           fields: [
             defineField({ name: "name", title: "Test", type: "string", validation: (r) => r.required().min(3) }),
             defineField({ name: "code", title: "Standard", type: "string", validation: (r) => r.required().min(2) }),
+            defineField({
+              name: "group",
+              title: "Group",
+              type: "string",
+              description: 'Heading shown above the first test in the group: "Per batch, before despatch".',
+            }),
           ],
           preview: { select: { title: "name", subtitle: "code" } },
         }),
@@ -325,6 +331,23 @@ export const specifyGrid = defineType({
         }),
       ],
       validation: (r) => r.required().min(2),
+      group: "content",
+    }),
+    defineField({
+      name: "closing",
+      title: "Closing line",
+      type: "string",
+      description: '"Have all four? Send them with your section drawing."',
+      group: "content",
+    }),
+    defineField({
+      name: "closingLink",
+      title: "Closing button",
+      type: "object",
+      fields: [
+        defineField({ name: "label", type: "string" }),
+        defineField({ name: "href", type: "string" }),
+      ],
       group: "content",
     }),
     anchorIdField(),

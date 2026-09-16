@@ -160,9 +160,9 @@ function renderBlock(block: Block, ctx: Ctx): ReactNode {
           glow
         >
           {sectors ? (
-            <SectorCards items={b.items} />
+            <SectorCards items={b.items} cardCta={b.cardCta} />
           ) : (
-            <ProfileGrid items={b.items} />
+            <ProfileGrid items={b.items} cardCta={b.cardCta} />
           )}
         </Section>
       );
@@ -341,7 +341,7 @@ function renderBlock(block: Block, ctx: Ctx): ReactNode {
           className={band}
           glow
         >
-          <SpecifyCards items={b.items} />
+          <SpecifyCards items={b.items} closing={b.closing} closingLink={b.closingLink} />
         </Section>
       );
 

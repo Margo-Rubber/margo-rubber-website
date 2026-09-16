@@ -390,6 +390,8 @@ export const productCategory = defineType({
           description: "Named catalogue lines, listed to search engines as a numbered list (Pads, Stoppers & Caps).",
           options: { layout: "tags" },
         }),
+        defineField({ name: "componentsName", title: "List name", type: "string", description: 'Default "Catalogue components".' }),
+        defineField({ name: "componentsAnchor", title: "List points at", type: "string", description: 'Section id, default "specifications".' }),
       ],
       options: { collapsible: true, collapsed: true },
       group: "meta",

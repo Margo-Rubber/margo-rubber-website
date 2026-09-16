@@ -106,3 +106,10 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 
 52. **FAQ node empty.** "Can I reorder leak test rubber in small quantities?" and "What is the lead time for a replacement rig seal?" are named with no written answers; no FAQPage node ships until they are written (as item 37).
 53. **Confirmation copy** (as item 36).
+
+## 18 Extrusion Profiles
+
+54. **Sector card icons.** Mining, Oil & gas and Agriculture take the nearest strokes in the icon set (layers, droplet, cycle) until drawn.
+55. **Construction card** links through the route registry to /contact?industry=Construction until the Construction page (sheet 41) is live.
+56. **Confirmation copy** "Drawing received. A named engineer replies within 48 hours to {email} with a compound recommendation, hardness grade and indicative pricing." — contact form post-submit state, Phase 7.
+57. **FAQ "Can Margo extrude a profile to my own cross-section drawing?"** (live) dropped — no written answer on the sheet; "How is rubber extrusion priced?" stays, answered by §08's intro.

@@ -49,9 +49,9 @@ export const categorySchema = z.preprocess(
 /** `sections[_key=="specSection"].rows` in the Sanity shape. */
 export const cellRows = (rows: string[][]) => rows.map((cells) => ({ cells }));
 
-/** "Label → /href" or "Label ↗ /href" on one line. */
+/** "Label → /href", "Label ↗ /href", "Label ↓ #id" or "Label › #id" on one line. */
 export function arrowLink(line: string): { label: string; href: string } {
-  const m = line.match(/^(.*?)\s*(?:→|↗|↓|->)\s*(\S+)$/);
+  const m = line.match(/^(.*?)\s*(?:→|↗|↓|›|->)\s*(\S+)$/);
   if (!m) throw new Error(`not a "Label → href" line: ${line}`);
   return { label: m[1].trim(), href: m[2] };
 }
@@ -93,7 +93,7 @@ export type StandardCategory = {
   materialFootnote?: string;
   /** FAQPage entries: the quoting question the notes name, answered by the commercial intro. */
   faq?: { q: string; from: "commercial" }[];
-  schemaProduct: { name: string; description: string; material?: string[] };
+  schemaProduct: { name: string; description: string; material?: string[]; components?: string[]; componentsName?: string; componentsAnchor?: string };
   related: string[];
 };
 

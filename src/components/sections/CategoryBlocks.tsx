@@ -1,4 +1,6 @@
+import Link from "next/link";
 import { Button } from "@/components/ui/Button";
+import { hrefFor, industryBySlug, productBySlug } from "@/content/routes";
 import { Container, Eyebrow, SectionGlow } from "@/components/ui/Section";
 import { Icon, ProfileDrawing, type IconName, type ProfileShape } from "@/components/ui/Icon";
 
@@ -45,6 +47,7 @@ function IconTile({
  */
 export function ProfileGrid({
   items,
+  cardCta,
 }: {
   items: readonly {
     id?: string;
@@ -53,6 +56,8 @@ export function ProfileGrid({
     body: string;
     shape?: string;
   }[];
+  /** "Quote this section" — links each coded card to the contact form with its code. */
+  cardCta?: string;
 }) {
   return (
     <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
@@ -84,6 +89,14 @@ export function ProfileGrid({
               </p>
             )}
             <p className="text-ink-4 mt-2.5 text-xs leading-relaxed">{p.body}</p>
+            {cardCta && p.code && (
+              <Link
+                href={`/contact?profile=${encodeURIComponent(p.code)}`}
+                className="text-accent-400 mt-4 inline-flex items-center gap-1.5 text-xs font-medium hover:opacity-80"
+              >
+                {cardCta} <span aria-hidden>→</span>
+              </Link>
+            )}
           </li>
         );
       })}
@@ -142,6 +155,8 @@ export function ProcessTimeline({
  */
 export function SpecifyCards({
   items,
+  closing,
+  closingLink,
 }: {
   items: readonly {
     label: string;
@@ -149,8 +164,11 @@ export function SpecifyCards({
     body: string;
     icon?: string;
   }[];
+  closing?: string;
+  closingLink?: { label: string; href: string };
 }) {
   return (
+    <>
     <dl className="grid gap-4 sm:grid-cols-2">
       {items.map((it, i) => (
         <div
@@ -180,6 +198,18 @@ export function SpecifyCards({
         </div>
       ))}
     </dl>
+    {closing && (
+      <p className="text-ink-3 mt-8 flex flex-wrap items-center justify-center gap-x-5 gap-y-3 text-center text-sm">
+        {closing}
+        {closingLink && (
+          <Button href={closingLink.href}>
+            {closingLink.label}
+            <span aria-hidden>→</span>
+          </Button>
+        )}
+      </p>
+    )}
+    </>
   );
 }
 
@@ -207,7 +237,7 @@ export function QualityPanel({
   body: string;
   quote?: { text: string; author: string; org: string; initials: string };
   badges?: readonly { label: string; icon?: string }[];
-  standards: readonly { name: string; code: string }[];
+  standards: readonly { name: string; code: string; group?: string }[];
   docPackage?: { title: string; body: string };
   className?: string;
 }) {
@@ -271,22 +301,32 @@ export function QualityPanel({
           </div>
 
           <div>
-            <ul className="space-y-2.5">
-              {standards.map((s) => (
-                <li
-                  key={s.name}
-                  className="border-line bg-surface-3 flex items-center gap-3 rounded-lg border px-5 py-3.5"
-                >
-                  <Icon name="check" className="text-accent-400 size-4 shrink-0" />
-                  <span className="text-ink-2 min-w-0 flex-1 text-sm">
-                    {s.name}
-                  </span>
-                  <span className="text-ink-4 font-mono text-[10px] tracking-[0.08em] whitespace-nowrap">
-                    {s.code}
-                  </span>
-                </li>
-              ))}
-            </ul>
+            {/* Tests in their groups — "Per batch, before despatch" / "Per
+                compound, at qualification" (sheet 18 §06). One list per
+                group with its label above; an ungrouped list has none. */}
+            {groupStandards(standards).map((g) => (
+              <div key={g.label ?? "all"} className="[&+div]:mt-6">
+                {g.label && (
+                  <p className="text-eyebrow text-ink-4 mb-3 font-mono uppercase">{g.label}</p>
+                )}
+                <ul className="space-y-2.5">
+                  {g.items.map((s) => (
+                    <li
+                      key={s.name}
+                      className="border-line bg-surface-3 flex items-center gap-3 rounded-lg border px-5 py-3.5"
+                    >
+                      <Icon name="check" className="text-accent-400 size-4 shrink-0" />
+                      <span className="text-ink-2 min-w-0 flex-1 text-sm">
+                        {s.name}
+                      </span>
+                      <span className="text-ink-4 font-mono text-[10px] tracking-[0.08em] whitespace-nowrap">
+                        {s.code}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
 
             {docPackage && (
               <div className="border-accent-400/25 bg-accent-400/[0.05] rounded-card mt-4 border p-6">
@@ -294,7 +334,7 @@ export function QualityPanel({
                   <Icon name="document" className="size-4" />
                   {docPackage.title}
                 </p>
-                <p className="text-ink-4 mt-3 text-xs leading-relaxed">
+                <p className="text-ink-4 mt-3 text-xs leading-relaxed whitespace-pre-line">
                   {docPackage.body}
                 </p>
               </div>
@@ -306,13 +346,39 @@ export function QualityPanel({
   );
 }
 
+/**
+ * A card may point at a page the registry has not flipped live yet
+ * (Construction, sheet 41). Until it is, the click goes where the registry
+ * sends every other link to that page — never to a 404.
+ */
+function liveHref(href: string): string {
+  const m = href.match(/^\/(industries|products)\/([a-z0-9-]+)$/);
+  if (!m) return href;
+  const entry = m[1] === "industries" ? industryBySlug(m[2]) : productBySlug(m[2]);
+  return entry ? hrefFor(entry) : href;
+}
+
+/** Consecutive tests with the same group label, in order; ungrouped stay together. */
+function groupStandards<T extends { group?: string }>(items: readonly T[]) {
+  const out: { label?: string; items: T[] }[] = [];
+  for (const it of items) {
+    const last = out[out.length - 1];
+    if (last && last.label === it.group) last.items.push(it);
+    else out.push({ label: it.group, items: [it] });
+  }
+  return out;
+}
+
 /* ── Sectors ─────────────────────────────────────────────────────────────── */
 
 /** Three across, icon tile top-left, left-aligned inside the card. */
 export function SectorCards({
   items,
+  cardCta,
 }: {
-  items: readonly { name: string; body: string; icon?: string }[];
+  items: readonly { name: string; body: string; icon?: string; href?: string }[];
+  /** "Rubber components for {sector}" — the link under each card that has an href. */
+  cardCta?: string;
 }) {
   return (
     <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -324,6 +390,14 @@ export function SectorCards({
           <IconTile name={(s.icon ?? "building") as IconName} />
           <h3 className="text-ink mt-5 text-base font-semibold">{s.name}</h3>
           <p className="text-ink-4 mt-3 text-sm leading-relaxed">{s.body}</p>
+          {cardCta && s.href && (
+            <Link
+              href={liveHref(s.href)}
+              className="text-accent-400 mt-4 inline-flex items-center gap-1.5 text-sm font-medium hover:opacity-80"
+            >
+              {cardCta.replace("{sector}", s.name)} <span aria-hidden>→</span>
+            </Link>
+          )}
         </li>
       ))}
     </ul>

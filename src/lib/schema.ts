@@ -554,16 +554,17 @@ export async function productCategoryGraph(
   // The one category with a named catalogue: thirteen components as an
   // ItemList, in table order, each pointing at the table (sheet 16).
   if (fm.schemaProduct?.components?.length) {
+    const anchor = fm.schemaProduct.componentsAnchor ?? "specifications";
     nodes.push({
       "@type": "ItemList",
-      "@id": `${SITE_URL}${path}#components`,
-      name: "Catalogue components",
+      "@id": `${SITE_URL}${path}#${anchor === "specifications" ? "components" : anchor}`,
+      name: fm.schemaProduct.componentsName ?? "Catalogue components",
       numberOfItems: fm.schemaProduct.components.length,
       itemListElement: fm.schemaProduct.components.map((name, i) => ({
         "@type": "ListItem",
         position: i + 1,
         name,
-        url: `${SITE_URL}${path}#specifications`,
+        url: `${SITE_URL}${path}#${anchor}`,
       })),
     });
   }

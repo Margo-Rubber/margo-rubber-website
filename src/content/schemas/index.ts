@@ -121,9 +121,18 @@ export const cardGridSchema = z.object({
         icon: z.string().optional(),
         /** Key into the cross-section drawings, for the profile library. */
         shape: z.string().optional(),
+        /** Where the card's link goes — a sector's industry page (sheet 18 §07). */
+        href: z.string().optional(),
       }),
     )
     .min(1),
+  /**
+   * The link on every card: "Quote this section" (→ /contact?profile=CODE)
+   * on the profile library; "Rubber components for {sector}" on the
+   * sectors grid, where `{sector}` is the card's name. Nothing links
+   * while empty.
+   */
+  cardCta: z.string().optional(),
 });
 
 /* ------------------------------------------------------------------ */
@@ -220,7 +229,14 @@ export const qualitySectionSchema = z
       .array(z.object({ label: z.string(), icon: z.string().optional() }))
       .default([]),
     standards: z
-      .array(z.object({ name: z.string().min(3), code: z.string().min(2) }))
+      .array(
+        z.object({
+          name: z.string().min(3),
+          code: z.string().min(2),
+          /** "Per batch, before despatch" / "Per compound, at qualification" (sheet 18 §06). */
+          group: z.string().optional(),
+        }),
+      )
       .min(1),
     docPackage: z
       .object({ title: z.string().min(4), body: z.string().min(20) })
@@ -281,6 +297,9 @@ export const specifySectionSchema = z
         }),
       )
       .min(2),
+    /** "Have all four? Send them with your section drawing." + a button (sheet 18 §05). */
+    closing: z.string().optional(),
+    closingLink: z.object({ label: z.string(), href: z.string() }).optional(),
   });
 
 
@@ -523,6 +542,9 @@ export const productCategorySchema = baseSchema.extend({
       material: z.array(z.string()).optional(),
       /** Named catalogue components → an ItemList node (sheet 16, page-level). */
       components: z.array(z.string()).optional(),
+      /** The list's name and the fragment it points at — "Catalogue components" at #specifications by default. */
+      componentsName: z.string().optional(),
+      componentsAnchor: z.string().optional(),
     })
     .optional(),
 });

@@ -177,6 +177,12 @@ export const cardGrid = defineType({
             iconField(),
             shapeField(),
             defineField({
+              name: "href",
+              title: "Links to",
+              type: "string",
+              description: "Where this card's link goes, e.g. /industries/automotive. Needs the grid's link label.",
+            }),
+            defineField({
               name: "id",
               title: "Anchor",
               type: "string",
@@ -191,6 +197,14 @@ export const cardGrid = defineType({
         }),
       ],
       validation: (r) => r.required().min(1),
+      group: "content",
+    }),
+    defineField({
+      name: "cardCta",
+      title: "Link label on every card",
+      type: "string",
+      description:
+        '"Quote this section" on a profile card (goes to the contact form with the code filled in); "Rubber components for {sector}" on a sector card, where {sector} becomes the card name. Empty means no links.',
       group: "content",
     }),
     anchorIdField(),
