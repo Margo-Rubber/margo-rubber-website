@@ -190,10 +190,10 @@ Founder & Director · Margo Rubber Products`
   | Ayyaz Shaikh | Co-Founder & Business Development Head | Nine years leading customer relations and vendor development. Runs quotation, programme onboarding and the export desk. |
   _Replaces four cards reading Name pending sign-off. CONFIRM both exact titles and whether either wants a photograph published · CONFIRM_
 - **Stat cards ×3** (Value | Label | Replaces):
-  | Team Members |  |
+  | ⚠ CONFIRM | Team Members |  |
   | 20 yrs | Founder Experience in Rubber |  |
   | 10+ yrs | Average Client Relationship |  |
-  _CONFIRM · Headcount is the one figure worth asking for — a real number, even 35, is more persuasive than 400+ that no one believes and a buyer can disprove on a plant visit in ten seconds. 100% safety record comes off regardless: it is unprovable, and the first incident makes it a liability rather than an error_
+  _Headcount is the one figure worth asking for — a real number, even 35, is more persuasive than 400+ that no one believes and a buyer can disprove on a plant visit in ten seconds. 100% safety record comes off regardless: it is unprovable, and the first incident makes it a liability rather than an error_
   <details><summary>notes (5)</summary>
   - This is the only section on the site that can carry Person schema. Two named people with titles, linked to the Organization, is a stronger trust signal for an entity query than every adjective on the page combined.
   - Markup. <h3> name, <p> title, itemprop not required — the JSON-LD carries it. Photograph: alt="Mehboob Shaikh, Founder and Director of Margo Rubber Products".
@@ -306,17 +306,17 @@ Founder & Director · Margo Rubber Products`
   _Live says 27 years from a 1997 founding. From 2005, it is 20 · eleven entries now, up from seven, so the two- and three-year gaps carry a continuous timeline rather than a decade-wide jump_
 - **Entries ×11** (Year | Title | Body | Status):
   | 2005 | Founded | Margo Rubber Products established in Nashik as a compression-moulding workshop. | Verified |
-  | First ISO 9001 certification | Quality management system independently audited and certified for moulded rubber components. |
-  | First automotive OEM programme | Moulded sealing and vibration components qualified into a Tier-1 automotive supply chain. |
-  | Compound mixing brought in-house | Formulation moved off the shelf and onto our own mixing floor, across the polymer families we run today. |
-  | AEM programme with Mahindra & Mahindra | AEM formulations qualified for engine and transmission applications — still our signature compound. |
-  | In-house test laboratory commissioned | Durometer, ODR rheometer, tensile machine, ageing oven and compression-set rig brought on site, each on a calibration cycle. |
-  | Extrusion line commissioned | Continuous-cure extrusion added, widening the catalogue beyond moulded parts to profiles, cords and channels. |
-  | Twenty-four accounts across seven sectors | Customer base spanning automotive, industrial machinery, electrical, specialist vehicles, medical, chemicals and tooling. |
-  | New plant, automated during the move | From 6,000 sq ft and 200,000 parts a month to 10,000+ sq ft and five million installed — automated presses, digital curing ovens, IoT monitoring and centralised ERP. |
-  | Sponge, foam and self-adhesive tape line | Cellular elastomers and converted foam tape added as the twelfth production line, taking the website catalogue to eleven categories. |
-  | Export programme opened | Ninety-five markets screened and scored, eighteen country playbooks written, five lanes set for activation. |
-  _2008 · Proposed · 2010 · Proposed · 2013 · Proposed · 2015 · Proposed · 2018 · Proposed · 2020 · Proposed · 2023 · Proposed · 2026 · Proposed · 2026 · Proposed · 2026 · Proposed · DO NOT PUBLISH THE PROPOSED YEARS AS-IS._
+  | ⚠ 2008 | First ISO 9001 certification | Quality management system independently audited and certified for moulded rubber components. | ⚠ Proposed |
+  | ⚠ 2010 | First automotive OEM programme | Moulded sealing and vibration components qualified into a Tier-1 automotive supply chain. | ⚠ Proposed |
+  | ⚠ 2013 | Compound mixing brought in-house | Formulation moved off the shelf and onto our own mixing floor, across the polymer families we run today. | ⚠ Proposed |
+  | ⚠ 2015 | AEM programme with Mahindra & Mahindra | AEM formulations qualified for engine and transmission applications — still our signature compound. | ⚠ Proposed |
+  | ⚠ 2018 | In-house test laboratory commissioned | Durometer, ODR rheometer, tensile machine, ageing oven and compression-set rig brought on site, each on a calibration cycle. | ⚠ Proposed |
+  | ⚠ 2020 | Extrusion line commissioned | Continuous-cure extrusion added, widening the catalogue beyond moulded parts to profiles, cords and channels. | ⚠ Proposed |
+  | ⚠ 2023 | Twenty-four accounts across seven sectors | Customer base spanning automotive, industrial machinery, electrical, specialist vehicles, medical, chemicals and tooling. | ⚠ Proposed |
+  | ⚠ 2026 | New plant, automated during the move | From 6,000 sq ft and 200,000 parts a month to 10,000+ sq ft and five million installed — automated presses, digital curing ovens, IoT monitoring and centralised ERP. | ⚠ Proposed |
+  | ⚠ 2026 | Sponge, foam and self-adhesive tape line | Cellular elastomers and converted foam tape added as the twelfth production line, taking the website catalogue to eleven categories. | ⚠ Proposed |
+  | ⚠ 2026 | Export programme opened | Ninety-five markets screened and scored, eighteen country playbooks written, five lanes set for activation. | ⚠ Proposed |
+  _DO NOT PUBLISH THE PROPOSED YEARS AS-IS._
 - **Removed entries** (Live entry | Why):
   |  | Founding year is 2005. Headcount and press count unsourced. |
   |  | Margo has no completed export shipments. This entry describes something that has not happened yet. |

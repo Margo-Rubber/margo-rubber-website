@@ -32,8 +32,13 @@ export function formatRange(c: SiteSettings["compounds"][number]): string {
 /** Match by code ("FKM") or by the code in parentheses of a display name ("Viton® (FKM)"). */
 export function compoundByCode(settings: SiteSettings, code: string) {
   const key = code.trim().toUpperCase();
+  // "FKM", "Silicone (VMQ)", "Natural Rubber" and "Neoprene" all resolve:
+  // by code, by the code in parentheses either way round, or by name.
   return settings.compounds.find(
     (c) =>
-      c.code.toUpperCase() === key || c.name.toUpperCase().includes(`(${key})`),
+      c.code.toUpperCase() === key ||
+      c.name.toUpperCase() === key ||
+      c.name.toUpperCase().includes(`(${key})`) ||
+      key.includes(`(${c.code.toUpperCase()})`),
   );
 }

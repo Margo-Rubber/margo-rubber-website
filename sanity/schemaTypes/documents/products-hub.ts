@@ -350,6 +350,15 @@ export const productsHub = defineType({
       fields: [
         ...sectionFields(),
         defineField({
+          name: "cta",
+          title: "Closing link",
+          type: "object",
+          fields: [
+            defineField({ name: "label", title: "Link text", type: "string" }),
+            defineField({ name: "href", title: "Link address", type: "string" }),
+          ],
+        }),
+        defineField({
           name: "items",
           title: "Certifications",
           type: "array",

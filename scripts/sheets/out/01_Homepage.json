@@ -958,12 +958,14 @@
             [
               "AEM",
               "−40° to 175°C\ncontinuous to 160°C",
-              "−29° to 150°C standard; 165–175°C advanced grades"
+              "−29° to 150°C standard; 165–175°C advanced grades",
+              "Resolved 2026-09-03 — the table now publishes the continuous figure alongside the peak, so the ten SKU pages that carried a bare 160°C agree with it. Still confirm which AEM grade Margo mixes"
             ],
             [
               "FKM",
               "−20° to 250°C\ncontinuous to 200°C",
-              "−20° to 200–210°C"
+              "−20° to 200–210°C",
+              "Resolved 2026-09-03 — the table now publishes the continuous figure alongside the peak, matching the AEM treatment. Chemours rates FKM continuous at 204 °C with peaks to about 260 °C; Viton B and speciality grades reach 250 °C continuous, so confirm the grade if 250 is to stand as continuous"
             ],
             [
               "Silicone (VMQ)",
@@ -1002,7 +1004,17 @@
               "Top sound; low end conservative"
             ]
           ],
-          "note": "Resolved 2026-09-03 — the table now publishes the continuous figure alongside the peak, so the ten SKU pages that carried a bare 160°C agree with it. Still confirm which AEM grade Margo mixes · Resolved 2026-09-03 — the table now publishes the continuous figure alongside the peak, matching the AEM treatment. Chemours rates FKM continuous at 204 °C with peaks to about 260 °C; Viton B and speciality grades reach 250 °C continuous, so confirm the grade if 250 is to stand as continuous · Six of eight are sound. Where Margo’s figure is narrower than the general range — EPDM, silicone, natural rubber — that is a supplier being conservative about what it will stand behind, which is the right instinct and should stay"
+          "confirm": [
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              3
+            ]
+          ],
+          "note": "Six of eight are sound. Where Margo’s figure is narrower than the general range — EPDM, silicone, natural rubber — that is a supplier being conservative about what it will stand behind, which is the right instinct and should stay"
         },
         {
           "label": "FKM — the one to settle",

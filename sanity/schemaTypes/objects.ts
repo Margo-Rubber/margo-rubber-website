@@ -24,7 +24,7 @@ export const seo = defineType({
       title: "Title in Google",
       type: "string",
       description: "The blue headline in search results. Google cuts it around 60 characters.",
-      validation: (r) => r.required().min(10).max(60),
+      validation: (r) => r.required().min(10).max(70),
     }),
     defineField({
       name: "description",
@@ -32,7 +32,7 @@ export const seo = defineType({
       type: "text",
       rows: 3,
       description: "The grey text under the headline. Between 50 and 160 characters.",
-      validation: (r) => r.required().min(50).max(160),
+      validation: (r) => r.required().min(50).max(200),
     }),
     defineField({
       name: "primaryKeyword",

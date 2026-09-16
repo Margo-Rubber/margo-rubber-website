@@ -671,7 +671,8 @@
             [
               "Oil & Gas",
               "Sealing rated to 250 °C for upstream and downstream service. NORSOK and API qualification is under way and targeted for 2027.",
-              "O-Rings, Gaskets, Oil Seals"
+              "O-Rings, Gaskets, Oil Seals",
+              "Gulf EPC and equipment suppliers — target sector, no named account yet"
             ],
             [
               "Pumps & Valves",
@@ -682,7 +683,8 @@
             [
               "HVAC",
               "Airtight compression under continuous low-amplitude vibration. Foam tape supplied as cut rolls to your width.",
-              "Sponge & Foam, Extrusion Profiles, Gaskets"
+              "Sponge & Foam, Extrusion Profiles, Gaskets",
+              "Duct and panel fabricators — 800,000 pcs/yr delivered, accounts unnamed"
             ],
             [
               "Electrical",
@@ -699,15 +701,35 @@
             [
               "Water",
               "Sealing rings to IS 5382 for water, gas and sewer mains, plus coupling gaskets and tank linings.",
-              "Gaskets, O-Rings, Extrusion Profiles"
+              "Gaskets, O-Rings, Extrusion Profiles",
+              "Treatment and distribution contractors — target sector, no named account yet"
             ],
             [
               "Agriculture",
               "Weather- and UV-resistant parts for farm machinery and irrigation. Built for ozone attack under static strain in sunlight.",
-              "Extrusion Profiles, Mounts, Grommets"
+              "Extrusion Profiles, Mounts, Grommets",
+              "Farm machinery and irrigation OEMs — target sector, no named account yet"
             ]
           ],
-          "note": "Gulf EPC and equipment suppliers — target sector, no named account yet · Duct and panel fabricators — 800,000 pcs/yr delivered, accounts unnamed · Treatment and distribution contractors — target sector, no named account yet · Farm machinery and irrigation OEMs — target sector, no named account yet · Descriptions 17–24 words, matching the live panel length. Five of nine sectors carry real named accounts from the corrected 24-account list — that is five more than the live build, which prints “OEMs & Tier 1 suppliers” on all eight tabs. The four amber rows have no named account and must not invent one: publish the buyer type, or leave the field out of those four panels entirely. Ask Ayaz whether any of the four have an account that simply never reached the profile · Ask Ayaz"
+          "confirm": [
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              7,
+              3
+            ],
+            [
+              8,
+              3
+            ]
+          ],
+          "note": "Descriptions 17–24 words, matching the live panel length. Five of nine sectors carry real named accounts from the corrected 24-account list — that is five more than the live build, which prints “OEMs & Tier 1 suppliers” on all eight tabs. The four amber rows have no named account and must not invent one: publish the buyer type, or leave the field out of those four panels entirely. Ask Ayaz whether any of the four have an account that simply never reached the profile · Ask Ayaz"
         }
       ],
       "notes": [

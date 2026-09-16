@@ -34,13 +34,13 @@ CERTIFIED · 09111526A`
 > live: LIVE H2 → ISO 9001:2015 Certificate · every field is a placeholder · QMS-XXXX-XXXX · DD Mon YYYY · Plot No. [XX] · 422 007 · “Accredited Certification Body” ×2 · a download wired to nothing
 - **Certificate card** (Field | Correct value | Live):
   | Certified entity | Margo Rubber Products | Margo Rubber Products — correct |
-  | Address |  |
+  | Address | ⚠ MISMATCH — the certificate itself carries B-12, MIDC Ambad, Nashik 422010; the client-confirmed operating address is SRNO. 4494/10, behind Furniture Stop, opposite Samarth Dies, Vilholi, Nashik 422010 |  |
   | Standard | ISO 9001:2015 | ISO 9001:2015 — correct |
   | Scope | Manufacture of moulded rubber components |  |
   | Certificate No. | 09111526A |  |
   | Valid until | 21 February 2027 |  |
-  | Issue date |  |
-  _MISMATCH — the certificate itself carries B-12, MIDC Ambad, Nashik 422010; the client-confirmed operating address is SRNO. 4494/10, behind Furniture Stop, opposite Samarth Dies, Vilholi, Nashik 422010 · CONFIRM — on the certificate, not yet extracted · The postcode is wrong twice over. Live says 422 007; every other surface on the site says 422 010. A supplier-qualification auditor cross-referencing the certificate against the letterhead finds a mismatch on the first field they check_
+  | Issue date | ⚠ CONFIRM — on the certificate, not yet extracted |  |
+  _The postcode is wrong twice over. Live says 422 007; every other surface on the site says 422 010. A supplier-qualification auditor cross-referencing the certificate against the letterhead finds a mismatch on the first field they check_
 - **Spec strip ×6** (Label | Correct value | Live):
   | STANDARD | ISO 9001:2015 | Correct |
   | ISSUED BY | Integral Certification Ltd |  |
@@ -65,12 +65,12 @@ CERTIFIED · 09111526A`
   > Our Nashik plant runs compression and transfer moulding, injection moulding, continuous-cure extrusion and rubber-to-metal bonding. Process parameters are controlled and recorded per batch under the ISO 9001:2015 QMS, with cure records retrievable per production batch.
   _36 words · live is 26 · injection moulding added — it is on every other capability list on the site and missing from this one_
 - **Cards ×5** (Card | Body | Status):
-  | Compression & transfer moulding | Automated hydraulic presses with closed-loop temperature and pressure control. Cure-time profiles logged per batch and retrievable. |
+  | Compression & transfer moulding | Automated hydraulic presses with closed-loop temperature and pressure control. Cure-time profiles logged per batch and retrievable. | ⚠ CONFIRM press tonnage — live says 50–300 tonne, which is not in any source document |
   | Extrusion lines | Continuous-cure extrusion for profiles, cord and tube. Section checked against the drawing at start-up and at defined intervals; hardness per batch. Not yet within the ISO certificate scope. | Scope note added |
-  | Rubber-to-metal bonding | Surface preparation, bonding-agent application and cure documented with operator sign-off. |
+  | Rubber-to-metal bonding | Surface preparation, bonding-agent application and cure documented with operator sign-off. | ⚠ CONFIRM — bonded pads appear in the company profile, but bonding as a named line does not |
   | Compound mixing | Automated in-house mixing with traceability to raw material lots. Compound released on hardness and specific gravity before it reaches a press. | Keep — sourced |
   | Tool room | Mould and die design, cutting, maintenance and modification in-house. Tooling records held as controlled documents. | Strengthened — live understates this as “maintenance and minor modifications” when tooling is designed and cut here |
-  _CONFIRM press tonnage — live says 50–300 tonne, which is not in any source document · CONFIRM — bonded pads appear in the company profile, but bonding as a named line does not · Card bodies 16–22 words, matching live. The tool room card is the one worth strengthening — in-house tooling is a genuine differentiator and this page describes it as if Margo only repairs moulds someone else made_
+  _Card bodies 16–22 words, matching live. The tool room card is the one worth strengthening — in-house tooling is a genuine differentiator and this page describes it as if Margo only repairs moulds someone else made_
 - **Image caption**: `Compression moulding bay · Nashik plant`
   _Replaces “Workers operating heavy machinery on the production floor” — that string is an alt-text description that has leaked into the visible caption. Alt should read alt="Compression moulding presses at the Margo Rubber Products plant, Nashik"_
   <details><summary>notes (5)</summary>

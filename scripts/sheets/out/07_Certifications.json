@@ -104,6 +104,7 @@
             ],
             [
               "Address",
+              "MISMATCH — the certificate itself carries B-12, MIDC Ambad, Nashik 422010; the client-confirmed operating address is SRNO. 4494/10, behind Furniture Stop, opposite Samarth Dies, Vilholi, Nashik 422010",
               ""
             ],
             [
@@ -128,10 +129,21 @@
             ],
             [
               "Issue date",
+              "CONFIRM — on the certificate, not yet extracted",
               ""
             ]
           ],
-          "note": "MISMATCH — the certificate itself carries B-12, MIDC Ambad, Nashik 422010; the client-confirmed operating address is SRNO. 4494/10, behind Furniture Stop, opposite Samarth Dies, Vilholi, Nashik 422010 · CONFIRM — on the certificate, not yet extracted · The postcode is wrong twice over. Live says 422 007; every other surface on the site says 422 010. A supplier-qualification auditor cross-referencing the certificate against the letterhead finds a mismatch on the first field they check"
+          "confirm": [
+            [
+              1,
+              1
+            ],
+            [
+              6,
+              1
+            ]
+          ],
+          "note": "The postcode is wrong twice over. Live says 422 007; every other surface on the site says 422 010. A supplier-qualification auditor cross-referencing the certificate against the letterhead finds a mismatch on the first field they check"
         },
         {
           "label": "Spec strip ×6",
@@ -222,7 +234,8 @@
           "rows": [
             [
               "Compression & transfer moulding",
-              "Automated hydraulic presses with closed-loop temperature and pressure control. Cure-time profiles logged per batch and retrievable."
+              "Automated hydraulic presses with closed-loop temperature and pressure control. Cure-time profiles logged per batch and retrievable.",
+              "CONFIRM press tonnage — live says 50–300 tonne, which is not in any source document"
             ],
             [
               "Extrusion lines",
@@ -231,7 +244,8 @@
             ],
             [
               "Rubber-to-metal bonding",
-              "Surface preparation, bonding-agent application and cure documented with operator sign-off."
+              "Surface preparation, bonding-agent application and cure documented with operator sign-off.",
+              "CONFIRM — bonded pads appear in the company profile, but bonding as a named line does not"
             ],
             [
               "Compound mixing",
@@ -244,7 +258,17 @@
               "Strengthened — live understates this as “maintenance and minor modifications” when tooling is designed and cut here"
             ]
           ],
-          "note": "CONFIRM press tonnage — live says 50–300 tonne, which is not in any source document · CONFIRM — bonded pads appear in the company profile, but bonding as a named line does not · Card bodies 16–22 words, matching live. The tool room card is the one worth strengthening — in-house tooling is a genuine differentiator and this page describes it as if Margo only repairs moulds someone else made"
+          "confirm": [
+            [
+              0,
+              2
+            ],
+            [
+              2,
+              2
+            ]
+          ],
+          "note": "Card bodies 16–22 words, matching live. The tool room card is the one worth strengthening — in-house tooling is a genuine differentiator and this page describes it as if Margo only repairs moulds someone else made"
         },
         {
           "label": "Image caption",

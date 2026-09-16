@@ -13,3 +13,12 @@ build (Build Instructions §01) or a row the sheet marks CONFIRM.
 5. **Footer description.** The sheet's second sentence ends "…in 95 countries". Buyer build shows the first sentence only. *Needed: buyer-build second sentence, or confirm one sentence.*
 6. **Contact panel footnote.** The sheet's footnote row is a test instruction (rfq@ mailbox), not copy. The line under the form reads "Quotation within 48 hours · info@margorubber.in", built from Site settings. *Needed: confirm or supply.*
 7. **Facility badge / contact panel badge.** The sheet gives neither; both are now empty and the pills do not render. (The old badge named MIDC Ambad.)
+
+## 02 Products hub
+
+8. **Hero stat card — "200+ Catalogue SKUs".** Roadmap claim; the buyer build shows the other three cards. *Needed: a buyer-build figure, or confirm three cards.*
+9. **Sector panels — four "Typical clients" cells.** Oil & Gas, HVAC, Water and Agriculture have no named account; per the sheet the buyer type is published (e.g. "Gulf EPC and equipment suppliers"). *The sheet asks: do any of the four have an account that never reached the company profile?*
+10. **Marquee strip under the hero.** The sheet has no such element; the old one named Aerospace and Pharmaceutical. Now empty (hidden).
+11. **Testing CTA — "Download the test capability statement".** Hidden until a PDF exists (sheet: CONFIRM the file).
+12. **Catalogue bullets — "CAD drawing index with part numbers"** comes off unless the index exists (sheet: CONFIRM). Not shown.
+13. **Certifications — ISO 14001 / ISO 45001 rows.** The sheet marks both CONFIRM before they ship; they render as "[Upgrade in progress]" from Site settings. *Needed: confirm the 2027 targets.*

@@ -212,6 +212,13 @@ export default async function ProductsHubPage() {
             items={settings.certifications.items}
             scopeNote={settings.certifications.scopeNote}
           />
+          {fm.certifications.cta && (
+            <p className="mt-8">
+              <Link href={fm.certifications.cta.href} className="text-accent-400 text-sm font-medium hover:opacity-80">
+                {fm.certifications.cta.label} <span aria-hidden>›</span>
+              </Link>
+            </p>
+          )}
         </Section>
       )}
 

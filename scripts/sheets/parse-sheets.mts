@@ -51,6 +51,8 @@ export type Field =
       kind: "table";
       columns: string[];
       rows: string[][];
+      /** [row, col] cells the sheet marks CONFIRM */
+      confirm?: [number, number][];
       note?: string;
     }
   | { label: string; kind: "list"; items: string[]; note?: string }
@@ -99,7 +101,9 @@ function headingLines(el: HTMLElement): string[] {
 }
 
 function stripNotes(dd: HTMLElement): { note: string; dd: HTMLElement } {
-  const notes = dd.querySelectorAll(".wc, .confirm");
+  // A <td class="confirm"> is a VALUE flagged for confirmation and stays in
+  // its row (readRow marks it); only free-standing notes are lifted out.
+  const notes = dd.querySelectorAll(".wc, .confirm").filter((n) => n.tagName !== "TD");
   const note = notes
     .map((n) => text(n))
     .filter(Boolean)
@@ -132,14 +136,14 @@ function readRow(dl: HTMLElement): Field | null {
   const table = dd.querySelector("table");
   if (table) {
     const columns = table.querySelectorAll("thead th").map((th) => text(th));
-    const rows = table
-      .querySelectorAll("tbody tr")
-      .map((tr) =>
-        tr
-          .querySelectorAll("td, th")
-          .map((td) => (td.classList.contains("strike") ? "" : text(td))),
-      );
-    return withNote({ label, kind: "table" as const, columns, rows });
+    const confirm: [number, number][] = [];
+    const rows = table.querySelectorAll("tbody tr").map((tr, ri) =>
+      tr.querySelectorAll("td, th").map((td, ci) => {
+        if (td.classList.contains("confirm")) confirm.push([ri, ci]);
+        return td.classList.contains("strike") ? "" : text(td);
+      }),
+    );
+    return withNote({ label, kind: "table" as const, columns, rows, ...(confirm.length ? { confirm } : {}) });
   }
   const paras = dd.querySelectorAll("p.body-copy, p");
   if (paras.length) {
@@ -255,7 +259,9 @@ function toMarkdown(s: Sheet): string {
           break;
         case "table":
           out.push(`- **${f.label}** (${f.columns.join(" | ")}):`);
-          for (const r of f.rows) out.push(`  | ${r.join(" | ")} |`);
+          f.rows.forEach((r, ri) =>
+            out.push(`  | ${r.map((c, ci) => (f.confirm?.some(([a, b]) => a === ri && b === ci) ? `⚠ ${c}` : c)).join(" | ")} |`),
+          );
           break;
         case "list":
           out.push(`- **${f.label}**:`);

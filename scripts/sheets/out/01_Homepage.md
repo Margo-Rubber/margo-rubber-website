@@ -289,16 +289,16 @@ continuous to 200°C |
   > This table is the one source for compound temperature ranges across the whole site. Every category page, the products hub, the industry pages and the export pages must carry these eight values and no others. Where a page disagrees, this table wins.
 - **Check result** (Compound | Published here | General industry continuous | Verdict):
   | AEM | −40° to 175°C
-continuous to 160°C | −29° to 150°C standard; 165–175°C advanced grades |
+continuous to 160°C | −29° to 150°C standard; 165–175°C advanced grades | ⚠ Resolved 2026-09-03 — the table now publishes the continuous figure alongside the peak, so the ten SKU pages that carried a bare 160°C agree with it. Still confirm which AEM grade Margo mixes |
   | FKM | −20° to 250°C
-continuous to 200°C | −20° to 200–210°C |
+continuous to 200°C | −20° to 200–210°C | ⚠ Resolved 2026-09-03 — the table now publishes the continuous figure alongside the peak, matching the AEM treatment. Chemours rates FKM continuous at 204 °C with peaks to about 260 °C; Viton B and speciality grades reach 250 °C continuous, so confirm the grade if 250 is to stand as continuous |
   | Silicone (VMQ) | −60° to 220°C | −55° to 230°C | Sound, slightly conservative |
   | EPDM | −40° to 140°C | −40° to 150°C | Sound, conservative |
   | NBR | −30° to 120°C | −33° to 120°C | Sound |
   | Neoprene (CR) | −40° to 120°C | −33° to 120°C | Sound |
   | SBR | −30° to 100°C | −28° to 100°C | Sound |
   | Natural Rubber | −20° to 90°C | −50° to 80–90°C | Top sound; low end conservative |
-  _Resolved 2026-09-03 — the table now publishes the continuous figure alongside the peak, so the ten SKU pages that carried a bare 160°C agree with it. Still confirm which AEM grade Margo mixes · Resolved 2026-09-03 — the table now publishes the continuous figure alongside the peak, matching the AEM treatment. Chemours rates FKM continuous at 204 °C with peaks to about 260 °C; Viton B and speciality grades reach 250 °C continuous, so confirm the grade if 250 is to stand as continuous · Six of eight are sound. Where Margo’s figure is narrower than the general range — EPDM, silicone, natural rubber — that is a supplier being conservative about what it will stand behind, which is the right instinct and should stay_
+  _Six of eight are sound. Where Margo’s figure is narrower than the general range — EPDM, silicone, natural rubber — that is a supplier being conservative about what it will stand behind, which is the right instinct and should stay_
 - **FKM — the one to settle**:
   > Published FKM continuous service is 200 to 210 °C across the industry. The 250 °C figure in Margo’s locked facts is 40 to 50 degrees above that, which is the pattern of a peak or intermittent rating rather than a continuous one. Both numbers can be true of the same compound — they answer different questions.
   > This matters more than the other seven combined. FKM is the compound specified precisely because something runs hot, so it is the one a buyer selects on the top number. An engineer who designs to 250 °C continuous on a compound rated 200 gets a seal that hardens and cracks in service — and the site said 250.

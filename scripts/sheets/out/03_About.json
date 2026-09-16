@@ -616,6 +616,7 @@
           ],
           "rows": [
             [
+              "CONFIRM",
               "Team Members",
               ""
             ],
@@ -630,7 +631,13 @@
               ""
             ]
           ],
-          "note": "CONFIRM · Headcount is the one figure worth asking for — a real number, even 35, is more persuasive than 400+ that no one believes and a buyer can disprove on a plant visit in ten seconds. 100% safety record comes off regardless: it is unprovable, and the first incident makes it a liability rather than an error"
+          "confirm": [
+            [
+              0,
+              0
+            ]
+          ],
+          "note": "Headcount is the one figure worth asking for — a real number, even 35, is more persuasive than 400+ that no one believes and a buyer can disprove on a plant visit in ten seconds. 100% safety record comes off regardless: it is unprovable, and the first incident makes it a liability rather than an error"
         }
       ],
       "notes": [
@@ -1016,47 +1023,149 @@
               "Verified"
             ],
             [
+              "2008",
               "First ISO 9001 certification",
-              "Quality management system independently audited and certified for moulded rubber components."
+              "Quality management system independently audited and certified for moulded rubber components.",
+              "Proposed"
             ],
             [
+              "2010",
               "First automotive OEM programme",
-              "Moulded sealing and vibration components qualified into a Tier-1 automotive supply chain."
+              "Moulded sealing and vibration components qualified into a Tier-1 automotive supply chain.",
+              "Proposed"
             ],
             [
+              "2013",
               "Compound mixing brought in-house",
-              "Formulation moved off the shelf and onto our own mixing floor, across the polymer families we run today."
+              "Formulation moved off the shelf and onto our own mixing floor, across the polymer families we run today.",
+              "Proposed"
             ],
             [
+              "2015",
               "AEM programme with Mahindra & Mahindra",
-              "AEM formulations qualified for engine and transmission applications — still our signature compound."
+              "AEM formulations qualified for engine and transmission applications — still our signature compound.",
+              "Proposed"
             ],
             [
+              "2018",
               "In-house test laboratory commissioned",
-              "Durometer, ODR rheometer, tensile machine, ageing oven and compression-set rig brought on site, each on a calibration cycle."
+              "Durometer, ODR rheometer, tensile machine, ageing oven and compression-set rig brought on site, each on a calibration cycle.",
+              "Proposed"
             ],
             [
+              "2020",
               "Extrusion line commissioned",
-              "Continuous-cure extrusion added, widening the catalogue beyond moulded parts to profiles, cords and channels."
+              "Continuous-cure extrusion added, widening the catalogue beyond moulded parts to profiles, cords and channels.",
+              "Proposed"
             ],
             [
+              "2023",
               "Twenty-four accounts across seven sectors",
-              "Customer base spanning automotive, industrial machinery, electrical, specialist vehicles, medical, chemicals and tooling."
+              "Customer base spanning automotive, industrial machinery, electrical, specialist vehicles, medical, chemicals and tooling.",
+              "Proposed"
             ],
             [
+              "2026",
               "New plant, automated during the move",
-              "From 6,000 sq ft and 200,000 parts a month to 10,000+ sq ft and five million installed — automated presses, digital curing ovens, IoT monitoring and centralised ERP."
+              "From 6,000 sq ft and 200,000 parts a month to 10,000+ sq ft and five million installed — automated presses, digital curing ovens, IoT monitoring and centralised ERP.",
+              "Proposed"
             ],
             [
+              "2026",
               "Sponge, foam and self-adhesive tape line",
-              "Cellular elastomers and converted foam tape added as the twelfth production line, taking the website catalogue to eleven categories."
+              "Cellular elastomers and converted foam tape added as the twelfth production line, taking the website catalogue to eleven categories.",
+              "Proposed"
             ],
             [
+              "2026",
               "Export programme opened",
-              "Ninety-five markets screened and scored, eighteen country playbooks written, five lanes set for activation."
+              "Ninety-five markets screened and scored, eighteen country playbooks written, five lanes set for activation.",
+              "Proposed"
             ]
           ],
-          "note": "2008 · Proposed · 2010 · Proposed · 2013 · Proposed · 2015 · Proposed · 2018 · Proposed · 2020 · Proposed · 2023 · Proposed · 2026 · Proposed · 2026 · Proposed · 2026 · Proposed · DO NOT PUBLISH THE PROPOSED YEARS AS-IS."
+          "confirm": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              5,
+              3
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              6,
+              3
+            ],
+            [
+              7,
+              0
+            ],
+            [
+              7,
+              3
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              8,
+              3
+            ],
+            [
+              9,
+              0
+            ],
+            [
+              9,
+              3
+            ],
+            [
+              10,
+              0
+            ],
+            [
+              10,
+              3
+            ]
+          ],
+          "note": "DO NOT PUBLISH THE PROPOSED YEARS AS-IS."
         },
         {
           "label": "Removed entries",
