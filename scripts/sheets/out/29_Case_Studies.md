@@ -7,15 +7,13 @@
 > live: LIVE H1 → Our First 90 Days. · the second paragraph is the most honest sentence on this website · and the page reads as a company with no history
 - **Eyebrow**: `CASE STUDIES · MARGO RUBBER PRODUCTS`
   _[no change]_
-- **H1 — 2 lines**: “Our First” / “90 Days.”
+- **H1 — 2 lines**: “Nothing Published Yet.” / “Everything On Record.”  (accent: Everything On Record.)
   _5 words · live is 4 · “Our First 90 Days” is the one weak element in an otherwise excellent section. It says nothing about the page, it implies the company is 90 days old, and there is no 90-day period anywhere in the copy beneath it. Margo has been manufacturing for over two decades.
 The replacement keeps the honesty and fixes the implication in the same breath: nothing published, everything on record. It is also the page’s argument in four words_
 - **Intro — para 1**:
-  > We are a precision rubber manufacturer based in Nashik, India. We hold ISO 9001:2015 certification and supply export-grade components across industrial sectors.
   > We are a precision rubber manufacturer in Nashik, India, ISO 9001:2015 certified, with 60+ active customers, an average relationship of more than ten years, and 95% repeat orders.
   _28 words · live is 23 · the three figures are the change, and they come from Margo’s own signed company profile (p27), not from anywhere else. They are the record this page currently hides_
 - **Intro — para 2**:
-  > We do not yet have documented export case studies. This page exists because we believe our first partners deserve to know exactly what to expect, before they decide to work with us, not after.
   > What we have never done is write any of it up. We have no published case studies, and we would rather say so than manufacture one. This page exists because we believe our first documented partners deserve to know exactly what to expect before they decide to work with us, not after.
   _50 words · live is 33 · this is the most important edit on the page and it is one added clause.
 The live sentence is true and it is read as something else. “We do not yet have documented export case studies” is heard by a first-time buyer as we have no export track record — and one click away, /about publishes a 24-name client wall across seven sectors. A buyer who sees both pages does not conclude that Margo is modest; they conclude that one of the two pages is wrong.
@@ -44,25 +42,29 @@ Certified Quality Management · certificate 09111526A`
 - **Intro**:
   > When we publish our first documented case study, it will follow this four-part structure. We are sharing the format now so prospective buyers understand the rigour behind what we will report — and what you can hold us accountable to.
   _39 words · live is 39 · comma fixed to a dash. “What you can hold us accountable to” is the best clause on this page and it should never be edited out_
-- **Card 01 — Challenge** (Stat chip | Live | Ships as):
-  | Value |  | ISO 3302-1 |
-  | Label |  | Class M1–M4 moulded, E1–E3 extruded |
+- **Card 01 — Challenge** (composite):
+  · Every case study begins with the exact component brief — tolerances, material grade, application environment and regulatory requirements. We document what the buyer needed, and why a standard off-the-shelf part fell short.
+    | Value |  | ISO 3302-1 |
+    | Label |  | Class M1–M4 moulded, E1–E3 extruded |
   _32 words · live is 33 · the stat chip is the correction. The homepage, /about and /products publish ±0.01 mm; this card publishes ±0.05 mm. Two tolerance claims on one website, and neither is a real specification.
 ±0.01 mm is a misreading of the company profile, where the figure is the resolution of the measuring instrument. And no moulded rubber part carries a single blanket tolerance — it varies with dimension, geometry and shrinkage, which is exactly what ISO 3302-1 exists to express. Naming the class is what a buyer’s drawing will call out anyway_
-- **Card 02 — Component Specced** (Stat chip | Live | Ships as):
-  | Value |  | 8 Compounds |
-  | Label |  | Mixed in-house, published in full |
+- **Card 02 — Component Specced** (composite):
+  · We record the compound chosen, the mould geometry, shore hardness and the rationale. Buyers see exactly how the specification maps to the final formulation.
+    | Value |  | 8 Compounds |
+    | Label |  | Mixed in-house, published in full |
   _24 words · live is 32 · the parenthetical list comes out of the body — “(EPDM, NBR, Silicone, Neoprene, etc.)” names four of eight and then abbreviates, which reads as a sample of many rather than most of a short list.
 The stat chip is the real correction. The homepage table publishes eight compounds and every product page in this set is written against those eight. 20+ against 8 is not rounding — a buyer who counts the table concludes one of the two numbers is padding, and on a page whose entire argument is we do not embellish, that is the most expensive place on the site to be caught rounding up.
 “Published in full” is the stronger claim anyway. Most competitors will not tell you the compound at all_
-- **Card 03 — QC Process** (Stat chip | Live | Ships as):
-  | Value | ISO 9001:2015 | [no change] |
-  | Label |  | Certified for rubber moulded components |
+- **Card 03 — QC Process** (composite):
+  · Each case study will log the inspection checkpoints — hardness testing, compression set to ASTM D395 Method B, tensile strength and dimensional verification — against the agreed acceptance criteria.
+    | Value | ISO 9001:2015 | [no change] |
+    | Label |  | Certified for rubber moulded components |
   _29 words · live is 27 · the standard number is added to the body — the tests named are all on Margo’s published list, and naming the method for one of them is what separates a checklist from a capability.
 The label is a scope correction. Certificate 09111526A covers rubber moulded components; extrusion and sponge/foam sit outside it. “Every batch” is not true of two of the eleven product categories, and an auditor checking the certificate scope will find that in under a minute_
-- **Card 04 — Outcome Metrics** (Stat chip | Live | Ships as):
-  | Value | 100% Traceable | [no change] |
-  | Label | Batch traceability from compound to despatch | [no change] |
+- **Card 04 — Outcome Metrics** (composite):
+  · We will report lead time met against lead time committed, rejection rate at final inspection, on-time delivery, and any post-delivery feedback. Numbers, not adjectives.
+    | Value | 100% Traceable | [no change] |
+    | Label | Batch traceability from compound to despatch | [no change] |
   _24 words · live is 26 · “Numbers, not adjectives” is the best three-word sentence on this website. It is the whole editorial position of this content set, written by the client, before anyone reviewed the site. Set it in bold and leave it alone_
   <details><summary>notes (5)</summary>
   - Stage titles are <h3>. The 01–04 numerals are decorative — put them in a <span aria-hidden="true">, not in the heading text, or every heading on the page starts with a digit.
@@ -74,11 +76,13 @@ The label is a scope correction. Certificate 09111526A covers rubber moulded com
 
 ## 03 In the meantime [4 cards become 3]
 > live: LIVE H2 → In the Meantime · the page’s entire conversion mechanism · two of its four buttons go nowhere and a third points at a page marked for deletion
-- **Four cards become three** (Live card | Button → destination | Decision):
-  | Certifications | /certifications | Keep — the strongest of the four and the only one whose destination works |
-  | Why Margo | /why-margo | Remove. /why-margo is recommended for deletion across this set — its job is done better by /certifications and /export. A card that survives the page it points at becomes a 404 in the middle of this section |
-  | Quality Philosophy | no page exists | Merge into the certifications card. The content is real and worth keeping; the destination never existed |
-  | Technical Specs | no file | Keep the card, change the button from a download to /products, where the compound data lives on-page |
+- **Four cards become three** (composite):
+  · Every other sheet in this set adds components. This one removes one, and the developer needs to know why so it does not get restored later.
+    | Certifications | /certifications | Keep — the strongest of the four and the only one whose destination works |
+    | Why Margo | /why-margo | Remove. /why-margo is recommended for deletion across this set — its job is done better by /certifications and /export. A card that survives the page it points at becomes a 404 in the middle of this section |
+    | Quality Philosophy | no page exists | Merge into the certifications card. The content is real and worth keeping; the destination never existed |
+    | Technical Specs | no file | Keep the card, change the button from a download to /products, where the compound data lives on-page |
+  · Three dead controls in the section that exists to route buyers somewhere. On any other page that is an irritation; here the page has just promised to show its working and then hands the reader a button that does nothing.
 - **Eyebrow · H2** (composite):
   · `03 · EXISTING TRUST PROOF`
   · H: “In the Meantime”
@@ -125,7 +129,6 @@ Compound & Material Data`
   > If you place a trial order with us, we will publish a full case study on this page — with your approval — that documents the process from specification to delivery. No embellishment. No invented outcomes.
   _35 words · live is 35 · commas to dashes, nothing else. “No embellishment. No invented outcomes.” is the sentence this entire content set has been arguing for across 29 sheets, and the client wrote it before anyone reviewed the site_
 - **Body — para 2**:
-  > We are not trying to manufacture credibility before we have earned it. We are asking for the chance to earn it, and to show our working in full.
   > We are not trying to manufacture credibility we have not earned. The work is twenty years old; the write-up is not. We are asking for the chance to show our working in full.
   _33 words · live is 28 · one clause changed, and it is the same fix as the hero.
 “Asking for the chance to earn it” says Margo has not yet earned credibility — which is not true of a firm with 60+ customers and ten-year average relationships, and it is the sentence that makes this page contradict /about. “The work is twenty years old; the write-up is not” keeps every ounce of the humility and removes the false implication. The rest of the paragraph is untouched_
@@ -154,7 +157,6 @@ Compound & Material Data`
   · H: “Request a Quote.” / “No Commitment Required.”
   _[no change to either] — “no commitment required” is the correct closing offer for a page aimed at a buyer who has not bought yet_
 - **Body**:
-  > Share your component drawing, tolerance requirements, and target volume. We will respond within one business day with a detailed quotation and lead time estimate.
   > Share your component drawing, tolerance requirements and target volume. We respond within 48 hours with a detailed quotation and a lead time estimate.
   _23 words · live is 24 · the response time is the correction, and this page states two of them. “Within one business day” here, “within 24 hours” in the footer CTA 763 px below — two commitments in one document.
 48 hours is the figure this set standardises on across all 29 sheets. It is the only one of the six response times published on this site that survives a bad week, and on a page whose argument is that Margo does not overstate, the response time is the worst possible place to overstate_

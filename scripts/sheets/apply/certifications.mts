@@ -61,9 +61,7 @@ const stages = rows(sys, "Stages").map((r, i) => ({
   name: E(r[0]),
   body: E(r[1]),
 }));
-const audit = paragraph(sys, "Audit note").match(
-  /^(For supplier qualification audits:)\s*(.*)$/s,
-);
+const audit = paragraph(sys, "Audit note").match(/^(For supplier qualification audits:)\s*([^]*)$/);
 if (!audit) throw new Error("audit note");
 
 /* ── 06 Documentation request ────────────────────────────────────────────── */

@@ -130,12 +130,14 @@ continuous to 200°C | 60–90 Shore A | Fluorocarbon rubber, the first choice f
 - **Intro**:
   > Margo produces in bulk against OEM schedules. Tell us the shaft, the bore, the width and the volume and we will quote it. Minimum run is 10,000 pieces per part number, per compound, or quoted against the part where size or complexity sets the economics. Prototype and first-article lots sit outside the minimum and are quoted separately.
   _46 words · live is 34 · replaces “Margo is geared for volume procurement. If your project requires below-MOQ qualification samples…”, which states an MOQ twice by implication and tells a prototype buyer they are below the floor before they have asked. The replacement is the founder’s own phrasing from the commercial terms, with the three oil-seal dimensions named_
-- **Rows ×5** (Row | Value | Sub-label | Replaces):
-  | Quotation | 48 hrs | With feasibility report |  |
-  | Prototype | 48–72 hrs | From an approved drawing |  |
-  | Catalogue sizes | 3–4 weeks | Ex-works Nashik, from drawing approval · 2 weeks express |  |
-  | Cut-to-print | 3–4 weeks + tooling | Tooling lead time quoted per part |  |
-  | Packaging | Poly bag + card label | Bulk or blister on request | (no change) |
+- **Rows ×5** (composite):
+    | Quotation | 48 hrs | With feasibility report |  |
+    | Prototype | 48–72 hrs | From an approved drawing |  |
+    | Catalogue sizes | 3–4 weeks | Ex-works Nashik, from drawing approval · 2 weeks express |  |
+    | Cut-to-print | 3–4 weeks + tooling | Tooling lead time quoted per part |  |
+    | Packaging | Poly bag + card label | Bulk or blister on request | (no change) |
+  · Lead times are corrected to the company standard. Live says 14–21 days for catalogue and 21–35 for custom; every other page on the site says 3–4 weeks standard with 2 weeks express. Three to four weeks is 21–28 days, so the live catalogue figure promises faster than the company delivers and the custom figure promises slower.
+  · Four MOQ statements come off this page: the hero stat, the section heading, the standard-MOQ row, and the fourth in the global footer. Standing founder instruction, 2026-08-19 — never publish a piece count, never claim to take only large orders.
   <details><summary>notes (5)</summary>
   - The section ID changes from #commercial to #lead-times, and the anchor label with it. An anchor named after a banned term is a banned term in the URL bar.
   - This is the highest-converting block on a category page. A buyer who has read the compound table and picked a material arrives here to find out whether the timeline works. Answering with an MOQ instead of a lead time loses them.

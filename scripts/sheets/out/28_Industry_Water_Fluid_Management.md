@@ -10,7 +10,6 @@
 - **H1 — 2 lines**: “Rubber Components” / “for Water & Fluid Management”  (accent: for Water & Fluid Management)
   _[no change] — 7 words, and the category name is the right one for a page that has to cover pumps, treatment, distribution and storage_
 - **Subhead**:
-  > Potable-water-compatible seals and linings for treatment and distribution equipment, including components validated to 100,000 centrifugal pump cycles.
   > EPDM seals, gaskets and rubber lining for treatment, distribution and pump equipment, produced to your drawing at our ISO 9001:2015 facility in Nashik, India.
   _23 words · live is 18 · one removal, one addition. The cycle claim comes out of the first sentence a buyer reads — see the note at the top of this sheet; it is the first of four placements and the one that sets the reader’s expectation for everything after it.
 “Lining” stays and is promoted (client-confirmed 2026-09-02) — it is a second product line, and on a water page it is the bigger line item. “Moulded” becomes “produced” for the same reason: lining is not moulded, and a hero that says “moulded” quietly excludes half the offer_
@@ -99,8 +98,6 @@ Card 4 was right as written and gains the inputs. Tank lining is client-confirme
 The live card is already careful: it asks the buyer to confirm their standard rather than claiming one, which is better than the medical or electrical pages managed. What it misses is why the question matters. Two EPDM compounds from the same factory, one approved and one not, is the normal case; a buyer who knows that reads “EPDM for potable water” as a supplier who has not been through the process. Naming the four schemes as things the buyer specifies — never as things Margo holds — turns the weakest sentence on the page into the most useful one_
 - **Card 2 — retitled**:
   > Compound and geometry are chosen for continuous running rather than intermittent duty — compression set to ASTM D395 Method B, which we test in-house, is the property that decides whether a static seal still seals after a year. A cycle count comes from your rig or a third-party laboratory, and we will support that test.
-  `Validated Cycle Life
-Components validated to 100,000 centrifugal pump cycles, evidence of durability under continuous-duty rather than intermittent service.`
   `Long-Cycle Durability`
   _54 words · live is 17 · the heading is the important half of this change. “Validated Cycle Life” is a card title, which is the part most likely to be quoted, screenshotted or lifted by an answer engine without its body — and Margo publishes no cycle rig.
 The replacement is not weaker, it is specific. Compression set to ASTM D395 Method B is a test Margo actually runs, and it is the correct property for a static water seal. Naming a real test in place of an unbacked number is the trade this whole content set is built on. Same structure as flex life on bellows and dielectric strength on electrical_
@@ -226,14 +223,11 @@ The addition maps each named market to its scheme, which is the work a buyer wou
   `Are your compounds approved for potable water?`
   _51 words · live is 34 · the live answer is honest and it is nearly right — it declines to claim an approval and asks for the standard. The addition is the sentence that makes the question make sense, and it is the one thing about potable-water sealing that buyers most often have wrong_
 - **Q2 — rewritten**:
-  > It refers to centrifugal pump components validated through 100,000 operating cycles, evidence of durability under continuous rather than intermittent duty. Test documentation is available on request.
   > Send the shaft speed, the medium, the temperature and the duty profile. We hold the geometry, the compound and the dimensional record, and we test compression set to ASTM D395 Method B in-house. A cycle count comes from your rig or a third-party laboratory, and we will support that test.
-  `What does the 100,000-cycle validation mean?`
   `How do you specify a seal for continuous-duty pump service?`
   _51 words · live is 26 · this is the fourth and last placement of the cycle claim, and the most exposed. The live answer does not merely state the number — it says “Test documentation is available on request”, which is a promise of a specific document to a buyer who will ask for it. A pump OEM qualifying a seal supplier asks on the first call.
 The question is replaced rather than the answer alone, because a question headed “What does the 100,000-cycle validation mean?” cannot be answered without the number. The replacement question is one Margo can answer completely, and it is the question a specifying engineer actually has_
 - **Q3**:
-  > 500 pieces per part number, per material. Catalogue sizes ship in 14 to 21 days ex-works Nashik from drawing approval.
   > We supply in bulk. The minimum run is 10,000 pieces per part number, per compound, or quoted against the part where geometry or tooling makes that unrealistic. Prototype and first-article lots sit outside the minimum. Lead time is confirmed with the quotation, from approved drawing and approved sample.
   `What is the minimum order quantity?`
   _48 words · live is 21 · client instruction, 2026-09-01. Sixth and last industry page with a dedicated minimum-order FAQ; the number was wrong in the other direction on every one of them. The lead time goes too — “catalogue sizes” contradicts a page that opens by saying nothing is stocked_
@@ -272,9 +266,9 @@ The addition is the supplied-cut-versus-fitted question. It is the single variab
   | Primary | Request Water & Fluid Component Specs → /contact | [no change] |
   | Secondary | Send a Technical Inquiry → /contact | Call +91 96655 79276 → tel:+919665579276 |
   _Two buttons to the same page is one button with a spare. Turning the second into a phone link gives the section two different actions — and a buyer in Dubai or Nairobi reading on a phone is more likely to call than to fill in a form_
-- **Contact strip**: `✆ +91 (Nashik), Contact for number
-✉ Contact for email
-⛊ ISO 9001:2015 Certified`
+- **Contact strip**: `✆ +91 96655 79276
+✉ info@margorubber.in
+⛊ ISO 9001:2015 Certified · 09111526A`
   _Both placeholder strings replaced with the values already published in the footer of this same page. The certificate number is added to the third item so the badge is checkable. Phone and email are real links — tel: and mailto:, not plain text_
   <details><summary>notes (4)</summary>
   - No ContactPoint schema until the strip is filled. Publishing “Contact for number” as structured data puts a placeholder into a knowledge graph, which is far harder to retract than to prevent.

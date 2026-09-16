@@ -1951,7 +1951,7 @@ export const caseStudiesPageSchema = baseSchema.extend({
           label: z.string(),
           href: z.string(),
           variant: z.enum(["primary", "secondary"]).default("primary"),
-          icon: z.enum(["mail", "out"]).optional(),
+          icon: z.enum(["mail", "out", "phone"]).optional(),
         }),
       )
       .min(1),

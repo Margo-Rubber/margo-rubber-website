@@ -231,20 +231,24 @@ Nhava Sheva and can recommend freight forwarders with a track record in your cou
 - **Intro**:
   > Six stages, and at each one it is clear what we owe you and what we need from you. Quotation in 48 hours, prototype in 48 to 72, production in three to four weeks.
   _34 words · live is 16 · the live intro promises “what we need from you” and then the six steps never say it. This version delivers on that promise and puts the three timings in the opening block, where an export buyer is looking for them_
-- **Steps ×6** (# | Title | Sub-content):
-  | 01 | Drawing & Quotation | We need: a drawing, a specification, or the physical component — a worn part in an envelope is how a large share of our work begins. Plus quantity, operating temperature and the media it sits in.
+- **Steps ×6** (composite):
+    | 01 | Drawing & Quotation | We need: a drawing, a specification, or the physical component — a worn part in an envelope is how a large share of our work begins. Plus quantity, operating temperature and the media it sits in.
 You get back: a quotation and feasibility report within 48 hours, with price, tooling cost if the part is new, and lead time. |
-  | 02 | Tooling & Samples | We do: design and cut the mould or die in our own toolroom — no third-party shop in the loop, which is why revisions take days rather than weeks.
+    | 02 | Tooling & Samples | We do: design and cut the mould or die in our own toolroom — no third-party shop in the loop, which is why revisions take days rather than weeks.
 You get back: a prototype 48 to 72 hours from an approved drawing, then fitment samples inside two weeks.
 We need: your dimensional approval on the first-off sample before we commit to volume. |
-  | 03 | Production & Inspection | We do: produce under ISO 9001:2015 with a first-article dimensional check, then in-process inspection through the run. Every despatch lot is released against hardness and dimensional criteria from our own laboratory.
+    | 03 | Production & Inspection | We do: produce under ISO 9001:2015 with a first-article dimensional check, then in-process inspection through the run. Every despatch lot is released against hardness and dimensional criteria from our own laboratory.
 You get back: signed inspection release data per lot, with compound batch, cure parameters and results retrievable per production batch. APQP and PPAP where your programme requires it. |
-  | 04 | Export Packaging | We do: poly-bag and carton the components, label each carton with part number and gross/net weight, and stack on heat-treated ISPM-15 marked pallets.
+    | 04 | Export Packaging | We do: poly-bag and carton the components, label each carton with part number and gross/net weight, and stack on heat-treated ISPM-15 marked pallets.
 Why it matters: untreated timber is rejected at the wharf in Australia, the US, the EU and the UK — and the rejection lands as the buyer’s cost, not ours. |
-  | 05 | Customs Clearance | We do: clear through our CHA at Nhava Sheva, 185 km and about three hours twenty by road from the plant. Bill of Lading, packing list, commercial invoice and Certificate of Origin are all issued before departure.
+    | 05 | Customs Clearance | We do: clear through our CHA at Nhava Sheva, 185 km and about three hours twenty by road from the plant. Bill of Lading, packing list, commercial invoice and Certificate of Origin are all issued before departure.
 We need: your confirmed Incoterm and consignee details at order stage, not at loading. |
-  | 06 | Documentation & Delivery | We do: send the full document set electronically and by courier so it reaches your broker ahead of the container, not with it. HS code declarations, MSDS where the compound requires one, and SGS or PVoC pre-shipment inspection on request.
+    | 06 | Documentation & Delivery | We do: send the full document set electronically and by courier so it reaches your broker ahead of the container, not with it. HS code declarations, MSDS where the compound requires one, and SGS or PVoC pre-shipment inspection on request.
 Why it matters: documents arriving after the vessel is the most common cause of demurrage on a first order. |
+  · What changed and why. The titles stay plain nouns, close to the live ones — a procurement buyer scanning six stages wants to know which one they are reading, not to be entertained. Two are sharpened: Quote becomes Drawing & Quotation because the drawing is the buyer’s half of that stage, and Shipping (Incoterm) becomes Customs Clearance, which is what actually happens there and is also the term people search.
+  · The work is in the bodies, not the headings. The live steps run 20–28 words of description and never say what the buyer has to supply, even though the intro promises exactly that. Splitting each body into We do / We need / You get back makes the obligation unambiguous at every stage without changing a single heading.
+  · Two steps carry a “why it matters” line. Packing and documentation are where a first-time importer loses money, and neither reason is obvious to someone who has not imported before — untreated timber rejected at the wharf, documents arriving after the vessel. Naming the failure mode is what makes a process list useful rather than procedural.
+  · Step 01 fixes the timing. Live promises a quotation in 3 business days, the slowest of five values the site publishes for one promise. The company profile states 48 hours.
   _Step bodies 45–60 words · live steps run 20–28 · the live cards are visually tall with a lot of dead space, so they absorb this without a layout change. Check the six-card grid at 1024px_
   <details><summary>notes (4)</summary>
   - Response-time consistency is the single most repeated defect on this site. Five values across five pages for one promise. One string: acknowledgement in one business day, quotation in 48 hours. Set it in one constant and render it everywhere.

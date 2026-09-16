@@ -310,18 +310,21 @@ confidential and disclosed under NDA.`
 > live: LIVE H2 → 27 Years of Milestones. · seven dated entries: 1997, 2002, 2008, 2013, 2018, 2022, 2024 · not one of the seven dates is verified, and the first one is wrong
 - **H2 — 2 lines**: “Twenty Years of” / “Milestones.”  (accent: Milestones.)
   _Live says 27 years from a 1997 founding. From 2005, it is 20 · eleven entries now, up from seven, so the two- and three-year gaps carry a continuous timeline rather than a decade-wide jump_
-- **Entries ×11** (Year | Title | Body | Status):
-  | 2005 | Founded | Margo Rubber Products established in Nashik as a compression-moulding workshop. | Verified |
-  | ⚠ 2008 | First ISO 9001 certification | Quality management system independently audited and certified for moulded rubber components. | ⚠ Proposed |
-  | ⚠ 2010 | First automotive OEM programme | Moulded sealing and vibration components qualified into a Tier-1 automotive supply chain. | ⚠ Proposed |
-  | ⚠ 2013 | Compound mixing brought in-house | Formulation moved off the shelf and onto our own mixing floor, across the polymer families we run today. | ⚠ Proposed |
-  | ⚠ 2015 | AEM programme with Mahindra & Mahindra | AEM formulations qualified for engine and transmission applications — still our signature compound. | ⚠ Proposed |
-  | ⚠ 2018 | In-house test laboratory commissioned | Durometer, ODR rheometer, tensile machine, ageing oven and compression-set rig brought on site, each on a calibration cycle. | ⚠ Proposed |
-  | ⚠ 2020 | Extrusion line commissioned | Continuous-cure extrusion added, widening the catalogue beyond moulded parts to profiles, cords and channels. | ⚠ Proposed |
-  | ⚠ 2023 | Twenty-four accounts across seven sectors | Customer base spanning automotive, industrial machinery, electrical, specialist vehicles, medical, chemicals and tooling. | ⚠ Proposed |
-  | ⚠ 2026 | New plant, automated during the move | From 6,000 sq ft and 200,000 parts a month to 10,000+ sq ft and five million installed — automated presses, digital curing ovens, IoT monitoring and centralised ERP. | ⚠ Proposed |
-  | ⚠ 2026 | Sponge, foam and self-adhesive tape line | Cellular elastomers and converted foam tape added as the twelfth production line, taking the website catalogue to eleven categories. | ⚠ Proposed |
-  | ⚠ 2026 | Export programme opened | Ninety-five markets screened and scored, eighteen country playbooks written, five lanes set for activation. | ⚠ Proposed |
+- **Entries ×11** (composite):
+    | 2005 | Founded | Margo Rubber Products established in Nashik as a compression-moulding workshop. | Verified |
+    | 2008 | First ISO 9001 certification | Quality management system independently audited and certified for moulded rubber components. | Proposed |
+    | 2010 | First automotive OEM programme | Moulded sealing and vibration components qualified into a Tier-1 automotive supply chain. | Proposed |
+    | 2013 | Compound mixing brought in-house | Formulation moved off the shelf and onto our own mixing floor, across the polymer families we run today. | Proposed |
+    | 2015 | AEM programme with Mahindra & Mahindra | AEM formulations qualified for engine and transmission applications — still our signature compound. | Proposed |
+    | 2018 | In-house test laboratory commissioned | Durometer, ODR rheometer, tensile machine, ageing oven and compression-set rig brought on site, each on a calibration cycle. | Proposed |
+    | 2020 | Extrusion line commissioned | Continuous-cure extrusion added, widening the catalogue beyond moulded parts to profiles, cords and channels. | Proposed |
+    | 2023 | Twenty-four accounts across seven sectors | Customer base spanning automotive, industrial machinery, electrical, specialist vehicles, medical, chemicals and tooling. | Proposed |
+    | 2026 | New plant, automated during the move | From 6,000 sq ft and 200,000 parts a month to 10,000+ sq ft and five million installed — automated presses, digital curing ovens, IoT monitoring and centralised ERP. | Proposed |
+    | 2026 | Sponge, foam and self-adhesive tape line | Cellular elastomers and converted foam tape added as the twelfth production line, taking the website catalogue to eleven categories. | Proposed |
+    | 2026 | Export programme opened | Ninety-five markets screened and scored, eighteen country playbooks written, five lanes set for activation. | Proposed |
+  · Every year except 2005 is proposed, not verified. The events are all real — each one is documented somewhere in Margo’s own material — but only the founding year has been confirmed. The years above are spaced at two- and three-year intervals so the timeline reads evenly and the carousel fills, with the three most recent milestones dated 2026.
+  · Send Ayaz this table, not a blank list. Correcting eleven dates that are already on the page takes him two minutes; supplying eleven dates from memory takes a week and usually does not happen. That is the whole reason to draft them.
+  · A drafted year is a prompt for the client, not a fact for a buyer. This is exactly how the live page acquired a 1997 founding, a 2002 first export that never happened, and a 2008 ISO date nobody can produce a certificate for — someone drafted plausible years and the draft shipped. Two entries carry the section until the real dates come back.
   _DO NOT PUBLISH THE PROPOSED YEARS AS-IS._
 - **Removed entries** (Live entry | Why):
   |  | Founding year is 2005. Headcount and press count unsourced. |
@@ -337,15 +340,18 @@ confidential and disclosed under NDA.`
 ## 14 Client strip [Rewrite]
 > live: LIVE → L&T, Tata Motors, Bosch India, BHEL, Siemens, ABB, Mahindra, Samsung Engineering · a different fabricated set from the homepage’s eleven — two pages naming two different customer lists, neither real
 - **Eyebrow**: `TWENTY-FOUR NAMED ACCOUNTS ACROSS SEVEN SECTORS`
-- **Names ×8** (Name | Sector | Replaces):
-  | Mahindra & Mahindra | Automotive | Mahindra — corrected to the full legal name |
-  | Tata | Automotive | Tata Motors — profile says Tata, not Tata Motors |
-  | Hyundai | Automotive |  |
-  | Victor Reinz | Auto components |  |
-  | IDEX India | Industrial machinery |  |
-  | Shakti Mining Equipments | Heavy engineering |  |
-  | Starlite Lighting | Electrical |  |
-  | Minerva Special Purpose Vehicle | Specialist vehicles |  |
+- **Names ×8** (composite):
+    | Mahindra & Mahindra | Automotive | Mahindra — corrected to the full legal name |
+    | Tata | Automotive | Tata Motors — profile says Tata, not Tata Motors |
+    | Hyundai | Automotive |  |
+    | Victor Reinz | Auto components |  |
+    | IDEX India | Industrial machinery |  |
+    | Shakti Mining Equipments | Heavy engineering |  |
+    | Starlite Lighting | Electrical |  |
+    | Minerva Special Purpose Vehicle | Specialist vehicles |  |
+  · Eight names, filling the same 4×2 grid the live build uses. These are the recognisable accounts from the corrected 24 — the ones an Indian procurement buyer will place immediately. The job shops and component suppliers on the full list are real customers but carry no recognition on a logo grid, and a grid is a recognition device.
+  · This differs from sheet 01 on purpose. The homepage strip runs all 24 as a marquee — there, the count is the point. Here it is a static eight-card grid, so the eight most recognisable names do more work than twenty-four at a smaller size. Same source list, two presentations; the sector bands stay available if the grid ever needs a hover state.
+  · Only Tata and Mahindra survive from the live eight. Larsen & Toubro, Bosch India, BHEL, Siemens, ABB Limited and Samsung Engineering appear nowhere in Margo’s own collateral.
 - **Trade mark line**: `Trade marks shown are the property of their respective owners and appear
 solely to identify commercial supply relationships.`
   _CONFIRM — logo permission per account. Text wordmarks until it lands · CONFIRM_

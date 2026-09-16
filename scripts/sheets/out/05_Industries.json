@@ -130,68 +130,85 @@
         },
         {
           "label": "Cards ×9",
-          "kind": "table",
-          "columns": [
-            "Industry",
-            "Description",
-            "Four parts",
-            "Parts removed"
-          ],
-          "rows": [
-            [
-              "Automotive",
-              "Moulded rubber for powertrain, chassis, interior and under-bonnet assemblies.",
-              "AEM insulation bushes · Oil filler caps · Radiator shroud flaps · Footrest mats",
-              ""
-            ],
-            [
-              "Mining",
-              "Precision moulded components for abrasive, high-load extraction plant — not wear linings.",
-              "Anti-vibration mounts · O-rings · Bushes & sleeves · Sealing gaskets",
-              ""
-            ],
-            [
-              "Oil & Gas",
-              "FKM sealing to 250 °C for general industrial and process service.",
-              "FKM O-rings · Flange gaskets · Oil seals · Valve stem seals",
-              ""
-            ],
-            [
-              "Pumps & Valves",
-              "Sealing components chosen against the pumped medium, not a catalogue default.",
-              "Moulded diaphragms · Valve seats · Lip seals · Casing gaskets",
-              ""
-            ],
-            [
-              "HVAC",
-              "Airtight compression under continuous low-amplitude vibration.",
-              "EPDM foam strips · Duct gaskets · Self-adhesive foam tape · Fan grommets",
-              ""
-            ],
-            [
-              "Electrical & Electronics",
-              "Insulating and sealing rubber, with flame-retardant grades where specified.",
-              "Cable grommets · Insulator head covers · Switchgear gaskets · Enclosure seals",
-              "All four retained, one renamed"
-            ],
-            [
-              "Agriculture",
-              "Weather- and UV-resistant parts built for ozone under static strain.",
-              "Cab and door seals · Extruded weatherstrip · Grommets · Buffer stops",
-              ""
-            ],
-            [
-              "Medical Devices",
-              "Biocompatible silicone components. We do not hold ISO 13485 or FDA registration.",
-              "Silicone gaskets · Equipment seals · O-rings · Moulded bellows",
-              ""
-            ],
-            [
-              "Water & Fluid Management",
-              "Sealing rings to IS 5382 for water, gas and sewer mains.",
-              "Pipe coupling gaskets · Sealing rings · Check valve seats · Meter gaskets",
-              ""
-            ]
+          "kind": "composite",
+          "parts": [
+            {
+              "kind": "table",
+              "columns": [
+                "Industry",
+                "Description",
+                "Four parts",
+                "Parts removed"
+              ],
+              "rows": [
+                [
+                  "Automotive",
+                  "Moulded rubber for powertrain, chassis, interior and under-bonnet assemblies.",
+                  "AEM insulation bushes · Oil filler caps · Radiator shroud flaps · Footrest mats",
+                  ""
+                ],
+                [
+                  "Mining",
+                  "Precision moulded components for abrasive, high-load extraction plant — not wear linings.",
+                  "Anti-vibration mounts · O-rings · Bushes & sleeves · Sealing gaskets",
+                  ""
+                ],
+                [
+                  "Oil & Gas",
+                  "FKM sealing to 250 °C for general industrial and process service.",
+                  "FKM O-rings · Flange gaskets · Oil seals · Valve stem seals",
+                  ""
+                ],
+                [
+                  "Pumps & Valves",
+                  "Sealing components chosen against the pumped medium, not a catalogue default.",
+                  "Moulded diaphragms · Valve seats · Lip seals · Casing gaskets",
+                  ""
+                ],
+                [
+                  "HVAC",
+                  "Airtight compression under continuous low-amplitude vibration.",
+                  "EPDM foam strips · Duct gaskets · Self-adhesive foam tape · Fan grommets",
+                  ""
+                ],
+                [
+                  "Electrical & Electronics",
+                  "Insulating and sealing rubber, with flame-retardant grades where specified.",
+                  "Cable grommets · Insulator head covers · Switchgear gaskets · Enclosure seals",
+                  "All four retained, one renamed"
+                ],
+                [
+                  "Agriculture",
+                  "Weather- and UV-resistant parts built for ozone under static strain.",
+                  "Cab and door seals · Extruded weatherstrip · Grommets · Buffer stops",
+                  ""
+                ],
+                [
+                  "Medical Devices",
+                  "Biocompatible silicone components. We do not hold ISO 13485 or FDA registration.",
+                  "Silicone gaskets · Equipment seals · O-rings · Moulded bellows",
+                  ""
+                ],
+                [
+                  "Water & Fluid Management",
+                  "Sealing rings to IS 5382 for water, gas and sewer mains.",
+                  "Pipe coupling gaskets · Sealing rings · Check valve seats · Meter gaskets",
+                  ""
+                ]
+              ]
+            },
+            {
+              "kind": "para",
+              "text": "Why each removal. Blowout preventer seals and wellhead O-rings are API 6A / 16A parts — qualification Margo does not hold and lists as a roadmap item on its own oil & gas page. Syringe plunger tips and peristaltic pump tubing are device-contact components requiring ISO 13485; /industries/medical-devices states plainly that Margo does not hold it. Conveyor belt scrapers, crusher wear pads and slurry pump seals are wear consumables, and the mining page’s entire positioning is precision-moulded-OEM-supplier rather than wear-parts reseller — the hub card contradicts the page it links to. Tank linings and impeller wear rings are fabricated or machined items, not moulded parts. Refrigerant seals need a compound rated for the specific refrigerant, which is a per-programme question, not a catalogue claim.",
+              "lead": "Why each removal.",
+              "em": false
+            },
+            {
+              "kind": "para",
+              "text": "Every replacement part is named in Margo’s own company profile or catalogue. Descriptions stay at 10–14 words, matching the live card height. Automotive gains the four parts the profile actually names, which are more specific and more persuasive than the generic three they replace.",
+              "lead": "Every replacement part is named in Margo’s own company profile or catalogue.",
+              "em": false
+            }
           ]
         }
       ],
@@ -238,43 +255,60 @@
         },
         {
           "label": "Cards ×6",
-          "kind": "table",
-          "columns": [
-            "Sector",
-            "Body",
-            "Links to"
-          ],
-          "rows": [
-            [
-              "Industrial machinery",
-              "Anti-vibration mounts, bonded pads and machine seals for general plant equipment. Three named accounts in this band.",
-              "/products/anti-vibration-mounts"
-            ],
-            [
-              "Construction & glazing",
-              "Extruded glazing and weatherstrip profiles, edge protection, expansion-joint sealing and bearing pads.",
-              "/products/extrusion"
-            ],
-            [
-              "Chemical processing",
-              "FKM and EPDM gaskets and seals selected against the process stream. Composition declarations per part on request.",
-              "/products/gaskets"
-            ],
-            [
-              "Specialist vehicles",
-              "Sealing, mounting and interior components for special-purpose vehicle builders.",
-              "/industries/automotive"
-            ],
-            [
-              "Elevators & lifts",
-              "Buffer blocks, door seals and cabin mounting pads for lift and escalator OEMs.",
-              "/products/pads-stoppers-caps"
-            ],
-            [
-              "Furniture & interior hardware",
-              "Bumpers, feet, edge trim and dampening pads for furniture and cabinetry.",
-              "/products/pads-stoppers-caps"
-            ]
+          "kind": "composite",
+          "parts": [
+            {
+              "kind": "table",
+              "columns": [
+                "Sector",
+                "Body",
+                "Links to"
+              ],
+              "rows": [
+                [
+                  "Industrial machinery",
+                  "Anti-vibration mounts, bonded pads and machine seals for general plant equipment. Three named accounts in this band.",
+                  "/products/anti-vibration-mounts"
+                ],
+                [
+                  "Construction & glazing",
+                  "Extruded glazing and weatherstrip profiles, edge protection, expansion-joint sealing and bearing pads.",
+                  "/products/extrusion"
+                ],
+                [
+                  "Chemical processing",
+                  "FKM and EPDM gaskets and seals selected against the process stream. Composition declarations per part on request.",
+                  "/products/gaskets"
+                ],
+                [
+                  "Specialist vehicles",
+                  "Sealing, mounting and interior components for special-purpose vehicle builders.",
+                  "/industries/automotive"
+                ],
+                [
+                  "Elevators & lifts",
+                  "Buffer blocks, door seals and cabin mounting pads for lift and escalator OEMs.",
+                  "/products/pads-stoppers-caps"
+                ],
+                [
+                  "Furniture & interior hardware",
+                  "Bumpers, feet, edge trim and dampening pads for furniture and cabinetry.",
+                  "/products/pads-stoppers-caps"
+                ]
+              ]
+            },
+            {
+              "kind": "para",
+              "text": "One card swapped. Generator & engine OEMs comes out; Specialist vehicles goes in — it is a named band in Margo’s own customer list with a real account behind it, and genset builders are not. Construction & glazing is retained and strengthened: it is the largest named sector for the extrusion and sponge/foam lines, and it is deliberately a card rather than a page until search data from those two category pages justifies promoting it.",
+              "lead": "One card swapped.",
+              "em": false
+            },
+            {
+              "kind": "para",
+              "text": "Every card gets its own destination. Live, only the first card has a “Browse product category” link; the other five are dead cards. Six sectors, six links.",
+              "lead": "Every card gets its own destination.",
+              "em": false
+            }
           ]
         }
       ],

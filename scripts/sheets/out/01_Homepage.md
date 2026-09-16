@@ -124,18 +124,19 @@ Mechanical → /industries/mining`
 - **H2 — 2 lines**: “Rubber Components” / “Engineered for Every Application”  (accent: Engineered for Every Application)
   _6 words · live is 4 · adds the head noun the live H2 is missing_
 - **Section link**: `Full Product Catalogue ↗ /products`
-- **Cards ×11** (Card title | Tag line | URL):
-  | O-Rings | AS568 / ISO 3601 / METRIC | /products/o-rings |
-  | Oil Seals | ROTARY SHAFT / LIP / FKM | /products/oil-seals |
-  | Gaskets | FLAT / PROFILE / FOAM | /products/gaskets |
-  | Bellows | EXPANSION / PROTECTIVE / BOOT | /products/bellows |
-  | Anti-Vibration Mounts | BOBBIN / BUFFER / SANDWICH | /products/anti-vibration-mounts |
-  | Grommets | OPEN / CLOSED / BLIND | /products/grommets |
-  | Bushes & Bushings | SUSPENSION / CENTRE / FLANGED | /products/bushes |
-  | Pads, Stoppers & Caps | BUMPER / DUST / PROTECTIVE | /products/pads-stoppers-caps |
-  | Leak Test Rubber | PLUG / BLADDER / DIAPHRAGM | /products/leak-test-rubber |
-  | Extrusion Profiles | D-SECTION / U-CHANNEL / CORD | /products/extrusion |
-  | Sponge & Foam Rubber | CLOSED CELL / OPEN CELL / TAPE | /products/sponge-foam-rubber |
+- **Cards ×11** (composite):
+    | O-Rings | AS568 / ISO 3601 / METRIC | /products/o-rings |
+    | Oil Seals | ROTARY SHAFT / LIP / FKM | /products/oil-seals |
+    | Gaskets | FLAT / PROFILE / FOAM | /products/gaskets |
+    | Bellows | EXPANSION / PROTECTIVE / BOOT | /products/bellows |
+    | Anti-Vibration Mounts | BOBBIN / BUFFER / SANDWICH | /products/anti-vibration-mounts |
+    | Grommets | OPEN / CLOSED / BLIND | /products/grommets |
+    | Bushes & Bushings | SUSPENSION / CENTRE / FLANGED | /products/bushes |
+    | Pads, Stoppers & Caps | BUMPER / DUST / PROTECTIVE | /products/pads-stoppers-caps |
+    | Leak Test Rubber | PLUG / BLADDER / DIAPHRAGM | /products/leak-test-rubber |
+    | Extrusion Profiles | D-SECTION / U-CHANNEL / CORD | /products/extrusion |
+    | Sponge & Foam Rubber | CLOSED CELL / OPEN CELL / TAPE | /products/sponge-foam-rubber |
+  · Two tag changes only: Gaskets loses SPIRAL / KAMMPROFILE (metallic types, not elastomeric — this is the exact metallic-vs-rubber confusion the resource-article slug rename was written to fix) and O-Rings gains ISO 3601 alongside AS568. Everything else is already correct.
   <details><summary>notes (7)</summary>
   - Heading levels. Section <h2>; each card title <h3> wrapped in the <a>. Tag lines are <p>.
   - Internal links. The single densest link block on the site — 11 category URLs with exact-match anchor text. Every one of the 11 head terms in the keyword map is reachable in one click from here.
@@ -374,25 +375,37 @@ Extrusion Profiles · Sponge & Foam Rubber · Rubber Lining & Skirting`
 Electrical & Electronics · Agriculture · Medical Devices ·
 Water & Fluid Management · Construction · Transport — Rail & Marine`
   _11 entries, up from 9 — adds Construction (sheet 41) and Transport — Rail & Marine (sheet 42), the first two of the six “additional sectors” on sheet 05 to earn a URL. Automotive still leads, matching real volume. 🛑 The live footer’s four industry links all resolve to the same /industries/ — adding two entries to a column whose links are broken makes eleven broken links, so fix the routing in this same commit_
-- **🛑 Footer link map — all 26** (Products column label | href | Watch for):
-  | SEALING |
-  | O-Rings | /products/o-rings |  |
-  | Oil Seals | /products/oil-seals |  |
-  | Gaskets | /products/gaskets |  |
-  | Diaphragms | /products/diaphragms |  |
-  | Reciprocating Seals | /products/seals | Label carries the qualifier so it is not read as a parent of O-Rings and Oil Seals — sheet 39 §02 |
-  | Leak Test Rubber | /products/leak-test-rubber |  |
-  | MOUNTING & PROTECTION |
-  | Anti-Vibration Mounts | /products/anti-vibration-mounts |  |
-  | Bushes & Bushings | /products/bushes | Not /products/bushes-bushings |
-  | Bonded Components | /products/bonded-components |  |
-  | Bellows | /products/bellows |  |
-  | Grommets | /products/grommets |  |
-  | Pads, Stoppers & Caps | /products/pads-stoppers-caps |  |
-  | SHEET & PROFILE |
-  | Extrusion Profiles | /products/extrusion | 🛑 Not /products/extrusion-profiles — the display name and the slug differ, and the wrong one is the memorable one. Sheet 18 records that the homepage grid and several internal links point at the non-existent path |
-  | Sponge & Foam Rubber | /products/sponge-foam-rubber |  |
-  | Rubber Lining & Skirting | /products/rubber-lining |  |
+- **🛑 Footer link map — all 26** (composite):
+  · The live footer’s four industry links all resolve to the same /industries/. The defect is named in thirty-three sheets and the correct hrefs have never been written down anywhere, so here they are once. This is the authoritative map for the shared footer component — every other sheet points at it.
+    | SEALING |
+    | O-Rings | /products/o-rings |  |
+    | Oil Seals | /products/oil-seals |  |
+    | Gaskets | /products/gaskets |  |
+    | Diaphragms | /products/diaphragms |  |
+    | Reciprocating Seals | /products/seals | Label carries the qualifier so it is not read as a parent of O-Rings and Oil Seals — sheet 39 §02 |
+    | Leak Test Rubber | /products/leak-test-rubber |  |
+    | MOUNTING & PROTECTION |
+    | Anti-Vibration Mounts | /products/anti-vibration-mounts |  |
+    | Bushes & Bushings | /products/bushes | Not /products/bushes-bushings |
+    | Bonded Components | /products/bonded-components |  |
+    | Bellows | /products/bellows |  |
+    | Grommets | /products/grommets |  |
+    | Pads, Stoppers & Caps | /products/pads-stoppers-caps |  |
+    | SHEET & PROFILE |
+    | Extrusion Profiles | /products/extrusion | 🛑 Not /products/extrusion-profiles — the display name and the slug differ, and the wrong one is the memorable one. Sheet 18 records that the homepage grid and several internal links point at the non-existent path |
+    | Sponge & Foam Rubber | /products/sponge-foam-rubber |  |
+    | Rubber Lining & Skirting | /products/rubber-lining |  |
+    | Automotive | /industries/automotive |  |
+    | Mining | /industries/mining |  |
+    | Oil & Gas | /industries/oil-gas |  |
+    | Pumps & Valves | /industries/pumps-valves |  |
+    | HVAC | /industries/hvac |  |
+    | Electrical & Electronics | /industries/electrical-electronics |  |
+    | Agriculture | /industries/agriculture |  |
+    | Medical Devices | /industries/medical-devices |  |
+    | Water & Fluid Management | /industries/water-fluid-management |  |
+    | Construction | /industries/construction |  |
+    | Transport — Rail & Marine | /industries/transport | Not /industries/transport-rail-marine |
   _Fifteen product links and eleven industry links, twenty-six in all. Three group labels in the Products column are not links — they are <p> or <div> headings-in-appearance-only, never <h2>/<h3> and never anchors. Derive the map from phase0-route-handlers/lib/site.ts, which is the single source every canonical, sitemap entry and JSON-LD block already derives from — a second hand-maintained copy of twenty-six URLs is how the four industry links ended up pointing at one page. Three slugs do not match their labels and each is a live trap: Extrusion Profiles → /products/extrusion, Bushes & Bushings → /products/bushes, Transport — Rail & Marine → /industries/transport. Test all twenty-six after the build — the defect this map fixes was four links silently collapsing to one, which renders fine and passes no check that was not looking for it_
 - **Column 3 — Company**: `About Us · Certifications · Export Markets · Case Studies ·
 Resources · Contact Us`

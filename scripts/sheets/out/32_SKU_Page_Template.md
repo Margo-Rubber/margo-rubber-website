@@ -5,7 +5,7 @@
 
 ## 01 Hero & spec block [Boilerplate specs · two contradictions]
 > live: LIVE H1 → {Part Name} · IN STOCK badge above a “MADE TO ORDER” label · four specs identical on all 31 pages · quantity in kilograms
-- **Badges**: `IN STOCK · MADE TO ORDER`
+- **Badges**: `MADE TO ORDER · ISO 9001:2015`
   _“IN STOCK” comes off all 31 pages. It sits in the same viewport as “MADE TO ORDER” and as an intro sentence that says the part is manufactured to order from a drawing. A procurement manager who reads IN STOCK plans a delivery date against it, and the rest of the page describes a tooled, made-to-order part quoted per programme. The certification badge is the honest thing to put in that slot_
 - **H1**: “{Part Name}”
   _[no change to the pattern] — but four of the 31 H1s name other companies’ vehicles and six are internal part names no buyer searches. Both are handled in the inventory table at the foot of this sheet_
@@ -23,7 +23,7 @@
 First, the temperature is wrong on the compounds that matter. The FKM oil seal page prints −40 to +120 °C here and −20 / +250 °C in its own compound card 2,000 px below. A buyer specifying a hot seal reads the hero, concludes FKM tops out at 120 °C and leaves — for a part that would have done the job. “Compound dependent” is both true and safe, and it routes the reader to the card that has the real range.
 Second, thickness and width are sheet-rubber fields. A bumper stopper is not 2,000 mm wide. Delete them rather than fill them — a moulded part is described by its drawing, which is what the intro sentence already says.
 Third, and worst: the tensile figure. 18 MPa is published identically on all 31 pages. Tensile strength belongs to the compound, not the part — natural rubber runs around 20–25 MPa, EPDM and silicone considerably lower. A blank field is ignored; a wrong number gets designed against_
-- **Quantity selector**: `QTY (kg) − 1,000 + Min: 500 kg`
+- **Quantity selector**: `QTY (pieces) − 10,000 + Minimum run: 10,000 pieces`
   _Two changes, both client-instructed. Moulded parts are ordered in pieces, not kilograms — no buyer on this page thinks in kg, and the Engineering Data table two sections below already says “per SKU”. And 500 becomes 10,000, per the position of 2026-09-01. These are the 7th and 8th minimum-order figures published on this website; correcting the template retires two of them across 31 pages at once_
   <details><summary>notes (4)</summary>
   - One <h1>, the part name. Breadcrumb above it: Home › Products › {Category} › {Part}. The live breadcrumb labels the second level “Rubber Products” while the nav calls it “Products” — pick one.
@@ -114,19 +114,17 @@ The rest should be hidden until populated, not shown empty. And the minimum cont
 
 ## 05 Why specifiers choose Margo [Drop one chip · fix one process claim]
 > live: LIVE H2 → Why Specifiers Choose Margo · four cards · a 99.7% yield chip the page later says is “on request”
-- **Quality chip**: `QUALITY RATE 99.7% first-pass yield avg.`
+- **Quality chip**: `QUALITY SYSTEM ISO 9001:2015 certificate 09111526A`
   _The page contradicts this chip 2,300 px lower, where the production-metrics table lists “First-pass yield — On request”. One of the two is wrong and the honest one is the table.
 99.7% is also the fourth quality figure on this website, alongside 0.2% field returns, 99.4% process consistency and the <1% target rejection in the company profile. Four numbers for one property is worse than none — the replacement states something checkable instead_
 - **Card 1 — Superior Durability**:
   > Compound and geometry selected for the service life your application needs — continuous mechanical stress, UV exposure or fluid contact.
   _20 words · live is 15 · “Engineered for long service life” is an adjective, not a claim. Naming the three failure modes says the same thing and tells the buyer what to send_
 - **Card 2 — Precision Tolerance**:
-  > Dimensional accuracy held under ISO-controlled compression moulding.
   > Dimensional conformity to ISO 3302-1, class agreed per part — injection, compression or transfer moulded to suit the geometry.
   _19 words · live is 8 · two fixes in one line. ISO 3302-1 replaces the vague “ISO-controlled”, which names no standard.
 And “compression moulding” is wrong on a third of these pages. Six oil seals and an O-ring are injection or transfer moulded — a seal engineer knows that on sight. Margo runs all three processes; the template just names one_
 - **Card 3 — Global Compliance**:
-  > Manufactured against the international standard applicable to your market.
   > Produced against the standard your drawing calls out. Tell us the specification and we confirm what we can supply against it.
   _21 words · live is 9 · “the international standard applicable to your market” is not a thing — there is no single standard, and the sentence implies Margo already meets whatever it is. The replacement is the same position the water and medical sheets take on approvals_
 - **Card 4 — Custom Formulation**:
@@ -181,9 +179,9 @@ Step 01 loses “ISO-certified lab” — the certificate scope covers rubber mo
   · H: “Certified to International Standards”
   · Every product leaves our facility with a documentation package — material test reports, dimensional inspection sheets and a certificate of conformance — giving traceability from raw material to finished part.
   _[no change] — 30 words, three named documents, one checkable promise. This is how the rest of the site should read_
-- **Certificate block**: `ISO 9001:2015
-Accredited certification body
-Current`
+- **Certificate block**: `ISO 9001:2015 · Certificate 09111526A
+Integral Certification Ltd
+Valid to 21 February 2027 · Scope: rubber moulded components`
   _“Accredited certification body” and “Current” are true but unverifiable. A number, an issuer and an expiry date are checkable, and this is the section a supplier-qualification team screenshots.
 The scope line matters on this template specifically: extrusion and sponge/foam sit outside the certificate. Neither category has SKU pages today, so nothing here is affected — but the moment an extruded profile gets a SKU page, this block would claim ISO cover it does not have_
 - **Production metrics ×4** (Row | Live | Ships as):
@@ -276,7 +274,6 @@ The one-line difference is what makes the cards worth clicking — three names a
 - **H2**: “Need this part quoted?”
   _[no change] — four words, correct question, no adjective_
 - **Body**:
-  > Send your drawing or a sample. We confirm compound, hardness and tolerance, then quote against your annual quantity. Response within 1 business day (IST).
   > Send your drawing or a sample. We confirm compound, hardness and tolerance, then quote against your annual quantity. We respond within 48 hours.
   _23 words · live is 24 · only the response time changes. “Quote against your annual quantity” is exactly right for a bulk moulder and it is the phrase that tells an OEM buyer this is a programme supplier, not a catalogue.
 “Within 1 business day (IST)” is the sixth response commitment on this website — and multiplied across 31 pages it is by far the most-published. 48 hours is the figure this set standardises on and the only one that survives a bad week_

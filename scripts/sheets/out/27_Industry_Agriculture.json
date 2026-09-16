@@ -614,11 +614,9 @@
           "label": "Compliance note",
           "kind": "paragraphs",
           "paragraphs": [
-            "Buyers are responsible for confirming applicable import duties and any phytosanitary requirements for their specific order.",
             "Buyers are responsible for confirming applicable import duties for their specific order. Where timber packaging is used, consignments are shipped with ISPM-15 treated and marked pallets and a fumigation certificate. Kenya and Tanzania both require pre-shipment verification of conformity (PVoC) through an approved inspection body before departure — we supply the technical file and arrange inspection at the Nashik facility."
           ],
           "leads": [
-            null,
             "Where timber packaging is used, consignments are shipped with ISPM-15 treated and marked pallets and a fumigation certificate."
           ],
           "note": "59 words · live is 16 · this is the correction the page most needs. Phytosanitary certification applies to plants and plant products — seeds, timber, produce, soil. A moulded rubber bush is none of those and will never need one. The word is on the page because the sector is agriculture, which is the kind of association error a knowledgeable importer notices immediately.\nThe two requirements that do apply are named instead: ISPM-15 on the wooden pallet, not on the rubber — the same standard the mining sheet raises for Australia — and PVoC for Kenya and Tanzania, which the export sheet already documents. A wrong word becomes the two most useful sentences on the page"
@@ -688,11 +686,9 @@
           "label": "Q3",
           "kind": "paragraphs",
           "paragraphs": [
-            "500 pieces per part number, per material. Catalogue sizes ship in 14 to 21 days ex-works Nashik from drawing approval.",
             "We supply in bulk. The minimum run is 10,000 pieces per part number, per compound, or quoted against the part where geometry or tooling makes that unrealistic. Prototype and first-article lots sit outside the minimum. Lead time is confirmed with the quotation, from approved drawing and approved sample."
           ],
           "leads": [
-            null,
             "The minimum run is 10,000 pieces per part number, per compound"
           ],
           "lits": [
@@ -827,7 +823,7 @@
         {
           "label": "Contact strip",
           "kind": "lit",
-          "value": "✆ +91 (Nashik), Contact for number\n✉ Contact for email\n⛊ ISO 9001:2015 Certified",
+          "value": "✆ +91 96655 79276\n✉ info@margorubber.in\n⛊ ISO 9001:2015 Certified · 09111526A",
           "note": "Both placeholder strings replaced with the values already published in the footer. The certificate number is added to the third item so the badge is checkable. Phone and email are real links — tel: and mailto:, not plain text"
         }
       ],

@@ -67,7 +67,12 @@ export type Part =
   | { kind: "heading"; lines: string[]; accent: string[] }
   | { kind: "para"; text: string; lead: string | null; em: boolean }
   | { kind: "list"; items: string[] }
-  | { kind: "table"; columns: string[]; rows: string[][] };
+  | {
+      kind: "table";
+      columns: string[];
+      rows: string[][];
+      confirm?: [number, number][];
+    };
 
 export type Section = {
   num: string;
@@ -114,12 +119,22 @@ function headingLines(el: HTMLElement): string[] {
 function stripNotes(dd: HTMLElement): { note: string; dd: HTMLElement } {
   // A <td class="confirm"> is a VALUE flagged for confirmation and stays in
   // its row (readRow marks it); only free-standing notes are lifted out.
-  const notes = dd.querySelectorAll(".wc, .confirm").filter((n) => n.tagName !== "TD");
+  const notes = dd
+    .querySelectorAll(".wc, .confirm")
+    .filter((n) => n.tagName !== "TD");
   const note = notes
     .map((n) => text(n))
     .filter(Boolean)
     .join(" · ");
   for (const n of notes) n.remove();
+  // Struck-through elements are the OLD copy ("Live"), shown for contrast
+  // beside what ships. They never reach a page. Table cells keep their
+  // column (readRow blanks them) so row shapes stay aligned; inline strike
+  // spans inside a sentence are part of that sentence's markup and stay.
+  for (const n of dd
+    .querySelectorAll(".strike")
+    .filter((n) => n.tagName !== "TD" && n.tagName !== "SPAN"))
+    n.remove();
   return { note, dd };
 }
 
@@ -136,28 +151,55 @@ function readRow(dl: HTMLElement): Field | null {
   const kinds = new Set<string>();
   for (const el of dd.childNodes as unknown as HTMLElement[]) {
     if (!el.tagName) continue;
-    if (el.classList?.contains("h1lit") || el.classList?.contains("h2lit")) kinds.add("heading");
+    if (el.classList?.contains("h1lit") || el.classList?.contains("h2lit"))
+      kinds.add("heading");
     else if (el.tagName === "P") kinds.add("para");
     else if (el.tagName === "UL" || el.tagName === "OL") kinds.add("list");
-    else if (el.classList?.contains("tbl") || el.tagName === "TABLE") kinds.add("table");
+    else if (el.classList?.contains("tbl") || el.tagName === "TABLE")
+      kinds.add("table");
     else if (el.classList?.contains("lit")) kinds.add("lit");
   }
-  if (kinds.size > 1 && (kinds.has("heading") || (kinds.has("list") && kinds.has("para")))) {
+  // Composite when two or more block kinds share a cell (a lone literal
+  // beside paragraphs stays a paragraphs field with `lits`).
+  const blockKinds = new Set([...kinds].filter((k) => k !== "lit"));
+  if (blockKinds.size > 1 || (kinds.has("heading") && kinds.size > 1)) {
     const parts: Part[] = [];
     for (const el of dd.childNodes as unknown as HTMLElement[]) {
       if (!el.tagName) continue;
       if (el.classList?.contains("h1lit") || el.classList?.contains("h2lit")) {
-        parts.push({ kind: "heading", lines: headingLines(el), accent: el.querySelectorAll("em, b").map((e) => text(e)) });
+        parts.push({
+          kind: "heading",
+          lines: headingLines(el),
+          accent: el.querySelectorAll("em, b").map((e) => text(e)),
+        });
       } else if (el.tagName === "P") {
-        parts.push({ kind: "para", text: text(el), lead: el.querySelector("b") ? text(el.querySelector("b")) : null, em: !!el.querySelector("em") && text(el.querySelector("em")) === text(el) });
+        parts.push({
+          kind: "para",
+          text: text(el),
+          lead: el.querySelector("b") ? text(el.querySelector("b")) : null,
+          em:
+            !!el.querySelector("em") &&
+            text(el.querySelector("em")) === text(el),
+        });
       } else if (el.tagName === "UL" || el.tagName === "OL") {
-        parts.push({ kind: "list", items: el.querySelectorAll("li").map((li) => text(li)) });
+        parts.push({
+          kind: "list",
+          items: el.querySelectorAll("li").map((li) => text(li)),
+        });
       } else if (el.classList?.contains("tbl") || el.tagName === "TABLE") {
         const t = el.tagName === "TABLE" ? el : el.querySelector("table")!;
+        const confirm: [number, number][] = [];
+        const rows = t.querySelectorAll("tbody tr").map((tr, ri) =>
+          tr.querySelectorAll("td, th").map((td, ci) => {
+            if (td.classList.contains("confirm")) confirm.push([ri, ci]);
+            return td.classList.contains("strike") ? "" : text(td);
+          }),
+        );
         parts.push({
           kind: "table",
           columns: t.querySelectorAll("thead th").map((th) => text(th)),
-          rows: t.querySelectorAll("tbody tr").map((tr) => tr.querySelectorAll("td, th").map((td) => (td.classList.contains("strike") ? "" : text(td)))),
+          rows,
+          ...(confirm.length ? { confirm } : {}),
         });
       } else if (el.classList?.contains("lit")) {
         parts.push({ kind: "lit", value: text(el) });
@@ -188,7 +230,13 @@ function readRow(dl: HTMLElement): Field | null {
         return td.classList.contains("strike") ? "" : text(td);
       }),
     );
-    return withNote({ label, kind: "table" as const, columns, rows, ...(confirm.length ? { confirm } : {}) });
+    return withNote({
+      label,
+      kind: "table" as const,
+      columns,
+      rows,
+      ...(confirm.length ? { confirm } : {}),
+    });
   }
   const paras = dd.querySelectorAll("p.body-copy, p");
   if (paras.length) {
@@ -308,7 +356,9 @@ function toMarkdown(s: Sheet): string {
         case "table":
           out.push(`- **${f.label}** (${f.columns.join(" | ")}):`);
           f.rows.forEach((r, ri) =>
-            out.push(`  | ${r.map((c, ci) => (f.confirm?.some(([a, b]) => a === ri && b === ci) ? `⚠ ${c}` : c)).join(" | ")} |`),
+            out.push(
+              `  | ${r.map((c, ci) => (f.confirm?.some(([a, b]) => a === ri && b === ci) ? `⚠ ${c}` : c)).join(" | ")} |`,
+            ),
           );
           break;
         case "list":
@@ -322,10 +372,14 @@ function toMarkdown(s: Sheet): string {
           out.push(`- **${f.label}** (composite):`);
           for (const p of f.parts) {
             if (p.kind === "lit") out.push(`  · \`${p.value}\``);
-            else if (p.kind === "heading") out.push(`  · H: ${p.lines.map((l) => `“${l}”`).join(" / ")}`);
-            else if (p.kind === "para") out.push(`  · ${p.em ? "_" : ""}${p.text}${p.em ? "_" : ""}`);
-            else if (p.kind === "list") for (const i of p.items) out.push(`    - ${i}`);
-            else if (p.kind === "table") for (const r of p.rows) out.push(`    | ${r.join(" | ")} |`);
+            else if (p.kind === "heading")
+              out.push(`  · H: ${p.lines.map((l) => `“${l}”`).join(" / ")}`);
+            else if (p.kind === "para")
+              out.push(`  · ${p.em ? "_" : ""}${p.text}${p.em ? "_" : ""}`);
+            else if (p.kind === "list")
+              for (const i of p.items) out.push(`    - ${i}`);
+            else if (p.kind === "table")
+              for (const r of p.rows) out.push(`    | ${r.join(" | ")} |`);
           }
       }
       if (f.note) out.push(`  _${f.note}_`);

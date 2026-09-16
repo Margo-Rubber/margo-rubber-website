@@ -43,7 +43,7 @@
         {
           "label": "Counter strip",
           "kind": "lit",
-          "value": "7 Guides · 3 Categories · Aug 2026 Last Updated",
+          "value": "7 Guides · 3 Categories · Updated September 2026",
           "note": "Rewritten 2026-09-03 — all seven guides are now written. The counter was the honesty gate while the library was empty; it is now a straight count of seven published articles, which is what the strip always claimed and can finally back. The date becomes real too. “Last Updated Aug 2026” was stale filler on a library that had published nothing; “Updated September 2026” is the month the seven articles ship, so it is a fact rather than a decoration. Derive the count, do not hard-code 7 — the eighth guide will be written eventually and a hard-coded number is how this strip went wrong the first time"
         }
       ],
@@ -75,7 +75,7 @@
         {
           "label": "Result counter",
           "kind": "lit",
-          "value": "7 results",
+          "value": "7 guides",
           "note": "The counter says 7 and eight cards render, because the gasket guide appears once as the featured card and again inside Material Comparison. The featured card is a duplicate link, not an eighth guide — so count distinct articles, not rendered cards. Seven is correct and all seven now exist"
         },
         {
@@ -207,7 +207,6 @@
             "ISO 3601-1 is the current standard and its size code matches the AS568 dash number; BS 1806 was superseded by BS ISO 3601 but is still widely quoted"
           ],
           "lits": [
-            "O-Ring Size Chart: AS568, BS1806 & Metric Standards Explained",
             "SIZING & SPEC · 5 min read\nO-Ring Size Chart: AS568, ISO 3601-1 and BS 1806 Explained",
             "[ Read Guide → /resources/o-ring-size-chart ]"
           ],
@@ -407,7 +406,7 @@
         {
           "label": "Related strip",
           "kind": "lit",
-          "value": "RELATED\no rings oil seals oil gas",
+          "value": "RELATED\nO-Rings Oil Seals Oil & Gas",
           "note": "A rendering bug, not a copy decision. The strip prints raw URL slugs as labels — /industries/oil-gas shows as “oil gas”. The links themselves are correct and useful; only the slug-to-label conversion is missing. Present on all seven pages"
         }
       ],

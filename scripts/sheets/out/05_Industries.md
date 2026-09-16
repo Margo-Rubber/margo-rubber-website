@@ -43,16 +43,18 @@ HVAC · Electrical · Agriculture · Medical · Water`
   _5 words · live is 3 · “9 Primary Markets” reads as a count; this reads as the reason the count is possible_
 - **Counter**: `9 of 9 showing`
   _Unchanged — a genuinely good detail, and rare on this site_
-- **Cards ×9** (Industry | Description | Four parts | Parts removed):
-  | Automotive | Moulded rubber for powertrain, chassis, interior and under-bonnet assemblies. | AEM insulation bushes · Oil filler caps · Radiator shroud flaps · Footrest mats |  |
-  | Mining | Precision moulded components for abrasive, high-load extraction plant — not wear linings. | Anti-vibration mounts · O-rings · Bushes & sleeves · Sealing gaskets |  |
-  | Oil & Gas | FKM sealing to 250 °C for general industrial and process service. | FKM O-rings · Flange gaskets · Oil seals · Valve stem seals |  |
-  | Pumps & Valves | Sealing components chosen against the pumped medium, not a catalogue default. | Moulded diaphragms · Valve seats · Lip seals · Casing gaskets |  |
-  | HVAC | Airtight compression under continuous low-amplitude vibration. | EPDM foam strips · Duct gaskets · Self-adhesive foam tape · Fan grommets |  |
-  | Electrical & Electronics | Insulating and sealing rubber, with flame-retardant grades where specified. | Cable grommets · Insulator head covers · Switchgear gaskets · Enclosure seals | All four retained, one renamed |
-  | Agriculture | Weather- and UV-resistant parts built for ozone under static strain. | Cab and door seals · Extruded weatherstrip · Grommets · Buffer stops |  |
-  | Medical Devices | Biocompatible silicone components. We do not hold ISO 13485 or FDA registration. | Silicone gaskets · Equipment seals · O-rings · Moulded bellows |  |
-  | Water & Fluid Management | Sealing rings to IS 5382 for water, gas and sewer mains. | Pipe coupling gaskets · Sealing rings · Check valve seats · Meter gaskets |  |
+- **Cards ×9** (composite):
+    | Automotive | Moulded rubber for powertrain, chassis, interior and under-bonnet assemblies. | AEM insulation bushes · Oil filler caps · Radiator shroud flaps · Footrest mats |  |
+    | Mining | Precision moulded components for abrasive, high-load extraction plant — not wear linings. | Anti-vibration mounts · O-rings · Bushes & sleeves · Sealing gaskets |  |
+    | Oil & Gas | FKM sealing to 250 °C for general industrial and process service. | FKM O-rings · Flange gaskets · Oil seals · Valve stem seals |  |
+    | Pumps & Valves | Sealing components chosen against the pumped medium, not a catalogue default. | Moulded diaphragms · Valve seats · Lip seals · Casing gaskets |  |
+    | HVAC | Airtight compression under continuous low-amplitude vibration. | EPDM foam strips · Duct gaskets · Self-adhesive foam tape · Fan grommets |  |
+    | Electrical & Electronics | Insulating and sealing rubber, with flame-retardant grades where specified. | Cable grommets · Insulator head covers · Switchgear gaskets · Enclosure seals | All four retained, one renamed |
+    | Agriculture | Weather- and UV-resistant parts built for ozone under static strain. | Cab and door seals · Extruded weatherstrip · Grommets · Buffer stops |  |
+    | Medical Devices | Biocompatible silicone components. We do not hold ISO 13485 or FDA registration. | Silicone gaskets · Equipment seals · O-rings · Moulded bellows |  |
+    | Water & Fluid Management | Sealing rings to IS 5382 for water, gas and sewer mains. | Pipe coupling gaskets · Sealing rings · Check valve seats · Meter gaskets |  |
+  · Why each removal. Blowout preventer seals and wellhead O-rings are API 6A / 16A parts — qualification Margo does not hold and lists as a roadmap item on its own oil & gas page. Syringe plunger tips and peristaltic pump tubing are device-contact components requiring ISO 13485; /industries/medical-devices states plainly that Margo does not hold it. Conveyor belt scrapers, crusher wear pads and slurry pump seals are wear consumables, and the mining page’s entire positioning is precision-moulded-OEM-supplier rather than wear-parts reseller — the hub card contradicts the page it links to. Tank linings and impeller wear rings are fabricated or machined items, not moulded parts. Refrigerant seals need a compound rated for the specific refrigerant, which is a per-programme question, not a catalogue claim.
+  · Every replacement part is named in Margo’s own company profile or catalogue. Descriptions stay at 10–14 words, matching the live card height. Automotive gains the four parts the profile actually names, which are more specific and more persuasive than the generic three they replace.
   <details><summary>notes (6)</summary>
   - Nine internal links out, anchor text “Rubber components for {industry}” rather than nine identical “View industry page”. Nine identical anchors waste nine links.
   - Part names are the page’s AEO surface. Thirty-six specific part names is what lets an assistant answer “who makes EPDM foam strips for HVAC in India?”. Which is exactly why the fourteen wrong ones matter: they are equally extractable.
@@ -70,13 +72,15 @@ HVAC · Electrical · Agriculture · Medical · Water`
 - **Intro**:
   > These sectors do not have a dedicated page yet. Browse the relevant product category, or send the drawing and we will quote it.
   _23 words · live is 15 · keeps the honest framing and adds the route that actually converts_
-- **Cards ×6** (Sector | Body | Links to):
-  | Industrial machinery | Anti-vibration mounts, bonded pads and machine seals for general plant equipment. Three named accounts in this band. | /products/anti-vibration-mounts |
-  | Construction & glazing | Extruded glazing and weatherstrip profiles, edge protection, expansion-joint sealing and bearing pads. | /products/extrusion |
-  | Chemical processing | FKM and EPDM gaskets and seals selected against the process stream. Composition declarations per part on request. | /products/gaskets |
-  | Specialist vehicles | Sealing, mounting and interior components for special-purpose vehicle builders. | /industries/automotive |
-  | Elevators & lifts | Buffer blocks, door seals and cabin mounting pads for lift and escalator OEMs. | /products/pads-stoppers-caps |
-  | Furniture & interior hardware | Bumpers, feet, edge trim and dampening pads for furniture and cabinetry. | /products/pads-stoppers-caps |
+- **Cards ×6** (composite):
+    | Industrial machinery | Anti-vibration mounts, bonded pads and machine seals for general plant equipment. Three named accounts in this band. | /products/anti-vibration-mounts |
+    | Construction & glazing | Extruded glazing and weatherstrip profiles, edge protection, expansion-joint sealing and bearing pads. | /products/extrusion |
+    | Chemical processing | FKM and EPDM gaskets and seals selected against the process stream. Composition declarations per part on request. | /products/gaskets |
+    | Specialist vehicles | Sealing, mounting and interior components for special-purpose vehicle builders. | /industries/automotive |
+    | Elevators & lifts | Buffer blocks, door seals and cabin mounting pads for lift and escalator OEMs. | /products/pads-stoppers-caps |
+    | Furniture & interior hardware | Bumpers, feet, edge trim and dampening pads for furniture and cabinetry. | /products/pads-stoppers-caps |
+  · One card swapped. Generator & engine OEMs comes out; Specialist vehicles goes in — it is a named band in Margo’s own customer list with a real account behind it, and genset builders are not. Construction & glazing is retained and strengthened: it is the largest named sector for the extrusion and sponge/foam lines, and it is deliberately a card rather than a page until search data from those two category pages justifies promoting it.
+  · Every card gets its own destination. Live, only the first card has a “Browse product category” link; the other five are dead cards. Six sectors, six links.
   <details><summary>notes (5)</summary>
   - Six links recovered. Five of six cards currently link nowhere. Wiring each to its most relevant category page turns a decorative block into six contextual internal links from a Tier-1 hub.
   - Do not promote any of these to a page yet. A card becomes a page on a demand signal, not on ambition. Construction & glazing is the strongest candidate and the correct trigger is search data from /products/extrusion and /products/sponge-foam-rubber once the site is indexable.

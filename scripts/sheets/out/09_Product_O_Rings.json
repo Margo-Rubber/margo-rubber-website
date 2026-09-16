@@ -359,78 +359,95 @@
         },
         {
           "label": "Panels ×9",
-          "kind": "table",
-          "columns": [
-            "Compound",
-            "Temp range",
-            "Hardness",
-            "Body",
-            "Live"
-          ],
-          "rows": [
-            [
-              "AEM (Vamac®)",
-              "−40° to +175°C",
-              "50–80 Shore A",
-              "Ethylene acrylic elastomer. Our signature compound, supplied to Mahindra & Mahindra for engine and transmission applications. Holds compression-set stability where oil, heat and ozone act together.",
-              "NEW PANEL"
-            ],
-            [
-              "FKM (Viton®)",
-              "−20° to +250°C\ncontinuous to 200°C",
-              "60–90 Shore A",
-              "Fluorocarbon rubber, the first choice for aggressive chemical environments. Resists petroleum oils, fuels and many solvents at sustained high temperature.",
-              ""
-            ],
-            [
-              "NBR (Nitrile)",
-              "−30° to +120°C",
-              "40–90 Shore A",
-              "Nitrile butadiene rubber, the general-purpose industry standard. Outstanding resistance to petroleum oils and hydraulic fluids at moderate temperature.",
-              ""
-            ],
-            [
-              "EPDM",
-              "−40° to +140°C",
-              "40–90 Shore A",
-              "Ethylene propylene diene rubber, the preferred material for water, steam and brake fluid service, with excellent weather and ozone resistance. Not for petroleum oils.",
-              ""
-            ],
-            [
-              "Silicone (VMQ)",
-              "−60° to +220°C",
-              "30–80 Shore A",
-              "Vinyl methyl silicone, the widest service range of the eight. Biocompatible grades available. Poor abrasion resistance — not a wear part.",
-              ""
-            ],
-            [
-              "Neoprene (CR)",
-              "−40° to +120°C",
-              "40–90 Shore A",
-              "Polychloroprene. Balanced properties across weather, refrigerants and moderate oil exposure, and the family we reach for when flame retardancy is specified.",
-              "NEW PANEL"
-            ],
-            [
-              "SBR",
-              "−30° to +100°C",
-              "40–90 Shore A",
-              "Styrene butadiene rubber. Abrasion resistance at low cost, for static seals in water and mild service. Not for oil or fuel contact.",
-              "NEW PANEL"
-            ],
-            [
-              "Natural Rubber (NR)",
-              "−20° to +90°C",
-              "30–80 Shore A",
-              "Polyisoprene. The highest resilience of the eight, specified where a seal also has to damp. Not for oil, fuel or sustained heat.",
-              "NEW PANEL"
-            ],
-            [
-              "PTFE-encapsulated",
-              "−60° to +205°C",
-              "85–95 Shore A",
-              "A PTFE jacket over an FKM or silicone core — the chemical resistance of PTFE with the recovery of an elastomer. Specified where a compound would be attacked but a rigid seal cannot follow the groove.",
-              "NEW PANEL"
-            ]
+          "kind": "composite",
+          "parts": [
+            {
+              "kind": "table",
+              "columns": [
+                "Compound",
+                "Temp range",
+                "Hardness",
+                "Body",
+                "Live"
+              ],
+              "rows": [
+                [
+                  "AEM (Vamac®)",
+                  "−40° to +175°C",
+                  "50–80 Shore A",
+                  "Ethylene acrylic elastomer. Our signature compound, supplied to Mahindra & Mahindra for engine and transmission applications. Holds compression-set stability where oil, heat and ozone act together.",
+                  "NEW PANEL"
+                ],
+                [
+                  "FKM (Viton®)",
+                  "−20° to +250°C\ncontinuous to 200°C",
+                  "60–90 Shore A",
+                  "Fluorocarbon rubber, the first choice for aggressive chemical environments. Resists petroleum oils, fuels and many solvents at sustained high temperature.",
+                  ""
+                ],
+                [
+                  "NBR (Nitrile)",
+                  "−30° to +120°C",
+                  "40–90 Shore A",
+                  "Nitrile butadiene rubber, the general-purpose industry standard. Outstanding resistance to petroleum oils and hydraulic fluids at moderate temperature.",
+                  ""
+                ],
+                [
+                  "EPDM",
+                  "−40° to +140°C",
+                  "40–90 Shore A",
+                  "Ethylene propylene diene rubber, the preferred material for water, steam and brake fluid service, with excellent weather and ozone resistance. Not for petroleum oils.",
+                  ""
+                ],
+                [
+                  "Silicone (VMQ)",
+                  "−60° to +220°C",
+                  "30–80 Shore A",
+                  "Vinyl methyl silicone, the widest service range of the eight. Biocompatible grades available. Poor abrasion resistance — not a wear part.",
+                  ""
+                ],
+                [
+                  "Neoprene (CR)",
+                  "−40° to +120°C",
+                  "40–90 Shore A",
+                  "Polychloroprene. Balanced properties across weather, refrigerants and moderate oil exposure, and the family we reach for when flame retardancy is specified.",
+                  "NEW PANEL"
+                ],
+                [
+                  "SBR",
+                  "−30° to +100°C",
+                  "40–90 Shore A",
+                  "Styrene butadiene rubber. Abrasion resistance at low cost, for static seals in water and mild service. Not for oil or fuel contact.",
+                  "NEW PANEL"
+                ],
+                [
+                  "Natural Rubber (NR)",
+                  "−20° to +90°C",
+                  "30–80 Shore A",
+                  "Polyisoprene. The highest resilience of the eight, specified where a seal also has to damp. Not for oil, fuel or sustained heat.",
+                  "NEW PANEL"
+                ],
+                [
+                  "PTFE-encapsulated",
+                  "−60° to +205°C",
+                  "85–95 Shore A",
+                  "A PTFE jacket over an FKM or silicone core — the chemical resistance of PTFE with the recovery of an elastomer. Specified where a compound would be attacked but a rigid seal cannot follow the groove.",
+                  "NEW PANEL"
+                ]
+              ]
+            },
+            {
+              "kind": "para",
+              "text": "Eight compounds plus PTFE. The four live panels stay with corrected ranges; five are new. Every range matches the homepage compound table, which governs across all eleven category pages.",
+              "lead": "Eight compounds plus PTFE.",
+              "em": false
+            },
+            {
+              "kind": "para",
+              "text": "Body copy for FKM, NBR, EPDM and silicone is kept close to live — it is accurate and well written. Only the numbers change, plus a “not for” clause on EPDM, which is the compound most often mis-specified into oil service.",
+              "lead": "Body copy for FKM, NBR, EPDM and silicone is kept close to live",
+              "em": false
+            }
           ]
         },
         {
@@ -739,44 +756,55 @@
         },
         {
           "label": "Rows ×5",
-          "kind": "table",
-          "columns": [
-            "Row",
-            "Value",
-            "Sub-label",
-            "Replaces"
-          ],
-          "rows": [
-            [
-              "Quotation",
-              "48 hrs",
-              "With feasibility report",
-              ""
-            ],
-            [
-              "Prototype",
-              "48–72 hrs",
-              "From an approved drawing",
-              ""
-            ],
-            [
-              "Catalogue sizes",
-              "3–4 weeks",
-              "Ex-works Nashik, from drawing approval · 2 weeks express",
-              ""
-            ],
-            [
-              "Cut-to-print",
-              "3–4 weeks + tooling",
-              "Tooling lead time quoted per part",
-              ""
-            ],
-            [
-              "Packaging",
-              "Poly bag + card label",
-              "Bulk reel or blister on request",
-              "[no change to the value]"
-            ]
+          "kind": "composite",
+          "parts": [
+            {
+              "kind": "table",
+              "columns": [
+                "Row",
+                "Value",
+                "Sub-label",
+                "Replaces"
+              ],
+              "rows": [
+                [
+                  "Quotation",
+                  "48 hrs",
+                  "With feasibility report",
+                  ""
+                ],
+                [
+                  "Prototype",
+                  "48–72 hrs",
+                  "From an approved drawing",
+                  ""
+                ],
+                [
+                  "Catalogue sizes",
+                  "3–4 weeks",
+                  "Ex-works Nashik, from drawing approval · 2 weeks express",
+                  ""
+                ],
+                [
+                  "Cut-to-print",
+                  "3–4 weeks + tooling",
+                  "Tooling lead time quoted per part",
+                  ""
+                ],
+                [
+                  "Packaging",
+                  "Poly bag + card label",
+                  "Bulk reel or blister on request",
+                  "[no change to the value]"
+                ]
+              ]
+            },
+            {
+              "kind": "para",
+              "text": "Lead times are corrected to the company standard. Live says 14–21 days for catalogue and 21–35 for custom; every other page on the site says 3–4 weeks standard with 2 weeks express. Three to four weeks is 21–28 days, so the live catalogue figure promises faster than the company delivers and the custom figure promises slower. One string, sitewide.",
+              "lead": "Lead times are corrected to the company standard.",
+              "em": false
+            }
           ]
         }
       ],

@@ -16,7 +16,7 @@
         {
           "label": "Badges",
           "kind": "lit",
-          "value": "IN STOCK · MADE TO ORDER",
+          "value": "MADE TO ORDER · ISO 9001:2015",
           "note": "“IN STOCK” comes off all 31 pages. It sits in the same viewport as “MADE TO ORDER” and as an intro sentence that says the part is manufactured to order from a drawing. A procurement manager who reads IN STOCK plans a delivery date against it, and the rest of the page describes a tooled, made-to-order part quoted per programme. The certification badge is the honest thing to put in that slot"
         },
         {
@@ -85,7 +85,7 @@
         {
           "label": "Quantity selector",
           "kind": "lit",
-          "value": "QTY (kg) − 1,000 + Min: 500 kg",
+          "value": "QTY (pieces) − 10,000 + Minimum run: 10,000 pieces",
           "note": "Two changes, both client-instructed. Moulded parts are ordered in pieces, not kilograms — no buyer on this page thinks in kg, and the Engineering Data table two sections below already says “per SKU”. And 500 becomes 10,000, per the position of 2026-09-01. These are the 7th and 8th minimum-order figures published on this website; correcting the template retires two of them across 31 pages at once"
         }
       ],
@@ -396,7 +396,7 @@
         {
           "label": "Quality chip",
           "kind": "lit",
-          "value": "QUALITY RATE 99.7% first-pass yield avg.",
+          "value": "QUALITY SYSTEM ISO 9001:2015 certificate 09111526A",
           "note": "The page contradicts this chip 2,300 px lower, where the production-metrics table lists “First-pass yield — On request”. One of the two is wrong and the honest one is the table.\n99.7% is also the fourth quality figure on this website, alongside 0.2% field returns, 99.4% process consistency and the <1% target rejection in the company profile. Four numbers for one property is worse than none — the replacement states something checkable instead"
         },
         {
@@ -414,11 +414,9 @@
           "label": "Card 2 — Precision Tolerance",
           "kind": "paragraphs",
           "paragraphs": [
-            "Dimensional accuracy held under ISO-controlled compression moulding.",
             "Dimensional conformity to ISO 3302-1, class agreed per part — injection, compression or transfer moulded to suit the geometry."
           ],
           "leads": [
-            null,
             null
           ],
           "note": "19 words · live is 8 · two fixes in one line. ISO 3302-1 replaces the vague “ISO-controlled”, which names no standard.\nAnd “compression moulding” is wrong on a third of these pages. Six oil seals and an O-ring are injection or transfer moulded — a seal engineer knows that on sight. Margo runs all three processes; the template just names one"
@@ -427,11 +425,9 @@
           "label": "Card 3 — Global Compliance",
           "kind": "paragraphs",
           "paragraphs": [
-            "Manufactured against the international standard applicable to your market.",
             "Produced against the standard your drawing calls out. Tell us the specification and we confirm what we can supply against it."
           ],
           "leads": [
-            null,
             null
           ],
           "note": "21 words · live is 9 · “the international standard applicable to your market” is not a thing — there is no single standard, and the sentence implies Margo already meets whatever it is. The replacement is the same position the water and medical sheets take on approvals"
@@ -603,7 +599,7 @@
         {
           "label": "Certificate block",
           "kind": "lit",
-          "value": "ISO 9001:2015\nAccredited certification body\nCurrent",
+          "value": "ISO 9001:2015 · Certificate 09111526A\nIntegral Certification Ltd\nValid to 21 February 2027 · Scope: rubber moulded components",
           "note": "“Accredited certification body” and “Current” are true but unverifiable. A number, an issuer and an expiry date are checkable, and this is the section a supplier-qualification team screenshots.\nThe scope line matters on this template specifically: extrusion and sponge/foam sit outside the certificate. Neither category has SKU pages today, so nothing here is affected — but the moment an extruded profile gets a SKU page, this block would claim ISO cover it does not have"
         },
         {
@@ -876,11 +872,9 @@
           "label": "Body",
           "kind": "paragraphs",
           "paragraphs": [
-            "Send your drawing or a sample. We confirm compound, hardness and tolerance, then quote against your annual quantity. Response within 1 business day (IST).",
             "Send your drawing or a sample. We confirm compound, hardness and tolerance, then quote against your annual quantity. We respond within 48 hours."
           ],
           "leads": [
-            null,
             "We respond within 48 hours."
           ],
           "note": "23 words · live is 24 · only the response time changes. “Quote against your annual quantity” is exactly right for a bulk moulder and it is the phrase that tells an OEM buyer this is a programme supplier, not a catalogue.\n“Within 1 business day (IST)” is the sixth response commitment on this website — and multiplied across 31 pages it is by far the most-published. 48 hours is the figure this set standardises on and the only one that survives a bad week"

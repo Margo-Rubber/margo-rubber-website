@@ -221,7 +221,7 @@ const patch = {
   ...Object.fromEntries(
     docPatch
       .filter((d) => d.name !== d.from)
-      .map((d) => [`documents.items[name=="${d.from}"].name`, E(d.name)]),
+      .map((d) => [`?documents.items[name=="${d.from}"].name`, E(d.name)]),
   ),
 
   "quote.heading": E(heading(quote, "H2").value),

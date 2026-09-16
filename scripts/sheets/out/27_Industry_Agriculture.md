@@ -190,7 +190,6 @@ Direct OEM supply chain from Nashik, Maharashtra
 Australia · United Kingdom · Kenya · Tanzania · United States`
   _[no change to the five countries] — and they should not be changed. Kenya and Tanzania are not the generic default five other industry pages carry; they are an East African focus that matches the Mombasa and Dar es Salaam lanes on the export sheet, and East African agricultural mechanisation is a market Indian manufacturers win on price and lead time_
 - **Compliance note**:
-  > Buyers are responsible for confirming applicable import duties and any phytosanitary requirements for their specific order.
   > Buyers are responsible for confirming applicable import duties for their specific order. Where timber packaging is used, consignments are shipped with ISPM-15 treated and marked pallets and a fumigation certificate. Kenya and Tanzania both require pre-shipment verification of conformity (PVoC) through an approved inspection body before departure — we supply the technical file and arrange inspection at the Nashik facility.
   _59 words · live is 16 · this is the correction the page most needs. Phytosanitary certification applies to plants and plant products — seeds, timber, produce, soil. A moulded rubber bush is none of those and will never need one. The word is on the page because the sector is agriculture, which is the kind of association error a knowledgeable importer notices immediately.
 The two requirements that do apply are named instead: ISPM-15 on the wooden pallet, not on the rubber — the same standard the mining sheet raises for Australia — and PVoC for Kenya and Tanzania, which the export sheet already documents. A wrong word becomes the two most useful sentences on the page_
@@ -217,7 +216,6 @@ The two requirements that do apply are named instead: ISPM-15 on the wooden pall
   `Can you supply components resistant to agricultural chemicals?`
   _49 words · live is 26 · the live answer is already the best FAQ answer in the whole set — it refuses to guess and asks for the three inputs that decide it. The addition is the one thing it misses, and it is the thing that actually fails_
 - **Q3**:
-  > 500 pieces per part number, per material. Catalogue sizes ship in 14 to 21 days ex-works Nashik from drawing approval.
   > We supply in bulk. The minimum run is 10,000 pieces per part number, per compound, or quoted against the part where geometry or tooling makes that unrealistic. Prototype and first-article lots sit outside the minimum. Lead time is confirmed with the quotation, from approved drawing and approved sample.
   `What is the minimum order quantity?`
   _48 words · live is 21 · client instruction, 2026-09-01. Fifth industry page with a dedicated minimum-order FAQ and the number was wrong in the other direction. The lead time goes too — “catalogue sizes” contradicts a page that says twice that nothing is supplied from a catalogue, and 14 to 21 days is not a promise any drawing-matched moulder can make before tooling is settled.
@@ -260,9 +258,9 @@ On this sector the corrected answer qualifies buyers in, not out. An agricultura
   | Primary | Request Agricultural Component Specs → /contact | [no change] |
   | Secondary | Send a Technical Inquiry → /contact | Call +91 96655 79276 → tel:+919665579276 |
   _Two buttons to the same page is one button with a spare. Turning the second into a phone link gives the section two different actions instead of one repeated — and on mobile, where an equipment buyer in Nairobi or Dar es Salaam is likely reading, a tap-to-call is the higher-intent action_
-- **Contact strip**: `✆ +91 (Nashik), Contact for number
-✉ Contact for email
-⛊ ISO 9001:2015 Certified`
+- **Contact strip**: `✆ +91 96655 79276
+✉ info@margorubber.in
+⛊ ISO 9001:2015 Certified · 09111526A`
   _Both placeholder strings replaced with the values already published in the footer. The certificate number is added to the third item so the badge is checkable. Phone and email are real links — tel: and mailto:, not plain text_
   <details><summary>notes (4)</summary>
   - No ContactPoint schema until the strip is filled. Publishing “Contact for number” as structured data puts a placeholder into a knowledge graph, where it is far harder to retract than to prevent.

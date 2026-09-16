@@ -78,17 +78,19 @@ Typical values. See our technical disclaimer.`
 - **Intro**:
   > Each compound has a distinct chemical compatibility profile and temperature ceiling. Name the medium, the operating temperature and the pressure class, and we will tell you which to specify.
   _28 words · live is 25_
-- **Panels ×9** (Compound | Temp range | Hardness | Body | Live):
-  | AEM (Vamac®) | −40° to +175°C | 50–80 Shore A | Ethylene acrylic elastomer. Our signature compound, supplied to Mahindra & Mahindra for engine and transmission applications. Holds compression-set stability where oil, heat and ozone act together. | NEW PANEL |
-  | FKM (Viton®) | −20° to +250°C
+- **Panels ×9** (composite):
+    | AEM (Vamac®) | −40° to +175°C | 50–80 Shore A | Ethylene acrylic elastomer. Our signature compound, supplied to Mahindra & Mahindra for engine and transmission applications. Holds compression-set stability where oil, heat and ozone act together. | NEW PANEL |
+    | FKM (Viton®) | −20° to +250°C
 continuous to 200°C | 60–90 Shore A | Fluorocarbon rubber, the first choice for aggressive chemical environments. Resists petroleum oils, fuels and many solvents at sustained high temperature. |  |
-  | NBR (Nitrile) | −30° to +120°C | 40–90 Shore A | Nitrile butadiene rubber, the general-purpose industry standard. Outstanding resistance to petroleum oils and hydraulic fluids at moderate temperature. |  |
-  | EPDM | −40° to +140°C | 40–90 Shore A | Ethylene propylene diene rubber, the preferred material for water, steam and brake fluid service, with excellent weather and ozone resistance. Not for petroleum oils. |  |
-  | Silicone (VMQ) | −60° to +220°C | 30–80 Shore A | Vinyl methyl silicone, the widest service range of the eight. Biocompatible grades available. Poor abrasion resistance — not a wear part. |  |
-  | Neoprene (CR) | −40° to +120°C | 40–90 Shore A | Polychloroprene. Balanced properties across weather, refrigerants and moderate oil exposure, and the family we reach for when flame retardancy is specified. | NEW PANEL |
-  | SBR | −30° to +100°C | 40–90 Shore A | Styrene butadiene rubber. Abrasion resistance at low cost, for static seals in water and mild service. Not for oil or fuel contact. | NEW PANEL |
-  | Natural Rubber (NR) | −20° to +90°C | 30–80 Shore A | Polyisoprene. The highest resilience of the eight, specified where a seal also has to damp. Not for oil, fuel or sustained heat. | NEW PANEL |
-  | PTFE-encapsulated | −60° to +205°C | 85–95 Shore A | A PTFE jacket over an FKM or silicone core — the chemical resistance of PTFE with the recovery of an elastomer. Specified where a compound would be attacked but a rigid seal cannot follow the groove. | NEW PANEL |
+    | NBR (Nitrile) | −30° to +120°C | 40–90 Shore A | Nitrile butadiene rubber, the general-purpose industry standard. Outstanding resistance to petroleum oils and hydraulic fluids at moderate temperature. |  |
+    | EPDM | −40° to +140°C | 40–90 Shore A | Ethylene propylene diene rubber, the preferred material for water, steam and brake fluid service, with excellent weather and ozone resistance. Not for petroleum oils. |  |
+    | Silicone (VMQ) | −60° to +220°C | 30–80 Shore A | Vinyl methyl silicone, the widest service range of the eight. Biocompatible grades available. Poor abrasion resistance — not a wear part. |  |
+    | Neoprene (CR) | −40° to +120°C | 40–90 Shore A | Polychloroprene. Balanced properties across weather, refrigerants and moderate oil exposure, and the family we reach for when flame retardancy is specified. | NEW PANEL |
+    | SBR | −30° to +100°C | 40–90 Shore A | Styrene butadiene rubber. Abrasion resistance at low cost, for static seals in water and mild service. Not for oil or fuel contact. | NEW PANEL |
+    | Natural Rubber (NR) | −20° to +90°C | 30–80 Shore A | Polyisoprene. The highest resilience of the eight, specified where a seal also has to damp. Not for oil, fuel or sustained heat. | NEW PANEL |
+    | PTFE-encapsulated | −60° to +205°C | 85–95 Shore A | A PTFE jacket over an FKM or silicone core — the chemical resistance of PTFE with the recovery of an elastomer. Specified where a compound would be attacked but a rigid seal cannot follow the groove. | NEW PANEL |
+  · Eight compounds plus PTFE. The four live panels stay with corrected ranges; five are new. Every range matches the homepage compound table, which governs across all eleven category pages.
+  · Body copy for FKM, NBR, EPDM and silicone is kept close to live — it is accurate and well written. Only the numbers change, plus a “not for” clause on EPDM, which is the compound most often mis-specified into oil service.
 - **PTFE — two questions**:
   > One question, and it is a process question rather than a value. Encapsulated or solid? — PTFE-encapsulated O-rings (a PTFE jacket over an elastomer core) are a moulder’s product and fit what Margo does. Solid PTFE O-rings are machined from stock, not moulded, and are a different process with different equipment. The panel above is written for encapsulated. If Margo machines solid PTFE, the copy changes and so does the capability claim.
   > Temperature and hardness — standard published values. An encapsulated ring is a PTFE (FEP or PFA) jacket over an elastomer core, and the figures come from the core and the jacket together. Published practice: silicone core, FEP jacket −60 to +205 °C; FKM core, FEP jacket −20 to +205 °C; silicone core, PFA jacket −60 to +260 °C. Hardness runs 85–90 Shore A on a silicone core and 90–95 on FKM, because the jacket dominates — which is why an encapsulated ring needs a wider groove and more closure force than a plain elastomer ring of the same section. The table publishes the silicone-core figures, −60 to +205 °C at 85–95 Shore A, as the widest band Margo would quote against; state the core on the enquiry and the range narrows accordingly.
@@ -177,12 +179,13 @@ continuous to 200°C | 60–90 Shore A | Fluorocarbon rubber, the first choice f
 - **Intro**:
   > Margo produces in bulk against OEM schedules. Tell us the part and the volume and we will quote it. Minimum run is 10,000 pieces per part number, per compound, or quoted against the part where size or complexity sets the economics. Prototype and first-article lots sit outside the minimum and are quoted separately.
   _42 words · live is 34 · replaces “Margo is geared for volume procurement. If your project requires below-MOQ qualification samples…” — which states an MOQ twice by implication and tells a prototype buyer they are below the floor before they have asked. The replacement is the founder’s own phrasing from the commercial terms_
-- **Rows ×5** (Row | Value | Sub-label | Replaces):
-  | Quotation | 48 hrs | With feasibility report |  |
-  | Prototype | 48–72 hrs | From an approved drawing |  |
-  | Catalogue sizes | 3–4 weeks | Ex-works Nashik, from drawing approval · 2 weeks express |  |
-  | Cut-to-print | 3–4 weeks + tooling | Tooling lead time quoted per part |  |
-  | Packaging | Poly bag + card label | Bulk reel or blister on request | [no change to the value] |
+- **Rows ×5** (composite):
+    | Quotation | 48 hrs | With feasibility report |  |
+    | Prototype | 48–72 hrs | From an approved drawing |  |
+    | Catalogue sizes | 3–4 weeks | Ex-works Nashik, from drawing approval · 2 weeks express |  |
+    | Cut-to-print | 3–4 weeks + tooling | Tooling lead time quoted per part |  |
+    | Packaging | Poly bag + card label | Bulk reel or blister on request | [no change to the value] |
+  · Lead times are corrected to the company standard. Live says 14–21 days for catalogue and 21–35 for custom; every other page on the site says 3–4 weeks standard with 2 weeks express. Three to four weeks is 21–28 days, so the live catalogue figure promises faster than the company delivers and the custom figure promises slower. One string, sitewide.
   <details><summary>notes (4)</summary>
   - The section ID changes from #commercial to #lead-times, and the anchor label with it. An anchor named after a banned term is a banned term in the URL bar.
   - This is the highest-converting block on a category page. A buyer who has read the spec table and picked a compound arrives here to find out whether the timeline works. Answering it with an MOQ instead of a lead time loses them.

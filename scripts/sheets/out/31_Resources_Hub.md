@@ -12,7 +12,7 @@
 - **Subhead**:
   > Technical reference library for engineers and procurement teams specifying precision rubber seals, gaskets and moulded components.
   _17 words · live is 17 · serial comma removed for house style. “Engineers and procurement teams” is the correct dual audience and the seven topics genuinely serve both_
-- **Counter strip**: `7 Guides · 3 Categories · Aug 2026 Last Updated`
+- **Counter strip**: `7 Guides · 3 Categories · Updated September 2026`
   _Rewritten 2026-09-03 — all seven guides are now written. The counter was the honesty gate while the library was empty; it is now a straight count of seven published articles, which is what the strip always claimed and can finally back. The date becomes real too. “Last Updated Aug 2026” was stale filler on a library that had published nothing; “Updated September 2026” is the month the seven articles ship, so it is a fact rather than a decoration. Derive the count, do not hard-code 7 — the eighth guide will be written eventually and a hard-coded number is how this strip went wrong the first time_
   <details><summary>notes (4)</summary>
   - The counter is the honesty gate for the whole page. Every other fix in this sheet follows from it — if the counter says “in preparation”, the read times and the Read Guide buttons stop being defensible and have to change too.
@@ -27,7 +27,7 @@
   _[no change to the placeholder text] — but the field should be disabled or hidden until at least one guide is published. A search box over an empty library returns nothing for every query, which is a worse first interaction than no search box_
 - **Filter tabs ×4**: `All Guides · Material Comparison · Sizing & Spec · Sourcing & Buyer Decision`
   _[no change] — the three categories are well drawn and the counts underneath them (3 / 2 / 2) are correct_
-- **Result counter**: `7 results`
+- **Result counter**: `7 guides`
   _The counter says 7 and eight cards render, because the gasket guide appears once as the featured card and again inside Material Comparison. The featured card is a duplicate link, not an eighth guide — so count distinct articles, not rendered cards. Seven is correct and all seven now exist_
 - **Featured card — START HERE**: `START HERE
 MATERIAL COMPARISON · 8 min read
@@ -82,7 +82,6 @@ The three standards are the addition and they are the reason this guide should s
   _[no change] — and “tolerances” is a word this site needs to get right, since it currently publishes four different tolerance figures across four pages_
 - **Card 1**:
   > Cross-references the international sizing standards with tolerance and groove-dimension guidance. ISO 3601-1 is the current standard and its size code matches the AS568 dash number; BS 1806 was superseded by BS ISO 3601 but is still widely quoted, so a working chart has to carry all three.
-  `O-Ring Size Chart: AS568, BS1806 & Metric Standards Explained`
   `SIZING & SPEC · 5 min read
 O-Ring Size Chart: AS568, ISO 3601-1 and BS 1806 Explained`
   `[ Read Guide → /resources/o-ring-size-chart ]`
@@ -162,7 +161,7 @@ The only thing wrong with these pages is the hub in front of them_
   > Technical guides are reviewed before publication by {name}, {role}, at our Nashik works.
   _13 words · new line, and it is the E-E-A-T lever for the whole library. The stub already promises review “by our team in Nashik” — naming the reviewer converts a claim into a credential. A named engineer at the works is a signal almost no competitor library carries, and it costs one sentence. who reviews · who reviews_
 - **Related strip**: `RELATED
-o rings oil seals oil gas`
+O-Rings Oil Seals Oil & Gas`
   _A rendering bug, not a copy decision. The strip prints raw URL slugs as labels — /industries/oil-gas shows as “oil gas”. The links themselves are correct and useful; only the slug-to-label conversion is missing. Present on all seven pages_
   <details><summary>notes (6)</summary>
   - <meta name="robots" content="noindex, follow"> on all seven, today. Seven URLs of roughly 225 words each, with under 60 words of body copy that is identical across all seven, is seven near-duplicate thin pages in the index. They cannot rank and they drag on a site with real depth elsewhere.

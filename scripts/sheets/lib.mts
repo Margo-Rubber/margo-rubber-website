@@ -24,7 +24,7 @@ import type { ZodTypeAny } from "zod";
 import { schemaTypes } from "../../sanity/schemaTypes/index.ts";
 import { stripNullsDeep } from "../../src/content/blocks.ts";
 import { FORBIDDEN_CLAIMS } from "../../src/content/site.ts";
-import type { Sheet, Section, Field } from "./parse-sheets.mts";
+import type { Sheet, Section, Field, Part } from "./parse-sheets.mts";
 
 export type { Section, Sheet, Field };
 
@@ -79,6 +79,37 @@ export function field<K extends Field["kind"]>(
     throw new Error(
       `section ${sec.num} "${sec.title}": no field starting "${label}" (have: ${sec.fields.map((x) => x.label).join(" | ")})`,
     );
+  // A composite cell (table + rationale paragraphs, say) answers for its
+  // table or its paragraphs when that is what the caller asked for.
+  if (f.kind === "composite" && kind === "table") {
+    const t = f.parts.find((p) => p.kind === "table");
+    if (t && t.kind === "table")
+      return {
+        label: f.label,
+        kind: "table",
+        columns: t.columns,
+        rows: t.rows,
+        ...(t.confirm ? { confirm: t.confirm } : {}),
+        note: f.note,
+      } as Extract<Field, { kind: K }>;
+  }
+  if (f.kind === "composite" && kind === "paragraphs") {
+    const ps = f.parts.filter(
+      (p): p is Extract<Part, { kind: "para" }> => p.kind === "para",
+    );
+    const lits = f.parts
+      .filter((p): p is Extract<Part, { kind: "lit" }> => p.kind === "lit")
+      .map((p) => p.value);
+    if (ps.length)
+      return {
+        label: f.label,
+        kind: "paragraphs",
+        paragraphs: ps.map((p) => p.text),
+        leads: ps.map((p) => p.lead),
+        ...(lits.length ? { lits } : {}),
+        note: f.note,
+      } as Extract<Field, { kind: K }>;
+  }
   if (f.kind !== kind)
     throw new Error(
       `section ${sec.num} "${label}": expected ${kind}, sheet has ${f.kind}`,
@@ -355,7 +386,22 @@ export async function applyDocument(opts: {
     return obj[seg];
   };
   const unsets: string[] = [];
-  for (const [path, value] of Object.entries(patch)) {
+  for (const [rawPath, value] of Object.entries(patch)) {
+    // A leading "?" marks a patch that may not apply — a rename whose
+    // source item is already gone on a re-run. Skipped, not failed.
+    const optional = rawPath.startsWith("?");
+    const path = optional ? rawPath.slice(1) : rawPath;
+    if (optional) {
+      try {
+        get(current, path.replace(/\.[^.]+$/, ""));
+        const segs = path.match(/[^.[\]]+(?:\[[^\]]+\])?/g) ?? [];
+        let node: unknown = current;
+        for (const seg of segs.slice(0, -1))
+          node = step(structuredClone(node), seg);
+      } catch {
+        continue;
+      }
+    }
     if (value === undefined) {
       // `undefined` removes the field — a section the sheet deletes.
       unsets.push(path);

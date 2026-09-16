@@ -40,18 +40,21 @@
   _32 words · live is 15_
 - **Filter chips ×7**: `All Products · Sealing · Anti-Vibration · Protection · Profiles · Custom · Cellular`
   _Unchanged — the taxonomy is correct and the filter works_
-- **Cards ×11** (Product | Family | Unit | Overline | Applications):
-  | O-Rings | Sealing | by the piece | PRECISION SEALING TO STANDARD SERIES | Hydraulic systems · Pneumatic valves |
-  | Oil Seals | Sealing | by the piece | ROTARY SHAFT SEALING, LIP TYPE | Gearboxes · Pumps & compressors |
-  | Gaskets | Sealing | by the piece | FLANGE AND PROFILE SEALING | Flanged joints · Engine covers |
-  | Bellows | Protection | by the piece | FLEXIBLE EXPANSION AND PROTECTION | CV joints · Steering systems |
-  | Grommets | Protection | by the piece | SEALED CABLE AND PANEL ENTRY | Cable entry · Panel seals |
-  | Bushes & Bushings | Anti-Vibration | by the piece | PRECISION BORE, ENGINEERED FIT | Suspension arms · Engine mounts |
-  | Anti-Vibration Mounts | Anti-Vibration | by the piece | ISOLATE, DAMPEN, PROTECT | Marine engines · Generators |
-  | Pads, Stoppers & Caps | Custom | by the piece | CUSHIONING, STOPPING, PROTECTING | Machinery feet · Buffer stops |
-  | Leak Test Rubber | Custom | by the piece | SEALS THE TEST, NOT THE PART | Alloy wheel testing · Diaphragms |
-  | Extrusion Profiles | Profiles | by the metre | CONTINUOUS PROFILE, ANY CROSS-SECTION | Door & window profiles · Cord & strip |
-  | Sponge & Foam Rubber | Cellular | sheet, roll or piece | CELLULAR ELASTOMERS, OPEN AND CLOSED CELL | HVAC insulation · Weatherseals |
+- **Cards ×11** (composite):
+    | O-Rings | Sealing | by the piece | PRECISION SEALING TO STANDARD SERIES | Hydraulic systems · Pneumatic valves |
+    | Oil Seals | Sealing | by the piece | ROTARY SHAFT SEALING, LIP TYPE | Gearboxes · Pumps & compressors |
+    | Gaskets | Sealing | by the piece | FLANGE AND PROFILE SEALING | Flanged joints · Engine covers |
+    | Bellows | Protection | by the piece | FLEXIBLE EXPANSION AND PROTECTION | CV joints · Steering systems |
+    | Grommets | Protection | by the piece | SEALED CABLE AND PANEL ENTRY | Cable entry · Panel seals |
+    | Bushes & Bushings | Anti-Vibration | by the piece | PRECISION BORE, ENGINEERED FIT | Suspension arms · Engine mounts |
+    | Anti-Vibration Mounts | Anti-Vibration | by the piece | ISOLATE, DAMPEN, PROTECT | Marine engines · Generators |
+    | Pads, Stoppers & Caps | Custom | by the piece | CUSHIONING, STOPPING, PROTECTING | Machinery feet · Buffer stops |
+    | Leak Test Rubber | Custom | by the piece | SEALS THE TEST, NOT THE PART | Alloy wheel testing · Diaphragms |
+    | Extrusion Profiles | Profiles | by the metre | CONTINUOUS PROFILE, ANY CROSS-SECTION | Door & window profiles · Cord & strip |
+    | Sponge & Foam Rubber | Cellular | sheet, roll or piece | CELLULAR ELASTOMERS, OPEN AND CLOSED CELL | HVAC insulation · Weatherseals |
+  · Five fields per card, all five already in the live component. Family is added — the same six-term taxonomy as the filter chips above, so a card always tells you which chip it sits under. Unit is unchanged from live. Family assignments are unchanged too; only the row order is regrouped so the families read in blocks, where live, Grommets sits four rows from Bellows despite sharing one.
+  · The unit is a pricing basis, never a quantity. “by the piece” states how a line is quoted — it must never be paired anywhere on the page with a number, a “from”, or a minimum. That pairing is what produced the MOQ leak in the live FAQ, and the founder instruction of 2026-08-19 has no exceptions.
+  · Where the standards go. AS568 / ISO 3601, ASTM D2000, ISO 3302-1 and ASTM D1056 / D6576 belong in the category page spec tables, not on a hub card. They are still carried on this page, in section 05, section 08 and the FAQ.
 - **Card CTA**: `View {Product} specifications →`
   _Replaces the generic View Details → on all 11 cards. Eleven identical anchor texts waste eleven internal links_
 - **Closing link**: `Part not in the catalogue? Send a drawing or a sample` → /contact
@@ -196,12 +199,15 @@ Electrical · Medical · Water · Agriculture`
 - **Intro**:
   > One list, with the status of each certification stated on the badge rather than implied. A supplier who names that boundary is one you can plan around. Compound composition declarations are produced per part on request.
   _36 words · live is 18_
-- **Cards ×5** (Badge | Title | Body):
-  | ISO 9001:2015 (Approved) | Quality Management System | Certificate 09111526A, issued by Integral Certification Ltd, valid to 21 February 2027. The certified scope covers moulded rubber components; extension to the extruded and cellular lines is in hand. |
-  | IATF 16949:2016 (Upgrade in progress) | Automotive Quality | Our quality management system is being upgraded to IATF 16949:2016, with certification targeted by the end of 2026. Automotive supply today runs against controlled drawing revisions with first-article approval and batch-level traceability. |
-  | NORSOK M-710 / API (Qualification in progress) | Oil & Gas Elastomer Qualification | The qualification programme for hydrocarbon service is under way and is targeted for 2027. FKM compounds ship against published temperature and fluid-resistance data in the meantime. |
-  | ISO 14001:2015 (In Progress) | Environmental Management | Not currently held. The plant is fully compliant with MIDC environmental and industrial norms, and material utilisation improved 20% after automation. |
-  | ISO 45001:2018 (In Progress) | Occupational Health & Safety | Not currently held. Industrial-grade fire extinguishers, smoke detectors and ventilation throughout the plant, under MIDC industrial norms. |
+- **Cards ×5** (composite):
+    | ISO 9001:2015 (Approved) | Quality Management System | Certificate 09111526A, issued by Integral Certification Ltd, valid to 21 February 2027. The certified scope covers moulded rubber components; extension to the extruded and cellular lines is in hand. |
+    | IATF 16949:2016 (Upgrade in progress) | Automotive Quality | Our quality management system is being upgraded to IATF 16949:2016, with certification targeted by the end of 2026. Automotive supply today runs against controlled drawing revisions with first-article approval and batch-level traceability. |
+    | NORSOK M-710 / API (Qualification in progress) | Oil & Gas Elastomer Qualification | The qualification programme for hydrocarbon service is under way and is targeted for 2027. FKM compounds ship against published temperature and fluid-resistance data in the meantime. |
+    | ISO 14001:2015 (In Progress) | Environmental Management | Not currently held. The plant is fully compliant with MIDC environmental and industrial norms, and material utilisation improved 20% after automation. |
+    | ISO 45001:2018 (In Progress) | Occupational Health & Safety | Not currently held. Industrial-grade fire extinguishers, smoke detectors and ventilation throughout the plant, under MIDC industrial norms. |
+  · The bracket does the work, so it cannot be decorative. (Approved) and (In Progress) sit inside the badge itself, at the same type size and weight as the standard number — never smaller, never a lighter grey, never a tooltip. A badge reading “IATF 16949:2016” with the status set 4px and 40% opacity beneath it makes functionally the same claim the live site makes. Give (In Progress) cards an outline badge against (Approved)’s filled one, so the two states also read apart in a screenshot with no text.
+  · RoHS and REACH come off this table entirely. They are declarations, not certifications, and no notified body is involved — putting them in a certification grid is what created the live overclaim. Correct home is one line under the table: Compound composition declarations are produced per part on request. A full REACH SVHC screen across all product families is a roadmap item.
+  · IATF 16949 is settled — client-instructed 2026-09-01, upgrade in progress with certification targeted by end 2026, wording identical on all four pages that carry it. NORSOK/API already has a documented position on the live site. ISO 14001 and ISO 45001 are client-instructed, 2026-09-01 — both management systems are being upgraded with certification targeted 2027, and the badge status carries the year. /certifications states only that they are not held, which is not the same as saying they are being pursued — publishing “In Progress” without a booked audit is a new fabrication in a more honest-looking badge. Ask whether either application is live, and drop the row if it is not.
   _CONFIRM — two rows need Ayaz before they ship._
 - **Closing link**: `Full certification detail, scope and test standards` → /certifications
   <details><summary>notes (7)</summary>

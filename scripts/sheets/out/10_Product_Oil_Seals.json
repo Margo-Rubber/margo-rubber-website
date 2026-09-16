@@ -496,44 +496,61 @@
         },
         {
           "label": "Rows ×5",
-          "kind": "table",
-          "columns": [
-            "Row",
-            "Value",
-            "Sub-label",
-            "Replaces"
-          ],
-          "rows": [
-            [
-              "Quotation",
-              "48 hrs",
-              "With feasibility report",
-              ""
-            ],
-            [
-              "Prototype",
-              "48–72 hrs",
-              "From an approved drawing",
-              ""
-            ],
-            [
-              "Catalogue sizes",
-              "3–4 weeks",
-              "Ex-works Nashik, from drawing approval · 2 weeks express",
-              ""
-            ],
-            [
-              "Cut-to-print",
-              "3–4 weeks + tooling",
-              "Tooling lead time quoted per part",
-              ""
-            ],
-            [
-              "Packaging",
-              "Poly bag + card label",
-              "Bulk or blister on request",
-              "(no change)"
-            ]
+          "kind": "composite",
+          "parts": [
+            {
+              "kind": "table",
+              "columns": [
+                "Row",
+                "Value",
+                "Sub-label",
+                "Replaces"
+              ],
+              "rows": [
+                [
+                  "Quotation",
+                  "48 hrs",
+                  "With feasibility report",
+                  ""
+                ],
+                [
+                  "Prototype",
+                  "48–72 hrs",
+                  "From an approved drawing",
+                  ""
+                ],
+                [
+                  "Catalogue sizes",
+                  "3–4 weeks",
+                  "Ex-works Nashik, from drawing approval · 2 weeks express",
+                  ""
+                ],
+                [
+                  "Cut-to-print",
+                  "3–4 weeks + tooling",
+                  "Tooling lead time quoted per part",
+                  ""
+                ],
+                [
+                  "Packaging",
+                  "Poly bag + card label",
+                  "Bulk or blister on request",
+                  "(no change)"
+                ]
+              ]
+            },
+            {
+              "kind": "para",
+              "text": "Lead times are corrected to the company standard. Live says 14–21 days for catalogue and 21–35 for custom; every other page on the site says 3–4 weeks standard with 2 weeks express. Three to four weeks is 21–28 days, so the live catalogue figure promises faster than the company delivers and the custom figure promises slower.",
+              "lead": "Lead times are corrected to the company standard.",
+              "em": false
+            },
+            {
+              "kind": "para",
+              "text": "Four MOQ statements come off this page: the hero stat, the section heading, the standard-MOQ row, and the fourth in the global footer. Standing founder instruction, 2026-08-19 — never publish a piece count, never claim to take only large orders.",
+              "lead": "Four MOQ statements come off this page:",
+              "em": false
+            }
           ]
         }
       ],
