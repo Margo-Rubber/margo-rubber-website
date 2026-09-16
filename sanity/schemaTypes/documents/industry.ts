@@ -32,6 +32,12 @@ const ALLOWED_BLOCKS = [
   "block.exportLane",
   "block.industryFaq",
   "block.closingBand",
+  // Added for the two new industry sheets (41–42), which are written against
+  // the universal blocks rather than the eight above.
+  "block.specTable",
+  "block.cardGrid",
+  "block.richText",
+  "block.accordion",
 ];
 
 export const industry = defineType({

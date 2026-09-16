@@ -1,4 +1,5 @@
 import { getSitePage } from "@/lib/page-source";
+import { IS_VISION } from "@/lib/build-mode";
 import { SITE_URL } from "@/lib/seo";
 import { trail } from "@/lib/breadcrumbs";
 import { buildMetadata } from "@/lib/seo";
@@ -43,7 +44,10 @@ export default async function IndustriesHubPage() {
         lines={fm.h1Lines}
         accentLines={fm.h1AccentLines}
         intro={fm.intro}
-        facts={fm.heroFacts}
+        facts={fm.heroFacts.map((f) => ({
+          label: (IS_VISION && f.labelVision) || f.label,
+          value: f.value,
+        }))}
         image={fm.hero?.image}
       />
 

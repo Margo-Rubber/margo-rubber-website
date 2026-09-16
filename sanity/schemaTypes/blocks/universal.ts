@@ -584,6 +584,76 @@ export const propertyList = defineType({
   preview: blockPreview("Terms & properties", (v) => count(v.rows, "row")),
 });
 
+/* ── Accordion ─────────────────────────────────────────────────────────────
+   Prose panels behind a heading each — content sheets 36 §05, 37 §03, 38 §07,
+   39 §06. Every panel is in the page at first paint; the reader collapses,
+   the crawler reads all of it. */
+export const accordion = defineType({
+  name: "block.accordion",
+  title: "Accordion",
+  type: "object",
+  groups: BLOCK_GROUPS,
+  fields: [
+    ...sectionMetaFields(),
+    defineField({ name: "intro", title: "Opening paragraph", type: "text", rows: 3, group: "content" }),
+    defineField({
+      name: "panels",
+      title: "Panels",
+      type: "array",
+      of: [
+        defineArrayMember({
+          type: "object",
+          name: "panel",
+          fields: [
+            defineField({ name: "title", title: "Panel title", type: "string", validation: (r) => r.required().min(3) }),
+            defineField({ name: "body", title: "Text", type: "text", rows: 6, validation: (r) => r.required().min(20) }),
+          ],
+          preview: { select: { title: "title" } },
+        }),
+      ],
+      validation: (r) => r.required().min(1),
+      group: "content",
+    }),
+    anchorIdField(),
+  ],
+  preview: blockPreview("Accordion", (v) => count(v.panels, "panel")),
+});
+
+/* ── Router list ───────────────────────────────────────────────────────────
+   "If your condition is X, you need Y" — sheet 39 §02. Each row can link to
+   the page that supplies Y. Emitted as an ItemList in structured data. */
+export const routerList = defineType({
+  name: "block.routerList",
+  title: "Which do you need?",
+  type: "object",
+  groups: BLOCK_GROUPS,
+  fields: [
+    ...sectionMetaFields(),
+    defineField({ name: "intro", title: "Opening paragraph", type: "text", rows: 3, group: "content" }),
+    defineField({
+      name: "rows",
+      title: "Rows",
+      type: "array",
+      of: [
+        defineArrayMember({
+          type: "object",
+          name: "routerRow",
+          fields: [
+            defineField({ name: "condition", title: "If…", type: "string", validation: (r) => r.required().min(3) }),
+            defineField({ name: "need", title: "…you need", type: "text", rows: 2, validation: (r) => r.required().min(3) }),
+            defineField({ name: "href", title: "Link address", type: "string", description: "The page that supplies it, if any." }),
+          ],
+          preview: { select: { title: "condition", subtitle: "need" } },
+        }),
+      ],
+      validation: (r) => r.required().min(1),
+      group: "content",
+    }),
+    anchorIdField(),
+  ],
+  preview: blockPreview("Which do you need?", (v) => count(v.rows, "row")),
+});
+
 export const UNIVERSAL_BLOCKS = [
   sectionHeader,
   richText,
@@ -596,4 +666,6 @@ export const UNIVERSAL_BLOCKS = [
   pullQuote,
   logoStrip,
   propertyList,
+  accordion,
+  routerList,
 ];

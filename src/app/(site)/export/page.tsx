@@ -1,4 +1,5 @@
 import { ExportLaneSequence } from "@/components/sections/ExportLaneSequence";
+import { IS_VISION } from "@/lib/build-mode";
 import { Section } from "@/components/ui/Section";
 import { FAQAccordion } from "@/components/sections/HubBlocks";
 import { trail } from "@/lib/breadcrumbs";
@@ -10,6 +11,7 @@ import { exportPageSchema } from "@/content/schemas";
 import {
   ExportDocuments,
   ExportHero,
+  IncotermsSection,
   ExportProcess,
   ExportQuote,
   ExportSummary,
@@ -48,7 +50,7 @@ export default async function ExportPage() {
           crumbs,
           faqs: fm.faqs,
           extra: incotermsTermSetNode(
-            fm.markets.find((m) => m.panel?.terms?.length)?.panel?.terms ?? [],
+            fm.incoterms?.terms ?? fm.markets.find((m) => m.panel?.terms?.length)?.panel?.terms ?? [],
           ),
         })}
       />
@@ -61,12 +63,30 @@ export default async function ExportPage() {
         image={fm.hero.image}
         hub={fm.hero.hub}
         markets={fm.markets}
+        visionStrip={IS_VISION ? fm.hero.visionStrip : undefined}
       />
 
       {/* Pinned scroll sequence. Sits between the hero's static overview plate
           and the per-market detail sections, so it reads as the transition
           from "we export" to "here is each market". */}
-      <ExportLaneSequence hub={fm.hero.hub} markets={fm.markets} />
+      <ExportLaneSequence
+        hub={fm.hero.hub}
+        markets={fm.markets}
+        extraPins={IS_VISION ? fm.hero.visionPins : []}
+      />
+
+      {/* Incoterms as their own section once the editor has filled it; the
+          US & EU panel keeps the nested copy until then (sheet 06 §05). */}
+      {fm.incoterms && (
+        <IncotermsSection
+          eyebrow={fm.incoterms.eyebrow}
+          heading={fm.incoterms.heading}
+          body={fm.incoterms.body}
+          terms={fm.incoterms.terms}
+          standard={fm.incoterms.standard}
+          footnote={fm.incoterms.footnote}
+        />
+      )}
 
       {fm.markets.map((m, i) => (
         <MarketSection key={m.slug} market={m} flip={i % 2 === 1} />

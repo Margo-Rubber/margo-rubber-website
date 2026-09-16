@@ -1,4 +1,5 @@
 import { getSitePage } from "@/lib/page-source";
+import { IS_VISION } from "@/lib/build-mode";
 import { getSiteSettings } from "@/lib/settings";
 import { buildMetadata } from "@/lib/seo";
 import { pageGraph, processListNode } from "@/lib/schema";
@@ -59,6 +60,7 @@ export default async function HomePage() {
         eyebrow={fm.hero.eyebrow}
         h1Lines={fm.hero.h1Lines}
         intro={fm.hero.intro}
+        introLinks={fm.hero.introLinks}
         image={fm.hero.image}
         actions={fm.hero.actions}
         chips={fm.hero.chips}
@@ -112,14 +114,24 @@ export default async function HomePage() {
         inset={fm.facility.inset}
         badge={fm.facility.badge}
         checks={fm.facility.checks}
+        stats={fm.facility.stats}
       />
 
       <ExportMarkets
         eyebrow={fm.exportMarkets.eyebrow}
-        lines={fm.exportMarkets.lines}
+        lines={
+          IS_VISION && fm.exportMarkets.linesVision.length
+            ? fm.exportMarkets.linesVision
+            : fm.exportMarkets.lines
+        }
+        standfirst={
+          (IS_VISION && fm.exportMarkets.standfirstVision) || fm.exportMarkets.standfirst
+        }
         hub={fm.exportMarkets.hub}
         lanes={fm.exportMarkets.lanes}
+        pins={fm.exportMarkets.pins}
         note={fm.exportMarkets.note}
+        noteLink={fm.exportMarkets.noteLink}
       />
 
       <Materials

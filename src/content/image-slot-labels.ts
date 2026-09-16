@@ -470,6 +470,11 @@ export const IMAGE_SLOT_LABELS = {
     where: "Contact page, the photograph behind the heading at the top.",
     page: "/contact",
   },
+  "contact.map": {
+    title: "Contact page — map still",
+    where: "Contact page, the map picture beside the address. It links to Google Maps; upload a screenshot of the plant's location.",
+    page: "/contact",
+  },
 
   /* ── Part pages ───────────────────────────────────────────────────── */
   "sku.product": {

@@ -587,6 +587,7 @@ export function Vision({
     body: string;
     footIcon: string;
     foot: string;
+    footHref?: string;
   }[];
 }) {
   return (
@@ -623,7 +624,13 @@ export function Vision({
               <div className="border-line mt-8 border-t pt-5">
                 <p className="text-accent-400 flex items-center gap-2.5 text-sm font-medium">
                   <Icon name={it.footIcon} className="size-4" />
-                  {it.foot}
+                  {it.footHref ? (
+                    <Link href={it.footHref} className="hover:opacity-80">
+                      {it.foot} <span aria-hidden>→</span>
+                    </Link>
+                  ) : (
+                    it.foot
+                  )}
                 </p>
               </div>
             </article>
@@ -769,6 +776,8 @@ export function Manufacturing({
   stats,
   portfolioLabel,
   portfolio,
+  equipmentLabel,
+  equipment = [],
 }: {
   head: Head;
   main: { image: string; caption: string };
@@ -776,6 +785,8 @@ export function Manufacturing({
   stats: readonly { icon: string; value: string; label: string }[];
   portfolioLabel: string;
   portfolio: readonly { label: string; href: string }[];
+  equipmentLabel?: string;
+  equipment?: readonly string[];
 }) {
   return (
     <section
@@ -858,6 +869,22 @@ export function Manufacturing({
             ))}
           </ul>
         </div>
+
+        {equipment.length > 0 && (
+          <div className="mt-12">
+            <p className="text-eyebrow text-ink-4 font-mono uppercase">
+              {equipmentLabel ?? "On the floor"}
+            </p>
+            <ul className="mt-5 grid gap-x-10 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
+              {equipment.map((e) => (
+                <li key={e} className="text-ink-2 flex gap-3 text-sm">
+                  <span aria-hidden className="bg-accent-400 mt-2 size-1.5 shrink-0 rounded-full" />
+                  {e}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </Container>
     </section>
   );
@@ -870,7 +897,7 @@ export function Team({
   stats,
 }: {
   head: Head;
-  members: readonly { name: string; role: string; image: string }[];
+  members: readonly { name: string; role: string; image: string; body?: string }[];
   stats: readonly { value: string; label: string }[];
 }) {
   return (
@@ -904,13 +931,16 @@ export function Team({
               <div className="p-5">
                 <p className="text-ink text-sm font-semibold">{m.name}</p>
                 <p className="text-accent-400 mt-1 text-sm">{m.role}</p>
+                {m.body && <p className="text-ink-4 mt-2 text-sm leading-relaxed">{m.body}</p>}
               </div>
             </li>
           ))}
         </ul>
 
+        {/* A stat whose value is empty is a question Margo has not answered
+            yet (the headcount) — it is left out rather than shown blank. */}
         <dl className="mt-6 grid gap-5 md:grid-cols-3">
-          {stats.map((s) => (
+          {stats.filter((s) => s.value.trim()).map((s) => (
             <div
               key={s.label}
               className="rounded-card border-line border bg-surface-3 py-8 text-center"
@@ -935,10 +965,12 @@ export function Presence({
   image,
   countries,
   stats,
+  link,
 }: {
   head: Head;
   image: string;
-  countries: readonly { flag: string; name: string }[];
+  countries: readonly { flag: string; name: string; tier?: 1 | 2; note?: string }[];
+  link?: { label: string; href: string };
   stats: readonly {
     icon: string;
     value: string;
@@ -972,10 +1004,18 @@ export function Presence({
                   <span aria-hidden className="text-base leading-none">
                     {c.flag}
                   </span>
-                  {c.name}
+                  <span className={c.tier === 2 ? "text-ink-4" : ""}>{c.name}</span>
+                  {c.note && <span className="text-ink-4 ml-auto font-mono text-xs">{c.note}</span>}
                 </li>
               ))}
             </ul>
+            {link?.label && link.href && (
+              <p className="mt-6">
+                <Link href={link.href} className="text-accent-400 text-sm font-medium hover:opacity-80">
+                  {link.label} <span aria-hidden>→</span>
+                </Link>
+              </p>
+            )}
           </div>
 
           <div className="flex flex-col gap-5">
@@ -1173,9 +1213,11 @@ export function Numbers({
   head,
   stats,
   testimonial,
+  references,
 }: {
   head: Head;
   stats: readonly { value: string; label: string; note: string }[];
+  references?: { eyebrow: string; body: string };
   testimonial: {
     stars: number;
     quote: string;
@@ -1205,6 +1247,14 @@ export function Numbers({
           ))}
         </dl>
 
+        {references?.body ? (
+          <div className="rounded-card border-line mt-5 border bg-surface-3 p-8 md:p-12">
+            <p className="text-eyebrow text-accent-400 font-mono uppercase">{references.eyebrow}</p>
+            <p className="text-ink mt-4 max-w-[62ch] text-[clamp(1.1rem,1.9vw,1.5rem)] leading-[1.45] font-medium">
+              {references.body}
+            </p>
+          </div>
+        ) : (
         <figure className="rounded-card border-line relative isolate mt-5 overflow-hidden border bg-surface-3 p-8 md:p-12">
           <svg
             viewBox="0 0 24 24"
@@ -1251,6 +1301,7 @@ export function Numbers({
             </span>
           </figcaption>
         </figure>
+        )}
       </Container>
     </section>
   );

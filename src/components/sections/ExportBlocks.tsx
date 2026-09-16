@@ -232,6 +232,7 @@ export function ExportHero({
   image,
   markets,
   breadcrumb,
+  visionStrip,
 }: {
   badge: string;
   h1Lines: readonly string[];
@@ -239,6 +240,8 @@ export function ExportHero({
   image: string;
   hub: { label: string; x: number; y: number };
   markets: readonly Pin[];
+  /** Concept-build figure strip. The page passes it only on that build. */
+  visionStrip?: string;
   breadcrumb?: readonly Crumb[];
 }) {
   return (
@@ -292,6 +295,9 @@ export function ExportHero({
             directly on photography rather than on a flat surface, and the
             brighter image behind it costs the dimmer grey its contrast. */}
         <p className="text-ink-2 mt-6 max-w-[52ch] leading-relaxed">{intro}</p>
+        {visionStrip && (
+          <p className="text-eyebrow text-accent-400 mt-5 font-mono uppercase">{visionStrip}</p>
+        )}
 
         {/* The map itself now lives in ExportLaneSequence directly below,
             where it pins and draws each trade lane in turn. Rendering the
@@ -525,7 +531,12 @@ export function ExportProcess({
   eyebrow: string;
   heading: string;
   body: string;
-  steps: readonly { icon: string; name: string; body: string }[];
+  steps: readonly {
+    icon: string;
+    name: string;
+    body: string;
+    lines?: readonly { label: string; text: string }[];
+  }[];
 }) {
   return (
     <section className="border-line bg-canvas border-t py-[70px]">
@@ -551,9 +562,20 @@ export function ExportProcess({
               </span>
               <div className="pt-2">
                 <h3 className="text-ink text-lg font-semibold">{s.name}</h3>
-                <p className="text-ink-4 mt-2 max-w-[70ch] text-sm leading-relaxed">
-                  {s.body}
-                </p>
+                {s.lines?.length ? (
+                  <dl className="mt-3 max-w-[70ch] space-y-2 text-sm">
+                    {s.lines.map((l) => (
+                      <div key={l.label} className="flex gap-3">
+                        <dt className="text-ink w-28 shrink-0 font-medium">{l.label}</dt>
+                        <dd className="text-ink-4 leading-relaxed">{l.text}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                ) : (
+                  <p className="text-ink-4 mt-2 max-w-[70ch] text-sm leading-relaxed">
+                    {s.body}
+                  </p>
+                )}
               </div>
             </li>
           ))}
@@ -776,6 +798,61 @@ export function ExportSummary({
             ))}
           </dl>
         </div>
+      </Container>
+    </section>
+  );
+}
+
+/* ── INCOTERMS — own section, content sheet 06 §05 ───────────────────── */
+export function IncotermsSection({
+  eyebrow,
+  heading,
+  body,
+  terms,
+  standard,
+  footnote,
+}: {
+  eyebrow: string;
+  heading: string;
+  body?: string;
+  terms: readonly { code: string; name: string; body: string }[];
+  standard?: string;
+  footnote?: string;
+}) {
+  return (
+    <section id="incoterms" className="bg-surface scroll-mt-24 py-[70px]">
+      <Container>
+        <p className="text-eyebrow text-accent-400 flex items-center gap-3 font-mono uppercase">
+          <span aria-hidden className="bg-accent-400 inline-block h-px w-8" />
+          {eyebrow}
+        </p>
+        <h2 className="text-h2 mt-4">{heading}</h2>
+        {body && <p className="text-ink-3 mt-4 max-w-[62ch] leading-relaxed">{body}</p>}
+        <dl className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {terms.map((t) => {
+            const isStandard = standard && t.code === standard;
+            return (
+              <div
+                key={t.code}
+                className={`rounded-card border p-6 ${isStandard ? "border-accent-400/40 bg-accent-400/[0.06]" : "border-line bg-surface-3"}`}
+              >
+                <dt className="flex items-center justify-between gap-3">
+                  <span className="text-ink text-xl font-bold">{t.code}</span>
+                  {isStandard && (
+                    <span className="text-eyebrow bg-accent-400 text-ink rounded-pill px-2.5 py-1 font-mono uppercase">
+                      Standard
+                    </span>
+                  )}
+                </dt>
+                <dd>
+                  <p className="text-ink mt-3 text-sm font-semibold">{t.name}</p>
+                  <p className="text-ink-4 mt-2 text-sm leading-relaxed">{t.body}</p>
+                </dd>
+              </div>
+            );
+          })}
+        </dl>
+        {footnote && <p className="text-ink-4 mt-6 max-w-[70ch] text-xs leading-relaxed">{footnote}</p>}
       </Container>
     </section>
   );

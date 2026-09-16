@@ -20,11 +20,12 @@ import { schemaTypesField } from "./_marketing.ts";
  * concrete on eight pages.
  */
 
+// The stored values — the same four keys the hub's category list uses.
 const CATEGORIES = [
-  { title: "Material selection", value: "material-selection" },
+  { title: "Material comparison", value: "material-comparison" },
   { title: "Sizing & specification", value: "sizing-spec" },
-  { title: "Sourcing", value: "sourcing" },
-  { title: "Manufacturing", value: "manufacturing" },
+  { title: "Sourcing & buyer guides", value: "sourcing-buyer" },
+  { title: "Datasheets", value: "datasheets" },
 ];
 
 export const resource = defineType({
@@ -104,6 +105,7 @@ export const resource = defineType({
           type: "block",
           styles: [
             { title: "Normal", value: "normal" },
+            { title: "Section heading", value: "h2" },
             { title: "Subheading", value: "h3" },
             { title: "Small heading", value: "h4" },
             { title: "Quote", value: "blockquote" },
@@ -139,7 +141,49 @@ export const resource = defineType({
           ],
           preview: { select: { title: "key", subtitle: "caption" } },
         }),
+        defineArrayMember({
+          type: "object",
+          name: "guideTable",
+          title: "Table",
+          fields: [
+            defineField({ name: "caption", title: "Caption", type: "string", description: "One line saying what the table shows. Read aloud by screen readers." }),
+            defineField({
+              name: "columns",
+              title: "Column headings",
+              type: "array",
+              of: [defineArrayMember({ type: "string" })],
+              validation: (r) => r.required().min(2),
+            }),
+            defineField({
+              name: "rows",
+              title: "Rows",
+              description: "One entry per row; cells in the same order as the column headings. Separate cells with a pipe: 25 °C | 70 Shore A | NBR",
+              type: "array",
+              of: [defineArrayMember({ type: "string" })],
+              validation: (r) => r.required().min(1),
+            }),
+          ],
+          preview: { select: { title: "caption" }, prepare: ({ title }) => ({ title: title || "Table" }) },
+        }),
+        defineArrayMember({
+          type: "object",
+          name: "callout",
+          title: "Answer box",
+          description: "The answer up front — a boxed paragraph a reader can take without the rest of the section.",
+          fields: [
+            defineField({ name: "title", title: "Title", type: "string" }),
+            defineField({ name: "body", title: "Text", type: "text", rows: 4, validation: (r) => r.required() }),
+          ],
+          preview: { select: { title: "title", subtitle: "body" } },
+        }),
       ],
+      group: "article",
+    }),
+    defineField({
+      name: "publishedAt",
+      title: "Published on",
+      type: "date",
+      description: "Shown in the byline and sent to Google. Leave empty until the guide is live.",
       group: "article",
     }),
 

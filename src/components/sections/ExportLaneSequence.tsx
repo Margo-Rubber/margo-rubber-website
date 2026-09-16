@@ -39,6 +39,7 @@ import {
 export function ExportLaneSequence({
   hub,
   markets,
+  extraPins = [],
 }: {
   hub: { label: string; x: number; y: number };
   markets: readonly {
@@ -46,7 +47,11 @@ export function ExportLaneSequence({
     chip: string;
     heading: string;
     pin: { x: number; y: number };
+    pins?: readonly { label: string; x: number; y: number }[];
+    pinNote?: string;
   }[];
+  /** Pins with no lane: drawn once, still, without a route. */
+  extraPins?: readonly { label: string; x: number; y: number }[];
 }) {
   if (markets.length === 0) return null;
   const total = String(markets.length).padStart(2, "0");
@@ -102,11 +107,22 @@ export function ExportLaneSequence({
                           </>
                         )}
                         <g className="lane-pin" data-lane={i}>
+                          {/* The tooltip is the pin's <title>: port · days · FCL/LCL. */}
+                          {m.pinNote && <title>{`${m.chip}: ${m.pinNote}`}</title>}
                           <MapPin x={m.pin.x} y={m.pin.y} />
+                          {(m.pins ?? []).map((p) => (
+                            <MapPin key={p.label} x={p.x} y={p.y} />
+                          ))}
                         </g>
                       </g>
                     );
                   })}
+                  {extraPins.map((p) => (
+                    <g key={`extra-${p.label}`} opacity="0.55">
+                      <title>{p.label}</title>
+                      <MapPin x={p.x} y={p.y} />
+                    </g>
+                  ))}
                 </g>
                 <MapDefs />
               </svg>

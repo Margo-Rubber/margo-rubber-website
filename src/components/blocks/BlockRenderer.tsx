@@ -1,4 +1,5 @@
 import { Fragment, type ReactNode } from "react";
+import Link from "next/link";
 import type { SiteSettings } from "@/content/schemas/settings";
 import {
   compoundByCode,
@@ -10,6 +11,7 @@ import { Section } from "@/components/ui/Section";
 import { SpecTable } from "@/components/sections/SpecTable";
 import { MaterialCards } from "@/components/sections/MaterialCards";
 import { PartsGrid } from "@/components/sections/PartsGrid";
+import { Prose } from "@/components/blocks/Prose";
 import {
   CtaPanel,
   ProcessTimeline,
@@ -256,6 +258,11 @@ function renderBlock(block: Block, ctx: Ctx): ReactNode {
               },
             )}
           />
+          {b.footnote && (
+            <Container>
+              <p className="text-ink-4 mt-8 text-xs leading-relaxed">{b.footnote}</p>
+            </Container>
+          )}
         </Section>
       );
 
@@ -266,6 +273,7 @@ function renderBlock(block: Block, ctx: Ctx): ReactNode {
         <Section id="parts" eyebrow={b.eyebrow} heading={b.heading} body={b.body}>
           <PartsGrid
             parts={b.parts}
+            items={b.items}
             categoryLabel={b.categoryLabel}
             categorySlug={b.categorySlug}
           />
@@ -343,6 +351,19 @@ function renderBlock(block: Block, ctx: Ctx): ReactNode {
             <div className="mt-[38px]">
               <StandardsGrid items={b.items} />
             </div>
+            {b.closing && (
+              <p className="text-ink-3 mt-8 text-sm leading-relaxed">
+                {b.closing}
+                {b.closingLink?.label && b.closingLink.href && (
+                  <>
+                    {" "}
+                    <Link href={b.closingLink.href} className="text-accent-400 hover:opacity-80">
+                      {b.closingLink.label} <span aria-hidden>›</span>
+                    </Link>
+                  </>
+                )}
+              </p>
+            )}
           </NarrowBlock>
         </Section>
       );
@@ -511,6 +532,67 @@ function renderBlock(block: Block, ctx: Ctx): ReactNode {
           actions={b.actions}
           contacts={closingContacts(ctx.settings)}
         />
+      );
+
+    /* ── The universal additions for the new sheets (36–42) ──────────── */
+
+    case "block.accordion":
+      return (
+        <Section id={b.id ?? "accordion"} eyebrow={b.eyebrow} eyebrowVariant="rule" heading={b.heading} body={b.intro}>
+          <div className="mx-auto max-w-[860px] space-y-3">
+            {/* Native disclosure: every panel is in the DOM at first paint and
+                readable without script; the first opens by default. */}
+            {b.panels.map((p: { title: string; body: string }, i: number) => (
+              <details
+                key={p.title}
+                open={i === 0}
+                className="rounded-card border-line group border bg-surface-3"
+              >
+                <summary className="text-ink flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-sm font-semibold [&::-webkit-details-marker]:hidden">
+                  {p.title}
+                  <span aria-hidden className="text-accent-400 transition-transform group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+                <div className="text-ink-3 px-5 pb-5 text-sm leading-relaxed whitespace-pre-line">{p.body}</div>
+              </details>
+            ))}
+          </div>
+        </Section>
+      );
+
+    case "block.routerList":
+      return (
+        <Section id={b.id ?? "router"} eyebrow={b.eyebrow} eyebrowVariant="rule" heading={b.heading} body={b.intro}>
+          <ol className="mx-auto max-w-[860px] divide-y divide-[color:var(--color-line)] rounded-card border-line border">
+            {b.rows.map((r: { condition: string; need: string; href?: string }, i: number) => (
+              <li key={r.condition} className="grid gap-2 p-5 sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] sm:gap-8">
+                <p className="text-ink text-sm font-medium">
+                  <span className="text-ink-4 mr-3 font-mono text-xs">{String(i + 1).padStart(2, "0")}</span>
+                  {r.condition}
+                </p>
+                <p className="text-ink-3 text-sm leading-relaxed">
+                  {r.href ? (
+                    <Link href={r.href} className="text-accent-400 hover:opacity-80">
+                      {r.need} <span aria-hidden>›</span>
+                    </Link>
+                  ) : (
+                    r.need
+                  )}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </Section>
+      );
+
+    case "block.richText":
+      return (
+        <Section id={b.id} eyebrow={b.eyebrow} heading={b.heading} body={b.body}>
+          <div className="prose-guide mx-auto max-w-[68ch]">
+            <Prose value={b.content} />
+          </div>
+        </Section>
       );
 
     default:

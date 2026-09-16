@@ -17,8 +17,9 @@ import { Img } from "@/components/ui/Img";
  *
  * The mapping below is deliberately narrow, and every omission is a decision:
  *
- *  · No H1 or H2. The page owns its H1 and a second one is an SEO fault an
- *    author should not be able to commit by choosing a dropdown value.
+ *  · No H1. The page owns its H1 and a second one is an SEO fault an author
+ *    should not be able to commit by choosing a dropdown value. H2 is the
+ *    section level the guides are written at (content sheet 35).
  *  · Links go through next/link so internal navigation stays client-side, and
  *    anything leaving the site gets rel="noopener".
  *  · Images come from the registry by key, like every other image on the site,
@@ -32,6 +33,9 @@ import { Img } from "@/components/ui/Img";
 const components: PortableTextComponents = {
   block: {
     normal: ({ children }) => <p>{children}</p>,
+    // H2 is the section level the content sheets write the guides at; the
+    // page keeps the one H1.
+    h2: ({ children }) => <h2>{children}</h2>,
     h3: ({ children }) => <h3>{children}</h3>,
     h4: ({ children }) => <h4>{children}</h4>,
     blockquote: ({ children }) => <blockquote>{children}</blockquote>,
@@ -61,6 +65,51 @@ const components: PortableTextComponents = {
   },
 
   types: {
+    // A data table. Cells arrive as pipe-separated strings — the plainest
+    // thing an editor can type — and are split here.
+    guideTable: ({ value }) => {
+      const columns = (value?.columns as string[] | undefined) ?? [];
+      const rows = ((value?.rows as string[] | undefined) ?? []).map((r) => r.split("|").map((c) => c.trim()));
+      if (!columns.length || !rows.length) return null;
+      return (
+        <div className="overflow-x-auto">
+          <table>
+            {value?.caption ? <caption>{String(value.caption)}</caption> : null}
+            <thead>
+              <tr>
+                {columns.map((c) => (
+                  <th key={c} scope="col">
+                    {c}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((r, i) => (
+                <tr key={i}>
+                  {r.map((cell, j) =>
+                    j === 0 ? (
+                      <th key={j} scope="row">
+                        {cell}
+                      </th>
+                    ) : (
+                      <td key={j}>{cell}</td>
+                    ),
+                  )}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+    },
+    // The answer up front.
+    callout: ({ value }) => (
+      <aside className="rounded-card border-line border-l-accent-400 my-8 border border-l-2 bg-[#0B0D10] p-6">
+        {value?.title ? <p className="text-ink font-semibold">{String(value.title)}</p> : null}
+        <p className="text-ink-3 mt-2 text-sm leading-relaxed">{String(value?.body ?? "")}</p>
+      </aside>
+    ),
     // An image inside the prose. Still a registry key, never an upload — the
     // same contract as the rest of the site.
     guideImage: ({ value }) => {

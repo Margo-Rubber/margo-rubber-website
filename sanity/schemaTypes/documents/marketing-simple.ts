@@ -7,7 +7,6 @@ import {
   confirmField,
   formFieldMember,
   headingFields,
-  labelValueMember,
   listField,
   schemaTypesField,
   pageIdentityFields,
@@ -150,7 +149,25 @@ export const industriesHub = defineType({
       name: "heroFacts",
       title: "Facts under the intro",
       type: "array",
-      of: [labelValueMember],
+      of: [
+        defineArrayMember({
+          type: "object",
+          // Keeps the stored _type of the existing rows, which were written
+          // with the shared label/value member.
+          name: "pair",
+          fields: [
+            defineField({ name: "label", type: "string", validation: (r) => r.required() }),
+            defineField({ name: "value", type: "string", validation: (r) => r.required() }),
+            defineField({
+              name: "labelVision",
+              title: "Label — concept build only",
+              type: "string",
+              description: "Wording shown instead of the label on the password-protected concept build. Leave empty to reuse the label.",
+            }),
+          ],
+          preview: { select: { title: "label", subtitle: "value" } },
+        }),
+      ],
       group: "hero",
     }),
     defineField({
@@ -524,6 +541,116 @@ export const contactPage = defineType({
       group: "body",
     }),
     defineField({ name: "seo", title: "Search engine listing", type: "seo", group: "meta" }),
+    defineField({
+      name: "addressSection",
+      title: "Address block — heading",
+      description: "The address, hours, phone and email themselves come from Site settings. Leave the heading empty to hide the block.",
+      type: "object",
+      fields: [
+        defineField({ name: "eyebrow", title: "Small label above the heading", type: "string" }),
+        defineField({ name: "heading", title: "Heading", type: "string" }),
+      ],
+      group: "body",
+    }),
+    defineField({
+      name: "map",
+      title: "Map",
+      description: "A still image of the map that links to Google Maps at the plant's coordinates (from Site settings). Never an embedded map.",
+      type: "object",
+      fields: [
+        imageRefField("image", { group: null }),
+        defineField({ name: "label", title: "Link text", type: "string", description: "e.g. “Open in Google Maps”." }),
+      ],
+      group: "body",
+    }),
+    defineField({
+      name: "logisticsSection",
+      title: "Logistics block — heading",
+      description: "Leave the heading empty to hide the block.",
+      type: "object",
+      fields: [
+        defineField({ name: "eyebrow", title: "Small label above the heading", type: "string" }),
+        defineField({ name: "heading", title: "Heading", type: "string" }),
+      ],
+      group: "body",
+    }),
+    defineField({
+      name: "logistics",
+      title: "Logistics",
+      description: "Destination, distance from the plant, and transit time — one row each.",
+      type: "array",
+      of: [
+        defineArrayMember({
+          type: "object",
+          name: "logisticsRow",
+          fields: [
+            defineField({ name: "destination", title: "Destination", type: "string", validation: (r) => r.required() }),
+            defineField({ name: "distance", title: "Distance", type: "string", validation: (r) => r.required() }),
+            defineField({ name: "transit", title: "Transit time", type: "string", validation: (r) => r.required() }),
+          ],
+          preview: { select: { title: "destination", subtitle: "transit" } },
+        }),
+      ],
+      group: "body",
+    }),
+    defineField({
+      name: "nextStepsSection",
+      title: "What happens next — heading",
+      description: "Leave the heading empty to hide the block.",
+      type: "object",
+      fields: [
+        defineField({ name: "eyebrow", title: "Small label above the heading", type: "string" }),
+        defineField({ name: "heading", title: "Heading", type: "string" }),
+      ],
+      group: "body",
+    }),
+    defineField({
+      name: "nextSteps",
+      title: "What happens next",
+      description: "The stages after an enquiry is sent, each with its timing.",
+      type: "array",
+      of: [
+        defineArrayMember({
+          type: "object",
+          name: "nextStep",
+          fields: [
+            defineField({ name: "stage", title: "Stage", type: "string", validation: (r) => r.required() }),
+            defineField({ name: "timing", title: "Timing", type: "string", validation: (r) => r.required() }),
+          ],
+          preview: { select: { title: "stage", subtitle: "timing" } },
+        }),
+      ],
+      group: "body",
+    }),
+    defineField({
+      name: "faqSection",
+      title: "Questions block — heading",
+      description: "Leave the heading empty to hide the block.",
+      type: "object",
+      fields: [
+        defineField({ name: "eyebrow", title: "Small label above the heading", type: "string" }),
+        defineField({ name: "heading", title: "Heading", type: "string" }),
+      ],
+      group: "body",
+    }),
+    defineField({
+      name: "faqs",
+      title: "Questions & answers",
+      description: "Appear on the page and are submitted to Google as structured data.",
+      type: "array",
+      of: [
+        defineArrayMember({
+          type: "object",
+          name: "faq",
+          fields: [
+            defineField({ name: "q", title: "Question", type: "string", validation: (r) => r.required().min(8) }),
+            defineField({ name: "a", title: "Answer", type: "text", rows: 4, validation: (r) => r.required().min(40).max(700) }),
+          ],
+          preview: { select: { title: "q" } },
+        }),
+      ],
+      group: "body",
+    }),
     schemaTypesField,
   confirmField,
   ],

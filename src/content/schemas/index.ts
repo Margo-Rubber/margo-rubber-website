@@ -173,6 +173,8 @@ export const materialSectionSchema = z
         }),
       )
       .min(1),
+    /** Trade-mark attribution under the cards: "Viton® is a trade mark of…" */
+    footnote: z.string().optional(),
   });
 
 
@@ -185,6 +187,9 @@ export const standardsSectionSchema = z
     items: z
       .array(z.object({ code: z.string(), name: z.string(), body: z.string().min(20) }))
       .default([]),
+    /** One line after the cards, e.g. the link to the size chart (sheet 09 §05). */
+    closing: z.string().optional(),
+    closingLink: z.object({ label: z.string(), href: z.string() }).optional(),
   });
 
 
@@ -488,6 +493,15 @@ export const productCategorySchema = baseSchema.extend({
   faqs: z.array(faqSchema).default([]),
   related: relatedSchema,
   /** JSON-LD types emitted for this page. */
+  /** Sheet 38 §07: what the line covers and what it does not. Nothing renders while empty. */
+  service: z
+    .object({
+      heading: z.string().optional(),
+      area: z.array(z.string()).default([]),
+      exclusionsHeading: z.string().optional(),
+      exclusions: z.array(z.string()).default([]),
+    })
+    .optional(),
   schemaTypes: z
     .array(z.enum(["Product", "BreadcrumbList", "FAQPage", "HowTo", "Organization", "WebSite"]))
     .default(["Product", "BreadcrumbList", "FAQPage"]),
@@ -629,7 +643,10 @@ export const industrySchema = baseSchema.extend({
 
 export const resourceSchema = baseSchema.extend({
   navLabel: z.string().min(2),
-  category: z.enum(["material-comparison", "sizing-spec", "sourcing-buyer"]),
+  /** "datasheets" is the fourth group the Build Instructions add for sheet 40. */
+  category: z.enum(["material-comparison", "sizing-spec", "sourcing-buyer", "datasheets"]),
+  /** ISO date the guide was published — the byline and TechArticle.datePublished. */
+  publishedAt: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
   /** Card glyph on the /resources hub. */
   icon: z
     .enum(["flask", "thermometer", "book", "ruler", "wrench", "globe", "clipboard"])
@@ -760,6 +777,16 @@ export const productsHubSchema = baseSchema.extend({
   validation: z.object({
     ...sectionMeta.shape,
     items: z.array(z.string()),
+    /** Sheet 02 §08: two groups — in-house and partner — each a list of
+        test → standard pairs. Rendered instead of `items` when present. */
+    groups: z
+      .array(
+        z.object({
+          title: z.string(),
+          rows: z.array(z.object({ test: z.string(), standard: z.string() })).min(1),
+        }),
+      )
+      .default([]),
     cta: z.object({ label: z.string(), href: z.string() }).optional(),
   }).optional(),
 
@@ -813,7 +840,10 @@ export const industriesHubSchema = baseSchema.extend({
   h1AccentLines: z.array(z.number()).default([]),
   badge: z.string(),
   intro: z.string().min(40),
-  heroFacts: z.array(z.object({ label: z.string(), value: z.string() })).default([]),
+  /** labelVision: the concept-build wording ("Markets Mapped" for "Export Markets"). */
+  heroFacts: z
+    .array(z.object({ label: z.string(), value: z.string(), labelVision: z.string().optional() }))
+    .default([]),
 
   filter: z.object({
     placeholder: z.string(),
@@ -926,6 +956,21 @@ export const contactPageSchema = baseSchema.extend({
     /** Stated directly under submit. No competitor states any response time. */
     responsePromise: z.string(),
   }),
+
+  /* ── The five blocks after the form — content sheet 04 §05. Each renders
+        only when filled; the address and coordinates come from settings. ── */
+  /** Section heading for the address block; the address itself is settings. */
+  addressSection: z.object({ eyebrow: z.string(), heading: z.string() }).optional(),
+  /** A static map image (never an iframe) that links to Google Maps at the plant's coordinates. */
+  map: z.object({ image: imageRefSchema, label: z.string() }).optional(),
+  logisticsSection: z.object({ eyebrow: z.string(), heading: z.string() }).optional(),
+  logistics: z
+    .array(z.object({ destination: z.string(), distance: z.string(), transit: z.string() }))
+    .default([]),
+  nextStepsSection: z.object({ eyebrow: z.string(), heading: z.string() }).optional(),
+  nextSteps: z.array(z.object({ stage: z.string(), timing: z.string() })).default([]),
+  faqSection: z.object({ eyebrow: z.string(), heading: z.string() }).optional(),
+  faqs: z.array(faqSchema).default([]),
 
   schemaTypes: z.array(z.enum(["Product", "BreadcrumbList", "FAQPage", "HowTo", "Organization", "WebSite"])).default(["BreadcrumbList"]),
 });
@@ -1063,6 +1108,8 @@ export const aboutPageSchema = baseSchema.extend({
           body: z.string(),
           footIcon: z.enum(["trend", "shield"]),
           foot: z.string(),
+          /** Where the foot line links, if anywhere — the vision foot → /export. */
+          footHref: z.string().optional(),
         }),
       )
       .length(2),
@@ -1104,6 +1151,9 @@ export const aboutPageSchema = baseSchema.extend({
       .min(1),
     portfolioLabel: z.string(),
     portfolio: z.array(z.object({ label: z.string(), href: z.string() })).min(1),
+    /** The plant list — sheet 03 §07. Empty renders nothing. */
+    equipmentLabel: z.string().optional(),
+    equipment: z.array(z.string()).default([]),
   }),
 
   team: aboutHead.extend({
@@ -1113,15 +1163,31 @@ export const aboutPageSchema = baseSchema.extend({
           name: z.string(),
           role: z.string(),
           image: imageRefSchema,
+          /** One-sentence bio beneath the role. */
+          body: z.string().optional(),
         }),
       )
       .min(1),
+    /** A stat with an empty value is a question still open — it is not shown. */
     stats: z.array(z.object({ value: z.string(), label: z.string() })).min(1),
   }),
 
   presence: aboutHead.extend({
     image: imageRefSchema,
-    countries: z.array(z.object({ flag: z.string(), name: z.string() })).min(1),
+    countries: z
+      .array(
+        z.object({
+          flag: z.string(),
+          name: z.string(),
+          /** 1 = active lane, 2 = reachable market — sheet 03 §09. */
+          tier: z.union([z.literal(1), z.literal(2)]).default(1),
+          /** Transit note, e.g. "18 days, FCL". */
+          note: z.string().optional(),
+        }),
+      )
+      .min(1),
+    /** "See the trade lanes" → /export. */
+    link: z.object({ label: z.string(), href: z.string() }).optional(),
     stats: z
       .array(
         z.object({
@@ -1150,6 +1216,8 @@ export const aboutPageSchema = baseSchema.extend({
   }),
 
   green: aboutHead.extend({
+    /** Off while the sustainability figures are unconfirmed (sheet 03 §11). */
+    enabled: z.boolean().default(true),
     image: imageRefSchema,
     imageBadge: z.object({ title: z.string(), note: z.string() }),
     bars: z
@@ -1176,6 +1244,9 @@ export const aboutPageSchema = baseSchema.extend({
       name: z.string(),
       role: z.string(),
     }),
+    /** Replaces the testimonial when set — a reference-check offer, not a
+        quote nobody gave (sheet 03 §12). */
+    references: z.object({ eyebrow: z.string(), body: z.string() }).optional(),
   }),
 
   timeline: aboutHead.extend({
@@ -1185,6 +1256,8 @@ export const aboutPageSchema = baseSchema.extend({
           year: z.string(),
           title: z.string(),
           body: z.string(),
+          /** Only verified entries publish; a proposed year is never shown. */
+          verification: z.enum(["verified", "proposed"]).default("verified"),
         }),
       )
       .min(1),
@@ -1247,6 +1320,9 @@ export const homePageSchema = baseSchema.extend({
       )
       .min(1),
     chips: z.array(z.object({ label: z.string(), href: z.string() })).min(1),
+    /** Phrases in the intro that link out — content sheet 01 §01 names four.
+        The renderer links the first occurrence of each label as written. */
+    introLinks: z.array(z.object({ label: z.string(), href: z.string() })).default([]),
     cards: z
       .array(
         z.object({
@@ -1264,7 +1340,7 @@ export const homePageSchema = baseSchema.extend({
     paragraphs: z.array(z.string()).min(1),
     image: imageRefSchema,
     imageBadge: z.string(),
-    floatCard: z.object({ title: z.string(), body: z.string() }),
+    floatCard: z.object({ title: z.string(), body: z.string(), href: z.string().optional() }),
     stats: z.array(z.object({ value: z.string(), label: z.string() })).min(1),
     cta: z.object({ label: z.string(), href: z.string() }),
   }),
@@ -1276,6 +1352,8 @@ export const homePageSchema = baseSchema.extend({
           icon: z.enum(["shield", "bolt", "gear", "globe", "layers", "ribbon"]),
           name: z.string(),
           body: z.string(),
+          /** Where the card leads, when it does — four of six do (sheet 01 §04). */
+          href: z.string().optional(),
         }),
       )
       .min(1),
@@ -1330,7 +1408,9 @@ export const homePageSchema = baseSchema.extend({
   }),
 
   process: homeHead.extend({
-    steps: z.array(z.object({ name: z.string(), body: z.string() })).min(1),
+    steps: z
+      .array(z.object({ name: z.string(), body: z.string(), href: z.string().optional() }))
+      .min(1),
   }),
 
   facility: homeHead.extend({
@@ -1338,9 +1418,18 @@ export const homePageSchema = baseSchema.extend({
     inset: imageRefSchema,
     badge: z.string(),
     checks: z.array(z.string()).min(1),
+    /** The stat row beneath the checks — sheet 01 §08. Empty renders nothing. */
+    stats: z.array(z.object({ value: z.string(), label: z.string() })).default([]),
   }),
 
   exportMarkets: homeHead.extend({
+    /** The paragraph under the heading — sheet 01 §09. */
+    standfirst: z.string().optional(),
+    /** Vision-build variants of the heading lines and standfirst (Build
+        Instructions §01). Rendered only on the vision build; empty falls
+        back to the buyer copy. */
+    linesVision: z.array(z.string()).default([]),
+    standfirstVision: z.string().optional(),
     hub: z.object({ label: z.string(), x: z.number(), y: z.number() }),
     lanes: z
       .array(
@@ -1351,10 +1440,18 @@ export const homePageSchema = baseSchema.extend({
           /** Percentage coordinates on the 100x100 map plate. */
           x: z.number(),
           y: z.number(),
+          /** The market block on /export: "/export#uk". */
+          href: z.string().optional(),
         }),
       )
       .min(1),
+    /** Extra pins with no lane card — the sheet has five pins for four cards. */
+    pins: z
+      .array(z.object({ label: z.string(), x: z.number(), y: z.number() }))
+      .default([]),
     note: z.string(),
+    /** "See all 95 markets →" after the note. */
+    noteLink: z.object({ label: z.string(), href: z.string() }).optional(),
   }),
 
   /** Rows come from SITE.COMPOUNDS, so the table has one source of truth. */
@@ -1616,6 +1713,10 @@ export const exportPageSchema = baseSchema.extend({
     image: imageRefSchema,
     /** Hub marker on the 1000x500 map plate. */
     hub: z.object({ label: z.string(), x: z.number(), y: z.number() }),
+    /** Concept-build strip under the intro: "95 MARKETS SCREENED · 18 PLAYBOOKS · 9 LANES". Never on the buyer build. */
+    visionStrip: z.string().optional(),
+    /** Concept-build tier-2 pins — the wider screened set. Never on the buyer build. */
+    visionPins: z.array(z.object({ label: z.string(), x: z.number(), y: z.number() })).default([]),
   }),
 
   markets: z
@@ -1628,6 +1729,10 @@ export const exportPageSchema = baseSchema.extend({
         body: z.string().min(40),
         image: imageRefSchema,
         pin: z.object({ x: z.number(), y: z.number() }),
+        /** Further pins the block owns — the East Africa lane pins KE and TZ separately. */
+        pins: z.array(z.object({ label: z.string(), x: z.number(), y: z.number() })).default([]),
+        /** Tooltip on the pin: "Mombasa · 18 days · FCL". */
+        pinNote: z.string().optional(),
         points: z.array(z.string()).min(1),
         /** Rendered italic and muted: duty/regulatory caveats. */
         caveat: z.string().optional(),
@@ -1668,10 +1773,26 @@ export const exportPageSchema = baseSchema.extend({
           icon: z.enum(["doc", "clipboard", "box", "pallet", "ship", "truck"]),
           name: z.string(),
           body: z.string(),
+          /** Labelled lines — We need / You get back / We do / Why it matters (sheet 06 §06). Rendered instead of body when present. */
+          lines: z.array(z.object({ label: z.string(), text: z.string() })).default([]),
         }),
       )
       .min(1),
   }),
+
+  /** Incoterms as their own section (#incoterms) — sheet 06 §05. Until it is
+      filled the page keeps the terms nested in the US & EU market panel. */
+  incoterms: z
+    .object({
+      eyebrow: z.string(),
+      heading: z.string(),
+      body: z.string().optional(),
+      terms: z.array(z.object({ code: z.string(), name: z.string(), body: z.string() })).min(1),
+      /** The code marked "standard" — FOB. */
+      standard: z.string().optional(),
+      footnote: z.string().optional(),
+    })
+    .optional(),
 
   documents: z.object({
     eyebrow: z.string(),
@@ -1955,7 +2076,19 @@ export const skuSchema = baseSchema.extend({
   eyebrow: z.string().optional(),
   intro: z.string().min(30),
   productCode: z.string().optional(),
+  /** No longer rendered: the IN STOCK badge was a contradiction in prose. Kept so old records validate. */
   stockLabel: z.string().optional(),
+  /** Sheet 32/33 per-part fields. All optional; nothing renders while empty. */
+  hardness: z.string().optional(),
+  dimensions: z.string().optional(),
+  /** How the part is made — the process block reads this when the per-part steps are empty. */
+  processType: z.enum(["compression", "injection", "transfer", "extrusion", "bonded", "cut"]).optional(),
+  /** The eight compounds ranked for this part, best first, each with the reason (sheet 33). */
+  compoundRanking: z
+    .array(z.object({ code: z.string().min(2), rank: z.number().int().positive(), reason: z.string().min(3) }))
+    .default([]),
+  /** The WooCommerce URL this part replaces — the 301 source (sheet 34). */
+  legacyUrl: z.string().optional(),
 
   /** Hero gallery. Empty renders styled placeholder plates, not broken images. */
   gallery: z
@@ -2031,6 +2164,11 @@ export const skuSchema = baseSchema.extend({
   faqs: z.array(faqSchema).default([]),
 
   related: relatedSchema,
+  /** "You may also need" — up to four sibling parts with the one-line difference (sheet 32 §11). */
+  relatedParts: z
+    .array(z.object({ slug: z.string().min(1), difference: z.string().min(3) }))
+    .max(4)
+    .default([]),
   schemaTypes: z
     .array(z.enum(["Product", "BreadcrumbList", "FAQPage", "HowTo", "Organization", "WebSite"]))
     .default(["BreadcrumbList"]),

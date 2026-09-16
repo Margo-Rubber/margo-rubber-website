@@ -491,6 +491,30 @@ export const exportPage = defineType({
             defineField({ name: "y", type: "number", validation: (r) => r.required().min(0).max(500) }),
           ],
         }),
+        defineField({
+          name: "visionStrip",
+          title: "Figure strip — concept build only",
+          type: "string",
+          description: "e.g. “95 MARKETS SCREENED · 18 PLAYBOOKS · 9 LANES”. Shown only on the password-protected concept build.",
+        }),
+        defineField({
+          name: "visionPins",
+          title: "Extra map pins — concept build only",
+          description: "The wider screened set. Never shown on the public site.",
+          type: "array",
+          of: [
+            defineArrayMember({
+              type: "object",
+              name: "mapPin",
+              fields: [
+                defineField({ name: "label", title: "Label", type: "string", validation: (r) => r.required() }),
+                defineField({ name: "x", type: "number", validation: (r) => r.required().min(0).max(1000) }),
+                defineField({ name: "y", type: "number", validation: (r) => r.required().min(0).max(500) }),
+              ],
+              preview: { select: { title: "label" } },
+            }),
+          ],
+        }),
       ],
       group: "hero",
     }),
@@ -526,6 +550,30 @@ export const exportPage = defineType({
                 defineField({ name: "x", type: "number", validation: (r) => r.required().min(0).max(1000) }),
                 defineField({ name: "y", type: "number", validation: (r) => r.required().min(0).max(500) }),
               ],
+            }),
+            defineField({
+              name: "pins",
+              title: "Further pins for this market",
+              description: "When one block covers two ports or countries (Kenya and Tanzania), each extra pin here.",
+              type: "array",
+              of: [
+                defineArrayMember({
+              type: "object",
+              name: "mapPin",
+              fields: [
+                defineField({ name: "label", title: "Label", type: "string", validation: (r) => r.required() }),
+                defineField({ name: "x", type: "number", validation: (r) => r.required().min(0).max(1000) }),
+                defineField({ name: "y", type: "number", validation: (r) => r.required().min(0).max(500) }),
+              ],
+              preview: { select: { title: "label" } },
+            }),
+              ],
+            }),
+            defineField({
+              name: "pinNote",
+              title: "Pin tooltip",
+              type: "string",
+              description: "Shown when the pin is hovered: port · transit days · FCL/LCL.",
             }),
             listField("points", "Points", { group: null, min: 1 }),
             defineField({
@@ -617,6 +665,23 @@ export const exportPage = defineType({
                 }),
                 defineField({ name: "name", type: "string", validation: (r) => r.required() }),
                 defineField({ name: "body", type: "text", rows: 2, validation: (r) => r.required() }),
+                defineField({
+                  name: "lines",
+                  title: "Labelled lines",
+                  description: "We need · You get back · We do · Why it matters. When filled, these show instead of the body.",
+                  type: "array",
+                  of: [
+                    defineArrayMember({
+                      type: "object",
+                      name: "stepLine",
+                      fields: [
+                        defineField({ name: "label", title: "Label", type: "string", validation: (r) => r.required() }),
+                        defineField({ name: "text", title: "Text", type: "text", rows: 2, validation: (r) => r.required() }),
+                      ],
+                      preview: { select: { title: "label", subtitle: "text" } },
+                    }),
+                  ],
+                }),
               ],
               preview: { select: { title: "name", subtitle: "body" } },
             }),
@@ -627,6 +692,38 @@ export const exportPage = defineType({
       group: "body",
     }),
 
+    defineField({
+      name: "incoterms",
+      title: "Incoterms",
+      description: "Its own section on the page (#incoterms). Until this is filled, the terms stay inside the US & EU market panel.",
+      type: "object",
+      fields: [
+        defineField({ name: "eyebrow", title: "Small label above the heading", type: "string" }),
+        defineField({ name: "heading", type: "string" }),
+        defineField({ name: "body", type: "text", rows: 2 }),
+        defineField({
+          name: "terms",
+          title: "Terms",
+          type: "array",
+          of: [
+            defineArrayMember({
+              type: "object",
+              name: "incoterm",
+              fields: [
+                defineField({ name: "code", title: "Code", type: "string", validation: (r) => r.required() }),
+                defineField({ name: "name", type: "string", validation: (r) => r.required() }),
+                defineField({ name: "body", type: "text", rows: 2, validation: (r) => r.required() }),
+              ],
+              preview: { select: { title: "code", subtitle: "name" } },
+            }),
+          ],
+        }),
+        defineField({ name: "standard", title: "Standard term", type: "string", description: "The code offered by default — FOB." }),
+        defineField({ name: "footnote", type: "text", rows: 2 }),
+      ],
+      options: { collapsible: true, collapsed: true },
+      group: "body",
+    }),
     defineField({
       name: "documents",
       title: "Export documents",
