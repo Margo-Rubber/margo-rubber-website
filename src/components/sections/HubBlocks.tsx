@@ -334,8 +334,10 @@ export function ProductRange({
                   ))}
                 </div>
 
+                {/* Sheet 02 §02: "View {Product} specifications →" — eleven
+                    distinct anchor texts, not eleven "View Details". */}
                 <span className="text-accent-400 mt-4 flex items-center gap-1.5 text-sm font-medium">
-                  View Details
+                  View {c.title} specifications
                   <span aria-hidden className="transition-transform group-hover:translate-x-0.5">
                     &rarr;
                   </span>

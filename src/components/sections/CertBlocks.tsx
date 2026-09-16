@@ -387,7 +387,7 @@ export function CertificateBlock({
         <div className="flex flex-wrap items-center justify-between gap-4 bg-[#0D0D0D] px-6 py-4">
           <div>
             <p className="text-ink text-sm font-medium">{card.barTitle}</p>
-            <p className="text-ink-4 mt-0.5 text-xs">{card.barNote}</p>
+            {card.barNote && <p className="text-ink-4 mt-0.5 text-xs">{card.barNote}</p>}
           </div>
           {isFileHref(card.downloadHref) && (
             <a

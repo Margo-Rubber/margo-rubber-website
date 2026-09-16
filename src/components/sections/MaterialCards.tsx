@@ -114,7 +114,7 @@ function MaterialCard({ m }: { m: Material }) {
             <dt className="text-eyebrow text-ink-4 font-mono uppercase">
               Temp. Range
             </dt>
-            <dd className="text-ink mt-1.5 text-sm font-medium">
+            <dd className="text-ink mt-1.5 text-sm font-medium whitespace-pre-line">
               {m.tempRange}
             </dd>
           </div>

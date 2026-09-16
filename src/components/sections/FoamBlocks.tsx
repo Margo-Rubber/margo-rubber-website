@@ -114,7 +114,7 @@ export function DensityBlock({
     highLabel: string;
     highNote: string;
   };
-  quote: { text: string; author: string };
+  quote: { text: string; author: string; org?: string };
   bands: readonly { range: string; note: string }[];
 }) {
   return (
@@ -166,6 +166,7 @@ export function DensityBlock({
           </blockquote>
           <figcaption className="text-accent-400 mt-4 font-mono text-xs">
             — {quote.author}
+            {quote.org && <span className="text-ink-4 block">{quote.org}</span>}
           </figcaption>
         </figure>
 

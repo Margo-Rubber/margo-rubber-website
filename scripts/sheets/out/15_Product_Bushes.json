@@ -1,0 +1,803 @@
+{
+  "file": "15_Product_Bushes.html",
+  "title": "Bushes & Bushings Page Content Sheet",
+  "kicker": "Margo Rubber Products · /products/bushes · Vision Build · Sheet 15 of 15",
+  "head": {
+    "title": "Rubber Bush Manufacturer India | Silent Block & Bonded Bushes | Margo",
+    "description": "Rubber bushes and bushings moulded in Nashik, India — silent-block, bonded, flanged and insulation bushes to your bore and durometer, in AEM, natural rubber, NBR and EPDM. Quote in 48 hours."
+  },
+  "sections": [
+    {
+      "num": "01",
+      "title": "Hero",
+      "chip": "Tune",
+      "live": "LIVE H1 → Rubber Bushes & Bushings · no geo · the strongest subhead on any product page — it names a customer · the fourth stat is an MOQ",
+      "fields": [
+        {
+          "label": "Eyebrow",
+          "kind": "lit",
+          "value": "ISO 9001:2015 CERTIFIED · NASHIK, INDIA",
+          "note": "[no change — carries certification and geo, which most eyebrows on this site do not]"
+        },
+        {
+          "label": "H1 — 2 lines",
+          "kind": "heading",
+          "lines": [
+            "Rubber Bushes and Bushings,",
+            "Manufactured in India"
+          ],
+          "accent": [
+            "Manufactured in India"
+          ],
+          "value": "Rubber Bushes and Bushings, Manufactured in India",
+          "note": "6 words · live is 3 · carries the verified head term. The ampersand is spelled out because the H1 is also the schema name and the breadcrumb label"
+        },
+        {
+          "label": "Subhead",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Margo Rubber Products moulds silent-block, bonded and insulation bushes to your bore, outer diameter and durometer at its ISO 9001:2015 certified plant in Nashik, India — including AEM, the compound Margo supplies to Mahindra & Mahindra."
+          ],
+          "leads": [
+            "Margo Rubber Products moulds silent-block, bonded and insulation bushes to your bore, outer diameter and durometer at its ISO 9001:2015 certified plant in Nashik, India"
+          ],
+          "marked": [
+            "**Margo Rubber Products moulds silent-block, bonded and insulation bushes to your bore, outer diameter and durometer at its ISO 9001:2015 certified plant in Nashik, India** — including AEM, the compound Margo supplies to Mahindra & Mahindra."
+          ],
+          "note": "37 words · live is 25 · the closing clause is the live sentence, kept word for word. It is the strongest sentence on any product page on this site: specific, checkable, and it names a customer. The only change is adding the entity, the process, the bush types and the geo in front of it — the live line opens with “Silent-block and insulation bushes” and never says who makes them or where"
+        },
+        {
+          "label": "Hero CTA",
+          "kind": "lit",
+          "value": "Send a Bush Drawing ↗ /contact",
+          "note": "The slot renders nothing on this page. The same hero component populates it on /products/o-rings, so this fills an existing slot rather than adding a component"
+        },
+        {
+          "label": "Stats ×4",
+          "kind": "table",
+          "columns": [
+            "Value",
+            "Label",
+            "Replaces"
+          ],
+          "rows": [
+            [
+              "AEM · NR · NBR · EPDM",
+              "Primary compounds",
+              ""
+            ],
+            [
+              "Bonded · Unbonded",
+              "Both processes in-house",
+              ""
+            ],
+            [
+              "8–40 mm bore",
+              "20–80 mm OD, cut to print beyond",
+              ""
+            ],
+            [
+              "Cut to print",
+              "From your drawing",
+              ""
+            ]
+          ],
+          "note": "Four stats, four stats — no count change. Stat 1 keeps all four compounds and reorders so AEM and natural rubber lead, matching the section 02 table; the label changes from “Materials” to “Primary compounds” because eight are available and four are the usual answer. Stat 2 keeps the value and sharpens the label. Stat 3 replaces “Silent-block”, which names one type where the page covers several, with the size envelope — the 8–40 mm bore and 20–80 mm OD figures are aggregated from the span of the live table’s own four rows, so they state nothing the site has not already published. Stat 4 removes the minimum order"
+        }
+      ],
+      "notes": [
+        "Heading. The page’s only <h1>. Two <span> lines inside one <h1>, not two headings.",
+        "Head term placement. rubber bush manufacturer India resolves across the H1 and the first clause of the subhead. A second term, silent block bush, resolves in the same sentence — it is the phrase a suspension or automotive buyer types and it is far more specific than “bush” alone.",
+        "The Mahindra sentence is the page’s GEO asset. A named OEM customer is the kind of fact a generative engine will repeat, because it is checkable and nobody else in this category publishes one. It should also appear on /about and on the homepage, where it currently does not.",
+        "Breadcrumb goes above the eyebrow. Home › Products › Bushes & Bushings, marked up as BreadcrumbList.",
+        "Stat markup. <dl> pairs, value in <dd>, label in <dt>.",
+        "Image alt. The hero has no image. If one is added: “Bonded rubber silent-block bushes at Margo Rubber Products, Nashik”."
+      ]
+    },
+    {
+      "num": "02",
+      "title": "Specification reference",
+      "chip": "4 rows become 8 · headings change",
+      "live": "LIVE H2 → Sizes, Hardness & Materials · the best table on the site, and it still ties each compound to one size band · filter chips are AS568, ISO, JIS and DIN, none of which apply to a bush",
+      "fields": [
+        {
+          "label": "Add four rows, change all four headings",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "The live table renders four rows. This section specifies eight, so the developer must add four and the component should take an arbitrary list. All four column headings change, but the column count stays at four and the chip count stays at five.",
+            "The material column becomes a construction column, and hardness moves to the footnote. Construction — unbonded, inner sleeve, inner and outer sleeve — is what a bush buyer specifies after the dimensions, and it appears nowhere on the live page despite the hero claiming both bonded and unbonded. Hardness moves out because the live bands are tied to compound, not to type; carrying them across as if they were type properties would be inventing data. The full range is stated once in the footnote instead."
+          ],
+          "leads": [
+            "eight",
+            "The material column becomes a construction column, and hardness moves to the footnote."
+          ],
+          "marked": [
+            "The live table renders four rows. This section specifies **eight**, so the developer must add four and the component should take an arbitrary list. **All four column headings change**, but **the column count stays at four** and the chip count stays at five.",
+            "**The material column becomes a construction column, and hardness moves to the footnote.** Construction — unbonded, inner sleeve, inner and outer sleeve — is what a bush buyer specifies after the dimensions, and it appears nowhere on the live page despite the hero claiming both bonded and unbonded. Hardness moves out because the live bands are tied to compound, not to type; carrying them across as if they were type properties would be inventing data. The full range is stated once in the footnote instead."
+          ]
+        },
+        {
+          "label": "Eyebrow",
+          "kind": "lit",
+          "value": "02 · SPECIFICATION REFERENCE",
+          "note": "[no change]"
+        },
+        {
+          "label": "H2",
+          "kind": "heading",
+          "lines": [
+            "Bush Types, Sizes and Construction"
+          ],
+          "accent": [],
+          "value": "Bush Types, Sizes and Construction",
+          "note": "5 words · live is 4 · “Materials” comes out of the heading because materials come out of the table. “Bush” goes in, because Sizes, Hardness & Materials is a heading that could sit on any of the eleven category pages"
+        },
+        {
+          "label": "Intro",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "A bush is specified by inner bore, outer diameter, length and durometer, and a bonded bush additionally by the metal insert drawing. Send those and we will quote it. Compound is a separate choice — any of our eight is available at any size and in any construction below."
+          ],
+          "leads": [
+            "inner bore, outer diameter, length and durometer"
+          ],
+          "marked": [
+            "A bush is specified by **inner bore, outer diameter, length and durometer**, and a bonded bush additionally by the metal insert drawing. Send those and we will quote it. **Compound is a separate choice — any of our eight is available at any size and in any construction below.**"
+          ],
+          "note": "51 words · live is 21 · the live intro is accurate and specific, including the insert-drawing clause, so it is kept almost intact. The closing sentence is added, and it is the one removing the coupling"
+        },
+        {
+          "label": "Filter chips ×5",
+          "kind": "table",
+          "columns": [
+            "Chip",
+            "Replaces"
+          ],
+          "rows": [
+            [
+              "All bush types",
+              "All Standards"
+            ],
+            [
+              "Unbonded",
+              ""
+            ],
+            [
+              "Bonded",
+              ""
+            ],
+            [
+              "Silent-block",
+              ""
+            ],
+            [
+              "Insulation",
+              ""
+            ]
+          ],
+          "note": "Five chips, five chips — no count change. All four standard names come off; AS568 and JIS B2401 are O-ring size standards and neither ISO nor DIN publishes a bush standard this table is filtered by. The replacements filter by the two things a bush buyer chooses between — construction and duty"
+        },
+        {
+          "label": "Search field",
+          "kind": "lit",
+          "value": "Filter by bore size or bush type",
+          "note": "Replaces Filter by ID or dimension. On this page “ID” genuinely means inner diameter, so the live label is closer to right here than anywhere else — but it still reads as a part-number field"
+        },
+        {
+          "label": "Table — 8 rows",
+          "kind": "table",
+          "columns": [
+            "Bush type",
+            "Construction",
+            "Size range (ID × OD)",
+            "Typical service"
+          ],
+          "rows": [
+            [
+              "Silent-block bush",
+              "Bonded, inner sleeve",
+              "8–20 × 20–40 mm",
+              "Suspension arms, engine links, chassis pivots"
+            ],
+            [
+              "Insulation bush",
+              "Bonded or unbonded",
+              "10–30 × 25–60 mm",
+              "Engine and transmission insulation, electrical isolation at a fixing"
+            ],
+            [
+              "Linkage bush",
+              "Unbonded",
+              "12–40 × 30–80 mm",
+              "Weather-exposed linkages and control rods"
+            ],
+            [
+              "Oil-contact bush",
+              "Bonded or unbonded",
+              "8–25 × 20–50 mm",
+              "Mountings in or near oil and hydraulic fluid"
+            ],
+            [
+              "Flanged bush",
+              "Unbonded",
+              "8–40 × 20–80 mm",
+              "Where the bush also takes an axial face load"
+            ],
+            [
+              "Shackle / spring eye bush",
+              "Bonded, inner sleeve",
+              "Per drawing",
+              "Leaf spring eyes and shackle pins"
+            ],
+            [
+              "Double-sleeve bush",
+              "Bonded, inner and outer sleeve",
+              "Per drawing",
+              "High radial and torsional load, press-fit housings"
+            ],
+            [
+              "Cut-to-print bush",
+              "Per drawing",
+              "Per drawing",
+              "Bespoke geometry, insert supplied or made to your drawing"
+            ]
+          ],
+          "note": "Eight rows, up from four. All four live size bands are kept exactly as published and reassigned from compounds to the bush types those bands actually describe — the live rows already pair each band with an application, so this is reading the table the way it was meant rather than inventing anything. Four rows are added: flanged, shackle, double-sleeve and cut-to-print. All eight compounds publish as available across the size range and in both constructions, which is what removes the false coupling the live table creates. Double-sleeve is cleared too — rubber-to-metal bonding is client-confirmed as an in-house process, 2026-09-01"
+        },
+        {
+          "label": "Footnote",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Showing 8 of 8 entries. Durometer across the range is 45 to 75 Shore A, set on your drawing — it is what sets the rate, so a bush that is too hard transmits and one that is too soft wanders. A bonded bush needs the metal insert drawing with the rubber drawing; the bond line and the insert finish decide whether the part survives, and we cannot quote one without the other. Dimensional conformity to ISO 3302-1, class M1 to M4, as recorded on the drawing. Values are typical for the type and are not a specification for a particular part; see our technical disclaimer."
+          ],
+          "leads": [
+            "Durometer across the range is 45 to 75 Shore A"
+          ],
+          "marked": [
+            "Showing 8 of 8 entries. **Durometer across the range is 45 to 75 Shore A**, set on your drawing — it is what sets the rate, so a bush that is too hard transmits and one that is too soft wanders. **A bonded bush needs the metal insert drawing with the rubber drawing**; the bond line and the insert finish decide whether the part survives, and we cannot quote one without the other. Dimensional conformity to ISO 3302-1, class M1 to M4, as recorded on the drawing. Values are typical for the type and are not a specification for a particular part; see our technical disclaimer."
+          ],
+          "note": "96 words · live is 26 · the hardness sentence carries the column that came out of the table, and states what hardness is for, which the live table never did. The insert sentence expands the live intro’s best clause into the reason behind it"
+        }
+      ],
+      "notes": [
+        "Real <table> markup with <caption>Rubber bush types, construction and size ranges</caption> and scope=\"col\" on every header. All eight rows in the DOM at first paint; filter with CSS, never unmount.",
+        "Eight bush-type names are eight searches. shackle bush manufacturer India, double sleeve bonded bush, flanged rubber bush — each is a phrase a real buyer types, and five of the eight appear nowhere on this site today.",
+        "The construction column is the differentiator. Bonded, inner sleeve versus inner and outer sleeve is a distinction a trader cannot answer and a manufacturer can. It is the same signal the anti-vibration page carries with its bonding claim, and the two pages should be linked to each other.",
+        "Overflow. Four columns will not fit 375 px — overflow-x:auto on the wrapper, never on the body.",
+        "The hardness sentence is the AEO surface. “What hardness should a rubber bush be?” has a real answer with a real consequence on either side of it, and it is now two clauses long on a manufacturer’s page.",
+        "Link the disclaimer beneath the table, anchor text technical disclaimer → /legal/disclaimer. The full copy is written in sheet 08."
+      ]
+    },
+    {
+      "num": "03",
+      "title": "Material selection",
+      "chip": "4 panels become 8 · order changes completely",
+      "live": "LIVE H2 → Which Material Do I Need? · the accordion disagrees with the hero and the table above it — it drops AEM and natural rubber and substitutes FKM and silicone · all four ranges wrong",
+      "fields": [
+        {
+          "label": "Add four panels, reorder all eight",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "The live accordion renders four panels. This section specifies eight, and the order is not the order on any other category page. The developer must extend the component to take an arbitrary list — four new panels: natural rubber, AEM, neoprene and SBR — and panel order must be per-page data, not a fixed sequence in the component.",
+            "This page proves the point better than any other. Its own hero and its own table both lead with AEM and natural rubber. The accordion, three hundred pixels below, shows neither — because it is hard-coded to the same four panels that render on every category. Fix the component once and seven pages stop contradicting themselves."
+          ],
+          "leads": [
+            "eight",
+            "This page proves the point better than any other."
+          ],
+          "marked": [
+            "The live accordion renders four panels. This section specifies **eight**, and the order is not the order on any other category page. The developer must extend the component to take an arbitrary list — four new panels: **natural rubber, AEM, neoprene and SBR** — and **panel order must be per-page data**, not a fixed sequence in the component.",
+            "**This page proves the point better than any other.** Its own hero and its own table both lead with AEM and natural rubber. The accordion, three hundred pixels below, shows neither — because it is hard-coded to the same four panels that render on every category. Fix the component once and seven pages stop contradicting themselves."
+          ]
+        },
+        {
+          "label": "Eyebrow",
+          "kind": "lit",
+          "value": "03 · MATERIAL SELECTION",
+          "note": "[no change]"
+        },
+        {
+          "label": "H2",
+          "kind": "heading",
+          "lines": [
+            "Which Bush Material Do I Need?"
+          ],
+          "accent": [],
+          "value": "Which Bush Material Do I Need?",
+          "note": "6 words · live is 5 · one word added. The live heading is a good question with no subject — adding “bush” is what makes it match the query a buyer types and lets the passage be retrieved on its own"
+        },
+        {
+          "label": "Intro",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "A bush is chosen for how it behaves under repeated load and what surrounds it. Natural rubber and AEM cover most of what we make here; the others are what you move to when oil, weather or temperature rules them out. Name the duty and the environment and we will tell you which to specify."
+          ],
+          "leads": [
+            "Natural rubber and AEM cover most of what we make here; the others are what you move to when oil, weather or temperature rules them out."
+          ],
+          "marked": [
+            "A bush is chosen for how it behaves under repeated load and what surrounds it. **Natural rubber and AEM cover most of what we make here; the others are what you move to when oil, weather or temperature rules them out.** Name the duty and the environment and we will tell you which to specify."
+          ],
+          "note": "55 words · live is 27 · the live intro says “chemical compatibility profile… medium, temperature, and pressure class”, which is the sealing-page intro rendered unchanged. A bush has no medium and no pressure class. The middle sentence also makes the accordion agree with the hero in words, not only in panel order"
+        },
+        {
+          "label": "Panels ×8",
+          "kind": "table",
+          "columns": [
+            "Compound",
+            "Temp range",
+            "Hardness",
+            "Body",
+            "Live"
+          ],
+          "rows": [
+            [
+              "Natural rubber (NR)",
+              "−20° to +90°C",
+              "30–80 Shore A",
+              "Polyisoprene, and the standard silent-block compound. The highest resilience and best fatigue life of the eight, with the lowest dynamic-to-static stiffness ratio — the property that decides whether a bush behaves in service the way it did on the rate curve. Not for oil, fuel or sustained heat.",
+              "NEW PANEL"
+            ],
+            [
+              "AEM (Vamac®)",
+              "−40° to +175°C",
+              "50–80 Shore A",
+              "Ethylene acrylic elastomer. Our signature compound, supplied to Mahindra & Mahindra for engine and transmission applications, and the reason this category exists in its current form. Holds its properties where oil, heat and ozone act together — the condition under a bonnet, and the one that ends a natural rubber bush.",
+              "NEW PANEL"
+            ],
+            [
+              "NBR (Nitrile)",
+              "−30° to +120°C",
+              "40–90 Shore A",
+              "Nitrile butadiene rubber, the general-purpose industry standard. Outstanding resistance to petroleum oils and hydraulic fluids at moderate temperature — the choice for a mounting that sits in oil. Dynamic behaviour is a compromise against natural rubber, so specify it for the oil, not for the ride.",
+              ""
+            ],
+            [
+              "Neoprene (CR)",
+              "−40° to +120°C",
+              "40–90 Shore A",
+              "Polychloroprene. Balanced across weather, ozone and moderate oil at once, which is what an exposed chassis or linkage bush actually faces. Slightly stiffer and less resilient than natural rubber, and worth the trade outdoors. Also the family we reach for when flame retardancy is specified.",
+              "NEW PANEL"
+            ],
+            [
+              "EPDM",
+              "−40° to +140°C",
+              "40–90 Shore A",
+              "Ethylene propylene diene rubber, the preferred material for weather-exposed linkages and anything near water, steam or coolant, with excellent ozone and UV resistance. Higher damping and lower resilience than natural rubber. Not for petroleum oils.",
+              ""
+            ],
+            [
+              "SBR",
+              "−30° to +100°C",
+              "40–90 Shore A",
+              "Styrene butadiene rubber. Abrasion resistance at low cost, blended with natural rubber where a bush takes rubbing contact rather than carrying a rate. Not for oil or fuel contact.",
+              "NEW PANEL"
+            ],
+            [
+              "FKM (Viton®)",
+              "−20° to +250°C\ncontinuous to 200°C",
+              "60–90 Shore A",
+              "Fluorocarbon rubber, the first choice for aggressive chemical environments. High cost, high damping loss and low resilience, so it is rarely specified for a bush — it appears here because we mould it, and because a bush in a chemical or fuel environment occasionally needs it.",
+              ""
+            ],
+            [
+              "Silicone (VMQ)",
+              "−60° to +220°C",
+              "30–80 Shore A",
+              "Vinyl methyl silicone, the widest service range of the eight. Poor tear and fatigue resistance, and a bonded part in silicone tends to fail at the bond line, so it is rarely specified for a bush — use it for a static high-temperature spacer rather than a loaded pivot.",
+              ""
+            ]
+          ],
+          "note": "Eight panels. Natural rubber and AEM lead, which makes the accordion agree with the hero and the table for the first time. FKM and silicone move to last and each carries an explicit “rarely specified for a bush” clause — they stay visible because Margo moulds them, but an engineer needs to be told not to pick them for a loaded pivot. Every range matches the homepage compound table. The four live panels are rewritten rather than tuned: they describe chemical resistance, which is the wrong axis for this category"
+        },
+        {
+          "label": "Panel link",
+          "kind": "lit",
+          "value": "Read more",
+          "note": "[no change to the label]. It expands the panel in place; it does not navigate. Keep it a <button>, not an <a>"
+        }
+      ],
+      "notes": [
+        "Crawlability. All eight panels render in the DOM at first paint and collapse with CSS. An accordion that mounts its body on click publishes eight paragraphs to a browser and zero to a crawler.",
+        "Heading levels. Section heading is <h2>; each compound name is <h3> inside the panel.",
+        "Internal consistency is a ranking factor here, not just a quality one. A page whose hero, table and accordion name three different compound sets gives an assistant no confident answer to “what does Margo make bushes from?” — and an unconfident answer is not cited.",
+        "The AEM panel is the page’s GEO asset. It is the only compound panel anywhere on the site that names a customer, and it should read identically here, on the homepage compound table and on /about.",
+        "FAQ schema. This section feeds two of the four FAQPage questions: “Which rubber is used for suspension bushes?” and “Can rubber bushes be used in oil?”. Answer text must match the visible copy word for word.",
+        "Shared component, per-page order. Panel order must come from page data. A fixed order in the component is what put FKM first on a page whose own hero leads with AEM."
+      ]
+    },
+    {
+      "num": "04",
+      "title": "Parts in this category",
+      "chip": "Full list, no links",
+      "live": "LIVE H2 → “1 parts we make to order” · the plural bug is on screen · one item · it carries a “View part” link to a child URL",
+      "fields": [
+        {
+          "label": "Eyebrow",
+          "kind": "lit",
+          "value": "04 · IN THIS CATEGORY",
+          "note": "New eyebrow number. The live parts section carries no eyebrow at all, which is why the counter jumps from 03 to 05"
+        },
+        {
+          "label": "H2",
+          "kind": "heading",
+          "lines": [
+            "Bushes We Make to Order"
+          ],
+          "accent": [],
+          "value": "Bushes We Make to Order",
+          "note": "5 words · live is 6 · states no count. This is the page where the pluralisation bug is visible right now — the live heading reads “1 parts we make to order”, rendered from array.length. Taking the count out of the heading fixes it here and on the other ten categories permanently, rather than patching the plural"
+        },
+        {
+          "label": "Intro",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Each part below is manufactured to customer drawing or to our standard tooling. Bore, outer diameter, length, durometer and insert geometry are set from your specification, and full dimensional data is issued with the quotation."
+          ],
+          "leads": [
+            "Bore, outer diameter, length, durometer and insert geometry are set from your specification, and full dimensional data is issued with the quotation."
+          ],
+          "marked": [
+            "Each part below is manufactured to customer drawing or to our standard tooling. **Bore, outer diameter, length, durometer and insert geometry are set from your specification, and full dimensional data is issued with the quotation.**"
+          ],
+          "note": "36 words · live is 27 · the five inputs named are the five the section 02 intro asks for, so the page asks for the same information twice in the same words rather than twice in different ones"
+        },
+        {
+          "label": "Cards ×18",
+          "kind": "table",
+          "columns": [
+            "Part name",
+            "Category",
+            "Availability"
+          ],
+          "rows": [
+            [
+              "AEM Insulation Bush",
+              "Bushes",
+              "Made to order"
+            ],
+            [
+              "Silent-Block Bushes",
+              "Bushes",
+              "Made to order"
+            ],
+            [
+              "Suspension Arm Bushes",
+              "Bushes",
+              "Made to order"
+            ],
+            [
+              "Shackle Bushes",
+              "Bushes",
+              "Made to order"
+            ],
+            [
+              "Spring Eye Bushes",
+              "Bushes",
+              "Made to order"
+            ],
+            [
+              "Torque Rod Bushes",
+              "Bushes",
+              "Made to order"
+            ],
+            [
+              "Stabiliser Bar Bushes",
+              "Bushes",
+              "Made to order"
+            ],
+            [
+              "Engine Mounting Bushes",
+              "Bushes",
+              "Made to order"
+            ],
+            [
+              "Transmission Insulation Bushes",
+              "Bushes",
+              "Made to order"
+            ],
+            [
+              "Linkage & Control Rod Bushes",
+              "Bushes",
+              "Made to order"
+            ],
+            [
+              "Flanged Bushes",
+              "Bushes",
+              "Made to order"
+            ],
+            [
+              "Double-Sleeve Bonded Bushes",
+              "Bushes",
+              "Made to order"
+            ],
+            [
+              "Bonded Bushes — Inner Sleeve",
+              "Bushes",
+              "Made to order"
+            ],
+            [
+              "Unbonded Press-Fit Bushes",
+              "Bushes",
+              "Made to order"
+            ],
+            [
+              "Electrical Isolation Bushes",
+              "Bushes",
+              "Made to order"
+            ],
+            [
+              "Pump & Motor Mounting Bushes",
+              "Bushes",
+              "Made to order"
+            ],
+            [
+              "Agricultural Implement Bushes",
+              "Bushes",
+              "Made to order"
+            ],
+            [
+              "Cut-to-Print Bushes",
+              "Bushes",
+              "Made to order"
+            ]
+          ],
+          "note": "Same three fields the live card already renders. One item becomes 18, and the live entry is kept and leads — AEM Insulation Bush is a real, specific, compound-named part and it is the right first card. No View part link on any card, and no card links anywhere"
+        },
+        {
+          "label": "Two CONFIRMs",
+          "kind": "table",
+          "columns": [
+            "Part",
+            "Why it needs a yes"
+          ],
+          "rows": [
+            [
+              "Torque Rod Bushes",
+              "A heavy-commercial-vehicle part with high radial and torsional load. Plausible for Margo but it is a different duty class from a passenger-car silent-block"
+            ],
+            [
+              "Double-Sleeve Bonded Bushes",
+              "Two inserts loaded and located in one tool. Resolves with the rubber-to-metal bonding CONFIRM on sheet 13 — if bonding is confirmed, ask specifically whether double-sleeve is within it"
+            ]
+          ]
+        }
+      ],
+      "notes": [
+        "Build note — same card component, 1 item becomes 18. The grid takes a longer list; the card is unchanged apart from losing its link.",
+        "One part name is the weakest possible AEO surface, and it is what an assistant sees when asked “does Margo make suspension bushes?” The answer is yes — the hero, the table and the applications column all imply it — but no string on the page says it.",
+        "Eighteen part names is eighteen searches. shackle bush manufacturer India, spring eye bush supplier, stabiliser bar bush — the automotive aftermarket searches these by name, and none of them appears anywhere on this site today.",
+        "Remove the link from the card. The SKU child page is 301-redirected to this category under the architecture decision, so the single card currently points at a redirect.",
+        "Card titles are <h3>, not links. The second line is a <p>.",
+        "Schema. The list goes in additionalProperty on the single Product node. Do not emit 18 separate Product nodes."
+      ]
+    },
+    {
+      "num": "05",
+      "title": "Commercial terms",
+      "chip": "Restructure",
+      "live": "LIVE H2 → Minimum Order & Lead Time · an MOQ in the heading and an MOQ row · lead times disagree with every other page · no mention of the insert, on a page whose own intro says the insert drawing is required",
+      "fields": [
+        {
+          "label": "Eyebrow",
+          "kind": "lit",
+          "value": "05 · COMMERCIAL TERMS",
+          "note": "[no change to the number, now that the parts section takes 04]"
+        },
+        {
+          "label": "H2",
+          "kind": "heading",
+          "lines": [
+            "Lead Times and How We Quote"
+          ],
+          "accent": [],
+          "value": "Lead Times and How We Quote",
+          "note": "6 words · live is 4 · “Minimum Order & Lead Time” puts a banned term in a section heading, where it is also an anchor and a table-of-contents entry"
+        },
+        {
+          "label": "Intro",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Margo produces in bulk against OEM schedules. Send the bore, outer diameter, length and durometer with your volume — and for a bonded bush, the metal insert drawing. Minimum run is 10,000 pieces per part number, per compound, or quoted against the part where size or complexity sets the economics. Prototype and first-article lots sit outside the minimum and are quoted separately."
+          ],
+          "leads": [
+            "Send the bore, outer diameter, length and durometer with your volume — and for a bonded bush, the metal insert drawing."
+          ],
+          "marked": [
+            "Margo produces in bulk against OEM schedules. **Send the bore, outer diameter, length and durometer with your volume — and for a bonded bush, the metal insert drawing.** **Minimum run is 10,000 pieces per part number, per compound**, or quoted against the part where size or complexity sets the economics. Prototype and first-article lots sit outside the minimum and are quoted separately."
+          ],
+          "note": "50 words · live is 34 · replaces “Margo is geared for volume procurement. If your project requires below-MOQ qualification samples…”, which states a minimum twice by implication and tells a prototype buyer they are below the floor before they have asked. The insert clause is the addition that matters here — the section 02 intro already says a bonded bush needs it, and then the commercial block, which is where the quotation is actually requested, never mentions it again"
+        },
+        {
+          "label": "Rows ×5",
+          "kind": "table",
+          "columns": [
+            "Row",
+            "Value",
+            "Sub-label",
+            "Replaces"
+          ],
+          "rows": [
+            [
+              "Quotation",
+              "48 hrs",
+              "With feasibility report",
+              ""
+            ],
+            [
+              "Prototype",
+              "48–72 hrs",
+              "From an approved drawing",
+              ""
+            ],
+            [
+              "Existing tooling",
+              "3–4 weeks",
+              "Ex-works Nashik · 2 weeks express",
+              ""
+            ],
+            [
+              "New tooling",
+              "3–4 weeks + tooling",
+              "Mould and insert fixture quoted separately",
+              ""
+            ],
+            [
+              "Packaging",
+              "Poly bag + card label",
+              "Bulk or partitioned carton on request",
+              "[no change to the value]"
+            ]
+          ],
+          "note": "Five rows, five rows — no count change. Lead times are corrected to the company standard. Live says 14–21 days and 21–35 days; every other page says 3–4 weeks standard with 2 weeks express. Three to four weeks is 21–28 days, so the live first figure promises faster than the company delivers and the second promises slower. The row labels change from “catalogue / cut-to-print” to “existing tooling / new tooling” — every bush is moulded, there is no die-cut or catalogue route. The new-tooling sub-label names two tools, as on the anti-vibration page: a bonded bush needs a mould and an insert-loading fixture. The packaging sub-label drops “bulk reel or blister”; a steel-cored bush neither reels nor blisters, and a partitioned carton is what stops the sleeves marking each other"
+        }
+      ],
+      "notes": [
+        "The section ID changes from #commercial to #lead-times, and the anchor label with it. An anchor named after a banned term is a banned term in the URL bar.",
+        "This is the highest-converting block on a category page. A buyer who has read the size table and picked a compound arrives here to find out whether the timeline works. Answering that with a minimum order instead of a lead time loses them at the last step.",
+        "Goes in the FAQPage node: “What is the lead time for custom rubber bushes?” and “How is a bonded rubber bush quoted?” — both verified buyer questions from the fan-out research.",
+        "Consistency gate. 48 hrs quotation, 48–72 hrs prototype, 3–4 weeks standard, 2 weeks express. These four values appear on eleven category pages, the homepage, /contact and /export. They must render from one source, not be typed per page.",
+        "Row markup. <dl> pairs or a real <table>. The value is the answer and the sub-label qualifies it, so the two must be programmatically associated.",
+        "Shared component. This block renders identically on all eleven category pages, so removing the minimum-order row lands eleven times from one change — eleven of the forty-four minimum-order statements published across the site."
+      ]
+    },
+    {
+      "num": "06",
+      "title": "Enquiries",
+      "chip": "Tune",
+      "live": "LIVE H2 → Request Bush Specs · two buttons · the body promises a response “within two working days”, the sixth different response time published on this site",
+      "fields": [
+        {
+          "label": "Eyebrow",
+          "kind": "lit",
+          "value": "06 · ENQUIRIES",
+          "note": "[no change to the number]"
+        },
+        {
+          "label": "H2",
+          "kind": "heading",
+          "lines": [
+            "Request Bush Specifications"
+          ],
+          "accent": [],
+          "value": "Request Bush Specifications",
+          "note": "3 words · live is 3 · “Specs” spelled out. It is a heading, an anchor and a schema string, and the abbreviation costs a matched term for no space saved"
+        },
+        {
+          "label": "Body",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Send your drawing with the bore, outer diameter, length and durometer — plus the metal insert drawing for a bonded bush — or the bush you are replacing, with a note of how it failed. Our engineering team responds within 48 hours with dimensional confirmation, a recommended compound and hardness, and a quotation."
+          ],
+          "leads": [
+            "Our engineering team responds within 48 hours with dimensional confirmation, a recommended compound and hardness, and a quotation."
+          ],
+          "marked": [
+            "Send your drawing with the bore, outer diameter, length and durometer — plus the metal insert drawing for a bonded bush — or the bush you are replacing, with a note of how it failed. **Our engineering team responds within 48 hours with dimensional confirmation, a recommended compound and hardness, and a quotation.**"
+          ],
+          "note": "52 words · live is 34 · “within two working days” becomes 48 hours. The site publishes six different response times; two working days contradicts the 48 hours promised on the homepage, the contact page and the commercial terms directly above. “How it failed” is the addition — a bush comes back split, perished, or with the bond broken away from the sleeve, and which of the three it was decides both the compound and whether the bond process needs changing"
+        },
+        {
+          "label": "Button 1",
+          "kind": "lit",
+          "value": "Send Enquiry",
+          "href": "/contact",
+          "note": "[no change]"
+        },
+        {
+          "label": "Button 2",
+          "kind": "lit",
+          "value": "Call Technical Sales",
+          "href": "tel:+919665579276",
+          "note": "[no change to the label]. The href must be a real tel: link and the digits must match the footer and the Organization node exactly"
+        },
+        {
+          "label": "Confirmation copy",
+          "kind": "lit",
+          "value": "Enquiry received. A named engineer replies within 48 hours to {email}.",
+          "note": "New string — it fills the existing post-submit state, which currently shows nothing. Neither form on the site has confirmation copy, so a buyer who submits a drawing has no evidence it arrived"
+        }
+      ],
+      "notes": [
+        "Schema. Emit nothing here. ContactPoint lives on the homepage Organization node and every page @id-references it. A second contact node per category page creates eleven competing entities.",
+        "Analytics. Named conversion event on submit and on the tel: click. Two RFQ forms on the site and zero events wired means no page here can currently be shown to convert.",
+        "Heading level. <h2>. The two buttons are <a> elements, not <div>s with click handlers.",
+        "The 48-hour promise is the site’s single most repeated commercial claim. It renders on the homepage, /contact, /export and all eleven category pages twice each. Render it from one constant."
+      ]
+    },
+    {
+      "num": "07",
+      "title": "Footer",
+      "chip": "Rewrite",
+      "live": "LIVE → 50+ countries, © 2024, and the wrong legal entity · Products column shows 9 of 11 categories · /export appears nowhere",
+      "fields": [
+        {
+          "label": "Wordmark",
+          "kind": "lit",
+          "value": "MARGO\nRUBBER PRODUCTS"
+        },
+        {
+          "label": "Description",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "ISO 9001:2015 certified manufacturer of precision moulded and extruded rubber components in Nashik, India. Sealing and anti-vibration parts to customer drawing, supplied to OEMs and distributors in 95 countries."
+          ],
+          "leads": [
+            null
+          ],
+          "marked": [
+            "ISO 9001:2015 certified manufacturer of precision moulded and extruded rubber components in Nashik, India. Sealing and anti-vibration parts to customer drawing, supplied to OEMs and distributors in 95 countries."
+          ],
+          "note": "29 words · live is 26 · opens with the entity definition, since the footer repeats on all 40 pages"
+        },
+        {
+          "label": "NAP block",
+          "kind": "lit",
+          "value": "+91 96655 79276\ninfo@margorubber.in\nSRNO. 4494/10, behind Furniture Stop,\nopposite Samarth Dies, Vilholi,\nNashik, Maharashtra 422010, India",
+          "note": "Client-confirmed 2026-09-01 — this exact string, on all 40 pages, in the PostalAddress node and on the Google Business Profile. The landmarks are part of the address and stay in; B-12, MIDC Ambad is wrong and comes off the site. The company name is not repeated inside the address line — the wordmark above it already carries it"
+        },
+        {
+          "label": "Column 1 — Products",
+          "kind": "lit",
+          "value": "SEALING\nO-Rings · Oil Seals · Gaskets · Diaphragms · Reciprocating Seals · Leak Test Rubber\nMOUNTING & PROTECTION\nAnti-Vibration Mounts · Bushes & Bushings · Bonded Components · Bellows · Grommets · Pads, Stoppers & Caps\nSHEET & PROFILE\nExtrusion Profiles · Sponge & Foam Rubber · Rubber Lining & Skirting",
+          "note": "15 entries in three groups, up from 11. Adds Diaphragms, Bonded Components, Rubber Lining & Skirting and Reciprocating Seals (sheets 36–39), plus /products/extrusion and /products/sponge-foam-rubber, which had no sitewide inbound link at all. The column was designed for eleven and fifteen flat is not readable, so it is grouped — Sealing (6), Mounting & protection (6), Sheet & profile (3). The third group is also the commercial split: those three are quoted by length or area rather than by piece count, per sheets 18, 38 and 40. “Seals” is labelled “Reciprocating Seals” so it is not read as a parent of O-Rings and Oil Seals — sheet 39 §02 explains why. Group labels are <p> or <div>, never headings — three more phantom sections is not an improvement on one. One label also changes: Bushes & Sleeves becomes Bushes & Bushings, matching this page’s own H1. The URL stays /products/bushes"
+        },
+        {
+          "label": "Column 2 — Industries",
+          "kind": "lit",
+          "value": "Automotive · Mining · Oil & Gas · Pumps & Valves · HVAC ·\nElectrical & Electronics · Agriculture · Medical Devices ·\nWater & Fluid Management · Construction · Transport — Rail & Marine",
+          "note": "11 entries, up from 9 — adds Construction (sheet 41) and Transport — Rail & Marine (sheet 42), the first two of the six “additional sectors” on sheet 05 to earn a URL. Automotive still leads, matching real volume. 🛑 The live footer’s four industry links all resolve to the same /industries/ The full twenty-six-row footer link map is in sheet 01_Homepage.html, footer section — fifteen product links and eleven industry links, with the three label/slug mismatches called out. — adding two entries to a column whose links are broken makes eleven broken links, so fix the routing in this same commit"
+        },
+        {
+          "label": "Column 3 — Company",
+          "kind": "lit",
+          "value": "About Us · Certifications · Export Markets · Case Studies ·\nResources · Contact Us",
+          "note": "6 entries · Export Markets is new and fixes the orphaned /export page · Why Choose Us comes out — that page is recommended for deletion, its job is done better by /certifications and /export"
+        },
+        {
+          "label": "CTA lines",
+          "kind": "lit",
+          "value": "Ready to source precision rubber components?\nQuotation from our engineering team within 48 hours.\n[ Request Quote → ]",
+          "note": "“within 24 hours” becomes 48 hours. The footer CTA is the fastest of the six response times published on this site, and it contradicts the page body on /contact, /industries and /export. One constant, rendered everywhere"
+        },
+        {
+          "label": "Legal line",
+          "kind": "lit",
+          "value": "© 2026 Margo Rubber Products. All rights reserved.\nPrivacy Policy · Terms & Conditions · Disclaimer\nISO 9001:2015 · Certificate 09111526A · Integral Certification Ltd",
+          "note": "Fixes © 2024 and Margo Rubber Industries Pvt. Ltd. — GSTIN 27AAKFM8595Q1Z1 embeds PAN AAKFM8595Q, whose 4th character F denotes a firm, not a company. Pvt. Ltd. is positively excluded. The ISO line gains the certificate number and the issuer, which makes it checkable on all 40 pages instead of decorative"
+        }
+      ],
+      "notes": [
+        "What it fixes on this page specifically: the footer is the third place a minimum order is stated on this page. Removing it here removes it on all forty.",
+        "The footer label for this very category is wrong. It reads Bushes & Sleeves on all 40 pages while this page’s H1 reads Bushes & Bushings. A sitewide navigation label that disagrees with the page it points at is a link a buyer does not trust and a term no crawler can consolidate.",
+        "The closest sibling is /products/anti-vibration-mounts, which shares this page’s compound set and its bonding process. Nothing in this page’s body links to it; the footer Products column is currently the only route.",
+        "Build once, ships forty times. This is one component. The copy above is written out in full on every sheet in this set so nobody has to open two files to build one block, but it is authored once in the codebase.",
+        "Heading levels. The column labels (PRODUCTS / INDUSTRIES / COMPANY) are <h2> in the live build. As visible <h2>s they inject three phantom sections into every document outline on the site. Change to <p class=\"col-label\">.",
+        "Link equity. 26 sitewide links from here. Adding /export, /products/extrusion and /products/sponge-foam-rubber gives three orphaned or under-linked URLs a sitewide inbound link each — the cheapest internal-linking win available on this site.",
+        "NAP markup. Wrap in <address>. Phone as <a href=\"tel:+919665579276\">, email as <a href=\"mailto:info@margorubber.in\">. The visible string and the href must not diverge.",
+        "Schema. The footer emits nothing. The Organization node on the homepage is the single entity definition and every other page @id-references it. Repeating an Organization block per page creates 40 competing entities.",
+        "Copyright year. Render from new Date().getFullYear(), not a literal. It has read 2024 for eight months."
+      ]
+    }
+  ]
+}

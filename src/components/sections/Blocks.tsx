@@ -93,7 +93,18 @@ export function CTABand({
       <Container>
         <div className="border-line bg-surface-2 rounded-card border p-10 md:p-14">
           <Eyebrow>{eyebrow}</Eyebrow>
-          <h2 className="text-h1 mt-3">{heading}</h2>
+          {/* `*accent*` marking, as every other heading on these pages. */}
+          <h2 className="text-h1 mt-3">
+            {heading.split("*").map((part, i) =>
+              i % 2 === 1 ? (
+                <span key={i} className="text-accent-400">
+                  {part}
+                </span>
+              ) : (
+                part
+              ),
+            )}
+          </h2>
           <p className="text-ink-3 mt-4 max-w-[60ch] leading-relaxed">{body}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button href={primary.href}>{primary.label}</Button>
@@ -188,7 +199,8 @@ export function CategoryHero({
             href={link.href}
             className="text-accent-400 mt-6 inline-flex items-center gap-1.5 text-sm font-medium"
           >
-            {link.label} <span aria-hidden>↗</span>
+            {/* An in-page link points down the page, not out of it. */}
+            {link.label} <span aria-hidden>{link.href.startsWith("#") ? "↓" : "↗"}</span>
           </a>
         )}
 

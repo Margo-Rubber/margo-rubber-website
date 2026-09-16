@@ -1,0 +1,199 @@
+# 12_Product_Bellows.html — Bellows & Boots Page Content Sheet
+
+**<title>** Rubber Bellows Manufacturer India | Bellows & Boots | Margo
+**description** Convoluted rubber bellows and protective boots moulded to your stroke and convolution spec in Nashik, India. AEM, FKM, NBR, EPDM, neoprene, silicone. Made to drawing. Quote in 48 hours.
+
+## 01 Hero [Rewrite]
+> live: LIVE H1 → Rubber Bellows & Boots · no geo · the subhead states the MOQ, which no other category page does · the first stat is an MOQ and the fourth contradicts the company lead time
+- **Eyebrow**: `ISO 9001:2015 CERTIFIED · NASHIK, INDIA`
+  _[no change — carries certification and geo, which most eyebrows on this site do not]_
+- **H1 — 2 lines**: “Rubber Bellows and Boots,” / “Manufactured in India”  (accent: Manufactured in India)
+  _6 words · live is 3 · carries the verified head term. The ampersand is spelled out because the H1 is also the schema name and the breadcrumb label_
+- **Subhead**:
+  > Margo Rubber Products moulds convoluted bellows and protective boots to your stroke, convolution count and service temperature at its ISO 9001:2015 certified plant in Nashik, India — in natural rubber, neoprene, NBR, EPDM, AEM, FKM and silicone. Made to your drawing, direct from the factory, with no trading margin.
+  _48 words · live is 24 · the MOQ comes out of the subhead, which is the second sentence a buyer reads on this page and the only category page that puts a piece count there. “Factory-direct, no trading margin” is kept — it is a real differentiator against the distributors this page competes with, and it belongs in prose rather than in a stat tile_
+- **Hero CTA**: `Send a Bellows Drawing ↗ /contact`
+  _The slot renders nothing on this page. The same hero component populates it on /products/o-rings, so this fills an existing slot rather than adding a component. Bellows enquiries arrive as drawings more often than any other category, because the geometry cannot be described in a sentence_
+- **Stats ×4** (Value | Label | Replaces):
+  | Ø10–Ø150 mm | Diameter range |  |
+  | Factory-direct | No trading margin |  |
+  | ISO 9001:2015 | Quality system | [no change] |
+  | 8 compounds | Mixed in-house |  |
+  _Four stats, four stats — no count change. Stat 1 replaces the minimum order with the capability figure the buyer is actually looking for; the Ø10–Ø150 mm envelope is the span of the live table’s own four rows, aggregated rather than newly claimed. Stat 2 changes “no middleman” to “no trading margin” — same claim, and the second version is the one a procurement manager can act on. Stat 4 replaces 14–35 days, which contradicts the 3–4 weeks published on every other page; the corrected lead time lives in section 04 rather than being stated twice on one page_
+  <details><summary>notes (6)</summary>
+  - Heading. The page’s only <h1>. Two <span> lines inside one <h1>, not two headings.
+  - Head term placement. rubber bellows manufacturer India resolves across the H1 and the first clause of the subhead. Both title and H1 now carry it; the live page carries it in neither.
+  - Two head terms, one page. bellows and boots are different searches from different buyers — a boot is a protective cover, a bellows is a flexing element — and this page is the only URL Margo has for either. Both must appear in the H1, the title and the first paragraph. Do not let “boots” drift out; on its own it also collides with footwear, which is why it never stands alone in the copy above.
+  - Breadcrumb goes above the eyebrow. Home › Products › Bellows & Boots, marked up as BreadcrumbList. No category page has one.
+  - Stat markup. <dl> pairs, value in <dd>, label in <dt>. Not four <div>s of loose text — the pairing is what makes them extractable.
+  - Image alt. The hero has no image. If one is added: “Convoluted rubber bellows moulded at Margo Rubber Products, Nashik”. A bellows is a shape a buyer recognises instantly, so this is the category where a hero photograph earns the most.
+  </details>
+
+## 02 Specification reference [4 rows become 8 · all headings change]
+> live: LIVE H2 → Sizes, Flex-Cycle & Materials · four rows · four unsupportable cycle-life ratings · natural rubber and neoprene absent · the filter chips are AS568, ISO, JIS and DIN, none of which apply to a bellows
+- **Add four rows, relabel four columns**:
+  > The live table renders four rows. This section specifies eight, so the developer must add four and the component should take an arbitrary list. All four column headings change, and the size range moves out of the table into the intro, because a diameter limit is a tooling question rather than a property of the compound — publishing a different diameter range per material implies a constraint that does not exist. The column count stays at four and the chip count stays at five, so nothing else about the component changes.
+- **Eyebrow**: `02 · SPECIFICATION REFERENCE`
+  _[no change]_
+- **H2**: “Bellows Compounds and Flex-Fatigue Behaviour”
+  _5 words · live is 4 · “Sizes, Flex-Cycle & Materials” describes a table that no longer promises a cycle count. The replacement names what the table now actually carries_
+- **Intro**:
+  > A bellows is specified by convolution count, free length, compressed length and stroke as well as diameter — send those with the drawing and we will quote it. We mould from Ø10 mm to Ø150 mm across all eight compounds; the diameter limit is set by tooling, not by the material.
+  _51 words · live is 30 · the second sentence is new and carries the size range the table used to fragment across four rows. The Ø10–Ø150 mm figure aggregates the four diameter bands the live table already publishes, so it states nothing the site has not already said_
+- **Filter chips ×5** (Chip | Replaces):
+  | All compounds | All Standards |
+  | Fatigue-critical |  |
+  | Oil contact |  |
+  | Water & steam |  |
+  | High temperature |  |
+  _Five chips, five chips — no count change. All four standard names come off. AS568 is an O-ring size standard, JIS B2401 is an O-ring standard, and neither ISO nor DIN publishes a rubber bellows standard that this table is filtered by — the chips are inherited from the category-page template and filter nothing here. The replacements filter by the thing a bellows buyer is actually choosing between_
+- **Search field**: `Filter by compound or application`
+  _Replaces Filter by ID or dimension — this table has no ID column and, after the restructure, no dimension column either_
+- **Table — 8 rows** (Compound | Flex-fatigue resistance | Temperature range | Typical bellows service):
+  | Natural rubber (NR) | Very high | −20 °C to +90 °C | Dust boots and covers where fatigue life governs and there is no oil contact |
+  | Neoprene (CR) | High | −40 °C to +120 °C | Protective boots exposed to weather, ozone and moderate oil together |
+  | NBR (Nitrile) | High | −30 °C to +120 °C | Boots and bellows in contact with petroleum oils and hydraulic fluid |
+  | EPDM | High | −40 °C to +140 °C | Water, steam, coolant and weather-exposed bellows. Not for petroleum oils |
+  | AEM (Vamac®) | Moderate to high | −40 °C to +175 °C | Under-bonnet bellows where oil, heat and ozone act together |
+  | FKM (Viton®) | Moderate | −20 °C to +250 °C
+continuous to +200 °C | Chemical and fuel-contact bellows at sustained high temperature |
+  | SBR | Moderate | −30 °C to +100 °C | Low-cost covers in water and mild service. Not for oil or fuel |
+  | Silicone (VMQ) | Low | −60 °C to +220 °C | High-temperature bellows where movement is limited. Poor tear and fatigue resistance |
+  _Eight rows, up from four. Natural rubber leads because it has the best flex-fatigue resistance of any of these families and is absent from the live table entirely; neoprene is second because it is the classic protective-boot compound and is also absent. Every temperature range matches the homepage compound table, which governs across all eleven category pages. Both were settled on the homepage sheet, 2026-09-03, and the resolution is carried here — FKM publishes +250 °C with continuous to +200 °C beneath it, AEM +175 °C with continuous to +160 °C. The peak stays the headline figure and the continuous figure is stated. The remaining question is a grade question for Margo, not a table question_
+- **Footnote**:
+  > Showing 8 of 8 entries. Flex-fatigue resistance is a relative ranking between compound families, not a cycle count. Cycle life for a given part depends on stroke, convolution geometry, wall thickness, installed pre-load and temperature as much as on the compound, and is established by qualification testing on that part — to ISO 132, ASTM D430 or ASTM D813 — not read off a table. Tell us the stroke and the target cycle life and we will qualify against it. Ranges are typical values for the compound family and are not a specification for a particular part; see our technical disclaimer.
+  _84 words · live is 26 · the longest footnote in the set, and the one doing the most work. It is what converts an unsupportable number into a defensible position, and the offer in bold is the part that opens an enquiry. This is the paragraph that removes the rubric cap on this section_
+  <details><summary>notes (6)</summary>
+  - Real <table> markup with <caption>Bellows compounds, flex-fatigue behaviour and service temperatures</caption> and scope="col" on every header. All eight rows in the DOM at first paint; filter with CSS, never unmount.
+  - This table is the page’s AEO surface, and after the rewrite it answers a question almost nothing else on the internet answers plainly: “which rubber compound lasts longest in a flexing boot”. Distributors publish size charts; nobody publishes fatigue ranking with the test method named.
+  - Naming ISO 132, ASTM D430 and ASTM D813 is the credibility move. It shows the fatigue question is understood properly, which is a stronger signal to an engineer than a number would have been — and unlike the number, it is true.
+  - Do not put the fatigue ranking in schema. Visible copy only. A machine-readable fatigue property gets quoted without the footnote that qualifies it, which recreates the problem the footnote exists to solve.
+  - Overflow. Four columns will not fit 375 px — overflow-x:auto on the wrapper, never on the body.
+  - Link the disclaimer beneath the table, anchor text technical disclaimer → /legal/disclaimer. That page carries eight placeholder sections while this table publishes engineering guidance; the full copy is written in sheet 08.
+  </details>
+
+## 03 Material selection [4 panels become 8]
+> live: LIVE H2 → Which Material Do I Need? · a buyer question with no subject · four compounds shown, all four ranges wrong · the two compounds a bellows buyer most often needs are both absent
+- **Add four panels**:
+  > The live accordion renders four panels. This section specifies eight. The developer must extend the component to take an arbitrary list — four new panels: natural rubber, neoprene, AEM and SBR. This is the same shared component as the O-rings, oil seals and gaskets pages, so extending it once lands on all eleven categories. If the Figma shows four, the Figma is short by four and needs the extra panels drawn.
+- **Eyebrow**: `03 · MATERIAL SELECTION`
+  _[no change]_
+- **H2**: “Which Bellows Material Do I Need?”
+  _6 words · live is 5 · one word added. The live heading is a good question with no subject — adding “bellows” is what makes it match the query a buyer types and lets the passage be retrieved on its own_
+- **Intro**:
+  > On a bellows the compound is chosen for two things at once: what it touches, and how many times it has to flex. Name the medium, the operating temperature and the stroke, and we will tell you which to specify.
+  _42 words · live is 27 · the live intro says “pressure class”, which is a flange-gasket concept inherited from the template. On a bellows the second axis is stroke and cycle count, and naming it correctly is what tells an engineer the page was written by someone who has made one_
+- **Panels ×8** (Compound | Temp range | Hardness | Body | Live):
+  | Natural rubber (NR) | −20° to +90°C | 30–80 Shore A | Polyisoprene. The best flex-fatigue resistance of the eight and the highest resilience, which is why it is specified for dust boots and covers that flex for the life of the vehicle. Not for oil, fuel or sustained heat. | NEW PANEL |
+  | Neoprene (CR) | −40° to +120°C | 40–90 Shore A | Polychloroprene. The classic protective boot compound — it holds weather, ozone and moderate oil exposure at the same time, which is the condition most exposed boots actually live in. Also the family we reach for when flame retardancy is specified. | NEW PANEL |
+  | NBR (Nitrile) | −30° to +120°C | 40–90 Shore A | Nitrile butadiene rubber, the general-purpose industry standard. Outstanding resistance to petroleum oils and hydraulic fluids at moderate temperature, and the usual answer for a bellows on the oil side of an assembly. |  |
+  | EPDM | −40° to +140°C | 40–90 Shore A | Ethylene propylene diene rubber, the preferred material for water, steam, coolant and brake fluid service, with excellent weather and ozone resistance. Holds a convolution outdoors for years. Not for petroleum oils. |  |
+  | AEM (Vamac®) | −40° to +175°C | 50–80 Shore A | Ethylene acrylic elastomer. Our signature compound, supplied to Mahindra & Mahindra for engine and transmission applications. Specified for under-bonnet bellows where oil, heat and ozone act together — the combination that ends most boots. | NEW PANEL |
+  | FKM (Viton®) | −20° to +250°C
+continuous to 200°C | 60–90 Shore A | Fluorocarbon rubber, the first choice for aggressive chemical environments. Resists petroleum oils, fuels and many solvents at sustained high temperature. Specify it for chemistry and heat rather than for flex life. |  |
+  | SBR | −30° to +100°C | 40–90 Shore A | Styrene butadiene rubber. Abrasion resistance at low cost, for covers and boots in water and mild service. Not for oil or fuel contact. | NEW PANEL |
+  | Silicone (VMQ) | −60° to +220°C | 30–80 Shore A | Vinyl methyl silicone, the widest service range of the eight. Biocompatible and food-contact grades on request. Poor tear and abrasion resistance, so specify it for temperature rather than for a bellows that flexes hard. |  |
+  _Eight panels. Panel order leads with natural rubber and neoprene — the two compounds a flexing part is most often made from, and the two the live page omits entirely. The live order leads with FKM, which on a bellows is the specialist answer, not the default. Every range matches the homepage compound table. Body copy for the four live panels is kept close to the original where it is accurate; each gains a bellows-specific closing clause, because the same paragraph currently renders on eleven category pages and says nothing about any of them_
+- **Panel link**: `Read more`
+  _[no change to the label]. It expands the panel in place; it does not navigate. Keep it a <button>, not an <a>_
+  <details><summary>notes (6)</summary>
+  - Crawlability. All eight panels render in the DOM at first paint and collapse with CSS. An accordion that mounts its body on click publishes eight paragraphs to a browser and zero to a crawler — the most common way a well-written technical page scores nothing.
+  - Heading levels. Section heading is <h2>; each compound name is <h3> inside the panel. Eight <h3>s under one question <h2> is a clean, extractable outline.
+  - The H2 is a literal buyer question, which is the AEO pattern. The passage under it answers in the first 40 to 60 words, before the accordion starts — which is what the rewritten intro does.
+  - The compound-specific closing clauses are what make this page rankable. Identical body copy on eleven category pages is eleven pages of duplicate content competing with each other; the closing clause is the only thing distinguishing this page’s NBR panel from the O-rings page’s NBR panel.
+  - FAQ schema. This section feeds two of the four FAQPage questions: “Which rubber compound is best for a flexing bellows?” and “What temperature can an EPDM bellows withstand?”. Answer text must match the visible copy word for word.
+  - Shared component, one data source. The compound data should come from one file, not eleven hand-maintained copies — that is how four temperature ranges came to disagree with the homepage on four separate category pages.
+  </details>
+
+## 04 Commercial terms [Restructure]
+> live: LIVE H2 → Minimum Order & Lead Time · live eyebrow reads 05 because the template counter skips the missing parts section · an MOQ in the heading and an MOQ row · lead times disagree with every other page
+- **Eyebrow**: `04 · COMMERCIAL TERMS`
+  _Renumbered from 05. The live counter is hard-coded to the category-page template, which has a parts section at 04; this page does not, so the visible numbering skips a step_
+- **H2**: “Lead Times and How We Quote”
+  _6 words · live is 4 · “Minimum Order & Lead Time” puts a banned term in a section heading, where it is also an anchor and a table-of-contents entry_
+- **Intro**:
+  > Margo produces in bulk against OEM schedules. Send the drawing with the stroke, convolution count and free length, plus the compound and the volume, and we will quote it. Minimum run is 10,000 pieces per part number, per compound, or quoted against the part where size or complexity sets the economics. Prototype and first-article lots sit outside the minimum and are quoted separately.
+  _50 words · live is 34 · replaces “Margo is geared for volume procurement. If your project requires below-MOQ qualification samples…”, which states a minimum twice by implication and tells a prototype buyer they are below the floor before they have asked. The founder’s own phrasing from the commercial terms, with the bellows inputs named_
+- **Rows ×5** (Row | Value | Sub-label | Replaces):
+  | Quotation | 48 hrs | With feasibility report |  |
+  | Prototype | 48–72 hrs | From an approved drawing |  |
+  | Existing tooling | 3–4 weeks | Ex-works Nashik · 2 weeks express |  |
+  | New tooling | 3–4 weeks + tooling | Tooling lead time quoted per part |  |
+  | Packaging | Poly bag + card label | Bulk or interleaved on request | [no change to the value] |
+  _Five rows, five rows — no count change. Lead times are corrected to the company standard. Live says 14–21 days and 21–35 days; every other page says 3–4 weeks standard with 2 weeks express. Three to four weeks is 21–28 days, so the live first figure promises faster than the company delivers and the second promises slower. The row labels also change from “catalogue / cut-to-print” to “existing tooling / new tooling”, which is the real driver on this category — every bellows is moulded, there is no die-cut or catalogue route, so the live labels describe a choice that does not exist here. The packaging sub-label drops “bulk reel”: a bellows does not reel_
+  <details><summary>notes (6)</summary>
+  - The section ID changes from #commercial to #lead-times, and the anchor label with it. An anchor named after a banned term is a banned term in the URL bar.
+  - This is the highest-converting block on a category page. A buyer who has read the fatigue table and picked a compound arrives here to find out whether the timeline works. Answering that with a minimum order instead of a lead time loses them at the last step.
+  - Goes in the FAQPage node: “What is the lead time for custom rubber bellows?” and “How is a rubber bellows order quoted?” — both verified buyer questions from the fan-out research.
+  - Consistency gate. 48 hrs quotation, 48–72 hrs prototype, 3–4 weeks standard, 2 weeks express. These four values appear on eleven category pages, the homepage, /contact and /export. They must render from one source, not be typed per page — that is how the site arrived at six different published response times.
+  - Row markup. <dl> pairs or a real <table>. The value is the answer and the sub-label qualifies it, so the two must be programmatically associated, not two adjacent <div>s.
+  - Shared component. This block renders identically on all eleven category pages, so removing the minimum-order row lands eleven times from one change — eleven of the forty-four minimum-order statements published across the site.
+  </details>
+
+## 05 Enquiries [Tune]
+> live: LIVE H2 → Request Bellows Specs · live eyebrow reads 06 · two buttons · the body promises a response “within two working days”, the sixth different response time published on this site
+- **Eyebrow**: `05 · ENQUIRIES`
+  _Renumbered from 06, following the section-04 renumbering above_
+- **H2**: “Request Bellows Specifications”
+  _3 words · live is 3 · “Specs” spelled out. It is a heading, an anchor and a schema string, and the abbreviation costs a matched term for no space saved_
+- **Body**:
+  > Send your drawing with the stroke, convolution count and free length, or a sample of the bellows you are replacing, with the compound and the volume. Our engineering team responds within 48 hours with dimensional confirmation, the compound datasheet and a quotation.
+  _42 words · live is 34 · “within two working days” becomes 48 hours. The site publishes six different response times; two working days is the slowest-reading of them and contradicts the 48 hours promised on the homepage, the contact page and the commercial terms directly above this block. “A sample of the bellows you are replacing” is added because replacement boots arrive as worn parts far more often than as drawings, and a worn boot is the one thing that tells us the stroke_
+- **Button 1**: `Send Enquiry` → /contact
+  _[no change]_
+- **Button 2**: `Call Technical Sales` → tel:+919665579276
+  _[no change to the label]. The href must be a real tel: link and the digits must match the footer and the Organization node exactly_
+- **Confirmation copy**: `Enquiry received. A named engineer replies within 48 hours to {email}.`
+  _New string — it fills the existing post-submit state, which currently shows nothing. Neither form on the site has confirmation copy, so a buyer who submits a drawing has no evidence it arrived_
+  <details><summary>notes (4)</summary>
+  - Schema. Emit nothing here. ContactPoint lives on the homepage Organization node and every page @id-references it. A second contact node per category page creates eleven competing entities.
+  - Analytics. Named conversion event on submit and on the tel: click. Two RFQ forms on the site and zero events wired means no page here can currently be shown to convert.
+  - Heading level. <h2>. The two buttons are <a> elements, not <div>s with click handlers — a handler on a div is invisible to a crawler and unreachable by keyboard.
+  - The 48-hour promise is the site’s single most repeated commercial claim. It renders on the homepage, /contact, /export and all eleven category pages twice each. Render it from one constant.
+  </details>
+
+## 06 Footer [Rewrite]
+> live: LIVE → 50+ countries, © 2024, and the wrong legal entity · Products column shows 9 of 11 categories · /export appears nowhere
+- **Wordmark**: `MARGO
+RUBBER PRODUCTS`
+- **Description**:
+  > ISO 9001:2015 certified manufacturer of precision moulded and extruded rubber components in Nashik, India. Sealing and anti-vibration parts to customer drawing, supplied to OEMs and distributors in 95 countries.
+  _29 words · live is 26 · opens with the entity definition, since the footer repeats on all 40 pages_
+- **NAP block**: `+91 96655 79276
+info@margorubber.in
+SRNO. 4494/10, behind Furniture Stop,
+opposite Samarth Dies, Vilholi,
+Nashik, Maharashtra 422010, India`
+  _Client-confirmed 2026-09-01 — this exact string, on all 40 pages, in the PostalAddress node and on the Google Business Profile. The landmarks are part of the address and stay in; B-12, MIDC Ambad is wrong and comes off the site. The company name is not repeated inside the address line — the wordmark above it already carries it_
+- **Column 1 — Products**: `SEALING
+O-Rings · Oil Seals · Gaskets · Diaphragms · Reciprocating Seals · Leak Test Rubber
+MOUNTING & PROTECTION
+Anti-Vibration Mounts · Bushes & Bushings · Bonded Components · Bellows · Grommets · Pads, Stoppers & Caps
+SHEET & PROFILE
+Extrusion Profiles · Sponge & Foam Rubber · Rubber Lining & Skirting`
+  _15 entries in three groups, up from 11. Adds Diaphragms, Bonded Components, Rubber Lining & Skirting and Reciprocating Seals (sheets 36–39), plus /products/extrusion and /products/sponge-foam-rubber, which had no sitewide inbound link at all. The column was designed for eleven and fifteen flat is not readable, so it is grouped — Sealing (6), Mounting & protection (6), Sheet & profile (3). The third group is also the commercial split: those three are quoted by length or area rather than by piece count, per sheets 18, 38 and 40. “Seals” is labelled “Reciprocating Seals” so it is not read as a parent of O-Rings and Oil Seals — sheet 39 §02 explains why. Group labels are <p> or <div>, never headings — three more phantom sections is not an improvement on one_
+- **Column 2 — Industries**: `Automotive · Mining · Oil & Gas · Pumps & Valves · HVAC ·
+Electrical & Electronics · Agriculture · Medical Devices ·
+Water & Fluid Management · Construction · Transport — Rail & Marine`
+  _11 entries, up from 9 — adds Construction (sheet 41) and Transport — Rail & Marine (sheet 42), the first two of the six “additional sectors” on sheet 05 to earn a URL. Automotive still leads, matching real volume. 🛑 The live footer’s four industry links all resolve to the same /industries/ The full twenty-six-row footer link map is in sheet 01_Homepage.html, footer section — fifteen product links and eleven industry links, with the three label/slug mismatches called out. — adding two entries to a column whose links are broken makes eleven broken links, so fix the routing in this same commit_
+- **Column 3 — Company**: `About Us · Certifications · Export Markets · Case Studies ·
+Resources · Contact Us`
+  _6 entries · Export Markets is new and fixes the orphaned /export page · Why Choose Us comes out — that page is recommended for deletion, its job is done better by /certifications and /export_
+- **CTA lines**: `Ready to source precision rubber components?
+Quotation from our engineering team within 48 hours.
+[ Request Quote → ]`
+  _“within 24 hours” becomes 48 hours. The footer CTA is the fastest of the six response times published on this site, and it contradicts the page body on /contact, /industries and /export. One constant, rendered everywhere_
+- **Legal line**: `© 2026 Margo Rubber Products. All rights reserved.
+Privacy Policy · Terms & Conditions · Disclaimer
+ISO 9001:2015 · Certificate 09111526A · Integral Certification Ltd`
+  _Fixes © 2024 and Margo Rubber Industries Pvt. Ltd. — GSTIN 27AAKFM8595Q1Z1 embeds PAN AAKFM8595Q, whose 4th character F denotes a firm, not a company. Pvt. Ltd. is positively excluded. The ISO line gains the certificate number and the issuer, which makes it checkable on all 40 pages instead of decorative_
+  <details><summary>notes (8)</summary>
+  - What it fixes on this page specifically: the footer is the fourth place a minimum order is stated on this page. Removing it here removes it on all forty.
+  - Bellows is the category with the weakest sibling linking. This page has no parts section and no outbound links at all in its body, so the footer’s eleven product links are the only route from here to anywhere else on the site.
+  - Build once, ships forty times. This is one component. The copy above is written out in full on every sheet in this set so nobody has to open two files to build one block, but it is authored once in the codebase.
+  - Heading levels. The column labels (PRODUCTS / INDUSTRIES / COMPANY) are <h2> in the live build. As visible <h2>s they inject three phantom sections into every document outline on the site. Change to <p class="col-label">.
+  - Link equity. 26 sitewide links from here. Adding /export, /products/extrusion and /products/sponge-foam-rubber gives three orphaned or under-linked URLs a sitewide inbound link each — the cheapest internal-linking win available on this site.
+  - NAP markup. Wrap in <address>. Phone as <a href="tel:+919665579276">, email as <a href="mailto:info@margorubber.in">. The visible string and the href must not diverge.
+  - Schema. The footer emits nothing. The Organization node on the homepage is the single entity definition and every other page @id-references it. Repeating an Organization block per page creates 40 competing entities.
+  - Copyright year. Render from new Date().getFullYear(), not a literal. It has read 2024 for eight months.
+  </details>

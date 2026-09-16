@@ -151,7 +151,12 @@ export default async function AboutPage() {
         />
       )}
 
-      <Clients label={fm.clients.label} items={fm.clients.items} />
+      <Clients
+        label={fm.clients.label}
+        items={fm.clients.items}
+        sectors={fm.clients.sectors}
+        trademarkLine={settings.clients.trademarkLine}
+      />
 
       <Closing
         eyebrow={fm.closing.eyebrow}

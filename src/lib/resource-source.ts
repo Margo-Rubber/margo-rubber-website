@@ -89,3 +89,14 @@ export async function resourceSlugs(): Promise<string[]> {
   const fromCms = await client.fetch<string[]>(resourceSlugsQuery).catch(() => []);
   return [...new Set([...getAllSlugs("resources"), ...fromCms])];
 }
+
+/**
+ * Every guide's frontmatter, from the CMS with the file as fallback — the
+ * hub's cards. The hub used to read the .mdx files directly, so a card
+ * edited in the Studio never reached it.
+ */
+export async function listResources(): Promise<Resource[]> {
+  const slugs = await resourceSlugs();
+  const pages = await Promise.all(slugs.map((slug) => getResourcePage(slug)));
+  return pages.filter((p): p is ResourcePage => !!p).map((p) => p.frontmatter);
+}

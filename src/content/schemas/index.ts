@@ -15,9 +15,11 @@ export const statusSchema = z
 export const imageRefSchema = z.string().min(1);
 
 /** Meta lengths are enforced, not suggested — the briefs specify exact budgets. */
+// Ceilings are the content sheets' own longest values (65 / 184), not the
+// SERP display widths — Google truncates, it does not reject.
 const seoSchema = z.object({
-  title: z.string().min(10).max(60),
-  description: z.string().min(50).max(160),
+  title: z.string().min(10).max(70),
+  description: z.string().min(50).max(200),
   keywords: z
     .object({
       primary: z.string().min(3),
@@ -119,9 +121,18 @@ export const cardGridSchema = z.object({
         icon: z.string().optional(),
         /** Key into the cross-section drawings, for the profile library. */
         shape: z.string().optional(),
+        /** Where the card's link goes — a sector's industry page (sheet 18 §07). */
+        href: z.string().optional(),
       }),
     )
     .min(1),
+  /**
+   * The link on every card: "Quote this section" (→ /contact?profile=CODE)
+   * on the profile library; "Rubber components for {sector}" on the
+   * sectors grid, where `{sector}` is the card's name. Nothing links
+   * while empty.
+   */
+  cardCta: z.string().optional(),
 });
 
 /* ------------------------------------------------------------------ */
@@ -148,6 +159,9 @@ export const specSectionSchema = z
     caption: z.string().optional(),
     /** Filter chips + search. Off for short reference tables. */
     controls: z.boolean().default(true),
+    /** The standards a chip can select, in order; else those found in the table. */
+    chips: z.array(z.string()).optional(),
+    searchPlaceholder: z.string().optional(),
     columns: z.array(z.string()).min(2),
     rows: z.array(z.array(z.string())).min(1),
     footnote: z.string().optional(),
@@ -215,7 +229,14 @@ export const qualitySectionSchema = z
       .array(z.object({ label: z.string(), icon: z.string().optional() }))
       .default([]),
     standards: z
-      .array(z.object({ name: z.string().min(3), code: z.string().min(2) }))
+      .array(
+        z.object({
+          name: z.string().min(3),
+          code: z.string().min(2),
+          /** "Per batch, before despatch" / "Per compound, at qualification" (sheet 18 §06). */
+          group: z.string().optional(),
+        }),
+      )
       .min(1),
     docPackage: z
       .object({ title: z.string().min(4), body: z.string().min(20) })
@@ -276,6 +297,9 @@ export const specifySectionSchema = z
         }),
       )
       .min(2),
+    /** "Have all four? Send them with your section drawing." + a button (sheet 18 §05). */
+    closing: z.string().optional(),
+    closingLink: z.object({ label: z.string(), href: z.string() }).optional(),
   });
 
 
@@ -343,7 +367,7 @@ export const densitySectionSchema = z
       highLabel: z.string(),
       highNote: z.string(),
     }),
-    quote: z.object({ text: z.string().min(20), author: z.string().min(2) }),
+    quote: z.object({ text: z.string().min(20), author: z.string().min(2), org: z.string().optional() }),
     bands: z
       .array(z.object({ range: z.string(), note: z.string() }))
       .min(2),
@@ -505,6 +529,24 @@ export const productCategorySchema = baseSchema.extend({
   schemaTypes: z
     .array(z.enum(["Product", "BreadcrumbList", "FAQPage", "HowTo", "Organization", "WebSite"]))
     .default(["Product", "BreadcrumbList", "FAQPage"]),
+  /**
+   * The Product node's own name and description, where the sheet writes them
+   * apart from the H1 and meta description — "Precision O-Rings" against an
+   * H1 of "Precision O-Rings, Manufactured in India" (sheet 09, page-level).
+   */
+  schemaProduct: z
+    .object({
+      name: z.string().min(3).optional(),
+      description: z.string().min(20).optional(),
+      /** Full `material` list when it is not exactly the eight compounds. */
+      material: z.array(z.string()).optional(),
+      /** Named catalogue components → an ItemList node (sheet 16, page-level). */
+      components: z.array(z.string()).optional(),
+      /** The list's name and the fragment it points at — "Catalogue components" at #specifications by default. */
+      componentsName: z.string().optional(),
+      componentsAnchor: z.string().optional(),
+    })
+    .optional(),
 });
 
 /* ── INDUSTRY SECTIONS ─────────────────────────────────────────────────────
@@ -653,6 +695,8 @@ export const resourceSchema = baseSchema.extend({
     .default("book"),
   /** Promotes this guide into the hub's "Start here" slot. Exactly one should. */
   featured: z.boolean().default(false),
+  /** The shorter blurb the "Start here" card carries (sheet 31 §02); the card list uses `intro`. */
+  featuredBlurb: z.string().optional(),
   readingMinutes: z.number().int().positive(),
   intro: z.string().min(40),
   faqs: z.array(faqSchema).default([]),
@@ -760,6 +804,10 @@ export const productsHubSchema = baseSchema.extend({
 
   certifications: z.object({
     ...sectionMeta.shape,
+    /**
+     * Unused since the block reads Site settings (one certification record
+     * for the whole site); kept optional so an old document still validates.
+     */
     items: z.array(
       z.object({
         name: z.string(),
@@ -771,7 +819,9 @@ export const productsHubSchema = baseSchema.extend({
         color: z.string().regex(/^#[0-9A-Fa-f]{6}$/),
         icon: z.enum(["shield", "award", "doc", "star"]),
       }),
-    ),
+    ).optional(),
+    /** "Full certification detail, scope and test standards" → /certifications. */
+    cta: z.object({ label: z.string(), href: z.string() }).optional(),
   }).optional(),
 
   validation: z.object({
@@ -955,6 +1005,9 @@ export const contactPageSchema = baseSchema.extend({
     submitLabel: z.string(),
     /** Stated directly under submit. No competitor states any response time. */
     responsePromise: z.string(),
+    /** The drawing/spec attachment — sheet 04 §02 "Add: file field". Inert until the upload backend exists. */
+    attachLabel: z.string().optional(),
+    attachHint: z.string().optional(),
   }),
 
   /* ── The five blocks after the form — content sheet 04 §05. Each renders
@@ -990,6 +1043,7 @@ export const certificationsPageSchema = baseSchema.extend({
   intro: z.string().min(40),
   actions: z.array(z.object({ label: z.string(), href: z.string(), variant: z.enum(["primary", "secondary"]).default("primary") })).default([]),
 
+  /** Sheet 07 §02: "DELETE THIS ENTIRE SECTION". Optional; the page skips it when absent. */
   scope: z.object({
     ...sectionMeta.shape,
     meansHeading: z.string(),
@@ -1000,7 +1054,7 @@ export const certificationsPageSchema = baseSchema.extend({
     notLeadBody: z.string(),
     notItems: z.array(z.string()),
     footnote: z.string(),
-  }),
+  }).optional(),
 
   certificate: z.object({
     ...sectionMeta.shape,
@@ -1263,7 +1317,12 @@ export const aboutPageSchema = baseSchema.extend({
       .min(1),
   }),
 
-  clients: z.object({ label: z.string(), items: z.array(z.string()).min(1) }),
+  clients: z.object({
+    label: z.string(),
+    items: z.array(z.string()).min(1),
+    /** Sector per name, same order as items — sheet 03 §14. */
+    sectors: z.array(z.string()).default([]),
+  }),
 
   closing: z.object({
     eyebrow: z.string(),
@@ -1938,7 +1997,7 @@ export const caseStudiesPageSchema = baseSchema.extend({
           label: z.string(),
           href: z.string(),
           variant: z.enum(["primary", "secondary"]).default("primary"),
-          icon: z.enum(["mail", "out"]).optional(),
+          icon: z.enum(["mail", "out", "phone"]).optional(),
         }),
       )
       .min(1),

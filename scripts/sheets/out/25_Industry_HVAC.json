@@ -1,0 +1,859 @@
+{
+  "file": "25_Industry_HVAC.html",
+  "title": "HVAC Industry Page Content Sheet",
+  "kicker": "Margo Rubber Products · /industries/hvac · Vision Build · Sheet 25 of 28 — sixth of nine industry pages",
+  "head": {
+    "title": "HVAC Rubber Components Manufacturer India | Margo",
+    "description": "Anti-vibration mounts, duct gaskets, grommets and foam profiles for HVAC and refrigeration equipment, moulded to drawing in Nashik, India. EPDM and neoprene. ISO 9001:2015."
+  },
+  "sections": [
+    {
+      "num": "01",
+      "title": "Hero",
+      "chip": "Keep · add geo and ISO to the subhead",
+      "live": "LIVE H1 → Rubber Components for HVAC Equipment · the subhead names three components and four applications · it is the one industry hero that omits the ISO certification",
+      "fields": [
+        {
+          "label": "Eyebrow",
+          "kind": "lit",
+          "value": "OEM COMPONENT SUPPLIER · DRAWING-MATCHED PRODUCTION",
+          "note": "[no change]"
+        },
+        {
+          "label": "H1 — 2 lines",
+          "kind": "heading",
+          "lines": [
+            "Rubber Components for HVAC Equipment,",
+            "Manufactured in India"
+          ],
+          "accent": [
+            "Manufactured in India"
+          ],
+          "value": "Rubber Components for HVAC Equipment, Manufactured in India",
+          "note": "8 words · live is 5 · only the geo clause is added"
+        },
+        {
+          "label": "Subhead",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Gaskets, grommets and vibration isolators for heating, cooling, ventilation and refrigeration equipment, moulded to your drawing at our ISO 9001:2015 facility in Nashik, India."
+          ],
+          "leads": [
+            "moulded to your drawing at our ISO 9001:2015 facility in Nashik, India"
+          ],
+          "marked": [
+            "Gaskets, grommets and vibration isolators for heating, cooling, ventilation and refrigeration equipment, **moulded to your drawing at our ISO 9001:2015 facility in Nashik, India**."
+          ],
+          "note": "24 words · live is 23 · the ISO reference is the addition. The live subhead says “moulded to your drawing in Nashik, India” and is the only industry hero on the site that leaves the certification out. Every other one carries it, and on an OEM page it is the first filter a sourcing team applies"
+        },
+        {
+          "label": "CTA 1",
+          "kind": "lit",
+          "value": "Request HVAC Component Specs",
+          "href": "/contact",
+          "note": "[no change]"
+        },
+        {
+          "label": "CTA 2",
+          "kind": "lit",
+          "value": "View Certifications",
+          "href": "/certifications",
+          "note": "[no change to the label]"
+        }
+      ],
+      "notes": [
+        "Heading. The page’s only <h1>. Two <span> lines inside one <h1>.",
+        "“Refrigeration” is the word worth protecting. HVAC and refrigeration are adjacent but separately searched, and the live subhead is the only place on the site that carries both. It should stay in the description too, where it already is.",
+        "Breadcrumb goes above the eyebrow. Home › Industries › HVAC.",
+        "Do not expand “HVAC” in the H1. It is the abbreviation the entire industry uses and searches; the long form belongs in the subhead, where it already is.",
+        "Image alt. No hero image. If one is added: “Anti-vibration mounts and duct gaskets for HVAC equipment, made at Margo Rubber Products, Nashik”."
+      ]
+    },
+    {
+      "num": "02",
+      "title": "Components we supply",
+      "chip": "3 cards become 8 · fatigue bullet removed",
+      "live": "LIVE H2 → Three components. Engineered to spec. · AV mounts, grommets, gaskets · the AV mounts card claims high-cycle fatigue testing — the sixth page to do so",
+      "fields": [
+        {
+          "label": "Three becomes eight, count out of the heading",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Same change as the other industry pages. This specifies eight, with the count rendered from the list or dropped. Sponge and foam is the important addition here — the page’s own FAQ answers a question about foam versus solid profiles, and foam has no component card"
+          ],
+          "leads": [
+            "eight"
+          ],
+          "marked": [
+            "Same change as the other industry pages. This specifies **eight**, with the count rendered from the list or dropped. **Sponge and foam is the important addition here** — the page’s own FAQ answers a question about foam versus solid profiles, and foam has no component card"
+          ]
+        },
+        {
+          "label": "H2",
+          "kind": "heading",
+          "lines": [
+            "Engineered to Spec, Not to Catalogue"
+          ],
+          "accent": [],
+          "value": "Engineered to Spec, Not to Catalogue",
+          "note": "5 words · live is 5 · count comes out. Consistent with the other industry sheets"
+        },
+        {
+          "label": "Intro",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "We don’t stock generic parts. Each component is produced against your drawing or an OEM sample — compound, hardness and geometry matched to the exposure and the vibration profile rather than picked from a catalogue."
+          ],
+          "leads": [
+            "Each component is produced against your drawing or an OEM sample"
+          ],
+          "marked": [
+            "We don’t stock generic parts. **Each component is produced against your drawing or an OEM sample** — compound, hardness and geometry matched to the exposure and the vibration profile rather than picked from a catalogue."
+          ],
+          "note": "36 words · live is 31 · “your equipment” becomes “the exposure and the vibration profile”, which is the selection basis section 04 states"
+        },
+        {
+          "label": "Cards ×8",
+          "kind": "table",
+          "columns": [
+            "Component",
+            "HVAC parts",
+            "Links to"
+          ],
+          "rows": [
+            [
+              "Anti-Vibration Mounts",
+              "Compressor, fan and condensing unit mounts; machine feet and isolation pads",
+              "/products/anti-vibration-mounts"
+            ],
+            [
+              "Grommets",
+              "Cable, pipe and refrigerant line pass-through seals for panels and enclosures",
+              "/products/grommets"
+            ],
+            [
+              "Gaskets",
+              "Duct flange, access hatch and panel gaskets in weather-resistant compounds",
+              "/products/gaskets"
+            ],
+            [
+              "Sponge & Foam Rubber",
+              "Duct liner, pipe wrap, AHU door seals and self-adhesive foam tape",
+              "/products/sponge-foam-rubber"
+            ],
+            [
+              "Extrusion Profiles",
+              "Door and access-panel seals, edge trim and glazing channels, cut to length",
+              "/products/extrusion"
+            ],
+            [
+              "Bushes & Bushings",
+              "Fan mounting bushes and linkage pivots for dampers and actuators",
+              "/products/bushes"
+            ],
+            [
+              "O-Rings",
+              "Refrigerant circuit and service port seals, and static seals on valve bodies",
+              "/products/o-rings"
+            ],
+            [
+              "Pads, Stoppers & Caps",
+              "Isolation pads, anti-slip feet and port caps for outdoor units",
+              "/products/pads-stoppers-caps"
+            ]
+          ],
+          "note": "Three become eight. All three live cards are kept and lead. Sponge and foam and extrusion profiles are the two that matter most — duct liner, pipe wrap, AHU door seals and self-adhesive foam tape are the highest-volume rubber products in this sector, they all have a product page, and this page mentions none of them today. The sponge page’s own sector list names HVAC first"
+        },
+        {
+          "label": "AV mounts card — bullets",
+          "kind": "table",
+          "columns": [
+            "Bullet",
+            "Replaces"
+          ],
+          "rows": [
+            [
+              "Load and deflection to spec",
+              "[no change]"
+            ],
+            [
+              "Bonded and unbonded variants",
+              "[no change — bonding is client-confirmed as in-house, 2026-09-01]"
+            ],
+            [
+              "Low-noise isolation",
+              "[no change]"
+            ],
+            [
+              "Natural rubber and neoprene — highest fatigue resistance of the eight compounds we mix",
+              ""
+            ]
+          ],
+          "note": "Four bullets, four bullets — three unchanged, one rewritten in exactly the same words as the mining page, because it is the same shared card. Sixth page carrying the fatigue claim; Margo has no fatigue rig in-house or at the NABL partner. The replacement claims the property rather than the test, and naming the two compounds is more useful to an HVAC engineer than the claim it replaces"
+        },
+        {
+          "label": "Card CTA",
+          "kind": "lit",
+          "value": "Request Specs for {Component} › /products/{slug}",
+          "note": "Destination changes from /contact to the product page, giving this page eight internal links out of a body that has none"
+        }
+      ],
+      "notes": [
+        "Eight internal links out of a page with none.",
+        "The sponge and extrusion cards close a real gap. The sponge product page lists HVAC first in its own sector block and this page has never linked to it — two pages that should be each other’s strongest internal link and currently are not connected at all.",
+        "“Self-adhesive foam tape” is a distinct search and this is one of two places on the site it belongs. The sponge sheet flags it as a candidate for its own URL.",
+        "All eight tab panels in the DOM at first paint. Card titles are <h3>; tab controls are <button role=\"tab\">."
+      ]
+    },
+    {
+      "num": "03",
+      "title": "Where components are used",
+      "chip": "One card rewritten",
+      "live": "LIVE H2 → Built into heating, cooling and ventilation equipment. · four equipment groups · the refrigeration card names no refrigerant and no compound",
+      "fields": [
+        {
+          "label": "H2",
+          "kind": "heading",
+          "lines": [
+            "Built into heating, cooling and ventilation equipment."
+          ],
+          "accent": [],
+          "value": "Built into heating, cooling and ventilation equipment.",
+          "note": "[no change]"
+        },
+        {
+          "label": "Groups ×4",
+          "kind": "table",
+          "columns": [
+            "Equipment",
+            "Body",
+            "Replaces"
+          ],
+          "rows": [
+            [
+              "Compressors & condensing units",
+              "Anti-vibration mounts and isolation pads that keep compressor noise and vibration out of the building structure. Port caps and service-valve seals for outdoor units.",
+              "Adds caps and valve seals"
+            ],
+            [
+              "Air handling & ductwork",
+              "Duct flange gaskets, panel seals, access-hatch profiles and closed-cell foam duct liner and pipe wrap, in weather- and temperature-resistant compounds.",
+              "Adds foam — the highest-volume HVAC rubber product and absent from the live card"
+            ],
+            [
+              "Fan assemblies",
+              "Grommets, isolation bushes and mounting pads for axial and centrifugal fan units.",
+              "[no change]"
+            ],
+            [
+              "Refrigeration circuits",
+              "Neoprene and nitrile sealing selected for refrigerant and lubricant compatibility — the compound has to hold against the refrigerant and the compressor oil together, and the oil is usually the harder of the two. Tell us the refrigerant and the lubricant with the enquiry.",
+              ""
+            ]
+          ],
+          "note": "Four groups, four groups — no count change, one rewritten and two extended.\nCard 4 is the substantive edit. The live card says compounds are “selected for refrigerant compatibility” and names neither a compound nor a refrigerant, which tells a refrigeration engineer nothing. And it misses the point that decides the specification: a refrigerant circuit seal has to survive the refrigerant and the compressor lubricant, and on modern synthetic oils the lubricant is usually the more aggressive of the two. Saying so, and asking for both, is what a supplier who has made these parts would say"
+        }
+      ],
+      "notes": [
+        "The refrigerant-plus-lubricant point is the AEO asset on this page. “Which rubber for R-410A?” is a real search with a widely misunderstood answer, and a supplier page that raises the lubricant is more useful than one that lists a refrigerant.",
+        "Do not name specific refrigerants in the copy. The R-number landscape is changing under refrigerant phase-down and a named list dates fast; asking the buyer for theirs never does.",
+        "Equipment-group headings are <h3>. Four named equipment classes, each a searched phrase.",
+        "Inline links, not card links. The foam clause should link to /products/sponge-foam-rubber."
+      ]
+    },
+    {
+      "num": "04",
+      "title": "Built for HVAC conditions",
+      "chip": "Tune — two cards gain figures",
+      "live": "LIVE H2 → Sealing for weather, temperature and vibration. · four property cards · the temperature card names no temperature · the sealing card names compression set without the test",
+      "fields": [
+        {
+          "label": "H2",
+          "kind": "heading",
+          "lines": [
+            "Sealing for weather, temperature and vibration."
+          ],
+          "accent": [],
+          "value": "Sealing for weather, temperature and vibration.",
+          "note": "[no change] — it names the three failure modes this sector actually has"
+        },
+        {
+          "label": "Intro",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "HVAC equipment lives outdoors, indoors and in plant rooms. Compound choice is driven by UV and ozone exposure, service temperature and the vibration profile of the machine."
+          ],
+          "leads": [
+            "HVAC equipment lives outdoors, indoors and in plant rooms."
+          ],
+          "marked": [
+            "**HVAC equipment lives outdoors, indoors and in plant rooms.** Compound choice is driven by UV and ozone exposure, service temperature and the vibration profile of the machine."
+          ],
+          "note": "[no change] — the first sentence is the best one-line explanation of why compound choice varies within a single sector, on any page of this site"
+        },
+        {
+          "label": "Cards ×4",
+          "kind": "table",
+          "columns": [
+            "Card",
+            "Body",
+            "Replaces"
+          ],
+          "rows": [
+            [
+              "Weather & ozone resistance",
+              "EPDM is the standard choice for outdoor and weather-exposed sealing, with excellent UV and ozone resistance. Ozone resistance is tested to ISO 1431-1 through our NABL-accredited partner laboratory.",
+              "Adds the test standard"
+            ],
+            [
+              "Vibration & noise isolation",
+              "Mount geometry and durometer tuned to the machine’s resonance rather than generic softness. Isolation only begins above about 1.4 times the system natural frequency — which is why a mount that is too stiff for its load does nothing at all.",
+              "Adds the isolation criterion from the anti-vibration mounts sheet"
+            ],
+            [
+              "Temperature cycling",
+              "Compounds selected to survive repeated thermal cycling: EPDM −40 to +140 °C, neoprene −40 to +120 °C, silicone −60 to +220 °C where the duty runs hotter.",
+              ""
+            ],
+            [
+              "Sealing integrity",
+              "Foam and solid profiles that hold compression set performance over long service intervals. Compression set measured to ASTM D395 Method B, which we run in-house — it is the property that decides when a door or duct seal stops sealing.",
+              "Adds the test method and the reason it matters"
+            ]
+          ],
+          "note": "Four cards, four cards — no count change, all four given the specific that was missing.\nCard 3 is the clearest gap: a card headed “temperature cycling” that states no temperature. Three figures from the locked homepage table fix it, and they are the numbers an HVAC engineer is scanning for.\nCard 4 is the most useful addition. The live card names compression set and never says what it is or how it is measured; on HVAC it is the property that decides when an AHU door seal stops sealing, and ASTM D395 Method B is on Margo’s in-house test list. The same standard is named on the leak-test, medical and sponge sheets — one method, four pages, one credibility argument"
+        }
+      ],
+      "notes": [
+        "Compression set is the through-line of this sector and it is now named with its test. “Why do duct gaskets stop sealing?” has a real answer and this card gives it in one clause.",
+        "The three temperature figures render from the locked homepage compound table.",
+        "ISO 1431-1 is named as a test run at the partner laboratory, not as a certification. The distinction matters and the wording carries it.",
+        "Card titles are <h3>."
+      ]
+    },
+    {
+      "num": "05",
+      "title": "Custom engineering",
+      "chip": "Keep — shared across all nine",
+      "live": "LIVE H2 → We match your equipment spec, not the other way around. · identical to the mining and oil-gas pages",
+      "fields": [
+        {
+          "label": "H2",
+          "kind": "heading",
+          "lines": [
+            "We match your equipment spec, not the other way around."
+          ],
+          "accent": [],
+          "value": "We match your equipment spec, not the other way around.",
+          "note": "[no change] — correct noun for this sector"
+        },
+        {
+          "label": "Intro",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Margo operates dedicated tooling capability for custom rubber components. Send us your OEM drawing, an existing part, or the equipment make and model — we reverse-engineer and produce to your specification."
+          ],
+          "leads": [
+            "Send us your OEM drawing, an existing part, or the equipment make and model"
+          ],
+          "marked": [
+            "Margo operates dedicated tooling capability for custom rubber components. **Send us your OEM drawing, an existing part, or the equipment make and model** — we reverse-engineer and produce to your specification."
+          ],
+          "note": "32 words · live is 34 · comma splice becomes a dash"
+        },
+        {
+          "label": "Bullets ×5",
+          "kind": "lit",
+          "value": "OEM drawing and sample matching\nCustom mould tooling in-house\nCompound selection by application\nPre-production sample approval process\nLong-run production with consistent batch quality",
+          "note": "[no change to any of the five]"
+        },
+        {
+          "label": "CTA",
+          "kind": "lit",
+          "value": "Discuss a Custom Component",
+          "href": "/contact",
+          "note": "[no change]"
+        },
+        {
+          "label": "Location panel",
+          "kind": "lit",
+          "value": "Nashik, Maharashtra, India\nISO 9001:2015 certified manufacturing facility",
+          "note": "[no change] — and note this panel carries the ISO reference the hero omits. Fixing the hero subhead means the page states it twice, which is correct: once where it is scanned and once where it is verified"
+        }
+      ],
+      "notes": [
+        "Shared component across nine pages. One prop — the noun in the H2.",
+        "Do not emit a second Place or PostalAddress.",
+        "Heading levels. <h2> for the section; five bullets as a <ul>."
+      ]
+    },
+    {
+      "num": "06",
+      "title": "Quality & certification",
+      "chip": "Tune",
+      "live": "LIVE H2 → Every batch. Every shipment. · shared across all nine · two of three downloads wired to nothing",
+      "fields": [
+        {
+          "label": "Intro",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Margo Rubber Products holds ISO 9001:2015 certification, certificate 09111526A, issued by Integral Certification Ltd and valid to 21 February 2027. Our quality management system covers incoming raw material inspection, in-process control and outgoing batch documentation."
+          ],
+          "leads": [
+            "Margo Rubber Products holds ISO 9001:2015 certification, certificate 09111526A, issued by Integral Certification Ltd and valid to 21 February 2027."
+          ],
+          "marked": [
+            "**Margo Rubber Products holds ISO 9001:2015 certification, certificate 09111526A, issued by Integral Certification Ltd and valid to 21 February 2027.** Our quality management system covers incoming raw material inspection, in-process control and outgoing batch documentation."
+          ],
+          "note": "37 words · live is 33 · certificate number, issuer and expiry added, matching the other industry sheets"
+        },
+        {
+          "label": "Cards ×3",
+          "kind": "table",
+          "columns": [
+            "Card",
+            "Body"
+          ],
+          "rows": [
+            [
+              "ISO 9001:2015",
+              "Certified quality management covering all production and inspection processes. Certificate 09111526A, Integral Certification Ltd. Documentation available on request."
+            ],
+            [
+              "OEM compliance",
+              "Every component produced against a controlled drawing revision. No substitutions without approval."
+            ],
+            [
+              "Batch traceability",
+              "Raw material certificates and batch records retained per shipment. Available to HVAC buyers on request."
+            ]
+          ],
+          "note": "Three cards, three cards — cards 2 and 3 unchanged, card 1 gains the certificate number"
+        },
+        {
+          "label": "Links ×3",
+          "kind": "table",
+          "columns": [
+            "Link",
+            "State",
+            "Action"
+          ],
+          "rows": [
+            [
+              "View ISO Certificate ›",
+              "Wired to nothing",
+              "Point at the PDF, or Request ISO Certificate → /contact?request=iso"
+            ],
+            [
+              "Download Quality Policy ›",
+              "Wired to nothing",
+              "Same"
+            ],
+            [
+              "All Certifications ›",
+              "Works",
+              "[no change]"
+            ]
+          ],
+          "note": "Eighteen dead downloads across nine industry pages, from one shared component. Sixth page in this set carrying it — and on this page they sit two sections above a CTA whose contact details are also placeholders"
+        }
+      ],
+      "notes": [
+        "Shared across all nine industry pages. Build once; card 3’s closing phrase changes per sector.",
+        "Do not emit hasCertification here.",
+        "Two dead downloads and two placeholder contact fields on one page is a pattern rather than an oversight. Whatever process ships these pages is not checking that links resolve or that strings are filled."
+      ]
+    },
+    {
+      "num": "07",
+      "title": "Export supply",
+      "chip": "Tune",
+      "live": "LIVE H2 → Direct supply from Nashik to HVAC manufacturers. · five export markets · the generic default list, no lane, no transit",
+      "fields": [
+        {
+          "label": "H2",
+          "kind": "heading",
+          "lines": [
+            "Direct supply from Nashik to HVAC manufacturers."
+          ],
+          "accent": [],
+          "value": "Direct supply from Nashik to HVAC manufacturers.",
+          "note": "[no change]"
+        },
+        {
+          "label": "Body ×2",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Margo Rubber Products exports sealing and isolation components directly to HVAC and refrigeration manufacturers across our active markets, with full export documentation managed from Nashik.",
+            "Components are produced against your controlled drawing revision, with pre-production sample approval before volume release — and the revision is recorded on the despatch documentation."
+          ],
+          "leads": [
+            null,
+            "Components are produced against your controlled drawing revision, with pre-production sample approval before volume release"
+          ],
+          "marked": [
+            "Margo Rubber Products exports sealing and isolation components directly to HVAC and refrigeration manufacturers across our active markets, with full export documentation managed from Nashik.",
+            "**Components are produced against your controlled drawing revision, with pre-production sample approval before volume release** — and the revision is recorded on the despatch documentation."
+          ],
+          "note": "45 words · “and refrigeration” is added to match the hero and the description; the recorded-revision clause matches the other industry sheets"
+        },
+        {
+          "label": "Export facts ×4",
+          "kind": "table",
+          "columns": [
+            "Label",
+            "Value",
+            "Replaces"
+          ],
+          "rows": [
+            [
+              "Export documentation",
+              "Commercial invoice, packing list, certificate of origin",
+              ""
+            ],
+            [
+              "Freight routing",
+              "Sea and air freight via established forwarders, ex-works Nashik",
+              "Adds the Incoterm"
+            ],
+            [
+              "Communication",
+              "English-language correspondence and technical support",
+              "[no change]"
+            ],
+            [
+              "Payment terms",
+              "Discussed per order — TT and LC accepted",
+              "[no change]"
+            ]
+          ],
+          "note": "Four facts, four facts. “COO” spelled out; freight gains ex-works"
+        },
+        {
+          "label": "Markets ×5",
+          "kind": "lit",
+          "value": "India → Export Markets · Direct OEM supply chain from Nashik, Maharashtra\nAustralia · United Kingdom · United Arab Emirates · United States · Malaysia",
+          "note": "[no change to the list] — the fourth industry page carrying a generic five-market default. Mining names five Australian states with the lane and biosecurity; oil & gas names five Gulf countries with the Jebel Ali lane and the SABER process. Those two score highest on GEO in this set for that reason alone. The UAE is the obvious lead market for HVAC — Gulf air conditioning is a large, year-round, replacement-driven market and the Nhava Sheva to Jebel Ali lane is already documented on the oil & gas sheet at five to nine days"
+        },
+        {
+          "label": "Duties note",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Buyers are responsible for confirming applicable import duties for their specific order. We supply the certificate of origin and material certificates your customs broker and incoming inspection will ask for. Contact us for documentation support."
+          ],
+          "leads": [
+            "We supply the certificate of origin and material certificates your customs broker and incoming inspection will ask for."
+          ],
+          "marked": [
+            "Buyers are responsible for confirming applicable import duties for their specific order. **We supply the certificate of origin and material certificates your customs broker and incoming inspection will ask for.** Contact us for documentation support."
+          ],
+          "note": "35 words · live is 19 · the live note states a responsibility and offers nothing; the replacement names what Margo provides, matching the other industry sheets"
+        }
+      ],
+      "notes": [
+        "Link the documentation list to /export, which has zero inbound links.",
+        "No areaServed on this node. Inherited from the Organization node.",
+        "The UAE lead-market case is stronger here than on any other undifferentiated page. Gulf HVAC runs year-round, replacement volumes are high, the lane is short and already documented, and the sponge product page already lists HVAC as its first sector. If one of the four generic pages gets a market, this is the one.",
+        "Export facts as <dl> pairs."
+      ]
+    },
+    {
+      "num": "08",
+      "title": "Frequently asked questions",
+      "chip": "5 questions become 6 · MOQ answer inverted",
+      "live": "LIVE H2 → Questions from HVAC buyers. · the best-chosen question set on any industry page · one answer carries a piece count and a wrong lead time",
+      "fields": [
+        {
+          "label": "H2",
+          "kind": "heading",
+          "lines": [
+            "Questions from HVAC buyers."
+          ],
+          "accent": [],
+          "value": "Questions from HVAC buyers.",
+          "note": "[no change]"
+        },
+        {
+          "label": "Q1",
+          "kind": "composite",
+          "parts": [
+            {
+              "kind": "heading",
+              "lines": [
+                "Which compound do you recommend for outdoor duct sealing?"
+              ],
+              "accent": []
+            },
+            {
+              "kind": "para",
+              "text": "EPDM, rated −40 to +140 °C, for its UV and ozone resistance — ozone attack is what ends most outdoor seals and EPDM resists it better than anything else we mix. Silicone to +220 °C where the duty runs hotter. Not nitrile outdoors, whatever its oil resistance — it hardens in sunlight.",
+              "lead": "EPDM",
+              "em": false
+            }
+          ],
+          "note": "58 words · live is 27 · the live answer is correct and gains three things: the two temperature figures, the reason EPDM wins outdoors, and the exclusion. “Not nitrile outdoors” is the useful half — nitrile is the default reach for a general-purpose seal and it is the wrong one here"
+        },
+        {
+          "label": "Q2",
+          "kind": "composite",
+          "parts": [
+            {
+              "kind": "heading",
+              "lines": [
+                "Can you supply flame-retardant grommets?"
+              ],
+              "accent": []
+            },
+            {
+              "kind": "para",
+              "text": "Flame-retardant compounds are available on request — neoprene is the family we reach for, and formulated grades can be specified against a flammability rating. Send your standard reference with the enquiry — UL 94, BS 476 or your own OEM specification — and we will confirm what the compound supplier can evidence. We do not hold a flammability listing ourselves.",
+              "lead": "neoprene is the family we reach for",
+              "em": false
+            }
+          ],
+          "note": "62 words · live is 24 · the live answer says compounds are “available on request” and asks for a standard reference without naming any. Naming the compound family and two common standards tells a buyer what to ask for; the closing sentence places the listing with the compound supplier, which is where it sits. Same structure as the pumps page’s potable-water answer and the medical page’s biocompatibility answer — name the standard, place the responsibility, offer to confirm.\n“Low-smoke” comes out of the live answer. Low-smoke and zero-halogen is a cable-compound classification with its own test regime, and claiming it alongside flame retardancy without a named standard is a claim the site cannot support"
+        },
+        {
+          "label": "Q3",
+          "kind": "composite",
+          "parts": [
+            {
+              "kind": "heading",
+              "lines": [
+                "How are anti-vibration mounts specified?"
+              ],
+              "accent": []
+            },
+            {
+              "kind": "para",
+              "text": "By static load rating and deflection at that load, plus mounting geometry and durometer. Send the machine mass, the number of mounting points and the running speed — the mount and the mass form a spring-mass system, and isolation only begins above about 1.4 times its natural frequency, which is why a mount that is too stiff for its load does nothing at all.",
+              "lead": "Send the machine mass, the number of mounting points and the running speed",
+              "em": false
+            }
+          ],
+          "note": "64 words · live is 27 · the live answer asks for machine mass and mounting pattern, which is right, and then stops. Adding the running speed and the isolation criterion turns a request into an explanation — and it answers the question behind the question, which on this sector is usually “why is the unit still noisy?”"
+        },
+        {
+          "label": "Q4 — heading kept, answer rewritten",
+          "kind": "composite",
+          "parts": [
+            {
+              "kind": "heading",
+              "lines": [
+                "Is there a minimum order quantity?"
+              ],
+              "accent": []
+            },
+            {
+              "kind": "para",
+              "text": "Yes — we are a volume manufacturer. Margo produces in bulk against OEM schedules rather than in small lots. Minimum run is 10,000 pieces per part number, per compound, and on larger or more complex parts the minimum is quoted against the part, because the economics are set by tooling and cure time rather than by piece count. Existing tooling ships in three to four weeks ex-works Nashik, or two weeks express where we have confirmed capacity; a new part adds the tooling lead time, quoted per part. Prototype within 48 to 72 hours of an approved drawing.",
+              "lead": "Yes — we are a volume manufacturer.",
+              "em": false
+            }
+          ],
+          "note": "66 words · live is 26 · the live answer carries a banned piece count and a lead time that contradicts every other page. Third industry page with a dedicated minimum-order FAQ, after medical devices and pumps & valves. It sits in the FAQPage node and it is what an assistant returns when asked. The question is kept and the answer inverted, matching the other two sheets word for word"
+        },
+        {
+          "label": "Q5",
+          "kind": "composite",
+          "parts": [
+            {
+              "kind": "heading",
+              "lines": [
+                "Do you supply foam as well as solid profiles?"
+              ],
+              "accent": []
+            },
+            {
+              "kind": "para",
+              "text": "Yes — closed-cell foam for weatherseals and duct liner, open-cell for acoustic lining, and solid profiles where the joint carries load. The choice is driven by the gap to be sealed and the closing force available: foam fills an uneven gap at low force, solid holds a defined compression. Send the gap and the closing force and we will tell you which.",
+              "lead": "closed-cell foam for weatherseals and duct liner, open-cell for acoustic lining, and solid profiles where the joint carries load.",
+              "em": false
+            }
+          ],
+          "note": "62 words · live is 26 · this is the best question on the page and the live answer half-answers it. It says both are available and selected “by the compression set and sealing force your application requires”, which is true and not actionable. The replacement gives the selection rule — foam for an uneven gap at low force, solid for defined compression — and asks for the two inputs, which is the same request the sponge product page’s CTA makes"
+        },
+        {
+          "label": "Q6 — new",
+          "kind": "composite",
+          "parts": [
+            {
+              "kind": "heading",
+              "lines": [
+                "What certifications does Margo hold?"
+              ],
+              "accent": []
+            },
+            {
+              "kind": "para",
+              "text": "Margo Rubber Products holds ISO 9001:2015, certificate 09111526A, issued by Integral Certification Ltd and valid to 21 February 2027. We are actively upgrading our quality management system to IATF 16949:2016, with certification targeted by the end of 2026, and ISO 14001 and ISO 45001 certification targeted for 2027. Material test reports and batch certificates are issued with every shipment.",
+              "lead": "ISO 9001:2015",
+              "em": false
+            }
+          ],
+          "note": "60 words · new question, carrying the canonical wording settled across the set. It must render from the same constant as the other pages that carry it"
+        }
+      ],
+      "notes": [
+        "Crawlability. All six answers in the DOM at first paint, collapsed with CSS.",
+        "This question set is the best on any industry page and the answers were the thinnest. Five well-chosen questions averaging 26 words of answer; the replacements average 62 and every added word is a figure, a standard or a selection rule.",
+        "Q5 is the one no other page has. “Foam or solid gasket?” is a real decision with a clean answer, and the sponge product page’s closed-versus-open-cell block is the long version of it. The two should link to each other.",
+        "Q2 names two flammability standards without claiming either. Same discipline as the potable-water and biocompatibility answers on the other sheets.",
+        "Question headings are <h3>; six Question children with answer text matching the visible copy word for word."
+      ]
+    },
+    {
+      "num": "09",
+      "title": "Enquiries",
+      "chip": "Placeholder contact details replaced",
+      "live": "LIVE H2 → Ready to specify HVAC components from the manufacturer? · the contact strip reads “Contact for number” and “Contact for email” · a different component from the other eight industry pages",
+      "fields": [
+        {
+          "label": "Eyebrow",
+          "kind": "lit",
+          "value": "GET STARTED",
+          "note": "[no change]"
+        },
+        {
+          "label": "H2",
+          "kind": "heading",
+          "lines": [
+            "Ready to specify HVAC components",
+            "from the Nashik plant?"
+          ],
+          "accent": [],
+          "value": "Ready to specify HVAC components from the Nashik plant?",
+          "note": "4 words changed · “from the manufacturer” becomes “from the Nashik plant”, matching the other eight industry pages. “The manufacturer” is a generic noun where the other pages name the place, and the place is the differentiator"
+        },
+        {
+          "label": "Body",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Send the drawing, an existing part, or the equipment make and model — with the exposure, the service temperature and, for a mount, the machine mass. Our engineering team responds within 48 hours with a compound and hardness recommendation, tooling status and a quotation."
+          ],
+          "leads": [
+            "Our engineering team responds within 48 hours with a compound and hardness recommendation, tooling status and a quotation."
+          ],
+          "marked": [
+            "Send the drawing, an existing part, or the equipment make and model — with the exposure, the service temperature and, for a mount, the machine mass. **Our engineering team responds within 48 hours with a compound and hardness recommendation, tooling status and a quotation.**"
+          ],
+          "note": "47 words · live is 25 · the live body says the team “will confirm compound selection, tooling status, and lead time” and never says how fast. “Tooling status” is worth keeping — it is the question a repeat HVAC buyer actually has, and no other industry page CTA mentions it"
+        },
+        {
+          "label": "Buttons ×2",
+          "kind": "lit",
+          "value": "Request HVAC Component Specs → /contact\nSend a Technical Inquiry → /contact",
+          "note": "[no change to the labels] — but both go to the same place, which makes the second redundant. Recommendation: keep button 1 and change button 2 to Call Technical Sales → tel:+919665579276, matching the eleven product pages and the other eight industry pages"
+        },
+        {
+          "label": "Contact strip",
+          "kind": "table",
+          "columns": [
+            "Field",
+            "Correct value",
+            "Live"
+          ],
+          "rows": [
+            [
+              "Phone",
+              "+91 96655 79276",
+              ""
+            ],
+            [
+              "Email",
+              "info@margorubber.in",
+              ""
+            ],
+            [
+              "Certification",
+              "ISO 9001:2015 · Certificate 09111526A",
+              ""
+            ]
+          ],
+          "note": "Both contact fields are placeholder text on the public build. This is the conversion block — the last thing a buyer reads before deciding whether to make contact — and it tells them to contact Margo to find out how to contact Margo. Both values are in the footer of this same page, in the entity graph and on all forty pages. The phone must be a real tel: link and the email a real mailto:, with the visible string matching the href. The certification line gains the certificate number, matching section 06"
+        }
+      ],
+      "notes": [
+        "This CTA is a different component from the other eight industry pages. They use the shared block; this one has an eyebrow, a contact strip and a second button. Fixing the shared component will not fix this page — worth knowing before anyone scopes the work.",
+        "The placeholder strings are the most damaging live defect found on any industry page. Two dead download links sit two sections above them; the same process shipped both.",
+        "Do not emit a ContactPoint from this strip. The homepage Organization node is the single source, and a second one carrying placeholder values would publish them as structured data.",
+        "Analytics. Named conversion event on the form button and on the tel: click, counted separately.",
+        "The 48-hour figure renders from the site constant."
+      ]
+    },
+    {
+      "num": "10",
+      "title": "Footer",
+      "chip": "Rewrite",
+      "live": "LIVE → 50+ countries, © 2024, and the wrong legal entity · Products column shows 9 of 11 categories · /export appears nowhere",
+      "fields": [
+        {
+          "label": "Wordmark",
+          "kind": "lit",
+          "value": "MARGO\nRUBBER PRODUCTS"
+        },
+        {
+          "label": "Description",
+          "kind": "paragraphs",
+          "paragraphs": [
+            "ISO 9001:2015 certified manufacturer of precision moulded and extruded rubber components in Nashik, India. Sealing and anti-vibration parts to customer drawing, supplied to OEMs and distributors in 95 countries."
+          ],
+          "leads": [
+            null
+          ],
+          "marked": [
+            "ISO 9001:2015 certified manufacturer of precision moulded and extruded rubber components in Nashik, India. Sealing and anti-vibration parts to customer drawing, supplied to OEMs and distributors in 95 countries."
+          ],
+          "note": "29 words · live is 26 · opens with the entity definition, since the footer repeats on all 40 pages"
+        },
+        {
+          "label": "NAP block",
+          "kind": "lit",
+          "value": "+91 96655 79276\ninfo@margorubber.in\nMargo Rubber Products, SRNO. 4494/10, Vilholi,\nNashik, Maharashtra 422010, India",
+          "note": "CONFIRM street address — SRNO. 4494/10, Vilholi, Nashik, Maharashtra 422010, settled 2026-09-03. Not B-12 MIDC Ambad, which is what the live site still shows. One string, everywhere, forever · CONFIRM"
+        },
+        {
+          "label": "Column 1 — Products",
+          "kind": "lit",
+          "value": "SEALING\nO-Rings · Oil Seals · Gaskets · Diaphragms · Reciprocating Seals · Leak Test Rubber\nMOUNTING & PROTECTION\nAnti-Vibration Mounts · Bushes & Bushings · Bonded Components · Bellows · Grommets · Pads, Stoppers & Caps\nSHEET & PROFILE\nExtrusion Profiles · Sponge & Foam Rubber · Rubber Lining & Skirting",
+          "note": "15 entries in three groups, up from 11. Adds Diaphragms, Bonded Components, Rubber Lining & Skirting and Reciprocating Seals (sheets 36–39), plus /products/extrusion and /products/sponge-foam-rubber, which had no sitewide inbound link at all. The column was designed for eleven and fifteen flat is not readable, so it is grouped — Sealing (6), Mounting & protection (6), Sheet & profile (3). The third group is also the commercial split: those three are quoted by length or area rather than by piece count, per sheets 18, 38 and 40. “Seals” is labelled “Reciprocating Seals” so it is not read as a parent of O-Rings and Oil Seals — sheet 39 §02 explains why. Group labels are <p> or <div>, never headings — three more phantom sections is not an improvement on one. One label also changes: Bushes & Sleeves becomes Bushes & Bushings, matching that category’s own H1. Its URL stays /products/bushes"
+        },
+        {
+          "label": "Column 2 — Industries",
+          "kind": "lit",
+          "value": "Automotive · Mining · Oil & Gas · Pumps & Valves · HVAC ·\nElectrical & Electronics · Agriculture · Medical Devices ·\nWater & Fluid Management · Construction · Transport — Rail & Marine",
+          "note": "11 entries, up from 9 — adds Construction (sheet 41) and Transport — Rail & Marine (sheet 42), the first two of the six “additional sectors” on sheet 05 to earn a URL. Automotive still leads, matching real volume. 🛑 The live footer’s four industry links all resolve to the same /industries/ The full twenty-six-row footer link map is in sheet 01_Homepage.html, footer section — fifteen product links and eleven industry links, with the three label/slug mismatches called out. — adding two entries to a column whose links are broken makes eleven broken links, so fix the routing in this same commit"
+        },
+        {
+          "label": "Column 3 — Company",
+          "kind": "lit",
+          "value": "About Us · Certifications · Export Markets · Case Studies ·\nResources · Contact Us",
+          "note": "6 entries · Export Markets is new and fixes the orphaned /export page · Why Choose Us comes out — that page is recommended for deletion, its job is done better by /certifications and /export"
+        },
+        {
+          "label": "CTA lines",
+          "kind": "lit",
+          "value": "Ready to source precision rubber components?\nQuotation from our engineering team within 48 hours.\n[ Request Quote → ]",
+          "note": "“within 24 hours” becomes 48 hours. The footer CTA is the fastest of the six response times published on this site, and it contradicts the page body on /contact, /industries and /export. One constant, rendered everywhere"
+        },
+        {
+          "label": "Legal line",
+          "kind": "lit",
+          "value": "© 2026 Margo Rubber Products. All rights reserved.\nPrivacy Policy · Terms & Conditions · Disclaimer\nISO 9001:2015 · Certificate 09111526A · Integral Certification Ltd",
+          "note": "Fixes © 2024 and Margo Rubber Industries Pvt. Ltd. — GSTIN 27AAKFM8595Q1Z1 embeds PAN AAKFM8595Q, whose 4th character F denotes a firm, not a company. Pvt. Ltd. is positively excluded. The ISO line gains the certificate number and the issuer, which makes it checkable on all 40 pages instead of decorative"
+        }
+      ],
+      "notes": [
+        "What it fixes on this page specifically: the footer is the third place a minimum order is stated on this page. Removing it here removes it on all forty.",
+        "What it fixes on this page specifically: the footer carries the correct phone number and email — the two strings the CTA two sections above it publishes as placeholders. The values a developer needs to fix section 09 are already on the same page. The footer also states a minimum order, which comes off on all forty.",
+        "The Products column must show all eleven. Section 02 now links to eight product pages from the body; the footer is where a buyer who arrived from a sector search finds the other three. It currently shows nine of eleven.",
+        "Build once, ships forty times. This is one component. The copy above is written out in full on every sheet in this set so nobody has to open two files to build one block, but it is authored once in the codebase.",
+        "Heading levels. The column labels (PRODUCTS / INDUSTRIES / COMPANY) are <h2> in the live build. As visible <h2>s they inject three phantom sections into every document outline on the site. Change to <p class=\"col-label\">.",
+        "Link equity. 26 sitewide links from here. Adding /export, /products/extrusion-profiles and /products/sponge-foam-rubber gives three orphaned or under-linked URLs a sitewide inbound link each — the cheapest internal-linking win available on this site.",
+        "NAP markup. Wrap in <address>. Phone as <a href=\"tel:+919665579276\">, email as <a href=\"mailto:info@margorubber.in\">. The visible string and the href must not diverge.",
+        "Schema. The footer emits nothing. The Organization node on the homepage is the single entity definition and every other page @id-references it. Repeating an Organization block per page creates 40 competing entities.",
+        "Copyright year. Render from new Date().getFullYear(), not a literal. It has read 2024 for eight months."
+      ]
+    }
+  ]
+}

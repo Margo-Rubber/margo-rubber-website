@@ -434,6 +434,7 @@ export const caseStudiesPage = defineType({
                     list: [
                       { title: "Mail", value: "mail" },
                       { title: "External", value: "out" },
+                      { title: "Phone", value: "phone" },
                     ],
                   },
                 }),

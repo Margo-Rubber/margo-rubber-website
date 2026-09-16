@@ -912,13 +912,16 @@ export function Facility({
                     "linear-gradient(to top, color-mix(in srgb, var(--color-surface-2) 90%, transparent), transparent 45%)",
                 }}
               />
-              <figcaption className="text-eyebrow border-line bg-canvas/70 text-ink absolute bottom-5 left-5 flex items-center gap-2.5 rounded-md border px-3.5 py-2 font-mono backdrop-blur">
-                <span
-                  aria-hidden
-                  className="bg-accent-400 size-1.5 rounded-full"
-                />
-                {badge}
-              </figcaption>
+              {/* No badge, no pill: the sheet gives this section none. */}
+              {badge && (
+                <figcaption className="text-eyebrow border-line bg-canvas/70 text-ink absolute bottom-5 left-5 flex items-center gap-2.5 rounded-md border px-3.5 py-2 font-mono backdrop-blur">
+                  <span
+                    aria-hidden
+                    className="bg-accent-400 size-1.5 rounded-full"
+                  />
+                  {badge}
+                </figcaption>
+              )}
             </figure>
 
             {/* Inset plate overlapping the lower-right corner. */}
@@ -1137,6 +1140,7 @@ export function ExportMarkets({
 }
 
 /* ══ 10 · MATERIAL ENGINEERING ════════════════════════════════════════════ */
+const deg = (n: number) => (n < 0 ? `−${Math.abs(n)}` : String(n));
 export function Materials({
   eyebrow,
   lines,
@@ -1205,8 +1209,9 @@ export function Materials({
                       style={{ left: `${lo}%`, width: `${r2(hi - lo)}%` }}
                     />
                   </div>
+                  {/* A true minus sign (U+2212), as the sheets and the compound table write it — not a hyphen. */}
                   <p className="text-ink-2 text-right text-sm whitespace-nowrap">
-                    {c.minC}° to {c.maxC}°C{c.continuousMaxC ? <span className="text-ink-4 block text-xs">continuous to {c.continuousMaxC}°C</span> : null}
+                    {deg(c.minC)}° to {deg(c.maxC)}°C{c.continuousMaxC ? <span className="text-ink-4 block text-xs">continuous to {c.continuousMaxC}°C</span> : null}
                   </p>
                 </li>
               );
@@ -1326,10 +1331,12 @@ export function HomeCta({
                   "linear-gradient(to top, color-mix(in srgb, #171A1F 92%, transparent), color-mix(in srgb, #171A1F 55%, transparent))",
               }}
             />
-            <span className="text-eyebrow border-accent-400/35 bg-accent-400/10 text-accent-400 inline-flex w-fit items-center gap-2 rounded-pill border px-3.5 py-1.5 font-mono uppercase">
-              <span aria-hidden className="bg-accent-400 size-1.5 rounded-full" />
-              {panel.badge}
-            </span>
+            {panel.badge && (
+              <span className="text-eyebrow border-accent-400/35 bg-accent-400/10 text-accent-400 inline-flex w-fit items-center gap-2 rounded-pill border px-3.5 py-1.5 font-mono uppercase">
+                <span aria-hidden className="bg-accent-400 size-1.5 rounded-full" />
+                {panel.badge}
+              </span>
+            )}
             <h3 className="text-ink mt-6 text-2xl leading-tight font-semibold md:text-3xl">
               {panel.title}
             </h3>

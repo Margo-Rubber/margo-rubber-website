@@ -366,6 +366,37 @@ export const productCategory = defineType({
     }),
     schemaTypesField,
     defineField({
+      name: "schemaProduct",
+      title: "Product record (structured data)",
+      description:
+        "How the page describes its product to search engines, where that differs from the heading and the meta description. Leave empty to use those.",
+      type: "object",
+      fields: [
+        defineField({ name: "name", title: "Product name", type: "string" }),
+        defineField({ name: "description", title: "One-line description", type: "text", rows: 2 }),
+        defineField({
+          name: "material",
+          title: "Materials",
+          type: "array",
+          of: [defineArrayMember({ type: "string" })],
+          description: "Only when the list is not exactly the eight compounds in Site settings.",
+          options: { layout: "tags" },
+        }),
+        defineField({
+          name: "components",
+          title: "Catalogue components",
+          type: "array",
+          of: [defineArrayMember({ type: "string" })],
+          description: "Named catalogue lines, listed to search engines as a numbered list (Pads, Stoppers & Caps).",
+          options: { layout: "tags" },
+        }),
+        defineField({ name: "componentsName", title: "List name", type: "string", description: 'Default "Catalogue components".' }),
+        defineField({ name: "componentsAnchor", title: "List points at", type: "string", description: 'Section id, default "specifications".' }),
+      ],
+      options: { collapsible: true, collapsed: true },
+      group: "meta",
+    }),
+    defineField({
       name: "confirmWithMargo",
       title: "Figures still to be confirmed",
       type: "array",

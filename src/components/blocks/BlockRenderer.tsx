@@ -3,7 +3,7 @@ import Link from "next/link";
 import type { SiteSettings } from "@/content/schemas/settings";
 import {
   compoundByCode,
-  formatRange,
+  formatRangeCompact,
   getSiteSettings,
   telHref,
 } from "@/lib/settings";
@@ -160,9 +160,9 @@ function renderBlock(block: Block, ctx: Ctx): ReactNode {
           glow
         >
           {sectors ? (
-            <SectorCards items={b.items} />
+            <SectorCards items={b.items} cardCta={b.cardCta} />
           ) : (
-            <ProfileGrid items={b.items} />
+            <ProfileGrid items={b.items} cardCta={b.cardCta} />
           )}
         </Section>
       );
@@ -217,6 +217,8 @@ function renderBlock(block: Block, ctx: Ctx): ReactNode {
             rows={b.rows}
             footnote={b.footnote}
             controls={b.controls}
+            chips={b.chips}
+            searchPlaceholder={b.searchPlaceholder}
           />
         </Section>
       );
@@ -253,7 +255,7 @@ function renderBlock(block: Block, ctx: Ctx): ReactNode {
               (m: { code: string; tempRange: string; hardness: string }) => {
                 const c = compoundByCode(ctx.settings, m.code);
                 return c
-                  ? { ...m, tempRange: formatRange(c), hardness: c.hardness }
+                  ? { ...m, tempRange: formatRangeCompact(c), hardness: c.hardness }
                   : m;
               },
             )}
@@ -339,7 +341,7 @@ function renderBlock(block: Block, ctx: Ctx): ReactNode {
           className={band}
           glow
         >
-          <SpecifyCards items={b.items} />
+          <SpecifyCards items={b.items} closing={b.closing} closingLink={b.closingLink} />
         </Section>
       );
 
@@ -382,10 +384,13 @@ function renderBlock(block: Block, ctx: Ctx): ReactNode {
         />
       );
 
+    // "#lead-times", not "#commercial": the anchor names what the section
+    // answers, and a table-of-contents entry named after an MOQ was one more
+    // place the term appeared (sheet 09 §06).
     case "block.propertyList":
       return (
         <Section
-          id="commercial"
+          id="lead-times"
           eyebrow={b.eyebrow}
           heading={b.heading}
           body={b.body}
@@ -617,7 +622,9 @@ function closingContacts(settings: SiteSettings) {
       ? [
           {
             icon: "cert",
-            text: `${held.code} ${held.statusLabel}`,
+            // "ISO 9001:2015 · Certificate 09111526A" — the contact strip
+            // on the industry pages (sheet 25 §09).
+            text: held.identifier ? `${held.code} · Certificate ${held.identifier}` : `${held.code} ${held.statusLabel}`,
             href: "/certifications",
           },
         ]

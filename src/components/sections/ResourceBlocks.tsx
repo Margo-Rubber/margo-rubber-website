@@ -13,6 +13,7 @@ export type Guide = {
   icon: string;
   readingMinutes: number;
   featured: boolean;
+  featuredBlurb?: string;
 };
 
 export type Category = { key: string; label: string; blurb: string };
@@ -277,7 +278,7 @@ export function ResourceLibrary({
                   {featured.h1}
                 </span>
                 <span className="text-ink-4 mt-2 block text-sm leading-relaxed">
-                  {featured.intro}
+                  {featured.featuredBlurb ?? featured.intro}
                 </span>
               </span>
               <span className="border-line-2 text-ink-3 group-hover:border-accent-400 group-hover:text-accent-400 grid size-10 shrink-0 place-items-center rounded-full border transition-colors">

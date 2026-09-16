@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo, useState } from "react";
+import { emphasised } from "@/components/ui/Emphasis";
 
 type Props = {
   columns: string[];
@@ -8,10 +10,34 @@ type Props = {
   footnote?: string;
   /** Filter chips and search box. See the note at the render site. */
   controls?: boolean;
+  /** The standards a chip can select, in the sheet's order. */
+  chips?: string[];
+  searchPlaceholder?: string;
 };
 
-/** Standard families derived from the "Part / Standard ID" column. */
-const FAMILIES = ["AS568", "ISO", "JIS", "DIN"] as const;
+/**
+ * Standard families a chip can select, in chip order. Only the families that
+ * appear in the first column are offered — "a filter with nothing to select
+ * is a dead control" (sheet 09 §02), and the same component serves oil-seal,
+ * gasket and bush tables whose families differ.
+ */
+const FAMILIES = ["AS568", "ISO", "JIS", "DIN", "ASME", "EN", "ASTM", "BS", "SAE"];
+
+/**
+ * A chip is a standard's name, matched as a whole word in any cell — or, for
+ * a table filtered by service rather than by standard (the bellows page's
+ * "Fatigue-critical", "Oil contact"), `Label :: pattern`, a regular
+ * expression a cell must match.
+ */
+const chipLabel = (chip: string) => chip.split(" :: ")[0];
+const chipTest = (chip: string): RegExp => {
+  const [label, pattern] = chip.split(" :: ");
+  return pattern ? new RegExp(pattern, "i") : new RegExp(`(^|[^A-Z0-9])${label}(?![A-Z0-9])`, "i");
+};
+const mentions = (row: string[], chip: string) => {
+  const re = chipTest(chip);
+  return row.some((cell) => re.test(cell));
+};
 
 /**
  * The spec table is a real <table>, never an image — required by both AI
@@ -22,16 +48,22 @@ const FAMILIES = ["AS568", "ISO", "JIS", "DIN"] as const;
  * stacking: stacking would destroy the column-to-column comparability that is
  * the entire point of the table.
  */
-export function SpecTable({ columns, rows, footnote, controls = true }: Props) {
+export function SpecTable({ columns, rows, footnote, controls = true, chips, searchPlaceholder }: Props) {
   const [family, setFamily] = useState<string>("all");
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState<{ col: number; dir: 1 | -1 } | null>(null);
+  // A chip list may open with its own "All …" label ("All standards").
+  const allLabel = chips?.[0] && /^all\b/i.test(chips[0]) ? chips[0] : "All Standards";
+  const families = useMemo(
+    () => (chips ?? FAMILIES).filter((f) => !/^all\b/i.test(f) && rows.some((r) => mentions(r, f))),
+    [rows, chips],
+  );
 
   const visible = useMemo(() => {
     let out = rows;
 
     if (family !== "all") {
-      out = out.filter((r) => r[0].toUpperCase().includes(family));
+      out = out.filter((r) => mentions(r, family));
     }
     if (query.trim()) {
       const q = query.trim().toLowerCase();
@@ -70,11 +102,11 @@ export function SpecTable({ columns, rows, footnote, controls = true }: Props) {
       <div className="mb-4 flex flex-wrap items-center gap-3">
         <div className="flex flex-wrap gap-2">
           <Chip active={family === "all"} onClick={() => setFamily("all")}>
-            All Standards
+            {allLabel}
           </Chip>
-          {FAMILIES.map((f) => (
+          {families.map((f) => (
             <Chip key={f} active={family === f} onClick={() => setFamily(f)}>
-              {f}
+              {chipLabel(f)}
             </Chip>
           ))}
         </div>
@@ -85,7 +117,7 @@ export function SpecTable({ columns, rows, footnote, controls = true }: Props) {
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Filter by ID or dimension…"
+            placeholder={searchPlaceholder ?? "Filter by ID or dimension…"}
             className="border-line bg-surface-2 text-ink placeholder:text-ink-4 focus:border-accent-400 w-full rounded-pill border px-4 py-2 text-sm"
           />
         </label>
@@ -140,7 +172,7 @@ export function SpecTable({ columns, rows, footnote, controls = true }: Props) {
                 {r.map((cell, ci) => (
                   <td
                     key={ci}
-                    className={`border-line border-t px-4 py-3 whitespace-nowrap ${
+                    className={`border-line border-t px-4 py-3 whitespace-pre ${
                       ci === 0 ? "text-ink font-medium" : "text-ink-2"
                     } ${columns[ci]?.includes("FKM") ? "text-accent-400" : ""}`}
                   >
@@ -163,14 +195,42 @@ export function SpecTable({ columns, rows, footnote, controls = true }: Props) {
         </table>
 
         {footnote && (
-          <p className="text-ink-4 border-line border-t px-4 py-3 text-xs">
-            {/* The count belongs to the filter, so it goes with it. */}
-            {controls && `Showing ${visible.length} of ${rows.length} entries · `}
-            {footnote.replace(/^Showing \d+ of \d+ entries · /, "")}
+          <p className="text-ink-4 border-line border-t px-4 py-3 text-xs whitespace-pre-line">
+            {disclaimerLinked(withCount(footnote, visible.length, rows.length, controls))}
           </p>
         )}
       </div>
     </div>
+  );
+}
+
+/**
+ * The count belongs to the filter, so it goes with it. A footnote written
+ * with its own "Showing 9 of 9 entries." keeps that wording and gets the
+ * live numbers; one written without gets "Showing N of M · " in front.
+ */
+function withCount(footnote: string, shown: number, total: number, controls: boolean) {
+  const count = `Showing ${shown} of ${total}`;
+  if (/^Showing \d+ of \d+/.test(footnote))
+    return controls ? footnote.replace(/^Showing \d+ of \d+/, count) : footnote.replace(/^Showing \d+ of \d+( entries)?[ ·.]+/, "");
+  return controls ? `${count} · ${footnote}` : footnote;
+}
+
+/**
+ * "Typical values. See our technical disclaimer." — every technical table
+ * links the disclaimer (sheet 08, page-level). The words stay the sheet's;
+ * only the phrase becomes the link.
+ */
+function disclaimerLinked(text: string) {
+  const parts = text.split(/(technical disclaimer)/i);
+  return parts.map((part, i) =>
+    i % 2 ? (
+      <Link key={i} href="/legal/disclaimer" className="text-ink-3 underline underline-offset-2 hover:text-ink">
+        {part}
+      </Link>
+    ) : (
+      <span key={i}>{emphasised(part, "text-ink-2 font-semibold")}</span>
+    ),
   );
 }
 

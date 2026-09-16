@@ -177,6 +177,12 @@ export const cardGrid = defineType({
             iconField(),
             shapeField(),
             defineField({
+              name: "href",
+              title: "Links to",
+              type: "string",
+              description: "Where this card's link goes, e.g. /industries/automotive. Needs the grid's link label.",
+            }),
+            defineField({
               name: "id",
               title: "Anchor",
               type: "string",
@@ -191,6 +197,14 @@ export const cardGrid = defineType({
         }),
       ],
       validation: (r) => r.required().min(1),
+      group: "content",
+    }),
+    defineField({
+      name: "cardCta",
+      title: "Link label on every card",
+      type: "string",
+      description:
+        '"Quote this section" on a profile card (goes to the contact form with the code filled in); "Rubber components for {sector}" on a sector card, where {sector} becomes the card name. Empty means no links.',
       group: "content",
     }),
     anchorIdField(),
@@ -442,6 +456,23 @@ export const specTable = defineType({
       type: "boolean",
       description: "Turn off for short reference tables where filtering is noise.",
       initialValue: true,
+      group: "options",
+    }),
+    defineField({
+      name: "chips",
+      title: "Filter chips",
+      type: "array",
+      of: [defineArrayMember({ type: "string" })],
+      description:
+        "The standards a chip can select, in order — ASME, EN, JIS. Leave empty to offer the standards found in the table.",
+      options: { layout: "tags" },
+      group: "options",
+    }),
+    defineField({
+      name: "searchPlaceholder",
+      title: "Search box hint",
+      type: "string",
+      description: "Grey text in the search box: \"Filter by compound or application\".",
       group: "options",
     }),
     anchorIdField(),

@@ -331,10 +331,10 @@ export async function productNode(
   return {
     "@type": "Product",
     "@id": `${SITE_URL}${path}#product`,
-    name: fm.h1,
-    description: fm.seo.description,
+    name: fm.schemaProduct?.name ?? fm.h1,
+    description: fm.schemaProduct?.description ?? fm.seo.description,
     manufacturer: { "@id": ORG_ID },
-    material: compounds.map((c) => c.name),
+    material: fm.schemaProduct?.material ?? compounds.map((c) => c.name),
     ...(entry?.family ? { category: FAMILY_CATEGORY[entry.family] } : {}),
     ...(related.length ? { isRelatedTo: related } : {}),
     // No Offer, no price, no availability, no minimum: Margo quotes per part.
@@ -550,6 +550,42 @@ export async function productCategoryGraph(
   if (fm.schemaTypes.includes("FAQPage")) {
     const faq = faqNode(fm.faqs, path);
     if (faq) nodes.push(faq);
+  }
+  // The one category with a named catalogue: thirteen components as an
+  // ItemList, in table order, each pointing at the table (sheet 16).
+  if (fm.schemaProduct?.components?.length) {
+    const anchor = fm.schemaProduct.componentsAnchor ?? "specifications";
+    nodes.push({
+      "@type": "ItemList",
+      "@id": `${SITE_URL}${path}#${anchor === "specifications" ? "components" : anchor}`,
+      name: fm.schemaProduct.componentsName ?? "Catalogue components",
+      numberOfItems: fm.schemaProduct.components.length,
+      itemListElement: fm.schemaProduct.components.map((name, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name,
+        url: `${SITE_URL}${path}#${anchor}`,
+      })),
+    });
+  }
+  // "How to specify sponge and foam rubber" — the four-line specification
+  // guide as a HowTo, when the page opts in (sheet 19, page-level).
+  if (fm.schemaTypes.includes("HowTo")) {
+    const guide = blocks.find((b) => b._type === "block.specifyGrid");
+    const items = guide?.items as { label: string; body: string }[] | undefined;
+    if (items?.length)
+      nodes.push({
+        "@type": "HowTo",
+        "@id": `${SITE_URL}${path}#specify`,
+        name: `How to specify ${fm.navLabel.toLowerCase()}`,
+        step: items.map((it, i) => ({
+          "@type": "HowToStep",
+          position: i + 1,
+          name: it.label,
+          text: it.body,
+          url: `${SITE_URL}${path}#specify`,
+        })),
+      });
   }
   for (const b of blocks) {
     if (b._type !== "block.routerList") continue;

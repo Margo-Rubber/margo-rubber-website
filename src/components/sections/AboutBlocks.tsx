@@ -394,7 +394,7 @@ export function AboutHero({
         <Breadcrumb items={breadcrumb} className="mb-6" />
         <div className="relative">
           <div className="max-w-[46rem]">
-            <Pill>{badge}</Pill>
+            {badge && <Pill>{badge}</Pill>}
             <Display
               as="h1"
               size="hero"
@@ -430,9 +430,9 @@ export function AboutHero({
             </div>
           </div>
 
-          {/* Film affordance, centred over the frame as the design has it.
-              Inert until Margo supplies a film, so it is not a button that
-              does nothing. */}
+          {/* Film affordance — only while there is a label for it. Sheet 03
+              §01: "there is no film, and the live control goes nowhere". */}
+          {watchLabel && (
           <div className="pointer-events-none absolute top-1/2 left-1/2 hidden -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-3 lg:flex">
             <span className="border-ink/30 bg-ink/10 text-ink grid size-16 place-items-center rounded-full border backdrop-blur-sm">
               <svg viewBox="0 0 24 24" className="ml-0.5 size-5 fill-current" aria-hidden>
@@ -443,6 +443,7 @@ export function AboutHero({
               {watchLabel}
             </span>
           </div>
+          )}
         </div>
       </Container>
 
@@ -735,7 +736,9 @@ export function Leadership({
             <p>
               {quoteLines.map((l, i) => (
                 <span key={l} className="block">
-                  {i === 0 ? `“${l}` : l}{" "}
+                  {i === 0 ? `“${l}` : l}
+                  {/* No space before the closing quote when there is no accent run. */}
+                  {i < quoteLines.length - 1 || quoteAccent ? " " : ""}
                   {i === quoteLines.length - 1 && (
                     <span className="text-accent-400">
                       {quoteAccent}
@@ -1154,17 +1157,20 @@ export function Green({
                   "linear-gradient(to top, var(--color-band-2), transparent 50%)",
               }}
             />
-            <figcaption className="border-line bg-surface-3/80 absolute right-5 bottom-5 left-5 flex items-center gap-3 rounded-xl border px-5 py-4 backdrop-blur">
-              <Icon name="leaf" className="text-accent-400 size-5 shrink-0" />
-              <span>
-                <span className="text-ink block text-sm font-semibold">
-                  {imageBadge.title}
+            {/* "Carbon Neutral · Target: 2027" came off (sheet 03 §11); no badge, no card. */}
+            {imageBadge.title && (
+              <figcaption className="border-line bg-surface-3/80 absolute right-5 bottom-5 left-5 flex items-center gap-3 rounded-xl border px-5 py-4 backdrop-blur">
+                <Icon name="leaf" className="text-accent-400 size-5 shrink-0" />
+                <span>
+                  <span className="text-ink block text-sm font-semibold">
+                    {imageBadge.title}
+                  </span>
+                  <span className="text-ink-4 block text-xs">
+                    {imageBadge.note}
+                  </span>
                 </span>
-                <span className="text-ink-4 block text-xs">
-                  {imageBadge.note}
-                </span>
-              </span>
-            </figcaption>
+              </figcaption>
+            )}
           </figure>
 
           <div>
@@ -1197,7 +1203,7 @@ export function Green({
                       style={{ width: `${b.pct}%` }}
                     />
                   </div>
-                  <p className="text-ink-4 mt-2 text-xs">{b.note}</p>
+                  {b.note && <p className="text-ink-4 mt-2 text-xs">{b.note}</p>}
                 </li>
               ))}
             </ul>
@@ -1332,9 +1338,15 @@ export function Timeline({
 export function Clients({
   label,
   items,
+  sectors = [],
+  trademarkLine,
 }: {
   label: string;
   items: readonly string[];
+  /** Same order as items; shown under each name (sheet 03 §14). */
+  sectors?: readonly string[];
+  /** From Site settings — beneath every customer list. */
+  trademarkLine?: string;
 }) {
   return (
     <section className="bg-surface-2 py-[70px]">
@@ -1343,15 +1355,21 @@ export function Clients({
           {label}
         </p>
         <ul className="mt-8 grid grid-cols-2 gap-5 md:grid-cols-4">
-          {items.map((c) => (
+          {items.map((c, i) => (
             <li
               key={c}
               className="rounded-card border-line text-ink-2 grid place-items-center border bg-surface-3 px-4 py-8 text-center text-sm font-semibold"
             >
-              {c}
+              <span>
+                {c}
+                {sectors[i] && <span className="text-ink-4 mt-1.5 block text-xs font-normal">{sectors[i]}</span>}
+              </span>
             </li>
           ))}
         </ul>
+        {trademarkLine && (
+          <p className="text-ink-4 mx-auto mt-6 max-w-[70ch] text-center text-xs leading-relaxed">{trademarkLine}</p>
+        )}
       </Container>
     </section>
   );

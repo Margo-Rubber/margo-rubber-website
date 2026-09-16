@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Img } from "@/components/ui/Img";
 import { Button } from "@/components/ui/Button";
 import { Container, Eyebrow } from "@/components/ui/Section";
+import { hrefFor, productBySlug } from "@/content/routes";
 
 /* ── HERO ─────────────────────────────────────────────────────────────── */
 export function IndustryHero({
@@ -108,6 +109,12 @@ type Component = {
   cta: { label: string; href: string };
 };
 
+function liveProductHref(href: string): string {
+  const m = href.match(/^\/products\/([a-z0-9-]+)$/);
+  const entry = m ? productBySlug(m[1]) : undefined;
+  return entry ? hrefFor(entry) : href;
+}
+
 export function ComponentTabs({ items }: { items: Component[] }) {
   const [i, setI] = useState(0);
   // Every panel stays in the DOM, hidden rather than unmounted: a tab that mounts on click does not exist for a crawler.
@@ -175,7 +182,10 @@ export function ComponentTabs({ items }: { items: Component[] }) {
                   </li>
                 ))}
               </ul>
-              <Button href={c.cta.href} variant="secondary" className="mt-6">
+              {/* A category the registry has not flipped live (Diaphragms,
+                  sheet 36) sends the click where every other link to it
+                  goes — the contact form, never a 404. */}
+              <Button href={liveProductHref(c.cta.href)} variant="secondary" className="mt-6">
                 {c.cta.label} <span aria-hidden>›</span>
               </Button>
             </div>
@@ -280,10 +290,13 @@ export function QualityCards({
             key={q.name}
             className="border-line rounded-card border bg-[#0A0A0A] p-6"
           >
-            <span className="text-accent-400 bg-accent-400/10 rounded-pill px-3 py-1 text-[11px] font-medium">
-              {q.chip}
-            </span>
-            <h3 className="text-ink mt-4 text-base font-semibold">{q.name}</h3>
+            {/* Sheets 22–28 write the card as a name and a body, no chip. */}
+            {q.chip && (
+              <span className="text-accent-400 bg-accent-400/10 rounded-pill px-3 py-1 text-[11px] font-medium">
+                {q.chip}
+              </span>
+            )}
+            <h3 className={`text-ink text-base font-semibold ${q.chip ? "mt-4" : ""}`}>{q.name}</h3>
             <p className="text-ink-4 mt-2 text-sm leading-relaxed">{q.body}</p>
           </div>
         ))}
