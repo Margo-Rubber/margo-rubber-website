@@ -1,4 +1,5 @@
 import { getSitePage } from "@/lib/page-source";
+import { trail } from "@/lib/breadcrumbs";
 import { buildMetadata } from "@/lib/seo";
 import { pageGraph } from "@/lib/schema";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -23,6 +24,8 @@ export async function generateMetadata() {
 export default async function ContactPage() {
   const fm = await getSitePage("contact", contactPageSchema);
 
+  const crumbs = trail(["Contact", "/contact"]);
+
   return (
     <>
       <JsonLd
@@ -32,11 +35,12 @@ export default async function ContactPage() {
           path: "/contact",
           name: fm.seo.title,
           description: fm.seo.description,
-          crumbs: [{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }],
+          crumbs,
         })}
       />
 
       <ContactHero
+        breadcrumb={crumbs}
         badge={fm.badge}
         lines={fm.h1Lines}
         accentLines={fm.h1AccentLines}

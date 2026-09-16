@@ -1,4 +1,6 @@
 import { getSitePage } from "@/lib/page-source";
+import { getSiteSettings } from "@/lib/settings";
+import { trail } from "@/lib/breadcrumbs";
 import { buildMetadata } from "@/lib/seo";
 import { pageGraph } from "@/lib/schema";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -39,6 +41,9 @@ export async function generateMetadata() {
 export default async function AboutPage() {
   const fm = await getSitePage("about", aboutPageSchema);
 
+  const crumbs = trail(["About", "/about"]);
+
+  const settings = await getSiteSettings();
   return (
     <>
       <JsonLd
@@ -48,11 +53,12 @@ export default async function AboutPage() {
           path: "/about",
           name: fm.seo.title,
           description: fm.seo.description,
-          crumbs: [{ name: "Home", path: "/" }, { name: "About", path: "/about" }],
+          crumbs,
         })}
       />
 
       <AboutHero
+        breadcrumb={crumbs}
         badge={fm.badge}
         lines={fm.h1Lines}
         accentLines={fm.h1AccentLines}
@@ -111,9 +117,8 @@ export default async function AboutPage() {
 
       <Awards
         head={fm.awards}
-        items={fm.awards.items}
+        certifications={settings.certifications}
         auditedLabel={fm.awards.auditedLabel}
-        auditors={fm.awards.auditors}
         auditImage={fm.awards.auditImage}
       />
 

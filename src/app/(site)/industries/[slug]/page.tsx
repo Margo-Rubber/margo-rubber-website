@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { trail } from "@/lib/breadcrumbs";
 import { buildMetadata } from "@/lib/seo";
 import { breadcrumbNode, faqNode, organizationNode, shouldEmitSchema } from "@/lib/schema";
 import { getIndustryPage, industrySlugs } from "@/lib/industry-source";
@@ -25,16 +26,13 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
 
   const { frontmatter: fm, blocks } = page;
   const path = `/industries/${slug}`;
+  const crumbs = trail(["Industries", "/industries"], [fm.navLabel, path]);
 
   const graph = {
     "@context": "https://schema.org",
     "@graph": [
       await organizationNode(),
-      breadcrumbNode([
-        { name: "Home", path: "/" },
-        { name: "Industries", path: "/industries" },
-        { name: fm.navLabel, path },
-      ]),
+      breadcrumbNode(crumbs),
       ...(faqNode(fm.faqs) ? [faqNode(fm.faqs)!] : []),
     ],
   };
@@ -49,6 +47,7 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
       )}
 
       <IndustryHero
+        breadcrumb={crumbs}
         badge={fm.badge}
         lines={fm.h1Lines}
         accentLines={fm.h1AccentLines}

@@ -1,4 +1,5 @@
 import { getSitePage } from "@/lib/page-source";
+import { trail } from "@/lib/breadcrumbs";
 import { buildMetadata } from "@/lib/seo";
 import { pageGraph } from "@/lib/schema";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -32,6 +33,8 @@ export async function generateMetadata() {
 export default async function CaseStudiesPage() {
   const fm = await getSitePage("case-studies", caseStudiesPageSchema);
 
+  const crumbs = trail(["Case Studies", "/case-studies"]);
+
   return (
     <>
       <JsonLd
@@ -40,11 +43,12 @@ export default async function CaseStudiesPage() {
           path: "/case-studies",
           name: fm.seo.title,
           description: fm.seo.description,
-          crumbs: [{ name: "Home", path: "/" }, { name: "Case Studies", path: "/case-studies" }],
+          crumbs,
         })}
       />
 
       <CaseHero
+        breadcrumb={crumbs}
         eyebrow={fm.hero.eyebrow}
         h1Lines={fm.hero.h1Lines}
         paragraphs={fm.hero.paragraphs}

@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
+import { trail } from "@/lib/breadcrumbs";
 import { notFound } from "next/navigation";
 import { getResourcePage, resourceSlugs } from "@/lib/resource-source";
 import { Prose } from "@/components/blocks/Prose";
@@ -54,6 +56,11 @@ export default async function ResourceGuidePage(
   const { frontmatter: fm, Content, prose, hasBody } = page;
   const related = fm.related;
 
+  const crumbs = trail(
+    ["Resources", "/resources"],
+    [fm.navLabel, `/resources/${slug}`],
+  );
+
   return (
     <article className="bg-canvas">
       <JsonLd
@@ -62,11 +69,7 @@ export default async function ResourceGuidePage(
           path: `/resources/${slug}`,
           name: fm.seo.title,
           description: fm.seo.description,
-          crumbs: [
-            { name: "Home", path: "/" },
-            { name: "Resources", path: "/resources" },
-            { name: fm.h1, path: `/resources/${slug}` },
-          ],
+          crumbs,
           faqs: fm.faqs,
           extra: [articleNode(fm, `/resources/${slug}`)],
         })}
@@ -78,17 +81,7 @@ export default async function ResourceGuidePage(
           className="bg-accent-400/10 pointer-events-none absolute -top-24 -left-32 -z-10 size-[30rem] rounded-full blur-3xl"
         />
         <Container>
-          <nav aria-label="Breadcrumb">
-            <ol className="text-eyebrow text-ink-4 flex flex-wrap items-center gap-2 font-mono uppercase">
-              <li>
-                <Link href="/resources" className="hover:text-ink transition-colors">
-                  Resources
-                </Link>
-              </li>
-              <li aria-hidden>/</li>
-              <li className="text-ink-2">{fm.navLabel}</li>
-            </ol>
-          </nav>
+          <Breadcrumb items={crumbs} />
 
           <p className="text-eyebrow text-accent-400 mt-8 flex items-center gap-2.5 font-mono uppercase">
             {CATEGORY_LABEL[fm.category] ?? fm.category}

@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
+import type { Crumb } from "@/lib/breadcrumbs";
 import { Img } from "@/components/ui/Img";
 import { Container } from "@/components/ui/Section";
 import { INDUSTRIES, PRODUCT_GROUPS } from "@/content/routes";
@@ -18,6 +20,7 @@ export function ContactHero({
   intro,
   proof,
   image,
+  breadcrumb,
 }: {
   badge: string;
   lines: string[];
@@ -25,6 +28,7 @@ export function ContactHero({
   intro: string;
   proof: string[];
   image?: string;
+  breadcrumb?: readonly Crumb[];
 }) {
   return (
     <header className="relative isolate overflow-hidden pt-32 pb-20 md:pt-48 md:pb-28">
@@ -44,6 +48,7 @@ export function ContactHero({
       )}
 
       <Container>
+        <Breadcrumb items={breadcrumb} className="mb-6" />
         <p className="text-eyebrow text-accent-400 font-mono uppercase">
           {badge}
         </p>
@@ -55,6 +60,8 @@ export function ContactHero({
               className={`block ${accentLines.includes(i) ? "text-accent-400" : ""}`}
             >
               {l}
+              {/* Trailing space inside the block: invisible, but a crawler reads the lines with spaces. */}
+              {i < lines.length - 1 ? " " : ""}
             </span>
           ))}
         </h1>

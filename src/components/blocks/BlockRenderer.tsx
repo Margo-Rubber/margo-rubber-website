@@ -1,4 +1,11 @@
 import { Fragment, type ReactNode } from "react";
+import type { SiteSettings } from "@/content/schemas/settings";
+import {
+  compoundByCode,
+  formatRange,
+  getSiteSettings,
+  telHref,
+} from "@/lib/settings";
 import { Section } from "@/components/ui/Section";
 import { SpecTable } from "@/components/sections/SpecTable";
 import { MaterialCards } from "@/components/sections/MaterialCards";
@@ -124,6 +131,8 @@ type Ctx = {
   band: string;
   /** True on the pages built from the newer comps — they centre their headers. */
   comp2: boolean;
+  /** The one phone, email and certification line every closing band shows. */
+  settings: SiteSettings;
 };
 
 function renderBlock(block: Block, ctx: Ctx): ReactNode {
@@ -234,7 +243,19 @@ function renderBlock(block: Block, ctx: Ctx): ReactNode {
           body={b.body}
           className="bg-band"
         >
-          <MaterialCards items={b.items} />
+          {/* Ranges and hardness come from the compound table in Site
+              settings, matched by code; the block keeps its own copy only
+              for a compound the table does not list. */}
+          <MaterialCards
+            items={b.items.map(
+              (m: { code: string; tempRange: string; hardness: string }) => {
+                const c = compoundByCode(ctx.settings, m.code);
+                return c
+                  ? { ...m, tempRange: formatRange(c), hardness: c.hardness }
+                  : m;
+              },
+            )}
+          />
         </Section>
       );
 
@@ -479,13 +500,16 @@ function renderBlock(block: Block, ctx: Ctx): ReactNode {
 
     case "block.closingBand":
       return (
+        // The contact strip is not the document's to type: nine industry
+        // files carried "+91 (Nashik), Contact for number" and "Contact for
+        // email" as the published values. It reads Site settings.
         <ClosingBand
           eyebrow={b.eyebrow}
           lines={b.lines}
           accentLines={b.accentLines}
           body={b.body}
           actions={b.actions}
-          contacts={b.contacts}
+          contacts={closingContacts(ctx.settings)}
         />
       );
 
@@ -500,7 +524,26 @@ function renderBlock(block: Block, ctx: Ctx): ReactNode {
 
 /* ── The renderer ─────────────────────────────────────────────────────────── */
 
-export function BlockRenderer({
+/** Phone · email · certification, from Site settings — identical on every page. */
+function closingContacts(settings: SiteSettings) {
+  const { entity, certifications } = settings;
+  const held = certifications.items.find((c) => c.standing === "held");
+  return [
+    { icon: "phone", text: entity.phone, href: telHref(entity.phone) },
+    { icon: "email", text: entity.email, href: `mailto:${entity.email}` },
+    ...(held
+      ? [
+          {
+            icon: "cert",
+            text: `${held.code} ${held.statusLabel}`,
+            href: "/certifications",
+          },
+        ]
+      : []),
+  ];
+}
+
+export async function BlockRenderer({
   blocks,
   comp2,
   prose,
@@ -517,6 +560,7 @@ export function BlockRenderer({
    */
   prose?: ReactNode;
 }) {
+  const settings = await getSiteSettings();
   const banded = assignBands(blocks, comp2);
   const ctaAt = banded.findIndex((b) => b.block._type === "block.ctaBand");
   const proseAt = ctaAt === -1 ? banded.length : ctaAt;
@@ -528,7 +572,7 @@ export function BlockRenderer({
         // and an extra div around every section would change their layout.
         <Fragment key={block._key}>
           {i === proseAt && prose}
-          {renderBlock(block, { band, comp2 })}
+          {renderBlock(block, { band, comp2, settings })}
         </Fragment>
       ))}
       {proseAt === banded.length && prose}

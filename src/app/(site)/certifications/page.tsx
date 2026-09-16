@@ -1,4 +1,5 @@
 import { getSitePage } from "@/lib/page-source";
+import { trail } from "@/lib/breadcrumbs";
 import { buildMetadata } from "@/lib/seo";
 import { pageGraph } from "@/lib/schema";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -31,6 +32,8 @@ export async function generateMetadata() {
 export default async function CertificationsPage() {
   const fm = await getSitePage("certifications", certificationsPageSchema);
 
+  const crumbs = trail(["Certifications", "/certifications"]);
+
   return (
     <>
       <JsonLd
@@ -39,11 +42,12 @@ export default async function CertificationsPage() {
           path: "/certifications",
           name: fm.seo.title,
           description: fm.seo.description,
-          crumbs: [{ name: "Home", path: "/" }, { name: "Certifications", path: "/certifications" }],
+          crumbs,
         })}
       />
 
       <CertHero
+        breadcrumb={crumbs}
         badge={fm.badge}
         lines={fm.h1Lines}
         accentLines={fm.h1AccentLines}

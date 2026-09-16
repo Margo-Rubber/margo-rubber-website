@@ -371,7 +371,7 @@ export const sku = defineType({
       title: "Downloadable files",
       type: "array",
       description:
-        "These describe a file; they do not upload one. The link is wired separately.",
+        "A row renders only when it has a file address — until then the section stays hidden.",
       of: [
         defineArrayMember({
           type: "object",
@@ -380,6 +380,12 @@ export const sku = defineType({
             defineField({ name: "name", type: "string", validation: (r) => r.required() }),
             defineField({ name: "format", title: "File type", type: "string", validation: (r) => r.required() }),
             defineField({ name: "size", type: "string", validation: (r) => r.required() }),
+            defineField({
+              name: "href",
+              title: "File address",
+              type: "string",
+              description: "Paste the file URL. The row is shown only once a file is here.",
+            }),
             iconField(),
           ],
           preview: { select: { title: "name", subtitle: "format" } },

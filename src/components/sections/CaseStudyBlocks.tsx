@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
+import type { Crumb } from "@/lib/breadcrumbs";
 import { Img } from "@/components/ui/Img";
 import { Container } from "@/components/ui/Section";
 
@@ -58,17 +60,22 @@ function Marked({
         : "text-display-2";
   return (
     <H className={`${scale} ${className}`}>
-      {lines.map((line) => (
-        <span key={line} className="block">
-          {line.split("*").map((part, i) =>
-            i % 2 === 1 ? (
-              <span key={part} className="text-accent-400">
-                {part}
-              </span>
-            ) : (
-              part
-            ),
-          )}
+      {lines.map((line, li) => (
+        // The space after each block line is invisible but load-bearing: without
+        // it a crawler reads the stacked H1 as one run-together word.
+        <span key={line}>
+          <span className="block">
+            {line.split("*").map((part, i) =>
+              i % 2 === 1 ? (
+                <span key={part} className="text-accent-400">
+                  {part}
+                </span>
+              ) : (
+                part
+              ),
+            )}
+          </span>
+          {li < lines.length - 1 ? " " : null}
         </span>
       ))}
     </H>
@@ -191,6 +198,7 @@ export function CaseHero({
   image,
   badge,
   actions,
+  breadcrumb,
 }: {
   eyebrow: string;
   h1Lines: readonly string[];
@@ -198,11 +206,13 @@ export function CaseHero({
   image: string;
   badge: { title: string; note: string };
   actions: readonly { label: string; href: string; variant: string }[];
+  breadcrumb?: readonly Crumb[];
 }) {
   return (
     <header className="bg-canvas relative isolate overflow-hidden pt-36 pb-20 md:pt-48 md:pb-28">
       <Bloom className="top-1/4 -left-40 size-[32rem]" />
       <Container>
+        <Breadcrumb items={breadcrumb} className="mb-6" />
         <div className="grid items-center gap-14 lg:grid-cols-2">
           <div>
             <BarEyebrow>{eyebrow}</BarEyebrow>

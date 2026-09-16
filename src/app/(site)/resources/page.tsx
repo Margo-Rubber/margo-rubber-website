@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
+import { trail } from "@/lib/breadcrumbs";
 import { getAllFrontmatter } from "@/lib/content";
 import { getSitePage } from "@/lib/page-source";
 import { buildMetadata } from "@/lib/seo";
@@ -45,6 +46,8 @@ export default async function ResourcesPage() {
 
   const categoryCount = new Set(guides.map((g) => g.category)).size;
 
+  const crumbs = trail(["Resources", "/resources"]);
+
   return (
     <>
       <JsonLd
@@ -54,7 +57,7 @@ export default async function ResourcesPage() {
           path: "/resources",
           name: fm.seo.title,
           description: fm.seo.description,
-          crumbs: [{ name: "Home", path: "/" }, { name: "Resources", path: "/resources" }],
+          crumbs,
         })}
       />
 
@@ -96,22 +99,7 @@ export default async function ResourcesPage() {
           className="bg-accent-400/10 pointer-events-none absolute -top-20 -left-32 -z-10 size-[32rem] rounded-full blur-3xl"
         />
         <Container>
-          <nav aria-label="Breadcrumb">
-            <ol className="text-eyebrow text-ink-4 flex flex-wrap items-center gap-2 font-mono uppercase">
-              {fm.breadcrumb.map((b, i) => (
-                <li key={b.label} className="flex items-center gap-2">
-                  {i > 0 && <span aria-hidden>/</span>}
-                  {b.href ? (
-                    <Link href={b.href} className="hover:text-ink transition-colors">
-                      {b.label}
-                    </Link>
-                  ) : (
-                    <span className="text-ink-2">{b.label}</span>
-                  )}
-                </li>
-              ))}
-            </ol>
-          </nav>
+          <Breadcrumb items={crumbs} />
 
           <h1 className="text-display mt-6">
             {fm.h1Lines.map((line) => (

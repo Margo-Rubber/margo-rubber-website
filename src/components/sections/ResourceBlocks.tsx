@@ -122,9 +122,21 @@ function IconTile({ name }: { name: string }) {
 }
 
 /* ── guide card ─────────────────────────────────────────────────────────── */
-function GuideCard({ g, label }: { g: Guide; label: string }) {
+function GuideCard({
+  g,
+  label,
+  hidden = false,
+}: {
+  g: Guide;
+  label: string;
+  hidden?: boolean;
+}) {
   return (
-    <li data-lift="" className="rounded-card border-line hover:border-accent-400/40 flex flex-col border bg-[#0B0D10] p-7">
+    <li
+      data-lift=""
+      hidden={hidden}
+      className="rounded-card border-line hover:border-accent-400/40 flex flex-col border bg-[#0B0D10] p-7"
+    >
       <IconTile name={g.icon} />
       <p className="text-eyebrow text-accent-400 mt-6 flex items-center gap-2.5 font-mono uppercase">
         {label}
@@ -280,10 +292,18 @@ export function ResourceLibrary({
       <section className="bg-canvas py-[70px]">
         <Container>
           {categories.map((c) => {
+            // Every guide card is in the DOM at first paint; the filter and
+            // search hide, never unmount. A filtered library that unmounts
+            // is empty to a crawler.
+            const all = guides.filter((g) => g.category === c.key);
             const inGroup = matches.filter((g) => g.category === c.key);
-            if (!inGroup.length) return null;
+            if (!all.length) return null;
             return (
-              <div key={c.key} className="mb-16 last:mb-0">
+              <div
+                key={c.key}
+                className="mb-16 last:mb-0"
+                hidden={!inGroup.length}
+              >
                 {/* Centred, per the comp. The count moves under the blurb
                     rather than floating on the opposite edge, where it read as
                     an unrelated fragment across a wide row. */}
@@ -297,8 +317,13 @@ export function ResourceLibrary({
                   </p>
                 </header>
                 <ul className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-                  {inGroup.map((g) => (
-                    <GuideCard key={g.slug} g={g} label={c.label} />
+                  {all.map((g) => (
+                    <GuideCard
+                      key={g.slug}
+                      g={g}
+                      label={c.label}
+                      hidden={!inGroup.includes(g)}
+                    />
                   ))}
                 </ul>
               </div>

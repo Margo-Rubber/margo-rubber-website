@@ -59,17 +59,22 @@ export function Marked({
     <H
       className={`${size === "hero" ? "text-display" : "text-display-2"} ${className}`}
     >
-      {lines.map((line) => (
-        <span key={line} className="block">
-          {line.split("*").map((part, i) =>
-            i % 2 === 1 ? (
-              <span key={part} className="text-accent-400">
-                {part}
-              </span>
-            ) : (
-              part
-            ),
-          )}
+      {lines.map((line, li) => (
+        // The space after each block line is invisible but load-bearing: without
+        // it a crawler reads "Where RubberMeetsInnovation" as the H1.
+        <span key={line}>
+          <span className="block">
+            {line.split("*").map((part, i) =>
+              i % 2 === 1 ? (
+                <span key={part} className="text-accent-400">
+                  {part}
+                </span>
+              ) : (
+                part
+              ),
+            )}
+          </span>
+          {li < lines.length - 1 ? " " : null}
         </span>
       ))}
     </H>

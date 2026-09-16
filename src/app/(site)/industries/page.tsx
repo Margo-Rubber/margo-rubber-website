@@ -1,4 +1,5 @@
 import { getSitePage } from "@/lib/page-source";
+import { trail } from "@/lib/breadcrumbs";
 import { buildMetadata } from "@/lib/seo";
 import { pageGraph } from "@/lib/schema";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -18,6 +19,8 @@ export async function generateMetadata() {
 export default async function IndustriesHubPage() {
   const fm = await getSitePage("industries", industriesHubSchema);
 
+  const crumbs = trail(["Industries", "/industries"]);
+
   return (
     <>
       <JsonLd
@@ -27,11 +30,12 @@ export default async function IndustriesHubPage() {
           path: "/industries",
           name: fm.seo.title,
           description: fm.seo.description,
-          crumbs: [{ name: "Home", path: "/" }, { name: "Industries", path: "/industries" }],
+          crumbs,
         })}
       />
 
       <IndustriesHero
+        breadcrumb={crumbs}
         badge={fm.badge}
         lines={fm.h1Lines}
         accentLines={fm.h1AccentLines}

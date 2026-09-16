@@ -128,8 +128,15 @@ export function SpecTable({ columns, rows, footnote, controls = true }: Props) {
             </tr>
           </thead>
           <tbody>
-            {visible.map((r, ri) => (
-              <tr key={r[0] + ri} className="odd:bg-surface-2/40">
+            {/* Every row stays in the DOM — a filtered table that unmounts
+                hides the specification from a crawler. Rows outside the
+                current filter are hidden; the sorted order is applied on top. */}
+            {(sort ? visible : rows).map((r, ri) => (
+              <tr
+                key={r[0] + ri}
+                hidden={!visible.includes(r)}
+                className="odd:bg-surface-2/40"
+              >
                 {r.map((cell, ci) => (
                   <td
                     key={ci}

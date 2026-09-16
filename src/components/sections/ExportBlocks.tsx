@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
+import type { Crumb } from "@/lib/breadcrumbs";
 import { Img } from "@/components/ui/Img";
 import { Container } from "@/components/ui/Section";
 import {
@@ -37,17 +39,22 @@ function Marked({
         : "text-display-2";
   return (
     <H className={`${scale} ${className}`}>
-      {lines.map((line) => (
-        <span key={line} className="block">
-          {line.split("*").map((part, i) =>
-            i % 2 === 1 ? (
-              <span key={part} className="text-accent-400">
-                {part}
-              </span>
-            ) : (
-              part
-            ),
-          )}
+      {lines.map((line, li) => (
+        // The space after each block line is invisible but load-bearing: without
+        // it a crawler reads the stacked H1 as one run-together word.
+        <span key={line}>
+          <span className="block">
+            {line.split("*").map((part, i) =>
+              i % 2 === 1 ? (
+                <span key={part} className="text-accent-400">
+                  {part}
+                </span>
+              ) : (
+                part
+              ),
+            )}
+          </span>
+          {li < lines.length - 1 ? " " : null}
         </span>
       ))}
     </H>
@@ -224,6 +231,7 @@ export function ExportHero({
   intro,
   image,
   markets,
+  breadcrumb,
 }: {
   badge: string;
   h1Lines: readonly string[];
@@ -231,6 +239,7 @@ export function ExportHero({
   image: string;
   hub: { label: string; x: number; y: number };
   markets: readonly Pin[];
+  breadcrumb?: readonly Crumb[];
 }) {
   return (
     <header className="bg-canvas relative isolate overflow-hidden pt-36 pb-12 md:pt-48 md:pb-14">
@@ -271,6 +280,7 @@ export function ExportHero({
       <Bloom className="top-1/4 -left-32 size-[32rem]" />
 
       <Container>
+        <Breadcrumb items={breadcrumb} className="mb-6" />
         <span className="text-eyebrow border-accent-400/35 bg-accent-400/8 text-accent-400 inline-flex items-center gap-2.5 rounded-pill border px-3.5 py-1.5 font-mono uppercase backdrop-blur">
           <Icon name="globe" className="size-3.5" />
           {badge}

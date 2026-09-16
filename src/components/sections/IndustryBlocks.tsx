@@ -1,6 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
+import type { Crumb } from "@/lib/breadcrumbs";
 import Link from "next/link";
 import { Img } from "@/components/ui/Img";
 import { Container } from "@/components/ui/Section";
@@ -29,6 +31,7 @@ export function IndustriesHero({
   intro,
   facts,
   image,
+  breadcrumb,
 }: {
   badge: string;
   lines: string[];
@@ -36,6 +39,7 @@ export function IndustriesHero({
   intro: string;
   facts: { label: string; value: string }[];
   image?: string;
+  breadcrumb?: readonly Crumb[];
 }) {
   return (
     <header className="relative isolate overflow-hidden pt-28 pb-12 md:pt-40 md:pb-16">
@@ -53,6 +57,7 @@ export function IndustriesHero({
         </>
       )}
       <Container>
+        <Breadcrumb items={breadcrumb} className="mb-6" />
         <span className="text-eyebrow border-accent-400/40 text-accent-400 inline-flex items-center gap-2 rounded-pill border px-4 py-1.5 font-mono uppercase">
           <span className="bg-accent-400 size-1.5 rounded-full" />
           {badge}
@@ -65,6 +70,8 @@ export function IndustriesHero({
               className={`block ${accentLines.includes(i) ? "text-accent-400" : ""}`}
             >
               {l}
+              {/* Trailing space inside the block: invisible, but a crawler reads the lines with spaces. */}
+              {i < lines.length - 1 ? " " : ""}
             </span>
           ))}
         </h1>
@@ -179,11 +186,15 @@ export function IndustryGrid({
             </p>
           </div>
 
+          {/* All nine cards render at first paint; the filter hides, never
+              unmounts. A filtered card that unmounts takes its link out of
+              the crawlable page. */}
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {visible.map((i) => (
+            {items.map((i) => (
               <Link
                 key={i.slug}
                 href={`/industries/${i.slug}`}
+                hidden={!visible.includes(i)}
                 data-lift=""
                 className="border-line bg-surface rounded-card group block overflow-hidden border hover:border-[color:var(--color-line-accent)]"
               >

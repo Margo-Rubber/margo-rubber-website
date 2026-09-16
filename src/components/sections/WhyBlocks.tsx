@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
+import type { Crumb } from "@/lib/breadcrumbs";
 import { Img } from "@/components/ui/Img";
 import { Container } from "@/components/ui/Section";
 import {
@@ -52,17 +54,22 @@ function Marked({
         : "text-display-2";
   return (
     <H className={`${scale} ${className}`}>
-      {lines.map((line) => (
-        <span key={line} className="block">
-          {line.split("*").map((part, i) =>
-            i % 2 === 1 ? (
-              <span key={part} className="text-accent-400">
-                {part}
-              </span>
-            ) : (
-              part
-            ),
-          )}
+      {lines.map((line, li) => (
+        // The space after each block line is invisible but load-bearing: without
+        // it a crawler reads the stacked H1 as one run-together word.
+        <span key={line}>
+          <span className="block">
+            {line.split("*").map((part, i) =>
+              i % 2 === 1 ? (
+                <span key={part} className="text-accent-400">
+                  {part}
+                </span>
+              ) : (
+                part
+              ),
+            )}
+          </span>
+          {li < lines.length - 1 ? " " : null}
         </span>
       ))}
     </H>
@@ -323,6 +330,7 @@ export function WhyHero({
   image,
   stats,
   actions,
+  breadcrumb,
 }: {
   eyebrow: string;
   h1Lines: readonly string[];
@@ -335,6 +343,7 @@ export function WhyHero({
     variant: string;
     icon?: string;
   }[];
+  breadcrumb?: readonly Crumb[];
 }) {
   return (
     <header className="bg-canvas relative isolate overflow-hidden pt-40 pb-24 md:pt-56 md:pb-32">
@@ -369,6 +378,7 @@ export function WhyHero({
       <Bloom className="top-1/3 -left-40 size-[34rem]" />
 
       <Container>
+        <Breadcrumb items={breadcrumb} className="mb-6" />
         <p className="text-eyebrow text-accent-400 flex items-center gap-4 font-mono uppercase">
           <span aria-hidden className="bg-accent-400/70 inline-block h-px w-8" />
           {eyebrow}
