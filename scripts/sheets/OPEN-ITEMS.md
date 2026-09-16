@@ -157,3 +157,10 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 82. **No product photography** — the tray-of-mouldings plate serves every page; the two metalworking stock images are off (sheet 32 §02). Thirty-one phone photographs on a plain background is the sheets' first ask.
 83. **Certification row date** renders "21 February 2027" from Site settings where a sheet writes "21 Feb 2027".
 84. **"Download Quality Certificates"** → "Certification detail" (a page, not a file); the hero's "Download Datasheet" → "Request documentation" — the sheets remove the dead downloads but do not name these two controls.
+
+## 35 Resource articles (7 guides)
+
+85. **Byline.** "Reviewed at our works in Nashik by [name], [title] · Published [date]" — the reviewer's name and title (Site settings → guide reviewer) and each guide's publication date are blank until Margo names them; the byline renders when they are set.
+86. **Related-link anchor text.** The sheets give anchor text per link ("Silicone vs EPDM guide", "About Margo"); the related strip renders the target's own short name and carries categories, industries and guides only — /about and /certifications links in two sheets are not shown.
+87. **The full AS568 chart** (RES_04 §12) — the sheet says the 369-row table is the one download worth building; not built.
+88. **Hub blurb vs standfirst.** Sheet 31's card blurbs stay on `intro`; the articles' opening paragraphs are on the new `standfirst` field.

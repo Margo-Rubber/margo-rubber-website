@@ -4,7 +4,8 @@ import { getSiteSettings } from "@/lib/settings";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { trail } from "@/lib/breadcrumbs";
 import { notFound } from "next/navigation";
-import { getResourcePage, resourceSlugs } from "@/lib/resource-source";
+import { getResourcePage, listResources, resourceSlugs } from "@/lib/resource-source";
+import { emphasised } from "@/components/ui/Emphasis";
 import { Prose } from "@/components/blocks/Prose";
 import { buildMetadata } from "@/lib/seo";
 import { articleNode, pageGraph } from "@/lib/schema";
@@ -66,6 +67,7 @@ export default async function ResourceGuidePage(
   const { frontmatter: fm, Content, prose, hasBody } = page;
   const { guideReviewer } = await getSiteSettings();
   const related = fm.related;
+  const guides = related.resources.length ? await listResources() : [];
 
   const crumbs = trail(
     ["Resources", "/resources"],
@@ -105,7 +107,7 @@ export default async function ResourceGuidePage(
           <h1 className="text-display-2 mt-4 max-w-[24ch]">{fm.h1}</h1>
 
           <p className="text-ink-3 mt-6 max-w-[60ch] leading-relaxed">
-            {fm.intro}
+            {fm.standfirst ?? fm.intro}
           </p>
           {/* The byline — reviewer from Site settings, date from the guide.
               Nothing renders while either is unset (sheet 35). */}
@@ -159,9 +161,45 @@ export default async function ResourceGuidePage(
           </div>
         )}
 
+        {/* The questions the FAQPage node carries, on the page as well —
+            the same rule as everywhere else on the site. */}
+        {hasBody && fm.faqs.length > 0 && (
+          <section className="max-w-[68ch] pb-16">
+            <h2 className="text-h2">Frequently asked questions</h2>
+            <ul className="mt-6 space-y-4">
+              {fm.faqs.map((f) => (
+                <li key={f.q} className="rounded-card border-line border bg-[#0B0D10]">
+                  <details className="group">
+                    <summary className="flex cursor-pointer list-none items-center justify-between gap-6 p-5 [&::-webkit-details-marker]:hidden">
+                      <span className="text-ink text-sm font-medium">{f.q}</span>
+                      <span aria-hidden className="text-ink-4 transition-transform group-open:rotate-180">⌄</span>
+                    </summary>
+                    <p className="text-ink-3 px-5 pb-5 text-sm leading-relaxed">{f.a}</p>
+                  </details>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {/* The closing offer the sheet writes for this guide. */}
+        {hasBody && fm.closing && (
+          <div className="rounded-card border-line border-l-accent-400 mb-16 max-w-[68ch] border border-l-2 bg-[#0B0D10] p-7 md:p-9">
+            <p className="text-ink-2 leading-relaxed">{emphasised(fm.closing.body, "text-ink font-semibold")}</p>
+            <div className="mt-6">
+              <Link
+                href={fm.closing.cta.href}
+                className="bg-accent-400 text-ink hover:opacity-90 shadow-glow rounded-cta inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-colors"
+              >
+                {fm.closing.cta.label} <span aria-hidden>→</span>
+              </Link>
+            </div>
+          </div>
+        )}
+
         {/* Related links carry the internal-linking spec from the plan: every
             guide points at the categories and sectors it informs. */}
-        {(related.products.length > 0 || related.industries.length > 0) && (
+        {(related.products.length > 0 || related.industries.length > 0 || related.resources.length > 0) && (
           <div className="border-line max-w-[68ch] border-t pt-10 pb-20">
             <h2 className="text-eyebrow text-ink-4 font-mono uppercase">
               Related
@@ -184,6 +222,17 @@ export default async function ResourceGuidePage(
                     className="border-line-2 text-ink-2 hover:border-accent-400/60 hover:text-ink rounded-pill inline-flex border px-4 py-2 text-sm transition-colors"
                   >
                     {displayName(i)}
+                  </Link>
+                </li>
+              ))}
+              {/* Guide-to-guide links, by the other guide's short name. */}
+              {related.resources.map((r) => (
+                <li key={`r-${r}`}>
+                  <Link
+                    href={`/resources/${r}`}
+                    className="border-line-2 text-ink-2 hover:border-accent-400/60 hover:text-ink rounded-pill inline-flex border px-4 py-2 text-sm transition-colors"
+                  >
+                    {guides.find((g) => g.slug === r)?.navLabel ?? r}
                   </Link>
                 </li>
               ))}

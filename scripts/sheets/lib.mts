@@ -276,12 +276,19 @@ function* strings(v: unknown, path = ""): Generator<[string, string]> {
   if (typeof v === "string") yield [path, v];
   else if (Array.isArray(v))
     for (let i = 0; i < v.length; i++) yield* strings(v[i], `${path}[${i}]`);
-  else if (v && typeof v === "object")
+  else if (v && typeof v === "object") {
+    // A Portable Text block reads as one sentence, not one span per mark.
+    const b = v as { _type?: string; children?: { text?: string }[] };
+    if (b._type === "block" && Array.isArray(b.children)) {
+      yield [path, b.children.map((c) => c.text ?? "").join("")];
+      return;
+    }
     for (const [k, val] of Object.entries(v)) {
       // An image slot id is a key into the photograph registry, not copy.
       if (k === "image") continue;
       yield* strings(val, path ? `${path}.${k}` : k);
     }
+  }
 }
 
 export function forbidden(patch: unknown): string[] {

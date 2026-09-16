@@ -697,6 +697,10 @@ export const resourceSchema = baseSchema.extend({
   featured: z.boolean().default(false),
   /** The shorter blurb the "Start here" card carries (sheet 31 §02); the card list uses `intro`. */
   featuredBlurb: z.string().optional(),
+  /** The article's own opening paragraph (sheet 35); `intro` stays the hub card's blurb (sheet 31). */
+  standfirst: z.string().min(40).optional(),
+  /** The closing band — an offer and a button (sheet 35, "Closing CTA"). */
+  closing: z.object({ body: z.string().min(20), cta: z.object({ label: z.string(), href: z.string() }) }).optional(),
   readingMinutes: z.number().int().positive(),
   intro: z.string().min(40),
   faqs: z.array(faqSchema).default([]),

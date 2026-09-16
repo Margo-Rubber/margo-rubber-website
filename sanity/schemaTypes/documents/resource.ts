@@ -180,6 +180,33 @@ export const resource = defineType({
       group: "article",
     }),
     defineField({
+      name: "standfirst",
+      title: "Opening paragraph",
+      type: "text",
+      rows: 3,
+      description: "Under the heading on the guide itself. The card blurb on /resources is the short description below.",
+      group: "article",
+    }),
+    defineField({
+      name: "closing",
+      title: "Closing offer",
+      type: "object",
+      description: "The paragraph and button at the end of the guide.",
+      fields: [
+        defineField({ name: "body", title: "Text", type: "text", rows: 3, validation: (r) => r.required() }),
+        defineField({
+          name: "cta",
+          title: "Button",
+          type: "object",
+          fields: [
+            defineField({ name: "label", title: "Button text", type: "string", validation: (r) => r.required() }),
+            defineField({ name: "href", title: "Goes to", type: "string", validation: (r) => r.required() }),
+          ],
+        }),
+      ],
+      group: "article",
+    }),
+    defineField({
       name: "publishedAt",
       title: "Published on",
       type: "date",

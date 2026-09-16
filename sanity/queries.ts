@@ -243,6 +243,8 @@ export const resourceBySlugQuery = groq`
     icon,
     featured,
     featuredBlurb,
+    standfirst,
+    closing,
     publishedAt,
     readingMinutes,
     h1,
