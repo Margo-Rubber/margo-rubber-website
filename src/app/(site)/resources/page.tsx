@@ -1,8 +1,8 @@
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
+import { listResources } from "@/lib/resource-source";
 import { publishedRoutes } from "@/lib/published";
 import { SITE_URL } from "@/lib/seo";
 import { trail } from "@/lib/breadcrumbs";
-import { getAllFrontmatter } from "@/lib/content";
 import { getSitePage } from "@/lib/page-source";
 import { buildMetadata } from "@/lib/seo";
 import { itemListNode, pageGraph } from "@/lib/schema";
@@ -32,7 +32,7 @@ export async function generateMetadata() {
 export default async function ResourcesPage() {
   const fm = await getSitePage("resources", resourcesHubSchema);
 
-  const guides: Guide[] = getAllFrontmatter("resources")
+  const guides: Guide[] = (await listResources())
     .map((g) => ({
       slug: g.slug,
       h1: g.h1,
@@ -41,6 +41,7 @@ export default async function ResourcesPage() {
       icon: g.icon,
       readingMinutes: g.readingMinutes,
       featured: g.featured,
+      featuredBlurb: g.featuredBlurb,
     }))
     // Longest reads last within a group: the quick reference guides are the
     // ones a specifying engineer wants first.
@@ -153,11 +154,10 @@ export default async function ResourcesPage() {
               <dd>Categories</dd>
             </div>
             <span aria-hidden>·</span>
+            {/* "Updated September 2026" — the sheet's order: label, then the month. */}
             <div className="flex items-center gap-1.5">
-              <dt className="text-accent-400 font-semibold">
-                {fm.lastUpdated}
-              </dt>
-              <dd>Last Updated</dd>
+              <dd>Updated</dd>
+              <dt className="text-accent-400 font-semibold">{fm.lastUpdated}</dt>
             </div>
           </dl>
         </Container>

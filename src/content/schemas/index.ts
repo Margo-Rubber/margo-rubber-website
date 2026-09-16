@@ -655,6 +655,8 @@ export const resourceSchema = baseSchema.extend({
     .default("book"),
   /** Promotes this guide into the hub's "Start here" slot. Exactly one should. */
   featured: z.boolean().default(false),
+  /** The shorter blurb the "Start here" card carries (sheet 31 §02); the card list uses `intro`. */
+  featuredBlurb: z.string().optional(),
   readingMinutes: z.number().int().positive(),
   intro: z.string().min(40),
   faqs: z.array(faqSchema).default([]),

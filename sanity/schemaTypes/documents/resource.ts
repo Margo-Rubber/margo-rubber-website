@@ -213,6 +213,14 @@ export const resource = defineType({
       group: "card",
     }),
     defineField({
+      name: "featuredBlurb",
+      title: "Blurb on the Start-here card",
+      type: "text",
+      rows: 2,
+      description: "Only the featured guide uses this; the category card shows the opening paragraph.",
+      group: "card",
+    }),
+    defineField({
       name: "readingMinutes",
       title: "Reading time in minutes",
       type: "number",

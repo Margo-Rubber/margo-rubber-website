@@ -88,6 +88,7 @@ export const productCategoryBySlugQuery = groq`
     faqs,
     confirmWithMargo,
     related,
+    service,
     seo{
       title,
       description,
@@ -236,6 +237,8 @@ export const resourceBySlugQuery = groq`
     category,
     icon,
     featured,
+    featuredBlurb,
+    publishedAt,
     readingMinutes,
     h1,
     intro,
