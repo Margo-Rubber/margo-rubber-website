@@ -1,6 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { INDUSTRIES, industryBySlug } from "@/content/routes";
+import { useSearch } from "@/lib/contact-prefill";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import type { Crumb } from "@/lib/breadcrumbs";
 import Link from "next/link";
@@ -334,10 +336,23 @@ export function EnquiryPanel({
   heading: string;
   body: string;
   points: string[];
-  fields: { label: string; placeholder: string; type: string; full: boolean }[];
+  fields: { name: string; label: string; placeholder: string; type: string; full: boolean }[];
   submitLabel: string;
   footnote: string;
 }) {
+  // The industry dropdown, from the route registry — the eleven sectors and
+  // "Other". A buyer who arrives via ?sector=hvac, or clicked the HVAC chip,
+  // finds it already chosen (sheet 05 §05); the address is read as a store,
+  // so the server renders it empty and the client fills it after hydration.
+  const [chosen, setChosen] = useState<string | null>(null);
+  const search = useSearch();
+  const fromLink = useMemo(() => {
+    const want = new URLSearchParams(search).get("sector")?.trim().toLowerCase();
+    if (!want) return "";
+    return (industryBySlug(want) ?? INDUSTRIES.find((i) => i.label.toLowerCase() === want))?.label ?? "";
+  }, [search]);
+  const sector = chosen ?? fromLink;
+  const setSector = setChosen;
   return (
     <section className="py-[70px]">
       <Container>
@@ -379,24 +394,39 @@ export function EnquiryPanel({
                   <span className="text-eyebrow text-ink-4 font-mono uppercase">
                     {f.label}
                   </span>
+                  {/* Every control carries its field name: FormData reads the
+                      DOM, and an input without a name posts nothing. */}
                   {f.type === "textarea" ? (
                     <textarea
+                      name={f.name}
                       rows={3}
+                      required
                       placeholder={f.placeholder}
                       className="border-line bg-surface text-ink placeholder:text-ink-4 focus:border-accent-400 mt-2 w-full rounded-lg border px-4 py-3 text-sm"
                     />
                   ) : f.type === "select" ? (
                     <select
-                      defaultValue=""
-                      className="border-line bg-surface text-ink-4 focus:border-accent-400 mt-2 w-full rounded-lg border px-4 py-3 text-sm"
+                      name={f.name}
+                      required
+                      value={sector}
+                      onChange={(e) => setSector(e.target.value)}
+                      className={`border-line bg-surface focus:border-accent-400 mt-2 w-full rounded-lg border px-4 py-3 text-sm ${sector ? "text-ink" : "text-ink-4"}`}
                     >
                       <option value="" disabled>
                         {f.placeholder}
                       </option>
+                      {INDUSTRIES.map((i) => (
+                        <option key={i.slug} value={i.label}>
+                          {i.label}
+                        </option>
+                      ))}
+                      <option value="Other">Other</option>
                     </select>
                   ) : (
                     <input
+                      name={f.name}
                       type={f.type}
+                      required
                       placeholder={f.placeholder}
                       className="border-line bg-surface text-ink placeholder:text-ink-4 focus:border-accent-400 mt-2 w-full rounded-lg border px-4 py-3 text-sm"
                     />

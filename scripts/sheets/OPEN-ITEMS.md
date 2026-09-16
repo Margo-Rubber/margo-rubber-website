@@ -37,7 +37,7 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 
 16. **European Union block.** New, split from "US & EU"; the sheet asks: is the EU a target market at all? If not, delete rather than split. In place as written.
 17. **Two bullets copied as written that look like sheet artefacts** — Singapore: "Transit 8–12 days, Nhava Sheva to the Port of Singapore *figure*"; Kenya & Tanzania: the ports bullet carries "CMA CGM's Swahili Express publishes 19 and 21 days … as the footnote already says". *Confirm the intended wording.*
-18. **Map pin labels and the concept-build pin layer.** The nine labels and the tooltip text are stored on the markets; the map draws pins without labels until the nine-pin map rewrite (Phase 7). The concept-build figure strip shows only on the concept build.
+18. **Map pin labels and the concept-build pin layer.** ~~The nine labels and the tooltip text are stored on the markets; the map draws pins without labels until the nine-pin map rewrite (Phase 7).~~ Resolved (Phase 7b): the nine destination labels and the origin are drawn beside their pins. The European Union block (item 16) has a lane but no pin label — the sheet's map names nine destinations and it is not among them. The concept-build figure strip shows only on the concept build.
 19. **Trade-lane chips.** The sheet's chip list keeps "US & EU" while its block list splits it into United States and European Union; the chips follow the blocks (8 lanes: Australia, United Kingdom, UAE & Saudi, Malaysia, USA, European Union, Singapore, Kenya & Tanzania).
 
 ## 07 Certifications
@@ -70,7 +70,7 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 
 ## 11 Gaskets
 
-36. **Confirmation copy** "Enquiry received. A named engineer replies within 48 hours to {email}." is the contact form's post-submit state — Phase 7 (forms), not this page.
+36. ~~**Confirmation copy** "Enquiry received. A named engineer replies within 48 hours to {email}." is the contact form's post-submit state — Phase 7 (forms), not this page.~~ Resolved (Phase 7b): the contact form shows it in place of the form once sent, with the buyer's address; the extrusion and sponge & foam variants apply when that category is chosen.
 37. **FAQ questions.** "Which rubber gasket material should I use for steam?", "What temperature can an EPDM gasket withstand?", "What is the lead time for custom rubber gaskets?" and "How is a rubber gasket order quoted?" are named for the FAQPage node with no written answers and no FAQ section; no node until one is written (as item 29).
 38. **Hero image.** The sheet says the hero has no image; the slot keeps the existing photograph with the sheet's alt text for when one is chosen.
 
@@ -78,40 +78,40 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 
 39. **Flex-fatigue qualification offer.** The footnote says cycle life "is established by qualification testing on that part — to ISO 132, ASTM D430 or ASTM D813" and "we will qualify against it". The claims register says no fatigue rig in-house or at the partner lab, and the Disclaimer's partner-lab list (sheet 08 §3) does not include fatigue. Shipped as written; confirm who runs the test.
 40. **Chip rules.** The sheet names four service chips (Fatigue-critical, Oil contact, Water & steam, High temperature) without saying which rows each selects; they select from the table's own cells — the two "High"/"Very high" fatigue grades, service text naming oil without a "not for oil" clause, water/steam/coolant, and peaks of +175 °C and above.
-41. **Confirmation copy** (as item 36) and the three unanswered FAQ questions (as item 37).
+41. ~~**Confirmation copy** (as item 36)~~ — resolved with item 36; and the three unanswered FAQ questions (as item 37).
 
 ## 13 Anti-Vibration Mounts
 
 42. **Chip rules.** Bonded / Unbonded / Compression / Shear select mount types by form (bobbins, conical, plate, shear and bonded bush = bonded; buffer = unbonded; shear and bush mounts = shear, the rest compression). The sheet names the chips only; confirm the classification.
 43. **Floor mat moved out** to Pads, Stoppers & Caps — client-confirmed part, category to confirm (sheet's Moved out row).
-44. **Confirmation copy** (as item 36) and the three unanswered FAQ questions (as item 37).
+44. ~~**Confirmation copy** (as item 36)~~ — resolved with item 36; and the three unanswered FAQ questions (as item 37).
 
 ## 14 Grommets
 
 45. **Two CONFIRMs in the parts list** — Edge Protection Grommet Strip (extruded and cut; may belong under Extrusion Profiles) and Metal-Reinforced Grommets (needs insert loading; resolves with the bonding CONFIRM). Both listed as written.
-46. **Confirmation copy** (as item 36) and the unanswered FAQ questions (as item 37).
+46. ~~**Confirmation copy** (as item 36)~~ — resolved with item 36; and the unanswered FAQ questions (as item 37).
 
 ## 15 Bushes
 
 47. **Two CONFIRMs in the parts list** — Torque Rod Bushes (heavy-commercial duty class) and Double-Sleeve Bonded Bushes (two inserts in one tool; resolves with the bonding CONFIRM). Both listed as written.
-48. **Confirmation copy** (as item 36) and the unanswered FAQ questions (as item 37).
+48. ~~**Confirmation copy** (as item 36)~~ — resolved with item 36; and the unanswered FAQ questions (as item 37).
 
 ## 16 Pads, Stoppers & Caps
 
 49. **Four table rows carry derived values** (Big Support Pad, Oil Seal Filler Cap, Rubber Insulator Head Cover, Boot Tailgate Switch) — the sheet shows its working in "Where the four new rows come from"; the plant should confirm the sizes and compounds.
 50. **Scorpio Footrest Rubber Mat** moved in from Anti-Vibration Mounts (same CONFIRM as item 43).
-51. **Confirmation copy** (as item 36); the two named FAQ questions are not on the page (as item 29).
+51. ~~**Confirmation copy** (as item 36)~~ — resolved with item 36; the two named FAQ questions are not on the page (as item 29).
 
 ## 17 Leak Test Rubber
 
 52. **FAQ node empty.** "Can I reorder leak test rubber in small quantities?" and "What is the lead time for a replacement rig seal?" are named with no written answers; no FAQPage node ships until they are written (as item 37).
-53. **Confirmation copy** (as item 36).
+53. ~~**Confirmation copy** (as item 36).~~ Resolved with item 36.
 
 ## 18 Extrusion Profiles
 
 54. **Sector card icons.** Mining, Oil & gas and Agriculture take the nearest strokes in the icon set (layers, droplet, cycle) until drawn.
 55. ~~**Construction card** links through the route registry to /contact?industry=Construction until the Construction page (sheet 41) is live.~~ Resolved — the page is built (Phase 7) and the card resolves to /industries/construction.
-56. **Confirmation copy** "Drawing received. A named engineer replies within 48 hours to {email} with a compound recommendation, hardness grade and indicative pricing." — contact form post-submit state, Phase 7.
+56. ~~**Confirmation copy** "Drawing received. A named engineer replies within 48 hours to {email} with a compound recommendation, hardness grade and indicative pricing." — contact form post-submit state, Phase 7.~~ Resolved (Phase 7b): shown when Extrusion Profiles is the category on the form — which a link from this page (`?profile=`, `?request=datasheets`) pre-selects.
 57. **FAQ node empty.** The two live questions had no written answers on the sheet and no FAQ section exists; none emitted (as item 29).
 
 ## 19 Sponge & Foam Rubber
@@ -119,14 +119,14 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 58. **Datasheet button.** The sheet links "Download Datasheet ↓ /resources/sponge-foam-datasheet.pdf"; the datasheet is a page (sheet 40, Phase 6) and the PDF is not yet produced. Both buttons open the page under its own title, "Sponge & Foam Rubber Datasheet". Restore the sheet's label and href when the file is published.
 59. **Construction and Transport cards** link through the route registry to /contact until those pages (sheets 41, 42) are live.
 60. **FAQ node empty.** The two live questions have no written answers on the sheet; a HowTo node carries the four-line specification guide instead, as the sheet's graph asks.
-61. **Confirmation copy** "Enquiry received. A named engineer replies within 48 hours to {email} with a compound, a density and a recommended cut form." — Phase 7 forms.
+61. ~~**Confirmation copy** "Enquiry received. A named engineer replies within 48 hours to {email} with a compound, a density and a recommended cut form." — Phase 7 forms.~~ Resolved (Phase 7b): shown when Sponge & Foam Rubber is the category on the form.
 
 ## 20 Automotive
 
 62. **Component card bullets.** The sheet writes bullets for one card (Bushes & Bushings) and says the other seven "take three bullets each … written per card from the matching product sheet" — none are written, so the seven cards ship with body copy only. The same holds for sheets 21–28.
-63. **Quality links.** "View ISO Certificate" and "Download Quality Policy" ship as the sheet's fallback — Request ISO Certificate → /contact?request=iso and Request Quality Policy → /contact?request=quality-policy — until the PDFs exist.
+63. **Quality links.** "View ISO Certificate" and "Download Quality Policy" ship as the sheet's fallback — Request ISO Certificate → /contact?request=iso and Request Quality Policy → /contact?request=quality-policy — until the PDFs exist. (Phase 7b: the form reads the request and opens with "Request: ISO 9001:2015 certificate" / "Request: quality policy" in the project details.)
 64. **Export card title/subtitle** ("Nashik → OEM Lines", "Direct supply to OEMs and Tier 1 suppliers") are live strings the sheet does not rewrite; kept.
-65. **Confirmation copy** — Phase 7 forms (as item 36).
+65. ~~**Confirmation copy** — Phase 7 forms (as item 36).~~ Resolved with item 36.
 
 ## 21–26 Mining, Oil & Gas, Medical Devices, Pumps & Valves, HVAC, Electrical & Electronics
 
@@ -177,7 +177,7 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 93. **Hero photographs.** None of the four categories has an image slot; the heroes ship without a photograph. The sheets give the alt text to use when one is added — "Fabric-reinforced rubber diaphragms moulded at Margo Rubber Products, Nashik" (36), "Rubber-to-metal bonded mounts and bushes moulded at Margo Rubber Products, Nashik" (37), "Natural rubber chute lining and conveyor skirting cut at Margo Rubber Products, Nashik" (38), "Moulded rubber plunger cups and rod seals produced at Margo Rubber Products, Nashik" (39).
 94. **/products hub cards.** The hub grid (sheet 02) has eleven cards with their own kicker, tag, chips and image; the four new categories need the same before they can be added. Sheet 38 also asks for a third group on the grid — "sheet and lining products" — to be raised with the design before its card is built. Until then the four are reachable from the header menu, the footer, the industry pages and the sitemap.
 95. **Seals slug** — the sheet's one decision for Ayaz: /products/seals (recommended, and what SKU 31 canonicalises to) or /products/reciprocating-seals. Built at /products/seals with §02 as the router, as recommended; the nav label is "Reciprocating Seals".
-96. **Plunger cups card (39 §03)** links to the part's live URL, /products/pads-stoppers-caps/rubber-plungers, until the SKU moves to /products/seals/plunger-seals (sheet 33's category move — a later Phase 7 branch, with the 301).
+96. ~~**Plunger cups card (39 §03)** links to the part's live URL, /products/pads-stoppers-caps/rubber-plungers, until the SKU moves to /products/seals/plunger-seals (sheet 33's category move — a later Phase 7 branch, with the 301).~~ Resolved (Phase 7b): the part is at /products/seals/plunger-seals and the old URL is a 301.
 97. **Lining service area (38 §07).** Fitting is client-confirmed and Version B ships. The sheet also asks for a Service node and "a named geographic service area"; no area is named, so neither is emitted. The "not included" line ships as the three items the note lists (scaffolding, confined-space entry, plant shutdown coordination) under a "Not included" heading — *confirm the wording and name the area*.
 98. **"See sheet 37"** (38 §06, the adhesion-to-steel row) is the sheet's own cross-reference; it ships as written, linked to /products/bonded-components. *Reword if wanted* — e.g. "See bonded components".
 99. **In-page cross-references** — "See section 04", "see section 06", "See section 05" — ship as written, each linked to the section it names.
@@ -191,4 +191,16 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 104. **/industries hub cards.** Sheet 05's grid has nine sector cards with body, products supplied, typical clients and an image; Construction and Transport need the same to move out of "additional sectors" (where "Construction & glazing" still links to /products/extrusion). Both are already in the hub's ItemList structured data.
 105. **Download buttons** (41–42 §07) render only once the hosted ISO certificate and quality policy exist — the same rule as the nine original industry pages (item 63).
 106. **RDSO vendor approval** (42 §05) ships as the sheet writes it — "Application in process — not yet held" — client-confirmed 2026-09-03. The sheet's business question stands: whether to pursue it, and if so the target date for the line.
-107. **Contact dropdown labels.** The sheets ask for "Seals — reciprocating" and "Transport — rail & marine" as dropdown options; the form offers the registry labels "Reciprocating Seals" and "Transport — Rail & Marine". Query prefills (`?part=`, `?industry=`) are the forms branch of Phase 7.
+107. **Contact dropdown labels.** The sheets ask for "Seals — reciprocating" and "Transport — rail & marine" as dropdown options; the form offers the registry labels "Reciprocating Seals" and "Transport — Rail & Marine". (Phase 7b: `?part=Seals` and `?industry=Transport` pre-select those options.)
+
+## Phase 7b — forms, redirects and the SKU moves
+
+108. **Attachment upload** (04 §02, 18 §09 "Send Drawing & Quote") stays an inert field until the storage account exists (item 14). The label and hint ship; nothing is uploaded.
+109. **Legacy WooCommerce URLs.** The 301 map for the old site's product URLs (Build Checklist B15) is taken from a crawl immediately before cutover; `src/content/redirects.ts` is where they go, next to the eight redirects already there.
+110. **SKU moves made** (each sheet's "New URL … 301 from …"): 02 → /products/extrusion/rear-windscreen-glazing-rubber, 04 → /products/pads-stoppers-caps/side-step-pad, 05 → /products/anti-vibration-mounts/cv-suspension-bump-stop, 07 → /products/sponge-foam-rubber/c-pillar-garnish-seal, 09 → /products/sponge-foam-rubber/foam-gaskets, 31 → /products/seals/plunger-seals. The image slots keep their old keys (`sku.anti-vibration-mounts--backlight-mount.photo` …) until the image-slot clean-up branch renames them with the 21 retired slots.
+111. **Duplicates folded** (sheets 16 and 29, "Duplicate — 301 this URL"): /oil-seals/fkm-compression-pump-inlays → /oil-seals/compression-pump-inlays and /pads-stoppers-caps/oil-seal-filler-cap → /pads-stoppers-caps/oil-filler-cap. Both documents carried the survivor's copy word for word after Phase 6; they are removed (dataset backup `backups/production-2026-09-16-18-51-moves.ndjson`). Item 74's question — are 28 and 29 the same cap? — is answered by the sheets as yes; if Margo says otherwise, the redirect comes out and a distinct part page is written.
+112. **Oil-seal compound pages** (14, 15, 17, 18) — the sheets say "collapse into /products/oil-seals as a compound section and 301 … after the collapse; until the collapse, canonical to this URL … move the content, do not bin it". They stay live, self-canonical, as written, until the category page's compound sections are written to carry their content — a copy job for 3rd Shade, not a redirect.
+113. **Kept, per their own sheets:** 08 EPDM Gaskets (sheet 08 overrides sheet 33's collapse — "collapse this one as well and the Gaskets category is left with no parts at all") and 24 Flat Packing Pad. 03 and 05 stay two parts with the duty in both H1s, pending the two-drawing check (item 74).
+114. **/why-margo** — the parked takedown sheet (30) recommends "unpublish now, 301 to /about": the page publishes four certifications not held and a fabricated timeline and testimonial. It is placeholder (noindex) and linked from nowhere, so it is not reachable today; the decision to remove it and redirect is Ayaz's — the redirect registry is ready to take it.
+115. **Products-hub and industries-hub forms** posted nothing until Phase 7b — their controls carried no field names and the selects had no options. Fixed: named fields, the registry's fifteen categories / eleven industries as options, `?sector=` pre-selects the industry.
+116. **Hidden context fields.** A pre-filled link's parameters travel with the enquiry as `via_part`, `via_industry`, `via_request`, `via_topic`, `via_profile`, `via_doc`, `via_sector` in the record's raw fields; the desk shows raw fields as it does today.

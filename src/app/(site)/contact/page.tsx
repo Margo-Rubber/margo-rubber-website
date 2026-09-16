@@ -64,6 +64,8 @@ export default async function ContactPage() {
         steps={[...fm.quote.steps]}
         step1={fm.quote.step1}
         step2={fm.quote.step2}
+        confirmation={fm.quote.confirmation}
+        confirmations={fm.quote.confirmations}
         continueLabel={fm.quote.continueLabel}
         backLabel={fm.quote.backLabel}
         submitLabel={fm.quote.submitLabel}

@@ -539,6 +539,30 @@ export const contactPage = defineType({
         }),
         defineField({ name: "attachLabel", title: "Attachment field — label", type: "string", description: "e.g. ATTACH DRAWING / SPEC (OPTIONAL). The control is shown but inert until file upload is wired." }),
         defineField({ name: "attachHint", title: "Attachment field — hint", type: "string", description: "e.g. PDF, DWG, DXF or image, max 10MB" }),
+        defineField({
+          name: "confirmation",
+          title: "After submit",
+          type: "text",
+          rows: 2,
+          description: 'Shown in place of the form once it is sent. Write {email} where the buyer\'s address goes: "Enquiry received. A named engineer replies within 48 hours to {email}."',
+        }),
+        defineField({
+          name: "confirmations",
+          title: "After submit — by product category",
+          type: "array",
+          description: "A line that says what is coming back, used when that category is chosen on the form (content sheets 18 and 19).",
+          of: [
+            defineArrayMember({
+              type: "object",
+              name: "confirmationVariant",
+              fields: [
+                defineField({ name: "product", title: "Product category (slug)", type: "string", validation: (r) => r.required() }),
+                defineField({ name: "text", title: "Line", type: "text", rows: 2, validation: (r) => r.required() }),
+              ],
+              preview: { select: { title: "product", subtitle: "text" } },
+            }),
+          ],
+        }),
       ],
       group: "body",
     }),

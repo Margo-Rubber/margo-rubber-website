@@ -553,6 +553,12 @@ export const exportPage = defineType({
               ],
             }),
             defineField({
+              name: "pinLabel",
+              title: "Pin label",
+              type: "string",
+              description: 'Set beside the pin on the map, in capitals: "UNITED ARAB EMIRATES". Empty draws the pin unlabelled.',
+            }),
+            defineField({
               name: "pins",
               title: "Further pins for this market",
               description: "When one block covers two ports or countries (Kenya and Tanzania), each extra pin here.",

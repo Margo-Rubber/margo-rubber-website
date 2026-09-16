@@ -94,7 +94,11 @@ for (let i = 0; i < args.length; i += 2) {
         case "lit":
           for (const line of f.value.split("\n")) {
             const m = line.match(/^(.*?)\s*(?:→|->)\s*\S+$/);
-            check(sec.num, f.label, m ? m[1] : line);
+            const v = m ? m[1] : line;
+            // "A · B · C" is a list — pin labels, dropdown options — whose
+            // items land in separate elements; each item is checked.
+            if (v.includes(" · ") && !lower.includes(norm(v).toLowerCase())) for (const part of v.split(" · ")) check(sec.num, f.label, part);
+            else check(sec.num, f.label, v);
           }
           break;
         case "heading":

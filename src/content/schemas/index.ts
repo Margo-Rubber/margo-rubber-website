@@ -1051,6 +1051,16 @@ export const contactPageSchema = baseSchema.extend({
     /** The drawing/spec attachment — sheet 04 §02 "Add: file field". Inert until the upload backend exists. */
     attachLabel: z.string().optional(),
     attachHint: z.string().optional(),
+    /**
+     * The post-submit state — "Enquiry received. A named engineer replies
+     * within 48 hours to {email}." (sheets 11–28). `{email}` is the address
+     * the buyer gave. A page that asked for something specific restates what
+     * is coming back: `confirmations` keys those lines by product-category
+     * slug (extrusion, sponge-foam-rubber) and applies when that category is
+     * chosen on the form. Without a confirmation the form goes to /thank-you.
+     */
+    confirmation: z.string().optional(),
+    confirmations: z.array(z.object({ product: z.string(), text: z.string() })).default([]),
   }),
 
   /* ── The five blocks after the form — content sheet 04 §05. Each renders
@@ -1831,6 +1841,8 @@ export const exportPageSchema = baseSchema.extend({
         body: z.string().min(40),
         image: imageRefSchema,
         pin: z.object({ x: z.number(), y: z.number() }),
+        /** The pin's label on the map — "UNITED ARAB EMIRATES" (sheet 06 §03). A market without one draws an unlabelled pin. */
+        pinLabel: z.string().optional(),
         /** Further pins the block owns — the East Africa lane pins KE and TZ separately. */
         pins: z.array(z.object({ label: z.string(), x: z.number(), y: z.number() })).default([]),
         /** Tooltip on the pin: "Mombasa · 18 days · FCL". */

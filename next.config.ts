@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 import createMDX from "@next/mdx";
+import { REDIRECTS } from "./src/content/redirects";
 
 const nextConfig: NextConfig = {
   // NOTE: `mdx` is deliberately NOT in pageExtensions. Content files live in
@@ -25,9 +26,11 @@ const nextConfig: NextConfig = {
   transpilePackages: ["sanity", "@sanity/sdk-react", "@sanity/workbench"],
 
   async redirects() {
-    // 301 map for the 26 legacy WooCommerce SKU URLs is finalised from a
-    // Screaming Frog crawl immediately before cutover (blocker B15).
-    return [];
+    // Moved and merged part pages — src/content/redirects.ts. The 26 legacy
+    // WooCommerce SKU URLs join the same list once the pre-cutover crawl
+    // names them (blocker B15).
+    // A 301 as the sheets specify — `permanent: true` would send a 308.
+    return REDIRECTS.map((r) => ({ source: r.from, destination: r.to, statusCode: 301 }));
   },
 };
 

@@ -24,7 +24,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: ["GPTBot", "OAI-SearchBot", "ClaudeBot", "PerplexityBot", "Bingbot"],
         allow: "/",
-        disallow: ["/margo-desk", "/margo-desk/", "/api/", "/studio", "/*?q=", "/*?status=", "/*?source=", "/*?page="],
+        disallow: ["/margo-desk", "/margo-desk/", "/api/", "/studio", "/*?q=", "/*?status=", "/*?source=", "/*?page=", "/contact?"],
       },
       {
         userAgent: "*",
@@ -44,6 +44,10 @@ export default function robots(): MetadataRoute.Robots {
           "/*?status=",
           "/*?source=",
           "/*?page=",
+          // The contact form arrives pre-filled from forty-odd links
+          // (?part=, ?industry=, ?request= …). One page, one URL: the
+          // parameterised variants canonical to /contact and are not crawled.
+          "/contact?",
         ],
       },
     ],

@@ -243,12 +243,37 @@ export function laneFor(x: number, y: number): string | undefined {
  * are plain circles of the same geometry (r12 ring, r4 dot) so they can be
  * placed from the market's own pin coordinates.
  */
-export function MapPin({ x, y }: { x: number; y: number }) {
+export function MapPin({ x, y, label }: { x: number; y: number; label?: string }) {
   return (
     <>
       <circle cx={x} cy={y} r="12" stroke="#2BBCC4" opacity="0.2" />
       <circle cx={x} cy={y} r="4" fill="#2BBCC4" fillOpacity="0.7" />
+      {label && <PinLabel x={x} y={y} label={label} />}
     </>
+  );
+}
+
+/**
+ * A pin's name, set beside it in the site's mono caps (sheet 06 §03: the
+ * nine destinations and the origin, each labelled). Pins in the eastern
+ * third of the plate take their label on the left so it stays inside the
+ * frame; the origin's sits above its marker, clear of the lanes leaving it.
+ */
+export function PinLabel({ x, y, label, strong = false }: { x: number; y: number; label: string; strong?: boolean }) {
+  const left = x > 720;
+  return (
+    <text
+      x={strong ? x : left ? x - 16 : x + 16}
+      y={strong ? y - 20 : y + 4}
+      textAnchor={strong ? "middle" : left ? "end" : "start"}
+      fill={strong ? "#2BBCC4" : "#9FB3B8"}
+      fontFamily="ui-monospace, SFMono-Regular, Menlo, monospace"
+      fontSize={strong ? 11 : 10}
+      letterSpacing="0.12em"
+      style={{ textTransform: "uppercase" }}
+    >
+      {label}
+    </text>
   );
 }
 

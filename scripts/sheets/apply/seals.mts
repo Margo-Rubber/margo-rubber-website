@@ -5,8 +5,7 @@
  *
  * The slug stays /products/seals, as the sheet recommends, and §02 ships as
  * a router — the two are one decision. The plunger cups card links to the
- * part's live URL under Pads, Stoppers & Caps until the category move the
- * SKU sheets propose is made.
+ * part, now under this category (SKU sheet 31).
  */
 
 import { applyNewPage } from "../new-page.mts";
@@ -24,7 +23,7 @@ await applyNewPage({
       num: "03",
       key: "types",
       noteLabel: "Typical use",
-      hrefFor: (r) => (r[0] === "Plunger cups" ? "/products/pads-stoppers-caps/rubber-plungers" : undefined),
+      hrefFor: (r) => (r[0] === "Plunger cups" ? "/products/seals/plunger-seals" : undefined),
     },
     {
       kind: "table",

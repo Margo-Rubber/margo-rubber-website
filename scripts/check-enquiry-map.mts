@@ -72,7 +72,9 @@ const PAGE_TO_SOURCE: Record<string, string> = {
   "why-margo.mdx": "why-margo", "home.mdx": "home",
 };
 // Fields deliberately kept out of the canonical columns; they still reach raw.
-const RAW_ONLY = new Set(["incoterm", "notes", "industry"]);
+// The parameters a link to /contact arrives with (part, request, topic …)
+// are posted as `via_*` hidden fields and kept in raw — see lib/contact-prefill.ts.
+const RAW_ONLY = new Set(["incoterm", "notes", "industry", "via_part", "via_product", "via_sector", "via_request", "via_topic", "via_profile", "via_doc", "via_industry"]);
 
 // Any array of field-shaped objects, wherever it sits. Looking only for a key
 // literally called `fields` missed the /contact form entirely, which nests its
