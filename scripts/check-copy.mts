@@ -28,6 +28,8 @@ const ROUTE: Record<string, string> = {
   "caseStudiesPage-case-studies": "/case-studies",
   "whyMargoPage-why-margo": "/why-margo",
   "siteFooter-footer": "/",
+  // The certification strip (settings) is checked where it is placed.
+  "siteSettings-settings": "/products/diaphragms",
 };
 const routeFor = (id: string) => {
   if (ROUTE[id]) return ROUTE[id];

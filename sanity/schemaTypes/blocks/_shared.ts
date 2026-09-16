@@ -34,8 +34,8 @@ export function sectionMetaFields({ bodyRequired = false } = {}) {
       name: "eyebrow",
       title: "Label above the heading",
       type: "string",
-      description: 'The small line in accent colour, e.g. "02 — SPECIFICATION REFERENCE".',
-      validation: (r) => r.required().min(2),
+      description: 'The small line in accent colour, e.g. "02 — SPECIFICATION REFERENCE". A section written with a heading alone leaves it empty.',
+      validation: (r) => r.min(2),
       group: "content",
     }),
     defineField({

@@ -45,6 +45,7 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
         lines={fm.h1Lines}
         accentLines={fm.h1AccentLines}
         intro={fm.intro}
+        chips={fm.heroChips}
         actions={fm.actions}
         image={fm.hero?.image}
         boost={fm.heroBoost}

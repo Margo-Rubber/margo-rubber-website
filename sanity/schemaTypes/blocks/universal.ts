@@ -180,7 +180,13 @@ export const cardGrid = defineType({
               name: "href",
               title: "Links to",
               type: "string",
-              description: "Where this card's link goes, e.g. /industries/automotive. Needs the grid's link label.",
+              description: "Where this card's link goes, e.g. /industries/automotive. Needs the grid's link label — or, on a plain card, the name itself becomes the link.",
+            }),
+            defineField({
+              name: "note",
+              title: "Third line",
+              type: "string",
+              description: 'A short line under the description — the typical use, or the compound. Labelled by the grid\'s "Third line is…".',
             }),
             defineField({
               name: "id",
@@ -197,6 +203,20 @@ export const cardGrid = defineType({
         }),
       ],
       validation: (r) => r.required().min(1),
+      group: "content",
+    }),
+    defineField({
+      name: "noteLabel",
+      title: "Third line is…",
+      type: "string",
+      description: '"Typical use" or "Compound" — set once, shown before every card\'s third line.',
+      group: "content",
+    }),
+    defineField({
+      name: "group",
+      title: "Group heading",
+      type: "string",
+      description: 'When this grid is one half of a section — "Rail", then a second grid "Marine" under the same heading.',
       group: "content",
     }),
     defineField({
@@ -451,6 +471,14 @@ export const specTable = defineType({
       group: "content",
     }),
     defineField({
+      name: "closing",
+      title: "Paragraph after the table",
+      type: "text",
+      rows: 3,
+      description: 'Body text under the table — "Ships with every consignment…".',
+      group: "content",
+    }),
+    defineField({
       name: "controls",
       title: "Show filters and search",
       type: "boolean",
@@ -645,9 +673,26 @@ export const accordion = defineType({
       validation: (r) => r.required().min(1),
       group: "content",
     }),
+    defineField({ name: "closing", title: "Closing paragraph", type: "text", rows: 3, group: "content" }),
     anchorIdField(),
   ],
   preview: blockPreview("Accordion", (v) => count(v.panels, "panel")),
+});
+
+/* ── Certification strip ───────────────────────────────────────────────────
+   The block sheets 36–42 share word for word. The lines are typed once, in
+   Site settings → Certifications → "Certification block"; this places them. */
+export const certificationStrip = defineType({
+  name: "block.certificationStrip",
+  title: "Certification block",
+  type: "object",
+  groups: BLOCK_GROUPS,
+  fields: [
+    defineField({ name: "eyebrow", title: "Label above the heading", type: "string", group: "content" }),
+    defineField({ name: "heading", title: "Heading", type: "string", group: "content" }),
+    anchorIdField(),
+  ],
+  preview: { prepare: () => ({ title: "Certification block", subtitle: "Lines from Site settings" }) },
 });
 
 /* ── Router list ───────────────────────────────────────────────────────────
@@ -699,4 +744,5 @@ export const UNIVERSAL_BLOCKS = [
   propertyList,
   accordion,
   routerList,
+  certificationStrip,
 ];

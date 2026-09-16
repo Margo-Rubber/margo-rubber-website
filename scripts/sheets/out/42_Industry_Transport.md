@@ -107,9 +107,9 @@ Neoprene ranks second here and nowhere else in the set. That is the sixth distin
   | ISO 1431-1 | Ozone resistance test method | Tested at our NABL partner laboratory |
   | EN 681-1 | Elastomeric seals for water and drainage pipe joints | Supplied |
   | RDSO vendor approval | Eligibility to supply rubber components for Indian Railways projects. Item-specific | Application in process — not yet held, and never to be stated as held until it is granted. See section 06 |
-  |  |  |  |
-  |  |  |  |
-  |  |  |  |
+  | EN 45545-2 | Fire behaviour of railway vehicle materials — hazard levels HL1, HL2, HL3 | 🛑 Not held. See section 06 |
+  | DNV · Lloyd’s Register · ABS · Bureau Veritas · IRS | Class society type approval for components in a surveyed scope | 🛑 Not held. See section 06 |
+  | IMO FTP Code | Fire test procedures for marine materials | 🛑 Not held. See section 06 |
   _Five held, four struck, in one table. That ratio is unusual and it is the truthful one for this sector — and a specifier scanning for RDSO or EN 45545 finds the row, finds the answer, and does not have to enquire to learn it.
 The five held rows are not filler. ASTM D2000, ISO 3302-1 and ISO 1431-1 are exactly what a builder’s drawing calls up for a non-safety-critical seal, and they are the standards the work on this page is actually done to.
 🛑 If RDSO approval is pursued, the struck row becomes a targeted line in the same form as the IATF statement — in progress, targeted [date], never as held, never as structured data. Do not write it speculatively_
@@ -127,11 +127,11 @@ The five held rows are not filler. ASTM D2000, ISO 3302-1 and ISO 1431-1 are exa
   > Rail and marine are approval-gated sectors. Supplying rubber components directly into an Indian Railways project requires RDSO vendor approval for the item; supplying into a classification society’s surveyed scope requires type approval from that society. We hold neither, and we will not imply otherwise. What we do is supply the builders, integrators and shipyards who hold their own approvals and buy components made to their own drawings — which is most of the rubber on a train or a vessel, and all of it in non-safety-critical positions.
   _85 words · the extractable answer for this page. It names both gates, states the position, and immediately reframes it as a defined role rather than an absence. “Which is most of the rubber on a train” is true and it is the sentence that keeps the enquiry alive_
 - **Scope table** (We do | We do not):
-  | Window, door, gangway, hatch and porthole seals to the builder’s drawing |  |
-  | Acoustic and thermal insulation cut to the builder’s development |  |
-  | Gaskets, grommets and vibration mounts for auxiliary and services positions |  |
-  | Aftermarket and MRO supply for privately operated fleets |  |
-  | Export supply where the OEM holds the approval |  |
+  | Window, door, gangway, hatch and porthole seals to the builder’s drawing | Anything requiring EN 45545-2 HL1, HL2 or HL3 classification |
+  | Acoustic and thermal insulation cut to the builder’s development | Direct supply to Indian Railways or any RDSO-gated item |
+  | Gaskets, grommets and vibration mounts for auxiliary and services positions | Components inside a class society’s surveyed hull or machinery scope |
+  | Aftermarket and MRO supply for privately operated fleets | Brake, suspension, stern tube or any safety-critical sealing element |
+  | Export supply where the OEM holds the approval | Fire-barrier or fire-stopping products of any kind |
   _Five and five, side by side, in one table. Reading down the right column tells a buyer in ten seconds whether to stop, and the left column tells them what is still worth an enquiry. That is a faster qualification than any form
 The fourth right-hand row is the one that matters most technically. Brake, suspension and stern tube seals are where a rubber failure is a safety event, and they are exactly the parts a general rubber supplier is most tempted to quote. Naming them removes the temptation from both sides
 Seventh boundary section in seven new sheets — and the only one where the boundary is commercial rather than technical. Diaphragms refused cycle life, bonded components refused bond strength, lining refused polyurethane and butyl, seals refused polyurethane, the datasheet refused food contact and a flame rating, construction refused bridge bearings. Here the refusal is about who Margo is allowed to sell to_
@@ -151,8 +151,8 @@ ISO 14001 and ISO 45001 — targeted 2027`
   _The exact string used across the set, client-instructed 2026-08-31 and 2026-09-01. Nothing is added.
 The phrase “quality management, not a product approval” earns its place on this page more than anywhere else in the set. This is the sector where a buyer is specifically looking for a product approval, and the scope line answers the question before it is asked_
 - **Download buttons ×2** (Button | State on the nine original industry pages | On this page):
-  | Download ISO Certificate |  | Renders only once the hosted PDF exists |
-  | Download Quality Policy |  | Renders only once the document exists |
+  | Download ISO Certificate | Wired to nothing — dead on 9 pages | Renders only once the hosted PDF exists |
+  | Download Quality Policy | Wired to nothing — dead on 9 pages | Renders only once the document exists |
   _🛑 Eighteen dead downloads today. This page and sheet 41 must not make it twenty-two. The build checklist tracks it as a Gate 3 item blocked on Gate 2 — the ISO certificate scan has never been supplied as a hosted PDF and appears zero times across all thirty-six live pages, despite being the only real credential Margo holds.
 On this sector it is the most expensive dead link on the site. A rail or marine buyer opens a supplier-qualification block specifically to download and file the certificate, and finding the button inert is the moment the supplier stops being credible_
   <details><summary>notes (2)</summary>

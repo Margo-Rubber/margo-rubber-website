@@ -84,6 +84,8 @@ export const productCategoryBySlugQuery = groq`
     heroLink,
     heroActions,
     heroBreadcrumb,
+    heroEyebrow,
+    heroChips,
     anchors,
     faqs,
     confirmWithMargo,
@@ -105,7 +107,8 @@ export const productCategoryBySlugQuery = groq`
         "parts": ^.anchors,
         "categoryLabel": ^.navLabel,
         "categorySlug": ^.slug.current
-      }
+      },
+      _type == "block.industryFaq" => { "items": ^.faqs }
     }
   }
 `;
@@ -139,9 +142,11 @@ export const industryBySlugQuery = groq`
     intro,
     hero,
     heroBoost,
+    heroChips,
     actions,
     faqs,
     nonClaims,
+    schemaService,
     confirmWithMargo,
     related,
     seo{
@@ -154,6 +159,7 @@ export const industryBySlugQuery = groq`
     },
     sections[]{
       ...,
+      _type == "block.specTable" => { "rows": rows[].cells },
       _type == "block.industryFaq" => { "items": ^.faqs }
     }
   }

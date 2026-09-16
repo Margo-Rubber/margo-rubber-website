@@ -17,6 +17,35 @@
 export type ContentStatus = "placeholder" | "draft" | "published";
 
 /**
+ * Every place a rule fires in one string, with the rule's exceptions applied.
+ * The sentence a match sits in runs from the previous full stop, question
+ * mark or line break to the next; a table cell or a question is its own
+ * sentence.
+ */
+export function claimHits(text: string): { rule: ClaimRule; match: string; index: number }[] {
+  const out: { rule: ClaimRule; match: string; index: number }[] = [];
+  for (const rule of FORBIDDEN_CLAIMS) {
+    const re = new RegExp(rule.pattern.source, rule.pattern.flags.includes("g") ? rule.pattern.flags : rule.pattern.flags + "g");
+    for (const m of text.matchAll(re)) {
+      const at = m.index ?? 0;
+      if (rule.unless) {
+        const start = Math.max(text.lastIndexOf(". ", at), text.lastIndexOf("? ", at), text.lastIndexOf("\n", at)) + 1;
+        const next = (from: number) => {
+          const ends = [text.indexOf(". ", from), text.indexOf("? ", from), text.indexOf("?\n", from), text.indexOf("\n", from)].filter((i) => i >= 0);
+          return ends.length ? Math.min(...ends) + 1 : text.length;
+        };
+        let end = next(at);
+        // A question is read with the sentence that answers it.
+        if (text[end - 1] === "?") end = next(end + 1);
+        if (rule.unless.test(text.slice(start, end))) continue;
+      }
+      out.push({ rule, match: m[0], index: at });
+    }
+  }
+  return out;
+}
+
+/**
  * STRINGS THAT MUST NEVER SHIP.
  *
  * From the content sheets' claim rules (Build Instructions §07–08) and the
@@ -26,7 +55,18 @@ export type ContentStatus = "placeholder" | "draft" | "published";
  * baseline is the list of known defects the copy pass burns down, and a NEW
  * violation fails the build the day it is introduced.
  */
-export const FORBIDDEN_CLAIMS: { pattern: RegExp; why: string }[] = [
+export type ClaimRule = {
+  pattern: RegExp;
+  why: string;
+  /**
+   * The sentence the match sits in may say the opposite — "we do not mix
+   * butyl", "Bureau Veritas … Not held". A rule with `unless` lets that
+   * sentence through; the claim it forbids is the positive one.
+   */
+  unless?: RegExp;
+};
+
+export const FORBIDDEN_CLAIMS: ClaimRule[] = [
   /* ── Entity ──────────────────────────────────────────────────────── */
   { pattern: /Margo Rubber Industries|Pvt\.?\s*Ltd/i, why: "The entity is Margo Rubber Products, a firm. GSTIN 27AAKFM8595Q1Z1 embeds a PAN whose 4th character F denotes a firm." },
   { pattern: /MIDC\s+Ambad|B-?12,?\s+MIDC|Ambad,?\s+Nashik/i, why: "Wrong address. The confirmed address is SRNO. 4494/10, behind Furniture Stop, opposite Samarth Dies, Vilholi, Nashik 422010." },
@@ -53,7 +93,7 @@ export const FORBIDDEN_CLAIMS: { pattern: RegExp; why: string }[] = [
   { pattern: /\b60\s*(M|million)\s*\+?\s*(pcs|pieces)?\s*(\/|per)?\s*(yr|year)/i, why: "Capacity typo. Installed is 5 million a month; current 1.5 million." },
   // Sheet 12 §02 may say what cycle life depends on and offer to qualify a
   // part against a target; it may not state a figure.
-  { pattern: /(?<!target )cycle\s*life(?! for a given part depends| and we will qualify| is proved by your rig)|100,?000[- ]cycle|fatigue[- ]tested/i, why: "No cycle-life or fatigue claim anywhere: no rig in-house or at the partner lab. The 100,000-cycle figure is parked." },
+  { pattern: /(?<!target |Pressure-)cycle\s*life(?! for a given part depends| and we will qualify| is proved by your rig)|100,?000[- ]cycle|fatigue[- ]tested/i, why: "No cycle-life or fatigue claim anywhere: no rig in-house or at the partner lab. The 100,000-cycle figure is parked." },
   // The gasket guide (sheet 35) names B16.20 to say it does not apply.
   { pattern: /(?<!does not apply is ASME )B16\.20\b(?![^.]{0,120}(does not apply|metallic|Rubber is B16\.21|for a rubber gasket|wrong standard))/, why: "Rubber flange gaskets cite ASME B16.21; B16.20 is the metallic standard." },
   { pattern: /Kammprofile|(?<!ring-joint, )Spiral[- ]wound/i, why: "Metallic gasket types Margo does not make." },
@@ -78,7 +118,7 @@ export const FORBIDDEN_CLAIMS: { pattern: RegExp; why: string }[] = [
   // The guides may say what aerospace needs and that Margo holds no such
   // approval; ISO 3601-3's Grade S is described as it is written.
   { pattern: /(?<!needs |requires )AS9100|CEMILAC|(?<!power, |hold no |industrial and |to cover |do not supply )aerospace(?! size standard| procurement| needs AS9100)/i, why: "Aerospace supply needs AS9100, not held and not claimed." },
-  { pattern: /Bureau Veritas|TÜV\s*SÜD|SGS India(?! pre-shipment)|FIEO/i, why: "Certification bodies that have never audited Margo. The issuer is Integral Certification Ltd." },
+  { pattern: /Bureau Veritas|TÜV\s*SÜD|SGS India(?! pre-shipment)|FIEO/i, why: "Certification bodies that have never audited Margo. The issuer is Integral Certification Ltd.", unless: /not held|not from|hold none|holds? no/i },
 
   /* ── Customers and people ────────────────────────────────────────── */
   { pattern: /Kirloskar|Bosch|Atlas Copco|Grundfos|Thermax|Forbes Marshall|\bKSB\b|Alfa Laval|Sulzer|Bonfiglioli|\bL&T\b|Larsen & Toubro|\bBHEL\b|Siemens|\bABB\b|Samsung Engineering/i, why: "Fabricated client names. The 23 named accounts come from company profile p28 via site settings." },
@@ -87,7 +127,7 @@ export const FORBIDDEN_CLAIMS: { pattern: RegExp; why: string }[] = [
   { pattern: /Name pending sign-off|Attribution pending/i, why: "Placeholder strings published on the live page." },
 
   /* ── Materials Margo does not make ───────────────────────────────── */
-  { pattern: /(?<!not |make microcellular |SBR, )\b(polyurethane|\bPU\b|butyl|\bPVC\b|solid PTFE)\b(?![^\n.]{0,60}(do not|not one of|decline|never))/i, why: "Not among the eight compounds. PTFE-encapsulated O-rings are fine; solid PTFE is not." },
+  { pattern: /(?<!not |make microcellular |SBR, )\b(polyurethane|\bPU\b|butyl|\bPVC\b|solid PTFE)\b(?![^\n.]{0,60}(do not|not one of|decline|never))/i, why: "Not among the eight compounds. PTFE-encapsulated O-rings are fine; solid PTFE is not.", unless: /\b(do not|does not|not a vulcanised|decline|never|we will (tell|say)|is not|are not|no\.)/i },
 
   /* ── Register ────────────────────────────────────────────────────── */
   { pattern: /cutting[- ]edge|world[- ]class|industry[- ]leading|state[- ]of[- ]the[- ]art/i, why: "Banned marketing register. Voice is factual-engineer." },

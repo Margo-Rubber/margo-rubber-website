@@ -83,11 +83,15 @@ const decode = (s: string) =>
     .replace(/&#x27;/g, "'")
     .replace(/\s+/g, " ")
     .trim();
+// Inline tags vanish — a link on a phrase inside an answer must not split
+// the sentence; block tags become a space.
+const INLINE = /<\/?(a|b|strong|em|i|span|u|small|abbr|code|sup|sub)\b[^>]*>/g;
 const textOf = (html: string) =>
   decode(
     html
       .replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, "")
       .replace(/<!-- -->/g, "")
+      .replace(INLINE, "")
       .replace(/<[^>]+>/g, " "),
   );
 

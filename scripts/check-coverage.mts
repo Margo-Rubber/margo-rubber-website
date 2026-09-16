@@ -17,8 +17,14 @@ import type { Sheet } from "./sheets/parse-sheets.mts";
 
 const BASE = process.env.BASE_URL ?? "http://localhost:3000";
 const SKIP_COLUMNS =
-  /^(replaces|live status|why|live [a-z]+|watch for|#|status|general industry continuous|verdict|published here)$/i;
+  /^(replaces|live status|why|why this one|live [a-z]+|watch for|#|status|general industry continuous|verdict|published here|links to|goes to|state on .*|on this page)$/i;
 const SKIP_SECTIONS = /footer|page-level/i;
+/**
+ * Fields a sheet writes but does not ship, by sheet#section and field index:
+ * sheet 38 §07 carries the question, Version A (its H2 and two panels) and
+ * the "also required" note beside the Version B that ships.
+ */
+const UNSHIPPED: Record<string, number[]> = { "38_Product_Rubber_Lining#07": [0, 1, 2, 3, 7] };
 
 const decode = (s: string) =>
   s
@@ -60,9 +66,12 @@ for (let i = 0; i < args.length; i += 2) {
   const check = (sec: string, label: string, s: string) => {
     const v = norm(s)
       .replace(/\*\*/g, "")
+      // The sheet's own glyph for a line it wants read twice is not copy.
+      .replace(/🛑\s*/g, "")
+      // "[ Label → /href ]" — the brackets come off before the href does.
+      .replace(/^\[\s*|\s*\]$/g, "")
       .replace(/\s*(→|↗|↓)\s*(\/|#|tel:|mailto:|https?:)\S*$/, "")
-      .replace(/\s*(→|↓|↗)\s*$/, "")
-      .replace(/^\[\s*|\s*\]$/g, "");
+      .replace(/\s*(→|↓|↗)\s*$/, "");
     if (!v || v.length < 3) return;
     total++;
     if (!lower.includes(v.toLowerCase()))
@@ -73,9 +82,10 @@ for (let i = 0; i < args.length; i += 2) {
   for (const sec of sheet.sections) {
     if (SKIP_SECTIONS.test(sec.title)) continue;
     if (only && sec.num !== only) continue;
-    for (const f of sec.fields) {
+    for (const [fi, f] of sec.fields.entries()) {
+      if (UNSHIPPED[`${stem}#${sec.num}`]?.includes(fi)) continue;
       if (
-        /^(remove|removed|cut|recommendation|permission note|strip build|check result|single source|fkm — the one|add a column|figure block ×0)/i.test(
+        /^(remove|removed|cut|recommendation|permission note|strip build|check result|single source|fkm — the one|add a column|figure block ×0|download buttons)/i.test(
           f.label,
         )
       )

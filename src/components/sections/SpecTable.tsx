@@ -50,6 +50,9 @@ const mentions = (row: string[], chip: string) => {
  */
 export function SpecTable({ columns, rows, footnote, controls = true, chips, searchPlaceholder }: Props) {
   const [family, setFamily] = useState<string>("all");
+  // A catalogue of sizes keeps every cell on one line so the columns compare;
+  // a reference table (no controls) carries prose in its cells and wraps.
+  const ws = controls ? "whitespace-pre" : "whitespace-pre-line";
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState<{ col: number; dir: 1 | -1 } | null>(null);
   // A chip list may open with its own "All …" label ("All standards").
@@ -144,16 +147,21 @@ export function SpecTable({ columns, rows, footnote, controls = true, chips, sea
                     }
                     className="bg-accent-400 text-canvas px-4 py-3 text-left font-semibold whitespace-nowrap"
                   >
-                    <button
-                      type="button"
-                      onClick={() => toggleSort(i)}
-                      className="inline-flex items-center gap-1.5"
-                    >
-                      {c}
-                      <span aria-hidden className="opacity-60">
-                        {isSorted ? (sort.dir === 1 ? "▲" : "▼") : "↕"}
-                      </span>
-                    </button>
+                    {controls ? (
+                      <button
+                        type="button"
+                        onClick={() => toggleSort(i)}
+                        className="inline-flex items-center gap-1.5"
+                      >
+                        {c}
+                        <span aria-hidden className="opacity-60">
+                          {isSorted ? (sort.dir === 1 ? "▲" : "▼") : "↕"}
+                        </span>
+                      </button>
+                    ) : (
+                      // A reference table reads in the sheet's order; nothing to sort.
+                      c
+                    )}
                   </th>
                 );
               })}
@@ -169,16 +177,29 @@ export function SpecTable({ columns, rows, footnote, controls = true, chips, sea
                 hidden={!visible.includes(r)}
                 className="odd:bg-surface-2/40"
               >
-                {r.map((cell, ci) => (
-                  <td
-                    key={ci}
-                    className={`border-line border-t px-4 py-3 whitespace-pre ${
-                      ci === 0 ? "text-ink font-medium" : "text-ink-2"
-                    } ${columns[ci]?.includes("FKM") ? "text-accent-400" : ""}`}
-                  >
-                    {cell}
-                  </td>
-                ))}
+                {r.map((cell, ci) =>
+                  ci === 0 ? (
+                    /* The row label is a row heading, not a data cell and not
+                       an <h3> — what a screen reader and an assistant both key
+                       the row on. */
+                    <th
+                      key={ci}
+                      scope="row"
+                      className={`border-line text-ink border-t px-4 py-3 text-left font-medium align-top ${ws}`}
+                    >
+                      {emphasised(cell, "text-ink font-semibold")}
+                    </th>
+                  ) : (
+                    <td
+                      key={ci}
+                      className={`border-line text-ink-2 border-t px-4 py-3 align-top ${ws} ${
+                        columns[ci]?.includes("FKM") ? "text-accent-400" : ""
+                      }`}
+                    >
+                      {emphasised(cell, "text-ink font-semibold")}
+                    </td>
+                  ),
+                )}
               </tr>
             ))}
             {!visible.length && (

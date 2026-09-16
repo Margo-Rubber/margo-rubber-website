@@ -49,6 +49,10 @@ const ALLOWED_BLOCKS = [
   "block.accordion",
   "block.routerList",
   "block.richText",
+  // The shared certification block and the questions block the same sheets
+  // end with.
+  "block.certificationStrip",
+  "block.industryFaq",
 ];
 
 export const productCategory = defineType({
@@ -194,6 +198,22 @@ export const productCategory = defineType({
         layout: "radio",
       },
       initialValue: "center",
+      group: "hero",
+    }),
+    defineField({
+      name: "heroEyebrow",
+      title: "Line above the heading",
+      type: "string",
+      description: 'Where the sheet writes its own — "01 · DIAPHRAGMS". Empty shows the certification badge.',
+      group: "hero",
+    }),
+    defineField({
+      name: "heroChips",
+      title: "Chips under the subhead",
+      type: "array",
+      of: [defineArrayMember({ type: "string" })],
+      description: 'Three short facts, shown uppercase — "8 COMPOUNDS IN-HOUSE" (content sheets 36–39).',
+      options: { layout: "tags" },
       group: "hero",
     }),
     linkObject("heroLink", "Extra link in the hero", false, "hero"),

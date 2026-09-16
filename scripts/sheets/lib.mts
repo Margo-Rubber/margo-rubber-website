@@ -23,7 +23,7 @@ import { readFileSync, existsSync, mkdirSync, writeFileSync } from "node:fs";
 import type { ZodTypeAny } from "zod";
 import { schemaTypes } from "../../sanity/schemaTypes/index.ts";
 import { stripNullsDeep } from "../../src/content/blocks.ts";
-import { FORBIDDEN_CLAIMS } from "../../src/content/site.ts";
+import { claimHits } from "../../src/content/site.ts";
 import type { Sheet, Section, Field, Part } from "./parse-sheets.mts";
 
 export type { Section, Sheet, Field };
@@ -278,9 +278,21 @@ function* strings(v: unknown, path = ""): Generator<[string, string]> {
     for (let i = 0; i < v.length; i++) yield* strings(v[i], `${path}[${i}]`);
   else if (v && typeof v === "object") {
     // A Portable Text block reads as one sentence, not one span per mark.
-    const b = v as { _type?: string; children?: { text?: string }[] };
+    const b = v as { _type?: string; children?: { text?: string }[]; q?: unknown; a?: unknown };
     if (b._type === "block" && Array.isArray(b.children)) {
       yield [path, b.children.map((c) => c.text ?? "").join("")];
+      return;
+    }
+    // A question is judged with its answer: "Can you supply polyurethane
+    // hydraulic seals?" is a claim only if the answer is yes.
+    if (typeof b.q === "string" && typeof b.a === "string") {
+      yield [path, `${b.q}\n${b.a}`];
+      return;
+    }
+    // A table row is one line: "PVC waterstops | PVC is not a vulcanised rubber…".
+    const row = v as { cells?: unknown };
+    if (Array.isArray(row.cells) && row.cells.every((c) => typeof c === "string")) {
+      yield [path, (row.cells as string[]).join(" | ")];
       return;
     }
     for (const [k, val] of Object.entries(v)) {
@@ -293,18 +305,8 @@ function* strings(v: unknown, path = ""): Generator<[string, string]> {
 
 export function forbidden(patch: unknown): string[] {
   const hits: string[] = [];
-  for (const [path, s] of strings(patch)) {
-    for (const rule of FORBIDDEN_CLAIMS) {
-      const re = new RegExp(
-        rule.pattern.source,
-        rule.pattern.flags.includes("g")
-          ? rule.pattern.flags
-          : rule.pattern.flags + "g",
-      );
-      const m = s.match(re);
-      if (m) hits.push(`${path}: “${m[0]}” — ${rule.why}`);
-    }
-  }
+  for (const [path, s] of strings(patch))
+    for (const h of claimHits(s)) hits.push(`${path}: “${h.match}” — ${h.rule.why}`);
   return hits;
 }
 

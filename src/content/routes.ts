@@ -8,12 +8,13 @@
  * path that does not exist.
  *
  * Counts are the client's decisions of 2026-09-16: fifteen product categories
- * in three groups, eleven industries. The four categories and two industries
- * marked `live: false` have content sheets written but no page built yet.
- * Until each page ships, its footer and menu entries point at /contact with
- * the product or industry pre-filled — the Build Instructions' rule: no link
- * may resolve to a 404; "if a destination is not built yet, point at /contact
- * in the interim." Flip `live` when the page deploys and every surface follows.
+ * in three groups, eleven industries. All fifteen and all eleven are built
+ * (the last six from sheets 36–39 and 41–42). An entry marked `live: false`
+ * would have a content sheet but no page yet; until such a page ships, its
+ * footer and menu entries point at /contact with the product or industry
+ * pre-filled — the Build Instructions' rule: no link may resolve to a 404;
+ * "if a destination is not built yet, point at /contact in the interim."
+ * Flip `live` when the page deploys and every surface follows.
  *
  * Labels are display names and the only place they are typed. Three of them
  * deliberately differ from their slugs, and each is a live trap if retyped:
@@ -55,10 +56,10 @@ export const PRODUCT_GROUPS: readonly RouteGroup[] = [
       cat("o-rings", "O-Rings", "Sealing"),
       cat("oil-seals", "Oil Seals", "Sealing"),
       cat("gaskets", "Gaskets", "Sealing"),
-      cat("diaphragms", "Diaphragms", "Sealing", false),
+      cat("diaphragms", "Diaphragms", "Sealing"),
       // "Reciprocating" is part of the label so it is not read as a parent of
       // O-Rings and Oil Seals — content sheet 39 §02.
-      cat("seals", "Reciprocating Seals", "Sealing", false),
+      cat("seals", "Reciprocating Seals", "Sealing"),
       cat("leak-test-rubber", "Leak Test Rubber", "Custom"),
     ],
   },
@@ -67,7 +68,7 @@ export const PRODUCT_GROUPS: readonly RouteGroup[] = [
     items: [
       cat("anti-vibration-mounts", "Anti-Vibration Mounts", "Anti-Vibration"),
       cat("bushes", "Bushes & Bushings", "Anti-Vibration"),
-      cat("bonded-components", "Bonded Components", "Anti-Vibration", false),
+      cat("bonded-components", "Bonded Components", "Anti-Vibration"),
       cat("bellows", "Bellows", "Protection"),
       cat("grommets", "Grommets", "Protection"),
       cat("pads-stoppers-caps", "Pads, Stoppers & Caps", "Custom"),
@@ -78,7 +79,7 @@ export const PRODUCT_GROUPS: readonly RouteGroup[] = [
     items: [
       cat("extrusion", "Extrusion Profiles", "Profiles"),
       cat("sponge-foam-rubber", "Sponge & Foam Rubber", "Cellular"),
-      cat("rubber-lining", "Rubber Lining & Skirting", "Cellular", false),
+      cat("rubber-lining", "Rubber Lining & Skirting", "Cellular"),
     ],
   },
 ];
@@ -96,8 +97,8 @@ export const INDUSTRIES: readonly RouteEntry[] = [
   ind("agriculture", "Agriculture"),
   ind("medical-devices", "Medical Devices"),
   ind("water-fluid-management", "Water & Fluid Management"),
-  ind("construction", "Construction", false),
-  ind("transport", "Transport — Rail & Marine", false),
+  ind("construction", "Construction"),
+  ind("transport", "Transport — Rail & Marine"),
 ];
 
 /** The footer's Company column — six entries; Why Choose Us is out. */

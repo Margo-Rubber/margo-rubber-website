@@ -7,7 +7,8 @@ import type { Crumb } from "@/lib/breadcrumbs";
 import Link from "next/link";
 import { Img } from "@/components/ui/Img";
 import { Button } from "@/components/ui/Button";
-import { Container, Eyebrow } from "@/components/ui/Section";
+import { Container, Eyebrow, HeroChips } from "@/components/ui/Section";
+import { emphasised } from "@/components/ui/Emphasis";
 import { hrefFor, productBySlug } from "@/content/routes";
 
 /* ── HERO ─────────────────────────────────────────────────────────────── */
@@ -20,11 +21,14 @@ export function IndustryHero({
   image,
   boost = false,
   breadcrumb,
+  chips = [],
 }: {
   badge: string;
   lines: string[];
   accentLines: number[];
   intro: string;
+  /** Short uppercase facts under the subhead (sheets 41–42). */
+  chips?: readonly string[];
   actions: { label: string; href: string; variant: "primary" | "secondary" }[];
   image?: string;
   /** Only for sources already faded to black; a normal photo would blow out. */
@@ -85,7 +89,9 @@ export function IndustryHero({
           ))}
         </h1>
 
-        <p className="text-ink-3 mt-6 max-w-[58ch] leading-relaxed">{intro}</p>
+        <p className="text-ink-3 mt-6 max-w-[58ch] leading-relaxed">{emphasised(intro)}</p>
+
+        <HeroChips chips={chips} />
 
         <div className="mt-8 flex flex-wrap gap-3">
           {actions.map((a) => (
@@ -392,6 +398,9 @@ export function IndustryFAQ({ items }: { items: { q: string; a: string }[] }) {
           key={f.q}
           className="border-line rounded-card border bg-[#0A0A0A]"
         >
+          {/* The question is a real heading (the sheets' "questions are <h3>");
+              the button inside it is what opens the answer. */}
+          <h3 className="m-0">
           <button
             type="button"
             onClick={() => setOpen(open === i ? -1 : i)}
@@ -406,6 +415,7 @@ export function IndustryFAQ({ items }: { items: { q: string; a: string }[] }) {
               ⌄
             </span>
           </button>
+          </h3>
           {/* The chevron rotated but the panel it controls appeared in a
               single frame, so the affordance animated and the content did not.
               `grid-template-rows: 0fr -> 1fr` animates height without
@@ -422,7 +432,7 @@ export function IndustryFAQ({ items }: { items: { q: string; a: string }[] }) {
                 className="text-ink-4 px-5 pb-5 text-sm leading-relaxed"
                 aria-hidden={open !== i}
               >
-                {f.a}
+                {emphasised(f.a, "text-ink-2 font-semibold")}
               </p>
             </div>
           </div>
@@ -473,7 +483,7 @@ export function ClosingBand({
             ))}
           </h2>
           <p className="text-ink-4 mx-auto mt-5 max-w-[58ch] text-sm leading-relaxed">
-            {body}
+            {emphasised(body)}
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-3">

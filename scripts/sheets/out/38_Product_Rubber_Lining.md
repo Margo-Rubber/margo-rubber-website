@@ -141,7 +141,7 @@ Butyl is absent and that is deliberate. It is the classic chemical-tank lining c
   | Fluid immersion / volume swell | ASTM D471 | NABL partner laboratory |
   | Ozone resistance | ISO 1431-1 | NABL partner laboratory |
   | Adhesion to steel | ASTM D429 · failure mode to 100% R | See sheet 37 |
-  |  |  |  |
+  | Wear life in service | — | not predictable from a test |
   _CONFIRM · The struck row is the honest limit of section 06. Abrasion loss ranks compounds; it does not predict months in a chute. Impact energy, particle shape, moisture and drop height all govern, and none of them is in the test. Saying so keeps the number credible — a supplier who claims a laboratory figure predicts service life has told a buyer something they can disprove.
 The adhesion row carries sheet 37’s CONFIRM forward. A bonded lining is a rubber-to-metal bond and it is qualified the same way — failure mode, not force. The two pages must give the same answer, so resolve the D429 question once_
 - **Ships with every consignment**:

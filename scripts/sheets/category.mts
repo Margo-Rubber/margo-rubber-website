@@ -18,16 +18,18 @@ type RawCategory = {
   slug?: { current?: string } | string;
   navLabel?: string;
   anchors?: unknown[];
+  faqs?: unknown[];
   sections?: RawBlock[];
 };
 
-function projectBlocks(d: RawCategory): unknown[] {
+export function projectBlocks(d: RawCategory): unknown[] {
   const slug = typeof d.slug === "string" ? d.slug : (d.slug?.current ?? "");
   return (d.sections ?? []).map((b) => {
     if (b._type === "block.specTable")
       return { ...b, rows: (b.rows ?? []).map((r) => (r as { cells: string[] }).cells) };
     if (b._type === "block.partsGrid")
       return { ...b, parts: d.anchors ?? [], categoryLabel: d.navLabel, categorySlug: slug };
+    if (b._type === "block.industryFaq") return { ...b, items: d.faqs ?? [] };
     return b;
   });
 }

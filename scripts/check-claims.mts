@@ -23,7 +23,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import { FORBIDDEN_CLAIMS } from "../src/content/site.ts";
+import { claimHits, FORBIDDEN_CLAIMS } from "../src/content/site.ts";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const BASELINE = path.join(ROOT, "claims-baseline.json");
@@ -34,17 +34,13 @@ type Hit = { source: string; pattern: string; match: string; context: string };
 const hits: Hit[] = [];
 
 function scanText(source: string, text: string) {
-  for (const { pattern } of FORBIDDEN_CLAIMS) {
-    const re = new RegExp(pattern.source, pattern.flags.includes("g") ? pattern.flags : pattern.flags + "g");
-    for (const m of text.matchAll(re)) {
-      const at = m.index ?? 0;
-      hits.push({
-        source,
-        pattern: pattern.source.slice(0, 40),
-        match: m[0],
-        context: text.slice(Math.max(0, at - 40), at + m[0].length + 40).replace(/\s+/g, " ").trim(),
-      });
-    }
+  for (const h of claimHits(text)) {
+    hits.push({
+      source,
+      pattern: h.rule.pattern.source.slice(0, 40),
+      match: h.match,
+      context: text.slice(Math.max(0, h.index - 40), h.index + h.match.length + 40).replace(/\s+/g, " ").trim(),
+    });
   }
 }
 
@@ -82,8 +78,12 @@ if (!noSanity) {
     else if (Array.isArray(v)) v.forEach((x) => strings(x, out));
     else if (v && typeof v === "object") {
       // A Portable Text block is one sentence, however many marks it carries.
-      const b = v as { _type?: string; children?: { text?: string }[] };
+      const b = v as { _type?: string; children?: { text?: string }[]; q?: unknown; a?: unknown };
       if (b._type === "block" && Array.isArray(b.children)) out.push(b.children.map((c) => c.text ?? "").join(""));
+      // A question is judged with its answer.
+      else if (typeof b.q === "string" && typeof b.a === "string") out.push(`${b.q}\n${b.a}`);
+      // A table row is one line.
+      else if (Array.isArray((b as { cells?: unknown }).cells)) out.push(((b as { cells: string[] }).cells).join(" | "));
       else for (const [k, x] of Object.entries(v)) if (!k.startsWith("_") && k !== "confirmWithMargo") strings(x, out);
     }
     return out;

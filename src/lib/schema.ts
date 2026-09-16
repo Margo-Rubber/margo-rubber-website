@@ -1,3 +1,4 @@
+import { plainText } from "@/components/ui/Emphasis";
 import type { ContentStatus } from "@/content/site";
 import { getSiteSettings } from "@/lib/settings";
 import type { SiteSettings } from "@/content/schemas/settings";
@@ -298,7 +299,9 @@ export function faqNode(
     mainEntity: faqs.map((f) => ({
       "@type": "Question",
       name: f.q,
-      acceptedAnswer: { "@type": "Answer", text: f.a },
+      // The rendered answer, character for character — its inline markers
+      // (a bold lead-in, a link on a phrase) are presentation, not text.
+      acceptedAnswer: { "@type": "Answer", text: plainText(f.a) },
     })),
   };
 }
@@ -350,8 +353,8 @@ export function serviceNode(fm: Industry, path: string): Node {
   return {
     "@type": "Service",
     "@id": `${SITE_URL}${path}#service`,
-    name: fm.h1,
-    description: fm.seo.description,
+    name: fm.schemaService?.name ?? fm.h1,
+    description: fm.schemaService?.description ?? fm.seo.description,
     provider: { "@id": ORG_ID },
     serviceType: "Custom rubber component manufacturing",
   };
