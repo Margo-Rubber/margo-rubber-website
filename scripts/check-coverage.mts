@@ -60,7 +60,7 @@ for (let i = 0; i < args.length; i += 2) {
   const check = (sec: string, label: string, s: string) => {
     const v = norm(s)
       .replace(/\*\*/g, "")
-      .replace(/\s*(→|↗)\s*(\/|#|tel:|mailto:|https?:)\S*$/, "")
+      .replace(/\s*(→|↗|↓)\s*(\/|#|tel:|mailto:|https?:)\S*$/, "")
       .replace(/\s*(→|↓|↗)\s*$/, "")
       .replace(/^\[\s*|\s*\]$/g, "");
     if (!v || v.length < 3) return;

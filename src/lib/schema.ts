@@ -551,6 +551,22 @@ export async function productCategoryGraph(
     const faq = faqNode(fm.faqs, path);
     if (faq) nodes.push(faq);
   }
+  // The one category with a named catalogue: thirteen components as an
+  // ItemList, in table order, each pointing at the table (sheet 16).
+  if (fm.schemaProduct?.components?.length) {
+    nodes.push({
+      "@type": "ItemList",
+      "@id": `${SITE_URL}${path}#components`,
+      name: "Catalogue components",
+      numberOfItems: fm.schemaProduct.components.length,
+      itemListElement: fm.schemaProduct.components.map((name, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name,
+        url: `${SITE_URL}${path}#specifications`,
+      })),
+    });
+  }
   for (const b of blocks) {
     if (b._type !== "block.routerList") continue;
     const rows = b.rows as { condition: string; need: string; href?: string }[];

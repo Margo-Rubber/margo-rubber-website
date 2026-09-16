@@ -51,7 +51,7 @@ export const cellRows = (rows: string[][]) => rows.map((cells) => ({ cells }));
 
 /** "Label → /href" or "Label ↗ /href" on one line. */
 export function arrowLink(line: string): { label: string; href: string } {
-  const m = line.match(/^(.*?)\s*(?:→|↗|->)\s*(\S+)$/);
+  const m = line.match(/^(.*?)\s*(?:→|↗|↓|->)\s*(\S+)$/);
   if (!m) throw new Error(`not a "Label → href" line: ${line}`);
   return { label: m[1].trim(), href: m[2] };
 }

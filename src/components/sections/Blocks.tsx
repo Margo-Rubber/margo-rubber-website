@@ -188,7 +188,8 @@ export function CategoryHero({
             href={link.href}
             className="text-accent-400 mt-6 inline-flex items-center gap-1.5 text-sm font-medium"
           >
-            {link.label} <span aria-hidden>↗</span>
+            {/* An in-page link points down the page, not out of it. */}
+            {link.label} <span aria-hidden>{link.href.startsWith("#") ? "↓" : "↗"}</span>
           </a>
         )}
 

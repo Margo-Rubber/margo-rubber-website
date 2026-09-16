@@ -521,6 +521,8 @@ export const productCategorySchema = baseSchema.extend({
       description: z.string().min(20).optional(),
       /** Full `material` list when it is not exactly the eight compounds. */
       material: z.array(z.string()).optional(),
+      /** Named catalogue components → an ItemList node (sheet 16, page-level). */
+      components: z.array(z.string()).optional(),
     })
     .optional(),
 });
