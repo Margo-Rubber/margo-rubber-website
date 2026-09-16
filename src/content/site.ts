@@ -53,7 +53,7 @@ export const FORBIDDEN_CLAIMS: { pattern: RegExp; why: string }[] = [
   { pattern: /\b60\s*(M|million)\s*\+?\s*(pcs|pieces)?\s*(\/|per)?\s*(yr|year)/i, why: "Capacity typo. Installed is 5 million a month; current 1.5 million." },
   // Sheet 12 §02 may say what cycle life depends on and offer to qualify a
   // part against a target; it may not state a figure.
-  { pattern: /(?<!target )cycle\s*life(?! for a given part depends| and we will qualify)|100,?000[- ]cycle|fatigue[- ]tested/i, why: "No cycle-life or fatigue claim anywhere: no rig in-house or at the partner lab. The 100,000-cycle figure is parked." },
+  { pattern: /(?<!target )cycle\s*life(?! for a given part depends| and we will qualify| is proved by your rig)|100,?000[- ]cycle|fatigue[- ]tested/i, why: "No cycle-life or fatigue claim anywhere: no rig in-house or at the partner lab. The 100,000-cycle figure is parked." },
   { pattern: /B16\.20\b/, why: "Rubber flange gaskets cite ASME B16.21; B16.20 is the metallic standard." },
   { pattern: /Kammprofile|Spiral[- ]wound/i, why: "Metallic gasket types Margo does not make." },
 
@@ -68,8 +68,9 @@ export const FORBIDDEN_CLAIMS: { pattern: RegExp; why: string }[] = [
   // "Do you hold FDA or ISO 13485 approval?" is answered "working toward …
   // targeted for 2027. We are not FDA registered." (sheet 23 §08).
   { pattern: /(?<!not hold\s)ISO\s*13485(?!\s*approval\?)(?![^.]{0,80}(do not hold|not held|not hold|working toward|targeted))|(?<!not )FDA[- ](approved|grade|registered|compliant)/i, why: "Never as held. The medical page states plainly they are not." },
-  // Naming the schemes is fine when the same passage says they are not held (sheet 24 §08).
-  { pattern: /WRAS[- ]approved|NSF[\/ ]?(ANSI[\/ ]?)?61\s*certified|AS\/NZS\s*4020|KTW[- ]BWGL(?![\s\S]{0,200}do not hold)/i, why: "Potable-water approvals attach to a formulation; Margo holds none." },
+  // The schemes may be named as what a market requires or what a
+  // formulation carries (sheets 24, 28); never as held by Margo.
+  { pattern: /(WRAS|NSF\/?ANSI\/?(CAN\/?)?\s*61|AS\/NZS\s*4020|KTW[- ]BWGL)[- ](approved|certified)|\b(hold|holds|certified to|approved to)\s+(WRAS|NSF|AS\/NZS\s*4020|KTW)/i, why: "Potable-water approvals attach to a formulation; Margo holds none." },
   { pattern: /ISO\s*(14001|45001)(?![^.]{0,120}(in progress|targeted|being upgraded|not (currently )?held))/i, why: "Only ever as targeted 2027, never as held." },
   // AS568 is the "Aerospace Size Standard" and is described as such; naming
   // the catalogue is not a supply claim (sheet 09 §05).

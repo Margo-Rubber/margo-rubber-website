@@ -133,3 +133,9 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 66. **Diaphragms card** (sheets 23, 24) links through the route registry to /contact?product=Diaphragms until the Diaphragms page (sheet 36) is live; its photograph is the page's own slot until the category has one.
 67. **Component bullets, quality-link fallbacks, export card title/subtitle where the sheet gives none, confirmation copy** — as items 62–65.
 68. **Sheet 23 §02 CONFIRM** (diaphragms, resolved 2026-09-03 per the sheet) — listed as written.
+
+## 27–28 Agriculture, Water & Fluid Management
+
+69. **Quality buttons.** These two sheets point "View ISO Certificate" at /certifications#iso-9001 (an anchor now on the certificate card) and remove "Download Quality Policy" until the PDF exists; sheets 20–26 use the request-form fallback (item 63). Two conventions on nine pages — settle which when the PDFs arrive.
+70. **Contact strip.** Sheet 27 writes the certification line as "ISO 9001:2015 Certified · 09111526A"; sheet 25 as "ISO 9001:2015 · Certificate 09111526A". The shared strip renders the sheet-25 form from Site settings.
+71. **Bold figures** in the FAQ answers and quality cards are highlights for the sheet's reader and ship as plain text, as on sheets 20–26.

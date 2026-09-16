@@ -63,6 +63,19 @@ const imageFor = (slug: string, fallback: string) => {
 };
 
 export async function applyIndustry(o: IndustryOptions): Promise<void> {
+  // An "Eyebrow · H2" composite (sheets 27–28) or the two fields (20–26).
+  const eyebrowAndH2 = (sec: Section, prefix: string) => {
+    const both = sec.fields.find((f) => f.label.startsWith("Eyebrow · H2"));
+    if (both?.kind === "composite") {
+      const l = both.parts.find((p) => p.kind === "lit");
+      const h = both.parts.find((p) => p.kind === "heading");
+      if (l?.kind === "lit") patch[`${prefix}.eyebrow`] = E(l.value);
+      if (h?.kind === "heading") patch[`${prefix}.heading`] = E(h.lines.join(" "));
+      return;
+    }
+    if (has(sec, "Eyebrow")) patch[`${prefix}.eyebrow`] = E(lit(sec, "Eyebrow"));
+    if (has(sec, "H2")) patch[`${prefix}.heading`] = E(heading(sec, "H2").value);
+  };
   const sheet = loadSheet(o.stem);
   const s = (n: string) => section(sheet, n);
   const expect: string[] = [];
@@ -168,21 +181,40 @@ export async function applyIndustry(o: IndustryOptions): Promise<void> {
   /* 06 Quality & certification */
   const qa = s("06");
   const qp = 'sections[_key=="quality"]';
-  if (has(qa, "Eyebrow")) patch[`${qp}.eyebrow`] = E(lit(qa, "Eyebrow"));
-  if (has(qa, "H2")) patch[`${qp}.heading`] = E(heading(qa, "H2").value);
+  eyebrowAndH2(qa, qp);
   patch[`${qp}.body`] = E(paragraph(qa, has(qa, "Intro") ? "Intro" : "Body"));
-  const qcards = field(qa, "Cards", "table");
-  patch[`${qp}.items`] = qcards.rows.map((r) =>
-    // Card | Sub-head | Body, or Card | Body. The card label is the chip
-    // when there is a sub-head to be the name; the name otherwise.
-    r.length === 3 ? { chip: E(r[0]), name: E(r[1]), body: E(r[2]) } : { chip: "", name: E(r[0]), body: E(r[1]) },
-  );
-  patch[`${qp}.links`] = rows(qa, "Links").map((r) => {
-    const key = r[0].replace(/\s*›\s*$/, "");
-    const link = QUALITY_LINKS[key];
-    if (!link) throw new Error(`${o.stem}: unknown quality link "${key}"`);
-    return { label: E(link.label), href: link.href };
-  });
+  if (has(qa, "Cards")) {
+    const qcards = field(qa, "Cards", "table");
+    patch[`${qp}.items`] = qcards.rows.map((r) =>
+      // Card | Sub-head | Body, or Card | Body. The card label is the chip
+      // when there is a sub-head to be the name; the name otherwise.
+      r.length === 3 ? { chip: E(r[0]), name: E(r[1]), body: E(r[2]) } : { chip: "", name: E(r[0]), body: E(r[1]) },
+    );
+  } else {
+    // Sheets 27–28: "Card N" — a body paragraph with "chip\nname" set beside it.
+    patch[`${qp}.items`] = qa.fields
+      .filter((f) => /^Card \d/.test(f.label) && f.kind === "paragraphs")
+      .map((f) => {
+        // Bold in these sheets highlights a figure for the reader of the
+        // sheet; the card carries plain text.
+        const p = f as { paragraphs: string[]; lits?: string[] };
+        const [chip, name] = (p.lits?.[0] ?? "").split("\n");
+        return { chip: E(chip), name: E(name), body: E(p.paragraphs[0]) };
+      });
+  }
+  if (has(qa, "Links")) {
+    patch[`${qp}.links`] = rows(qa, "Links").map((r) => {
+      const key = r[0].replace(/\s*›\s*$/, "");
+      const link = QUALITY_LINKS[key];
+      if (!link) throw new Error(`${o.stem}: unknown quality link "${key}"`);
+      return { label: E(link.label), href: link.href };
+    });
+  } else {
+    // Button | Live | Ships as — a button "Remove[d] until the PDF exists" is dropped.
+    patch[`${qp}.links`] = rows(qa, "Buttons")
+      .filter((r) => !/^Remove/i.test(r[2]))
+      .map((r) => ({ label: E(r[0]), href: /^\[no change\]/.test(r[2]) ? r[1] : r[2] }));
+  }
 
   /* 07 Export lane */
   const ex = s("07");
@@ -191,7 +223,7 @@ export async function applyIndustry(o: IndustryOptions): Promise<void> {
   if (has(ex, "Eyebrow")) patch[`${xp}.eyebrow`] = E(lit(ex, "Eyebrow"));
   patch[`${xp}.heading`] = E(heading(ex, "H2").value);
   patch[`${xp}.paragraphs`] = paragraphs(ex, "Body").map((p) => E(p));
-  patch[`${xp}.rows`] = rows(ex, "Export facts").map((r) => ({ label: E(r[0]), value: E(r[1]) }));
+  patch[`${xp}.rows`] = rows(ex, has(ex, "Export facts") ? "Export facts" : "Info blocks").map((r) => ({ label: E(r[0]), value: E(r[1]) }));
   // "India → Australia · Direct OEM supply chain from Nashik, Maharashtra" then the
   // markets; sheet 20 has a Supply modes table and a closing line instead.
   const markets = ex.fields.find((f) => /^(States|Countries|Markets|Market list)/.test(f.label));
@@ -199,10 +231,15 @@ export async function applyIndustry(o: IndustryOptions): Promise<void> {
   let subtitle = oldCard?.subtitle ?? "";
   let regions: string[];
   if (markets?.kind === "lit") {
-    const [head, list] = markets.value.split("\n");
-    const m = head.match(/^(.*?) · (.*)$/);
-    if (m) [title, subtitle] = [E(m[1]), E(m[2])];
-    regions = (list ?? head).split(" · ").map((x) => E(x));
+    // "Title · Subtitle" then the list (sheets 21–26), or title, subtitle
+    // and list on three lines (sheets 27–28).
+    const lines = markets.value.split("\n");
+    if (lines.length === 3) [title, subtitle] = [E(lines[0]), E(lines[1])];
+    else {
+      const m = lines[0].match(/^(.*?) · (.*)$/);
+      if (m) [title, subtitle] = [E(m[1]), E(m[2])];
+    }
+    regions = lines[lines.length - 1].split(" · ").map((x) => E(x));
   } else regions = rows(ex, "Supply modes").map((r) => E(r[0]));
   const note = ex.fields.find((f) => / note$|^Closing line$/.test(f.label));
   const footnote =
@@ -213,15 +250,7 @@ export async function applyIndustry(o: IndustryOptions): Promise<void> {
   /* 08 FAQ */
   const faq = s("08");
   const fp = 'sections[_key=="faqs"]';
-  if (has(faq, "Eyebrow")) patch[`${fp}.eyebrow`] = E(lit(faq, "Eyebrow"));
-  const faqH2 = faq.fields.find((f) => f.label.startsWith("H2") || f.label.startsWith("Eyebrow · H2"))!;
-  if (faqH2.kind === "heading") patch[`${fp}.heading`] = E(faqH2.value);
-  else if (faqH2.kind === "composite") {
-    const h = faqH2.parts.find((p) => p.kind === "heading");
-    const l = faqH2.parts.find((p) => p.kind === "lit");
-    if (l?.kind === "lit") patch[`${fp}.eyebrow`] = E(l.value);
-    if (h?.kind === "heading") patch[`${fp}.heading`] = E(h.lines.join(" "));
-  }
+  eyebrowAndH2(faq, fp);
   patch.faqs = faq.fields
     .filter((f) => /^Q\d/.test(f.label))
     .map((f) => {
@@ -231,10 +260,9 @@ export async function applyIndustry(o: IndustryOptions): Promise<void> {
         if (h?.kind !== "heading" || p?.kind !== "para") throw new Error(`${o.stem}: ${f.label} shape`);
         return { q: E(h.lines.join(" ")), a: E(p.text) };
       }
-      if (f.kind === "paragraphs" && f.leads[0]) {
-        // Sheets 27–28: "**Question?** Answer…" in one paragraph.
-        const q = f.leads[0];
-        return { q: E(q), a: E(f.paragraphs[0].slice(q.length).trim()) };
+      if (f.kind === "paragraphs" && f.lits?.[0]) {
+        // Sheets 27–28: the answer paragraph with the question set beside it.
+        return { q: E(f.lits[0]), a: E(f.paragraphs[0]) };
       }
       throw new Error(`${o.stem}: ${f.label} shape`);
     });
@@ -251,7 +279,8 @@ export async function applyIndustry(o: IndustryOptions): Promise<void> {
     buttons.kind === "lit"
       ? buttons.value.split("\n").map(arrowLink)
       : buttons.kind === "table"
-        ? buttons.rows.map((r) => arrowLink(r[r.length - 1] || r[0]))
+        ? // Button | Live | Ships as — "[no change]" keeps the live button.
+          buttons.rows.map((r) => arrowLink(/^\[no change\]/.test(r[2]) ? r[1] : r[2]))
         : [];
   patch[`${zp}.actions`] = links.map((l, i) => ({ label: E(l.label), href: l.href, variant: i ? "secondary" : "primary" }));
 
