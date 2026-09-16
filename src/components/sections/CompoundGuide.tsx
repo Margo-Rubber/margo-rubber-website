@@ -85,7 +85,7 @@ export function CompoundGuide({
                 <dt className="text-ink-4 font-mono text-[10px] tracking-[0.16em] uppercase">
                   Service Temperature
                 </dt>
-                <dd className="text-ink mt-2 text-lg font-semibold">
+                <dd className="text-ink mt-2 text-lg font-semibold whitespace-pre-line">
                   {sel.tempRange}
                 </dd>
               </div>

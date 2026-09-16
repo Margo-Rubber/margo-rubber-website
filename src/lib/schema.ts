@@ -568,6 +568,25 @@ export async function productCategoryGraph(
       })),
     });
   }
+  // "How to specify sponge and foam rubber" — the four-line specification
+  // guide as a HowTo, when the page opts in (sheet 19, page-level).
+  if (fm.schemaTypes.includes("HowTo")) {
+    const guide = blocks.find((b) => b._type === "block.specifyGrid");
+    const items = guide?.items as { label: string; body: string }[] | undefined;
+    if (items?.length)
+      nodes.push({
+        "@type": "HowTo",
+        "@id": `${SITE_URL}${path}#specify`,
+        name: `How to specify ${fm.navLabel.toLowerCase()}`,
+        step: items.map((it, i) => ({
+          "@type": "HowToStep",
+          position: i + 1,
+          name: it.label,
+          text: it.body,
+          url: `${SITE_URL}${path}#specify`,
+        })),
+      });
+  }
   for (const b of blocks) {
     if (b._type !== "block.routerList") continue;
     const rows = b.rows as { condition: string; need: string; href?: string }[];

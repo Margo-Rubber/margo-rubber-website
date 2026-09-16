@@ -277,8 +277,11 @@ function* strings(v: unknown, path = ""): Generator<[string, string]> {
   else if (Array.isArray(v))
     for (let i = 0; i < v.length; i++) yield* strings(v[i], `${path}[${i}]`);
   else if (v && typeof v === "object")
-    for (const [k, val] of Object.entries(v))
+    for (const [k, val] of Object.entries(v)) {
+      // An image slot id is a key into the photograph registry, not copy.
+      if (k === "image") continue;
       yield* strings(val, path ? `${path}.${k}` : k);
+    }
 }
 
 export function forbidden(patch: unknown): string[] {

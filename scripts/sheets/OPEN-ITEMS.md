@@ -113,3 +113,10 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 55. **Construction card** links through the route registry to /contact?industry=Construction until the Construction page (sheet 41) is live.
 56. **Confirmation copy** "Drawing received. A named engineer replies within 48 hours to {email} with a compound recommendation, hardness grade and indicative pricing." — contact form post-submit state, Phase 7.
 57. **FAQ "Can Margo extrude a profile to my own cross-section drawing?"** (live) dropped — no written answer on the sheet; "How is rubber extrusion priced?" stays, answered by §08's intro.
+
+## 19 Sponge & Foam Rubber
+
+58. **Datasheet button.** The sheet links "Download Datasheet ↓ /resources/sponge-foam-datasheet.pdf"; no PDF exists yet (sheet 40, Phase 6). Both buttons ship as the sheet's own fallback, "Request Datasheet" → /contact?request=datasheet. Restore the label and href when the file is published.
+59. **Construction and Transport cards** link through the route registry to /contact until those pages (sheets 41, 42) are live.
+60. **FAQ node empty.** The two live questions have no written answers on the sheet; a HowTo node carries the four-line specification guide instead, as the sheet's graph asks.
+61. **Confirmation copy** "Enquiry received. A named engineer replies within 48 hours to {email} with a compound, a density and a recommended cut form." — Phase 7 forms.

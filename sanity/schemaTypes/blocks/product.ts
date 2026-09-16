@@ -521,6 +521,7 @@ export const densityScale = defineType({
       fields: [
         defineField({ name: "text", type: "text", rows: 3, validation: (r) => r.required().min(20) }),
         defineField({ name: "author", type: "string", validation: (r) => r.required().min(2) }),
+        defineField({ name: "org", title: "Their company", type: "string" }),
       ],
       validation: (r) => r.required(),
       group: "content",

@@ -367,7 +367,7 @@ export const densitySectionSchema = z
       highLabel: z.string(),
       highNote: z.string(),
     }),
-    quote: z.object({ text: z.string().min(20), author: z.string().min(2) }),
+    quote: z.object({ text: z.string().min(20), author: z.string().min(2), org: z.string().optional() }),
     bands: z
       .array(z.object({ range: z.string(), note: z.string() }))
       .min(2),
