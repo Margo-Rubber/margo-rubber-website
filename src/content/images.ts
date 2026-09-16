@@ -408,6 +408,17 @@ export const IMAGES = {
     status: "placeholder",
   },
 
+  "contact.map": {
+    // Stands in until a map still is uploaded in the Studio: the block links
+    // to Google Maps at the plant's coordinates whatever the picture shows.
+    src: "/images/contact/0d423de901bffb06f69b1e44c1fef77e980a8876.jpg",
+    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAeEAACAwABBQAAAAAAAAAAAAABAgADEQQFIzFBof/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAXEQADAQAAAAAAAAAAAAAAAAAAAQIR/9oADAMBAAIRAxEAPwCd4S942EhUXNBG7vj7kpuZ0m241WO4LPWpJHuIiphmU8P/2Q==",
+    w: 1920,
+    h: 1080,
+    alt: "Map showing the Margo Rubber Products plant at Vilholi, Nashik",
+    status: "placeholder",
+  },
+
   /* --- Certifications ------------------------------------------------- */
   "certifications.facility.press-wide": {
     src: "/images/certifications/30762e5cda42ef64cdc538710fb78406b1f30d09.png",

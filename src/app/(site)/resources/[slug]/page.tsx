@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { displayName } from "@/content/routes";
+import { getSiteSettings } from "@/lib/settings";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { trail } from "@/lib/breadcrumbs";
 import { notFound } from "next/navigation";
@@ -25,7 +27,15 @@ const CATEGORY_LABEL: Record<string, string> = {
   "material-comparison": "Material Comparison",
   "sizing-spec": "Sizing & Spec",
   "sourcing-buyer": "Sourcing & Buyer",
+  datasheets: "Datasheets",
 };
+
+/** "2026-09-01" → "1 September 2026", fixed locale so server and client agree. */
+function longDate(iso: string) {
+  const [y, m, d] = iso.split("-").map(Number);
+  const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  return `${d} ${months[m - 1]} ${y}`;
+}
 
 /**
  * /resources/[slug] — the guide template.
@@ -54,6 +64,7 @@ export default async function ResourceGuidePage(
   if (!page) notFound();
 
   const { frontmatter: fm, Content, prose, hasBody } = page;
+  const { guideReviewer } = await getSiteSettings();
   const related = fm.related;
 
   const crumbs = trail(
@@ -96,6 +107,20 @@ export default async function ResourceGuidePage(
           <p className="text-ink-3 mt-6 max-w-[60ch] leading-relaxed">
             {fm.intro}
           </p>
+          {/* The byline — reviewer from Site settings, date from the guide.
+              Nothing renders while either is unset (sheet 35). */}
+          {(guideReviewer.name || fm.publishedAt) && hasBody && (
+            <p className="text-ink-4 mt-6 text-sm">
+              {guideReviewer.name && (
+                <>
+                  Reviewed at our works in Nashik by {guideReviewer.name}
+                  {guideReviewer.role ? `, ${guideReviewer.role}` : ""}
+                </>
+              )}
+              {guideReviewer.name && fm.publishedAt ? " · " : ""}
+              {fm.publishedAt && <>Published {longDate(fm.publishedAt)}</>}
+            </p>
+          )}
         </Container>
       </header>
 
@@ -148,7 +173,7 @@ export default async function ResourceGuidePage(
                     href={`/products/${p}`}
                     className="border-line-2 text-ink-2 hover:border-accent-400/60 hover:text-ink rounded-pill inline-flex border px-4 py-2 text-sm transition-colors"
                   >
-                    {p.replace(/-/g, " ")}
+                    {displayName(p)}
                   </Link>
                 </li>
               ))}
@@ -158,7 +183,7 @@ export default async function ResourceGuidePage(
                     href={`/industries/${i}`}
                     className="border-line-2 text-ink-2 hover:border-accent-400/60 hover:text-ink rounded-pill inline-flex border px-4 py-2 text-sm transition-colors"
                   >
-                    {i.replace(/-/g, " ")}
+                    {displayName(i)}
                   </Link>
                 </li>
               ))}

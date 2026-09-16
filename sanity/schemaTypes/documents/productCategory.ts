@@ -44,6 +44,11 @@ const ALLOWED_BLOCKS = [
   "block.qualityPanel",
   "block.propertyList",
   "block.ctaBand",
+  // Added for the four new category sheets (36–39): prose panels, the
+  // "which do you need" router, and free text.
+  "block.accordion",
+  "block.routerList",
+  "block.richText",
 ];
 
 export const productCategory = defineType({
@@ -341,6 +346,20 @@ export const productCategory = defineType({
           of: [defineArrayMember({ type: "string" })],
           options: { layout: "tags" },
         }),
+      ],
+      options: { collapsible: true, collapsed: true },
+      group: "meta",
+    }),
+    defineField({
+      name: "service",
+      title: "What the line covers",
+      description: "The service area and what is not supplied (content sheet 38 §07). Nothing shows while empty.",
+      type: "object",
+      fields: [
+        defineField({ name: "heading", type: "string" }),
+        defineField({ name: "area", title: "Covered", type: "array", of: [defineArrayMember({ type: "string" })] }),
+        defineField({ name: "exclusionsHeading", title: "Exclusions heading", type: "string" }),
+        defineField({ name: "exclusions", title: "Not supplied", type: "array", of: [defineArrayMember({ type: "string" })] }),
       ],
       options: { collapsible: true, collapsed: true },
       group: "meta",

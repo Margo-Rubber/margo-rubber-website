@@ -149,10 +149,37 @@ export const sku = defineType({
     }),
     defineField({
       name: "stockLabel",
-      title: "Availability",
+      title: "Availability (no longer shown)",
       type: "string",
-      description: 'e.g. "Made to order", "Ex-stock".',
+      description: "Retired: nothing is stocked, so the badge came off the page. Kept for old records.",
+      readOnly: true,
+      hidden: ({ value }) => !value,
       group: "top",
+    }),
+    defineField({ name: "hardness", title: "Hardness", type: "string", description: "e.g. 70 ±5 Shore A", group: "top" }),
+    defineField({ name: "dimensions", title: "Dimensions", type: "string", description: "e.g. Ø 42 × 3.5 mm, or “to your drawing”", group: "top" }),
+    defineField({
+      name: "processType",
+      title: "Process",
+      type: "string",
+      options: {
+        list: [
+          { title: "Compression moulding", value: "compression" },
+          { title: "Injection moulding", value: "injection" },
+          { title: "Transfer moulding", value: "transfer" },
+          { title: "Extrusion", value: "extrusion" },
+          { title: "Rubber-to-metal bonding", value: "bonded" },
+          { title: "Cut from sheet", value: "cut" },
+        ],
+      },
+      group: "top",
+    }),
+    defineField({
+      name: "legacyUrl",
+      title: "Old address (WooCommerce)",
+      type: "string",
+      description: "The old shop URL for this part, e.g. /product/oil-seal-fkm. Requests to it are redirected here.",
+      group: "meta",
     }),
     defineField({
       name: "gallery",
@@ -427,6 +454,44 @@ export const sku = defineType({
      * would lose work nobody would notice was gone until the .mdx files were
      * deleted. Carried across on every type for that reason.
      */
+    defineField({
+      name: "compoundRanking",
+      title: "Compounds ranked for this part",
+      description: "All eight, best first, each with the reason. The compound selector shows them in this order.",
+      type: "array",
+      of: [
+        defineArrayMember({
+          type: "object",
+          name: "ranked",
+          fields: [
+            defineField({ name: "code", title: "Compound code", type: "string", description: "AEM · FKM · VMQ · EPDM · NBR · CR · SBR · NR", validation: (r) => r.required() }),
+            defineField({ name: "rank", title: "Rank", type: "number", validation: (r) => r.required().integer().min(1).max(8) }),
+            defineField({ name: "reason", title: "Why", type: "string", validation: (r) => r.required() }),
+          ],
+          preview: { select: { title: "code", subtitle: "reason", rank: "rank" }, prepare: ({ title, subtitle, rank }) => ({ title: `${rank}. ${title}`, subtitle }) },
+        }),
+      ],
+      group: "specs",
+    }),
+    defineField({
+      name: "relatedParts",
+      title: "You may also need",
+      description: "Up to four sibling parts, each with the one line that says how it differs from this one.",
+      type: "array",
+      of: [
+        defineArrayMember({
+          type: "object",
+          name: "relatedPart",
+          fields: [
+            defineField({ name: "slug", title: "Part address (last part of the URL)", type: "string", validation: (r) => r.required() }),
+            defineField({ name: "difference", title: "How it differs", type: "string", validation: (r) => r.required() }),
+          ],
+          preview: { select: { title: "slug", subtitle: "difference" } },
+        }),
+      ],
+      validation: (r) => r.max(4),
+      group: "trust",
+    }),
     defineField({
       name: "related",
       title: "Related pages",

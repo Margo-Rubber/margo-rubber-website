@@ -395,7 +395,7 @@ export function skuNode(
  * and reviewedBy only once a reviewer is named in settings.
  */
 export async function articleNode(
-  fm: { h1: string; seo: { description: string } },
+  fm: { h1: string; seo: { description: string }; publishedAt?: string },
   path: string,
 ): Promise<Node> {
   const { guideReviewer } = await getSiteSettings();
@@ -416,8 +416,8 @@ export async function articleNode(
           },
         }
       : {}),
-    // No datePublished: nothing in the content records one, and a date that
-    // is really "when the build ran" is worse than none.
+    // datePublished only when the guide records one — never the build date.
+    ...(fm.publishedAt ? { datePublished: fm.publishedAt, dateModified: fm.publishedAt } : {}),
   };
 }
 
@@ -525,7 +525,12 @@ export async function pageGraph(opts: {
 }
 
 /** Assembles the full @graph for a product category page — sheet 09. */
-export async function productCategoryGraph(fm: ProductCategory, path: string) {
+export async function productCategoryGraph(
+  fm: ProductCategory,
+  path: string,
+  /** The page's rendered blocks — a router list becomes an ItemList (sheet 39 §02). */
+  blocks: readonly { _type: string; [k: string]: unknown }[] = [],
+) {
   const nodes: Node[] = [];
 
   if (fm.schemaTypes.includes("Product"))
@@ -545,6 +550,24 @@ export async function productCategoryGraph(fm: ProductCategory, path: string) {
   if (fm.schemaTypes.includes("FAQPage")) {
     const faq = faqNode(fm.faqs, path);
     if (faq) nodes.push(faq);
+  }
+  for (const b of blocks) {
+    if (b._type !== "block.routerList") continue;
+    const rows = b.rows as { condition: string; need: string; href?: string }[];
+    nodes.push({
+      "@type": "ItemList",
+      "@id": `${SITE_URL}${path}#router`,
+      name: String(b.heading ?? ""),
+      itemListOrder: "ItemListOrderAscending",
+      numberOfItems: rows.length,
+      itemListElement: rows.map((r, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: r.condition,
+        description: r.need,
+        ...(r.href ? { url: `${SITE_URL}${r.href}` } : {}),
+      })),
+    });
   }
 
   return { "@context": "https://schema.org", "@graph": nodes };

@@ -59,6 +59,15 @@ function homeHead({ lines = true } = {}) {
   ];
 }
 
+/** An optional link on an item that is usually plain text. */
+const optionalHref = (description: string) =>
+  defineField({
+    name: "href",
+    title: "Link address",
+    type: "string",
+    description,
+  });
+
 const statMember = defineArrayMember({
   type: "object",
   name: "homeStat",
@@ -125,6 +134,24 @@ export const homePage = defineType({
           validation: (r) => r.required().min(1),
         }),
         defineField({
+          name: "introLinks",
+          title: "Links inside the intro",
+          description:
+            "Phrases from the intro paragraph that should link out, exactly as written there. The first match of each is linked.",
+          type: "array",
+          of: [
+            defineArrayMember({
+              type: "object",
+              name: "introLink",
+              fields: [
+                defineField({ name: "label", title: "Phrase in the intro", type: "string", validation: (r) => r.required() }),
+                defineField({ name: "href", title: "Link address", type: "string", validation: (r) => r.required() }),
+              ],
+              preview: { select: { title: "label", subtitle: "href" } },
+            }),
+          ],
+        }),
+        defineField({
           name: "cards",
           title: "Figure cards",
           type: "array",
@@ -174,6 +201,7 @@ export const homePage = defineType({
           fields: [
             defineField({ name: "title", type: "string", validation: (r) => r.required() }),
             defineField({ name: "body", type: "text", rows: 2, validation: (r) => r.required() }),
+            optionalHref("Where the card leads when clicked, e.g. /certifications. Leave empty for no link."),
           ],
         }),
         defineField({ name: "stats", title: "Figures", type: "array", of: [statMember], validation: (r) => r.required().min(1) }),
@@ -214,6 +242,7 @@ export const homePage = defineType({
                 }),
                 defineField({ name: "name", type: "string", validation: (r) => r.required() }),
                 defineField({ name: "body", type: "text", rows: 2, validation: (r) => r.required() }),
+                optionalHref("Where the point leads when clicked. Leave empty for no link."),
               ],
               preview: { select: { title: "name", subtitle: "body" } },
             }),
@@ -329,6 +358,7 @@ export const homePage = defineType({
               fields: [
                 defineField({ name: "name", type: "string", validation: (r) => r.required() }),
                 defineField({ name: "body", type: "text", rows: 2, validation: (r) => r.required() }),
+                optionalHref("Where the step leads, e.g. /contact for the brief. Leave empty for no link."),
               ],
               preview: { select: { title: "name", subtitle: "body" } },
             }),
@@ -350,6 +380,13 @@ export const homePage = defineType({
         imageRefField("inset", { title: "Inset image", required: true, group: null }),
         defineField({ name: "badge", type: "string", validation: (r) => r.required() }),
         listField("checks", "Points", { group: null, min: 1 }),
+        defineField({
+          name: "stats",
+          title: "Figures beneath the points",
+          description: "The stat row: value and label. Leave empty to show none.",
+          type: "array",
+          of: [statMember],
+        }),
       ],
       options: { collapsible: true, collapsed: true },
       group: "lower",
@@ -362,6 +399,23 @@ export const homePage = defineType({
       type: "object",
       fields: [
         ...homeHead(),
+        defineField({
+          name: "standfirst",
+          title: "Paragraph under the heading",
+          type: "text",
+          rows: 3,
+        }),
+        listField("linesVision", "Heading lines — concept build only", {
+          group: null,
+          description: "Shown instead of the heading lines on the password-protected concept build. Leave empty to reuse the heading above.",
+        }),
+        defineField({
+          name: "standfirstVision",
+          title: "Paragraph — concept build only",
+          type: "text",
+          rows: 3,
+          description: "Shown instead of the paragraph on the concept build. Leave empty to reuse it.",
+        }),
         defineField({
           name: "hub",
           title: "Hub marker",
@@ -393,13 +447,42 @@ export const homePage = defineType({
                 defineField({ name: "note", type: "string", validation: (r) => r.required() }),
                 defineField({ name: "x", type: "number", validation: (r) => r.required().min(0).max(100) }),
                 defineField({ name: "y", type: "number", validation: (r) => r.required().min(0).max(100) }),
+                optionalHref("The market's block on the export page, e.g. /export#uk."),
               ],
               preview: { select: { title: "name", subtitle: "note" } },
             }),
           ],
           validation: (r) => r.required().min(1),
         }),
+        defineField({
+          name: "pins",
+          title: "Extra map pins",
+          description: "Pins on the map that have no lane card beneath. Percentage coordinates, 0 to 100.",
+          type: "array",
+          of: [
+            defineArrayMember({
+              type: "object",
+              name: "pin",
+              fields: [
+                defineField({ name: "label", type: "string", validation: (r) => r.required() }),
+                defineField({ name: "x", type: "number", validation: (r) => r.required().min(0).max(100) }),
+                defineField({ name: "y", type: "number", validation: (r) => r.required().min(0).max(100) }),
+              ],
+              preview: { select: { title: "label" } },
+            }),
+          ],
+        }),
         defineField({ name: "note", type: "text", rows: 2, validation: (r) => r.required() }),
+        defineField({
+          name: "noteLink",
+          title: "Link after the note",
+          description: "e.g. “See all 95 markets” → /export. Leave empty for no link.",
+          type: "object",
+          fields: [
+            defineField({ name: "label", title: "Link text", type: "string" }),
+            defineField({ name: "href", title: "Link address", type: "string" }),
+          ],
+        }),
       ],
       options: { collapsible: true, collapsed: true },
       group: "closing",

@@ -62,6 +62,9 @@ const partsGridSchema = z.object({
   parts: z.array(anchorSchema).min(1),
   categoryLabel: z.string().min(2),
   categorySlug: z.string().min(1),
+  /** The sheets' static list — 16–24 part NAMES with no links (sheet 09 §04).
+      When present it renders instead of the linked cards from `parts`. */
+  items: z.array(z.object({ name: z.string().min(2), availability: z.string().optional() })).optional(),
 });
 
 /**
@@ -83,7 +86,42 @@ const industryFaqSchema = z.object({
   items: z.array(faqSchema).default([]),
 });
 
+/** Prose panels behind headings — sheets 36–39. Every panel is in the DOM. */
+const accordionSchema = z.object({
+  /** The section id, from the Studio "Anchor" field. */
+  id: z.string().regex(/^[a-z0-9-]+$/).optional(),
+  eyebrow: z.string().optional(),
+  heading: z.string().min(3),
+  intro: z.string().optional(),
+  panels: z.array(z.object({ title: z.string().min(3), body: z.string().min(20) })).min(1),
+});
+
+/** "If your condition is X, you need Y" — sheet 39 §02. Emitted as an ItemList. */
+const routerListSchema = z.object({
+  /** The section id, from the Studio "Anchor" field. */
+  id: z.string().regex(/^[a-z0-9-]+$/).optional(),
+  eyebrow: z.string().optional(),
+  heading: z.string().min(3),
+  intro: z.string().optional(),
+  rows: z
+    .array(z.object({ condition: z.string().min(3), need: z.string().min(3), href: z.string().optional() }))
+    .min(1),
+});
+
+/** Free text from the Studio editor. Portable text is validated by Sanity; here it is carried through. */
+const richTextSchema = z.object({
+  /** The section id, from the Studio "Anchor" field. */
+  id: z.string().regex(/^[a-z0-9-]+$/).optional(),
+  eyebrow: z.string().optional(),
+  heading: z.string().optional(),
+  body: z.string().optional(),
+  content: z.array(z.record(z.string(), z.unknown())).min(1),
+});
+
 export const BLOCK_SCHEMAS = {
+  "block.accordion": accordionSchema,
+  "block.routerList": routerListSchema,
+  "block.richText": richTextSchema,
   "block.partsGrid": partsGridSchema,
   "block.specTable": specSectionSchema,
   "block.materialCards": materialSectionSchema,

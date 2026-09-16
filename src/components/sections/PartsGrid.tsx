@@ -43,13 +43,28 @@ function Arrow({ className = "size-4" }: { className?: string }) {
 
 export function PartsGrid({
   parts,
+  items = [],
   categoryLabel,
   categorySlug,
 }: {
   parts: readonly { id: string; label: string; legacyUrl?: string }[];
+  /** The sheets' static list: names only, no links. Replaces `parts` when filled. */
+  items?: readonly { name: string; availability?: string }[];
   categoryLabel: string;
   categorySlug: string;
 }) {
+  if (items.length > 0) {
+    return (
+      <ul className="grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
+        {items.map((it) => (
+          <li key={it.name} className="border-line text-ink-2 flex items-baseline justify-between gap-4 border-b py-3 text-sm">
+            <span>{it.name}</span>
+            {it.availability && <span className="text-ink-4 shrink-0 font-mono text-xs">{it.availability}</span>}
+          </li>
+        ))}
+      </ul>
+    );
+  }
   if (parts.length === 0) return null;
 
   return (

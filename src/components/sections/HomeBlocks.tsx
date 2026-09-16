@@ -311,10 +311,48 @@ function Arrow({ className = "size-4" }: { className?: string }) {
 }
 
 /* ══ 01 · HERO ════════════════════════════════════════════════════════════ */
+/**
+ * A paragraph with named phrases linked — the hero intro names four product
+ * lines (sheet 01 §01). The first occurrence of each label, as written, is
+ * wrapped; a label that is not in the text is simply not linked.
+ */
+export function LinkedText({
+  text,
+  links,
+}: {
+  text: string;
+  links: readonly { label: string; href: string }[];
+}) {
+  const parts: React.ReactNode[] = [];
+  let rest = text;
+  const pending = links.filter((l) => l.label && rest.includes(l.label));
+  while (rest.length) {
+    let first: { label: string; href: string; at: number } | null = null;
+    for (const l of pending) {
+      const at = rest.indexOf(l.label);
+      if (at !== -1 && (first === null || at < first.at)) first = { ...l, at };
+    }
+    if (!first) {
+      parts.push(rest);
+      break;
+    }
+    if (first.at > 0) parts.push(rest.slice(0, first.at));
+    parts.push(
+      <Link key={`${first.href}-${parts.length}`} href={first.href} className="text-ink underline decoration-accent-400/50 underline-offset-4 hover:decoration-accent-400">
+        {first.label}
+      </Link>,
+    );
+    rest = rest.slice(first.at + first.label.length);
+    pending.splice(pending.findIndex((l) => l.label === first!.label), 1);
+  }
+  return <>{parts}</>;
+}
+
 export function HomeHero({
   eyebrow,
   h1Lines,
   intro,
+  introLinks = [],
   image,
   actions,
   chips,
@@ -323,6 +361,7 @@ export function HomeHero({
   eyebrow: string;
   h1Lines: readonly string[];
   intro: string;
+  introLinks?: readonly { label: string; href: string }[];
   image: string;
   actions: readonly { label: string; href: string; variant: string }[];
   chips: readonly { label: string; href: string }[];
@@ -381,7 +420,7 @@ export function HomeHero({
             <Rule>{eyebrow}</Rule>
             <Marked as="h1" size="hero" lines={h1Lines} className="mt-6" />
             <p className="text-ink-3 mt-7 max-w-[46ch] leading-relaxed">
-              {intro}
+              <LinkedText text={intro} links={introLinks} />
             </p>
 
             <div className="mt-9 flex flex-wrap gap-3">
@@ -500,7 +539,7 @@ export function Story({
   paragraphs: readonly string[];
   image: string;
   imageBadge: string;
-  floatCard: { title: string; body: string };
+  floatCard: { title: string; body: string; href?: string };
   stats: readonly { value: string; label: string }[];
   cta: { label: string; href: string };
 }) {
@@ -523,7 +562,13 @@ export function Story({
             <div className="rounded-card border-line absolute right-0 bottom-0 w-[62%] border bg-[#111418]/90 p-5 backdrop-blur">
               <p className="text-ink flex items-center gap-2.5 text-sm font-semibold">
                 <Icon name="ribbon" className="text-accent-400 size-4" />
-                {floatCard.title}
+                {floatCard.href ? (
+                  <Link href={floatCard.href} className="hover:text-accent-400 transition-colors after:absolute after:inset-0">
+                    {floatCard.title}
+                  </Link>
+                ) : (
+                  floatCard.title
+                )}
               </p>
               <p className="text-ink-4 mt-2 text-xs leading-relaxed">
                 {floatCard.body}
@@ -574,7 +619,7 @@ export function Edge({
 }: {
   eyebrow: string;
   lines: readonly string[];
-  items: readonly { icon: string; name: string; body: string }[];
+  items: readonly { icon: string; name: string; body: string; href?: string }[];
 }) {
   return (
     <section className="bg-canvas relative isolate overflow-hidden py-[70px]">
@@ -585,11 +630,17 @@ export function Edge({
           {items.map((it) => (
             <li
               key={it.name}
-              className="rounded-card border-line border bg-[#0F1115] p-7"
+              className="rounded-card border-line relative border bg-[#0F1115] p-7"
             >
               <IconTile name={it.icon} />
               <h3 className="text-ink mt-6 text-base font-semibold">
-                {it.name}
+                {it.href ? (
+                  <Link href={it.href} className="hover:text-accent-400 transition-colors after:absolute after:inset-0">
+                    {it.name}
+                  </Link>
+                ) : (
+                  it.name
+                )}
               </h3>
               <p className="text-ink-4 mt-2.5 text-sm leading-relaxed">
                 {it.body}
@@ -763,7 +814,7 @@ export function Process({
   eyebrow: string;
   lines: readonly string[];
   body?: string;
-  steps: readonly { name: string; body: string }[];
+  steps: readonly { name: string; body: string; href?: string }[];
 }) {
   return (
     <section className="relative isolate overflow-hidden bg-[#171A1F] py-[70px]">
@@ -801,7 +852,13 @@ export function Process({
                     STEP {String(i + 1).padStart(2, "0")}
                   </p>
                   <h3 className="text-ink mt-2 text-lg font-semibold">
-                    {s.name}
+                    {s.href ? (
+                      <Link href={s.href} className="hover:text-accent-400 transition-colors">
+                        {s.name} <span aria-hidden>›</span>
+                      </Link>
+                    ) : (
+                      s.name
+                    )}
                   </h3>
                   <p className="text-ink-4 mt-2 text-sm leading-relaxed">
                     {s.body}
@@ -825,6 +882,7 @@ export function Facility({
   inset,
   badge,
   checks,
+  stats = [],
 }: {
   eyebrow: string;
   lines: readonly string[];
@@ -833,6 +891,7 @@ export function Facility({
   inset: string;
   badge: string;
   checks: readonly string[];
+  stats?: readonly { value: string; label: string }[];
 }) {
   return (
     <section className="bg-surface-2 py-[70px]">
@@ -888,6 +947,16 @@ export function Facility({
                 </li>
               ))}
             </ul>
+            {stats.length > 0 && (
+              <dl className="border-line mt-8 grid grid-cols-2 gap-6 border-t pt-8 sm:grid-cols-4">
+                {stats.map((st) => (
+                  <div key={st.label}>
+                    <dd className="text-ink text-2xl font-bold">{st.value}</dd>
+                    <dt className="text-ink-4 mt-1 text-xs">{st.label}</dt>
+                  </div>
+                ))}
+              </dl>
+            )}
           </div>
         </div>
       </Container>
@@ -902,6 +971,7 @@ type Lane = {
   note: string;
   x: number;
   y: number;
+  href?: string;
 };
 
 /** Coordinates are rounded: raw float output serialises differently on server
@@ -911,15 +981,22 @@ const r2 = (n: number) => Math.round(n * 100) / 100;
 export function ExportMarkets({
   eyebrow,
   lines,
+  standfirst,
   hub,
   lanes,
+  pins = [],
   note,
+  noteLink,
 }: {
   eyebrow: string;
   lines: readonly string[];
+  standfirst?: string;
   hub: { label: string; x: number; y: number };
   lanes: readonly Lane[];
+  /** Pins with no lane card — drawn on the map only. */
+  pins?: readonly { label: string; x: number; y: number }[];
   note: string;
+  noteLink?: { label: string; href: string };
 }) {
   const W = 600;
   const H = 380;
@@ -932,6 +1009,9 @@ export function ExportMarkets({
         <header className="mb-12">
           <Rule>{eyebrow}</Rule>
           <Marked lines={lines} className="mt-6" />
+          {standfirst && (
+            <p className="text-ink-3 mt-6 max-w-[58ch] leading-relaxed">{standfirst}</p>
+          )}
         </header>
 
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_26rem]">
@@ -984,6 +1064,20 @@ export function ExportMarkets({
                 );
               })}
 
+              {/* Pins without a lane card: a marker and a label, no route drawn. */}
+              {pins.map((p) => {
+                const px = r2((p.x / 100) * W);
+                const py = r2((p.y / 100) * H);
+                return (
+                  <g key={`pin-${p.label}`}>
+                    <circle cx={px} cy={py} r="4" fill="var(--color-ink)" opacity="0.8" />
+                    <text x={px + 10} y={py + 4} fill="var(--color-ink-3)" fontSize="10" fontFamily="var(--font-mono)">
+                      {p.label.toUpperCase()}
+                    </text>
+                  </g>
+                );
+              })}
+
               <circle cx={hx} cy={hy} r="14" fill="none" stroke="var(--color-accent-400)" strokeWidth="1.5" />
               <circle cx={hx} cy={hy} r="6" fill="var(--color-accent-400)" />
               <text
@@ -1002,20 +1096,38 @@ export function ExportMarkets({
             {lanes.map((l) => (
               <div
                 key={l.code}
-                className="rounded-card border-line flex items-center gap-4 border bg-[#0F1115] px-5 py-4"
+                className="rounded-card border-line relative flex items-center gap-4 border bg-[#0F1115] px-5 py-4"
               >
                 <span className="text-eyebrow border-accent-400/20 bg-accent-400/10 text-accent-400 grid size-10 shrink-0 place-items-center rounded-lg border font-mono">
                   {l.code}
                 </span>
                 <div>
-                  <p className="text-ink text-sm font-semibold">{l.name}</p>
+                  <p className="text-ink text-sm font-semibold">
+                    {l.href ? (
+                      <Link href={l.href} className="hover:text-accent-400 transition-colors after:absolute after:inset-0">
+                        {l.name}
+                      </Link>
+                    ) : (
+                      l.name
+                    )}
+                  </p>
                   <p className="text-ink-4 mt-0.5 text-sm">{l.note}</p>
                 </div>
               </div>
             ))}
             <p className="text-ink-4 mt-2 flex gap-2.5 text-xs leading-relaxed">
               <Icon name="globe" className="text-accent-400 mt-px size-4 shrink-0" />
-              {note}
+              <span>
+                {note}
+                {noteLink?.label && noteLink.href && (
+                  <>
+                    {" "}
+                    <Link href={noteLink.href} className="text-accent-400 hover:opacity-80">
+                      {noteLink.label} <span aria-hidden>→</span>
+                    </Link>
+                  </>
+                )}
+              </span>
             </p>
           </div>
         </div>

@@ -396,6 +396,40 @@ export const productsHub = defineType({
         ...sectionFields(),
         listField("items", "Tests", { group: null, min: 1 }),
         defineField({
+          name: "groups",
+          title: "Tests by who performs them",
+          description:
+            "Two groups — in-house and partner laboratory — each a list of test and the standard it is run to. When filled, these replace the plain list above.",
+          type: "array",
+          of: [
+            defineArrayMember({
+              type: "object",
+              name: "testGroup",
+              fields: [
+                defineField({ name: "title", title: "Group title", type: "string", validation: (r) => r.required() }),
+                defineField({
+                  name: "rows",
+                  title: "Tests",
+                  type: "array",
+                  of: [
+                    defineArrayMember({
+                      type: "object",
+                      name: "testRow",
+                      fields: [
+                        defineField({ name: "test", title: "Test", type: "string", validation: (r) => r.required() }),
+                        defineField({ name: "standard", title: "Standard", type: "string", validation: (r) => r.required() }),
+                      ],
+                      preview: { select: { title: "test", subtitle: "standard" } },
+                    }),
+                  ],
+                  validation: (r) => r.required().min(1),
+                }),
+              ],
+              preview: { select: { title: "title" } },
+            }),
+          ],
+        }),
+        defineField({
           name: "cta",
           title: "Button",
           type: "object",

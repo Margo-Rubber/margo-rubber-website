@@ -84,6 +84,14 @@ export const materialCards = defineType({
       validation: (r) => r.required().min(1),
       group: "content",
     }),
+    defineField({
+      name: "footnote",
+      title: "Trade-mark line",
+      type: "text",
+      rows: 2,
+      description: "Attribution under the cards, e.g. “Viton® is a trade mark of The Chemours Company.”",
+      group: "content",
+    }),
     anchorIdField(),
   ],
   preview: blockPreview("Material cards", (v) => count(v.items, "material")),
@@ -146,6 +154,17 @@ export const standardsAnswer = defineType({
           ],
           preview: { select: { title: "code", subtitle: "name" } },
         }),
+      ],
+      group: "content",
+    }),
+    defineField({ name: "closing", title: "Closing line", type: "text", rows: 2, group: "content" }),
+    defineField({
+      name: "closingLink",
+      title: "Link after the closing line",
+      type: "object",
+      fields: [
+        defineField({ name: "label", title: "Link text", type: "string" }),
+        defineField({ name: "href", title: "Link address", type: "string" }),
       ],
       group: "content",
     }),
@@ -672,11 +691,29 @@ export const partsGrid = defineType({
       title: "Where the parts come from",
       type: "string",
       readOnly: true,
-      initialValue: "Edit the list itself under Search & links → Parts in this category.",
+      initialValue: "Linked part cards come from Search & links → Parts in this category. Fill the list below to show plain names instead.",
       group: "options",
     }),
+    defineField({
+      name: "items",
+      title: "Part names",
+      description: "The plain list from the content sheet — 16 to 24 names, no links. When filled, it replaces the linked part cards.",
+      type: "array",
+      of: [
+        defineArrayMember({
+          type: "object",
+          name: "partName",
+          fields: [
+            defineField({ name: "name", title: "Part", type: "string", validation: (r) => r.required().min(2) }),
+            defineField({ name: "availability", title: "Availability", type: "string", description: "e.g. “to drawing” or “standard sizes”." }),
+          ],
+          preview: { select: { title: "name", subtitle: "availability" } },
+        }),
+      ],
+      group: "content",
+    }),
   ],
-  preview: blockPreview("Parts in this category"),
+  preview: blockPreview("Parts in this category", (v) => count(v.items, "part")),
 });
 
 export const PRODUCT_BLOCKS = [

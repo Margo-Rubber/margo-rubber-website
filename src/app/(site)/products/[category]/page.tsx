@@ -59,7 +59,7 @@ export default async function ProductCategoryPage(
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(await productCategoryGraph(fm, path)),
+            __html: JSON.stringify(await productCategoryGraph(fm, path, blocks)),
           }}
         />
       )}
@@ -87,11 +87,45 @@ export default async function ProductCategoryPage(
           // The FAQ renders from the same list the FAQPage node is built
           // from, so what Google is told is what the reader sees. It was
           // in the graph and missing from the page — content sheet 09 §09.
-          hasBody || fm.faqs.length ? (
+          hasBody || fm.faqs.length || fm.service?.area.length || fm.service?.exclusions.length ? (
             <>
               {hasBody && Content && (
                 <Section>
                   <Content />
+                </Section>
+              )}
+              {/* What the line covers and what it does not — sheet 38 §07.
+                  Two plain lists; the exclusions are as load-bearing as the
+                  coverage for a buyer deciding whether to ask. */}
+              {fm.service && (fm.service.area.length > 0 || fm.service.exclusions.length > 0) && (
+                <Section id="scope" heading={fm.service.heading}>
+                  <div className="grid gap-8 md:grid-cols-2">
+                    {fm.service.area.length > 0 && (
+                      <ul className="space-y-2.5">
+                        {fm.service.area.map((a) => (
+                          <li key={a} className="text-ink-2 flex gap-3 text-sm">
+                            <span aria-hidden className="bg-accent-400 mt-2 size-1.5 shrink-0 rounded-full" />
+                            {a}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    {fm.service.exclusions.length > 0 && (
+                      <div className="rounded-card border-line border border-dashed p-6">
+                        <p className="text-eyebrow text-ink-4 font-mono uppercase">
+                          {fm.service.exclusionsHeading ?? "Not supplied"}
+                        </p>
+                        <ul className="mt-4 space-y-2.5">
+                          {fm.service.exclusions.map((e) => (
+                            <li key={e} className="text-ink-3 flex gap-3 text-sm">
+                              <span aria-hidden className="text-ink-4">—</span>
+                              {e}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
                 </Section>
               )}
               {fm.faqs.length > 0 && (

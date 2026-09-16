@@ -105,6 +105,8 @@ export default async function AboutPage() {
         stats={fm.manufacturing.stats}
         portfolioLabel={fm.manufacturing.portfolioLabel}
         portfolio={fm.manufacturing.portfolio}
+        equipmentLabel={fm.manufacturing.equipmentLabel}
+        equipment={fm.manufacturing.equipment}
       />
 
       <Team head={fm.team} members={fm.team.members} stats={fm.team.stats} />
@@ -114,6 +116,7 @@ export default async function AboutPage() {
         image={fm.presence.image}
         countries={fm.presence.countries}
         stats={fm.presence.stats}
+        link={fm.presence.link}
       />
 
       <Awards
@@ -123,20 +126,30 @@ export default async function AboutPage() {
         auditImage={fm.awards.auditImage}
       />
 
+      {fm.green.enabled && (
       <Green
         head={fm.green}
         image={fm.green.image}
         imageBadge={fm.green.imageBadge}
         bars={fm.green.bars}
       />
+      )}
 
       <Numbers
         head={fm.numbers}
         stats={fm.numbers.stats}
         testimonial={fm.numbers.testimonial}
+        references={fm.numbers.references}
       />
 
-      <Timeline head={fm.timeline} items={fm.timeline.items} />
+      {/* Proposed years never publish — the sheet's rule, kept in code so an
+          editor cannot flip one live by accident. */}
+      {fm.timeline.items.some((i) => i.verification === "verified") && (
+        <Timeline
+          head={fm.timeline}
+          items={fm.timeline.items.filter((i) => i.verification === "verified")}
+        />
+      )}
 
       <Clients label={fm.clients.label} items={fm.clients.items} />
 

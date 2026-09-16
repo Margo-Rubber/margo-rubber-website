@@ -1,4 +1,6 @@
 import { getSitePage } from "@/lib/page-source";
+import { ContactDetails } from "@/components/sections/ContactDetails";
+import { getSiteSettings } from "@/lib/settings";
 import { trail } from "@/lib/breadcrumbs";
 import { buildMetadata } from "@/lib/seo";
 import { pageGraph } from "@/lib/schema";
@@ -25,6 +27,7 @@ export default async function ContactPage() {
   const fm = await getSitePage("contact", contactPageSchema);
 
   const crumbs = trail(["Contact", "/contact"]);
+  const settings = await getSiteSettings();
 
   return (
     <>
@@ -36,6 +39,7 @@ export default async function ContactPage() {
           name: fm.seo.title,
           description: fm.seo.description,
           crumbs,
+          faqs: fm.faqs,
         })}
       />
 
@@ -64,6 +68,18 @@ export default async function ContactPage() {
         backLabel={fm.quote.backLabel}
         submitLabel={fm.quote.submitLabel}
         responsePromise={fm.quote.responsePromise}
+      />
+
+      <ContactDetails
+        settings={settings}
+        addressSection={fm.addressSection}
+        map={fm.map}
+        logisticsSection={fm.logisticsSection}
+        logistics={fm.logistics}
+        nextStepsSection={fm.nextStepsSection}
+        nextSteps={fm.nextSteps}
+        faqSection={fm.faqSection}
+        faqs={fm.faqs}
       />
     </>
   );

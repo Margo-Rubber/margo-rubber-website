@@ -93,6 +93,13 @@ export default async function SkuPage(
     // A missing category file is a content error, not a reason to 500.
   }
 
+  const relatedParts = fm.relatedParts
+    .map((r) => {
+      const s = siblings.find((x) => x.slug === r.slug);
+      return s ? { ...s, difference: r.difference } : null;
+    })
+    .filter((x): x is { slug: string; label: string; difference: string } => !!x);
+
   const crumbs = trail(
     ["Products", "/products"],
     [categoryLabel, `/products/${category}`],
@@ -126,7 +133,6 @@ export default async function SkuPage(
         eyebrow={fm.eyebrow}
         h1={fm.h1}
         intro={fm.intro}
-        stockLabel={fm.stockLabel}
         gallery={fm.gallery}
         quickSpecs={fm.quickSpecs}
         order={fm.order}
@@ -138,6 +144,8 @@ export default async function SkuPage(
       <SkuSpecs
         productCode={fm.productCode}
         specs={fm.specs}
+        hardness={fm.hardness}
+        dimensions={fm.dimensions}
         dimensional={fm.dimensional}
         categoryLabel={categoryLabel}
         settings={settings}
@@ -147,6 +155,7 @@ export default async function SkuPage(
         codes={fm.compounds}
         properties={fm.compoundProperties}
         compounds={settings.compounds}
+        ranking={fm.compoundRanking}
       />
 
       <SkuAdvantages items={fm.advantages} />
@@ -161,7 +170,9 @@ export default async function SkuPage(
 
       <SkuFaq items={fm.faqs} />
 
-      <SkuRelated items={siblings} categorySlug={category} />
+      {/* The sheet's four named siblings with their differences when set;
+          the category's other parts otherwise. */}
+      <SkuRelated items={relatedParts.length ? relatedParts : siblings} categorySlug={category} />
 
       <SkuCta
         h1={fm.h1}

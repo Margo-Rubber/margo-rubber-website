@@ -222,6 +222,7 @@ export default async function ProductsHubPage() {
             heading={fm.validation.heading}
             body={fm.validation.body ?? ""}
             items={fm.validation.items}
+            groups={fm.validation.groups}
             cta={fm.validation.cta}
           />
         </Section>

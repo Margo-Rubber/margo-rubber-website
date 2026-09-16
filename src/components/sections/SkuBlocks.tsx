@@ -34,7 +34,6 @@ import {
    than copied into 31 content files, so deleting the block removes every
    placeholder at a stroke. */
 const SAMPLE = {
-  stockLabel: "IN STOCK",
   /* The three plates supplied with the design. Shared across every SKU until
      Margo shoots the real parts; a SKU file with its own `gallery` overrides. */
   gallery: {
@@ -282,7 +281,6 @@ export function SkuHero({
   eyebrow,
   h1,
   intro,
-  stockLabel,
   gallery,
   quickSpecs,
   order,
@@ -293,7 +291,6 @@ export function SkuHero({
   eyebrow?: string;
   h1: string;
   intro: string;
-  stockLabel?: string;
   gallery: { main?: string; thumbs: readonly string[]; overlay: readonly { label: string; value: string; note?: string }[] };
   quickSpecs: readonly { label: string; value: string }[];
   order?: { unit: string; defaultQty: string; minNote: string };
@@ -318,9 +315,8 @@ export function SkuHero({
           <div>
             <div className="relative">
               <Plate k={main} ratio="aspect-[4/3]" sizes="(min-width:1024px) 46vw, 100vw" />
-              <span className="text-eyebrow bg-accent-400 text-ink absolute top-4 right-4 rounded px-2.5 py-1 font-mono">
-                {stockLabel ?? SAMPLE.stockLabel}
-              </span>
+              {/* The IN STOCK badge is gone: nothing is stocked, every part is
+                  made to order (sheet 32). The field stays for old records. */}
               {/* Floating spec card over the lower-right of the plate. */}
               {/* Overlay card. Sized down on small screens: at desktop scale it
                   covered most of the plate on a 375px viewport. */}
@@ -513,12 +509,16 @@ export function SkuGallery({
 export function SkuSpecs({
   productCode,
   specs,
+  hardness,
+  dimensions,
   dimensional,
   categoryLabel,
   settings,
 }: {
   productCode?: string;
   specs: readonly { label: string; value: string }[];
+  hardness?: string;
+  dimensions?: string;
   dimensional?: { tiles: readonly { value: string; label: string }[] };
   categoryLabel: string;
   settings: SiteSettings;
@@ -527,7 +527,10 @@ export function SkuSpecs({
   const rows = [
     { label: "Product Code", value: productCode ?? "On request" },
     { label: "Product Family", value: categoryLabel },
-    ...(specs.length ? specs : SAMPLE.specs),
+    ...(hardness ? [{ label: "Hardness", value: hardness }] : []),
+    ...(dimensions ? [{ label: "Dimensions", value: dimensions }] : []),
+    // Per-part rows only; a row with nothing behind it is not shown.
+    ...specs.filter((r) => r.value.trim()),
     {
       label: "Certifications",
       value: held
@@ -603,20 +606,29 @@ export function SkuCompounds({
   codes,
   properties,
   compounds,
+  ranking = [],
 }: {
   codes: readonly string[];
   properties: Record<string, string[]>;
   /** The eight rows from site settings. */
   compounds: readonly CompoundRow[];
+  /** Sheet 33: all eight ranked for this part, with the reason. When present
+      it decides the order and the note; `codes` is the older subset. */
+  ranking?: readonly { code: string; rank: number; reason: string }[];
 }) {
   // Part documents name compounds either by code (FKM) or by display name
   // (Silicone, Natural Rubber); accept both so no existing record goes dark.
   const wanted = (c: CompoundRow) => codes.includes(c.code) || codes.includes(c.name);
-  const items: Compound[] = compounds.filter(wanted).map((c) => ({
+  const rankOf = (c: CompoundRow) =>
+    ranking.find((r) => r.code.toUpperCase() === c.code.toUpperCase());
+  const source = ranking.length
+    ? [...compounds].filter(rankOf).sort((a, b) => rankOf(a)!.rank - rankOf(b)!.rank)
+    : compounds.filter(wanted);
+  const items: Compound[] = source.map((c) => ({
     code: c.name,
     name: c.fullName,
     tempC: [c.minC, c.maxC] as const,
-    note: c.descriptor,
+    note: rankOf(c)?.reason ?? c.descriptor,
     properties: properties[c.code] ?? properties[c.name] ?? [],
   }));
   if (!items.length) return null;
@@ -916,7 +928,7 @@ export function SkuRelated({
   items,
   categorySlug,
 }: {
-  items: readonly { slug: string; label: string }[];
+  items: readonly { slug: string; label: string; difference?: string }[];
   categorySlug: string;
 }) {
   if (!items.length) return null;
@@ -934,13 +946,14 @@ export function SkuRelated({
           </Link>
         </div>
 
-        <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {items.slice(0, 3).map((r) => (
+        <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {items.slice(0, 4).map((r) => (
             <li key={r.slug} data-lift="" className="rounded-card border-line hover:border-accent-400/40 overflow-hidden border bg-[#0D0F12]">
               <Link href={`/products/${categorySlug}/${r.slug}`}>
                 <Plate k={SAMPLE.gallery.main} ratio="aspect-[16/9]" label="" className="rounded-none border-0 border-b" sizes="(min-width:1024px) 32vw, 100vw" />
                 <span className="block p-6">
                   <span className="text-ink block text-base font-semibold">{r.label}</span>
+                  {r.difference && <span className="text-ink-4 mt-2 block text-sm">{r.difference}</span>}
                   <span className="text-accent-400 mt-3 inline-flex items-center gap-2 text-sm font-medium">
                     View part
                     <Arrow />

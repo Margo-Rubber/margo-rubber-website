@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { withoutDeadDownloads } from "@/lib/downloads";
+import { PRODUCTS, hrefFor } from "@/content/routes";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import type { Crumb } from "@/lib/breadcrumbs";
 import Link from "next/link";
@@ -630,20 +631,33 @@ export function SectorSelector({ items }: { items: Sector[] }) {
             <div className="p-6">
               <p className="text-ink-2 leading-relaxed">{s.body}</p>
               <div className="mt-5 grid gap-3 sm:grid-cols-2">
-                {[
-                  ["Products Supplied", s.products],
-                  ["Typical Clients", s.clients],
-                ].map(([k, v]) => (
-                  <div
-                    key={k}
-                    className="border-line bg-surface rounded-lg border px-4 py-3"
-                  >
-                    <p className="text-eyebrow text-ink-4 font-mono uppercase">
-                      {k}
-                    </p>
-                    <p className="text-ink mt-1.5 text-sm">{v}</p>
-                  </div>
-                ))}
+                <div className="border-line bg-surface rounded-lg border px-4 py-3">
+                  <p className="text-eyebrow text-ink-4 font-mono uppercase">Products Supplied</p>
+                  {/* Each product name links to its category (sheet 02 §06).
+                      Derived from the route registry, not typed: a name that
+                      is not a category stays as text. */}
+                  <p className="text-ink mt-1.5 text-sm">
+                    {s.products.split(/,\s*/).map((name, i, all) => {
+                      const entry = PRODUCTS.find((p) => p.label.toLowerCase() === name.trim().toLowerCase());
+                      return (
+                        <span key={name}>
+                          {entry ? (
+                            <Link href={hrefFor(entry)} className="text-accent-400 hover:opacity-80">
+                              {name.trim()}
+                            </Link>
+                          ) : (
+                            name.trim()
+                          )}
+                          {i < all.length - 1 ? ", " : ""}
+                        </span>
+                      );
+                    })}
+                  </p>
+                </div>
+                <div className="border-line bg-surface rounded-lg border px-4 py-3">
+                  <p className="text-eyebrow text-ink-4 font-mono uppercase">Typical Clients</p>
+                  <p className="text-ink mt-1.5 text-sm">{s.clients}</p>
+                </div>
               </div>
               <Button href={s.href} className="mt-5">
                 Find {s.name} Solutions <span aria-hidden>→</span>
@@ -661,12 +675,15 @@ export function SectorSelector({ items }: { items: Sector[] }) {
    ──────────────────────────────────────────────────────────────────────── */
 export function ValidationPanel({
   items,
+  groups = [],
   cta,
   heading,
   body,
   eyebrow,
 }: {
   items: string[];
+  /** Test → standard, grouped by who runs it. Replaces `items` when present. */
+  groups?: { title: string; rows: { test: string; standard: string }[] }[];
   heading: string;
   body: string;
   eyebrow: string;
@@ -684,17 +701,45 @@ export function ValidationPanel({
           </Button>
         )}
       </div>
-      <ul className="grid gap-3 sm:grid-cols-2">
-        {items.map((t) => (
-          <li
-            key={t}
-            className="border-line bg-surface text-ink-2 flex items-center gap-2.5 rounded-lg border px-4 py-3 text-sm"
-          >
-            <span className="bg-accent-400 size-1.5 shrink-0 rounded-full" />
-            {t}
-          </li>
-        ))}
-      </ul>
+      {groups.length > 0 ? (
+        <div className="space-y-6">
+          {groups.map((g) => (
+            <table key={g.title} className="w-full text-sm">
+              <caption className="text-eyebrow text-accent-400 mb-3 text-left font-mono uppercase">
+                {g.title}
+              </caption>
+              <thead className="sr-only">
+                <tr>
+                  <th scope="col">Test</th>
+                  <th scope="col">Standard</th>
+                </tr>
+              </thead>
+              <tbody>
+                {g.rows.map((r) => (
+                  <tr key={r.test} className="border-line border-t">
+                    <th scope="row" className="text-ink-2 py-2.5 pr-4 text-left font-normal">
+                      {r.test}
+                    </th>
+                    <td className="text-ink-4 py-2.5 text-right font-mono text-xs">{r.standard}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          ))}
+        </div>
+      ) : (
+        <ul className="grid gap-3 sm:grid-cols-2">
+          {items.map((t) => (
+            <li
+              key={t}
+              className="border-line bg-surface text-ink-2 flex items-center gap-2.5 rounded-lg border px-4 py-3 text-sm"
+            >
+              <span className="bg-accent-400 size-1.5 shrink-0 rounded-full" />
+              {t}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
