@@ -180,6 +180,13 @@ export const resource = defineType({
       group: "article",
     }),
     defineField({
+      name: "eyebrow",
+      title: "Line above the heading",
+      type: "string",
+      description: 'Only where the category and read time are the wrong line — a datasheet reads "TECHNICAL DATASHEET · SPONGE & FOAM RUBBER".',
+      group: "article",
+    }),
+    defineField({
       name: "standfirst",
       title: "Opening paragraph",
       type: "text",

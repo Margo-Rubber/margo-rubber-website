@@ -96,12 +96,18 @@ export default async function ResourceGuidePage(
         <Container>
           <Breadcrumb items={crumbs} />
 
+          {/* A datasheet is looked up, not read through: its own line
+              stands in for the category and read time (sheet 40). */}
           <p className="text-eyebrow text-accent-400 mt-8 flex items-center gap-2.5 font-mono uppercase">
-            {CATEGORY_LABEL[fm.category] ?? fm.category}
-            <span aria-hidden className="text-ink-4">·</span>
-            <span className="text-ink-4 normal-case">
-              {fm.readingMinutes} min read
-            </span>
+            {fm.eyebrow ?? (
+              <>
+                {CATEGORY_LABEL[fm.category] ?? fm.category}
+                <span aria-hidden className="text-ink-4">·</span>
+                <span className="text-ink-4 normal-case">
+                  {fm.readingMinutes} min read
+                </span>
+              </>
+            )}
           </p>
 
           <h1 className="text-display-2 mt-4 max-w-[24ch]">{fm.h1}</h1>

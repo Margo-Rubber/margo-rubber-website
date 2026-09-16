@@ -15,11 +15,11 @@ export const statusSchema = z
 export const imageRefSchema = z.string().min(1);
 
 /** Meta lengths are enforced, not suggested — the briefs specify exact budgets. */
-// Ceilings are the content sheets' own longest values (65 / 184), not the
+// Ceilings are the content sheets' own longest values (70 / 217), not the
 // SERP display widths — Google truncates, it does not reject.
 const seoSchema = z.object({
   title: z.string().min(10).max(70),
-  description: z.string().min(50).max(200),
+  description: z.string().min(50).max(220),
   keywords: z
     .object({
       primary: z.string().min(3),
@@ -697,6 +697,8 @@ export const resourceSchema = baseSchema.extend({
   featured: z.boolean().default(false),
   /** The shorter blurb the "Start here" card carries (sheet 31 §02); the card list uses `intro`. */
   featuredBlurb: z.string().optional(),
+  /** Replaces the "category · read time" line above the heading — "TECHNICAL DATASHEET · SPONGE & FOAM RUBBER" (sheet 40). */
+  eyebrow: z.string().optional(),
   /** The article's own opening paragraph (sheet 35); `intro` stays the hub card's blurb (sheet 31). */
   standfirst: z.string().min(40).optional(),
   /** The closing band — an offer and a button (sheet 35, "Closing CTA"). */
