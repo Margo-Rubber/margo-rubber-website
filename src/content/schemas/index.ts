@@ -804,6 +804,10 @@ export const productsHubSchema = baseSchema.extend({
 
   certifications: z.object({
     ...sectionMeta.shape,
+    /**
+     * Unused since the block reads Site settings (one certification record
+     * for the whole site); kept optional so an old document still validates.
+     */
     items: z.array(
       z.object({
         name: z.string(),
@@ -815,7 +819,7 @@ export const productsHubSchema = baseSchema.extend({
         color: z.string().regex(/^#[0-9A-Fa-f]{6}$/),
         icon: z.enum(["shield", "award", "doc", "star"]),
       }),
-    ),
+    ).optional(),
     /** "Full certification detail, scope and test standards" → /certifications. */
     cta: z.object({ label: z.string(), href: z.string() }).optional(),
   }).optional(),

@@ -291,6 +291,9 @@ const patch = {
   "certifications.heading": h2(cert),
   "certifications.body": E(paragraph(cert, "Intro")),
   "certifications.cta": { label: E(certLink.label), href: certLink.href },
+  // The block reads the certification record in Site settings; the old
+  // per-page list (four badges, three of them not held) comes off.
+  "certifications.items": undefined,
 
   "validation.eyebrow": E(lit(test, "Eyebrow")),
   "validation.heading": h2(test),
