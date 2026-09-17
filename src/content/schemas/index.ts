@@ -919,6 +919,9 @@ export const productsHubSchema = baseSchema.extend({
         }),
       ),
       submitLabel: z.string(),
+      /** The drawing/spec attachment — sheet 02 §11 "Add: file field". Inert until the upload backend exists. */
+      attachLabel: z.string().optional(),
+      attachHint: z.string().optional(),
     })
     .optional(),
 

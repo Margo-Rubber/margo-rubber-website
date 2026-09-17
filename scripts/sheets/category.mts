@@ -93,12 +93,100 @@ export type StandardCategory = {
   specFootnote?: string;
   /** Trade-mark attribution under the material panels, where the notes give it. */
   materialFootnote?: string;
+  /**
+   * A panel whose sheet contradicts itself: the table says one thing and the
+   * sheet's own note asks for another. Panel name → [the table's sentence,
+   * the note's]. The note is the later thought and the one that ships.
+   */
+  panelFix?: Record<string, [from: string, to: string]>;
   schemaProduct: { name: string; description: string; material?: string[]; components?: string[]; componentsName?: string; componentsAnchor?: string };
   related: string[];
 };
 
 const has = (sec: Section, label: string) =>
   sec.fields.some((f) => f.label.toLowerCase().startsWith(label.toLowerCase()));
+
+/* ── Parts with a page of their own ─────────────────────────────────────
+   The category sheets (10–16) list the parts as plain names — written
+   before the SKU sheets (32–34) renamed several, moved six to other
+   categories and folded two. Ayaz's rule (2026-09-17) settles the
+   contradiction in favour of the later sheets: a card that is a part links
+   to the part's page under the part's current name; a part that moved shows
+   in the category it now lives in; a folded duplicate's card comes off. The
+   foam gaskets card stays on the gaskets page as a cross-reference — sheet
+   09: "keep it linked from the Gaskets category". */
+
+/** The sheets' card name → the part (`category--slug`) it is; `null` = the card comes off. */
+export const PART_CARDS: Record<string, string | null> = {
+  "Back Light Rubber Mount (Bolero)": null, // moved to extrusion (SKU 02)
+  "Bumper Stopper for Tata": "anti-vibration-mounts--cv-suspension-bump-stop",
+  "Bumper Stopper": "anti-vibration-mounts--bumper-stopper",
+  "Weight Rubber": "anti-vibration-mounts--ac-vibration-weight",
+  "AEM Insulation Bush": "bushes--aem-insulation-bush",
+  "EPDM Gaskets": "gaskets--epdm",
+  "Foam Gaskets": "sponge-foam-rubber--foam-gaskets",
+  "C-Pillar Garnish EPDM Hard Foam": null, // moved to sponge & foam (SKU 07)
+  "3 Pin Hole Pad (Electrical Pass-Through)": "grommets--3-pin-hole-pad",
+  "Rubber Grommet Internal Fits": "grommets--internal-fit",
+  "Seal Filler Cap O-Rings": "o-rings--seal-filler-cap-o-rings",
+  "EPDM Pad": "pads-stoppers-caps--epdm-pad",
+  "Support Pad for Bolero": "pads-stoppers-caps--bolero-support-pad",
+  "Big Support Pad": "pads-stoppers-caps--big-support-pad",
+  "L Pad": "pads-stoppers-caps--l-pad",
+  "C Pad": "pads-stoppers-caps--c-pad",
+  "Oil Filler Cap": "pads-stoppers-caps--oil-filler-cap",
+  "Oil Seal Filler Cap": null, // folded into the oil filler cap (SKU 29)
+  "Glove Box Stopper": "pads-stoppers-caps--glove-box-stopper",
+  "Rubber Plungers": null, // moved to reciprocating seals (SKU 31)
+  "Rubber Insulator Head Cover": "pads-stoppers-caps--insulator-head-cover",
+  "Boot Tailgate Switch": "pads-stoppers-caps--boot-tailgate-switch",
+  "Rubber Flap for A/C Air Extractor": "pads-stoppers-caps--ac-flaps",
+  "Rubber Radiator Shroud Flaps": "pads-stoppers-caps--radiator-shroud-flaps",
+  "Scorpio Footrest Rubber Mat": "pads-stoppers-caps--side-step-pad",
+};
+
+export type PartCard = { name: string; availability?: string; href?: string };
+
+/**
+ * The sheet's cards with every part linked and named as it is today, and
+ * the category's other parts (the ones its sheet did not list, or that
+ * moved in) appended. Idempotent: a card already linked is left alone.
+ */
+export async function linkParts(categorySlug: string, items: PartCard[]): Promise<PartCard[]> {
+  const parts = (await client.fetch(`*[_type == "sku"]{"slug": slug.current, category, navLabel}`)) as {
+    slug: string;
+    category: string;
+    navLabel: string;
+  }[];
+  const pathOf = (slug: string) => `/products/${slug.replace("--", "/")}`;
+  const out: PartCard[] = [];
+  for (const it of items) {
+    if (it.href) {
+      out.push(it);
+      continue;
+    }
+    if (!(it.name in PART_CARDS)) {
+      out.push(it);
+      continue;
+    }
+    const target = PART_CARDS[it.name];
+    if (!target) continue;
+    const part = parts.find((p) => p.slug === target);
+    if (!part) throw new Error(`${categorySlug}: card "${it.name}" names a part that does not exist (${target})`);
+    out.push({ ...it, name: part.navLabel, href: pathOf(part.slug) });
+  }
+  // A family card that now duplicates a part's current name (the o-rings grid
+  // lists "Oil Filler Cap O-Rings" as a family too) gives way to the part.
+  const deduped = out.filter((it, i) => it.href || !out.some((o, j) => j !== i && o.href && o.name === it.name));
+  // Parts of this category the sheet did not list — appended, after the
+  // sheet's own cards, with the availability the sheet uses on its cards.
+  const availability = deduped.find((it) => it.availability)?.availability;
+  for (const p of parts.filter((p) => p.category === categorySlug)) {
+    if (deduped.some((it) => it.href === pathOf(p.slug))) continue;
+    deduped.push({ name: p.navLabel, ...(availability ? { availability } : {}), href: pathOf(p.slug) });
+  }
+  return deduped;
+}
 
 export async function applyStandardCategory(o: StandardCategory): Promise<void> {
   const sheet = loadSheet(o.stem);
@@ -176,7 +264,10 @@ export async function applyStandardCategory(o: StandardCategory): Promise<void> 
     const code = CODE[r[0]];
     if (!code) throw new Error(`${o.stem}: no compound code for panel "${r[0]}"`);
     const image = existing.find((it) => it.code === code)?.image;
-    return { code, name: E(r[0]), tempRange: E(r[1]), hardness: E(r[2]), summary: E(r[3]), ...(image ? { image } : {}) };
+    const fix = o.panelFix?.[r[0]];
+    if (fix && !r[3].includes(fix[0])) throw new Error(`${o.stem}: panel "${r[0]}" no longer says "${fix[0]}"`);
+    const summary = fix ? r[3].replace(fix[0], fix[1]) : r[3];
+    return { code, name: E(r[0]), tempRange: E(r[1]), hardness: E(r[2]), summary: E(summary), ...(image ? { image } : {}) };
   });
   if (o.materialFootnote) patch[`${mp}.footnote`] = E(o.materialFootnote);
 
@@ -190,11 +281,22 @@ export async function applyStandardCategory(o: StandardCategory): Promise<void> 
     const cards = field(parts, "Cards", "table");
     // "Part name | Category | Availability" or "# | Part name | Second line".
     const numbered = /^#/.test(cards.columns[0]);
-    patch[`${pp}.items`] = cards.rows.map((r) =>
-      numbered
-        ? { name: E(r[1]), availability: E(r[2]) }
-        : { name: E(r[0]), availability: E(`${r[1]} · ${r[2]}`) },
+    const slug = o.id.replace(/^productCategory-/, "");
+    patch[`${pp}.items`] = await linkParts(
+      slug,
+      cards.rows.map((r) =>
+        numbered
+          ? { name: r[1], availability: E(r[2]) }
+          : { name: r[0], availability: E(`${r[1]} · ${r[2]}`) },
+      ),
     );
+    // The sheet's card names are expected on the page except where the
+    // later SKU sheet renamed or moved the part.
+    for (const r of cards.rows) {
+      const name = numbered ? r[1] : r[0];
+      if (!(name in PART_CARDS)) E(name);
+    }
+    for (const it of patch[`${pp}.items`] as PartCard[]) if (it.href) E(it.name);
   }
 
   /* Sizing standards (O-Rings only) */

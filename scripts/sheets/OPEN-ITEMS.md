@@ -4,11 +4,18 @@ Every place the site deviates from a content sheet, with the reason. Nothing
 here was invented; each is either a roadmap claim held back from the buyer
 build (Build Instructions §01) or a row the sheet marks CONFIRM.
 
+**Ayaz's rule (2026-09-17): the content sheets are the source of truth.
+Whatever a sheet writes is published as written, without question; a CONFIRM
+mark alone does not hold a value back. The only open questions are
+contradictions inside the content itself, and facts the sheets leave blank
+— those are filled in the Studio when Margo has them.** Items below marked
+*ruled* were closed by that instruction.
+
 ## 01 Homepage
 
 Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including the three figures the Build Instructions §01 mark as concept-build only (95 countries, 200+ catalogue SKUs, named ports) and the full 24-name account list. They are in the live fields. Below is only what the sheet itself leaves open.
 
-1. **Export markets H2 — buyer-build variant.** The sheet's note says on the buyer-facing build this H2 becomes "Where we are opening lanes first" and each card reads as a target market. The boxed H2 ("95 markets screened. Eighteen playbooks. Five live lanes.") ships. *Decide whether the note applies.*
+1. **Export markets H2 — buyer-build variant.** *Ruled:* the boxed H2 ("95 markets screened. Eighteen playbooks. Five live lanes.") ships as written.
 2. **Facility badge / contact panel badge.** The sheet gives neither; both are empty and the pills do not render. (The old badge named MIDC Ambad.)
 
 ## 02 Products hub
@@ -16,14 +23,14 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 3. **Sector panels — four "Typical clients" cells.** Oil & Gas, HVAC, Water and Agriculture have no named account; per the sheet the buyer type is published (e.g. "Gulf EPC and equipment suppliers"). *The sheet asks: do any of the four have an account that never reached the company profile?*
 4. **Marquee strip under the hero.** The sheet has no such element; the old one named Aerospace and Pharmaceutical. Now empty (hidden).
 5. **Testing CTA — "Download the test capability statement".** Hidden until a PDF exists (sheet: CONFIRM the file).
-6. **Certifications — ISO 14001 / ISO 45001 rows.** The sheet marks both CONFIRM before they ship; they render as "[Upgrade in progress]" from Site settings. *Needed: confirm the 2027 targets.*
+6. **Certifications — ISO 14001 / ISO 45001 rows.** *Ruled:* sheet 02 writes the badge "(In Progress)", sheet 03 "(Upgrade in progress)"; the shared record renders sheet 03's on every page — the wording the client instructed for IATF.
 
 ## 03 About
 
 7. **Leadership stat — "Team Members".** The sheet's value is CONFIRM; the card is not shown until a headcount is given.
-8. **Milestones — ten proposed years.** The sheet says "DO NOT PUBLISH THE PROPOSED YEARS AS-IS". All eleven entries are stored; only 2005 (verified) renders. Each of the other ten is marked "proposed" in the Studio and publishes the moment it is switched to "verified". *Needed: the dates.*
+8. **Milestones — ten proposed years.** *Ruled:* all eleven entries publish as the sheet writes them. The Studio's verified/proposed switch stays as the way to take one down if a date proves wrong.
 9. **Founder titles.** Sheet marks both CONFIRM ("Founder & Director" / "Co-Founder & Business Development Head") and asks whether either wants a photograph published. Shown as written.
-10. **Sustainability section.** The sheet's first recommendation is to cut it; its "honest version" copy is in place with the section switched on. *Decide: keep or cut (a toggle in the Studio).*
+10. **Sustainability section.** *Ruled:* the sheet's "honest version" copy ships, section on.
 11. **Certifications record.** Sheets 02 and 03 both say render the five rows from one shared record; sheet 02's fuller card bodies are the record, sheet 03's one-line titles are not shown separately.
 12. **Client strip — logos.** Text wordmarks until permission letters exist (sheet: CONFIRM per account).
 
@@ -64,7 +71,7 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 
 ## 10 Oil Seals
 
-33. **Silicone panel wording.** The panel table ships "Biocompatible grades available." while the sheet's Remove note asks for "Biocompatible grades available; we do not hold FDA registration or ISO 13485." — the table is what is applied; confirm which line.
+33. ~~**Silicone panel wording.** The panel table ships "Biocompatible grades available." while the sheet's Remove note asks for "Biocompatible grades available; we do not hold FDA registration or ISO 13485." — the table is what is applied; confirm which line.~~ Resolved (2026-09-17): the note's line ships.
 34. **Six live parts removed** (four compound variants, two non-seals) — the sheet's "CONFIRM which" on the two that belong under Leak Test Rubber or Pads, Stoppers & Caps.
 35. **FAQ questions** "What is the lead time for custom oil seals?" and "How is a custom oil seal quoted?" — named for the FAQPage node, not on the page; no node until a FAQ section is written (as item 29).
 
@@ -145,7 +152,7 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 ## 32–34 SKU pages (31 parts)
 
 72. **Six parts need one sentence from Margo** — what the part does and where it fits: 01, 13, 20, 23, 27, 31; and 26, where two readings are possible (engine cylinder-head cover insulator or electrical terminal head cover). Shipped from the sheets as written.
-73. **Four OEM-name pages** (02, 04, 05, 21) are written twice; version A ships (platform class, fitment in the body) per the sheets' "ship A unless a supply agreement exists". Sheet 21's spec rows still name "Mahindra Bolero" in Fitment — confirm.
+73. **Four OEM-name pages** (02, 04, 05 written twice; version A ships per "ship A unless a supply agreement exists"). Sheet 21 has one version only — an aftermarket "to suit Mahindra Bolero" part with its trade-mark disclaimer — and its fitment rows are as written. No contradiction.
 74. **Three confirmations**: are 03 and 05 the same bump stop? Are 28 and 29 the same filler cap? Is 14 a water/steam seal mislabelled as an oil seal?
 75. **Category moves and renames** proposed by sheet 33 (07 and 09 to Sponge & Foam; 08, 14, 24 as material variants to collapse; 13/16 to merge; 11, 22 renamed) are Phase 7 — the pages stay at their current URLs; the sheets' related-part links to the proposed URLs resolve to the current ones.
 76. **Application cards left out** because the sheet describes the card without writing it: SKU 16 Water & Fluid Management (flag FKM as wrong for hot water), SKU 17 Agriculture ("add, with the caveat"), SKU 18 Food & Beverage ("must say Margo holds no food-contact approval"). Two lead cards (13, 16 Pumps & Valves) ship with a title only.
@@ -204,3 +211,9 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 114. **/why-margo** — the parked takedown sheet (30) recommends "unpublish now, 301 to /about": the page publishes four certifications not held and a fabricated timeline and testimonial. It is placeholder (noindex) and linked from nowhere, so it is not reachable today; the decision to remove it and redirect is Ayaz's — the redirect registry is ready to take it.
 115. **Products-hub and industries-hub forms** posted nothing until Phase 7b — their controls carried no field names and the selects had no options. Fixed: named fields, the registry's fifteen categories / eleven industries as options, `?sector=` pre-selects the industry.
 116. **Hidden context fields.** A pre-filled link's parameters travel with the enquiry as `via_part`, `via_industry`, `via_request`, `via_topic`, `via_profile`, `via_doc`, `via_sector` in the record's raw fields; the desk shows raw fields as it does today.
+
+## Sheet gaps closed under the rule (2026-09-17)
+
+117. **Products hub attachment field** (02 §11 "Add: file field") was missing from the hub form; added, inert like the homepage and /contact fields.
+118. **About timeline** — the ten CONFIRM years now publish (item 8).
+119. **Parts grids link to the part pages** (2026-09-17). The category sheets (10–16) listed parts as plain names and said the part pages would be 301-redirected to the category; the later SKU sheets build the pages and assume the category links to them. Ruled for the later sheets: each card that is a part links to its page under the part's current name; parts that moved show under their new category; the two folded duplicates' cards are off; foam gaskets stays on the Gaskets page as the cross-reference sheet 09 asks for. Extrusion and Sponge & Foam had no grid (their parts arrived with the moves): each gets one whose eyebrow, heading pattern and body sentence are the other sheets' shared wording ("IN THIS CATEGORY" · "Profiles We Make to Order" / "Sponge & Foam Parts We Make to Order" · "Each part below is manufactured to customer drawing or to our standard tooling. Full dimensional data is issued with the quotation.") — the one place with composed copy, for 3rd Shade to replace if they want their own.
