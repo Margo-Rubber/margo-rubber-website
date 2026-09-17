@@ -211,6 +211,8 @@ const facts = rows(sum, "Summary rows").map((r) => ({
 }));
 
 const patch = {
+  // RES_07 §01: the guide this page sends its reader on to — shown once published.
+  furtherReading: ["india-vs-china-rubber-sourcing"],
   "seo.title": sheet.head.title,
   "seo.description": sheet.head.description,
   h1: h1.lines.join(" "),
@@ -235,6 +237,8 @@ const patch = {
   "process.steps": steps,
 
   "documents.body": E(paragraph(docs, "Intro")),
+  // "The ISPM-15 entry should link to the Australia block, which also mentions it" (§07).
+  '?documents.items[name=="ISPM-15 Packaging"].body': "All wooden pallets are heat-treated and bear the [ISPM-15](#australia) mark, required for phytosanitary compliance in AU, US, EU, UK, and others.",
   ...Object.fromEntries(
     docPatch
       .filter((d) => d.name !== d.from)

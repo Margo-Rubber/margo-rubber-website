@@ -37,8 +37,11 @@ export function TimelineSlider({ items }: { items: readonly Item[] }) {
         ))}
       </ul>
 
-      <div
-        className="rounded-card border-line bg-surface-3 relative isolate mx-auto mt-10 grid max-w-[44rem] overflow-hidden border px-8 py-14"
+      {/* An <ol>: the timeline is a real sequence, and each year is a <time>
+          so the date is machine-readable (sheet 03 §13). Every milestone is
+          in the DOM; the slider only chooses which one is visible. */}
+      <ol
+        className="rounded-card border-line bg-surface-3 relative isolate mx-auto mt-10 grid max-w-[44rem] list-none overflow-hidden border px-8 py-14"
         aria-live="polite"
       >
         <span
@@ -46,7 +49,7 @@ export function TimelineSlider({ items }: { items: readonly Item[] }) {
           className="bg-accent-400/10 pointer-events-none absolute -top-32 left-1/2 -z-10 size-80 -translate-x-1/2 rounded-full blur-3xl"
         />
         {items.map((it, n) => (
-          <article
+          <li
             key={it.year}
             // Every panel occupies the same grid cell, so the card height is
             // the tallest milestone and never jumps between slides.
@@ -61,19 +64,22 @@ export function TimelineSlider({ items }: { items: readonly Item[] }) {
             >
               {it.year}
             </span>
-            <span className="text-eyebrow border-accent-400/35 bg-accent-400/10 text-accent-400 rounded-pill inline-flex border px-3 py-1 font-mono">
+            <time
+              dateTime={it.year}
+              className="text-eyebrow border-accent-400/35 bg-accent-400/10 text-accent-400 rounded-pill inline-flex border px-3 py-1 font-mono"
+            >
               {it.year}
-            </span>
+            </time>
             <h3 className="text-ink mt-5 text-2xl font-semibold md:text-3xl">
               {it.title}
             </h3>
             <p className="text-ink-3 mx-auto mt-4 max-w-[46ch] leading-relaxed">
               {it.body}
             </p>
-          </article>
+          </li>
         ))}
 
-        <div className="col-start-1 row-start-2 mt-9 flex items-center justify-center gap-5">
+        <li aria-hidden className="col-start-1 row-start-2 mt-9 flex items-center justify-center gap-5">
           <button
             type="button"
             onClick={() => go(i - 1)}
@@ -93,8 +99,8 @@ export function TimelineSlider({ items }: { items: readonly Item[] }) {
           >
             <Chevron className="size-4" />
           </button>
-        </div>
-      </div>
+        </li>
+      </ol>
     </div>
   );
 }

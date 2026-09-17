@@ -13,6 +13,7 @@ import {
   QualitySystem,
   ScopePanel,
 } from "@/components/sections/CertBlocks";
+import { FurtherReading } from "@/components/sections/FurtherReading";
 
 export async function generateMetadata() {
   const fm = await getSitePage("certifications", certificationsPageSchema);
@@ -117,6 +118,8 @@ export default async function CertificationsPage() {
         />
       </Section>
 
+      <FurtherReading slugs={fm.furtherReading} />
+
       <Section className="bg-[#050505]">
         <DocsPanel
           heading={fm.docs.heading}
@@ -125,6 +128,7 @@ export default async function CertificationsPage() {
           fields={fm.docs.fields}
           submitLabel={fm.docs.submitLabel}
           footnote={fm.docs.footnote}
+          confirmation={fm.docs.confirmation}
         />
       </Section>
     </>

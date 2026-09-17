@@ -9,6 +9,7 @@ import {
   SkuCompoundPicker,
   type Compound,
 } from "@/components/sections/SkuCompoundPicker";
+import { emphasised } from "@/components/ui/Emphasis";
 
 /**
  * SKU DETAIL TEMPLATE — built to `single category.png`, section for section.
@@ -631,6 +632,7 @@ export function SkuCompounds({
   ranking = [],
   router,
   h1,
+  prompt,
 }: {
   codes: readonly string[];
   properties: Record<string, string[]>;
@@ -651,6 +653,8 @@ export function SkuCompounds({
   router?: { columns: readonly string[]; rows: readonly (readonly string[])[] };
   /** Pre-fills the "Not sure?" link with the part. */
   h1?: string;
+  /** Set on a wetted part: no compound starts selected and this question shows instead (SKU 31 §03). */
+  prompt?: string;
 }) {
   // Part documents name compounds either by code (FKM) or by display name
   // (Silicone, Natural Rubber); accept both so no existing record goes dark.
@@ -710,7 +714,7 @@ export function SkuCompounds({
                         key={j}
                         className={`border-line border-t px-4 py-3 align-top whitespace-pre-line ${j === 0 ? "text-ink font-medium whitespace-nowrap" : "text-ink-2"}`}
                       >
-                        {cell}
+                        {emphasised(cell)}
                       </td>
                     ))}
                   </tr>
@@ -719,7 +723,7 @@ export function SkuCompounds({
             </table>
           </div>
         ) : (
-          <SkuCompoundPicker items={items} />
+          <SkuCompoundPicker items={items} prompt={prompt} />
         )}
         {/* "Not sure? Send the medium, temperature and load" — the same
             request the industry pages make (sheet 32 §04). */}
@@ -738,10 +742,13 @@ export function SkuCompounds({
 export function SkuAdvantages({
   items,
   chip,
+  heading,
 }: {
-  items: readonly { icon: string; name: string; body: string }[];
+  items: readonly { icon: string; name: string; body: string; href?: string }[];
   /** The figure over the plate — the part's own service temperature, or the quality system. */
   chip?: { label: string; value: string; note?: string };
+  /** "Why distributors buy from Margo" on a fitment part (SKU 22 §04). */
+  heading?: string;
 }) {
   const list = items.length ? items : SAMPLE.advantages;
   const badge: { label: string; value: string; note?: string } = chip ?? SAMPLE.qualityChip;
@@ -767,7 +774,7 @@ export function SkuAdvantages({
 
           <div>
             <Eyebrow>Key advantages</Eyebrow>
-            <h2 className="text-h2 mt-3">Why Specifiers Choose Margo</h2>
+            <h2 className="text-h2 mt-3">{heading ?? "Why Specifiers Choose Margo"}</h2>
             <ul className="mt-8 space-y-4">
               {list.map((a) => (
                 <li key={a.name} className="rounded-card border-line flex gap-4 border bg-[#0D0F12] p-5">
@@ -794,7 +801,7 @@ export function SkuApplications({
 }: {
   items: readonly { icon: string; name: string; body: string }[];
 }) {
-  const list = items.length ? items : SAMPLE.applications;
+  const list: readonly { icon: string; name: string; body: string; href?: string }[] = items.length ? items : SAMPLE.applications;
   return (
     <section className="bg-band border-line border-t py-[70px]">
       <Container>
@@ -806,7 +813,15 @@ export function SkuApplications({
               <span className="border-accent-400/25 bg-accent-400/10 text-accent-400 grid size-9 place-items-center rounded-md border">
                 <Icon name={a.icon} className="size-4" />
               </span>
-              <h3 className="text-ink mt-5 text-base font-semibold">{a.name}</h3>
+              <h3 className="text-ink mt-5 text-base font-semibold">
+                {a.href ? (
+                  <Link href={a.href} className="hover:text-accent-400 inline-flex items-center gap-1.5">
+                    {a.name} <span aria-hidden className="text-accent-400">›</span>
+                  </Link>
+                ) : (
+                  a.name
+                )}
+              </h3>
               {a.body && <p className="text-ink-4 mt-1.5 text-sm">{a.body}</p>}
             </li>
           ))}
@@ -1010,7 +1025,8 @@ export function SkuFaq({ items }: { items: readonly { q: string; a: string }[] }
               <li key={f.q} className="rounded-card border-line border bg-[#0D0F12]">
                 <details className="group">
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-6 p-5 [&::-webkit-details-marker]:hidden">
-                    <span className="text-ink text-sm font-medium">{f.q}</span>
+                    {/* The question is a heading (sheet 32 §09: "Questions become <h3>, not <span>"). */}
+                    <h3 className="text-ink text-sm font-medium">{f.q}</h3>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-ink-4 size-4 shrink-0 transition-transform group-open:rotate-180" aria-hidden>
                       <path d="m6 9 6 6 6-6" />
                     </svg>

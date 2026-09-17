@@ -69,7 +69,7 @@ export const IMAGES = {
     blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIG/8QAHBABAQEAAQUAAAAAAAAAAAAAAQIAAxEhMUFR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMdXKAhEh67aLJUZk6J4+ZmD/9k=",
     w: 1800,
     h: 1200,
-    alt: "Sweeping folds of dark moulded rubber",
+    alt: "Precision O-rings moulded by Margo Rubber Products, Nashik, India",
     status: "placeholder",
   },
   /* --- Products: Extrusion Profiles category -------------------------- */
@@ -538,7 +538,7 @@ export const IMAGES = {
     src: "/images/home/9bdb88cbf9df2a3ece934ab581cd22671ca697d9.png",
     blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwIG/8QAHRAAAgIBBQAAAAAAAAAAAAAAAQIAESEDEjIzcf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AyyIgW9xFw2CA5OfJWn1GC3KFf//Z",
     w: 800, h: 600,
-    alt: "The Margo Rubber Products shop floor at MIDC Ambad, Nashik",
+    alt: "The Margo Rubber Products shop floor at Vilholi, Nashik",
     status: "placeholder",
   },
   "home.facility": {
@@ -836,7 +836,7 @@ export const IMAGES = {
     blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwQG/8QAIRAAAgEDBAMBAAAAAAAAAAAAAQIDAAQSERMiUSExccH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABgRAAIDAAAAAAAAAAAAAAAAAAABAhEx/9oADAMBAAIRAxEAPwAjLtTmTwJmDLgqnIH13V97dbsiYzFAqBdMD+USTLd3pguokk5sA44sND2K0sMEcUSqiKB8qxSwOz//2Q==",
     w: 800,
     h: 900,
-    alt: "Rubber-to-metal bonded anti-vibration mounts",
+    alt: "Rubber-to-metal bonded anti-vibration mounts at Margo Rubber Products, Nashik",
     status: "placeholder",
   },
   "products.bonded-components.hero": {
@@ -916,7 +916,7 @@ export const IMAGES = {
     blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAED/8QAIRAAAQQBAwUAAAAAAAAAAAAAAQIDBBEAEhMhIjFBUXH/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/EABURAQEAAAAAAAAAAAAAAAAAAAEA/9oADAMBAAIRAxEAPwC7kaPobQizfClHkV6w7kyc8vUlbNfTmrrIaqiT2GDcj9dhZF+ABlCMd//Z",
     w: 800,
     h: 900,
-    alt: "Rubber bellows and protective boots",
+    alt: "Convoluted rubber bellows moulded at Margo Rubber Products, Nashik",
     status: "placeholder",
   },
   "products.diaphragms.hero": {
@@ -996,7 +996,7 @@ export const IMAGES = {
     blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQAB/8QAIRAAAgEDBAMBAAAAAAAAAAAAAQIDAAQRBRIhIjFBgdH/xAAUAQEAAAAAAAAAAAAAAAAAAAAC/8QAFhEBAQEAAAAAAAAAAAAAAAAAABES/9oADAMBAAIRAxEAPwACwSNXQh845ClQQaSjubCNdsti1y2T3zj55rbXR0UjZO+0Z6sARzVPoaNKSJSufQB/aGyj/9k=",
     w: 800,
     h: 900,
-    alt: "Rubber bushes and bushings for suspension and mounting",
+    alt: "Bonded rubber silent-block bushes at Margo Rubber Products, Nashik",
     status: "placeholder",
   },
   "products.bushes.material.fkm": {
@@ -1068,7 +1068,7 @@ export const IMAGES = {
     blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwEF/8QAIxAAAgICAQIHAAAAAAAAAAAAAQIDEQAEBRMxISJBQlFhwf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8Ar8lEk6x9UEH3FSVP1Y9cbW3F2ouoBfjXlYfuZj8csrlDIwjNMFrsfm8aPVUA2zE33Jwj/9k=",
     w: 800,
     h: 900,
-    alt: "Moulded and die-cut rubber gaskets for flanged joints",
+    alt: "Moulded EPDM flange gaskets at Margo Rubber Products, Nashik",
     status: "placeholder",
   },
   "products.gaskets.material.fkm": {
@@ -1148,7 +1148,7 @@ export const IMAGES = {
     blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQQG/8QAHhAAAwACAwADAAAAAAAAAAAAAQIDAAQFESESMXH/xAAUAQEAAAAAAAAAAAAAAAAAAAAC/8QAFREBAQAAAAAAAAAAAAAAAAAAAQD/2gAMAwEAAhEDEQA/AKr7Etjj91Hgk6Tj8vCrKex4QwxaMisUVj2QoBJ/MD5uc9LkddISmk9kBXVVAHYb7zSkDs4liF//2Q==",
     w: 800,
     h: 900,
-    alt: "Rubber grommets for cable and panel pass-throughs",
+    alt: "Moulded rubber cable grommets at Margo Rubber Products, Nashik",
     status: "placeholder",
   },
   "products.grommets.material.fkm": {
@@ -1220,7 +1220,7 @@ export const IMAGES = {
     blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABAH/xAAiEAABAwMDBQAAAAAAAAAAAAABAgMRAAQhEjJBBSIxocH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AEtoVq7lmFEGAeSM0G7acQ6Cl5Q1CTBjkj5RbnqDtutte8bSkk5jE1E3IVJU2DJkSfAOY91B/9k=",
     w: 800,
     h: 900,
-    alt: "Leak-test rubber for alloy-wheel pressure testing",
+    alt: "Profiled leak-test sealing rubber for alloy wheel rigs, made at Margo Rubber Products, Nashik",
     status: "placeholder",
   },
   "products.leak-test-rubber.material.fkm": {
@@ -1364,7 +1364,7 @@ export const IMAGES = {
     blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAQMEBv/EACAQAAICAgEFAQAAAAAAAAAAAAECAxEABEEiMTJRYbH/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AM9Lp6RKvBOyKQemSiQb+fuTbUMcMxUvfII7Y4RlUqwaNePrDLCC9hmF8XiD/9k=",
     w: 800,
     h: 900,
-    alt: "Rotary oil seals for gearboxes and pumps",
+    alt: "Rotary oil seals moulded by Margo Rubber Products, Nashik, India",
     status: "placeholder",
   },
   "products.seals.hero": {
@@ -1444,7 +1444,7 @@ export const IMAGES = {
     blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAwQFBv/EAB4QAAICAwADAQAAAAAAAAAAAAECAxEABCESIkEx/8QAFAEBAAAAAAAAAAAAAAAAAAAAAf/EABcRAQEBAQAAAAAAAAAAAAAAAAEAEUH/2gAMAwEAAhEDEQA/ANTp7UbsxDC+FiRRPP3GEdJUV4j5owsMPoORYJHRhsSEO/gIwKoAc+YXXMezArtAgr1AFgADgw2QO3//2Q==",
     w: 800,
     h: 900,
-    alt: "Rubber pads, stoppers and protective caps",
+    alt: "Moulded rubber pads, filler caps and stoppers made at Margo Rubber Products, Nashik",
     status: "placeholder",
   },
   "products.pads-stoppers-caps.material.fkm": {

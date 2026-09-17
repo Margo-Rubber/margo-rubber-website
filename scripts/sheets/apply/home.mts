@@ -341,9 +341,23 @@ await applyDocument({
   patch,
   expect,
 });
+// The footer's own strings (§12): the CTA lines and the legal line. The
+// columns, NAP and year render from the route registry and Site settings.
+const ctaLines = lit(foot, "CTA lines").split("\n");
+const ctaAction = ctaLines[2].match(/^\[\s*(.*?)\s*→\s*\]$/);
+if (!ctaAction) throw new Error("footer CTA button");
+const legalLines = lit(foot, "Legal line").split("\n");
 await applyDocument({
   id: "siteFooter-footer",
   type: "siteFooter",
   schema: footerSchema,
-  patch: { "brand.blurb": footBlurb },
+  patch: {
+    "brand.blurb": footBlurb,
+    "cta.heading": ctaLines[0],
+    "cta.body": ctaLines[1],
+    "cta.action": { label: ctaAction[1], href: "/contact" },
+    copyright: legalLines[0],
+    // "ISO 9001:2015 · Certificate 09111526A · Integral Certification Ltd" is Site settings' certifications.line.
+  },
+  expect: [ctaLines[0], ctaLines[1], ctaAction[1], legalLines[0]],
 });

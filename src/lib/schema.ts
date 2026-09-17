@@ -365,14 +365,15 @@ export function serviceNode(fm: Industry, path: string): Node {
  * specific item, so it gets `isSimilarTo` back to its category rather than
  * duplicating the category's claims.
  */
-export function skuNode(
+export async function skuNode(
   fm: { h1: string; seo: { description: string }; productCode?: string },
   path: string,
   categoryPath: string,
   /** The sibling parts the page lists under "You may also need" — sheet 32 §11. */
   siblingPaths: readonly string[] = [],
-): Node {
+): Promise<Node> {
   const category = productBySlug(categoryPath.split("/").pop() ?? "");
+  const { compounds } = await getSiteSettings();
   return {
     "@type": "Product",
     "@id": `${SITE_URL}${path}#product`,
@@ -381,9 +382,12 @@ export function skuNode(
     ...(fm.productCode ? { sku: fm.productCode, mpn: fm.productCode } : {}),
     ...(category ? { category: category.label } : {}),
     manufacturer: { "@id": ORG_ID },
-    // Siblings when the page lists them; the category otherwise. Never a
-    // material list yet: today's compounds are a category default, not a
-    // fact about the part (sheet 32).
+    // All eight compounds, as on the category pages. Sheet 32 §04 wanted
+    // only the recommended rows; the later client instruction (2026-09-02,
+    // sheet 36 page-level) overrides it: every part is made in every
+    // compound Margo mixes, so the array is never shortened.
+    material: compounds.map((c) => c.name),
+    // Siblings when the page lists them; the category otherwise.
     isSimilarTo: siblingPaths.length
       ? siblingPaths.map((p) => ({ "@id": `${SITE_URL}${p}#product` }))
       : { "@id": `${SITE_URL}${categoryPath}#product` },
@@ -590,6 +594,35 @@ export async function productCategoryGraph(
         })),
       });
   }
+  // "The list goes in additionalProperty on the single Product node. Do not
+  // emit N separate Product nodes — they are variants of one category"
+  // (sheets 11, 13–15 §04): the parts grid, as one property on the Product.
+  // On the one page with a named catalogue (sheet 16), the catalogue is the
+  // ItemList above and only the generic names go here.
+  const grid = blocks.find((b) => b._type === "block.partsGrid");
+  const catalogue = new Set(fm.schemaProduct?.components ?? []);
+  const gridItems = ((grid?.items as { name: string }[] | undefined) ?? []).filter((it) => !catalogue.has(it.name));
+  const product = nodes.find((n) => n["@type"] === "Product") as Record<string, unknown> | undefined;
+  const properties: Record<string, unknown>[] = [];
+  if (gridItems.length)
+    properties.push({
+      "@type": "PropertyValue",
+      name: String(grid?.heading ?? "Parts made to order"),
+      value: gridItems.map((it) => it.name),
+    });
+  // "This is the block to expose in additionalProperty — density as a range
+  // with kg/m3 as the unit code" (sheet 19 §05): the density scale, once.
+  const density = blocks.find((b) => b._type === "block.densityScale") as { scale?: { min: string; max: string; unit?: string } } | undefined;
+  if (density?.scale)
+    properties.push({
+      "@type": "PropertyValue",
+      name: "Density",
+      minValue: Number(density.scale.min),
+      maxValue: Number(density.scale.max),
+      unitCode: "KMQ",
+      unitText: density.scale.unit ?? "kg/m³",
+    });
+  if (product && properties.length) product.additionalProperty = properties;
   for (const b of blocks) {
     if (b._type !== "block.routerList") continue;
     const rows = b.rows as { condition: string; need: string; href?: string }[];

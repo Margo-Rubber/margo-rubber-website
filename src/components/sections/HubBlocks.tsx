@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import { withoutDeadDownloads } from "@/lib/downloads";
 import { PRODUCTS, PRODUCT_GROUPS, hrefFor } from "@/content/routes";
+import { compoundAnchor } from "@/lib/compound-anchor";
+import { autocompleteFor } from "@/lib/autocomplete";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import type { Crumb } from "@/lib/breadcrumbs";
 import Link from "next/link";
@@ -14,6 +16,7 @@ import {
   EnquiryStatus,
   EnquirySubmit,
 } from "@/components/forms/EnquiryForm";
+import { accented } from "@/components/ui/Emphasis";
 
 /* ────────────────────────────────────────────────────────────────────────
    HUB HERO
@@ -456,8 +459,9 @@ type Compound = {
 export function CompoundSelector({ items }: { items: Compound[] }) {
   const [i, setI] = useState(0);
   // Every panel stays in the DOM, hidden rather than unmounted: a panel that mounts on click does not exist for a crawler, and these are the passages an assistant lifts.
-  const panelId = (k: string) =>
-    `hub-compound-${k.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+  // Deep-linkable as /products#aem, #fkm, #silicone … (sheet 02 §05): the
+  // panel's id is the compound's short name.
+  const panelId = (k: string) => compoundAnchor(k);
   // A link to a panel — the compound routers on the category pages link
   // each compound name here (sheets 36–42) — opens that panel's tab.
   useEffect(() => {
@@ -706,7 +710,7 @@ export function ValidationPanel({
     <div className="border-line bg-surface-3 rounded-card grid gap-8 border p-6 md:p-10 lg:grid-cols-2">
       <div>
         <Eyebrow>{eyebrow}</Eyebrow>
-        <h2 className="text-h2 mt-3">{heading}</h2>
+        <h2 className="text-h2 mt-3">{accented(heading)}</h2>
         <p className="text-ink-4 mt-4 text-sm leading-relaxed">{body}</p>
         {cta && withoutDeadDownloads([cta]).length > 0 && (
           <Button href={cta.href} className="mt-6">
@@ -775,7 +779,7 @@ export function CatalogueBlock({
   footnote?: string;
 }) {
   const words = heading.split(" ");
-  const accent = words.splice(-2).join(" ");
+  const accent = heading.includes("*") ? "" : words.splice(-2).join(" ");
 
   return (
     <div className="border-line bg-surface-3 rounded-card grid gap-10 border p-6 md:p-12 lg:grid-cols-2">
@@ -784,7 +788,13 @@ export function CatalogueBlock({
           ▤
         </span>
         <h2 className="text-h1 mt-6">
-          {words.join(" ")} <span className="text-accent-400">{accent}</span>
+          {accent ? (
+            <>
+              {words.join(" ")} <span className="text-accent-400">{accent}</span>
+            </>
+          ) : (
+            accented(heading)
+          )}
         </h2>
         <p className="text-ink-4 mt-4 text-sm leading-relaxed">{body}</p>
         <ul className="mt-6 space-y-3">
@@ -815,6 +825,7 @@ export function CatalogueBlock({
               <input
                 name={field}
                 type={type}
+                autoComplete={autocompleteFor(field)}
                 placeholder={ph}
                 className="border-line bg-surface-3 text-ink placeholder:text-ink-4 focus:border-accent-400 mt-2 w-full rounded-lg border px-4 py-3 text-sm"
               />
@@ -920,7 +931,7 @@ export function QuoteBand({
   attachHint?: string;
 }) {
   const words = heading.split(" ");
-  const accent = words.pop();
+  const accent = heading.includes("*") ? "" : words.pop();
   // The product dropdown, from the route registry: the fifteen categories
   // in their three groups, then "Not sure / other".
   const [product, setProduct] = useState("");
@@ -936,7 +947,13 @@ export function QuoteBand({
           <span aria-hidden className="bg-accent-400 h-px w-8" />
         </div>
         <h2 className="text-h1 mt-4">
-          {words.join(" ")} <span className="text-accent-400">{accent}</span>
+          {accent ? (
+            <>
+              {words.join(" ")} <span className="text-accent-400">{accent}</span>
+            </>
+          ) : (
+            accented(heading)
+          )}
         </h2>
         {body && (
           <p className="text-ink-4 mx-auto mt-4 max-w-[62ch] text-sm leading-relaxed">
@@ -1053,6 +1070,7 @@ export function QuoteBand({
                   <input
                     name={f.name}
                     type={f.type}
+                    autoComplete={autocompleteFor(f.name)}
                     required={f.name !== "phone" && f.name !== "quantity"}
                     placeholder={f.placeholder}
                     className="border-line text-ink placeholder:text-ink-4 focus:border-accent-400 mt-2 w-full rounded-lg border bg-[#0F1116] px-4 py-3 text-sm"

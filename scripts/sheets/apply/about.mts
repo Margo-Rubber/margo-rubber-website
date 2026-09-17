@@ -220,6 +220,8 @@ const fieldLit = lit(close, "Field").match(/^(\S+)\s+\[\s*(.*?)\s*→\s*\]$/);
 if (!fieldLit) throw new Error("closing field");
 
 const patch = {
+  // RES_06 §01: the guide this page sends its reader on to — shown once published.
+  furtherReading: ["how-to-evaluate-a-rubber-manufacturer"],
   "seo.title": sheet.head.title,
   "seo.description": sheet.head.description,
   h1: h1.lines.join(" "),

@@ -1,3 +1,5 @@
+import { autocompleteFor } from "@/lib/autocomplete";
+import { emphasised } from "@/components/ui/Emphasis";
 import Link from "next/link";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import type { Crumb } from "@/lib/breadcrumbs";
@@ -8,6 +10,7 @@ import {
   EnquiryStatus,
   EnquirySubmit,
 } from "@/components/forms/EnquiryForm";
+import { accented } from "@/components/ui/Emphasis";
 
 /* ══ SHARED ═══════════════════════════════════════════════════════════════ */
 
@@ -305,7 +308,10 @@ export function ExportHero({
             screen of each other. The chip row survives because it is the real
             navigation into the market sections, and it is what carries the
             tap targets on phones where the sequence does not run. */}
-        <ul className="mt-6 flex flex-wrap gap-2.5">
+        {/* A navigation of real sequence: <nav aria-label="Trade lanes"> wrapping
+            an <ol>, chips as <a> (sheet 06 §02). */}
+        <nav aria-label="Trade lanes">
+        <ol className="mt-6 flex flex-wrap gap-2.5">
           {markets.map((m) => (
             <li key={m.slug}>
               <Link
@@ -322,7 +328,8 @@ export function ExportHero({
               </Link>
             </li>
           ))}
-        </ul>
+        </ol>
+        </nav>
 
         {/* Scroll affordance from the comp. A real link to the first market so
             it does something rather than being decorative. */}
@@ -617,7 +624,7 @@ export function ExportDocuments({
                 {d.name}
               </h3>
               <p className="text-ink-4 mt-2.5 text-sm leading-relaxed">
-                {d.body}
+                {emphasised(d.body, "text-ink-2 font-semibold")}
               </p>
             </li>
           ))}
@@ -676,6 +683,7 @@ function Control({ f }: { f: Field }) {
     <input
       name={f.name}
       type={f.type}
+      autoComplete={autocompleteFor(f.name)}
       required={f.required}
       placeholder={f.placeholder}
       className={inputCls}
@@ -707,7 +715,7 @@ export function ExportQuote({
           <div className="p-8 md:p-10">
             <IconTile name="mail" />
             <h2 className="text-ink mt-7 text-2xl font-semibold md:text-3xl">
-              {heading}
+              {accented(heading)}
             </h2>
             <p className="text-ink-3 mt-4 max-w-[46ch] leading-relaxed">
               {body}
@@ -774,7 +782,7 @@ export function ExportSummary({
             <Eyebrow>{eyebrow}</Eyebrow>
             {/* Summary runs a step below the section scale: the comp sets this
                 block at roughly h2 size, not display. */}
-            <h2 className="text-h2 mt-4">{heading}</h2>
+            <h2 className="text-h2 mt-4">{accented(heading)}</h2>
             <p className="text-ink-3 mt-5 text-sm leading-relaxed">{body}</p>
           </header>
 
@@ -828,7 +836,7 @@ export function IncotermsSection({
             {eyebrow}
           </p>
         )}
-        <h2 className="text-h2 mt-4">{heading}</h2>
+        <h2 className="text-h2 mt-4">{accented(heading)}</h2>
         {body && <p className="text-ink-3 mt-4 max-w-[62ch] leading-relaxed">{body}</p>}
         <dl className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {terms.map((t) => {

@@ -398,7 +398,7 @@ function renderBlock(block: Block, ctx: Ctx): ReactNode {
     case "block.propertyList":
       return (
         <Section
-          id="lead-times"
+          id={b.id ?? "lead-times"}
           eyebrow={b.eyebrow}
           heading={b.heading}
           body={b.body}
@@ -519,7 +519,7 @@ function renderBlock(block: Block, ctx: Ctx): ReactNode {
 
     case "block.industryFaq":
       return (
-        <Section>
+        <Section id={b.id ?? "faq"}>
           <Container className="!px-0">
             <Eyebrow variant="rule">
               {b.eyebrow ?? "FREQUENTLY ASKED QUESTIONS"}
@@ -562,7 +562,9 @@ function renderBlock(block: Block, ctx: Ctx): ReactNode {
                 className="rounded-card border-line group border bg-surface-3"
               >
                 <summary className="text-ink flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-sm font-semibold [&::-webkit-details-marker]:hidden">
-                  {p.title}
+                  {/* "Panel headings are <h3>" (sheets 36–39): a real heading, so
+                      "Fabric-reinforced diaphragm" is in the outline. */}
+                  <h3 className="text-sm font-semibold">{p.title}</h3>
                   <span aria-hidden className="text-accent-400 transition-transform group-open:rotate-45">
                     +
                   </span>

@@ -165,24 +165,27 @@ export function DensityBlock({
             {quote.text}
           </blockquote>
           <figcaption className="text-accent-400 mt-4 font-mono text-xs">
-            — {quote.author}
-            {quote.org && <span className="text-ink-4 block">{quote.org}</span>}
+            <cite className="not-italic">
+              — {quote.author}
+              {quote.org && <span className="text-ink-4 block">{quote.org}</span>}
+            </cite>
           </figcaption>
         </figure>
 
-        <ul className="mt-4 space-y-2.5">
+        {/* "Each band should be an <h3> or a <dt>, not a styled span" (sheet 19 §05). */}
+        <dl className="mt-4 space-y-2.5">
           {bands.map((b) => (
-            <li
+            <div
               key={b.range}
               className="border-line bg-surface-3 flex flex-wrap items-baseline gap-x-4 gap-y-1 rounded-lg border px-5 py-3.5"
             >
-              <span className="text-accent-400 font-mono text-xs whitespace-nowrap">
+              <dt className="text-accent-400 font-mono text-xs whitespace-nowrap">
                 {b.range}
-              </span>
-              <span className="text-ink-4 text-sm">{b.note}</span>
-            </li>
+              </dt>
+              <dd className="text-ink-4 text-sm">{b.note}</dd>
+            </div>
           ))}
-        </ul>
+        </dl>
       </div>
     </div>
   );

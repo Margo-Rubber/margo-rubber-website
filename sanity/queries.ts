@@ -201,6 +201,8 @@ export const skuBySlugQuery = groq`
     documentation,
     ctaBody,
     "compoundRouter": select(defined(compoundRouter) => { "columns": compoundRouter.columns, "rows": compoundRouter.rows[].cells }),
+    compoundPrompt,
+    advantagesHeading,
     gallery,
     quickSpecs,
     order,

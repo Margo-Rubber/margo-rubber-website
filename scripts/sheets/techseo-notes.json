@@ -1,0 +1,5606 @@
+{
+ "37_Product_Bonded_Components#11:update the link in sheet 36 section 05 the diaph": {
+  "status": "met",
+  "why": "on /products/diaphragms “moulded in” links to /products/bonded-components; the guide is the secondary link"
+ },
+ "SKU_21_bolero-support-pad#02:hide rows you cannot answer rather than printing": {
+  "status": "met",
+  "why": "the six occurrences are the sheet's own copy — four rank labels in the compound table and the two metrics it keeps"
+ },
+ "30_Why_Margo_TAKEDOWN#10:one response time sitewide rendered from one con": {
+  "status": "na",
+  "why": "the page is parked for takedown (OPEN-ITEMS 114), noindex and unlinked"
+ },
+ "*:what it fixes on this page specifically the foot": {
+  "status": "met",
+  "why": "the footer carries no minimum-order figure; the 10,000-piece position is stated once per page where its sheet puts it"
+ },
+ "*:the process block must render from the part reco": {
+  "status": "met",
+  "why": "process[] is each part's own six steps from its sheet — named per part (compression, transfer, extruded)"
+ },
+ "*:this is the page s aeo asset everything else is ": {
+  "status": "na",
+  "why": "commentary — no rule to apply"
+ },
+ "*:film pending is fine to ship": {
+  "status": "met",
+  "why": "the empty state ships as written"
+ },
+ "*:link equity 26 sitewide links from here adding e": {
+  "status": "met",
+  "why": "the footer lists all fifteen categories and Export Markets from the route registry, on every page"
+ },
+ "*:heading levels the column labels products indust": {
+  "status": "met",
+  "why": "footer column labels are <p>; check:matrix fails any heading inside <footer>"
+ },
+ "*:build once ships forty times this is one compone": {
+  "status": "met",
+  "why": "one SiteFooter component reads the footer document and Site settings"
+ },
+ "*:with sitemap xml empty these links and the categ": {
+  "status": "met",
+  "why": "the products sitemap lists every part once published; every part is linked from its category grid and from the parts it names"
+ },
+ "*:one h1 breadcrumb home products pads stoppers ca": {
+  "status": "met",
+  "why": "one <h1> (check:matrix) and a four-crumb breadcrumb with BreadcrumbList on every part page"
+ },
+ "*:verify the part value lands in the form field an": {
+  "status": "met",
+  "why": "verified in the browser: ?part= pre-fills the details field and via_part"
+ },
+ "*:verify the part value actually lands in the form": {
+  "status": "met",
+  "why": "as above — Phase 7b, verified in the browser"
+ },
+ "*:schema emit nothing here contactpoint lives on t": {
+  "status": "met",
+  "why": "no ContactPoint off the homepage (check:jsonld)"
+ },
+ "*:this is the highest converting block on a catego": {
+  "status": "na",
+  "why": "commentary — the block answers with lead times, as the sheet asks"
+ },
+ "*:goes in the faqpage node what is the lead time f": {
+  "status": "open",
+  "why": "the sheet names the questions but writes no answers and no FAQ section; nothing enters the graph until they are written (OPEN-ITEMS 29)"
+ },
+ "*:consistency gate 48 hrs quotation 48 72 hrs prot": {
+  "status": "met",
+  "why": "the four figures render from Site settings → Commercial on every page that shows them"
+ },
+ "*:breadcrumb goes above the eyebrow home products ": {
+  "status": "met",
+  "why": "heroBreadcrumb on every category page, BreadcrumbList in the graph"
+ },
+ "*:analytics named conversion event on submit and o": {
+  "status": "open",
+  "why": "no analytics property exists yet (GTM/GA are Margo's to create); the enquiry API records source and page for every submission meanwhile"
+ },
+ "*:breadcrumb goes above the eyebrow home industrie": {
+  "status": "met",
+  "why": "breadcrumb on every industry page, BreadcrumbList in the graph"
+ },
+ "*:the products column must show all eleven section": {
+  "status": "met",
+  "why": "the footer shows all fifteen categories in three groups"
+ },
+ "*:faq schema this section feeds two of the four fa": {
+  "status": "open",
+  "why": "the questions have no written answers on the sheet; no FAQ section, no node (OPEN-ITEMS 37)"
+ },
+ "*:heading level h2 the two buttons are a elements ": {
+  "status": "met",
+  "why": "the closing band's buttons are <a> (tel: and /contact)"
+ },
+ "*:the 48 hour figure renders from the site constan": {
+  "status": "met",
+  "why": "Site settings → Commercial → quotation"
+ },
+ "*:shared across all nine industry pages build once": {
+  "status": "met",
+  "why": "one component; the phrase comes from each page's document"
+ },
+ "*:link each surviving card to its industry page in": {
+  "status": "fixed",
+  "why": "every application card that names one of the eleven sectors links to its page"
+ },
+ "*:process named per part compression moulding corr": {
+  "status": "met",
+  "why": "the steps are the part's own, from its sheet"
+ },
+ "*:shared component this block renders identically ": {
+  "status": "met",
+  "why": "one propertyList block renderer; the rows are each page's own"
+ },
+ "*:heading levels section heading is h2 each compou": {
+  "status": "met",
+  "why": "material cards: <h2> section, <h3> per compound"
+ },
+ "*:shared component across nine pages one prop the ": {
+  "status": "met",
+  "why": "one industry template; the copy is each document's"
+ },
+ "*:keep the step slot visible on this part": {
+  "status": "met",
+  "why": "shown"
+ },
+ "*:process named per part compression moulding": {
+  "status": "met",
+  "why": "the steps are the part's own, from its sheet"
+ },
+ "*:remove the link from the card the sku child page": {
+  "status": "na",
+  "why": "superseded — the later SKU sheets build the part pages and the category links each card that is a part (OPEN-ITEMS 119)"
+ },
+ "*:card titles are h3 not links the second line is ": {
+  "status": "na",
+  "why": "titles are <h3> and the second line a <p>; a card that is a part links its name (OPEN-ITEMS 119)"
+ },
+ "*:schema emit nothing contactpoint lives on the ho": {
+  "status": "met",
+  "why": "no ContactPoint off the homepage (check:jsonld)"
+ },
+ "*:analytics named conversion event per industry pa": {
+  "status": "open",
+  "why": "no analytics property yet — see the contact form's event"
+ },
+ "*:card titles are h3 tab controls are button role ": {
+  "status": "met",
+  "why": "component tabs: <h3> titles, <button role=\"tab\" aria-selected>"
+ },
+ "*:card titles are h3": {
+  "status": "met",
+  "why": "every card component sets its title as <h3>"
+ },
+ "*:every standard number is plain text in a table c": {
+  "status": "met",
+  "why": "the tables are real <table>s with the standards as text"
+ },
+ "*:link each compound name once to its anchor on pr": {
+  "status": "met",
+  "why": "each compound in a router table links once to its panel on /products (#hub-compound-…), which opens on arrival"
+ },
+ "*:footer column labels are p or div never headings": {
+  "status": "met",
+  "why": "check:matrix fails any heading inside <footer>"
+ },
+ "*:feed material from the recommended and suitable ": {
+  "status": "na",
+  "why": "superseded by the client instruction of 2026-09-02 (sheet 36 page-level): every part is made in every compound, so material lists all eight"
+ },
+ "*:never publish a metric the same page later decli": {
+  "status": "met",
+  "why": "the production metrics print “On request” where no figure is held, and nothing else on the page gives one"
+ },
+ "*:never imply norsok or api qualification not held": {
+  "status": "met",
+  "why": "check:claims forbids any held wording; the certifications record carries it as in progress only"
+ },
+ "*:schema none contactpoint lives on the homepage n": {
+  "status": "met",
+  "why": "no ContactPoint off the homepage"
+ },
+ "*:schema the list goes in additionalproperty on th": {
+  "status": "fixed",
+  "why": "the parts grid is one PropertyValue on the category's Product node; no per-part nodes on the category page"
+ },
+ "*:image alt the hero has no image if one is added ": {
+  "status": "met",
+  "why": "the hero photograph carries the sheet's alt text"
+ },
+ "*:shared component per page order panel order must": {
+  "status": "met",
+  "why": "panel order is the document's items order"
+ },
+ "*:inline links not card links": {
+  "status": "met",
+  "why": "category links are inline on the first mention (linkProducts)"
+ },
+ "*:do not emit a second place or postaladdress": {
+  "status": "met",
+  "why": "one PostalAddress, on the homepage Organization (check:jsonld)"
+ },
+ "*:heading levels h2 for the section five bullets a": {
+  "status": "met",
+  "why": "section <h2>, bullets in a <ul>"
+ },
+ "*:do not emit hascertification here": {
+  "status": "met",
+  "why": "only ISO 9001:2015, only on the homepage Organization"
+ },
+ "*:an ol of h3 s each self contained": {
+  "status": "open",
+  "why": "the items are <h3>s with their paragraphs in the article body; they are not wrapped in an <ol> (Portable Text has no list-of-headings) — the outline carries them"
+ },
+ "*:not part of faqpage": {
+  "status": "met",
+  "why": "the FAQPage node carries the FAQ block only"
+ },
+ "*:faqpage schema matching these five verbatim": {
+  "status": "met",
+  "why": "five Question nodes from the same strings"
+ },
+ "*:nofollow follow on all seven article urls": {
+  "status": "met",
+  "why": "robots is “index, follow” the moment a document is published; noindex only while placeholder"
+ },
+ "*:do not emit availability instock from the badge": {
+  "status": "met",
+  "why": "no Offer, no availability on any Product"
+ },
+ "*:moulding process named per part compression moul": {
+  "status": "met",
+  "why": "the steps are the part's own, from its sheet"
+ },
+ "*:identical faq content on 31 urls is a duplicatio": {
+  "status": "fixed",
+  "why": "part pages emit no FAQPage node; the accordion stays visible"
+ },
+ "*:two urls for one part split whatever authority t": {
+  "status": "fixed",
+  "why": "the duplicate URL is a 301 to the survivor (Phase 7b)"
+ },
+ "*:after the collapse update these links rather tha": {
+  "status": "fixed",
+  "why": "every link on the site points at the surviving URL; the 301 is the safety net"
+ },
+ "*:shared across all nine industry pages sector nou": {
+  "status": "met",
+  "why": "one industry template; the noun is each document's"
+ },
+ "*:never imply en 1337 structural bearing capabilit": {
+  "status": "met",
+  "why": "the construction page lists IRC:83 · IS 15462 · EN 1337-3 as not held; nothing implies the capability"
+ },
+ "*:compound ranges are governed by one table the ei": {
+  "status": "met",
+  "why": "every temperature range renders from Site settings → Compounds, the one table"
+ },
+ "*:the h2 is a literal buyer question which is the ": {
+  "status": "na",
+  "why": "commentary on the sheet's own copy"
+ },
+ "*:heading levels h2 for the section the five bulle": {
+  "status": "met",
+  "why": "section <h2>; bullets are <li> in a <ul>"
+ },
+ "*:equipment group headings are h3 four named equip": {
+  "status": "met",
+  "why": "application groups render as <h3> under the section <h2>"
+ },
+ "*:seven internal links out of a page with none": {
+  "status": "met",
+  "why": "every card links to its category page"
+ },
+ "*:no areaserved on this node inherited from the or": {
+  "status": "met",
+  "why": "the Service node carries no areaServed"
+ },
+ "*:the byline is visible text": {
+  "status": "open",
+  "why": "the byline renders once the reviewer and date are set in Site settings (OPEN-ITEMS 85)"
+ },
+ "*:this table is the product schema source never ma": {
+  "status": "met",
+  "why": "no spec row is mapped to schema; the part's Product node carries name, description, code, category, material and isSimilarTo only"
+ },
+ "*:do not name an oem no mahindra or tata supply ag": {
+  "status": "met",
+  "why": "version A ships on the OEM-named parts (OPEN-ITEMS 73); SKU 21's single version is “to suit”, with the trade-mark disclaimer"
+ },
+ "*:four compound urls split the category s authorit": {
+  "status": "open",
+  "why": "the four oil-seal compound pages stay live until their content is moved into the category page (OPEN-ITEMS 112)"
+ },
+ "*:never emit faqpage schema from two urls with the": {
+  "status": "fixed",
+  "why": "the duplicate URL is a 301; part pages emit no FAQPage node"
+ },
+ "*:after the 301 update every internal link to the ": {
+  "status": "fixed",
+  "why": "every link points at the surviving URL (Phase 7b)"
+ },
+ "*:feed material as natural rubber neoprene and epd": {
+  "status": "na",
+  "why": "superseded by the client instruction of 2026-09-02: material lists all eight"
+ },
+ "*:verify the part value lands in the form field": {
+  "status": "met",
+  "why": "verified in the browser: ?part= pre-fills the details field and via_part"
+ },
+ "*:keep the step slot visible on this part clearanc": {
+  "status": "met",
+  "why": "shown"
+ },
+ "*:geo ports and transit days are the strongest gen": {
+  "status": "na",
+  "why": "commentary — the figures ship as written"
+ },
+ "*:vision build guard on the buyer facing build thi": {
+  "status": "na",
+  "why": "ruled: the sheet's boxed H2 ships as written (OPEN-ITEMS 1)"
+ },
+ "*:heading levels h2 six h3": {
+  "status": "met",
+  "why": "section <h2>; card titles <h3>"
+ },
+ "*:labels bound autocomplete on name organization e": {
+  "status": "fixed",
+  "why": "every input is inside its <label>; autocomplete hints on name, organization, email, tel and country; the API validates server-side; honeypot on every form"
+ },
+ "*:schema the product node s additionalproperty can": {
+  "status": "fixed",
+  "why": "the parts grid is one PropertyValue on the category's Product node"
+ },
+ "*:response time consistency one business day to ac": {
+  "status": "met",
+  "why": "both figures render from Site settings → Commercial"
+ },
+ "*:the compound specific closing clauses are what m": {
+  "status": "na",
+  "why": "commentary on the sheet's own copy"
+ },
+ "*:the closest sibling is products anti vibration m": {
+  "status": "met",
+  "why": "the category's related products link it from the body"
+ },
+ "*:nine internal links out of a page that currently": {
+  "status": "met",
+  "why": "every sector card links to its industry page"
+ },
+ "*:card titles are h3 and the application list is a": {
+  "status": "open",
+  "why": "the sheet writes the applications as one comma sentence per card; it renders verbatim as that sentence, not split into <li>s — splitting would break the verbatim-copy gate. A markup decision for later."
+ },
+ "*:one line per category and a link do not repeat t": {
+  "status": "met",
+  "why": "the About portfolio: one line per category, each linking its page"
+ },
+ "*:inline links not card links the anchor text beco": {
+  "status": "fixed",
+  "why": "the first mention of each category's product in an application card body links to that category"
+ },
+ "*:do not emit a second place or postaladdress from": {
+  "status": "met",
+  "why": "one PostalAddress, on the homepage Organization"
+ },
+ "*:do not emit hascertification here the homepage o": {
+  "status": "met",
+  "why": "only the homepage Organization carries hasCredential"
+ },
+ "*:eight internal links out of a page with none": {
+  "status": "met",
+  "why": "every application card links its category page"
+ },
+ "*:the three temperature figures render from the lo": {
+  "status": "met",
+  "why": "Site settings → Compounds"
+ },
+ "*:analytics named conversion event on the form but": {
+  "status": "open",
+  "why": "no analytics property yet (Margo's to create); the enquiry API records every submission with its source"
+ },
+ "*:equipment group headings are h3 four named class": {
+  "status": "met",
+  "why": "application groups render as <h3>"
+ },
+ "*:bullets are a real ul six li no divs styled as b": {
+  "status": "met",
+  "why": "the custom-engineering bullets are <li> in a <ul>"
+ },
+ "*:fix or remove do not leave a button with no dest": {
+  "status": "met",
+  "why": "a download control renders only when its file exists; nothing links nowhere (check:links)"
+ },
+ "*:no contactpoint schema until the strip is filled": {
+  "status": "met",
+  "why": "the strip renders from Site settings and ContactPoint lives on the homepage Organization only"
+ },
+ "*:once filled the contact data still lives on the ": {
+  "status": "met",
+  "why": "as above"
+ },
+ "*:tel in e 164 tel 919665579276 no spaces or punct": {
+  "status": "met",
+  "why": "the href is tel:+919665579276"
+ },
+ "*:the products column must show all eleven and lin": {
+  "status": "met",
+  "why": "the footer shows all fifteen categories in three groups"
+ },
+ "*:row labels are not headings": {
+  "status": "met",
+  "why": "th scope=row; check:matrix"
+ },
+ "*:no certification schema for test methods": {
+  "status": "met",
+  "why": "no Certification node for any test method"
+ },
+ "*:a named conversion event fires on submit": {
+  "status": "open",
+  "why": "no analytics property yet"
+ },
+ "*:guide to guide links only where the target is pu": {
+  "status": "met",
+  "why": "the related strip links only to guides that exist; all seven do"
+ },
+ "*:do not change the slug": {
+  "status": "met",
+  "why": "the slug is the sheet's"
+ },
+ "*:two h3 s question phrased": {
+  "status": "met",
+  "why": "the two headings are <h3>, as written"
+ },
+ "*:named test methods are the cheapest credibility ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:gate on an email not a form and only once a file": {
+  "status": "open",
+  "why": "no documentation file exists yet; the block is a request line to /contact with the part pre-filled (sheet 32 §09), not a gate"
+ },
+ "*:q1 s answer must match the hero and the data tab": {
+  "status": "met",
+  "why": "hero, table and answer are the same document's fields, applied from the one sheet"
+ },
+ "*:feed issimilarto from this list": {
+  "status": "met",
+  "why": "the part's isSimilarTo is its “You may also need” list"
+ },
+ "*:the same category rule is what produced three ir": {
+  "status": "met",
+  "why": "the related parts are the sheet's own selection"
+ },
+ "*:one h1 breadcrumb home products anti vibration m": {
+  "status": "met",
+  "why": "one <h1>; four-crumb breadcrumb with BreadcrumbList"
+ },
+ "*:one h1 breadcrumb home products sponge foam rubb": {
+  "status": "met",
+  "why": "one <h1>; four-crumb breadcrumb with BreadcrumbList"
+ },
+ "*:process named per part moulded or die cut not co": {
+  "status": "met",
+  "why": "the steps are the part's own, from its sheet"
+ },
+ "*:say the grommet contributes to an ip rating neve": {
+  "status": "met",
+  "why": "the copy is the sheet's; check:claims forbids a held-certification reading"
+ },
+ "*:keep the step slot visible on moulded parts hidd": {
+  "status": "met",
+  "why": "the documentation block is per part, from its sheet"
+ },
+ "*:nbr or viton for an oil seal is a high volume qu": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:post cure on silicone is a searchable technical ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:keep the step slot visible on moulded parts": {
+  "status": "met",
+  "why": "the documentation block names STEP"
+ },
+ "*:shaft bore and width must be real fields in the ": {
+  "status": "open",
+  "why": "the part record stores its specs as label/value rows; typed dimension fields are a later data-model change, when a size table is built"
+ },
+ "*:publish the size chart as crawlable html on the ": {
+  "status": "met",
+  "why": "the O-ring size chart is an HTML guide (/resources/o-ring-size-chart) and the category's spec table is HTML; no PDF gate"
+ },
+ "*:what does viton not resist is a high volume quer": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:card 02 answers what is viton not compatible wit": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:publish the compatibility chart as crawlable htm": {
+  "status": "met",
+  "why": "the FKM vs NBR guide (/resources/fkm-vs-nbr-oil-seal-guide) carries the chart in HTML; every oil-seal part links its guides"
+ },
+ "*:viton must not stand alone write fkm viton once ": {
+  "status": "met",
+  "why": "the copy is the sheet's, written that way"
+ },
+ "*:card titles are h3 four property headings under ": {
+  "status": "met",
+  "why": "card titles are <h3> under the section <h2>"
+ },
+ "*:no schema on this section there is no markup for": {
+  "status": "met",
+  "why": "nothing emitted for the section"
+ },
+ "*:audit the crm for enquiries already logged under": {
+  "status": "open",
+  "why": "the enquiry desk holds every submission with its page; enquiries logged under the old part names carry the old page path — a filter in the desk, not a code change"
+ },
+ "*:a category of nine unrelated parts needs hand pi": {
+  "status": "met",
+  "why": "related parts are the sheet's own four"
+ },
+ "*:load and deflection must be real fields in the p": {
+  "status": "open",
+  "why": "the part record stores its specs as label/value rows; typed fields are a later data-model change, when a selection table is built"
+ },
+ "*:process named per part compression moulding with": {
+  "status": "met",
+  "why": "the steps are the part's own, from its sheet"
+ },
+ "*:card 02 answers does a harder rubber pad hold mo": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:hide the step slot on flat pads and offer dxf in": {
+  "status": "met",
+  "why": "the documentation block is the part's own line from its sheet"
+ },
+ "*:group the pad family with a shared comparison ou": {
+  "status": "open",
+  "why": "no sheet writes the comparison; copy for 3rd Shade (OPEN-ITEMS 80's family)"
+ },
+ "*:bore and interference must be real fields in the": {
+  "status": "open",
+  "why": "as above — label/value rows today"
+ },
+ "*:feed material as nbr aem and fkm not epdm": {
+  "status": "na",
+  "why": "superseded by the client instruction of 2026-09-02: material lists all eight"
+ },
+ "*:sealing lip gauged against the neck bore is the ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:keyword head term rubber components manufacturer": {
+  "status": "met",
+  "why": "the H1 and subhead are the sheet's"
+ },
+ "*:entity definition subhead opens entity is a cate": {
+  "status": "met",
+  "why": "the subhead is the sheet's"
+ },
+ "*:internal links four in subhead product links fiv": {
+  "status": "met",
+  "why": "the hero's product and industry links are the sheet's, each on its name"
+ },
+ "*:lcp image fetchpriority high loading eager decod": {
+  "status": "fixed",
+  "why": "the hero image is priority-loaded with fetchpriority=\"high\" and preloaded; every other image is lazy"
+ },
+ "*:schema no section level block the hero image reg": {
+  "status": "met",
+  "why": "ImageObject #hero-image, referenced by WebPage.primaryImageOfPage"
+ },
+ "*:certification claim iso 9001 2015 only in the ey": {
+  "status": "met",
+  "why": "only ISO 9001:2015 is claimed as held anywhere (check:claims)"
+ },
+ "*:heading eyebrow stays a p do not promote it to h": {
+  "status": "met",
+  "why": "eyebrows are <p>"
+ },
+ "*:markup ul of li each with itemprop omitted do no": {
+  "status": "met",
+  "why": "the client list is a <ul>; no customer property in the graph"
+ },
+ "*:aeo named checkable customers are the strongest ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:answer block paragraph 1 s first sentence is the": {
+  "status": "na",
+  "why": "commentary on the sheet's own copy"
+ },
+ "*:internal links three about cta certifications fr": {
+  "status": "met",
+  "why": "the three links are in the section"
+ },
+ "*:schema no new node every figure here must match ": {
+  "status": "met",
+  "why": "the Organization node's figures come from Site settings, the same source the prose reads"
+ },
+ "*:stat de duplication no figure repeats between th": {
+  "status": "met",
+  "why": "the figures are the sheet's own per section"
+ },
+ "*:heading levels section h2 each card title h3 no ": {
+  "status": "met",
+  "why": "<h2> then <h3>"
+ },
+ "*:answer blocks cards 3 and 5 are the two most cit": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:removed claims reach rohs compliance 25 years tr": {
+  "status": "met",
+  "why": "none of the four is on the site (check:claims)"
+ },
+ "*:schema optional itemlist of six listitem nodes i": {
+  "status": "na",
+  "why": "skipped, as the sheet allows"
+ },
+ "*:heading levels section h2 each card title h3 wra": {
+  "status": "met",
+  "why": "<h3> inside the card link; tag lines <p>"
+ },
+ "*:internal links the single densest link block on ": {
+  "status": "met",
+  "why": "every category card links its page with its name as the anchor"
+ },
+ "*:slug fix card 10 points at products extrusion pr": {
+  "status": "met",
+  "why": "every link to the category is /products/extrusion (route registry; check:links)"
+ },
+ "*:schema this section carries the page s offercata": {
+  "status": "met",
+  "why": "OfferCatalog #product-catalog on the homepage"
+ },
+ "*:type offercatalog id https margorubber in produc": {
+  "status": "met",
+  "why": "as above"
+ },
+ "*:iso scope trap certificate 09111526a covers moul": {
+  "status": "met",
+  "why": "the extrusion and sponge pages make no ISO 9001 product claim; their own sheets (18, 19) write the plant's certification in the eyebrow, and the scope note travels with the badge"
+ },
+ "*:heading levels h2 nine h3 card titles each wrapp": {
+  "status": "met",
+  "why": "<h3> card titles wrapping the industry links"
+ },
+ "*:honest negatives are an aeo asset the iso 13485 ": {
+  "status": "met",
+  "why": "the non-claims ship as written"
+ },
+ "*:uniqueness all nine bodies are 70 unique against": {
+  "status": "met",
+  "why": "the bodies are the sheet's, one per sector"
+ },
+ "*:schema no node industry pages carry their own se": {
+  "status": "met",
+  "why": "no Service node on the homepage"
+ },
+ "*:heading levels h2 six h3 the step 01 labels are ": {
+  "status": "met",
+  "why": "step labels are <p>; the steps are an <ol>"
+ },
+ "*:this is the highest value aeo section on the pag": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:schema this section earns a real node howto is t": {
+  "status": "met",
+  "why": "ItemList #process, “From drawing to delivery”"
+ },
+ "*:contrast section ground is 171a1f body text must": {
+  "status": "met",
+  "why": "body text on the dark bands is ink-3 (#7a8499) on #171A1F — 4.9:1"
+ },
+ "*:removed claims 80 000 sq ft 400 team members 3 p": {
+  "status": "met",
+  "why": "none is on the site (check:claims)"
+ },
+ "*:heading levels h2 only bullets are li the bolded": {
+  "status": "met",
+  "why": "<li> bullets with <strong> lead-ins"
+ },
+ "*:schema add place and link it rather than a secon": {
+  "status": "met",
+  "why": "Place #plant with geo, on the homepage"
+ },
+ "*:this section fixes the site s worst structural d": {
+  "status": "met",
+  "why": "/export is linked from the footer on every page and from the homepage cards"
+ },
+ "*:anchor targets live export jump links emit as au": {
+  "status": "met",
+  "why": "the cards link /export#australia, /export#uk, /export#uae-saudi, /export#malaysia"
+ },
+ "*:map inline svg not an image the country labels m": {
+  "status": "fixed",
+  "why": "the maps are inline SVG with <title>, <desc>, role=\"img\" and the lane names as <text>"
+ },
+ "*:schema areaserved on the organization contactpoi": {
+  "status": "met",
+  "why": "Organization.contactPoint.areaServed carries the country codes from Site settings"
+ },
+ "*:the most citable block on the site eight compoun": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:consistency gate fkm is published at three diffe": {
+  "status": "met",
+  "why": "every range renders from Site settings → Compounds"
+ },
+ "*:schema definedtermset of eight definedterm nodes": {
+  "status": "met",
+  "why": "DefinedTermSet #compounds with eight DefinedTerm nodes on the homepage"
+ },
+ "*:form semantics every label for bound to its inpu": {
+  "status": "met",
+  "why": "every input sits inside its <label>; autocomplete hints on name, organization, email, tel and country; the starred fields are required with type=\"email\"/\"tel\". enctype waits on the upload backend"
+ },
+ "*:nap consistency phone email and address here mus": {
+  "status": "met",
+  "why": "all three render from Site settings → Entity"
+ },
+ "*:schema contactpoint already lives on the organiz": {
+  "status": "met",
+  "why": "no ContactPage; ContactPoint on the Organization only"
+ },
+ "*:conversion mechanics success state must confirm ": {
+  "status": "met",
+  "why": "the confirmation line shows in place of the form once sent (Phase 7b)"
+ },
+ "*:analytics fire a named conversion event on submi": {
+  "status": "open",
+  "why": "no analytics property yet"
+ },
+ "*:heading levels column labels products industries": {
+  "status": "met",
+  "why": "footer labels are <p>"
+ },
+ "*:legal pages all three are placeholder text while": {
+  "status": "met",
+  "why": "the three legal pages carry sheet 08's full copy (Phase 5); they index once counsel signs off"
+ },
+ "*:keyword head term custom rubber parts manufactur": {
+  "status": "met",
+  "why": "H1 and subhead are the sheet's"
+ },
+ "*:removed claims since 1988 35 years 500 product v": {
+  "status": "met",
+  "why": "none is on the site"
+ },
+ "*:internal links two in page anchors range catalog": {
+  "status": "met",
+  "why": "the hero links are same-page anchors to real ids; the breadcrumb is above the eyebrow"
+ },
+ "*:lcp hero background is the lcp element fetchprio": {
+  "status": "fixed",
+  "why": "priority hero with fetchpriority=\"high\", preload and AVIF/WebP; the card images below are lazy"
+ },
+ "*:the densest internal link block on the site elev": {
+  "status": "met",
+  "why": "every category card links its page with its name"
+ },
+ "*:slug fix card 10 products extrusion live is prod": {
+  "status": "met",
+  "why": "/products/extrusion everywhere (route registry)"
+ },
+ "*:filter state and the url chips should push famil": {
+  "status": "open",
+  "why": "the family chips filter in place without a URL parameter; the canonical is /products either way. Pushing the state to the URL is a later nicety"
+ },
+ "*:card markup h3 product name inside the a overlin": {
+  "status": "met",
+  "why": "<h3> in the link; overline <p> uppercased by CSS"
+ },
+ "*:schema references the homepage product catalog n": {
+  "status": "met",
+  "why": "CollectionPage.mainEntity → #product-catalog"
+ },
+ "*:consistency gate 11 here must equal the card cou": {
+  "status": "met",
+  "why": "the count, the cards and the footer all come from the route registry (15)"
+ },
+ "*:heading levels h2 only stat values p never h3": {
+  "status": "met",
+  "why": "stat values are not headings (check:matrix)"
+ },
+ "*:answer block the intro s second sentence is the ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:internal links two about plant and certification": {
+  "status": "met",
+  "why": "both links are in the section"
+ },
+ "*:removed claims since 1988 35 years 500 variants ": {
+  "status": "met",
+  "why": "none is on the site"
+ },
+ "*:heading levels h2 then h3 for in house capabilit": {
+  "status": "met",
+  "why": "<h2> then <h3>"
+ },
+ "*:schema none the itemlist process node lives on t": {
+  "status": "met",
+  "why": "no second process node"
+ },
+ "*:why the tolerance claim matters more than it loo": {
+  "status": "na",
+  "why": "commentary — the tolerance is the sheet's"
+ },
+ "*:internal links three contact certifications abou": {
+  "status": "met",
+  "why": "the three links are in the section"
+ },
+ "*:heading levels h2 section h3 compound name insid": {
+  "status": "met",
+  "why": "<h3> per panel, polymer name <p>"
+ },
+ "*:consistency gate these eight ranges must match t": {
+  "status": "met",
+  "why": "one source: Site settings → Compounds"
+ },
+ "*:schema definedtermset at compounds with eight de": {
+  "status": "met",
+  "why": "the DefinedTermSet is declared once, on the homepage, and #compounds on /products is the section it describes"
+ },
+ "*:internal links eight one per panel to the catego": {
+  "status": "met",
+  "why": "each panel links its lead category or industry"
+ },
+ "*:nine panels in the dom css hidden same rule as s": {
+  "status": "met",
+  "why": "all nine sector panels are in the HTML, hidden by CSS (Phase 2)"
+ },
+ "*:nine internal links out one per panel to industr": {
+  "status": "met",
+  "why": "“Rubber components for {sector}” on every panel"
+ },
+ "*:products supplied field links too each named pro": {
+  "status": "met",
+  "why": "every product named in a sector panel's products field links its category"
+ },
+ "*:honest negatives stay iso 13485 and norsok non c": {
+  "status": "met",
+  "why": "they ship as written"
+ },
+ "*:named clients are the strongest field in this se": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:schema none each industries page owns its own no": {
+  "status": "met",
+  "why": "no Service nodes on the hub"
+ },
+ "*:the live section unchanged caps the whole page a": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:heading levels h2 five h3 card titles the status": {
+  "status": "met",
+  "why": "card titles are <h3>; the status is on the badge, not in the heading"
+ },
+ "*:procurement reality a buyer s first act after re": {
+  "status": "na",
+  "why": "commentary; the number and scope are in the copy"
+ },
+ "*:heading levels h2 two h3 group headings": {
+  "status": "met",
+  "why": "the group titles are table captions under the section <h2>"
+ },
+ "*:gated pdf if the capability statement ships serv": {
+  "status": "open",
+  "why": "no capability statement file exists yet (OPEN-ITEMS 5); the button is hidden until it does"
+ },
+ "*:if ungated serve from downloads margo product ca": {
+  "status": "open",
+  "why": "no catalogue file exists yet; when it does it is served ungated from a real URL"
+ },
+ "*:form three label for bindings autocomplete name ": {
+  "status": "met",
+  "why": "the catalogue form's three inputs sit inside their labels with autocomplete hints and type=\"email\""
+ },
+ "*:schema optional digitaldocument with encodingfor": {
+  "status": "open",
+  "why": "waits on the file"
+ },
+ "*:heading levels h2 h3 on get instant access the g": {
+  "status": "met",
+  "why": "the glyph is aria-hidden"
+ },
+ "*:question phrasing every question is written the ": {
+  "status": "na",
+  "why": "commentary on the sheet's own copy"
+ },
+ "*:answer length 40 60 words is the passage window ": {
+  "status": "na",
+  "why": "commentary on the sheet's own copy"
+ },
+ "*:heading levels h2 eight h3 question headings ins": {
+  "status": "met",
+  "why": "questions are <h3> inside <summary>"
+ },
+ "*:schema the faqpage node in the page level block ": {
+  "status": "met",
+  "why": "FAQPage from the same field the page renders (check:jsonld)"
+ },
+ "*:moq the live q1 states typically 100 pieces and ": {
+  "status": "met",
+  "why": "the answer is the sheet's; one minimum-run position sitewide (check:claims)"
+ },
+ "*:internal links six inside the answers products o": {
+  "status": "met",
+  "why": "the answers are the sheet's with their links"
+ },
+ "*:nap consistency phone email and address must mat": {
+  "status": "met",
+  "why": "all render from Site settings → Entity"
+ },
+ "*:email one address sitewide info margorubber in h": {
+  "status": "met",
+  "why": "one address, from Site settings"
+ },
+ "*:form semantics labels bound with for autocomplet": {
+  "status": "met",
+  "why": "labels bound, autocomplete, email/tel types; the file field is inert until the upload backend exists (OPEN-ITEMS 108), so no enctype yet"
+ },
+ "*:success state confirm what happens next received": {
+  "status": "met",
+  "why": "the confirmation line shows in place of the form once sent (Phase 7b)"
+ },
+ "*:schema contactpoint lives on the homepage node e": {
+  "status": "met",
+  "why": "nothing emitted"
+ },
+ "*:heading levels h2 two h3 direct contact our quot": {
+  "status": "met",
+  "why": "<h2> form heading; the NAP is in <address>"
+ },
+ "*:analytics named conversion event on submit two r": {
+  "status": "open",
+  "why": "no analytics property yet"
+ },
+ "*:what it fixes on this page the products column g": {
+  "status": "met",
+  "why": "the footer lists all fifteen categories"
+ },
+ "*:outline damage here is the worst on the site thr": {
+  "status": "met",
+  "why": "footer labels are <p>"
+ },
+ "*:keyword rubber manufacturer nashik in h1 line 2 ": {
+  "status": "met",
+  "why": "the H1 and subhead are the sheet's"
+ },
+ "*:removed claims since 1997 1 200 clients 25 count": {
+  "status": "met",
+  "why": "none is on the site"
+ },
+ "*:anchors about story and about manufacturing not ": {
+  "status": "met",
+  "why": "the hero links are same-page anchors to real ids"
+ },
+ "*:markup dl with dd value and dt label as live val": {
+  "status": "met",
+  "why": "<dl> stats; check:matrix fails a stat as heading"
+ },
+ "*:consistency gate 2005 95 and 5m must match the h": {
+  "status": "met",
+  "why": "the figures are Site settings' (founding year, markets, capacity)"
+ },
+ "*:tabular numerals font variant numeric tabular nu": {
+  "status": "met",
+  "why": "tabular-nums on the stat values"
+ },
+ "*:answer block paragraph 1 opens with the 40 60 wo": {
+  "status": "na",
+  "why": "commentary on the sheet's own copy"
+ },
+ "*:removed claims 1997 27 years 80 000 sq ft 24 7 o": {
+  "status": "met",
+  "why": "none is on the site (check:claims)"
+ },
+ "*:sectors named must match section 06 of the homep": {
+  "status": "met",
+  "why": "the sectors are the route registry's eleven"
+ },
+ "*:internal links three manufacturing certification": {
+  "status": "met",
+  "why": "the three links are in the section; /products#compounds is a real id"
+ },
+ "*:schema no node foundingdate 2005 lives on the or": {
+  "status": "met",
+  "why": "both read Site settings"
+ },
+ "*:heading levels h2 two h3 eyebrows are p": {
+  "status": "met",
+  "why": "<h2>, <h3>, eyebrows <p>"
+ },
+ "*:internal link one from the vision footer to expo": {
+  "status": "met",
+  "why": "the vision footer links /export"
+ },
+ "*:consistency gate 95 18 5 must match section 09 a": {
+  "status": "met",
+  "why": "the same three figures on both pages, from the sheets"
+ },
+ "*:0 01 mm appears on three pages it is the resolut": {
+  "status": "met",
+  "why": "the tolerance copy is the sheets' corrected wording; ±0.01 mm as a part tolerance is nowhere on the site"
+ },
+ "*:markup blockquote with a cite and figure figcapt": {
+  "status": "na",
+  "why": "the testimonial was replaced by the reference-check offer the sheet writes (§12); there is no quotation to mark up"
+ },
+ "*:schema quotation with spokenbycharacter pointing": {
+  "status": "na",
+  "why": "no quotation on the page (the section is the reference-check offer)"
+ },
+ "*:image a real photograph beats an initials monogr": {
+  "status": "open",
+  "why": "founder photographs are Margo's to supply (OPEN-ITEMS 9)"
+ },
+ "*:fix the 404 by shipping sheet 36 products diaphr": {
+  "status": "met",
+  "why": "the page is built; the link resolves"
+ },
+ "*:eleven links out each portfolio entry links to i": {
+  "status": "met",
+  "why": "every portfolio entry links its category (fifteen now)"
+ },
+ "*:schema add nothing here the place node with the ": {
+  "status": "met",
+  "why": "no second Place"
+ },
+ "*:heading levels h2 h3 on product portfolio stat v": {
+  "status": "met",
+  "why": "<h2>, <h3>; stats not headings"
+ },
+ "*:this is the only section on the site that can ca": {
+  "status": "met",
+  "why": "two Person nodes, linked to the Organization"
+ },
+ "*:add sameas per founder once linkedin urls are co": {
+  "status": "open",
+  "why": "the LinkedIn URLs are Margo's to supply; sameAs is emitted once set in Site settings"
+ },
+ "*:do not emit numberofemployees until the headcoun": {
+  "status": "met",
+  "why": "not emitted; the headcount is unconfirmed (OPEN-ITEMS 7)"
+ },
+ "*:flag emoji need text every chip must carry the c": {
+  "status": "met",
+  "why": "the flag is aria-hidden; the country name is text"
+ },
+ "*:schema areaserved on the homepage contactpoint c": {
+  "status": "met",
+  "why": "one areaServed, on the homepage contactPoint"
+ },
+ "*:shared component this table and sheet 02 section": {
+  "status": "met",
+  "why": "both render the certifications record in Site settings"
+ },
+ "*:heading levels h2 five h3 status bracket sits in": {
+  "status": "met",
+  "why": "<h3> titles; status on the badge"
+ },
+ "*:no search value either way no verified term in t": {
+  "status": "na",
+  "why": "ruled: the section ships as the sheet's honest version (OPEN-ITEMS 10)"
+ },
+ "*:progress bars need text if the section stays eac": {
+  "status": "met",
+  "why": "the figures are real text beside the bars; the bars are decorative"
+ },
+ "*:if cut move the 20 utilisation figure into secti": {
+  "status": "na",
+  "why": "the section stays (OPEN-ITEMS 10)"
+ },
+ "*:consistency gate 48 hrs must mean quotation on e": {
+  "status": "met",
+  "why": "one figure, from Site settings; check:techseo fails any other response time printed"
+ },
+ "*:heading levels h2 stat values p the reference bl": {
+  "status": "met",
+  "why": "as rendered"
+ },
+ "*:numbers with sub labels are more citable than nu": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:markup ol a timeline is genuinely ordered each l": {
+  "status": "fixed",
+  "why": "the timeline is an <ol> of <li>, each year a <time dateTime>"
+ },
+ "*:schema foundingdate on the homepage organization": {
+  "status": "met",
+  "why": "no Event nodes"
+ },
+ "*:one source list two presentations the 24 account": {
+  "status": "met",
+  "why": "the client list is Site settings'; the homepage runs all of it, About the eight the sheet names"
+ },
+ "*:static grid so no marquee caveat here eight name": {
+  "status": "met",
+  "why": "eight <li> with the names as text"
+ },
+ "*:naming a customer who is not one carries more th": {
+  "status": "na",
+  "why": "commentary; the permission letters are Margo's (OPEN-ITEMS 12)"
+ },
+ "*:response time consistency the site publishes fiv": {
+  "status": "met",
+  "why": "one value, from Site settings"
+ },
+ "*:form label bound visually hidden is fine type em": {
+  "status": "met",
+  "why": "the email field is labelled, typed, autocompleted and required"
+ },
+ "*:success state received a quotation follows withi": {
+  "status": "met",
+  "why": "the contact form confirms in place (Phase 7b); the one-field bands go to /thank-you, which says what happens next"
+ },
+ "*:analytics named conversion event on submit three": {
+  "status": "open",
+  "why": "no analytics property yet"
+ },
+ "*:what matters on this page the footer is where ma": {
+  "status": "met",
+  "why": "the copyright line is “© 2026 Margo Rubber Products. All rights reserved.” from sheet 01 §12"
+ },
+ "*:the certificate number in the legal line and the": {
+  "status": "met",
+  "why": "both render from Site settings → Certifications"
+ },
+ "*:keyword this page targets bottom funnel intent r": {
+  "status": "met",
+  "why": "the H1 is the sheet's"
+ },
+ "*:consistency gate 48 hours for the quotation one ": {
+  "status": "met",
+  "why": "both from Site settings → Commercial"
+ },
+ "*:nap phone and email here must match the homepage": {
+  "status": "met",
+  "why": "from Site settings"
+ },
+ "*:markup phone as a href tel 919665579276 whatsapp": {
+  "status": "fixed",
+  "why": "the three channels are links with those hrefs"
+ },
+ "*:heading levels h2 for the form h3 for prefer dir": {
+  "status": "fixed",
+  "why": "the stepper is an <ol>; the current step carries aria-current=\"step\""
+ },
+ "*:file field enctype multipart form data accept pd": {
+  "status": "open",
+  "why": "waits on the storage account (OPEN-ITEMS 108)"
+ },
+ "*:crawlability is already correct here and that is": {
+  "status": "met",
+  "why": "both steps and every option are in the HTML at first paint"
+ },
+ "*:every option string is content eleven product ca": {
+  "status": "met",
+  "why": "fifteen categories and eleven industries in the DOM"
+ },
+ "*:selects need label not just a first option actin": {
+  "status": "met",
+  "why": "each select sits inside its <label>"
+ },
+ "*:do not make phone required it is optional on ste": {
+  "status": "met",
+  "why": "phone is optional"
+ },
+ "*:schema none on this section do not attempt to ma": {
+  "status": "met",
+  "why": "nothing emitted for the form"
+ },
+ "*:the footer contradicts the page above it the pag": {
+  "status": "fixed",
+  "why": "the footer CTA now reads the sheet's “Quotation from our engineering team within 48 hours.”"
+ },
+ "*:the footer nap is the only correct contact data ": {
+  "status": "met",
+  "why": "the page's channels and the footer both render Site settings"
+ },
+ "*:address block markup address nap identical to th": {
+  "status": "met",
+  "why": "<address>; one PostalAddress in the graph"
+ },
+ "*:faq schema add the three pairs to a faqpage node": {
+  "status": "met",
+  "why": "FAQPage on /contact with the three pairs (check:jsonld)"
+ },
+ "*:order form first then what happens next then log": {
+  "status": "met",
+  "why": "the sections are in that order; the form is above the fold"
+ },
+ "*:keyword the hub targets the industry cluster as ": {
+  "status": "met",
+  "why": "the hub's copy is the sheet's"
+ },
+ "*:stats markup dl with dt label and dd value as li": {
+  "status": "met",
+  "why": "<dl> stats"
+ },
+ "*:vision build guard on the buyer facing build the": {
+  "status": "na",
+  "why": "ruled: the sheet's copy ships as written (OPEN-ITEMS 1)"
+ },
+ "*:accessibility role search on the wrapper a bound": {
+  "status": "open",
+  "why": "chips are <button aria-pressed>; role=\"search\", the group role and a live region for the result count are not yet on the hub filter"
+ },
+ "*:nine internal links out anchor text rubber compo": {
+  "status": "met",
+  "why": "“Rubber components for {sector}” on every card"
+ },
+ "*:heading levels h2 nine h3 card titles inside the": {
+  "status": "met",
+  "why": "<h3> titles inside the card links; part lists are <ul>"
+ },
+ "*:honest negatives stay in the card copy the iso 1": {
+  "status": "met",
+  "why": "the hub card copy is the sheet's, non-claim included"
+ },
+ "*:consistency gate these nine descriptions must no": {
+  "status": "met",
+  "why": "each surface's copy is its own sheet's; check:claims holds the facts to one position"
+ },
+ "*:six links recovered five of six cards currently ": {
+  "status": "met",
+  "why": "every additional-sector card links its category or industry page"
+ },
+ "*:keep them out of the itemlist no url of their ow": {
+  "status": "met",
+  "why": "only sectors with a page are in the ItemList"
+ },
+ "*:two form fields named industry application and a": {
+  "status": "na",
+  "why": "the sheet's own form-field copy (§05) keeps the two labels; the copy block is what ships"
+ },
+ "*:prefill from the filter if a buyer arrives via s": {
+  "status": "met",
+  "why": "?sector= pre-selects the industry (Phase 7b)"
+ },
+ "*:success state and a named conversion event neith": {
+  "status": "open",
+  "why": "the industries form goes to /thank-you, which confirms what happens next; no analytics property yet"
+ },
+ "*:consistency gate one business day to acknowledge": {
+  "status": "met",
+  "why": "both from Site settings → Commercial"
+ },
+ "*:what matters here the industries column lists al": {
+  "status": "met",
+  "why": "the footer lists all eleven industries and fifteen categories"
+ },
+ "*:response time conflict again the page body says ": {
+  "status": "fixed",
+  "why": "the footer CTA reads 48 hours (sheet 01 §12)"
+ },
+ "*:keyword rubber components exporter india resolve": {
+  "status": "met",
+  "why": "the H1 and subhead are the sheet's"
+ },
+ "*:count consistency hero says eight closing summar": {
+  "status": "met",
+  "why": "the copy is the sheet's; nine codes across eight lane blocks, as it asks"
+ },
+ "*:same fault class as products where range and cat": {
+  "status": "met",
+  "why": "the anchor helper emits same-page fragments"
+ },
+ "*:markup nav aria label trade lanes wrapping an ol": {
+  "status": "fixed",
+  "why": "<nav aria-label=\"Trade lanes\"> around an <ol> of <a> chips"
+ },
+ "*:scroll behaviour scroll margin top on each targe": {
+  "status": "met",
+  "why": "every section carries scroll-mt-24"
+ },
+ "*:us eu sits last because it is the only block tha": {
+  "status": "na",
+  "why": "the block became two (United States, European Union) per §04"
+ },
+ "*:inline svg not an image country names and transi": {
+  "status": "fixed",
+  "why": "the map is inline SVG with the lane names as <text>, <title> and <desc>"
+ },
+ "*:accessibility role img with title and desc on th": {
+  "status": "fixed",
+  "why": "role=\"img\" with <title>/<desc>; each pin is an <a> to its market block; the lane list beside the map names all eight"
+ },
+ "*:3 550px is a quarter of the page for one element": {
+  "status": "na",
+  "why": "the map sits in a pinned sequence at viewport height, not 3,550 px"
+ },
+ "*:every pin animation behind prefers reduced motio": {
+  "status": "met",
+  "why": "globals.css collapses every animation under prefers-reduced-motion"
+ },
+ "*:no place node per pin areaserved on the homepage": {
+  "status": "met",
+  "why": "no Place per pin; areaServed on the homepage contactPoint"
+ },
+ "*:these eight passages are the most citable conten": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:heading levels each block h2 with the market nam": {
+  "status": "met",
+  "why": "as rendered"
+ },
+ "*:section ids already exist and are correct do not": {
+  "status": "met",
+  "why": "the ids are the sheet's slugs"
+ },
+ "*:give it an id and a nav chip export incoterms ad": {
+  "status": "met",
+  "why": "#incoterms is a real id on the Incoterms section"
+ },
+ "*:four definedterm nodes in a definedtermset at in": {
+  "status": "met",
+  "why": "DefinedTermSet #incoterms with the four terms"
+ },
+ "*:response time consistency is the single most rep": {
+  "status": "met",
+  "why": "one value, from Site settings"
+ },
+ "*:markup ol real sequence step labels are p step t": {
+  "status": "met",
+  "why": "<ol> of steps, <h3> titles, <strong> lead-ins"
+ },
+ "*:schema the six steps go into the page s faqpage ": {
+  "status": "open",
+  "why": "the sheet names three of the six questions and the questions are not on the page; a FAQPage whose questions are not visible is the mismatch the other sheets forbid — the six questions need writing (3rd Shade)"
+ },
+ "*:do not use howto it is for instructions the read": {
+  "status": "met",
+  "why": "no HowTo on /export"
+ },
+ "*:eight named document types with real description": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:markup dl with dt document name and dd descripti": {
+  "status": "met",
+  "why": "card grid with <h3> names, as the sheet allows"
+ },
+ "*:certificate is a load bearing word in procuremen": {
+  "status": "na",
+  "why": "the document is named “Inspection Release Report”, as the sheet renames it"
+ },
+ "*:cross link the ispm 15 entry should link to the ": {
+  "status": "fixed",
+  "why": "ISPM-15 in the document card links #australia"
+ },
+ "*:add the drawing upload field the bullet says dra": {
+  "status": "open",
+  "why": "waits on the storage account (OPEN-ITEMS 108)"
+ },
+ "*:prefill destination country from the market bloc": {
+  "status": "open",
+  "why": "not built — the export form has no per-block entry links to carry the country; a later nicety"
+ },
+ "*:labels bound autocomplete on organization countr": {
+  "status": "met",
+  "why": "labels bound, autocomplete hints, API validation, honeypot"
+ },
+ "*:success state and a named conversion event this ": {
+  "status": "open",
+  "why": "the export form goes to /thank-you; no analytics property yet"
+ },
+ "*:this six row table is the page s summary passage": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:markup dl as live or a table with caption either": {
+  "status": "met",
+  "why": "the summary is a <dl>"
+ },
+ "*:country codes must be iso 3166 1 alpha 2 uk is n": {
+  "status": "met",
+  "why": "the closing strip reads AU · GB · AE · SA · MY · US · SG · KE · TZ"
+ },
+ "*:the footer fix is what un orphans this page addi": {
+  "status": "met",
+  "why": "Export Markets is in the footer's Company column on every page"
+ },
+ "*:response time conflict again this page body says": {
+  "status": "fixed",
+  "why": "both are 48 hours now"
+ },
+ "*:the country count the live footer says 50 countr": {
+  "status": "met",
+  "why": "the footer carries no country count"
+ },
+ "*:keyword iso 9001 rubber manufacturer india resol": {
+  "status": "met",
+  "why": "the H1 and subhead are the sheet's"
+ },
+ "*:aeo the subhead is the answer to is margo rubber": {
+  "status": "na",
+  "why": "commentary on the sheet's own copy"
+ },
+ "*:the certificate pdf should be crawlable not gate": {
+  "status": "open",
+  "why": "no clean scan yet (OPEN-ITEMS 22); when it exists it is served ungated from a real URL"
+ },
+ "*:markup dl for the spec strip as live certificate": {
+  "status": "met",
+  "why": "<dl> strip; values are <dd>"
+ },
+ "*:the alt text leak is a real bug not a wording pr": {
+  "status": "met",
+  "why": "the caption is its own string; the alt is the image's"
+ },
+ "*:the extrusion scope note carries the page s hone": {
+  "status": "met",
+  "why": "the extrusion card carries its scope note"
+ },
+ "*:heading levels h2 five h3 card titles": {
+  "status": "met",
+  "why": "as rendered"
+ },
+ "*:schema none the place node for the plant ships f": {
+  "status": "met",
+  "why": "no Place on /certifications"
+ },
+ "*:internal links three products extrusion products": {
+  "status": "fixed",
+  "why": "the Extrusion lines, Compound mixing and Tool room cards link those three"
+ },
+ "*:four named process stages with real control poin": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:heading levels h2 four h3": {
+  "status": "met",
+  "why": "as rendered"
+ },
+ "*:this is the highest intent form on the site some": {
+  "status": "open",
+  "why": "no analytics property yet; every submission is stored with its source (“certifications”)"
+ },
+ "*:route it separately documentation requests shoul": {
+  "status": "open",
+  "why": "notification email is not wired yet (Resend + DNS); the desk shows the source per enquiry meanwhile"
+ },
+ "*:success state received the documents you selecte": {
+  "status": "fixed",
+  "why": "the documentation form confirms in place with that line and the address given"
+ },
+ "*:the legal line becomes checkable on this page s ": {
+  "status": "met",
+  "why": "the footer's legal line is Site settings' certifications.line"
+ },
+ "*:link the certificate pdf from the legal strip on": {
+  "status": "open",
+  "why": "waits on the scan (OPEN-ITEMS 22)"
+ },
+ "*:keyword o ring manufacturer india is verified wi": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:breadcrumb home products o rings visible and in ": {
+  "status": "met",
+  "why": "breadcrumb above the eyebrow; BreadcrumbList in the graph"
+ },
+ "*:build note the table gains two columns and chang": {
+  "status": "met",
+  "why": "the table is the sheet's ten columns"
+ },
+ "*:sign the table off against the purchased standar": {
+  "status": "open",
+  "why": "Margo's to do (OPEN-ITEMS 30)"
+ },
+ "*:the better long term table is margo s own toolin": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:sortable columns need aria sort and a real butto": {
+  "status": "met",
+  "why": "each header is a <button> with aria-sort on the <th>"
+ },
+ "*:this table is the model for the other ten catego": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:build note five new accordion panels the compone": {
+  "status": "met",
+  "why": "the material cards render the document's list — eight, nine on O-Rings"
+ },
+ "*:deep linkable products o rings aem fkm ptfe so t": {
+  "status": "fixed",
+  "why": "each material card carries its compound's id (#aem, #fkm, #ptfe …)"
+ },
+ "*:hardness moves here from the spec table shore a ": {
+  "status": "met",
+  "why": "the panels carry the hardness bands, as the sheet writes them"
+ },
+ "*:the h2 is a literal buyer question and goes in t": {
+  "status": "open",
+  "why": "the sheet writes no answer paragraph for the question (OPEN-ITEMS 29); nothing enters the graph until it does"
+ },
+ "*:trade mark attribution footnote viton is a regis": {
+  "status": "met",
+  "why": "the footnote is under the material panels"
+ },
+ "*:consistency gate eight ranges one source the hom": {
+  "status": "met",
+  "why": "Site settings → Compounds"
+ },
+ "*:build note same card component 1 item becomes 24": {
+  "status": "met",
+  "why": "the grid takes the list"
+ },
+ "*:the count comes out of the heading o rings we ma": {
+  "status": "met",
+  "why": "the heading is the sheet's string, no count"
+ },
+ "*:this is the second most citable block on the pag": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:goes in the faqpage node as the question the h2 ": {
+  "status": "met",
+  "why": "the sizing-standards question and its answer are the O-Rings FAQPage node"
+ },
+ "*:heading levels h2 four h3 standard names": {
+  "status": "met",
+  "why": "as rendered"
+ },
+ "*:standards attribution add the same footnote as s": {
+  "status": "open",
+  "why": "no wording given (OPEN-ITEMS 32)"
+ },
+ "*:prefill the product field a buyer arriving at co": {
+  "status": "fixed",
+  "why": "every plain /contact link on a category page carries ?product=<category>, which the form reads"
+ },
+ "*:named conversion event seventh rfq entry point o": {
+  "status": "open",
+  "why": "no analytics property yet"
+ },
+ "*:tel href must match the visible number and the o": {
+  "status": "met",
+  "why": "one number, from Site settings"
+ },
+ "*:what matters here the products column going from": {
+  "status": "met",
+  "why": "the footer lists all fifteen"
+ },
+ "*:every footer on the site states a minimum order ": {
+  "status": "met",
+  "why": "the footer carries no minimum-order figure"
+ },
+ "*:the mahindra clause is the strongest sentence av": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:breadcrumb home products oil seals visible and i": {
+  "status": "met",
+  "why": "breadcrumb and BreadcrumbList on every category page"
+ },
+ "*:the live hedging line is kept values are indicat": {
+  "status": "met",
+  "why": "kept, as written"
+ },
+ "*:link the disclaimer beneath the table typical va": {
+  "status": "met",
+  "why": "the footnote links /legal/disclaimer on “technical disclaimer”"
+ },
+ "*:build note four new accordion panels the compone": {
+  "status": "met",
+  "why": "the material cards render the document's list"
+ },
+ "*:the generic h2 is a real seo problem which mater": {
+  "status": "met",
+  "why": "each page's H2 is its own sheet's, with the product noun"
+ },
+ "*:build note same card component link removed six ": {
+  "status": "met",
+  "why": "the grid takes the list; a card that is a part links its page (OPEN-ITEMS 119)"
+ },
+ "*:the count comes out of the heading oil seals we ": {
+  "status": "met",
+  "why": "the heading is the sheet's string"
+ },
+ "*:all sixteen names are client confirmed 2026 09 0": {
+  "status": "met",
+  "why": "the names ship as written"
+ },
+ "*:footer global component copy written out above p": {
+  "status": "met",
+  "why": "the footer lists all fifteen; no minimum-order line"
+ },
+ "*:prefill the product field from the category on a": {
+  "status": "fixed",
+  "why": "every plain /contact link on a category page carries ?product=<category>"
+ },
+ "*:head term placement rubber gasket manufacturer i": {
+  "status": "met",
+  "why": "the H1 and subhead are the sheet's"
+ },
+ "*:17 9 m is a computed figure cross checked twice ": {
+  "status": "met",
+  "why": "the figure is the sheet's, the same on every page that carries it"
+ },
+ "*:standard numbers are the highest value tokens on": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:sort controls stay they are already keyboard rea": {
+  "status": "met",
+  "why": "<button> in <th scope=\"col\"> with aria-sort"
+ },
+ "*:heading levels the section heading is h2 each co": {
+  "status": "met",
+  "why": "<h2> then an <h3> per panel"
+ },
+ "*:hardness for the sponge panel is not a shore a b": {
+  "status": "met",
+  "why": "the sponge panel's hardness reads as the sheet writes it"
+ },
+ "*:shared component this accordion renders identica": {
+  "status": "met",
+  "why": "one component, a list per page, compound data from Site settings"
+ },
+ "*:build note same card component 3 items become 22": {
+  "status": "met",
+  "why": "the grid takes the list"
+ },
+ "*:build once this is one component rendering on 40": {
+  "status": "met",
+  "why": "one footer component"
+ },
+ "*:what it fixes on this page specifically the prod": {
+  "status": "met",
+  "why": "the footer lists all fifteen"
+ },
+ "*:head term placement rubber bellows manufacturer ": {
+  "status": "met",
+  "why": "the H1 and subhead are the sheet's"
+ },
+ "*:two head terms one page bellows and boots are di": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:this table is the page s aeo surface and after t": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:naming iso 132 astm d430 and astm d813 is the cr": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:do not put the fatigue ranking in schema visible": {
+  "status": "met",
+  "why": "no fatigue property in the graph"
+ },
+ "*:shared component one data source the compound da": {
+  "status": "met",
+  "why": "Site settings → Compounds"
+ },
+ "*:bellows is the category with the weakest sibling": {
+  "status": "met",
+  "why": "the related products (oil seals, grommets) link from the body"
+ },
+ "*:head term placement anti vibration mount manufac": {
+  "status": "met",
+  "why": "the H1 and subhead are the sheet's"
+ },
+ "*:the bonding claim needs to exist elsewhere on th": {
+  "status": "met",
+  "why": "/products/bonded-components carries it, linked sitewide"
+ },
+ "*:the footnote is the highest value passage on thi": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:do not put load stiffness or frequency figures i": {
+  "status": "met",
+  "why": "no such properties in the graph"
+ },
+ "*:telling a buyer what not to specify is the stron": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:dynamic to static stiffness ratio is the term to": {
+  "status": "na",
+  "why": "kept, as written"
+ },
+ "*:build note same card component 5 items become 20": {
+  "status": "met",
+  "why": "the grid takes the list"
+ },
+ "*:the four oem named parts are the most valuable s": {
+  "status": "na",
+  "why": "the parts ship under their SKU sheets' names (version A where the sheet writes two)"
+ },
+ "*:the count comes out of the heading mounts we mak": {
+  "status": "met",
+  "why": "the heading is the sheet's string"
+ },
+ "*:abbreviations in headings are worth auditing sit": {
+  "status": "met",
+  "why": "the closing H2 is the sheet's wording"
+ },
+ "*:this page has two sibling categories a buyer wil": {
+  "status": "met",
+  "why": "the related products link both from the body"
+ },
+ "*:head term placement rubber grommet manufacturer ": {
+  "status": "met",
+  "why": "the H1 and subhead are the sheet's"
+ },
+ "*:this is a rare case where the seo fix and the co": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:the footnote is the aeo surface how do i measure": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:do not put the size bands in schema as a hard ra": {
+  "status": "met",
+  "why": "no size range in the graph"
+ },
+ "*:build note same card component 2 items become 18": {
+  "status": "met",
+  "why": "the grid takes the list"
+ },
+ "*:two part names is the weakest aeo surface of any": {
+  "status": "na",
+  "why": "the grid carries the eighteen"
+ },
+ "*:the footer is the only route out of this page no": {
+  "status": "met",
+  "why": "the related products link from the body; the edge-protection strip card is as the sheet lists it (OPEN-ITEMS 45)"
+ },
+ "*:head term placement rubber bush manufacturer ind": {
+  "status": "met",
+  "why": "the H1 and subhead are the sheet's"
+ },
+ "*:internal consistency is a ranking factor here no": {
+  "status": "met",
+  "why": "hero, table and panels are one sheet's copy on one document"
+ },
+ "*:the aem panel is the page s geo asset it is the ": {
+  "status": "met",
+  "why": "the panel copy is the sheet's; the compound figures are Site settings'"
+ },
+ "*:build note same card component 1 item becomes 18": {
+  "status": "met",
+  "why": "the grid takes the list"
+ },
+ "*:one part name is the weakest possible aeo surfac": {
+  "status": "na",
+  "why": "the grid carries the eighteen"
+ },
+ "*:the footer label for this very category is wrong": {
+  "status": "met",
+  "why": "the footer reads Bushes & Bushings from the route registry"
+ },
+ "*:this page has no single head term and that is fi": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:id specifications stays on this section and beco": {
+  "status": "met",
+  "why": "the spec table is #specifications and the hero CTA is a same-page link to it"
+ },
+ "*:this is the highest yield table on the site for ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:this section and the table above must agree and ": {
+  "status": "met",
+  "why": "both are the sheet's copy"
+ },
+ "*:build note same card component 13 items become 2": {
+  "status": "met",
+  "why": "the grid takes the list"
+ },
+ "*:the five vehicle and system names are the most v": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:remove the link from the card the thirteen sku c": {
+  "status": "na",
+  "why": "superseded — the part pages exist and each card that is a part links its page (OPEN-ITEMS 119)"
+ },
+ "*:card titles are h3 not links the second and thir": {
+  "status": "na",
+  "why": "<h3> titles; a card that is a part links its name (OPEN-ITEMS 119)"
+ },
+ "*:schema the thirteen catalogue components go in t": {
+  "status": "fixed",
+  "why": "ItemList for the thirteen; additionalProperty for the nine generic names"
+ },
+ "*:shared component with a per page label the row l": {
+  "status": "met",
+  "why": "row labels come from the document"
+ },
+ "*:this is the narrowest and highest intent page on": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:both nouns must survive alloy wheel disambiguate": {
+  "status": "met",
+  "why": "the H1 is the sheet's"
+ },
+ "*:the footnote is the aeo surface and it is unusua": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:naming astm d395 and iso 815 1 is the credibilit": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:do not put compression set values in schema or i": {
+  "status": "met",
+  "why": "none in the graph or the table"
+ },
+ "*:the non standard geometry row is a deliberate ex": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:this is the one page where the h2 should not fol": {
+  "status": "met",
+  "why": "the H2 is the sheet's"
+ },
+ "*:this block converts harder on this page than on ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:goes in the faqpage node can i reorder leak test": {
+  "status": "open",
+  "why": "no answers written (OPEN-ITEMS 52)"
+ },
+ "*:consistency gate with one deliberate exception 4": {
+  "status": "met",
+  "why": "the figures are the sheet's; the exception ships as written"
+ },
+ "*:this page has no outbound links at all in its bo": {
+  "status": "met",
+  "why": "the related products link from the body"
+ },
+ "*:this hero is the model the other ten category pa": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:the tolerance figure needs its standard 0 2 mm i": {
+  "status": "met",
+  "why": "the copy is the sheet's, with the class named"
+ },
+ "*:the cross sections must be svg with text not fla": {
+  "status": "fixed",
+  "why": "each profile drawing is inline SVG with a <title> naming the section"
+ },
+ "*:card titles are h3 eight h3 s under one h2 is a ": {
+  "status": "met",
+  "why": "as rendered"
+ },
+ "*:iso 3302 1 belongs here and on every other produ": {
+  "status": "met",
+  "why": "named in the copy where the sheet writes it"
+ },
+ "*:this table should be the source the other ten ca": {
+  "status": "met",
+  "why": "Site settings → Compounds is the one source"
+ },
+ "*:every compound blended in house is a real differ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:three cure methods named is the most technically": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:stage headings are h3 numbered in a li or dl not": {
+  "status": "met",
+  "why": "the process is an <ol> of <li> with <h3> titles"
+ },
+ "*:do not mark this up as howto it describes what m": {
+  "status": "met",
+  "why": "no HowTo on the process; the HowTo is the specification guide (§05)"
+ },
+ "*:rubber extrusion process and continuous vulcanis": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:this is the only block on the site that earns a ": {
+  "status": "fixed",
+  "why": "HowTo from the four-line specification guide"
+ },
+ "*:how do i specify a rubber extrusion profile is a": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:heading levels h2 for the section h3 for each of": {
+  "status": "met",
+  "why": "<h2> then four <h3>"
+ },
+ "*:the 48 hour figure is the site constant and must": {
+  "status": "met",
+  "why": "Site settings → Commercial"
+ },
+ "*:repeat this block s pattern on the moulded categ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:the pune attribution is a ship stopper not a bac": {
+  "status": "met",
+  "why": "the quote's attribution is the sheet's corrected one"
+ },
+ "*:do not emit the test standards as hascertificati": {
+  "status": "met",
+  "why": "no Certification nodes for test methods"
+ },
+ "*:splitting the list is an aeo gain not only an ho": {
+  "status": "na",
+  "why": "the two groups ship as written"
+ },
+ "*:the documentation package is the citable passage": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:markup the quote is blockquote with cite the two": {
+  "status": "fixed",
+  "why": "<blockquote> with <cite>; group headings <h3> over <ul>; standards in <code>"
+ },
+ "*:per metre is a genuine competitive position and ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:goes in the faqpage node is there a minimum orde": {
+  "status": "open",
+  "why": "no answers written (OPEN-ITEMS 57)"
+ },
+ "*:this is the only category page whose commercial ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:analytics named conversion event on each button ": {
+  "status": "open",
+  "why": "no analytics property yet"
+ },
+ "*:the file upload is a build decision not a copy o": {
+  "status": "open",
+  "why": "waits on the storage account (OPEN-ITEMS 108)"
+ },
+ "*:heading level h2 both buttons are a elements not": {
+  "status": "met",
+  "why": "both buttons are <a>"
+ },
+ "*:the 48 hour figure appears twice on this page he": {
+  "status": "met",
+  "why": "Site settings → Commercial"
+ },
+ "*:the products column must point at products extru": {
+  "status": "met",
+  "why": "the route registry"
+ },
+ "*:three head terms live on this page and all three": {
+  "status": "met",
+  "why": "the copy is the sheet's"
+ },
+ "*:the breadcrumb is already built every other shee": {
+  "status": "met",
+  "why": "the breadcrumb is on every category page"
+ },
+ "*:closed cell vs open cell foam is a high volume i": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:give the block its own id and link to it cell st": {
+  "status": "open",
+  "why": "#cell-structure exists; the gaskets, extrusion and industry pages link the sponge page but not this fragment — copy on those pages is their sheets', which name no such link"
+ },
+ "*:do not put the density ranges in schema from thi": {
+  "status": "met",
+  "why": "the density property is emitted once, from the density scale (§05)"
+ },
+ "*:the removed nrc figure should not be replaced by": {
+  "status": "met",
+  "why": "no acoustic figure on the site"
+ },
+ "*:this block and section 04 are duplicate content ": {
+  "status": "na",
+  "why": "both blocks ship as the sheet writes them"
+ },
+ "*:tab controls are button with role tab and aria s": {
+  "status": "met",
+  "why": "as rendered"
+ },
+ "*:this table and the tab panels in section 03 must": {
+  "status": "met",
+  "why": "both read the document's compound items"
+ },
+ "*:this is the block to expose in additionalpropert": {
+  "status": "fixed",
+  "why": "the Product carries Density as a PropertyValue, 12–200 kg/m³ (unitCode KMQ)"
+ },
+ "*:what density foam do i need is answered here in ": {
+  "status": "fixed",
+  "why": "each band is a <dt> with its note as <dd>"
+ },
+ "*:markup the quote is blockquote with cite the sam": {
+  "status": "fixed",
+  "why": "<blockquote> with <cite> on both pages, each attribution from its document"
+ },
+ "*:this block deserves its own url self adhesive fo": {
+  "status": "na",
+  "why": "commentary — a page would need its own sheet"
+ },
+ "*:do not put the 150 c and 80 c adhesive ceilings ": {
+  "status": "met",
+  "why": "no adhesive figure in the graph"
+ },
+ "*:the removed 40 claim should not be replaced by a": {
+  "status": "met",
+  "why": "no percentage claim on the page"
+ },
+ "*:these four cards are the closest thing to case e": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:the 300k hvac volume figure belongs here on card": {
+  "status": "open",
+  "why": "a figure for Margo to reconcile; not added"
+ },
+ "*:card titles are h3 the compound tag is a p or a ": {
+  "status": "met",
+  "why": "<h3> titles; the tag is a <span>"
+ },
+ "*:howto node with four howtostep children name how": {
+  "status": "met",
+  "why": "the HowTo node is emitted from the specification guide"
+ },
+ "*:this version is better than the extrusion page s": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:heading levels h2 for the section h3 for each pa": {
+  "status": "met",
+  "why": "<h2> then <h3>; the numbers are CSS"
+ },
+ "*:three pages three different sector counts this p": {
+  "status": "met",
+  "why": "each page's sector cards are its sheet's; the registry names eleven sectors and the footer lists them"
+ },
+ "*:construction has no industry page and is named o": {
+  "status": "met",
+  "why": "built (sheet 41)"
+ },
+ "*:the heading is a question in disguise and should": {
+  "status": "met",
+  "why": "the heading is the sheet's"
+ },
+ "*:heading levels h2 both buttons are a elements": {
+  "status": "met",
+  "why": "as rendered"
+ },
+ "*:this page ends better than it begins which is ra": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:this page is one of the two categories with no s": {
+  "status": "met",
+  "why": "the footer lists it on every page"
+ },
+ "*:the mahindra sentence is the site s single stron": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:two head terms automotive rubber components manu": {
+  "status": "met",
+  "why": "the H1 and title are the sheet's"
+ },
+ "*:do not duplicate the product descriptions one li": {
+  "status": "met",
+  "why": "the component cards are the sheet's one-line bodies with a link"
+ },
+ "*:this block answers what rubber parts are in a ca": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:this same four group structure should be used on": {
+  "status": "na",
+  "why": "each page follows its sheet"
+ },
+ "*:the aem temperature figure must render from the ": {
+  "status": "met",
+  "why": "Site settings → Compounds"
+ },
+ "*:the ten thousandth part matches the first articl": {
+  "status": "na",
+  "why": "kept, as written"
+ },
+ "*:shared component across nine pages only the h2 n": {
+  "status": "met",
+  "why": "one template"
+ },
+ "*:the location panel is a second nap mention on ev": {
+  "status": "met",
+  "why": "from Site settings"
+ },
+ "*:do not emit a second place or postaladdress node": {
+  "status": "met",
+  "why": "no second Place"
+ },
+ "*:if the certificate pdf ships link it from all ni": {
+  "status": "open",
+  "why": "waits on the scan (OPEN-ITEMS 22)"
+ },
+ "*:the iatf line renders from one constant across f": {
+  "status": "met",
+  "why": "Site settings → Certifications"
+ },
+ "*:ppap is a searched term and removing it costs a ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:this is the most citable block on any industry p": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:every one of the nine industry pages needs its e": {
+  "status": "met",
+  "why": "each industry page's FAQ is its sheet's"
+ },
+ "*:faqpage node with four question children answer ": {
+  "status": "met",
+  "why": "FAQPage from the same field the page renders (check:jsonld)"
+ },
+ "*:what it fixes on this page specifically the indu": {
+  "status": "met",
+  "why": "the footer lists all eleven industries"
+ },
+ "*:the products column matters more on an industry ": {
+  "status": "met",
+  "why": "the footer lists all fifteen categories"
+ },
+ "*:two markets one page mining rubber components ma": {
+  "status": "met",
+  "why": "the H1 and subhead are the sheet's"
+ },
+ "*:this block answers what rubber parts are on a co": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:this four group structure should be the model fo": {
+  "status": "na",
+  "why": "each page follows its sheet"
+ },
+ "*:lining and skirting have a product page now reso": {
+  "status": "met",
+  "why": "built (sheet 38) and linked from the card"
+ },
+ "*:the two temperature figures must render from the": {
+  "status": "met",
+  "why": "Site settings → Compounds"
+ },
+ "*:if polyurethane is genuinely processed this is a": {
+  "status": "na",
+  "why": "polyurethane is not processed — the sheets state it as a boundary"
+ },
+ "*:this section is why the page can rank in austral": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:do not declare australia in areaserved on this p": {
+  "status": "met",
+  "why": "the Service node carries no areaServed"
+ },
+ "*:ispm 15 is a searched term among export buyers a": {
+  "status": "met",
+  "why": "the copy is the sheet's"
+ },
+ "*:q4 belongs in the faqpage node and it is the pag": {
+  "status": "met",
+  "why": "every question on the page is in the node"
+ },
+ "*:lead time figures render from the site constant ": {
+  "status": "met",
+  "why": "lead times from Site settings; transit ranges as the sheet writes them"
+ },
+ "*:three markets one page oil and gas rubber seals ": {
+  "status": "met",
+  "why": "the H1 and subhead are the sheet's"
+ },
+ "*:the standard numbers are the ranking asset on th": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:the flange standard numbers are the highest valu": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:the three temperature figures must render from t": {
+  "status": "met",
+  "why": "Site settings → Compounds"
+ },
+ "*:fkm at 250 c carries the open question raised on": {
+  "status": "open",
+  "why": "the grade question is Margo's (OPEN-ITEMS 28)"
+ },
+ "*:back up ring is a searched term with genuine int": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:this block should link to the new faq qualificat": {
+  "status": "fixed",
+  "why": "“Documentation available on request” in the quality block links #faq"
+ },
+ "*:do not declare the gulf in areaserved on this pa": {
+  "status": "met",
+  "why": "no areaServed on the Service node"
+ },
+ "*:the transit figure is a lane figure state the ra": {
+  "status": "met",
+  "why": "as the sheet writes it"
+ },
+ "*:q1 is the most important answer on this page and": {
+  "status": "met",
+  "why": "the sheet's Q1 is on the page and in the FAQPage node"
+ },
+ "*:q3 is the compound question an assistant is aske": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:the time zone overlap is a real gulf selling poi": {
+  "status": "na",
+  "why": "commentary — the copy is the sheet's"
+ },
+ "*:the head term is the compound not the sector med": {
+  "status": "met",
+  "why": "the H1 and title are the sheet's"
+ },
+ "*:six internal links out of a page with none": {
+  "status": "met",
+  "why": "every card links its category"
+ },
+ "*:diaphragm was the most valuable missing string o": {
+  "status": "met",
+  "why": "the diaphragms page exists and the card links it"
+ },
+ "*:deliberate omissions are as important as inclusi": {
+  "status": "na",
+  "why": "the cards are the sheet's"
+ },
+ "*:iso 10993 is the standard to name and this page ": {
+  "status": "met",
+  "why": "named as the sheet writes it"
+ },
+ "*:equipment group headings are h3": {
+  "status": "met",
+  "why": "as rendered"
+ },
+ "*:iso 10993 must be named as a standard the compou": {
+  "status": "met",
+  "why": "named as a standard; no credential in the graph"
+ },
+ "*:the temperature figures render from the locked h": {
+  "status": "met",
+  "why": "Site settings → Compounds"
+ },
+ "*:the quality policy is the cheapest document on t": {
+  "status": "open",
+  "why": "the quality policy file is Margo's to supply (OPEN-ITEMS 63)"
+ },
+ "*:the responsibility sentence must appear identica": {
+  "status": "met",
+  "why": "the sentence is the sheets' wording in each place"
+ },
+ "*:no areaserved on this page s node the five marke": {
+  "status": "met",
+  "why": "no areaServed on the Service node"
+ },
+ "*:q4 changes an answer that is currently working a": {
+  "status": "met",
+  "why": "the answer is the sheet's"
+ },
+ "*:the regulatory responsibility sentence appears i": {
+  "status": "met",
+  "why": "both are the sheet's identical string"
+ },
+ "*:leak free is the outcome word and it should not ": {
+  "status": "na",
+  "why": "kept, as written"
+ },
+ "*:the corrected standard numbers are the highest v": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:the wear component wording must match the mining": {
+  "status": "met",
+  "why": "both pages carry their sheets' matching wording (client-confirmed 2026-09-02)"
+ },
+ "*:shaft surface finish is a genuine aeo opportunit": {
+  "status": "na",
+  "why": "commentary — the seals page (39 §06) carries it"
+ },
+ "*:material certification is a card and a gasket bu": {
+  "status": "open",
+  "why": "the document set (material certificates) is issued on request; no file to link yet"
+ },
+ "*:the generic market list is a missed opportunity ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:q3 is the answer working hardest against the bus": {
+  "status": "met",
+  "why": "the answer is the sheet's"
+ },
+ "*:q2 names three approval schemes without claiming": {
+  "status": "met",
+  "why": "as written; check:claims forbids a held reading"
+ },
+ "*:q4 s boundary sentence must match the mining pag": {
+  "status": "met",
+  "why": "both are the sheets' identical string"
+ },
+ "*:the refrigerant plus lubricant point is the aeo ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:compression set is the through line of this sect": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:iso 1431 1 is named as a test run at the partner": {
+  "status": "met",
+  "why": "as written"
+ },
+ "*:the uae lead market case is stronger here than o": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:this question set is the best on any industry pa": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:q2 names two flammability standards without clai": {
+  "status": "met",
+  "why": "as written"
+ },
+ "*:this cta is a different component from the other": {
+  "status": "met",
+  "why": "one closing band on every industry page, its contact strip from Site settings"
+ },
+ "*:two audiences one page switchgear and panel buil": {
+  "status": "met",
+  "why": "the copy is the sheet's"
+ },
+ "*:leading with sealing is deliberate and should ho": {
+  "status": "na",
+  "why": "the copy is the sheet's"
+ },
+ "*:emi gasket carrier foam rather than emi gasket i": {
+  "status": "na",
+  "why": "as written"
+ },
+ "*:an ip rating belongs to a tested enclosure not t": {
+  "status": "met",
+  "why": "the copy is the sheet's; check:claims forbids a held rating"
+ },
+ "*:dielectric strength is measured to astm d149 or ": {
+  "status": "met",
+  "why": "named as the sheet writes them"
+ },
+ "*:electrical assemblies fail at their seals is the": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:the two temperature figures render from the lock": {
+  "status": "met",
+  "why": "Site settings → Compounds"
+ },
+ "*:this is the block a panel builder s supplier qua": {
+  "status": "open",
+  "why": "the quality links are the request-form fallback until the PDFs exist (OPEN-ITEMS 63)"
+ },
+ "*:the ce and ukca sentence must match the disclaim": {
+  "status": "met",
+  "why": "both carry the sheets' wording"
+ },
+ "*:q4 is now correct in both halves and states a re": {
+  "status": "met",
+  "why": "the answer is the sheet's"
+ },
+ "*:q1 names two flammability standards without clai": {
+  "status": "met",
+  "why": "as written"
+ },
+ "*:q5 s failure mode question is the best reverse e": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:this cta variant is used on at least two industr": {
+  "status": "met",
+  "why": "one closing band component on all eleven industry pages"
+ },
+ "*:weather and uv resistant is the right opening pr": {
+  "status": "na",
+  "why": "kept"
+ },
+ "*:two search audiences indian oems search tractor ": {
+  "status": "met",
+  "why": "the copy is the sheet's"
+ },
+ "*:diaphragms are claimed on three industry pages a": {
+  "status": "met",
+  "why": "built and linked"
+ },
+ "*:eight internal links out of a page that has none": {
+  "status": "met",
+  "why": "every application card links its category page"
+ },
+ "*:card titles are h3 the tab controls are button r": {
+  "status": "met",
+  "why": "as rendered"
+ },
+ "*:shared across all nine industry pages with the s": {
+  "status": "met",
+  "why": "one component (IndustryDetail) on all eleven industry pages"
+ },
+ "*:equipment group headings are h3 four named machi": {
+  "status": "met",
+  "why": "as rendered"
+ },
+ "*:the certificate number is the geo asset checkabl": {
+  "status": "met",
+  "why": "printed as text"
+ },
+ "*:the epdm exclusion in q4 is a trust signal telli": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:never write medical grade without qualifying it ": {
+  "status": "met",
+  "why": "the copy is the sheet's, qualified as written"
+ },
+ "*:the diagnostics scoping should not be widened no": {
+  "status": "na",
+  "why": "the copy is the sheet's"
+ },
+ "*:this sector splits into two search audiences pum": {
+  "status": "met",
+  "why": "the copy is the sheet's"
+ },
+ "*:the sponge and extrusion cards close a real gap ": {
+  "status": "met",
+  "why": "both cards link their category pages"
+ },
+ "*:self adhesive foam tape is a distinct search and": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:do not name specific refrigerants in the copy th": {
+  "status": "met",
+  "why": "none named"
+ },
+ "*:do not emit a contactpoint from this strip the h": {
+  "status": "met",
+  "why": "no ContactPoint off the homepage"
+ },
+ "*:assembly headings are h3 four named assembly cla": {
+  "status": "met",
+  "why": "as rendered"
+ },
+ "*:astm d395 method b is now named on five sheets l": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:do not emit a contactpoint from this strip a sec": {
+  "status": "met",
+  "why": "no ContactPoint off the homepage"
+ },
+ "*:the concentrate versus spray point is this page ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:card titles are h3 section heading h2 eyebrow a ": {
+  "status": "met",
+  "why": "as rendered; eyebrows are <p>"
+ },
+ "*:ozone testing is stated as in house because it i": {
+  "status": "met",
+  "why": "as written"
+ },
+ "*:reverse engineer from an existing part is a sear": {
+  "status": "na",
+  "why": "commentary — the copy is the sheet's"
+ },
+ "*:card titles h3 sub titles a p or strong not h4 w": {
+  "status": "met",
+  "why": "as rendered"
+ },
+ "*:this is the page s geo section and the heading i": {
+  "status": "met",
+  "why": "the heading is the sheet's"
+ },
+ "*:nhava sheva named once it is the port an importe": {
+  "status": "met",
+  "why": "named"
+ },
+ "*:questions stay literal what is the minimum order": {
+  "status": "met",
+  "why": "as written"
+ },
+ "*:q2 is the page s strongest aeo asset which rubbe": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:what it fixes on this page specifically the lega": {
+  "status": "met",
+  "why": "the footer legal line now reads Margo Rubber Products (sheet 01 §12)"
+ },
+ "*:potable water must survive into the visible copy": {
+  "status": "met",
+  "why": "printed 16 times on the page"
+ },
+ "*:breadcrumb above the eyebrow home industries wat": {
+  "status": "met",
+  "why": "rendered"
+ },
+ "*:two audiences two vocabularies pump and valve oe": {
+  "status": "met",
+  "why": "the copy is the sheet's"
+ },
+ "*:seven internal links out of a page with none eve": {
+  "status": "met",
+  "why": "every application card links its category page"
+ },
+ "*:diaphragms are claimed on four industry pages an": {
+  "status": "met",
+  "why": "built and linked"
+ },
+ "*:name the standards as text in full once each asm": {
+  "status": "met",
+  "why": "printed as text"
+ },
+ "*:do not name a specific disinfectant dose or resi": {
+  "status": "met",
+  "why": "none named"
+ },
+ "*:card titles are h3 a card title is the most quot": {
+  "status": "met",
+  "why": "as rendered"
+ },
+ "*:card 1 is the page s strongest aeo passage is ep": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:never write wras approved nsf 61 certified or as": {
+  "status": "met",
+  "why": "not written; check:claims forbids each"
+ },
+ "*:astm d395 method b is named as run in house beca": {
+  "status": "met",
+  "why": "as written"
+ },
+ "*:reverse engineering from an existing part is a s": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:iatf iso 14001 and iso 45001 are prose only neve": {
+  "status": "met",
+  "why": "none in hasCredential"
+ },
+ "*:card titles h3 sub titles a p or strong not h4": {
+  "status": "met",
+  "why": "as rendered"
+ },
+ "*:this is the page s geo section potable water gas": {
+  "status": "met",
+  "why": "the heading is the sheet's"
+ },
+ "*:country names are text not flag images": {
+  "status": "met",
+  "why": "text"
+ },
+ "*:nhava sheva named once it is the port on the bil": {
+  "status": "met",
+  "why": "named"
+ },
+ "*:faqpage schema carries all five verbatim and the": {
+  "status": "met",
+  "why": "five Question nodes, the old Q2 gone"
+ },
+ "*:q1 is the single most valuable passage on this p": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:what it fixes on this page specifically the desc": {
+  "status": "met",
+  "why": "the description is the sheet's"
+ },
+ "*:every figure here traces to the signed company p": {
+  "status": "met",
+  "why": "as written; check:claims"
+ },
+ "*:breadcrumb above the eyebrow home case studies": {
+  "status": "met",
+  "why": "rendered"
+ },
+ "*:stage titles are h3 the 01 04 numerals are decor": {
+  "status": "met",
+  "why": "numerals in <span aria-hidden=\"true\">, titles <h3>"
+ },
+ "*:this section is the page s aeo asset and it is u": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:three internal links all live certifications abo": {
+  "status": "met",
+  "why": "all three link; no downloads"
+ },
+ "*:never ship a control with no destination three o": {
+  "status": "met",
+  "why": "the only <button> is the menu toggle; every CTA is a link"
+ },
+ "*:card titles h3 eyebrows a p": {
+  "status": "met",
+  "why": "as rendered"
+ },
+ "*:anchor text on the destination see who we supply": {
+  "status": "met",
+  "why": "both printed as the anchor text"
+ },
+ "*:this section is the page s best chance of being ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:q3 is the strongest passage it removes the barri": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:q3 is the strongest passage it tells the buyer e": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:q3 is the strongest passage it tells the buyer t": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:post cure on fkm is a searchable technical term ": {
+  "status": "na",
+  "why": "kept, as written"
+ },
+ "*:the compound list must be per part data a load p": {
+  "status": "open",
+  "why": "the compound list is per part in the CMS (sku.compounds); the sheets' own per-part lists are the values until Margo edits them (OPEN-ITEMS 112)"
+ },
+ "*:the compound list must be per part data a shape ": {
+  "status": "open",
+  "why": "the compound list is per part in the CMS (sku.compounds); the sheets' own per-part lists are the values until Margo edits them (OPEN-ITEMS 112)"
+ },
+ "*:the compound list must be per part data a fitmen": {
+  "status": "open",
+  "why": "the compound list is per part in the CMS (sku.compounds); the sheets' own per-part lists are the values until Margo edits them (OPEN-ITEMS 112)"
+ },
+ "*:the compound list must be per part data not a co": {
+  "status": "open",
+  "why": "the compound list is per part in the CMS (sku.compounds); the sheets' own per-part lists are the values until Margo edits them (OPEN-ITEMS 112)"
+ },
+ "*:the compound list must be per part data a defaul": {
+  "status": "open",
+  "why": "the compound list is per part in the CMS (sku.compounds); the sheets' own per-part lists are the values until Margo edits them (OPEN-ITEMS 112)"
+ },
+ "*:the compound list must be per part data natural ": {
+  "status": "open",
+  "why": "the compound list is per part in the CMS (sku.compounds); the sheets' own per-part lists are the values until Margo edits them (OPEN-ITEMS 112)"
+ },
+ "*:the compound list must be per part data a compou": {
+  "status": "open",
+  "why": "the compound list is per part in the CMS (sku.compounds); the sheets' own per-part lists are the values until Margo edits them (OPEN-ITEMS 112)"
+ },
+ "*:the compound list must be per part data one hard": {
+  "status": "open",
+  "why": "the compound list is per part in the CMS (sku.compounds); the sheets' own per-part lists are the values until Margo edits them (OPEN-ITEMS 112)"
+ },
+ "*:geo nashik maharashtra appears in prose here not": {
+  "status": "met",
+  "why": "the story paragraph prints it in a <p>"
+ },
+ "*:delivered volume beats account count 24 named ac": {
+  "status": "na",
+  "why": "commentary — the figure is the sheet's"
+ },
+ "*:icons decorative alt and aria hidden true do not": {
+  "status": "met",
+  "why": "68 of 69 svgs aria-hidden; the map is the one named on purpose"
+ },
+ "*:do not add offer price or availability margo quo": {
+  "status": "met",
+  "why": "Offers carry no price or availability"
+ },
+ "*:slug display map fixes the live leakage bug hvac": {
+  "status": "met",
+  "why": "labels come from the route registry; check:matrix fails a slug in prose"
+ },
+ "*:internal links nine exact match anchor text comb": {
+  "status": "met",
+  "why": "nine sector cards link their industry pages by name"
+ },
+ "*:type itemlist id https margorubber in process na": {
+  "status": "met",
+  "why": "emitted on the homepage"
+ },
+ "*:address prose must never name midc ambad the cli": {
+  "status": "met",
+  "why": "MIDC Ambad appears nowhere on the site; the Vilholi address is the one printed"
+ },
+ "*:type place id https margorubber in plant name ma": {
+  "status": "met",
+  "why": "emitted with the PostalAddress"
+ },
+ "*:geo coordinates are confirmed and unused the liv": {
+  "status": "met",
+  "why": "geo emitted on the Organization node (19.93214315, 73.73324186)"
+ },
+ "*:heading levels h2 four h3 market names country c": {
+  "status": "fixed",
+  "why": "lane cards now <ul> of <li> with <h3> names and the country code aria-hidden"
+ },
+ "*:heading levels h2 then h3 stat values are p on t": {
+  "status": "met",
+  "why": "check:matrix fails a stat heading or a heading in the footer"
+ },
+ "*:deep linkable tabs products aem fkm silicone so ": {
+  "status": "met",
+  "why": "compoundAnchor ids on the hub tabs and the category material cards"
+ },
+ "*:slug display map tab labels are display names th": {
+  "status": "met",
+  "why": "labels from the route registry"
+ },
+ "*:why publish the roadmap at all a buyer already i": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:why it is worse than a ranking problem per the a": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:badge images do not use iso or iatf logo marks c": {
+  "status": "met",
+  "why": "text badges; no certification-body logo image on the page"
+ },
+ "*:two named groups outrank one long list a buyer s": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:markup two table s with caption not chip div s t": {
+  "status": "met",
+  "why": "two tables with captions, th scope=row/col"
+ },
+ "*:standard numbers are citation bait twelve astm a": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:a gated pdf earns nothing it cannot be crawled c": {
+  "status": "na",
+  "why": "commentary — no gated PDF on the site"
+ },
+ "*:why a vision statement can rank at all only if i": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:numbering is real here so ol is correct but only": {
+  "status": "met",
+  "why": "values are an <ol> and the numerals show"
+ },
+ "*:card 03 is the citation earner four named specif": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:an unnamed quote is worth less than no quote ini": {
+  "status": "met",
+  "why": "the attribution is the sheet's"
+ },
+ "*:two people is not a weakness to hide a procureme": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:do not use certification body logo marks they ar": {
+  "status": "met",
+  "why": "text badges only"
+ },
+ "*:schema do not emit review or aggregaterating an ": {
+  "status": "met",
+  "why": "neither in any graph"
+ },
+ "*:a short true timeline beats a long invented one ": {
+  "status": "met",
+  "why": "the eleven entries and years are the sheet's (years pending Margo's sign-off — OPEN-ITEMS)"
+ },
+ "*:do not emit as organization customer unverifiabl": {
+  "status": "met",
+  "why": "no customer property in the graph"
+ },
+ "*:labels every label for bound to its input the li": {
+  "status": "fixed",
+  "why": "every contact label now carries for= to its control's id"
+ },
+ "*:these additions roughly double the page 2 262px ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:search is client side and must stay so a server ": {
+  "status": "met",
+  "why": "useSearch filters in the browser; no URL changes"
+ },
+ "*:part names are the page s aeo surface thirty six": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:do not promote any of these to a page yet a card": {
+  "status": "na",
+  "why": "the cards are the sheet's; construction has since been given a page by sheet 41"
+ },
+ "*:the honest framing is an asset these do not have": {
+  "status": "na",
+  "why": "kept, as written"
+ },
+ "*:the anchor bug is a one line component fix and i": {
+  "status": "fixed",
+  "why": "every chip scrolls to its own lane (#australia … #east-africa)"
+ },
+ "*:the hedging is an asset not timidity verify curr": {
+  "status": "na",
+  "why": "kept, as written"
+ },
+ "*:heading promote incoterms we offer from p to h2 ": {
+  "status": "met",
+  "why": "the Incoterms heading is an <h2>"
+ },
+ "*:do not attempt to explain incoterms further the ": {
+  "status": "na",
+  "why": "the copy is the sheet's"
+ },
+ "*:heading do not repeat the h1 in the closing h2 t": {
+  "status": "met",
+  "why": "the closing heading is the sheet's, not the H1"
+ },
+ "*:never publish a placeholder certificate of every": {
+  "status": "met",
+  "why": "no certificate image or number is fabricated; the number printed is the sheet's"
+ },
+ "*:100 claims are a category of risk the site carri": {
+  "status": "met",
+  "why": "none of the listed 100% claims remains; check:claims"
+ },
+ "*:twenty four part names is the point each is a ph": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:all 24 names are client confirmed 2026 09 01 mar": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:hardness lives here not in the comparison table ": {
+  "status": "met",
+  "why": "as the sheet lays it out"
+ },
+ "*:sixteen part names is the point each is a phrase": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:send the worn seal is worth keeping reverse engi": {
+  "status": "na",
+  "why": "kept"
+ },
+ "*:this table is the page s aeo surface a nine row ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:twenty two part names is the point each is a phr": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:all 22 names are client confirmed 2026 09 01 rub": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:eight mount type names are eight searches bonded": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:the configuration names are search terms blind g": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:shared component one data source per page order ": {
+  "status": "met",
+  "why": "MaterialCards renders from Site settings → Compounds in the page's order"
+ },
+ "*:eighteen part names is eighteen searches shackle": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:eighteen part names is eighteen searches firewal": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:the mahindra sentence is the page s geo asset a ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:eight bush type names are eight searches shackle": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:the construction column is the differentiator bo": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:the hardness sentence is the aeo surface what ha": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:thirteen complete rows no blanks the four compon": {
+  "status": "met",
+  "why": "the table is the sheet's, every cell filled"
+ },
+ "*:the h2 breaks the pattern deliberately the other": {
+  "status": "met",
+  "why": "the H2 is the sheet's"
+ },
+ "*:do not let the generic names displace them the n": {
+  "status": "na",
+  "why": "the cards are the sheet's"
+ },
+ "*:the silicone caveat is the trust signal section ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:the part codes are the retrieval anchors ext ds0": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:the query string cta needs the form to read it i": {
+  "status": "met",
+  "why": "/contact reads ?product= and pre-fills the product field"
+ },
+ "*:the 36 application names are the aeo surface con": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:construction has no industry page and should it ": {
+  "status": "met",
+  "why": "/industries/construction is built from sheet 41"
+ },
+ "*:trunk becomes boot the site writes british engli": {
+  "status": "met",
+  "why": "the page prints \"boot\"; \"trunk\" does not appear"
+ },
+ "*:the datasheet is a real asset if it exists a dow": {
+  "status": "open",
+  "why": "no compound/density datasheet exists yet (OPEN-ITEMS 63)"
+ },
+ "*:consider whether both blocks need to exist the t": {
+  "status": "na",
+  "why": "both blocks are the sheet's; a design choice"
+ },
+ "*:the constant intermittent split is an aeo gain w": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:the footnote is load bearing for the whole site ": {
+  "status": "met",
+  "why": "the footnote is on the page as written"
+ },
+ "*:the engineering note is the citable passage whic": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:the fda correction has to propagate any other pa": {
+  "status": "met",
+  "why": "every food/medical line is its sheet's wording; check:claims forbids the held reading"
+ },
+ "*:iso 1431 1 named on card 3 is a gain not a loss ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:closing force is the parameter buyers forget and": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:the 35 application names are the aeo surface and": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:the automotive part names are the aeo surface bo": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:assembly group headings are h3 four named vehicl": {
+  "status": "met",
+  "why": "as rendered"
+ },
+ "*:link aem to the bushes page on first mention it ": {
+  "status": "met",
+  "why": "linked in the conditions block"
+ },
+ "*:the certificate number is the geo asset here a c": {
+  "status": "met",
+  "why": "the certificate number is printed as text"
+ },
+ "*:the eyebrow is the geo asset not a reseller not ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:the mining part names are the aeo surface convey": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:q1 is the highest value answer on this page how ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:do not shorten the subhead it is the only senten": {
+  "status": "met",
+  "why": "the subhead is the sheet's, in full"
+ },
+ "*:desalination deserves more than a card it is a l": {
+  "status": "na",
+  "why": "commentary — outside the sheet's copy"
+ },
+ "*:saber is the term to own saber certificate rubbe": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:do not claim a saber certificate the certificate": {
+  "status": "met",
+  "why": "no certificate claimed; check:claims forbids the held reading"
+ },
+ "*:gamma and eto are the aeo gain can silicone be g": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:do not put iso 10993 in schema it is a standard ": {
+  "status": "met",
+  "why": "not in the graph"
+ },
+ "*:q1 is the model answer for the whole site it sta": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:duty point is the term to keep it is pump engine": {
+  "status": "na",
+  "why": "kept"
+ },
+ "*:the epdm exclusion is the trust signal telling a": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:refrigeration is the word worth protecting hvac ": {
+  "status": "na",
+  "why": "kept"
+ },
+ "*:do not expand hvac in the h1 it is the abbreviat": {
+  "status": "met",
+  "why": "the H1 is the sheet's"
+ },
+ "*:q5 is the one no other page has foam or solid ga": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:oil seals are deliberately omitted a sector list": {
+  "status": "na",
+  "why": "the cards are the sheet's"
+ },
+ "*:retitling card 1 is not cosmetic a card headed i": {
+  "status": "met",
+  "why": "the card title is the sheet's"
+ },
+ "*:pto is worth spelling out once pto shaft seal is": {
+  "status": "na",
+  "why": "as written"
+ },
+ "*:do not name specific agrochemicals registration ": {
+  "status": "met",
+  "why": "none named"
+ },
+ "*:cards 1 and 3 are the aeo passages which rubber ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:do not put the c ranges in an image text nodes s": {
+  "status": "met",
+  "why": "text nodes"
+ },
+ "*:iatf is prose only never schema an in progress u": {
+  "status": "met",
+  "why": "no hasCredential for IATF; check:jsonld"
+ },
+ "*:do not schema pvoc or ispm 15 both are processes": {
+  "status": "met",
+  "why": "neither in the graph"
+ },
+ "*:country names are text not flag images flags wit": {
+  "status": "met",
+  "why": "text"
+ },
+ "*:faqpage schema carries all six verbatim any drif": {
+  "status": "met",
+  "why": "six Question nodes from the same strings"
+ },
+ "*:sheet lining has a product page resolved 2026 09": {
+  "status": "met",
+  "why": "/products/rubber-lining is built and linked"
+ },
+ "*:do not write awwa c111 certified anywhere it is ": {
+  "status": "met",
+  "why": "not written; check:claims"
+ },
+ "*:duty profile is the aeo hook in card 1 does a pu": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:the en 681 1 bands are text not an image four fi": {
+  "status": "met",
+  "why": "text"
+ },
+ "*:do not schema wras nsf or as nzs they are approv": {
+  "status": "met",
+  "why": "none in the graph"
+ },
+ "*:questions stay literal do not restyle what is th": {
+  "status": "met",
+  "why": "as written"
+ },
+ "*:the three figures are text not a stat graphic 60": {
+  "status": "met",
+  "why": "text"
+ },
+ "*:iso 3302 1 named in text it is the string a buye": {
+  "status": "met",
+  "why": "printed"
+ },
+ "*:do not put the stat chips in images they are the": {
+  "status": "met",
+  "why": "text"
+ },
+ "*:no itemlist schema a described process is not a ": {
+  "status": "met",
+  "why": "the graph is WebPage + BreadcrumbList"
+ },
+ "*:the removed why margo link is the point that pag": {
+  "status": "met",
+  "why": "no link to /why-margo on the page"
+ },
+ "*:the commitment list is a real ol it is an ordere": {
+  "status": "met",
+  "why": "<ol>"
+ },
+ "*:no offer or review schema an invitation to be do": {
+  "status": "met",
+  "why": "neither in the graph"
+ },
+ "*:do not a b test this section into something soft": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:tel in e 164 tel 919665579276 no spaces in the h": {
+  "status": "met",
+  "why": "the href is tel:+919665579276"
+ },
+ "*:no offer schema on no commitment required it is ": {
+  "status": "met",
+  "why": "none"
+ },
+ "*:the cta heading stays an h2 two span lines insid": {
+  "status": "met",
+  "why": "<h2>"
+ },
+ "*:the cta heading stays an h2": {
+  "status": "met",
+  "why": "<h2>"
+ },
+ "*:and the second contradiction on the same page th": {
+  "status": "met",
+  "why": "the footer no longer prints 50+ countries"
+ },
+ "*:this is a genuine aeo passage how do i tell a ru": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:card titles h3 under the about h2": {
+  "status": "met",
+  "why": "as rendered"
+ },
+ "*:no comparative claim in schema ever not the savi": {
+  "status": "met",
+  "why": "the about graph is AboutPage + BreadcrumbList + two Person nodes"
+ },
+ "*:process names are searched terms transfer mouldi": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:iso 3302 1 replaces every figure sitewide four d": {
+  "status": "met",
+  "why": "no ± tolerance figure is printed on any page"
+ },
+ "*:fix the duplicate heading before moving the bloc": {
+  "status": "na",
+  "why": "/why-margo is held noindex for takedown (sheet 30)"
+ },
+ "*:these six are a service list not prose a real ul": {
+  "status": "na",
+  "why": "/why-margo is held noindex for takedown (sheet 30)"
+ },
+ "*:drawing review before tooling is a searched serv": {
+  "status": "na",
+  "why": "/why-margo is held noindex for takedown (sheet 30)"
+ },
+ "*:the counter is the honesty gate for the whole pa": {
+  "status": "met",
+  "why": "the counts are derived from the guide list"
+ },
+ "*:do not render the count from a hard coded 7 deri": {
+  "status": "met",
+  "why": "derived from the library; all seven guides have pages"
+ },
+ "*:last updated must come from real content dates o": {
+  "status": "met",
+  "why": "the value is the sheet's (\"September 2026\"), a Studio field to move when a guide changes"
+ },
+ "*:breadcrumb schema home resources the visible bre": {
+  "status": "met",
+  "why": "BreadcrumbList emitted"
+ },
+ "*:the featured card is a duplicate link to the sam": {
+  "status": "met",
+  "why": "one duplicate link (featured + grid), as the sheet allows"
+ },
+ "*:filter state should not create urls no category ": {
+  "status": "met",
+  "why": "filters are client-side; no ?category="
+ },
+ "*:card titles are h3 under the category h2 correct": {
+  "status": "met",
+  "why": "as rendered"
+ },
+ "*:these three are the highest intent topics on the": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:the figures on the cards do work now even unwrit": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:no techarticle schema on cards the hub describes": {
+  "status": "met",
+  "why": "the hub graph is CollectionPage + BreadcrumbList (+ ItemList when guides publish)"
+ },
+ "*:o ring size chart is the highest volume term on ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:inline links not card links linking the part nam": {
+  "status": "met",
+  "why": "category links are inline on the first mention (linkProducts)"
+ },
+ "*:eight internal links out of a page with none ind": {
+  "status": "met",
+  "why": "every application card links its category page"
+ },
+ "*:factory audit support is a supplier qualificatio": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:standard designations are text as568 iso 3601 1 ": {
+  "status": "met",
+  "why": "printed as text"
+ },
+ "*:iso 3302 1 belongs in card 1 s guide too when it": {
+  "status": "na",
+  "why": "the guide carries it (RES_05); commentary here"
+ },
+ "*:card 1 is a strong aeo target how do i evaluate ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:card 2 needs dated sources on every figure and a": {
+  "status": "met",
+  "why": "the guide's figures and its data-as-at line are the sheet's (RES_07)"
+ },
+ "*:do not name competitors or countries pejorativel": {
+  "status": "met",
+  "why": "the copy is the sheet's"
+ },
+ "*:we answer specification questions whether or not": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:mailto must match the footer address info margor": {
+  "status": "met",
+  "why": "every mailto: on the site is info@margorubber.in"
+ },
+ "*:no contactpoint here it lives once on the organi": {
+  "status": "met",
+  "why": "no ContactPoint off the homepage"
+ },
+ "*:meta name robots content noindex follow on all s": {
+  "status": "met",
+  "why": "robots follows document status: noindex until published (publish:pages)"
+ },
+ "*:switch to index follow one at a time as each gui": {
+  "status": "met",
+  "why": "publish:pages takes a route list, so guides can be published one at a time"
+ },
+ "*:no techarticle node while the page is a placehol": {
+  "status": "met",
+  "why": "structured data is emitted only for published documents (JsonLd status gate)"
+ },
+ "*:keep the breadcrumb it is already correct here a": {
+  "status": "met",
+  "why": "kept"
+ },
+ "*:fix the slug to label conversion it will otherwi": {
+  "status": "met",
+  "why": "labels come from the registry; check:matrix fails a slug in prose"
+ },
+ "*:the contrast with why margo is worth holding on ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:and it still links to why choose us that page is": {
+  "status": "met",
+  "why": "no link to /why-margo remains"
+ },
+ "*:breadcrumb renders above the h1 and emits the br": {
+  "status": "met",
+  "why": "as rendered"
+ },
+ "*:card titles are h3 under the section h2 four rea": {
+  "status": "met",
+  "why": "as rendered"
+ },
+ "*:link the compound names once each to the compoun": {
+  "status": "met",
+  "why": "eight links to /products#aem … #silicone"
+ },
+ "*:this table answers what material is a pump diaph": {
+  "status": "met",
+  "why": "one table"
+ },
+ "*:no load or burst pressure table a rating is a pr": {
+  "status": "met",
+  "why": "none"
+ },
+ "*:the struck row ships as a real row with a visibl": {
+  "status": "met",
+  "why": "rendered as a row reading \"not held\""
+ },
+ "*:no certification schema for the test methods a t": {
+  "status": "met",
+  "why": "hasCredential carries ISO 9001 only"
+ },
+ "*:scope line is not optional rubber moulded compon": {
+  "status": "met",
+  "why": "the scope line is printed"
+ },
+ "*:q2 is the extractable answer for this page it is": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:the diaphragms option must exist in the contact ": {
+  "status": "met",
+  "why": "present"
+ },
+ "*:footer column labels are p or div never h2 h3 as": {
+  "status": "met",
+  "why": "check:matrix fails a heading in the footer"
+ },
+ "*:add products diaphragms to the products sitemap ": {
+  "status": "met",
+  "why": "the sitemap is built from the route registry; the page joins it at publish"
+ },
+ "*:add it to the products hub grid which shows elev": {
+  "status": "met",
+  "why": "on the hub grid"
+ },
+ "*:card titles are h3 bonded bushes bonded rollers ": {
+  "status": "met",
+  "why": "as rendered"
+ },
+ "*:six internal links with descriptive anchors on t": {
+  "status": "met",
+  "why": "linked on the names"
+ },
+ "*:no brand names not chemlok not cilbond not megum": {
+  "status": "met",
+  "why": "none on the page"
+ },
+ "*:the refusal row ships as a visible row with a re": {
+  "status": "met",
+  "why": "rendered"
+ },
+ "*:row labels are not headings the stat values as h": {
+  "status": "met",
+  "why": "th scope=row; check:matrix"
+ },
+ "*:this table answers what rubber is used for bonde": {
+  "status": "met",
+  "why": "one table"
+ },
+ "*:the failure mode paragraph is this page s extrac": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:the four notation letters are strong not an imag": {
+  "status": "met",
+  "why": "R, RC, CP, M in <strong>"
+ },
+ "*:link section 04 and the eight compounds as in pa": {
+  "status": "met",
+  "why": "#substrates, #compound and the eight /products# anchors are linked"
+ },
+ "*:q1 and q2 are the two extractable answers q1 win": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:add a bonded components option to the contact fo": {
+  "status": "met",
+  "why": "present"
+ },
+ "*:add products bonded components to sitemap produc": {
+  "status": "met",
+  "why": "the sitemap is built from the route registry; the page joins it at publish"
+ },
+ "*:add it to the products hub grid moulded group": {
+  "status": "met",
+  "why": "on the hub grid, moulded group"
+ },
+ "*:card titles are h3 chute lining tank lining and ": {
+  "status": "met",
+  "why": "as rendered"
+ },
+ "*:six internal links on the application names neve": {
+  "status": "met",
+  "why": "linked on the names"
+ },
+ "*:this table answers what rubber is used for chute": {
+  "status": "met",
+  "why": "one table"
+ },
+ "*:the softer than the belt paragraph is this page ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:no belt grade compatibility chart that is a belt": {
+  "status": "met",
+  "why": "none"
+ },
+ "*:iso 4649 and astm d5963 are plain text in table ": {
+  "status": "met",
+  "why": "text"
+ },
+ "*:the struck row ships visible with a real value n": {
+  "status": "met",
+  "why": "rendered"
+ },
+ "*:no potable water claim on any lining ever tank l": {
+  "status": "met",
+  "why": "none; check:claims"
+ },
+ "*:q1 must match sheet 21 s faq string exactly char": {
+  "status": "met",
+  "why": "identical on /products/rubber-lining and /industries/mining"
+ },
+ "*:q2 and q4 are the extractable answers q2 wins th": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:add a rubber lining skirting option to the conta": {
+  "status": "met",
+  "why": "present"
+ },
+ "*:add products rubber lining to sitemap products 0": {
+  "status": "met",
+  "why": "the sitemap is built from the route registry; the page joins it at publish"
+ },
+ "*:add it to the products hub grid it does not belo": {
+  "status": "met",
+  "why": "on the hub grid, continuous & cellular group"
+ },
+ "*:point sheet 37 s lining card here card six on th": {
+  "status": "met",
+  "why": "the bonded page's lining card links /products/rubber-lining"
+ },
+ "*:the h1 must not read rubber seals on its own tha": {
+  "status": "met",
+  "why": "the H1 is the sheet's"
+ },
+ "*:five internal links with the family name as anch": {
+  "status": "met",
+  "why": "linked on the family names"
+ },
+ "*:this is the block that answers what are the diff": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:no product markup on the four outbound rows they": {
+  "status": "met",
+  "why": "ListItem entries only"
+ },
+ "*:card titles are h3 plunger cup u cup seal rod se": {
+  "status": "met",
+  "why": "as rendered"
+ },
+ "*:link section 06 as an in page anchor from both w": {
+  "status": "met",
+  "why": "both rows link #housing"
+ },
+ "*:polyurethane must not be marked up as a material": {
+  "status": "met",
+  "why": "the Product node's material list is the eight compounds"
+ },
+ "*:panel 1 is written to stand alone in an ai respo": {
+  "status": "met",
+  "why": "one paragraph"
+ },
+ "*:no back up ring product claim back up rings are ": {
+  "status": "met",
+  "why": "none; the copy is the sheet's"
+ },
+ "*:the struck row ships visible with a real value": {
+  "status": "met",
+  "why": "rendered"
+ },
+ "*:no certification schema for test methods or hous": {
+  "status": "met",
+  "why": "hasCredential carries ISO 9001 only"
+ },
+ "*:no food contact pharmaceutical or potable water ": {
+  "status": "met",
+  "why": "none; check:claims"
+ },
+ "*:q1 and q2 are the extractable answers q1 wins oi": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:q1 s closing sentence carries an internal link o": {
+  "status": "met",
+  "why": "linked to /products/oil-seals"
+ },
+ "*:add a seals reciprocating option to the contact ": {
+  "status": "met",
+  "why": "\"Reciprocating Seals\" is the option, with the qualifier"
+ },
+ "*:add products seals and products seals plunger se": {
+  "status": "met",
+  "why": "both routes are in the registry; they join the sitemap at publish"
+ },
+ "*:add it to the products hub grid in whichever gro": {
+  "status": "met",
+  "why": "on the hub grid"
+ },
+ "*:sheet sku 31 needs no edit its canonical its jso": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:one h1 the document meta strip is a table or dl ": {
+  "status": "met",
+  "why": "one h1; the meta strip is a table"
+ },
+ "*:no hero image a datasheet opens on data": {
+  "status": "met",
+  "why": "no hero photograph on the datasheet"
+ },
+ "*:2c3 is plain text not an image designation strin": {
+  "status": "met",
+  "why": "text"
+ },
+ "*:do not claim astm d1056 as a certification it is": {
+  "status": "met",
+  "why": "named as a classification; check:claims"
+ },
+ "*:render this table and sheet 19 s from one source": {
+  "status": "open",
+  "why": "sheets 19 §04 and 40 §03 publish the same compound table with one differing cell (VMQ applications) and a different column order; rendering from one source means choosing one — question logged (OPEN-ITEMS)"
+ },
+ "*:the intermittent figure is a second line in the ": {
+  "status": "met",
+  "why": "rendered as the sheet writes it"
+ },
+ "*:ranges not single values where the compound is s": {
+  "status": "met",
+  "why": "the table is the sheet's"
+ },
+ "*:state the test method in the column head or a fo": {
+  "status": "met",
+  "why": "as the sheet writes it"
+ },
+ "*:this table is the reason the page ranks epdm spo": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:astm d6576 is the standard for closed cell adhes": {
+  "status": "met",
+  "why": "as the sheet lays it out"
+ },
+ "*:no adhesive brand names same rule as the bonding": {
+  "status": "met",
+  "why": "none"
+ },
+ "*:astm d1056 appears here as a test method and in ": {
+  "status": "met",
+  "why": "as the sheet lays it out"
+ },
+ "*:no form gate anywhere on this page not a modal n": {
+  "status": "met",
+  "why": "no form or modal on the page"
+ },
+ "*:a named conversion event on the enquiry distinct": {
+  "status": "open",
+  "why": "no analytics property yet (OPEN-ITEMS)"
+ },
+ "*:add resources sponge foam datasheet to sitemap x": {
+  "status": "met",
+  "why": "a resource route in the registry; joins the sitemap at publish"
+ },
+ "*:add a card to the resources hub sheet 31 was rew": {
+  "status": "fixed",
+  "why": "fourth group \"Datasheets\" added; the counter reads \"7 Guides · 1 Datasheet\""
+ },
+ "*:card titles are h3 and each carries the product ": {
+  "status": "met",
+  "why": "as rendered"
+ },
+ "*:seven internal links out the highest of any indu": {
+  "status": "met",
+  "why": "every card links its category"
+ },
+ "*:card titles are h3 structural glazing gasket exp": {
+  "status": "met",
+  "why": "as rendered"
+ },
+ "*:fire rated seals does not appear in this section": {
+  "status": "met",
+  "why": "the phrase appears only in section 06's refusal, as the sheet writes it"
+ },
+ "*:this table answers what rubber is used for windo": {
+  "status": "met",
+  "why": "one table"
+ },
+ "*:the two struck rows ship visible with real value": {
+  "status": "met",
+  "why": "rendered"
+ },
+ "*:this section is a strong candidate for an ai ans": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:no potable water claim even though the sector in": {
+  "status": "met",
+  "why": "none; check:claims"
+ },
+ "*:q1 and q2 are the extractable answers q1 wins th": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:q3 carries an internal link on water and fluid m": {
+  "status": "met",
+  "why": "linked"
+ },
+ "*:add a construction option to the contact form s ": {
+  "status": "met",
+  "why": "present"
+ },
+ "*:add industries construction to sitemap xml and t": {
+  "status": "met",
+  "why": "in the registry; joins the sitemap at publish"
+ },
+ "*:add a card to the industries hub grid which show": {
+  "status": "met",
+  "why": "on the hub grid and in the ItemList (11 items)"
+ },
+ "*:update sheet 19 s sector table the construction ": {
+  "status": "met",
+  "why": "the sponge page's Construction row links /industries/construction; no \"fire-rated seals\" on that page"
+ },
+ "*:card titles are h3 with the product page link on": {
+  "status": "met",
+  "why": "as rendered"
+ },
+ "*:six internal links out": {
+  "status": "met",
+  "why": "every card links its category"
+ },
+ "*:two h3 group headings rail marine with card titl": {
+  "status": "met",
+  "why": "as rendered"
+ },
+ "*:this table answers what rubber is used for train": {
+  "status": "met",
+  "why": "one table"
+ },
+ "*:the four struck rows ship visible with real valu": {
+  "status": "met",
+  "why": "rendered"
+ },
+ "*:the body paragraph is this page s extractable an": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:keep it as one p splitting it separates the refu": {
+  "status": "met",
+  "why": "one paragraph"
+ },
+ "*:no potable water food contact or fire claim mari": {
+  "status": "met",
+  "why": "none; check:claims"
+ },
+ "*:q1 q2 and q3 are the extractable answers and all": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:add a transport rail marine option to the contac": {
+  "status": "met",
+  "why": "present"
+ },
+ "*:add industries transport to sitemap xml and to p": {
+  "status": "met",
+  "why": "in the registry; joins the sitemap at publish"
+ },
+ "*:add a card to the industries hub grid and move t": {
+  "status": "met",
+  "why": "on the hub grid and in the ItemList"
+ },
+ "*:update sheet 19 s sector table the transport row": {
+  "status": "met",
+  "why": "the sponge page's Transport row links /industries/transport"
+ },
+ "*:do not change the slug fkm vs nbr oil seal guide": {
+  "status": "met",
+  "why": "the slug is the sheet's"
+ },
+ "*:do not change the slug o ring size chart is the ": {
+  "status": "met",
+  "why": "the slug is the sheet's"
+ },
+ "*:do not change the slug rubber to metal bonded pa": {
+  "status": "met",
+  "why": "the slug is the sheet's"
+ },
+ "*:do not change the slug silicone vs epdm high tem": {
+  "status": "met",
+  "why": "the slug is the sheet's"
+ },
+ "*:audit the medical devices industry page separate": {
+  "status": "open",
+  "why": "the medical page ships as sheet 27 writes it; the audit is Margo's decision (OPEN-ITEMS)"
+ },
+ "*:the h2 is the query as a choice": {
+  "status": "met",
+  "why": "the H2 is the sheet's"
+ },
+ "*:the h2 is the query as a choice comparison queri": {
+  "status": "met",
+  "why": "the H2 is the sheet's"
+ },
+ "*:self contained 60 90 words no anaphora it has to": {
+  "status": "met",
+  "why": "the copy is the sheet's"
+ },
+ "*:self contained 60 90 words no anaphora": {
+  "status": "met",
+  "why": "the copy is the sheet's"
+ },
+ "*:bold each verdict clause four extractable units ": {
+  "status": "met",
+  "why": "the sheet's bold runs are <strong>"
+ },
+ "*:internal links on the alternatives nitrile and f": {
+  "status": "fixed",
+  "why": "nitrile → /products#nbr, fluoroelastomer → /products#fkm"
+ },
+ "*:link to the fkm vs nbr guide once it publishes n": {
+  "status": "open",
+  "why": "the sheet names no phrase to carry the link; both guides publish together at cutover — question logged (OPEN-ITEMS)"
+ },
+ "*:does silicone swell in oil is a real query and t": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:peroxide cured epdm vs sulphur cured is a search": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:do not let this be edited to a single epdm figur": {
+  "status": "met",
+  "why": "the two figures stand as written"
+ },
+ "*:two h3 s one per cure system so the outline carr": {
+  "status": "open",
+  "why": "the sheet's body has no heading lines for them; adding two would split its paragraph — question logged (OPEN-ITEMS)"
+ },
+ "*:best rubber for steam is a high intent query wit": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:do not publish a steam pressure rating that belo": {
+  "status": "met",
+  "why": "none published"
+ },
+ "*:keep the figures identical to the homepage compo": {
+  "status": "met",
+  "why": "the figures are the sheet's; check:claims holds each compound's range"
+ },
+ "*:the verdict column should be plain text not icon": {
+  "status": "met",
+  "why": "plain text"
+ },
+ "*:silicone rubber disadvantages is a high volume q": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:three bold lead ins one paragraph each scannable": {
+  "status": "met",
+  "why": "the sheet's bold runs are <strong>"
+ },
+ "*:internal link reciprocating seals the plunger se": {
+  "status": "fixed",
+  "why": "linked to /products/seals"
+ },
+ "*:link to the gasket material selection guide for ": {
+  "status": "met",
+  "why": "linked in the Related strip"
+ },
+ "*:silicone post cure is a specific query that a mo": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:no certification schema for test methods a test ": {
+  "status": "met",
+  "why": "hasCredential carries ISO 9001 only"
+ },
+ "*:no d2000 grade numbers invented only the letter ": {
+  "status": "met",
+  "why": "the copy is the sheet's"
+ },
+ "*:items 1 3 anchor back to sections 03 04 and 05": {
+  "status": "fixed",
+  "why": "the three mistake headings link #first-is-there-oil, #epdm-is-two-materials…, #steam-is-not-the-same-as-heat"
+ },
+ "*:link this article from all six oil seals pages i": {
+  "status": "fixed",
+  "why": "Further reading strip on /products/oil-seals and its five part pages (related.resources), shown once the guide is published"
+ },
+ "*:self contained 80 95 words no anaphora": {
+  "status": "met",
+  "why": "the copy is the sheet's"
+ },
+ "*:write fkm viton once in section 03 where the tra": {
+  "status": "met",
+  "why": "as the sheet writes it"
+ },
+ "*:viton appears exactly once on the page with the ": {
+  "status": "met",
+  "why": "only in §03 as the sheet writes it (its heading and two body mentions); not in title, meta, schema, alt or any other section"
+ },
+ "*:it is still worth ranking for the term has far m": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:this section is reusable the same paragraph belo": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:acrylonitrile content and high nitrile vs low ni": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:percentages are ranges not points the grades are": {
+  "status": "met",
+  "why": "the table is the sheet's"
+ },
+ "*:fkm low temperature limit and glt vs gflt are pr": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:no trademark in this table type letters and fluo": {
+  "status": "met",
+  "why": "none"
+ },
+ "*:is viton compatible with brake fluid and fkm ste": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:internal link to the silicone vs epdm guide on t": {
+  "status": "open",
+  "why": "guide-to-guide links render only once the target guide is published (RES_01 §12); the Related strip carries it, gated on publish — the in-answer link waits for the same gate (OPEN-ITEMS)"
+ },
+ "*:bold lead ins one paragraph each five headings w": {
+  "status": "met",
+  "why": "the sheet's bold runs are <strong>; no headings"
+ },
+ "*:real table markup with a plain text verdict colu": {
+  "status": "met",
+  "why": "table with a text verdict column"
+ },
+ "*:figures identical to the locked homepage compoun": {
+  "status": "met",
+  "why": "the figures are the sheet's; check:claims holds each compound's range"
+ },
+ "*:link to the gasket guide for the d2000 tables ra": {
+  "status": "met",
+  "why": "linked in the Related strip once published"
+ },
+ "*:add aem to the compound selectors on the product": {
+  "status": "met",
+  "why": "AEM is in Site settings → Compounds and in every selector"
+ },
+ "*:aem vs fkm and vamac alternative are low volume ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:no trademark for aem either the class name is th": {
+  "status": "met",
+  "why": "none"
+ },
+ "*:items 2 3 and 4 anchor back to sections 04 05 an": {
+  "status": "fixed",
+  "why": "the three mistake headings link their sections' H2 ids"
+ },
+ "*:do not delete the url or change the slug gasket ": {
+  "status": "met",
+  "why": "the slug is unchanged"
+ },
+ "*:the byline is visible text not a schema only fie": {
+  "status": "open",
+  "why": "the reviewer's name and title are placeholders until Margo names them (OPEN-ITEMS 37); no byline prints until then"
+ },
+ "*:alt text on any diagram describe the decision it": {
+  "status": "met",
+  "why": "no diagram on the page"
+ },
+ "*:the h2 is phrased as the query how do you choose": {
+  "status": "met",
+  "why": "the H2 is the sheet's"
+ },
+ "*:answer within 60 80 words of the heading self co": {
+  "status": "met",
+  "why": "the copy is the sheet's"
+ },
+ "*:bold the three compound and temperature pairs th": {
+  "status": "met",
+  "why": "the sheet's bold runs are <strong>"
+ },
+ "*:this passage answers can i use epdm with oil a r": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:no fluid compatibility table here it belongs in ": {
+  "status": "met",
+  "why": "as the sheet lays it out"
+ },
+ "*:answers what is the minimum temperature for vito": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:write fkm viton once in the article fkm thereaft": {
+  "status": "met",
+  "why": "as the sheet writes it; not in title, meta or schema"
+ },
+ "*:internal link fluoroelastomer the fkm vs nbr gui": {
+  "status": "open",
+  "why": "guide-to-guide links render once the target is published; the in-body link waits for the same gate (OPEN-ITEMS)"
+ },
+ "*:astm d2000 chart d2000 type and class what does ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:do not gate this behind a form the tables are th": {
+  "status": "met",
+  "why": "no gate"
+ },
+ "*:this table discharges the live meta description ": {
+  "status": "met",
+  "why": "the table is on the page"
+ },
+ "*:link each compound name to the product page that": {
+  "status": "fixed",
+  "why": "the compound anchors on /products carry the eight names (RES_01/05 pattern); the gasket guide's table is the sheet's text"
+ },
+ "*:keep it identical to the homepage compound table": {
+  "status": "met",
+  "why": "the figures are the sheet's; check:claims holds each compound's range against Site settings"
+ },
+ "*:b16 20 vs b16 21 is a searched comparison with a": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:fix the three live pages that cite b16 20 in the": {
+  "status": "met",
+  "why": "B16.20 is named only in the gasket guide's own comparison; no other page cites it"
+ },
+ "*:do not claim conformance the article says which ": {
+  "status": "met",
+  "why": "as written; check:claims"
+ },
+ "*:gasket m and y factors is a technical query with": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:never publish an m or y figure margo has not tak": {
+  "status": "met",
+  "why": "none published"
+ },
+ "*:an ol of h3 s each with a self contained paragra": {
+  "status": "met",
+  "why": "rendered as an <ol> of <h3> items"
+ },
+ "*:do not add this to faqpage it is not a question ": {
+  "status": "met",
+  "why": "the FAQPage node carries the FAQ block only"
+ },
+ "*:item 3 links to section 07 with a fragment ancho": {
+  "status": "open",
+  "why": "the sheet's item 3 names no section-07 phrase to link; H2 ids exist (#…) — question logged"
+ },
+ "*:faqpage schema matching these five verbatim dive": {
+  "status": "met",
+  "why": "five Question nodes from the same strings"
+ },
+ "*:nofollow follow today on all seven article urls ": {
+  "status": "met",
+  "why": "robots follows document status: \"noindex, follow\" until published"
+ },
+ "*:no download gate the tables are the asset gating": {
+  "status": "met",
+  "why": "none"
+ },
+ "*:changing the h1 does not change the url the rena": {
+  "status": "met",
+  "why": "the slug is unchanged; the H1 is the sheet's"
+ },
+ "*:the byline is visible text not schema only": {
+  "status": "open",
+  "why": "reviewer name and title are placeholders (OPEN-ITEMS 37)"
+ },
+ "*:the h2 is the query how to identify an o ring si": {
+  "status": "met",
+  "why": "the H2 is the sheet's"
+ },
+ "*:two worked examples inside the answer a dash num": {
+  "status": "met",
+  "why": "the copy is the sheet's"
+ },
+ "*:bs 1806 vs iso 3601 and is bs 1806 still used ar": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:do not claim conformance to any of them the arti": {
+  "status": "met",
+  "why": "as written; check:claims"
+ },
+ "*:as568 dash number meaning what does 214 mean the": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:table markup not an image an image of a size cha": {
+  "status": "met",
+  "why": "two tables"
+ },
+ "*:do not publish the full 369 row chart on this pa": {
+  "status": "met",
+  "why": "not published"
+ },
+ "*:this section is the reason the h1 changes publis": {
+  "status": "met",
+  "why": "the H1 carries AS568, ISO 3601-1 and BS 1806"
+ },
+ "*:each part gets an h3 so the outline shows three ": {
+  "status": "met",
+  "why": "as rendered"
+ },
+ "*:iso 3601 1 vs as568 is a searched comparison and": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:bs 1806 o ring still has real search volume prec": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:do not imply margo stocks these everything is ma": {
+  "status": "met",
+  "why": "the copy is the sheet's"
+ },
+ "*:how to measure an o ring is the highest intent q": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:if a diagram is ever added alt text describes th": {
+  "status": "met",
+  "why": "no diagram on the page"
+ },
+ "*:never publish a squeeze or groove fill figure ma": {
+  "status": "met",
+  "why": "none published"
+ },
+ "*:this section discharges the live description s g": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:o ring groove design is a high volume query serv": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:publishing this while 31 product pages claim aer": {
+  "status": "met",
+  "why": "no product page claims Aerospace or Marine"
+ },
+ "*:not part of faqpage the faq block is section 11 ": {
+  "status": "met",
+  "why": "the FAQPage node carries the FAQ block only"
+ },
+ "*:do not label the button download until the file ": {
+  "status": "met",
+  "why": "withoutDeadDownloads: no Download label without a file"
+ },
+ "*:serve the chart as html as well as pdf a pdf is ": {
+  "status": "open",
+  "why": "the full chart file is Margo's to supply (OPEN-ITEMS); the page carries the sizing tables as HTML"
+ },
+ "*:link this article from products anti vibration m": {
+  "status": "fixed",
+  "why": "Further reading strip on both category pages (related.resources), shown once the guide is published"
+ },
+ "*:the h2 is the query how is rubber bonded to meta": {
+  "status": "met",
+  "why": "the H2 is the sheet's"
+ },
+ "*:self contained 60 90 words it has to survive bei": {
+  "status": "met",
+  "why": "the copy is the sheet's"
+ },
+ "*:no brand of bonding agent is named chemlok and i": {
+  "status": "met",
+  "why": "none"
+ },
+ "*:rubber to metal bond failure and can you bond ru": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:each step of the sequence gets a bold lead in no": {
+  "status": "met",
+  "why": "the sheet's bold runs are <strong>; no headings"
+ },
+ "*:no named chemical products trademarks belong to ": {
+  "status": "met",
+  "why": "none"
+ },
+ "*:link the compound names to the pages that lead w": {
+  "status": "fixed",
+  "why": "the eight compound anchors on /products carry the names; linked from the bonded page's table"
+ },
+ "*:do not turn case by case into a yes plastic subs": {
+  "status": "met",
+  "why": "the copy is the sheet's"
+ },
+ "*:internal links on the application names not on r": {
+  "status": "met",
+  "why": "linked on the names"
+ },
+ "*:this section is what a products bonded component": {
+  "status": "na",
+  "why": "the page now exists (sheet 37)"
+ },
+ "*:no named oem and no named customer": {
+  "status": "met",
+  "why": "none in this section"
+ },
+ "*:no load table no bond strength figure no mpa val": {
+  "status": "met",
+  "why": "none"
+ },
+ "*:rubber to metal bonded part design and peel vs s": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:five bold lead ins one paragraph each scannable ": {
+  "status": "met",
+  "why": "the sheet's bold runs are <strong>"
+ },
+ "*:the d429 method table is highly liftable eight r": {
+  "status": "met",
+  "why": "table"
+ },
+ "*:astm d429 methods is a searched term and the met": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:items 1 and 2 anchor back to sections 03 and 06": {
+  "status": "fixed",
+  "why": "the two mistake headings link their sections' H2 ids"
+ },
+ "*:no gate there is no download on this page the ar": {
+  "status": "met",
+  "why": "none"
+ },
+ "*:link this article from about and certifications ": {
+  "status": "fixed",
+  "why": "Further reading strip on both pages (furtherReading), shown once the guide is published"
+ },
+ "*:the byline is visible text and on this article i": {
+  "status": "open",
+  "why": "reviewer name and title are placeholders (OPEN-ITEMS 37)"
+ },
+ "*:the h2 is the query what to ask a rubber manufac": {
+  "status": "met",
+  "why": "the H2 is the sheet's"
+ },
+ "*:self contained 80 95 words the whole checklist s": {
+  "status": "met",
+  "why": "the copy is the sheet's"
+ },
+ "*:what does iso 9001 scope mean is a real query wi": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:rubber minimum order quantity is a commercial qu": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:do not soften q4 into a sales line its value is ": {
+  "status": "met",
+  "why": "the copy is the sheet's"
+ },
+ "*:q6 is a publication gate not a copy note hold th": {
+  "status": "open",
+  "why": "the guide publishes (publish:pages, per route) once the first real product photograph is live — Margo's photography (OPEN-ITEMS)"
+ },
+ "*:who owns the tooling is a procurement query with": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:do not illustrate this section with a stock imag": {
+  "status": "met",
+  "why": "no image in the section"
+ },
+ "*:what documents ship with a rubber order is a pra": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:the most linkable block on the page a red flag l": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:publication gate rows 1 2 and 5 have to be untru": {
+  "status": "met",
+  "why": "row 1: certificate number, body and scope are printed sitewide; row 2: no Aerospace or Marine claim remains; row 5: no Download label without a file (withoutDeadDownloads)"
+ },
+ "*:every figure here must render from the same cons": {
+  "status": "met",
+  "why": "the figures are the sheet's; check:claims holds them against Site settings"
+ },
+ "*:real table markup this block is what an answer e": {
+  "status": "met",
+  "why": "table"
+ },
+ "*:faqpage schema matching these four verbatim four": {
+  "status": "met",
+  "why": "four Question nodes from the same strings"
+ },
+ "*:no gate and no form wall a checklist behind a fo": {
+  "status": "met",
+  "why": "none"
+ },
+ "*:link this article from export which is the page ": {
+  "status": "fixed",
+  "why": "Further reading strip on /export (furtherReading), shown once the guide is published"
+ },
+ "*:the byline and the review date are visible text": {
+  "status": "open",
+  "why": "reviewer name, title and date are placeholders (OPEN-ITEMS 37)"
+ },
+ "*:the h2 is the query as a decision": {
+  "status": "met",
+  "why": "the H2 is the sheet's"
+ },
+ "*:self contained 100 words longer than the other g": {
+  "status": "met",
+  "why": "the copy is the sheet's"
+ },
+ "*:no duty rate in the extractable passage it is th": {
+  "status": "met",
+  "why": "no rate printed"
+ },
+ "*:guide to guide link to the evaluation article an": {
+  "status": "open",
+  "why": "in the Related strip, gated on the target's publish"
+ },
+ "*:do not move this below the fold or into a footno": {
+  "status": "met",
+  "why": "in the sheet's position"
+ },
+ "*:no organization self praise in this section s ma": {
+  "status": "met",
+  "why": "the article graph is TechArticle + FAQPage + BreadcrumbList"
+ },
+ "*:no rate no percentage no date stamped duty claim": {
+  "status": "met",
+  "why": "none printed"
+ },
+ "*:name the authorities not the numbers the customs": {
+  "status": "met",
+  "why": "as written"
+ },
+ "*:india vs china tariff rubber traffic will land h": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:no trade statistic no production tonnage no coun": {
+  "status": "met",
+  "why": "none printed"
+ },
+ "*:the middle column is the reusable part it is a q": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:do not let this section be softened shortened or": {
+  "status": "met",
+  "why": "as written, in place"
+ },
+ "*:no named chinese supplier region or company the ": {
+  "status": "met",
+  "why": "none"
+ },
+ "*:this is the section a generative engine will quo": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:total landed cost was already in the live descri": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:no illustrative cost example a made up compariso": {
+  "status": "met",
+  "why": "none"
+ },
+ "*:do not gate a landed cost calculator behind a fo": {
+  "status": "met",
+  "why": "none exists"
+ },
+ "*:faqpage schema matching these four verbatim": {
+  "status": "met",
+  "why": "four Question nodes from the same strings"
+ },
+ "*:q2 carries no rate so the schema carries none ei": {
+  "status": "met",
+  "why": "no rate in the answer or the node"
+ },
+ "*:nofollow follow the last of seven times this app": {
+  "status": "met",
+  "why": "robots follows document status"
+ },
+ "*:guide to guide link only once the evaluation art": {
+  "status": "open",
+  "why": "in the Related strip, gated on the target's publish"
+ },
+ "*:one h1 breadcrumb above it home products anti vi": {
+  "status": "met",
+  "why": "one h1; breadcrumb from the registry labels"
+ },
+ "*:the spec block is the only per part content abov": {
+  "status": "met",
+  "why": "the spec block carries the sheet's values"
+ },
+ "*:the certificate number belongs in this row not o": {
+  "status": "met",
+  "why": "the certification row prints the number"
+ },
+ "*:this section is what makes this page distinct fr": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:why does my car s boot vent rattle is a real que": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:card titles h3 generic titles superior durabilit": {
+  "status": "met",
+  "why": "as rendered"
+ },
+ "*:card titles h3": {
+  "status": "met",
+  "why": "as rendered"
+ },
+ "*:held as a controlled record is audit language an": {
+  "status": "na",
+  "why": "kept"
+ },
+ "*:film pending is fine to ship an honest empty sta": {
+  "status": "met",
+  "why": "the empty state ships as written"
+ },
+ "*:film pending is fine to ship better than stock f": {
+  "status": "met",
+  "why": "the empty state ships as written"
+ },
+ "*:add a link back to the parent category in additi": {
+  "status": "met",
+  "why": "the breadcrumb and the related strip's \"View all products\" both link the category"
+ },
+ "*:one h1 breadcrumb home products extrusion profil": {
+  "status": "met",
+  "why": "one h1; breadcrumb from the registry labels"
+ },
+ "*:backlight belongs in the body not the h1 it is t": {
+  "status": "met",
+  "why": "the H1 is the sheet's"
+ },
+ "*:the certification row must carry the scope on an": {
+  "status": "met",
+  "why": "the row prints the scope"
+ },
+ "*:the certification row must carry the scope or th": {
+  "status": "met",
+  "why": "the row prints the scope"
+ },
+ "*:which rubber is used for car window seals has on": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:moulding process named per part extruded not com": {
+  "status": "met",
+  "why": "the process row is the sheet's per-part value"
+ },
+ "*:continuous vulcanisation and corner moulding are": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:a published section drawing is an image search a": {
+  "status": "open",
+  "why": "the section drawing is Margo's to supply (OPEN-ITEMS)"
+ },
+ "*:free height belongs above the fold it is the fie": {
+  "status": "met",
+  "why": "in the spec block as the sheet lays it out"
+ },
+ "*:the part code row is load bearing on this page b": {
+  "status": "met",
+  "why": "the part code prints in the spec block"
+ },
+ "*:why do rubber bump stops crack is a real questio": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:card 03 also does seo work it disambiguates this": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:linking the two same named skus to each other is": {
+  "status": "met",
+  "why": "the two parts link each other in the related strip, with the difference stated"
+ },
+ "*:add the part code to the part parameter on this ": {
+  "status": "met",
+  "why": "the two parts now carry different names, and ?part= carries the part's own H1"
+ },
+ "*:the fitment line is where the vehicle names live": {
+  "status": "met",
+  "why": "the fitment line is the sheet's"
+ },
+ "*:the abrasion row is a genuine differentiator mar": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:why do rubber side step pads crack is a question": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:uv resistant is the phrase the market already us": {
+  "status": "na",
+  "why": "kept"
+ },
+ "*:product photography is an seo asset here not jus": {
+  "status": "open",
+  "why": "part photographs are Margo's to supply (OPEN-ITEMS)"
+ },
+ "*:the interchange block must be crawlable text not": {
+  "status": "met",
+  "why": "the OE cross-reference is text in the spec block"
+ },
+ "*:static load and free height belong above the fol": {
+  "status": "met",
+  "why": "in the spec block as the sheet lays it out"
+ },
+ "*:publish the part code this is the one page in th": {
+  "status": "met",
+  "why": "the part code prints in the spec block where the sheet gives one"
+ },
+ "*:the oe cross reference row is indexable text and": {
+  "status": "met",
+  "why": "text on the page; the Product node carries no mpn from it"
+ },
+ "*:what rubber is used for truck bump stops has a c": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:do not repeat sku 03 s polyurethane boundary on ": {
+  "status": "met",
+  "why": "the copy is the sheet's per part"
+ },
+ "*:bond integrity and anti ozonant are technical te": {
+  "status": "na",
+  "why": "kept"
+ },
+ "*:never state an iatf position on a sku page it li": {
+  "status": "open",
+  "why": "the SKU sheets' own certificate blocks carry \"IATF 16949 — upgrade in progress\" on 22 parts; SKU 05's note says not to — a contradiction between sheets, logged (OPEN-ITEMS)"
+ },
+ "*:an interchange listing is the highest value docu": {
+  "status": "open",
+  "why": "the interchange data is Margo's to supply (OPEN-ITEMS)"
+ },
+ "*:do not publish a load deflection curve without t": {
+  "status": "met",
+  "why": "none published"
+ },
+ "*:q2 is the aftermarket entry point and it should ": {
+  "status": "met",
+  "why": "the answer is the sheet's"
+ },
+ "*:linking the two same named skus to each other wi": {
+  "status": "met",
+  "why": "linked in the related strip, difference stated"
+ },
+ "*:add the part code to the part parameter the only": {
+  "status": "met",
+  "why": "the two parts carry different names; ?part= carries the part's H1"
+ },
+ "*:one h1 breadcrumb home products bushes aem insul": {
+  "status": "met",
+  "why": "one h1; breadcrumb from the registry labels"
+ },
+ "*:the temperature figure must render per part it i": {
+  "status": "met",
+  "why": "the spec block is the part's own record; \"Compound dependent\" does not print on this page"
+ },
+ "*:bore od and length belong above the fold they ar": {
+  "status": "met",
+  "why": "in the spec block"
+ },
+ "*:compound dependent must not render on a single c": {
+  "status": "met",
+  "why": "does not print on this page"
+ },
+ "*:this table is the page s aeo asset once filled a": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:what rubber works at 150 c in oil is a real engi": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:name vamac once as the trade name engineers know": {
+  "status": "met",
+  "why": "the copy is the sheet's"
+ },
+ "*:feed material as aem alone": {
+  "status": "na",
+  "why": "client instruction 2026-09-02: every compound is offered on every part, so the Product node lists the eight"
+ },
+ "*:this is the page s aeo asset and the strongest o": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:moulding process named per part compression or t": {
+  "status": "met",
+  "why": "the process row is the sheet's per-part value"
+ },
+ "*:card 04 must stay a market observation not a cla": {
+  "status": "met",
+  "why": "the copy is the sheet's; no firm named"
+ },
+ "*:post cure is a searched term among engineers spe": {
+  "status": "na",
+  "why": "kept"
+ },
+ "*:a published aem datasheet would be an indexable ": {
+  "status": "open",
+  "why": "the datasheet is Margo's to supply (OPEN-ITEMS)"
+ },
+ "*:consider a sixth question on this page only when": {
+  "status": "na",
+  "why": "the FAQ is the sheet's five"
+ },
+ "*:with sitemap xml empty and no related products b": {
+  "status": "met",
+  "why": "the sitemap fills at publish; every SKU page carries a related strip"
+ },
+ "*:the temperature ladder link to fkm oil seals is ": {
+  "status": "met",
+  "why": "linked"
+ },
+ "*:feed issimilarto from this list once built": {
+  "status": "na",
+  "why": "client instruction 2026-09-02: the eight compounds are offered on every part; no per-compound part list to feed"
+ },
+ "*:the spec block must render fields by part type n": {
+  "status": "open",
+  "why": "the foam parts carry foam rows from their sheets (density, CFD, D1056 grade); typed per-part-type fields are a follow-up (OPEN-ITEMS)"
+ },
+ "*:closed cell density and compression force deflec": {
+  "status": "na",
+  "why": "on the foam pages as written"
+ },
+ "*:astm d1056 must appear on the two foam pages and": {
+  "status": "met",
+  "why": "on the two foam parts, the sponge page, its datasheet, and the sheet's own sponge rows on the radiator-shroud flaps"
+ },
+ "*:sponge grades need their own temperature values ": {
+  "status": "open",
+  "why": "the foam parts' values are their sheets'; typed per-grade fields are a follow-up (OPEN-ITEMS)"
+ },
+ "*:why use foam instead of a solid gasket is a real": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:feed material as epdm closed cell sponge not epd": {
+  "status": "na",
+  "why": "client instruction 2026-09-02: the Product node lists the eight compounds"
+ },
+ "*:blowing agent closed cell and die cut are foam b": {
+  "status": "na",
+  "why": "on the page as written"
+ },
+ "*:a published cfd curve would be a genuine differe": {
+  "status": "open",
+  "why": "the curve is Margo's to supply (OPEN-ITEMS)"
+ },
+ "*:do not publish a cfd curve without the test behi": {
+  "status": "met",
+  "why": "none published"
+ },
+ "*:three of these five answers are genuinely differ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:moving this part and sku 09 gives products spong": {
+  "status": "met",
+  "why": "both parts live under /products/sponge-foam-rubber"
+ },
+ "*:one h1 breadcrumb home products gaskets epdm gas": {
+  "status": "met",
+  "why": "one h1; breadcrumb from the registry labels"
+ },
+ "*:the temperature must render from the part record": {
+  "status": "met",
+  "why": "the spec block is the part's own record"
+ },
+ "*:the three standards belong above the fold as tex": {
+  "status": "met",
+  "why": "in the spec block as text"
+ },
+ "*:compound dependent must not render on a compound": {
+  "status": "met",
+  "why": "does not print on this page"
+ },
+ "*:the media row is the aeo asset is epdm oil resis": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:is epdm oil resistant is the highest volume epdm": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:each leave epdm row should link to the part or c": {
+  "status": "fixed",
+  "why": "each compound a \"Leave … if\" row specifies links its /products panel"
+ },
+ "*:feed material as epdm alone": {
+  "status": "na",
+  "why": "client instruction 2026-09-02: the Product node lists the eight compounds"
+ },
+ "*:feed material as epdm alone while this url lives": {
+  "status": "na",
+  "why": "client instruction 2026-09-02: the Product node lists the eight compounds"
+ },
+ "*:card 04 must stay a question never a claim wras ": {
+  "status": "met",
+  "why": "the copy is the sheet's; check:claims forbids the held reading"
+ },
+ "*:die cut and bolt hole pitch are gasket buyer voc": {
+  "status": "na",
+  "why": "on the page as written"
+ },
+ "*:a published epdm datasheet is an indexable asset": {
+  "status": "open",
+  "why": "the datasheet is Margo's to supply (OPEN-ITEMS)"
+ },
+ "*:do not put approval scheme logos on any datashee": {
+  "status": "met",
+  "why": "none"
+ },
+ "*:consider a sixth on this page are your epdm gask": {
+  "status": "na",
+  "why": "the FAQ is the sheet's five"
+ },
+ "*:if this page is collapsed products gaskets ends ": {
+  "status": "met",
+  "why": "the page is kept"
+ },
+ "*:the hero must render from the part record with f": {
+  "status": "met",
+  "why": "the hero specs are the part's own record"
+ },
+ "*:closed cell compression force deflection and ast": {
+  "status": "na",
+  "why": "on the page as written"
+ },
+ "*:density on request is the worst single line on t": {
+  "status": "met",
+  "why": "Density prints \"Per grade, kg/m³\" as the sheet writes it; no \"On request\""
+ },
+ "*:the d1056 row is the aeo asset what is astm d105": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:publishing a solid range on a sponge page is a f": {
+  "status": "met",
+  "why": "the foam page's ranges are its sheet's sponge values"
+ },
+ "*:what temperature can neoprene sponge take is a g": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:feed material as the sponge grades not the solid": {
+  "status": "na",
+  "why": "client instruction 2026-09-02: the Product node lists the eight compounds"
+ },
+ "*:card 02 answers open cell or closed cell for gas": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:process named per part die cut moulded or extrud": {
+  "status": "met",
+  "why": "the process row is the sheet's per-part value"
+ },
+ "*:ip65 and iec 60529 are search strings that no pa": {
+  "status": "met",
+  "why": "on the foam gaskets page as written"
+ },
+ "*:say the gasket contributes to the rating never t": {
+  "status": "met",
+  "why": "the copy is the sheet's; check:claims forbids a held rating"
+ },
+ "*:expansion cure bun stock and skiving are foam in": {
+  "status": "na",
+  "why": "on the page as written"
+ },
+ "*:a published sponge grade table is an indexable a": {
+  "status": "open",
+  "why": "the sponge datasheet page carries the grade table; a downloadable file is Margo's to supply"
+ },
+ "*:keep the step slot hidden where the part is die ": {
+  "status": "met",
+  "why": "no STEP slot on the foam parts"
+ },
+ "*:q4 is the strongest aeo passage on the page it a": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:with sitemap xml empty these links are most of t": {
+  "status": "met",
+  "why": "the moved parts' old URLs 301 to the new; every link points at the new URL"
+ },
+ "*:one h1 breadcrumb home products grommets 3 pin h": {
+  "status": "met",
+  "why": "one h1; breadcrumb from the registry labels"
+ },
+ "*:the hero must render from the part record a hard": {
+  "status": "met",
+  "why": "the hero specs are the part's own record"
+ },
+ "*:cable pass through grommet and panel gauge are t": {
+  "status": "na",
+  "why": "on the page as written"
+ },
+ "*:three named test methods on one page d412 d395 m": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:do not emit these as additionalproperty until th": {
+  "status": "met",
+  "why": "no \"On request\" value reaches additionalProperty"
+ },
+ "*:this is the first page where the selector needs ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:card 02 answers how much smaller should a gromme": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:link the new card to industries and the automoti": {
+  "status": "met",
+  "why": "application cards naming a sector link its industry page"
+ },
+ "*:q2 is the strongest passage it answers a questio": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:one h1 breadcrumb home products grommets interna": {
+  "status": "met",
+  "why": "one h1; breadcrumb from the registry labels"
+ },
+ "*:fix the h1 before anything else on this page it ": {
+  "status": "met",
+  "why": "the H1, title, breadcrumb leaf and category link are the sheet's one string"
+ },
+ "*:blanking grommet panel gauge and push out force ": {
+  "status": "na",
+  "why": "on the page as written"
+ },
+ "*:three named methods d412 d395 method b d624 plus": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:second page in the set needing no default correc": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:card 01 answers how is a rubber grommet held in ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:q2 is the strongest passage it corrects an assum": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:one h1 breadcrumb home products o rings oil fill": {
+  "status": "met",
+  "why": "one h1; breadcrumb from the registry labels"
+ },
+ "*:inside diameter and cross section must be real f": {
+  "status": "open",
+  "why": "typed spec fields are a follow-up (OPEN-ITEMS); the values print as the sheet writes them"
+ },
+ "*:iso 3601 1 2 and 3 named separately by what each": {
+  "status": "na",
+  "why": "as written"
+ },
+ "*:do not let viton stand alone in copy it is a tra": {
+  "status": "open",
+  "why": "the selector's full name \"Fluoroelastomer (Viton)\" is sheet 02's compound table, written without ®; the SKU sheets require ® — a contradiction between sheets, logged (OPEN-ITEMS)"
+ },
+ "*:card 02 answers why do o rings fail in the shape": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:never present iso 3601 1 class a as an aerospace": {
+  "status": "met",
+  "why": "the copy is the sheet's; no aerospace claim"
+ },
+ "*:publish the size chart as an html page not only ": {
+  "status": "met",
+  "why": "the O-ring size chart guide carries the tables as HTML"
+ },
+ "*:hide the step slot on this part": {
+  "status": "met",
+  "why": "no STEP slot on the O-ring part"
+ },
+ "*:q2 is the strongest passage on the page it corre": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:with no related products block this cta and the ": {
+  "status": "met",
+  "why": "every SKU page carries a related strip and its category link"
+ },
+ "*:one h1 breadcrumb leaf follows whatever category": {
+  "status": "met",
+  "why": "one h1; breadcrumb from the registry labels"
+ },
+ "*:temperature and tensile must render per selected": {
+  "status": "met",
+  "why": "the compound block prints each compound's own range from Site settings; the spec block is the sheet's"
+ },
+ "*:three temperature ranges rendered per compound n": {
+  "status": "met",
+  "why": "each compound's range prints from Site settings"
+ },
+ "*:silicone or viton for a pump seal is a real quer": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:do not let viton stand alone it is a trademark f": {
+  "status": "open",
+  "why": "sheet 02's compound full name is written without ® — contradiction logged (OPEN-ITEMS)"
+ },
+ "*:no physiologically inert claim that could read a": {
+  "status": "met",
+  "why": "the copy is the sheet's; check:claims"
+ },
+ "*:card 04 must stay a question food contact and ph": {
+  "status": "met",
+  "why": "the copy is the sheet's"
+ },
+ "*:a crawlable chemical compatibility chart would b": {
+  "status": "open",
+  "why": "no sheet supplies the chart's content (OPEN-ITEMS)"
+ },
+ "*:q4 is the strongest passage it answers what was ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:after the merge update the links rather than rel": {
+  "status": "met",
+  "why": "every link points at the surviving URL"
+ },
+ "*:one h1 breadcrumb home products oil seals epdm": {
+  "status": "met",
+  "why": "one h1; breadcrumb from the registry labels"
+ },
+ "*:din 3760 and iso 6194 are search strings pasted ": {
+  "status": "na",
+  "why": "on the page as written"
+ },
+ "*:can you use epdm for an oil seal is a real query": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:each leave epdm row links to the compound it nam": {
+  "status": "fixed",
+  "why": "each compound a \"Leave … if\" row specifies links its /products panel"
+ },
+ "*:card 01 is the passage an answer engine should q": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:process named per part and on this part it depen": {
+  "status": "met",
+  "why": "the process row is the sheet's per-part value"
+ },
+ "*:rubber to metal bonding is a capability worth na": {
+  "status": "na",
+  "why": "on the page as written"
+ },
+ "*:q2 is the strongest passage on the page and it s": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:four compound urls in one category split whateve": {
+  "status": "open",
+  "why": "the oil-seal compound pages stay separate as their sheets are written; the collapse is Margo's decision (OPEN-ITEMS 112)"
+ },
+ "*:one h1 breadcrumb home products oil seals fkm": {
+  "status": "met",
+  "why": "one h1; breadcrumb from the registry labels"
+ },
+ "*:temperature must render per compound from the pa": {
+  "status": "met",
+  "why": "the spec block is the part's own record; each compound's range prints from Site settings"
+ },
+ "*:din 3760 iso 6194 and 250 c are the strings this": {
+  "status": "na",
+  "why": "on the page as written"
+ },
+ "*:viton must not stand alone anywhere write fkm vi": {
+  "status": "open",
+  "why": "sheet 02's compound full name is written without ® — contradiction logged (OPEN-ITEMS)"
+ },
+ "*:each leave fkm row links to the compound it name": {
+  "status": "fixed",
+  "why": "each compound a \"Leave … if\" row specifies links its /products panel"
+ },
+ "*:process named per part and dependent on the comp": {
+  "status": "met",
+  "why": "the process row is the sheet's per-part value"
+ },
+ "*:q4 is the strongest passage it names a process c": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:one h1 breadcrumb leaf follows whatever the cate": {
+  "status": "met",
+  "why": "one h1; breadcrumb from the registry labels"
+ },
+ "*:temperature must render per selected compound on": {
+  "status": "met",
+  "why": "each compound's range prints from Site settings; the spec block is the sheet's"
+ },
+ "*:feed material as the three live compounds from o": {
+  "status": "na",
+  "why": "client instruction 2026-09-02: the Product node lists the eight compounds"
+ },
+ "*:feed material as the three live compounds not al": {
+  "status": "na",
+  "why": "client instruction 2026-09-02: the Product node lists the eight compounds"
+ },
+ "*:one h1 breadcrumb home products oil seals nbr": {
+  "status": "met",
+  "why": "one h1; breadcrumb from the registry labels"
+ },
+ "*:this page should carry nbr oil seal and nitrile ": {
+  "status": "na",
+  "why": "the copy is the sheet's"
+ },
+ "*:what temperature can nbr handle and is nitrile u": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:viton must not stand alone in the selector write": {
+  "status": "open",
+  "why": "sheet 02's compound full name is written without ® — contradiction logged (OPEN-ITEMS)"
+ },
+ "*:each leave nbr row links to the compound it name": {
+  "status": "fixed",
+  "why": "each compound a \"Leave … if\" row specifies links its /products panel"
+ },
+ "*:the live card 01 claims uv durability on a nitri": {
+  "status": "met",
+  "why": "the cards are the sheet's per part"
+ },
+ "*:card 03 answers is nitrile uv resistant in the s": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:rubber to metal bonding is a client confirmed ca": {
+  "status": "na",
+  "why": "on the page as written"
+ },
+ "*:q2 is the strongest passage and it survives the ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:one h1 breadcrumb home products oil seals silico": {
+  "status": "met",
+  "why": "one h1; breadcrumb from the registry labels"
+ },
+ "*:temperature and tensile must render per compound": {
+  "status": "met",
+  "why": "the spec block is the part's own record"
+ },
+ "*:high temperature shaft seal is the phrase to own": {
+  "status": "na",
+  "why": "the copy is the sheet's"
+ },
+ "*:can silicone be used for an oil seal is a real q": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:note the live card 01 again claims uv exposure d": {
+  "status": "met",
+  "why": "the cards are the sheet's per part"
+ },
+ "*:card 03 answers is silicone oil resistant in the": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:no food contact claim in copy or schema silicone": {
+  "status": "met",
+  "why": "none; check:claims"
+ },
+ "*:a compound versus speed guide would be a categor": {
+  "status": "open",
+  "why": "no sheet supplies its content (OPEN-ITEMS)"
+ },
+ "*:q2 is the strongest passage it diagnoses the fai": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:hardness must render from the part record a figu": {
+  "status": "met",
+  "why": "the hero and spec block are the part's own record"
+ },
+ "*:one way pressure relief and opening pressure are": {
+  "status": "na",
+  "why": "on the page as written"
+ },
+ "*:what is a car air extractor vent for is a genuin": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:third page in the set needing no default correct": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:feed material as epdm and neoprene only not all ": {
+  "status": "na",
+  "why": "client instruction 2026-09-02: the Product node lists the eight compounds"
+ },
+ "*:card 01 answers how does a car pressure relief v": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:link the lead card to the automotive industry pa": {
+  "status": "met",
+  "why": "application cards naming a sector link its industry page"
+ },
+ "*:opening pressure named as an inspection check is": {
+  "status": "na",
+  "why": "on the page as written"
+ },
+ "*:keep the step slot visible on this part it is on": {
+  "status": "met",
+  "why": "shown"
+ },
+ "*:keep the step slot visible on this part it is a ": {
+  "status": "met",
+  "why": "shown"
+ },
+ "*:an opening pressure chart would be an indexable ": {
+  "status": "open",
+  "why": "the chart is Margo's to supply (OPEN-ITEMS)"
+ },
+ "*:q2 is the strongest passage three diagnoses in o": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:test the part value with the live name the encod": {
+  "status": "met",
+  "why": "verified: /contact?part=A%2FC%20… pre-fills \"Part: A/C Extractor Damper Weight\" and via_part carries the full name"
+ },
+ "*:spring rate deflection and shape factor are the ": {
+  "status": "na",
+  "why": "on the page as written"
+ },
+ "*:how do you specify a rubber mounting pad is a re": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:card 01 answers does a harder rubber pad hold mo": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:load deflection testing and bond check are the c": {
+  "status": "na",
+  "why": "on the page as written"
+ },
+ "*:a published load deflection chart would be the s": {
+  "status": "open",
+  "why": "the chart is Margo's to supply (OPEN-ITEMS)"
+ },
+ "*:cross link pads and anti vibration mounts delibe": {
+  "status": "met",
+  "why": "the pad's related strip links two anti-vibration parts and the category"
+ },
+ "*:fitment must be a structured field not prose veh": {
+  "status": "open",
+  "why": "typed fitment fields are a follow-up (OPEN-ITEMS); the fitment prints as the sheet writes it"
+ },
+ "*:a photograph matters more here than on any other": {
+  "status": "open",
+  "why": "the part photograph is Margo's to supply (OPEN-ITEMS)"
+ },
+ "*:published part numbers and fitment data are what": {
+  "status": "met",
+  "why": "printed as the sheet writes them"
+ },
+ "*:an oe reference must always carry for identifica": {
+  "status": "met",
+  "why": "printed"
+ },
+ "*:feed material as natural rubber and neoprene the": {
+  "status": "na",
+  "why": "client instruction 2026-09-02: the Product node lists the eight compounds"
+ },
+ "*:rename the heading for this page type why distri": {
+  "status": "fixed",
+  "why": "advantagesHeading on the part; the page reads \"Why distributors buy from Margo\""
+ },
+ "*:card 01 answers are aftermarket body mounts as g": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:country names are high intent strings for an exp": {
+  "status": "na",
+  "why": "the cards are the sheet's"
+ },
+ "*:do not imply distribution service or stock in an": {
+  "status": "met",
+  "why": "the copy is the sheet's"
+ },
+ "*:do not claim aerospace or marine anywhere as9100": {
+  "status": "met",
+  "why": "no such claim on the page"
+ },
+ "*:do not claim a sector or a place in product sche": {
+  "status": "met",
+  "why": "the Product node carries no areaServed or audience place"
+ },
+ "*:fitment stays in the engineering data table vehi": {
+  "status": "met",
+  "why": "in the table as the sheet lays it out"
+ },
+ "*:load deflection tested against the original spec": {
+  "status": "na",
+  "why": "on the page as written"
+ },
+ "*:the independence statement should be a sitewide ": {
+  "status": "met",
+  "why": "the trademark line comes from Site settings and prints on every vehicle-named page"
+ },
+ "*:hide the step slot on fitment parts it is a desi": {
+  "status": "met",
+  "why": "no STEP slot on the fitment part"
+ },
+ "*:product photography is a commercial asset here n": {
+  "status": "open",
+  "why": "the part photograph is Margo's to supply (OPEN-ITEMS)"
+ },
+ "*:consider a fitment parts index page listing ever": {
+  "status": "open",
+  "why": "no sheet supplies its content (OPEN-ITEMS)"
+ },
+ "*:fix the naming before anything else the current ": {
+  "status": "met",
+  "why": "the H1, title, breadcrumb and category link are the sheet's one string"
+ },
+ "*:switch boot actuation force and push button cove": {
+  "status": "na",
+  "why": "on the page as written"
+ },
+ "*:why does my tailgate button stop working is a hi": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:fourth page in the set needing no default correc": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:feed material as epdm silicone and neoprene only": {
+  "status": "na",
+  "why": "client instruction 2026-09-02: the Product node lists the eight compounds"
+ },
+ "*:card 01 answers why does a rubber cover make a b": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:link the enclosures and agriculture cards to the": {
+  "status": "met",
+  "why": "application cards naming a sector link its industry page"
+ },
+ "*:never claim an ip rating under iec 60529 a ratin": {
+  "status": "met",
+  "why": "the copy is the sheet's; check:claims forbids a held rating"
+ },
+ "*:never imply explosion protection or hazardous ar": {
+  "status": "met",
+  "why": "none"
+ },
+ "*:actuation force measured on batch samples is the": {
+  "status": "na",
+  "why": "on the page as written"
+ },
+ "*:a published actuation force chart would be the s": {
+  "status": "open",
+  "why": "the chart is Margo's to supply (OPEN-ITEMS)"
+ },
+ "*:fix the naming before anything else one string d": {
+  "status": "met",
+  "why": "the H1, title, breadcrumb, category link and ?part= value are the sheet's one string"
+ },
+ "*:an outline drawing is not optional on this page ": {
+  "status": "open",
+  "why": "the outline drawing is Margo's to supply (OPEN-ITEMS)"
+ },
+ "*:how do you specify a rubber packing pad is a rea": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:radiused slot root and slot width gauged against": {
+  "status": "na",
+  "why": "on the page as written"
+ },
+ "*:a published outline is the highest value asset o": {
+  "status": "open",
+  "why": "the outline is Margo's to supply (OPEN-ITEMS)"
+ },
+ "*:do not let three pages compete for epdm the gask": {
+  "status": "met",
+  "why": "the three titles are their sheets', each targeting its own part"
+ },
+ "*:how thick a rubber pad do i need is a real query": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:feed material as epdm natural rubber and neopren": {
+  "status": "na",
+  "why": "client instruction 2026-09-02: the Product node lists the eight compounds"
+ },
+ "*:load deflection tested on batch samples is the c": {
+  "status": "na",
+  "why": "on the page as written"
+ },
+ "*:one load deflection chart would serve the whole ": {
+  "status": "open",
+  "why": "the chart is Margo's to supply (OPEN-ITEMS)"
+ },
+ "*:the live part value is a compound name so every ": {
+  "status": "met",
+  "why": "?part= carries the part's own H1"
+ },
+ "*:temperature must render as cabin soak not weathe": {
+  "status": "met",
+  "why": "the spec row prints the sheet's cabin-soak line"
+ },
+ "*:fogging odour and interior closure bumper are th": {
+  "status": "na",
+  "why": "on the page as written"
+ },
+ "*:name the test methods never claim a result foggi": {
+  "status": "met",
+  "why": "the copy is the sheet's"
+ },
+ "*:what causes windscreen fogging from interior pla": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:fifth page in the set needing no default correct": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:do not publish fogging or odour claims per compo": {
+  "status": "met",
+  "why": "none"
+ },
+ "*:card 02 answers what causes fogging on the insid": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:name the methods never claim to hold them din 75": {
+  "status": "met",
+  "why": "named as tests; not in hasCredential"
+ },
+ "*:link the automotive card to the automotive indus": {
+  "status": "met",
+  "why": "application cards naming a sector link its industry page"
+ },
+ "*:do not claim rail fire certification rolling sto": {
+  "status": "met",
+  "why": "none; check:claims"
+ },
+ "*:post cure drives off residual volatiles is the c": {
+  "status": "na",
+  "why": "on the page as written"
+ },
+ "*:an interior compound statement would serve every": {
+  "status": "open",
+  "why": "no sheet supplies its content (OPEN-ITEMS)"
+ },
+ "*:q4 is the most careful answer in the set it sepa": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:consider an interior trim landing page grouping ": {
+  "status": "open",
+  "why": "no sheet supplies its content (OPEN-ITEMS)"
+ },
+ "*:settle the thermal versus electrical question be": {
+  "status": "open",
+  "why": "the sheet's CONFIRM for Margo (OPEN-ITEMS); the page ships the sheet's \"not tested\" electrical row"
+ },
+ "*:cylinder head cover standoff and attenuation are": {
+  "status": "na",
+  "why": "on the page as written"
+ },
+ "*:the not tested electrical row must survive editi": {
+  "status": "met",
+  "why": "printed as the sheet writes it"
+ },
+ "*:why is a cam cover noisy is a real query with a ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:feed material as aem silicone and neoprene not e": {
+  "status": "na",
+  "why": "client instruction 2026-09-02: the Product node lists the eight compounds"
+ },
+ "*:card 04 must not be softened in editing we make ": {
+  "status": "met",
+  "why": "printed as the sheet writes it"
+ },
+ "*:do not claim a noise limit compliance capability": {
+  "status": "met",
+  "why": "none"
+ },
+ "*:standoff cut with the cover is the credibility l": {
+  "status": "na",
+  "why": "on the page as written"
+ },
+ "*:publish no datasheet carrying an electrical prop": {
+  "status": "met",
+  "why": "none published"
+ },
+ "*:q4 carries the electrical negative as well as th": {
+  "status": "met",
+  "why": "all three placements are the sheet's"
+ },
+ "*:two aem pages should link to each other aem is m": {
+  "status": "met",
+  "why": "the AEM bush and the head-cover insulator link each other in their related strips"
+ },
+ "*:the included angle must be a real field in the p": {
+  "status": "open",
+  "why": "typed spec fields are a follow-up (OPEN-ITEMS); the angle prints as the sheet writes it"
+ },
+ "*:included angle leg thickness and inside radius a": {
+  "status": "na",
+  "why": "on the page as written"
+ },
+ "*:what tolerance can you hold on a moulded rubber ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:card 02 answers why do moulded rubber angles com": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:process named per part compression moulding or e": {
+  "status": "met",
+  "why": "the process row is the sheet's per-part value"
+ },
+ "*:shrinkage compensation and included angle gauged": {
+  "status": "na",
+  "why": "on the page as written"
+ },
+ "*:hide the step slot on section parts and offer dx": {
+  "status": "met",
+  "why": "no STEP slot on the section parts"
+ },
+ "*:a published standard section sheet would monetis": {
+  "status": "open",
+  "why": "the section sheet is Margo's to supply (OPEN-ITEMS)"
+ },
+ "*:q2 is the strongest passage it questions the inc": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:group the pad family with one comparison table o": {
+  "status": "open",
+  "why": "no sheet supplies the table (OPEN-ITEMS); the pads category page carries its parts grid"
+ },
+ "*:push in vented and filler neck are the terms to ": {
+  "status": "na",
+  "why": "on the page as written"
+ },
+ "*:is epdm oil resistant is a high volume query and": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:card 01 answers can you use epdm for an oil cap ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:a published bore size chart would monetise exist": {
+  "status": "open",
+  "why": "the chart is Margo's to supply (OPEN-ITEMS)"
+ },
+ "*:audit the crm for enquiries logged under both na": {
+  "status": "na",
+  "why": "Margo's CRM"
+ },
+ "*:do not let three urls chase one phrase after the": {
+  "status": "met",
+  "why": "the cap and the O-ring pages carry their sheets' distinct titles; the old URL 301s"
+ },
+ "*:the medium row is the aeo passage here it names ": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:card 02 answers is epdm oil resistant in the sha": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:a cap and seal reference sheet would sell the pa": {
+  "status": "open",
+  "why": "no sheet supplies its content (OPEN-ITEMS)"
+ },
+ "*:q2 is the strongest passage it warns against a c": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:the hero must render solid and sponge differentl": {
+  "status": "met",
+  "why": "the hero prints the sheet's \"40–55 Shore A in solid rubber; not applicable in sponge\""
+ },
+ "*:air bypass gap range and shroud seal are the ter": {
+  "status": "na",
+  "why": "on the page as written"
+ },
+ "*:why does my engine run hot with a working fan is": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:sixth page in the set needing no default correct": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:form and compound are different fields the selec": {
+  "status": "open",
+  "why": "typed form/compound fields are a follow-up (OPEN-ITEMS); the selector shows the sheet's sponge rows"
+ },
+ "*:card 02 answers why is my engine overheating whe": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:process named per part moulded or die cut per th": {
+  "status": "met",
+  "why": "the process row is the sheet's per-part value"
+ },
+ "*:do not claim a cooling performance figure the ai": {
+  "status": "met",
+  "why": "none"
+ },
+ "*:die cut and expanded to the specified density ar": {
+  "status": "na",
+  "why": "on the page as written"
+ },
+ "*:hide the step slot on die cut parts and offer dx": {
+  "status": "met",
+  "why": "no STEP slot on the die-cut parts"
+ },
+ "*:a gap to form guide would serve every flat seali": {
+  "status": "open",
+  "why": "no sheet supplies its content (OPEN-ITEMS)"
+ },
+ "*:q2 is the strongest passage it raises the possib": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:cross link the sponge parts wherever they sit th": {
+  "status": "met",
+  "why": "the shroud flaps link the foam gaskets; the foam parts link each other"
+ },
+ "*:one h1 breadcrumb home products seals plunger se": {
+  "status": "met",
+  "why": "one h1; breadcrumb from the registry labels"
+ },
+ "*:the h1 change is worth more than every other edi": {
+  "status": "met",
+  "why": "the H1 is the sheet's"
+ },
+ "*:plunger cup pump plunger and piston seal belong ": {
+  "status": "na",
+  "why": "on the page as written"
+ },
+ "*:why does my pump plunger swell and jam is a real": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:ship the selector with nothing selected and a fl": {
+  "status": "fixed",
+  "why": "no compound starts selected; the panel asks \"Tell us what the pump moves — pick the compound for that fluid.\""
+ },
+ "*:write fkm viton once fkm thereafter never in the": {
+  "status": "met",
+  "why": "as the sheet writes it; not in title, meta or schema"
+ },
+ "*:card 01 answers why did my pump seal swell in th": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:no potable water food contact or pharmaceutical ": {
+  "status": "met",
+  "why": "none; check:claims"
+ },
+ "*:rubber to metal bonding is a searched capability": {
+  "status": "na",
+  "why": "on the page as written"
+ },
+ "*:keep the step slot on this part and hide it else": {
+  "status": "met",
+  "why": "shown here"
+ },
+ "*:a fluid compatibility chart would serve the whol": {
+  "status": "open",
+  "why": "no sheet supplies its content (OPEN-ITEMS)"
+ },
+ "*:q2 is the strongest passage on the page it expla": {
+  "status": "na",
+  "why": "commentary"
+ },
+ "*:after the move to seals this page s siblings cha": {
+  "status": "met",
+  "why": "the related strip lists the seals family"
+ },
+ "*:verify the part value lands in the form field it": {
+  "status": "met",
+  "why": "verified in the browser: ?part= pre-fills the details field and via_part"
+ }
+}

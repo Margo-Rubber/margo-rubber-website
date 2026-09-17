@@ -1,3 +1,4 @@
+import { autocompleteFor } from "@/lib/autocomplete";
 import Link from "next/link";
 import { Img } from "@/components/ui/Img";
 import { Container } from "@/components/ui/Section";
@@ -1023,8 +1024,13 @@ export function ExportMarkets({
               viewBox={`0 0 ${W} ${H}`}
               className="h-auto w-full"
               role="img"
-              aria-label={`Export lanes from ${hub.label} to ${lanes.map((l) => l.name).join(", ")}`}
+              aria-labelledby="home-map-title"
+              aria-describedby="home-map-desc"
             >
+              {/* Named inside the SVG so the lanes are in the text layer a
+                  crawler reads (sheet 01 §09: <title> and <desc> on the <svg>). */}
+              <title id="home-map-title">{`Export lanes from ${hub.label}`}</title>
+              <desc id="home-map-desc">{`Sea lanes from ${hub.label} to ${lanes.map((l) => l.name).join(", ")}.`}</desc>
               {/* Reference grid */}
               <g stroke="var(--color-line)" strokeWidth="1">
                 {[0, 1, 2, 3, 4].map((i) => (
@@ -1096,28 +1102,35 @@ export function ExportMarkets({
           </div>
 
           <div className="flex flex-col gap-3.5">
-            {lanes.map((l) => (
-              <div
-                key={l.code}
-                className="rounded-card border-line relative flex items-center gap-4 border bg-[#0F1115] px-5 py-4"
-              >
-                <span className="text-eyebrow border-accent-400/20 bg-accent-400/10 text-accent-400 grid size-10 shrink-0 place-items-center rounded-lg border font-mono">
-                  {l.code}
-                </span>
-                <div>
-                  <p className="text-ink text-sm font-semibold">
-                    {l.href ? (
-                      <Link href={l.href} className="hover:text-accent-400 transition-colors after:absolute after:inset-0">
-                        {l.name}
-                      </Link>
-                    ) : (
-                      l.name
-                    )}
-                  </p>
-                  <p className="text-ink-4 mt-0.5 text-sm">{l.note}</p>
-                </div>
-              </div>
-            ))}
+            {/* Sheet 01 §09: <h2> + four <h3> market names; the country code
+                is decoration, the accessible name is the full country. */}
+            <ul className="flex flex-col gap-3.5">
+              {lanes.map((l) => (
+                <li
+                  key={l.code}
+                  className="rounded-card border-line relative flex items-center gap-4 border bg-[#0F1115] px-5 py-4"
+                >
+                  <span
+                    aria-hidden="true"
+                    className="text-eyebrow border-accent-400/20 bg-accent-400/10 text-accent-400 grid size-10 shrink-0 place-items-center rounded-lg border font-mono"
+                  >
+                    {l.code}
+                  </span>
+                  <div>
+                    <h3 className="text-ink text-sm font-semibold">
+                      {l.href ? (
+                        <Link href={l.href} className="hover:text-accent-400 transition-colors after:absolute after:inset-0">
+                          {l.name}
+                        </Link>
+                      ) : (
+                        l.name
+                      )}
+                    </h3>
+                    <p className="text-ink-4 mt-0.5 text-sm">{l.note}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
             <p className="text-ink-4 mt-2 flex gap-2.5 text-xs leading-relaxed">
               <Icon name="globe" className="text-accent-400 mt-px size-4 shrink-0" />
               <span>
@@ -1173,50 +1186,62 @@ export function Materials({
           )}
         </header>
 
-        <div className="rounded-card border-line overflow-hidden border bg-[#0F1115]">
-          <div className="text-eyebrow text-ink-4 grid grid-cols-[minmax(0,10rem)_1fr_minmax(0,8rem)] gap-4 px-6 pt-5 font-mono">
-            <span />
-            <span className="flex justify-between">
-              <span>{axis.min}°C</span>
-              <span>{axis.mid}°C</span>
-              <span>{axis.max}°C</span>
-            </span>
-            <span />
-          </div>
-
-          <ul>
-            {compounds.map((c) => {
-              const lo = pct(c.minC);
-              const hi = pct(c.maxC);
-              return (
-                <li
-                  key={c.code}
-                  className="border-line grid grid-cols-[minmax(0,10rem)_1fr_minmax(0,8rem)] items-center gap-4 border-t px-6 py-5"
-                >
-                  <div className="min-w-0">
-                    <p className="text-ink text-sm font-semibold">{c.href ? <a href={c.href} className="hover:text-accent-400 transition-colors">{c.name}</a> : c.name}</p>
-                    <p className="text-ink-4 mt-0.5 text-xs leading-snug">
-                      {c.descriptor}
-                    </p>
-                  </div>
-                  <div
-                    className="relative h-1.5 w-full rounded-full bg-[#20242A]"
-                    role="img"
-                    aria-label={`${c.name} service range ${c.minC} to ${c.maxC} degrees Celsius${c.continuousMaxC ? `, continuous to ${c.continuousMaxC}` : ""}`}
-                  >
-                    <span
-                      className="bg-accent-400 absolute inset-y-0 rounded-full"
-                      style={{ left: `${lo}%`, width: `${r2(hi - lo)}%` }}
-                    />
-                  </div>
-                  {/* A true minus sign (U+2212), as the sheets and the compound table write it — not a hyphen. */}
-                  <p className="text-ink-2 text-right text-sm whitespace-nowrap">
-                    {deg(c.minC)}° to {deg(c.maxC)}°C{c.continuousMaxC ? <span className="text-ink-4 block text-xs">continuous to {c.continuousMaxC}°C</span> : null}
-                  </p>
-                </li>
-              );
-            })}
-          </ul>
+        <div className="rounded-card border-line overflow-x-auto border bg-[#0F1115]">
+          {/* A real table, styled as bars (sheet 01 §10: "Do not build it from
+              <div>s — the tabular relationship is what makes it extractable").
+              Compound names are row headings; the bar is a visual of the
+              range column, not the data. */}
+          <table className="w-full border-collapse">
+            <caption className="sr-only">Service temperature range of the eight compounds mixed in-house</caption>
+            <thead>
+              <tr className="text-eyebrow text-ink-4 font-mono">
+                <th scope="col" className="w-[10rem] px-6 pt-5 pb-1 text-left font-normal">
+                  <span className="sr-only">Compound</span>
+                </th>
+                <th scope="col" className="px-2 pt-5 pb-1 font-normal">
+                  <span className="flex justify-between" aria-hidden>
+                    <span>{axis.min}°C</span>
+                    <span>{axis.mid}°C</span>
+                    <span>{axis.max}°C</span>
+                  </span>
+                  <span className="sr-only">Service range on a scale of {axis.min}°C to {axis.max}°C</span>
+                </th>
+                <th scope="col" className="w-[8rem] px-6 pt-5 pb-1 text-right font-normal">
+                  <span className="sr-only">Service range</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {compounds.map((c) => {
+                const lo = pct(c.minC);
+                const hi = pct(c.maxC);
+                return (
+                  <tr key={c.code} className="border-line border-t">
+                    <th scope="row" className="min-w-0 px-6 py-5 text-left align-middle">
+                      <p className="text-ink text-sm font-semibold">{c.href ? <a href={c.href} className="hover:text-accent-400 transition-colors">{c.name}</a> : c.name}</p>
+                      <p className="text-ink-4 mt-0.5 text-xs leading-snug font-normal">{c.descriptor}</p>
+                    </th>
+                    <td className="px-2 py-5 align-middle">
+                      <div
+                        className="relative h-1.5 w-full rounded-full bg-[#20242A]"
+                        role="img"
+                        aria-label={`${c.name} service range ${c.minC} to ${c.maxC} degrees Celsius${c.continuousMaxC ? `, continuous to ${c.continuousMaxC}` : ""}`}
+                      >
+                        <span
+                          className="bg-accent-400 absolute inset-y-0 rounded-full"
+                          style={{ left: `${lo}%`, width: `${r2(hi - lo)}%` }}
+                        />
+                      </div>
+                    </td>
+                    {/* A true minus sign (U+2212), as the sheets and the compound table write it — not a hyphen. */}
+                    <td className="text-ink-2 px-6 py-5 text-right align-middle text-sm whitespace-nowrap">
+                      {deg(c.minC)}° to {deg(c.maxC)}°C{c.continuousMaxC ? <span className="text-ink-4 block text-xs">continuous to {c.continuousMaxC}°C</span> : null}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
 
           <p className="text-ink-4 border-line flex gap-2.5 border-t px-6 py-5 text-xs leading-relaxed">
             <Icon name="ribbon" className="text-accent-400 mt-px size-4 shrink-0" />
@@ -1277,6 +1302,7 @@ function Control({ f }: { f: Field }) {
     <input
       name={f.name}
       type={f.type}
+      autoComplete={autocompleteFor(f.name)}
       required={f.required}
       placeholder={f.placeholder}
       className={inputCls}

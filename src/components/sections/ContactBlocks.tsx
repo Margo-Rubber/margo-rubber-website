@@ -2,6 +2,7 @@
 
 import { useMemo, useState, type ReactNode } from "react";
 import { readPrefill, useSearch } from "@/lib/contact-prefill";
+import { autocompleteFor } from "@/lib/autocomplete";
 import { PRODUCTS } from "@/content/routes";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import type { Crumb } from "@/lib/breadcrumbs";
@@ -154,7 +155,19 @@ function DirectContact({
               </span>
               <div>
                 <p className="text-ink text-sm font-semibold">{c.label}</p>
-                <p className="text-ink-2 mt-1 text-sm">{c.value}</p>
+                {/* The visible string and the href share one source (sheet 04
+                    §02): phone as tel:, WhatsApp as wa.me, email as mailto:. */}
+                <p className="text-ink-2 mt-1 text-sm">
+                  {(() => {
+                    const digits = c.value.replace(/[^\d+]/g, "");
+                    const href =
+                      c.icon === "whatsapp" ? `https://wa.me/${digits.replace(/^\+/, "")}`
+                      : c.icon === "phone" ? `tel:${digits}`
+                      : c.icon === "email" ? `mailto:${c.value.trim()}`
+                      : null;
+                    return href ? <a href={href} className="hover:text-accent-400 transition-colors">{c.value}</a> : c.value;
+                  })()}
+                </p>
                 {c.note && (
                   <p className="text-ink-4 mt-1 text-xs">{c.note}</p>
                 )}
@@ -214,6 +227,7 @@ function FieldControl({
   if (f.type === "textarea") {
     return (
       <textarea
+        id={`contact-${f.name}`}
         name={f.name}
         rows={5}
         required={f.required}
@@ -227,6 +241,7 @@ function FieldControl({
   if (f.type === "select") {
     return (
       <select
+        id={`contact-${f.name}`}
         name={f.name}
         required={f.required}
         value={value}
@@ -269,10 +284,12 @@ function FieldControl({
   }
   return (
     <input
+      id={`contact-${f.name}`}
       name={f.name}
       type={f.type}
       required={f.required}
       placeholder={f.placeholder}
+      autoComplete={autocompleteFor(f.name)}
       value={value}
       onChange={(e) => onChange(e.target.value)}
       className={inputCls}
@@ -367,7 +384,7 @@ export function RfqForm({
       {/* Stepper */}
       <ol className="mb-8 flex items-center gap-4">
         {steps.map((label, i) => (
-          <li key={label} className="flex flex-1 items-center gap-4 last:flex-none">
+          <li key={label} aria-current={i === step ? "step" : undefined} className="flex flex-1 items-center gap-4 last:flex-none">
             <span className="flex items-center gap-3">
               <span
                 className={`grid size-7 place-items-center rounded-full text-xs font-semibold ${
@@ -417,6 +434,7 @@ export function RfqForm({
             {set.map((f) => (
               <label
                 key={f.name}
+                htmlFor={`contact-${f.name}`}
                 className={f.full ? "sm:col-span-2" : undefined}
               >
                 <span className="text-eyebrow text-ink-4 font-mono uppercase">

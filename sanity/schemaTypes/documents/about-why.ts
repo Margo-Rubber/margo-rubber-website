@@ -3,6 +3,7 @@ import { imageRefField } from "../blocks/_shared.ts";
 import {
   actionsField,
   confirmField,
+  furtherReadingField,
   formFieldMember,
   listField,
   schemaTypesField,
@@ -1183,6 +1184,7 @@ export const aboutPage = defineType({
 
     defineField({ name: "seo", title: "Search engine listing", type: "seo", group: "meta" }),
     schemaTypesField,
+    furtherReadingField,
   confirmField,
   ],
   preview: { prepare: () => ({ title: "About", subtitle: "/about" }) },

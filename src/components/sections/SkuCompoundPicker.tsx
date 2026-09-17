@@ -23,8 +23,10 @@ export type Compound = {
  * unmounted) so the whole material table is in the HTML for crawlers and
  * in-page search rather than appearing only on click.
  */
-export function SkuCompoundPicker({ items }: { items: readonly Compound[] }) {
-  const [i, setI] = useState(0);
+export function SkuCompoundPicker({ items, prompt }: { items: readonly Compound[]; prompt?: string }) {
+  // With a prompt nothing starts selected: on a wetted part the fluid
+  // decides the compound, so the page asks before it shows one (SKU 31 §03).
+  const [i, setI] = useState(prompt ? -1 : 0);
   if (!items.length) return null;
 
   return (
@@ -75,6 +77,11 @@ export function SkuCompoundPicker({ items }: { items: readonly Compound[] }) {
       </ul>
 
       <div className="rounded-card border-line mt-5 border bg-[#0D0F12] p-7 md:p-8">
+        {prompt && (
+          <p hidden={i !== -1} className="text-ink text-lg font-semibold">
+            {prompt}
+          </p>
+        )}
         {items.map((c, n) => (
           <div
             key={c.code}

@@ -228,7 +228,7 @@ export function ApplicationCards({
           )}
           <div className="p-5">
             <h3 className="text-ink text-base font-semibold">{a.name}</h3>
-            <p className="text-ink-4 mt-2 text-sm leading-relaxed">{a.body}</p>
+            <p className="text-ink-4 mt-2 text-sm leading-relaxed">{emphasised(a.body, "text-ink-2 font-semibold")}</p>
           </div>
         </article>
       ))}
@@ -272,7 +272,7 @@ export function ConditionGrid({
           </svg>
           <h3 className="text-ink mt-4 text-base font-semibold">{c.name}</h3>
           <p className="text-ink-4 mt-2 max-w-[46ch] text-sm leading-relaxed">
-            {c.body}
+            {emphasised(c.body, "text-ink-2 font-semibold")}
           </p>
         </div>
       ))}
@@ -303,7 +303,7 @@ export function QualityCards({
               </span>
             )}
             <h3 className={`text-ink text-base font-semibold ${q.chip ? "mt-4" : ""}`}>{q.name}</h3>
-            <p className="text-ink-4 mt-2 text-sm leading-relaxed">{q.body}</p>
+            <p className="text-ink-4 mt-2 text-sm leading-relaxed">{emphasised(q.body, "text-ink-2 font-semibold")}</p>
           </div>
         ))}
       </div>

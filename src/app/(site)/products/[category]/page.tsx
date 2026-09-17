@@ -6,6 +6,7 @@ import { BlockRenderer } from "@/components/blocks/BlockRenderer";
 import { categorySlugs, getCategoryPage } from "@/lib/product-source";
 import { Section } from "@/components/ui/Section";
 import { CategoryHero } from "@/components/sections/Blocks";
+import { FurtherReading } from "@/components/sections/FurtherReading";
 
 /**
  * ONE file → nine product category pages.
@@ -87,7 +88,7 @@ export default async function ProductCategoryPage(
           // The FAQPage node carries only questions the page already
           // answers in its own sections — a category sheet has no FAQ
           // section, so none is drawn (sheet 09, page-level).
-          hasBody || fm.service?.area.length || fm.service?.exclusions.length ? (
+          hasBody || fm.service?.area.length || fm.service?.exclusions.length || fm.related.resources.length ? (
             <>
               {hasBody && Content && (
                 <Section>
@@ -128,6 +129,9 @@ export default async function ProductCategoryPage(
                   </div>
                 </Section>
               )}
+              {/* The guides this category's sheet, or a guide's own sheet,
+                  asks it to send the reader on to — RES_02 §01, RES_05 §01. */}
+              <FurtherReading slugs={fm.related.resources} />
             </>
           ) : undefined
         }

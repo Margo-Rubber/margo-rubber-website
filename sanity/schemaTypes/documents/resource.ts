@@ -325,6 +325,23 @@ export const resource = defineType({
           of: [defineArrayMember({ type: "string" })],
           options: { layout: "tags" },
         }),
+        defineField({
+          name: "pages",
+          title: "Other pages",
+          type: "array",
+          description: "Any other page on the site, with the words the link shows — e.g. /certifications, “ISO 9001:2015 certification”.",
+          of: [
+            defineArrayMember({
+              type: "object",
+              name: "relatedPage",
+              fields: [
+                defineField({ name: "label", title: "Link text", type: "string", validation: (r) => r.required() }),
+                defineField({ name: "href", title: "Web address", type: "string", validation: (r) => r.required() }),
+              ],
+              preview: { select: { title: "label", subtitle: "href" } },
+            }),
+          ],
+        }),
       ],
       options: { collapsible: true, collapsed: true },
       group: "meta",

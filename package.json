@@ -26,6 +26,7 @@
     "sheets:parse": "node scripts/sheets/parse-sheets.mts",
     "check:coverage": "node scripts/check-coverage.mts",
     "check:matrix": "node scripts/check-matrix.mts",
+    "check:techseo": "node scripts/check-techseo.mts",
     "publish:pages": "node scripts/publish.mts"
   },
   "dependencies": {

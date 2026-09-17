@@ -6,6 +6,7 @@ import { getIndustryPage, industrySlugs } from "@/lib/industry-source";
 import { BlockRenderer } from "@/components/blocks/BlockRenderer";
 import { Section } from "@/components/ui/Section";
 import { IndustryHero } from "@/components/sections/IndustryDetail";
+import { FurtherReading } from "@/components/sections/FurtherReading";
 
 /** ONE file → all nine industry pages. */
 export async function generateStaticParams() {
@@ -52,7 +53,7 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
       />
 
       {/* Industry pages have no alternating band, so nothing alternates. */}
-      <BlockRenderer blocks={blocks} comp2={false} />
+      <BlockRenderer blocks={blocks} comp2={false} prose={<FurtherReading slugs={fm.related.resources} />} />
 
       {/* Mandatory verbatim non-claim sentences, e.g. NORSOK/API on oil-gas.
           Not a block: it is a legal obligation attached to the page, not a

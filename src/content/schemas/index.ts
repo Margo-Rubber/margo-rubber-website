@@ -69,8 +69,10 @@ export const relatedSchema = z
     products: z.array(z.string()).default([]),
     industries: z.array(z.string()).default([]),
     resources: z.array(z.string()).default([]),
+    /** Any other page, with the anchor text the sheet gives it — "/certifications — ISO 9001:2015 certification". */
+    pages: z.array(z.object({ label: z.string(), href: z.string() })).default([]),
   })
-  .default({ products: [], industries: [], resources: [] });
+  .default({ products: [], industries: [], resources: [], pages: [] });
 
 /** Named on-page section that a SKU anchor resolves to. */
 export const anchorSchema = z.object({
@@ -1093,6 +1095,8 @@ export const contactPageSchema = baseSchema.extend({
  * pattern rather than copying it, and it is the reason this page exists.
  */
 export const certificationsPageSchema = baseSchema.extend({
+  /** Guides listed before the closing call-to-action; only published ones show. */
+  furtherReading: z.array(z.string()).default([]),
   h1Lines: z.array(z.string()).min(1),
   h1AccentLines: z.array(z.number()).default([]),
   badge: z.string(),
@@ -1137,12 +1141,21 @@ export const certificationsPageSchema = baseSchema.extend({
     ...sectionMeta.shape,
     caption: z.string(),
     gallery: z.array(z.object({ image: imageRefSchema, alt: z.string() })).min(1),
-    capabilities: z.array(z.object({ name: z.string(), body: z.string() })),
+    /** `href`: the page a capability card links out to (sheet 07 §04). */
+    capabilities: z.array(z.object({ name: z.string(), body: z.string(), href: z.string().optional() })),
   }),
 
   system: z.object({
     ...sectionMeta.shape,
-    items: z.array(z.object({ icon: z.enum(["inbox", "gauge", "shield", "loop"]), name: z.string(), body: z.string() })),
+    items: z.array(
+      z.object({
+        icon: z.enum(["inbox", "gauge", "shield", "loop"]),
+        name: z.string(),
+        body: z.string(),
+        /** A stage that links out — final QC to the test standards on /products#testing (sheet 07 §05). */
+        href: z.string().optional(),
+      }),
+    ),
     auditNote: z.object({ lead: z.string(), body: z.string() }),
   }),
 
@@ -1153,6 +1166,8 @@ export const certificationsPageSchema = baseSchema.extend({
     fields: z.array(z.object({ name: z.string(), label: z.string(), placeholder: z.string(), type: z.enum(["text", "email", "textarea"]).default("text") })),
     submitLabel: z.string(),
     footnote: z.string(),
+    /** The post-submit state — "Received. The documents you selected will follow within one business day to {email}." (sheet 07 §06). */
+    confirmation: z.string().optional(),
   }),
 
   schemaTypes: z.array(z.enum(["Product", "BreadcrumbList", "FAQPage", "HowTo", "Organization", "WebSite"])).default(["BreadcrumbList", "Organization"]),
@@ -1177,6 +1192,8 @@ const aboutHead = z.object({
 });
 
 export const aboutPageSchema = baseSchema.extend({
+  /** Guides listed before the closing call-to-action; only published ones show. */
+  furtherReading: z.array(z.string()).default([]),
   h1Lines: z.array(z.string()).min(1),
   h1AccentLines: z.array(z.number()).default([]),
   badge: z.string(),
@@ -1821,6 +1838,8 @@ export const whyMargoPageSchema = baseSchema.extend({
 
 /** /export. Eight anchored market sections plus process, docs and summary. */
 export const exportPageSchema = baseSchema.extend({
+  /** Guides listed before the closing call-to-action; only published ones show. */
+  furtherReading: z.array(z.string()).default([]),
   hero: z.object({
     badge: z.string(),
     h1Lines: z.array(z.string()).min(1),
@@ -2095,9 +2114,10 @@ export const resourcesHubSchema = baseSchema.extend({
   categories: z
     .array(
       z.object({
-        key: z.enum(["material-comparison", "sizing-spec", "sourcing-buyer"]),
+        key: z.enum(["material-comparison", "sizing-spec", "sourcing-buyer", "datasheets"]),
         label: z.string(),
-        blurb: z.string(),
+        /** Sheet 40 §10 names the Datasheets group with no blurb. */
+        blurb: z.string().optional(),
       }),
     )
     .min(1),
@@ -2228,6 +2248,12 @@ export const skuSchema = baseSchema.extend({
   compoundRouter: z
     .object({ columns: z.array(z.string()).min(2), rows: z.array(z.array(z.string())).min(1) })
     .optional(),
+  /**
+   * "Ship the selector with nothing selected and a fluid question in its
+   * place" (SKU 31 §03): on a wetted part the compound is the part, so no
+   * chip starts selected and the panel asks what the part sits in.
+   */
+  compoundPrompt: z.string().optional(),
   /** The chip over the advantages plate — "SERVICE TEMPERATURE / −40 to +160 °C continuous, in AEM" (sheet 34 §04). */
   qualityChip: z.object({ label: z.string().min(2), value: z.string().min(2), note: z.string().optional() }).optional(),
   /** One honest request line in place of four dead downloads (sheet 32 §09). */
@@ -2278,12 +2304,22 @@ export const skuSchema = baseSchema.extend({
   compounds: z.array(z.string()).default([]),
   compoundProperties: z.record(z.string(), z.array(z.string())).default({}),
 
+  /** The advantages heading where the page type changes it — "Why distributors buy from Margo" on a fitment part (SKU 22 §04). */
+  advantagesHeading: z.string().optional(),
   advantages: z
     .array(z.object({ icon: z.string(), name: z.string(), body: z.string() }))
     .default([]),
 
   applications: z
-    .array(z.object({ icon: z.string(), name: z.string(), body: z.string() }))
+    .array(
+      z.object({
+        icon: z.string(),
+        name: z.string(),
+        body: z.string(),
+        /** The industry page a card is about — "Link each surviving card to its industry page" (sheet 34 §05). */
+        href: z.string().optional(),
+      }),
+    )
     .default([]),
 
   process: z.array(z.object({ name: z.string(), body: z.string() })).default([]),

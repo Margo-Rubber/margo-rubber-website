@@ -45,7 +45,26 @@ function linked(text: string): ReactNode {
   return out;
 }
 
+/**
+ * `Every Shipment, *Same Quality System.*` — the sheets mark the accent
+ * words of a heading with single stars (starAccent in scripts/sheets/lib);
+ * the hub headings render them coloured. Anything printing a heading
+ * string straight goes through this, or the stars reach the page.
+ */
+export function accented(text: string): ReactNode {
+  if (!text.includes("*")) return text;
+  return text.split("*").map((part, i) =>
+    i % 2 ? (
+      <span key={i} className="text-accent-400">
+        {part}
+      </span>
+    ) : (
+      part
+    ),
+  );
+}
+
 /** The same string with its markers removed — for structured data and titles. */
 export function plainText(text: string): string {
-  return text.replace(/\*\*([^*]+)\*\*/g, "$1").replace(LINK, "$1");
+  return text.replace(/\*\*([^*]+)\*\*/g, "$1").replace(/\*([^*]+)\*/g, "$1").replace(LINK, "$1");
 }

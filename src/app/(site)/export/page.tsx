@@ -17,6 +17,7 @@ import {
   ExportSummary,
   MarketSection,
 } from "@/components/sections/ExportBlocks";
+import { FurtherReading } from "@/components/sections/FurtherReading";
 
 export async function generateMetadata() {
   const fm = await getSitePage("export", exportPageSchema);
@@ -116,6 +117,8 @@ export default async function ExportPage() {
           </div>
         </Section>
       )}
+
+      <FurtherReading slugs={fm.furtherReading} />
 
       <ExportQuote
         heading={fm.quote.heading}

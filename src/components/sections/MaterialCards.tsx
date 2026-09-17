@@ -1,5 +1,6 @@
 "use client";
 
+import { compoundAnchor } from "@/lib/compound-anchor";
 import { useState } from "react";
 import { Img } from "@/components/ui/Img";
 
@@ -56,7 +57,9 @@ function MaterialCard({ m }: { m: Material }) {
   const dot = m.dot ?? DOT[m.code] ?? "var(--color-surface-4)";
 
   return (
-    <article className="bg-card relative isolate overflow-hidden">
+    /* The card is addressable as #fkm, #nbr … — "FKM → /products/oil-seals#fkm"
+       (sheet 01 §10); the panel inside keeps its own id for aria-controls. */
+    <article id={compoundAnchor(m.code)} className="bg-card relative isolate scroll-mt-24 overflow-hidden">
       {m.image && (
         <div
           aria-hidden
