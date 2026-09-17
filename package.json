@@ -24,7 +24,9 @@
     "check:jsonld": "node scripts/check-jsonld.mts",
     "check:copy": "node scripts/check-copy.mts",
     "sheets:parse": "node scripts/sheets/parse-sheets.mts",
-    "check:coverage": "node scripts/check-coverage.mts"
+    "check:coverage": "node scripts/check-coverage.mts",
+    "check:matrix": "node scripts/check-matrix.mts",
+    "publish:pages": "node scripts/publish.mts"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",
