@@ -30,12 +30,28 @@ import { Img } from "@/components/ui/Img";
  * indistinguishable once rendered.
  */
 
+/** A heading's fragment id, from its own text — the same rule the apply script uses to write the anchors. */
+export function headingId(value: { children?: unknown[] } | undefined): string {
+  const text = (value?.children ?? []).map((c) => (typeof (c as { text?: unknown }).text === "string" ? (c as { text: string }).text : "")).join("");
+  return headingSlug(text);
+}
+export function headingSlug(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[’'"“”]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
 const components: PortableTextComponents = {
   block: {
     normal: ({ children }) => <p>{children}</p>,
     // H2 is the section level the content sheets write the guides at; the
     // page keeps the one H1.
-    h2: ({ children }) => <h2>{children}</h2>,
+    // Each carries an id from its own words, so a list item lower down can
+    // anchor back to it ("Items 2, 3 and 4 anchor back to sections 04, 05
+    // and 08" — RES_02 §10).
+    h2: ({ children, value }) => <h2 id={headingId(value)}>{children}</h2>,
     h3: ({ children }) => <h3>{children}</h3>,
     h4: ({ children }) => <h4>{children}</h4>,
     blockquote: ({ children }) => <blockquote>{children}</blockquote>,

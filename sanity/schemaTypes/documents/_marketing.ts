@@ -226,6 +226,23 @@ export function formFieldMember(
   });
 }
 
+/**
+ * The guides a page sends its reader on to — a "Further reading" strip
+ * before the closing call-to-action, listing only guides that are
+ * published. The guide sheets name the pages: the evaluation checklist
+ * from /about and /certifications (RES_06), the sourcing comparison from
+ * /export (RES_07).
+ */
+export const furtherReadingField = defineField({
+  name: "furtherReading",
+  title: "Further reading",
+  type: "array",
+  of: [defineArrayMember({ type: "string" })],
+  options: { layout: "tags" },
+  description: "Guides to list before the closing call-to-action. Use the last part of the guide's URL only, e.g. how-to-evaluate-a-rubber-manufacturer. Unpublished guides are not shown.",
+  group: "meta",
+});
+
 /** confirmWithMargo — on every type. */
 export const confirmField = defineField({
   name: "confirmWithMargo",

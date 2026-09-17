@@ -32,10 +32,9 @@ export async function generateMetadata() {
 export default async function ResourcesPage() {
   const fm = await getSitePage("resources", resourcesHubSchema);
 
-  // The hub lists the guides; a datasheet (sheet 40) is a reference
-  // document reached from the product page it applies to.
+  // The hub lists the guides and, in a fourth group, the datasheets —
+  // sheet 40 §10 files the sponge datasheet as an eighth item, not a guide.
   const guides: Guide[] = (await listResources())
-    .filter((g) => g.category !== "datasheets")
     .map((g) => ({
       slug: g.slug,
       h1: g.h1,
@@ -51,6 +50,7 @@ export default async function ResourcesPage() {
     .sort((a, b) => a.readingMinutes - b.readingMinutes);
 
   const categoryCount = new Set(guides.map((g) => g.category)).size;
+  const datasheets = guides.filter((g) => g.category === "datasheets").length;
 
   const crumbs = trail(["Resources", "/resources"]);
 
@@ -145,13 +145,23 @@ export default async function ResourcesPage() {
             {fm.intro}
           </p>
 
-          {/* Counts are derived, so they cannot drift from the library. */}
+          {/* Counts are derived, so they cannot drift from the library.
+              "7 Guides · 1 Datasheet" — sheet 40 §10. */}
           <dl className="text-ink-4 mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm">
             <div className="flex items-center gap-1.5">
-              <dt className="text-accent-400 font-semibold">{guides.length}</dt>
+              <dt className="text-accent-400 font-semibold">{guides.length - datasheets}</dt>
               <dd>Guides</dd>
             </div>
             <span aria-hidden>·</span>
+            {datasheets > 0 && (
+              <>
+                <div className="flex items-center gap-1.5">
+                  <dt className="text-accent-400 font-semibold">{datasheets}</dt>
+                  <dd>{datasheets === 1 ? "Datasheet" : "Datasheets"}</dd>
+                </div>
+                <span aria-hidden>·</span>
+              </>
+            )}
             <div className="flex items-center gap-1.5">
               <dt className="text-accent-400 font-semibold">{categoryCount}</dt>
               <dd>Categories</dd>

@@ -24,6 +24,7 @@ import {
   StatCards,
   ValidationPanel,
 } from "@/components/sections/HubBlocks";
+import { accented } from "@/components/ui/Emphasis";
 
 export async function generateMetadata() {
   const frontmatter = await getSitePage("products", productsHubSchema);
@@ -103,10 +104,16 @@ export default async function ProductsHubPage() {
             <div>
               <Eyebrow variant="rule">{fm.excellence.eyebrow}</Eyebrow>
               <h2 className="text-h1 mt-3">
-                {fm.excellence.heading.split(" ").slice(0, -1).join(" ")}{" "}
-                <span className="text-accent-400 block">
-                  {fm.excellence.heading.split(" ").slice(-1)}
-                </span>
+                {fm.excellence.heading.includes("*") ? (
+                  accented(fm.excellence.heading)
+                ) : (
+                  <>
+                    {fm.excellence.heading.split(" ").slice(0, -1).join(" ")}{" "}
+                    <span className="text-accent-400 block">
+                      {fm.excellence.heading.split(" ").slice(-1)}
+                    </span>
+                  </>
+                )}
               </h2>
               {fm.excellence.body && (
                 <p className="text-ink-4 mt-4 leading-relaxed">
@@ -155,8 +162,13 @@ export default async function ProductsHubPage() {
         </Section>
       )}
 
+      {fm.compounds && <span id="materials" className="block scroll-mt-24" aria-hidden />}
       {fm.compounds && (
+        /* #compounds is the section (sheet 02 §05, the export page's links,
+           the DefinedTermSet); #materials is what the homepage cards link
+           (sheet 01 §04) — both land here. */
         <Section
+          id="compounds"
           className="bg-surface"
           eyebrow={fm.compounds.eyebrow}
           eyebrowVariant="rule"
@@ -223,7 +235,9 @@ export default async function ProductsHubPage() {
       )}
 
       {fm.validation && (
-        <Section>
+        /* #testing — the twelve test standards, linked from /certifications
+           stage 3 and the homepage materials footnote (sheets 07 §05, 01 §10). */
+        <Section id="testing">
           <ValidationPanel
             eyebrow={fm.validation.eyebrow}
             heading={fm.validation.heading}
@@ -254,10 +268,16 @@ export default async function ProductsHubPage() {
           <Container className="!px-0 text-center">
             <Eyebrow>{fm.faqSection?.eyebrow ?? "FREQUENTLY ASKED"}</Eyebrow>
             <h2 className="text-h1 mt-3">
-              {(fm.faqSection?.heading ?? "Common Questions").split(" ").slice(0, -1).join(" ")}{" "}
-              <span className="text-accent-400">
-                {(fm.faqSection?.heading ?? "Common Questions").split(" ").slice(-1)}
-              </span>
+              {(fm.faqSection?.heading ?? "Common Questions").includes("*") ? (
+                accented(fm.faqSection?.heading ?? "")
+              ) : (
+                <>
+                  {(fm.faqSection?.heading ?? "Common Questions").split(" ").slice(0, -1).join(" ")}{" "}
+                  <span className="text-accent-400">
+                    {(fm.faqSection?.heading ?? "Common Questions").split(" ").slice(-1)}
+                  </span>
+                </>
+              )}
             </h2>
           </Container>
           <div className="mx-auto mt-10 max-w-[860px]">

@@ -36,22 +36,72 @@ const ARTICLES: Record<string, string> = {
 let keyN = 0;
 const key = (p: string) => `${p}${(keyN++).toString(36)}`;
 
-/** One paragraph → one block; `**…**` runs become strong spans; the glyph the sheet uses for emphasis of its own is not copy. */
+const LINK = /\[([^\]]+)\]\(((?:\/|#|https?:)[^)\s]+)\)/g;
+
+/**
+ * One paragraph → one block; `**…**` runs become strong spans and
+ * `[phrase](href)` runs become link-annotated spans; the glyph the sheet
+ * uses for emphasis of its own is not copy.
+ */
 function block(text: string, style: "normal" | "h2" | "h3" | "h4" = "normal", list?: "number" | "bullet") {
   const clean = text.replace(/🛑\s*/g, "");
-  const parts = clean.split(/\*\*([^*]+)\*\*/g);
-  const children = parts
-    .map((part, i) => ({ _type: "span", _key: key("s"), text: part, marks: i % 2 ? ["strong"] : [] }))
-    .filter((c) => c.text);
+  const markDefs: { _type: "link"; _key: string; href: string }[] = [];
+  const children: { _type: "span"; _key: string; text: string; marks: string[] }[] = [];
+  const spans = (part: string, marks: string[]) => {
+    let last = 0;
+    for (const m of part.matchAll(LINK)) {
+      if (m.index > last) children.push({ _type: "span", _key: key("s"), text: part.slice(last, m.index), marks });
+      const def = { _type: "link" as const, _key: key("l"), href: m[2] };
+      markDefs.push(def);
+      children.push({ _type: "span", _key: key("s"), text: m[1], marks: [...marks, def._key] });
+      last = m.index + m[0].length;
+    }
+    if (last < part.length) children.push({ _type: "span", _key: key("s"), text: part.slice(last), marks });
+  };
+  clean.split(/\*\*([^*]+)\*\*/g).forEach((part, i) => spans(part, i % 2 ? ["strong"] : []));
   return {
     _type: "block",
     _key: key("b"),
     style,
-    markDefs: [],
-    children,
+    markDefs,
+    children: children.filter((c) => c.text),
     ...(list ? { listItem: list, level: 1 } : {}),
   };
 }
+
+/**
+ * The links a sheet's notes ask for on a phrase in the body — "Internal
+ * links on the alternatives — nitrile and fluoroelastomer to the pages that
+ * lead with them" (RES_01 §03), "reciprocating seals → the plunger seals
+ * page" (§07). Applied to the first paragraph carrying the phrase.
+ */
+const LINKS: Record<string, { phrase: string; href: string; in?: string }[]> = {
+  "RES_01_silicone-vs-epdm-high-temperature-seals": [
+    { phrase: "nitrile up to about", href: "/products#nbr" },
+    { phrase: "fluoroelastomer above that", href: "/products#fkm" },
+    { phrase: "reciprocating seals", href: "/products/seals" },
+  ],
+  // RES_02 §09: "internal link on ISO 9001:2015 to /certifications" — in the certificate paragraph.
+  "RES_02_fkm-vs-nbr-oil-seal-guide": [{ phrase: "ISO 9001:2015", href: "/certifications", in: "certificate 09111526A" }],
+};
+
+/**
+ * "Items 2, 3 and 4 anchor back to sections 04, 05 and 08" — the numbered
+ * mistakes at the end of a guide link back to the section that explains
+ * them. Item number → section number; the anchor is the section H2's id,
+ * derived from its words the way Prose.tsx derives it.
+ */
+const ANCHORS: Record<string, Record<number, string>> = {
+  "RES_01_silicone-vs-epdm-high-temperature-seals": { 1: "03", 2: "04", 3: "05" },
+  "RES_02_fkm-vs-nbr-oil-seal-guide": { 2: "04", 3: "05", 4: "08" },
+  "RES_05_rubber-to-metal-bonded-parts-guide": { 1: "03", 2: "06" },
+};
+const headingSlug = (text: string) =>
+  text
+    .toLowerCase()
+    .replace(/[’'"“”]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
 
 function table(caption: string | undefined, columns: string[], rows: string[][]) {
   return {
@@ -83,21 +133,31 @@ for (const stem of stems) {
   const sheet = loadSheet(stem);
   const slug = ARTICLES[stem];
   const expect: string[] = [];
-  const E = (v: string) => (expect.push(v.replace(/\*\*/g, "").replace(/🛑\s*/g, "")), v);
+  const E = (v: string) => (expect.push(v.replace(/\*\*/g, "").replace(/🛑\s*/g, "").replace(LINK, "$1")), v);
   keyN = 0;
+  const pending = [...(LINKS[stem] ?? [])];
+  /** Link each asked-for phrase where it first appears; the words stay the sheet's. */
+  const linkPhrases = (text: string) => {
+    for (const l of [...pending]) {
+      if (!text.includes(l.phrase) || (l.in && !text.includes(l.in))) continue;
+      text = text.replace(l.phrase, `[${l.phrase}](${l.href})`);
+      pending.splice(pending.indexOf(l), 1);
+    }
+    return text;
+  };
 
   const body: unknown[] = [];
   const faqs: { q: string; a: string }[] = [];
   let h1 = "";
   let standfirst = "";
   let closing: { body: string; cta: { label: string; href: string } } | undefined;
-  const related = { products: [] as string[], industries: [] as string[], resources: [] as string[] };
+  const related = { products: [] as string[], industries: [] as string[], resources: [] as string[], pages: [] as { label: string; href: string }[] };
 
-  const para = (f: Extract<Field, { kind: "paragraphs" }>) => f.marked.forEach((p) => body.push(block(E(p))));
+  const para = (f: Extract<Field, { kind: "paragraphs" }>) => f.marked.forEach((p) => body.push(block(E(linkPhrases(p)))));
   const parts = (ps: Part[]) => {
     for (const p of ps) {
       if (p.kind === "heading") body.push(block(E(p.lines.join(" ")), "h3"));
-      else if (p.kind === "para") body.push(block(E(p.text)));
+      else if (p.kind === "para") body.push(block(E(linkPhrases(p.text))));
       else if (p.kind === "table") {
         for (const r of p.rows) for (const c of r) E(c);
         body.push(table(undefined, p.columns.map((c) => E(c)), p.rows));
@@ -132,12 +192,19 @@ for (const stem of stems) {
           const cta = (f.lits?.[0] ?? "").match(/^\[\s*(.*?)\s*→\s*(\S+?)\s*\]$/);
           closing = { body: E(f.marked[0]), cta: cta ? { label: E(cta[1]), href: cta[2] } : { label: "Ask our engineers", href: "/contact" } };
         } else if (f.label === "Related" && f.kind === "table") {
-          // Slot | Destination | Anchor text — categories, industries, guides.
+          // Slot | Destination | Anchor text — categories and industries by
+          // slug; guides and any other page ("/certifications — ISO 9001:2015
+          // certification") as links carrying the sheet's own anchor text.
+          // A guide link renders only once that guide is published.
           for (const r of f.rows) {
-            const m = r[1].match(/^\/(products|industries|resources)\/([a-z0-9-]+)$/);
-            if (!m) continue;
-            const list = related[m[1] as keyof typeof related];
-            if (!list.includes(m[2])) list.push(m[2]);
+            const m = r[1].match(/^\/(products|industries)\/([a-z0-9-]+)$/);
+            if (m) {
+              const list = related[m[1] as "products" | "industries"];
+              if (!list.includes(m[2])) list.push(m[2]);
+            } else if (/^\/[a-z0-9-]+(?:\/[a-z0-9-]+)?$/.test(r[1])) {
+              // A guide link's words are checked once the guide is published — until then the page hides it.
+              related.pages.push({ label: r[1].startsWith("/resources/") ? r[2] : E(r[2]), href: r[1] });
+            }
           }
         }
         // "The full chart" (RES_04) is a note to Margo, not copy.
@@ -156,9 +223,14 @@ for (const stem of stems) {
       } else if (f.kind === "paragraphs") para(f);
       else if (f.kind === "table") {
         if (/^List <ol>/.test(f.label)) {
-          // Each numbered item is an <h3> with its paragraph.
+          // Each numbered item is an <h3> with its paragraph; the items the
+          // sheet names anchor back to their section's H2.
           for (const r of f.rows) {
-            body.push(block(E(r[1]), "h3"));
+            const back = ANCHORS[stem]?.[Number(r[0])];
+            const target = back ? sheet.sections.find((x) => x.num === back) : undefined;
+            const h2 = target?.fields.find((x) => x.label === "H2") as { kind: string; value?: string } | undefined;
+            if (back && !h2?.value) throw new Error(`${stem}: no H2 in section ${back} to anchor item ${r[0]} to`);
+            body.push(block(h2?.value ? `[${E(r[1])}](#${headingSlug(h2.value)})` : E(r[1]), "h3"));
             if (r[2]) body.push(block(E(r[2])));
           }
         } else {
@@ -169,6 +241,7 @@ for (const stem of stems) {
     }
   }
 
+  for (const l of pending) console.warn(`  ${stem}: phrase "${l.phrase}" not found — link not applied`);
   if (!h1 || !standfirst || !closing) throw new Error(`${stem}: missing ${!h1 ? "H1" : !standfirst ? "standfirst" : "closing"}`);
 
   await applyDocument({

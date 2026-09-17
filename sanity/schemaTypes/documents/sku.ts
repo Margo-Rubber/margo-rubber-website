@@ -64,6 +64,7 @@ const iconCardArray = (name: string, title: string, description: string) =>
           iconField(),
           defineField({ name: "name", title: "Heading", type: "string", validation: (r) => r.required() }),
           defineField({ name: "body", title: "Description", type: "text", rows: 2, validation: (r) => r.required() }),
+          defineField({ name: "href", title: "Links to", type: "string", description: "The industry page this card is about, e.g. /industries/automotive. Empty for no link." }),
         ],
         preview: { select: { title: "name", subtitle: "body" } },
       }),
@@ -318,6 +319,13 @@ export const sku = defineType({
     }),
 
     /* ── Advantages & uses ────────────────────────────────────────────────── */
+    defineField({
+      name: "advantagesHeading",
+      title: "Heading over 'Why this part'",
+      type: "string",
+      description: "Leave empty for “Why Specifiers Choose Margo”. A fitment part sold to distributors reads “Why distributors buy from Margo”.",
+      group: "selling",
+    }),
     iconCardArray("advantages", "Why this part", "What makes it the right choice."),
     iconCardArray("applications", "Where it is used", "Typical applications."),
     defineField({
@@ -500,6 +508,13 @@ export const sku = defineType({
           ],
         }),
       ],
+      group: "specs",
+    }),
+    defineField({
+      name: "compoundPrompt",
+      title: "Question shown before a compound is chosen",
+      type: "string",
+      description: "Set on a wetted part, where the fluid decides the compound: no chip starts selected and this question shows in the panel — e.g. “What does the pump move? Pick the compound for that fluid.”",
       group: "specs",
     }),
     defineField({

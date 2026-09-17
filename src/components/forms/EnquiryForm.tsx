@@ -174,6 +174,27 @@ export function EnquiryForm({
 }
 
 /**
+ * The post-submit state, in place of the form: "Received. The documents you
+ * selected will follow within one business day to {email}." (sheet 07 §06)
+ * — `{email}` is the address the visitor gave. Renders the children until
+ * the enquiry is sent; a form with no `text` keeps its redirect instead.
+ */
+export function EnquiryReceived({ text, children }: { text?: string; children: ReactNode }) {
+  const { status, submitted } = useEnquiry();
+  if (!text || status !== "success") return <>{children}</>;
+  const [before, after] = text.split("{email}");
+  return (
+    <div role="status" className="border-accent-400/40 rounded-card border bg-[#0B1416] p-6 md:p-8">
+      <p className="text-ink text-base leading-relaxed">
+        {before}
+        {after !== undefined && <strong className="text-accent-400 font-semibold">{submitted.email}</strong>}
+        {after}
+      </p>
+    </div>
+  );
+}
+
+/**
  * Submit button. Disabled while in flight so a slow connection cannot produce
  * two identical enquiries from one impatient click.
  */

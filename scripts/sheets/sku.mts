@@ -14,6 +14,8 @@ import { z } from "zod";
 import { skuSchema } from "../../src/content/schemas/index.ts";
 import { stripNullsDeep } from "../../src/content/blocks.ts";
 import { applyDocument, client, field, lit, loadSheet, paragraphs, rows } from "./lib.mts";
+import { INDUSTRIES } from "../../src/content/routes.ts";
+import { compoundAnchor } from "../../src/lib/compound-anchor.ts";
 import type { Section } from "./lib.mts";
 
 /** The raw document, reshaped as the route's GROQ does (router rows are `{cells}`). */
@@ -298,6 +300,19 @@ const EXTRA_SPECS: Record<string, { after: string; label: string; value: string 
  * category moves and renames of sheet 33) or by a shortened slug. Until
  * those moves land (Phase 7) the links resolve to where the parts are.
  */
+/**
+ * What a sheet's notes change about the page type rather than its copy:
+ * the advantages heading on a part sold to distributors ("Rename the
+ * heading for this page type", SKU 21 §04) and the question a wetted part
+ * asks in place of a pre-selected compound ("Ship the selector with
+ * nothing selected and a fluid question in its place", SKU 31 §03 — the
+ * question is that sheet's own §11 request, "tell us what the pump moves").
+ */
+const PAGE_TYPE: Record<string, { advantagesHeading?: string; compoundPrompt?: string }> = {
+  "SKU_21_bolero-support-pad": { advantagesHeading: "Why distributors buy from Margo" },
+  "SKU_31_rubber-plungers": { compoundPrompt: "Tell us what the pump moves — pick the compound for that fluid." },
+};
+
 const RELATED_ALIAS: Record<string, string> = {
   // Sheets written before the moves name the old paths; the parts now live
   // where their own sheets put them (src/content/redirects.ts).
@@ -322,6 +337,21 @@ export type SkuOptions = {
   /** Print the derived values without writing. */
   review?: boolean;
 };
+
+/** `Specify NBR (−30/+120 °C) or … FKM` → each compound named links its /products panel, once. */
+function linkCompounds(text: string): string {
+  const names = ["natural rubber", "Natural rubber", "Neoprene", "neoprene", "Silicone", "silicone", "AEM", "FKM", "NBR", "SBR", "EPDM"];
+  const seen = new Set<string>();
+  for (const n of names) {
+    const code = COMPOUND_CODE[n] ?? COMPOUND_CODE[n[0].toUpperCase() + n.slice(1)];
+    if (!code || seen.has(code)) continue;
+    const re = new RegExp(`(^|[^A-Za-z\\]])${n}(?![A-Za-z\\]])`);
+    if (!re.test(text)) continue;
+    text = text.replace(re, `$1[${n}](/products#${compoundAnchor(code)})`);
+    seen.add(code);
+  }
+  return text;
+}
 
 const COMPOUND_CODE: Record<string, string> = {
   AEM: "AEM",
@@ -455,11 +485,19 @@ export async function applySku(o: SkuOptions): Promise<Record<string, unknown>> 
     patch.compoundRouter = undefined;
   } else {
     // A compound-variant page: the table routes, as written; the
-    // severity glyphs and a trailing sheet note come off a cell.
+    // severity glyphs and a trailing sheet note come off a cell. "Each
+    // 'leave EPDM' row should link to the part or compound it names" (SKU
+    // 08 §03): the compounds a "Leave … if" row specifies link their
+    // panels on /products, first mention each.
     patch.compoundRanking = [];
     patch.compoundRouter = {
       columns: sel.columns.map((c) => E(c)),
-      rows: sel.rows.map((r) => ({ cells: r.map((cell) => E(buyerCopy(cell))) })),
+      rows: sel.rows.map((r) => ({
+        cells: r.map((cell, j) => {
+          const text = E(buyerCopy(cell));
+          return /^🛑?\s*Leave /.test(r[0]) && j === whyCol ? linkCompounds(text) : text;
+        }),
+      })),
     };
   }
 
@@ -469,6 +507,8 @@ export async function applySku(o: SkuOptions): Promise<Record<string, unknown>> 
   const chip = lit(why, "Quality chip").split("\n");
   if (chip.length < 2) throw new Error(`${o.stem}: quality chip "${chip.join(" ")}"`);
   patch.qualityChip = { label: E(chip[0]), value: E(chip[1]), ...(chip[2] ? { note: E(chip.slice(2).join(" ")) } : {}) };
+  patch.advantagesHeading = PAGE_TYPE[o.stem]?.advantagesHeading;
+  patch.compoundPrompt = PAGE_TYPE[o.stem]?.compoundPrompt;
   const oldAdv = ((current.advantages as { icon?: string }[]) ?? []).map((a) => a.icon);
   const ADV_ICON = ["shield", "bolt", "globe", "layers"];
   patch.advantages = rows(why, "Cards").map((r, i) => ({
@@ -497,7 +537,12 @@ export async function applySku(o: SkuOptions): Promise<Record<string, unknown>> 
     const kept = cards.rows.filter((r) => !/^🛑?\s*remove/i.test(r[1])).map((r) => decisionCard(r[0], r[1])?.name);
     for (const a of apps) if (!kept.includes(a.name)) throw new Error(`${o.stem}: card "${a.name}" is not on the sheet`);
   }
-  patch.applications = apps.map((a) => ({ icon: iconFor(a.name), name: E(a.name), body: E(a.body) }));
+  // A card that is one of the eleven sectors links to its page — "Link each
+  // surviving card to its industry page" (§05 on every part sheet).
+  patch.applications = apps.map((a) => {
+    const ind = INDUSTRIES.find((i) => i.label.toLowerCase() === a.name.toLowerCase() || i.slug === a.name.toLowerCase().replace(/[^a-z0-9]+/g, "-"));
+    return { icon: iconFor(a.name), name: E(a.name), body: E(a.body), ...(ind ? { href: ind.path } : {}) };
+  });
 
   /* 06 From compound to certification */
   const proc = sec(/^From compound/);
@@ -581,6 +626,10 @@ export async function applySku(o: SkuOptions): Promise<Record<string, unknown>> 
     }
   }
   patch.relatedParts = related.slice(0, 4);
+  // RES_02 §01: the FKM vs NBR guide is linked from every oil-seal page —
+  // "the explanation those pages need for a compound choice they
+  // currently make silently". Rendered as Further reading once published.
+  if (o.category === "oil-seals") patch["related.resources"] = ["fkm-vs-nbr-oil-seal-guide"];
 
   /* 11 Quote CTA */
   const qcta = sec(/^Quote CTA/);

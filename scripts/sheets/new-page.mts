@@ -76,10 +76,10 @@ const COMPOUND_ANCHOR: Record<string, string> = {
   NBR: "nbr",
   FKM: "fkm",
   AEM: "aem",
-  Neoprene: "neoprene-cr-",
+  Neoprene: "neoprene",
   "Natural rubber": "natural-rubber",
   SBR: "sbr",
-  Silicone: "silicone-vmq-",
+  Silicone: "silicone",
 };
 
 const STOP = /🛑\s*/g;
@@ -203,7 +203,7 @@ export async function applyNewPage(o: NewPage): Promise<void> {
           ? t.rows.map((r) => {
               const anchor = COMPOUND_ANCHOR[r[1]];
               if (!anchor) throw new Error(`${where}: no /products anchor for "${r[1]}"`);
-              return [r[0], `[${r[1]}](/products#hub-compound-${anchor})`, ...r.slice(2)];
+              return [r[0], `[${r[1]}](/products#${anchor})`, ...r.slice(2)];
             })
           : t.rows;
         const para = (label: string | undefined) =>

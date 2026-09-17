@@ -21,6 +21,7 @@ import {
   SkuRelated,
   SkuSpecs,
 } from "@/components/sections/SkuBlocks";
+import { FurtherReading } from "@/components/sections/FurtherReading";
 
 /**
  * ONE file → every SKU page, built to `single category.png` section for section.
@@ -136,9 +137,12 @@ export default async function SkuPage(
           name: fm.seo.title,
           description: fm.seo.description,
           crumbs,
-          faqs: fm.faqs,
+          // No FAQPage node here: the five questions are the same on every
+          // part, and "Q1's answer competes with itself 31 times" (sheet 32
+          // §10). The accordion stays visible; the schema lives with the
+          // category once it has a questions section.
           extra: [
-            skuNode(
+            await skuNode(
               fm,
               `/products/${category}/${product}`,
               `/products/${category}`,
@@ -179,9 +183,10 @@ export default async function SkuPage(
         ranking={fm.compoundRanking}
         router={fm.compoundRouter}
         h1={fm.h1}
+        prompt={fm.compoundPrompt}
       />
 
-      <SkuAdvantages items={fm.advantages} chip={fm.qualityChip} />
+      <SkuAdvantages items={fm.advantages} chip={fm.qualityChip} heading={fm.advantagesHeading} />
 
       <SkuApplications items={fm.applications} />
 
@@ -196,6 +201,7 @@ export default async function SkuPage(
       {/* The sheet's four named siblings with their differences when set;
           the category's other parts otherwise. */}
       <SkuRelated items={relatedParts.length ? relatedParts : siblings} categorySlug={category} />
+      <FurtherReading slugs={fm.related.resources} />
 
       <SkuCta
         h1={fm.h1}

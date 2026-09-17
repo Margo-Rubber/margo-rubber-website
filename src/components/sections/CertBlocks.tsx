@@ -1,7 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { isFileHref } from "@/lib/downloads";
+import { autocompleteFor } from "@/lib/autocomplete";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import type { Crumb } from "@/lib/breadcrumbs";
 import { Img } from "@/components/ui/Img";
@@ -9,6 +11,7 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Section";
 import {
   EnquiryForm,
+  EnquiryReceived,
   EnquiryStatus,
   EnquirySubmit,
 } from "@/components/forms/EnquiryForm";
@@ -426,7 +429,7 @@ export function FacilityGallery({
 }: {
   caption: string;
   gallery: { image: string; alt: string }[];
-  capabilities: { name: string; body: string }[];
+  capabilities: { name: string; body: string; href?: string }[];
 }) {
   const [active, setActive] = useState(0);
 
@@ -471,7 +474,15 @@ export function FacilityGallery({
             key={c.name}
             className="border-line rounded-card border bg-[#0A0A0A] p-5"
           >
-            <p className="text-ink text-sm font-semibold">{c.name}</p>
+            <p className="text-ink text-sm font-semibold">
+              {c.href ? (
+                <Link href={c.href} className="hover:text-accent-400 inline-flex items-center gap-1.5">
+                  {c.name} <span aria-hidden className="text-accent-400">›</span>
+                </Link>
+              ) : (
+                c.name
+              )}
+            </p>
             <p className="text-ink-4 mt-1.5 text-sm leading-relaxed">{c.body}</p>
           </li>
         ))}
@@ -513,7 +524,7 @@ export function QualitySystem({
   items,
   auditNote,
 }: {
-  items: { icon: string; name: string; body: string }[];
+  items: { icon: string; name: string; body: string; href?: string }[];
   auditNote: { lead: string; body: string };
 }) {
   return (
@@ -538,7 +549,15 @@ export function QualitySystem({
                 {SYS_ICON[q.icon]}
               </svg>
             </span>
-            <h3 className="text-ink mt-5 text-base font-semibold">{q.name}</h3>
+            <h3 className="text-ink mt-5 text-base font-semibold">
+              {q.href ? (
+                <Link href={q.href} className="hover:text-accent-400 inline-flex items-center gap-1.5">
+                  {q.name} <span aria-hidden className="text-accent-400">›</span>
+                </Link>
+              ) : (
+                q.name
+              )}
+            </h3>
             <p className="text-ink-4 mt-2 text-sm leading-relaxed">{q.body}</p>
             <span aria-hidden className="bg-accent-400 mt-5 h-px w-8" />
           </div>
@@ -563,6 +582,7 @@ export function DocsPanel({
   fields,
   submitLabel,
   footnote,
+  confirmation,
 }: {
   heading: string;
   body: string;
@@ -570,6 +590,7 @@ export function DocsPanel({
   fields: { name: string; label: string; placeholder: string; type: string }[];
   submitLabel: string;
   footnote: string;
+  confirmation?: string;
 }) {
   const words = heading.split(" ");
   const second = words.slice(1).join(" ");
@@ -600,8 +621,10 @@ export function DocsPanel({
 
       <EnquiryForm
         source="certifications"
+        redirectTo={confirmation ? null : "/thank-you"}
         className="border-line bg-[#050505] p-8 md:p-10 lg:border-l"
       >
+        <EnquiryReceived text={confirmation}>
         <div className="space-y-5">
           {fields.map((f) => (
             <label key={f.name} className="block">
@@ -619,6 +642,8 @@ export function DocsPanel({
                 <input
                   name={f.name}
                   type={f.type}
+                  autoComplete={autocompleteFor(f.name)}
+                  required={f.name !== "need"}
                   placeholder={f.placeholder}
                   className="border-line text-ink placeholder:text-ink-4 focus:border-accent-400 mt-2 w-full rounded-lg border bg-[#0D0D0D] px-4 py-3 text-sm"
                 />
@@ -632,6 +657,7 @@ export function DocsPanel({
         </EnquirySubmit>
         <EnquiryStatus />
         <p className="text-ink-4 mt-3 text-[11px] leading-relaxed">{footnote}</p>
+        </EnquiryReceived>
       </EnquiryForm>
     </div>
   );

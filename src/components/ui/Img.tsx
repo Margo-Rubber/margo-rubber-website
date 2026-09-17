@@ -70,6 +70,9 @@ export function Img({
         alt={img.alt}
         fill
         priority={priority}
+        // The LCP element asks for the network first (sheet 01 §01:
+        // fetchpriority="high" on the hero background only).
+        fetchPriority={priority ? "high" : undefined}
         sizes={sizes ?? "100vw"}
         className={className}
         {...blurProps}
@@ -84,6 +87,7 @@ export function Img({
       width={img.w}
       height={img.h}
       priority={priority}
+      fetchPriority={priority ? "high" : undefined}
       sizes={sizes}
       className={className}
       {...blurProps}

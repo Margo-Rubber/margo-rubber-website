@@ -11,6 +11,7 @@ import { buildMetadata } from "@/lib/seo";
 import { articleNode, pageGraph } from "@/lib/schema";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Container } from "@/components/ui/Section";
+import { publishedRoutes } from "@/lib/published";
 
 export async function generateStaticParams() {
   return (await resourceSlugs()).map((slug) => ({ slug }));
@@ -68,6 +69,11 @@ export default async function ResourceGuidePage(
   const { guideReviewer } = await getSiteSettings();
   const related = fm.related;
   const guides = related.resources.length ? await listResources() : [];
+  // "Guide-to-guide links only where the target is published. A link to an
+  // unwritten guide is another dead affordance." — RES_01 §12.
+  const live = new Set((await publishedRoutes()).filter((r) => r.type === "resource").map((r) => r.slug));
+  const pages = related.pages.filter((p) => !p.href.startsWith("/resources/") || live.has(p.href.slice("/resources/".length)));
+  const resources = related.resources.filter((r) => live.has(r));
 
   const crumbs = trail(
     ["Resources", "/resources"],
@@ -177,7 +183,7 @@ export default async function ResourceGuidePage(
                 <li key={f.q} className="rounded-card border-line border bg-[#0B0D10]">
                   <details className="group">
                     <summary className="flex cursor-pointer list-none items-center justify-between gap-6 p-5 [&::-webkit-details-marker]:hidden">
-                      <span className="text-ink text-sm font-medium">{f.q}</span>
+                      <h3 className="text-ink text-sm font-medium">{f.q}</h3>
                       <span aria-hidden className="text-ink-4 transition-transform group-open:rotate-180">⌄</span>
                     </summary>
                     <p className="text-ink-3 px-5 pb-5 text-sm leading-relaxed">{f.a}</p>
@@ -205,7 +211,7 @@ export default async function ResourceGuidePage(
 
         {/* Related links carry the internal-linking spec from the plan: every
             guide points at the categories and sectors it informs. */}
-        {(related.products.length > 0 || related.industries.length > 0 || related.resources.length > 0) && (
+        {(related.products.length > 0 || related.industries.length > 0 || resources.length > 0 || pages.length > 0) && (
           <div className="border-line max-w-[68ch] border-t pt-10 pb-20">
             <h2 className="text-eyebrow text-ink-4 font-mono uppercase">
               Related
@@ -232,13 +238,24 @@ export default async function ResourceGuidePage(
                 </li>
               ))}
               {/* Guide-to-guide links, by the other guide's short name. */}
-              {related.resources.map((r) => (
+              {resources.map((r) => (
                 <li key={`r-${r}`}>
                   <Link
                     href={`/resources/${r}`}
                     className="border-line-2 text-ink-2 hover:border-accent-400/60 hover:text-ink rounded-pill inline-flex border px-4 py-2 text-sm transition-colors"
                   >
                     {guides.find((g) => g.slug === r)?.navLabel ?? r}
+                  </Link>
+                </li>
+              ))}
+              {/* Any other page, with the sheet's own anchor text. */}
+              {pages.map((p) => (
+                <li key={`g-${p.href}`}>
+                  <Link
+                    href={p.href}
+                    className="border-line-2 text-ink-2 hover:border-accent-400/60 hover:text-ink rounded-pill inline-flex border px-4 py-2 text-sm transition-colors"
+                  >
+                    {p.label}
                   </Link>
                 </li>
               ))}

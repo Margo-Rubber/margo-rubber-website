@@ -53,7 +53,7 @@ export function Icon({
  * 48px box with a heavier stroke, not UI glyphs.
  */
 
-export function ProfileDrawing({ shape }: { shape: ProfileShape }) {
+export function ProfileDrawing({ shape, title }: { shape: ProfileShape; title?: string }) {
   return (
     <svg
       viewBox="0 0 32 32"
@@ -62,9 +62,13 @@ export function ProfileDrawing({ shape }: { shape: ProfileShape }) {
       strokeWidth={1.6}
       strokeLinecap="round"
       strokeLinejoin="round"
-      aria-hidden
+      // Named when the card gives it a name, so the drawing is words as
+      // well as a picture (sheet 18 §02); decorative otherwise.
+      role={title ? "img" : undefined}
+      aria-hidden={title ? undefined : true}
       className="size-12"
     >
+      {title && <title>{title}</title>}
       <path d={PROFILES[shape]} />
     </svg>
   );

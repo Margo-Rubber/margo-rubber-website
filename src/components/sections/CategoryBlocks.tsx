@@ -75,7 +75,7 @@ export function ProfileGrid({
             }`}
           >
             <span className="text-accent-400 flex justify-center">
-              <ProfileDrawing shape={(p.shape ?? "custom-profile") as ProfileShape} />
+              <ProfileDrawing shape={(p.shape ?? "custom-profile") as ProfileShape} title={`${p.name} cross-section`} />
             </span>
             <h3
               className={`mt-5 text-sm font-semibold ${
@@ -276,12 +276,13 @@ export function QualityPanel({
                   <span className="bg-accent-400 text-ink grid size-9 shrink-0 place-items-center rounded-full text-[11px] font-bold">
                     {quote.initials}
                   </span>
-                  <span className="text-sm">
+                  {/* <cite> for the attribution (sheets 18 §06, 19 §08). */}
+                  <cite className="text-sm not-italic">
                     <span className="text-ink block font-semibold">
                       {quote.author}
                     </span>
                     <span className="text-ink-4 block text-xs">{quote.org}</span>
-                  </span>
+                  </cite>
                 </figcaption>
               </figure>
             )}
@@ -307,8 +308,11 @@ export function QualityPanel({
                 group with its label above; an ungrouped list has none. */}
             {groupStandards(standards).map((g) => (
               <div key={g.label ?? "all"} className="[&+div]:mt-6">
+                {/* The group label is a heading and the standard a <code>
+                    (sheet 18 §06: "the two test groups are <h3> plus <ul>.
+                    Standards go in <code>"). */}
                 {g.label && (
-                  <p className="text-eyebrow text-ink-4 mb-3 font-mono uppercase">{g.label}</p>
+                  <h3 className="text-eyebrow text-ink-4 mb-3 font-mono uppercase">{g.label}</h3>
                 )}
                 <ul className="space-y-2.5">
                   {g.items.map((s) => (
@@ -320,9 +324,9 @@ export function QualityPanel({
                       <span className="text-ink-2 min-w-0 flex-1 text-sm">
                         {s.name}
                       </span>
-                      <span className="text-ink-4 font-mono text-[10px] tracking-[0.08em] whitespace-nowrap">
+                      <code className="text-ink-4 font-mono text-[10px] tracking-[0.08em] whitespace-nowrap">
                         {s.code}
-                      </span>
+                      </code>
                     </li>
                   ))}
                 </ul>

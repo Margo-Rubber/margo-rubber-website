@@ -72,10 +72,13 @@ export function ExportLaneSequence({
                 fill="none"
                 className="h-auto w-full"
                 role="img"
-                aria-label={`Margo export trade lanes from ${hub.label} to ${markets
-                  .map((m) => m.chip)
-                  .join(", ")}`}
+                aria-labelledby="export-map-title"
+                aria-describedby="export-map-desc"
               >
+                {/* Named inside the SVG so the map is in the text layer a
+                    crawler reads (sheet 01 §09: <title> and <desc> on the <svg>). */}
+                <title id="export-map-title">{`Margo export trade lanes from ${hub.label}`}</title>
+                <desc id="export-map-desc">{`Sea lanes from ${hub.label} to ${markets.map((m) => m.pinLabel ?? m.chip).join(", ")}.`}</desc>
                 <MapBase />
                 <g clipPath="url(#margo-map-clip)">
                   {markets.map((m, i) => {
@@ -108,14 +111,18 @@ export function ExportLaneSequence({
                             />
                           </>
                         )}
-                        <g className="lane-pin" data-lane={i}>
-                          {/* The tooltip is the pin's <title>: port · days · FCL/LCL. */}
-                          {m.pinNote && <title>{`${m.pinLabel ?? m.chip}: ${m.pinNote}`}</title>}
-                          <MapPin x={m.pin.x} y={m.pin.y} label={m.pinLabel} />
-                          {(m.pins ?? []).map((p) => (
-                            <MapPin key={p.label} x={p.x} y={p.y} label={p.label} />
-                          ))}
-                        </g>
+                        {/* Each pin is a focusable link to its market block
+                            (sheet 06 §03: "pins as focusable <a> elements"). */}
+                        <a href={`#${m.slug}`} aria-label={`${m.pinLabel ?? m.chip} — read the market notes`}>
+                          <g className="lane-pin" data-lane={i}>
+                            {/* The tooltip is the pin's <title>: port · days · FCL/LCL. */}
+                            {m.pinNote && <title>{`${m.pinLabel ?? m.chip}: ${m.pinNote}`}</title>}
+                            <MapPin x={m.pin.x} y={m.pin.y} label={m.pinLabel} />
+                            {(m.pins ?? []).map((p) => (
+                              <MapPin key={p.label} x={p.x} y={p.y} label={p.label} />
+                            ))}
+                          </g>
+                        </a>
                       </g>
                     );
                   })}

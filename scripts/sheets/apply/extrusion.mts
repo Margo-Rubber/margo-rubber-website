@@ -189,6 +189,8 @@ const patch = {
   'sections[_key=="sectorsSection"].items': sectors,
   'sections[_key=="sectorsSection"].cardCta': sectorLink.value,
 
+  // "The section ID changes from #commercial to #pricing" (§08) — this page prices per metre.
+  'sections[_key=="commercialSection"].id': "pricing",
   'sections[_key=="commercialSection"].eyebrow': E(lit(com, "Eyebrow")),
   'sections[_key=="commercialSection"].heading': keepAccent("commercialSection", heading(com, "H2").value),
   'sections[_key=="commercialSection"].body': E(paragraph(com, "Intro")),
@@ -214,6 +216,9 @@ const patch = {
     componentsAnchor: "profiles",
   },
   "related.products": ["sponge-foam-rubber", "gaskets"],
+  // "This is the only block on the site that earns a HowTo node" (§05) —
+  // the four-line specification guide, as on the sponge page.
+  schemaTypes: ["Product", "BreadcrumbList", "HowTo"],
   confirmWithMargo: [],
 };
 // Every sector card's link is checked against the sheet's pattern.

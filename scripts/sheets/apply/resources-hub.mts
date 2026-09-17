@@ -46,7 +46,7 @@ const KEY: Record<string, string> = {
   "Sizing & Spec": "sizing-spec",
   "Sourcing & Buyer Decision": "sourcing-buyer",
 };
-const categories: { key: string; label: string; blurb: string }[] = [];
+const categories: { key: string; label: string; blurb?: string }[] = [];
 const cards: {
   id: string;
   h1: string;
@@ -112,6 +112,10 @@ const buttons = rows(cta, "Buttons").map((r) => {
     variant: r[0] === "Primary" ? "primary" : "secondary",
   };
 });
+
+// Sheet 40 §10: the datasheet is an eighth item in a fourth category,
+// Datasheets, not filed as a guide. The group has a label and no blurb.
+categories.push({ key: "datasheets", label: "Datasheets" });
 
 const patch = {
   "seo.title": sheet.head.title,

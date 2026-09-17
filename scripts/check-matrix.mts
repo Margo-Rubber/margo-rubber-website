@@ -13,7 +13,8 @@
  *   CTA    a way to enquire on the page — a link to /contact or a tel: link
  *   Outline stat values and footer labels are not headings; no heading is empty
  *   Text   nothing that only a template prints: "undefined", "[object Object]",
- *          "NaN", a raw slug in a sentence, a leftover "Contact for number"
+ *          "NaN", a raw slug in a sentence, a leftover "Contact for number",
+ *          a sheet's *accent* or **bold** marker printed as text
  *
  * Run against a dev server:  node scripts/check-matrix.mts [/route …]
  */
@@ -132,6 +133,11 @@ for (const route of list) {
   // ordinary hyphenated words are left out.
   const leak = SLUGS.find((slug) => new RegExp(`(^|[\\s(])${slug}(?=[\\s.,;)])`).test(text));
   if (leak) problems.push(`slug in prose: "${leak}"`);
+  // A sheet's accent or emphasis marker printed as text — "*Same Quality
+  // System.*" — a star touching a letter. A required-field "Company *" is
+  // a star on its own and does not match.
+  const star = text.match(/(?:\*[A-Za-z]|[A-Za-z.]\*)[^*]{0,30}/);
+  if (star) problems.push(`prints a marker: "…${star[0]}"`);
 
   pages++;
   if (problems.length) {

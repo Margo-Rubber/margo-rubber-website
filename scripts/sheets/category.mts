@@ -61,6 +61,7 @@ export function arrowLink(line: string): { label: string; href: string } {
 /* ── The standard category page (sheets 09–17) ─────────────────────────── */
 
 import { applyDocument, client, field, heading, lit, litHref, loadSheet, paragraph, paragraphs, rows, section, starAccent } from "./lib.mts";
+import { productBySlug } from "../../src/content/routes.ts";
 import type { Section } from "./lib.mts";
 
 /** Compound panel name → Site settings code. Shared across the sheets. */
@@ -213,7 +214,8 @@ export async function applyStandardCategory(o: StandardCategory): Promise<void> 
   patch.heroStats = rows(hero, "Stats").map((r) => ({ value: E(r[0]), label: E(r[1]) }));
   if (has(hero, "Hero CTA") || has(hero, "CTA")) {
     const cta = arrowLink(lit(hero, has(hero, "Hero CTA") ? "Hero CTA" : "CTA"));
-    patch.heroLink = { label: E(cta.label), href: cta.href };
+    const label = productBySlug(o.id.replace(/^productCategory-/, ""))?.label;
+    patch.heroLink = { label: E(cta.label), href: cta.href === "/contact" && label ? `/contact?product=${encodeURIComponent(label)}` : cta.href };
   }
   if (o.heroAlt) patch["hero.alt"] = o.heroAlt;
 
@@ -327,8 +329,13 @@ export async function applyStandardCategory(o: StandardCategory): Promise<void> 
   const [primary, secondary] = has(enq, "Button 1")
     ? [litHref(enq, "Button 1"), litHref(enq, "Button 2")]
     : lit(enq, "CTAs").split("\n").map(arrowLink);
-  patch[`${ep}.primary`] = { label: E(primary.label), href: primary.href };
-  patch[`${ep}.secondary`] = { label: E(secondary.label), href: secondary.href };
+  // "Prefill the product field. A buyer arriving at /contact from here has
+  // already told you the category. Pass it." (sheets 09 §07, 10 §06): a
+  // plain /contact link from this page carries the category.
+  const label = productBySlug(o.id.replace(/^productCategory-/, ""))?.label;
+  const prefilled = (href: string) => (href === "/contact" && label ? `/contact?product=${encodeURIComponent(label)}` : href);
+  patch[`${ep}.primary`] = { label: E(primary.label), href: prefilled(primary.href) };
+  patch[`${ep}.secondary`] = { label: E(secondary.label), href: prefilled(secondary.href) };
 
   // Only a question the page itself shows (O-Rings §05's heading) can be
   // in the FAQPage node; the questions the notes name for the other pages

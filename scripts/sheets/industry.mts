@@ -44,6 +44,12 @@ export type IndustryOptions = {
   id: string;
   /** The component card the sheet writes bullets for ("AV mounts card — bullets"). */
   bulletsFor: string;
+  /**
+   * A link the sheet's technical notes ask for on one phrase in one block —
+   * "Link 'AEM' to the bushes page on first mention" (20 §04). Applied to
+   * the block's first item body (or its body) that carries the phrase.
+   */
+  links?: { block: "conditions" | "quality" | "custom"; phrase: string; href: string }[];
   /** Nine sheets, four condition icons each; the existing icons stay by index. */
 };
 
@@ -65,6 +71,46 @@ const imageFor = (slug: string, fallback: string) => {
   const key = `products.${slug === "sponge-foam-rubber" ? "sponge-foam" : slug}.hero`;
   return key in IMAGES ? key : fallback;
 };
+
+/**
+ * "Inline links, not card links. Linking the part name inside the sentence
+ * is worth more than a 'learn more' under the card — the anchor text
+ * becomes the part name" (§03 on every industry sheet). The first mention
+ * of a category's product in a card body becomes that category's link;
+ * each category is linked once per section.
+ */
+const PRODUCT_TERMS: [slug: string, pattern: RegExp][] = [
+  ["o-rings", /\bo-rings?\b/i],
+  ["oil-seals", /\b(?:oil|shaft|lip) seals?\b/i],
+  ["gaskets", /\bgaskets?\b/i],
+  ["bellows", /\bbellows\b/i],
+  ["anti-vibration-mounts", /\b(?:anti-vibration|vibration|isolation|engine) mounts?\b/i],
+  ["grommets", /\bgrommets?\b/i],
+  ["bushes", /\bbush(?:es|ings?)?\b/i],
+  ["pads-stoppers-caps", /\b(?:pads|stoppers|filler caps|port caps|buffers)\b/i],
+  ["diaphragms", /\bdiaphragms?\b/i],
+  ["extrusion", /\b(?:extruded profiles?|extrusions?|weatherstrips?|extruded [a-z-]+ profiles?)\b/i],
+  ["sponge-foam-rubber", /\b(?:closed-cell foam[a-z -]*|foam[a-z -]*tape|sponge|foam)\b/i],
+  ["leak-test-rubber", /\bleak[- ]test\b/i],
+  ["seals", /\b(?:plunger|reciprocating) seals?\b/i],
+  ["bonded-components", /\bbonded\b/i],
+  ["rubber-lining", /\b(?:sheet lining|lining|skirting)\b/i],
+];
+export function linkProducts(body: string, used: Set<string>): string {
+  let out = body;
+  for (const [slug, re] of PRODUCT_TERMS) {
+    if (used.has(slug)) continue;
+    const entry = PRODUCTS.find((p) => p.slug === slug);
+    if (!entry?.live) continue;
+    const m = out.match(re);
+    if (!m || m.index === undefined) continue;
+    // Not inside a link already made.
+    if (/\[[^\]]*$/.test(out.slice(0, m.index))) continue;
+    out = `${out.slice(0, m.index)}[${m[0]}](${entry.path})${out.slice(m.index + m[0].length)}`;
+    used.add(slug);
+  }
+  return out;
+}
 
 export async function applyIndustry(o: IndustryOptions): Promise<void> {
   // An "Eyebrow · H2" composite (sheets 27–28) or the two fields (20–26).
@@ -152,7 +198,8 @@ export async function applyIndustry(o: IndustryOptions): Promise<void> {
   const ap = 'sections[_key=="applications"]';
   if (has(app, "Eyebrow")) patch[`${ap}.eyebrow`] = E(lit(app, "Eyebrow"));
   patch[`${ap}.heading`] = E(heading(app, "H2").value);
-  patch[`${ap}.items`] = rows(app, "Groups").map((r) => ({ name: E(r[0]), body: E(r[1]) }));
+  const linked = new Set<string>();
+  patch[`${ap}.items`] = rows(app, "Groups").map((r) => ({ name: E(r[0]), body: (E(r[1]), linkProducts(r[1], linked)) }));
 
   /* 04 Built for … conditions */
   const con = s("04");
@@ -168,6 +215,7 @@ export async function applyIndustry(o: IndustryOptions): Promise<void> {
         .filter((f) => /^Card \d/.test(f.label) && f.kind === "paragraphs")
         .map((f) => [f.label.replace(/^Card \d+ — /, ""), (f as { paragraphs: string[] }).paragraphs[0]]);
   patch[`${np}.items`] = condRows.map((r, i) => ({ icon: oldIcons[i] ?? "shield", name: E(r[0]), body: E(r[1]) }));
+
 
   /* 05 Custom engineering */
   const cus = s("05");
@@ -287,6 +335,17 @@ export async function applyIndustry(o: IndustryOptions): Promise<void> {
           buttons.rows.map((r) => arrowLink(/^\[no change\]/.test(r[2]) ? r[1] : r[2]))
         : [];
   patch[`${zp}.actions`] = links.map((l, i) => ({ label: E(l.label), href: l.href, variant: i ? "secondary" : "primary" }));
+
+  // The sheet's named phrase links, on the first item that carries the phrase.
+  for (const l of o.links ?? []) {
+    const key = { conditions: np, quality: qp, custom: up }[l.block];
+    const items = patch[`${key}.items`] as { body: string }[] | undefined;
+    const hit = items?.find((it) => it.body.includes(l.phrase) && !it.body.includes(`[${l.phrase}]`));
+    if (hit) hit.body = hit.body.replace(l.phrase, `[${l.phrase}](${l.href})`);
+    else if (typeof patch[`${key}.body`] === "string" && (patch[`${key}.body`] as string).includes(l.phrase))
+      patch[`${key}.body`] = (patch[`${key}.body`] as string).replace(l.phrase, `[${l.phrase}](${l.href})`);
+    else throw new Error(`${o.stem}: no "${l.phrase}" in the ${l.block} block to link`);
+  }
 
   await applyDocument({ id: o.id, type: "industry", schema: industryDocSchema, patch, expect });
 }

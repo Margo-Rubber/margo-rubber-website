@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { INDUSTRIES, industryBySlug } from "@/content/routes";
 import { useSearch } from "@/lib/contact-prefill";
+import { autocompleteFor } from "@/lib/autocomplete";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import type { Crumb } from "@/lib/breadcrumbs";
 import Link from "next/link";
@@ -13,6 +14,7 @@ import {
   EnquiryStatus,
   EnquirySubmit,
 } from "@/components/forms/EnquiryForm";
+import { accented } from "@/components/ui/Emphasis";
 
 type Industry = {
   slug: string;
@@ -183,7 +185,7 @@ export function IndustryGrid({
               <p className="text-eyebrow text-accent-400 font-mono uppercase">
                 {eyebrow}
               </p>
-              <h2 className="text-h2 mt-3">{heading}</h2>
+              <h2 className="text-h2 mt-3">{accented(heading)}</h2>
             </div>
             <p className="text-ink-4 text-xs">
               {visible.length} of {items.length} showing
@@ -281,7 +283,7 @@ export function SectorCards({
             <p className="text-eyebrow text-accent-400 font-mono uppercase">
               {eyebrow}
             </p>
-            <h2 className="text-h2 mt-3">{heading}</h2>
+            <h2 className="text-h2 mt-3">{accented(heading)}</h2>
           </div>
           <p className="text-ink-4 max-w-[44ch] text-right text-xs leading-relaxed">
             {note}
@@ -361,7 +363,7 @@ export function EnquiryPanel({
             <span className="bg-accent-400/10 text-accent-400 grid size-11 place-items-center rounded-lg text-lg">
               ✍
             </span>
-            <h2 className="text-h1 mt-6 max-w-[16ch]">{heading}</h2>
+            <h2 className="text-h1 mt-6 max-w-[16ch]">{accented(heading)}</h2>
             <p className="text-ink-4 mt-4 max-w-[46ch] text-sm leading-relaxed">
               {body}
             </p>
@@ -426,6 +428,7 @@ export function EnquiryPanel({
                     <input
                       name={f.name}
                       type={f.type}
+                      autoComplete={autocompleteFor(f.name)}
                       required
                       placeholder={f.placeholder}
                       className="border-line bg-surface text-ink placeholder:text-ink-4 focus:border-accent-400 mt-2 w-full rounded-lg border px-4 py-3 text-sm"

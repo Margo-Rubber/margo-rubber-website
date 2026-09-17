@@ -16,7 +16,7 @@ export type Guide = {
   featuredBlurb?: string;
 };
 
-export type Category = { key: string; label: string; blurb: string };
+export type Category = { key: string; label: string; blurb?: string };
 
 /* ── icons ──────────────────────────────────────────────────────────────── */
 const ICONS: Record<string, React.ReactNode> = {
@@ -310,11 +310,14 @@ export function ResourceLibrary({
                     an unrelated fragment across a wide row. */}
                 <header className="border-line mx-auto max-w-[52rem] border-b pb-6 text-center">
                   <h2 className="text-h2">{c.label}</h2>
-                  <p className="text-ink-3 mx-auto mt-3 max-w-[62ch] text-sm leading-relaxed">
-                    {c.blurb}
-                  </p>
+                  {c.blurb && (
+                    <p className="text-ink-3 mx-auto mt-3 max-w-[62ch] text-sm leading-relaxed">
+                      {c.blurb}
+                    </p>
+                  )}
                   <p className="text-ink-4 mt-3 text-sm">
-                    {inGroup.length} guide{inGroup.length === 1 ? "" : "s"}
+                    {inGroup.length} {c.key === "datasheets" ? "datasheet" : "guide"}
+                    {inGroup.length === 1 ? "" : "s"}
                   </p>
                 </header>
                 <ul className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">

@@ -22,6 +22,7 @@ import {
   Values,
   Vision,
 } from "@/components/sections/AboutBlocks";
+import { FurtherReading } from "@/components/sections/FurtherReading";
 
 export async function generateMetadata() {
   const fm = await getSitePage("about", aboutPageSchema);
@@ -157,6 +158,8 @@ export default async function AboutPage() {
         sectors={fm.clients.sectors}
         trademarkLine={settings.clients.trademarkLine}
       />
+
+      <FurtherReading slugs={fm.furtherReading} />
 
       <Closing
         eyebrow={fm.closing.eyebrow}

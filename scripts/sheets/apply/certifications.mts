@@ -48,9 +48,17 @@ const ADDRESS =
 
 /* ── 04 Facility ─────────────────────────────────────────────────────────── */
 const fac = s("04");
+// "Internal links. Three: /products/extrusion, /products#compounds,
+// /about#manufacturing" — on the card that describes each.
+const CAP_LINK: Record<string, string> = {
+  "Extrusion lines": "/products/extrusion",
+  "Compound mixing": "/products#compounds",
+  "Tool room": "/about#manufacturing",
+};
 const capabilities = rows(fac, "Cards").map((r) => ({
   name: E(r[0]),
   body: E(r[1]),
+  ...(CAP_LINK[r[0]] ? { href: CAP_LINK[r[0]] } : {}),
 }));
 
 /* ── 05 Quality system ───────────────────────────────────────────────────── */
@@ -60,6 +68,8 @@ const stages = rows(sys, "Stages").map((r, i) => ({
   icon: ICON[i],
   name: E(r[0]),
   body: E(r[1]),
+  // "Stage 3 links to /products#testing where the twelve ASTM and ISO test standards are listed."
+  ...(i === 2 ? { href: "/products#testing" } : {}),
 }));
 const audit = paragraph(sys, "Audit note").match(/^(For supplier qualification audits:)\s*([^]*)$/);
 if (!audit) throw new Error("audit note");
@@ -68,10 +78,14 @@ if (!audit) throw new Error("audit note");
 const docs = s("06");
 const docsH2 = heading(docs, "H2");
 const docsForm = lit(docs, "Form fields").split("\n");
+// The post-submit state the sheet's technical note writes for this form.
+const docsConfirmation = "Received. The documents you selected will follow within one business day to {email}.";
 const send = docsForm[docsForm.length - 1].match(/^\[\s*(.*?)\s*→\s*\]$/);
 if (!send) throw new Error("docs submit");
 
 const patch = {
+  // RES_06 §01: the guide this page sends its reader on to — shown once published.
+  furtherReading: ["how-to-evaluate-a-rubber-manufacturer"],
   "seo.title": sheet.head.title,
   "seo.description": sheet.head.description,
   h1: h1.lines.join(" "),
@@ -121,6 +135,7 @@ const patch = {
   "docs.items": rows(docs, "Options").map((r) => E(r[0])),
   "docs.submitLabel": E(send[1]),
   "docs.footnote": E(lit(docs, "Footnote")),
+  "docs.confirmation": docsConfirmation,
 };
 
 await applyDocument({
