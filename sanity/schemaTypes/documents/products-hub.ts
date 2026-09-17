@@ -521,6 +521,8 @@ export const productsHub = defineType({
           validation: (r) => r.required().min(1),
         }),
         defineField({ name: "submitLabel", type: "string", validation: (r) => r.required() }),
+        defineField({ name: "attachLabel", title: "Attachment field — label", type: "string", description: "e.g. ATTACH DRAWING / SPEC (OPTIONAL). Shown but inert until file upload is wired." }),
+        defineField({ name: "attachHint", title: "Attachment field — hint", type: "string", description: "e.g. PDF, DWG or image, max 10MB" }),
       ],
       options: { collapsible: true, collapsed: true },
       group: "sections",

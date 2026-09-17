@@ -285,6 +285,8 @@ export default async function ProductsHubPage() {
             promises={fm.quote.promises}
             fields={fm.quote.fields}
             submitLabel={fm.quote.submitLabel}
+            attachLabel={fm.quote.attachLabel}
+            attachHint={fm.quote.attachHint}
           />
         </Section>
       )}

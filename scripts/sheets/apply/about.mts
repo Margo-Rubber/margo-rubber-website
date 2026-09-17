@@ -191,13 +191,16 @@ const [refEyebrow, ...refBody] = refLit.split("\n");
 /* ── 13 Milestones ───────────────────────────────────────────────────────── */
 const ms = s("13");
 const msField = field(ms, "Entries", "table");
-const timeline = msField.rows.map((r, i) => ({
+// The sheet marks ten of the eleven years CONFIRM. Ayaz's instruction
+// (2026-09-17): the sheets are the source of truth — what they write is
+// published as written, and only a contradiction inside the content is a
+// question. So every entry ships; the Studio's verified/proposed switch
+// remains the way to take one down if a date proves wrong.
+const timeline = msField.rows.map((r) => ({
   year: r[0],
   title: r[1],
   body: r[2],
-  verification: msField.confirm?.some(([ri, ci]) => ri === i && ci === 0)
-    ? "proposed"
-    : "verified",
+  verification: "verified" as const,
 }));
 timeline
   .filter((t) => t.verification === "verified")

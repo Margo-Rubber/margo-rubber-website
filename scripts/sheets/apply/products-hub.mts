@@ -325,6 +325,12 @@ const patch = {
     { icon: "address", label: "ADDRESS", value: E(address) },
   ],
   "quote.promises": list(quote, "Quote promise").map((p) => E(p)),
+  // "Add: file field" — label and hint from the sheet's one line (as on /contact).
+  ...(() => {
+    const m = lit(quote, "Add: file field").match(/^(.*?)\s+—\s+(.*)$/);
+    if (!m) throw new Error("file field");
+    return { "quote.attachLabel": E(m[1]), "quote.attachHint": E(m[2]) };
+  })(),
 };
 
 await applyDocument({

@@ -904,6 +904,8 @@ export function QuoteBand({
   promises,
   fields,
   submitLabel,
+  attachLabel,
+  attachHint,
 }: {
   eyebrow: string;
   heading: string;
@@ -914,6 +916,8 @@ export function QuoteBand({
   promises: string[];
   fields: { name: string; label: string; placeholder: string; type: string; full: boolean }[];
   submitLabel: string;
+  attachLabel?: string;
+  attachHint?: string;
 }) {
   const words = heading.split(" ");
   const accent = words.pop();
@@ -1056,6 +1060,15 @@ export function QuoteBand({
                 )}
               </label>
             ))}
+            {/* The attachment field (sheet 02 §11) — the same inert
+                affordance as the homepage and /contact forms until the
+                upload backend exists. */}
+            {attachLabel && (
+              <div className="sm:col-span-2">
+                <span className="text-eyebrow text-ink-4 font-mono uppercase">{attachLabel}</span>
+                <p className="border-line-2 text-ink-4 mt-2 rounded-lg border border-dashed bg-[#0F1116] px-4 py-3.5 text-sm">{attachHint}</p>
+              </div>
+            )}
           </div>
 
           <EnquirySubmit className="bg-accent-400 text-ink hover:opacity-90 mt-7 w-full rounded-cta px-6 py-3.5 text-sm font-semibold transition-colors">
