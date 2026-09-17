@@ -191,26 +191,6 @@ export const IMAGE_SLOT_LABELS = {
   },
 
   /* ── Product category pages ───────────────────────────────────────── */
-  "products.material.fkm": {
-    title: "Retired — FKM material card",
-    where: "Retired — every place this appeared now has its own slot. Nothing draws it; it is removed once the documents are re-pointed.",
-    page: "/products/o-rings",
-  },
-  "products.material.nbr": {
-    title: "Retired — NBR material card",
-    where: "Retired — every place this appeared now has its own slot. Nothing draws it; it is removed once the documents are re-pointed.",
-    page: "/products/o-rings",
-  },
-  "products.material.epdm": {
-    title: "Retired — EPDM material card",
-    where: "Retired — every place this appeared now has its own slot. Nothing draws it; it is removed once the documents are re-pointed.",
-    page: "/products/o-rings",
-  },
-  "products.material.silicone": {
-    title: "Retired — Silicone material card",
-    where: "Retired — every place this appeared now has its own slot. Nothing draws it; it is removed once the documents are re-pointed.",
-    page: "/products/o-rings",
-  },
   "products.o-rings.hero": {
     title: "O-Rings page — hero background",
     where: "O-Rings category page, the photograph behind the heading at the top.",
@@ -303,11 +283,6 @@ export const IMAGE_SLOT_LABELS = {
   "industries.mining.hero": {
     title: "Mining page — hero background",
     where: "Mining industry page, the photograph behind the heading at the top.",
-    page: "/industries/mining",
-  },
-  "industries.mining.component": {
-    title: "Retired — Mining page — ‘Components we supply’ photo",
-    where: "Retired — every place this appeared now has its own slot. Nothing draws it; it is removed once the documents are re-pointed.",
     page: "/industries/mining",
   },
   "industries.mining.use.conveyor": {
@@ -404,31 +379,6 @@ export const IMAGE_SLOT_LABELS = {
   },
 
   /* ── Export page ──────────────────────────────────────────────────── */
-  "export.containers": {
-    title: "Retired — Export — stacked containers photo",
-    where: "Retired — every place this appeared now has its own slot. Nothing draws it; it is removed once the documents are re-pointed.",
-    page: "/export",
-  },
-  "export.warehouse": {
-    title: "Retired — Export — warehouse forklift photo",
-    where: "Retired — every place this appeared now has its own slot. Nothing draws it; it is removed once the documents are re-pointed.",
-    page: "/export",
-  },
-  "export.gantry": {
-    title: "Retired — Export — quayside cranes photo",
-    where: "Retired — every place this appeared now has its own slot. Nothing draws it; it is removed once the documents are re-pointed.",
-    page: "/export",
-  },
-  "export.vessel": {
-    title: "Retired — Export page — hero background",
-    where: "Retired — every place this appeared now has its own slot. Nothing draws it; it is removed once the documents are re-pointed.",
-    page: "/export",
-  },
-  "export.pallets": {
-    title: "Retired — Export — heat-treated pallets photo",
-    where: "Retired — every place this appeared now has its own slot. Nothing draws it; it is removed once the documents are re-pointed.",
-    page: "/export",
-  },
 
   /* ── Certifications page ──────────────────────────────────────────── */
   "certifications.facility.press-wide": {
@@ -1127,123 +1077,118 @@ export const IMAGE_SLOT_LABELS = {
     page: "/certifications",
   },
   "sku.anti-vibration-mounts--ac-vibration-weight.photo": {
-    title: "Weight Rubber, A/C Vibration Extractor — product photo",
-    where: "The part page for Weight Rubber, A/C Vibration Extractor: the main gallery image and thumbnails 1 and 4.",
+    title: "A/C Extractor Damper Weight — product photo",
+    where: "The part page for A/C Extractor Damper Weight: the main gallery image and thumbnails 1 and 4.",
     page: "/products/anti-vibration-mounts/ac-vibration-weight",
   },
-  "sku.anti-vibration-mounts--backlight-mount.photo": {
-    title: "Back Light Rubber Mount (Bolero) — product photo",
-    where: "The part page for Back Light Rubber Mount (Bolero): the main gallery image and thumbnails 1 and 4.",
-    page: "/products/anti-vibration-mounts/backlight-mount",
+  "sku.extrusion--rear-windscreen-glazing-rubber.photo": {
+    title: "Rear Windscreen Glazing Rubber — product photo",
+    where: "The part page for Rear Windscreen Glazing Rubber: the main gallery image and thumbnails 1 and 4.",
+    page: "/products/extrusion/rear-windscreen-glazing-rubber",
   },
   "sku.anti-vibration-mounts--bumper-stopper.photo": {
     title: "Bumper Stopper — product photo",
     where: "The part page for Bumper Stopper: the main gallery image and thumbnails 1 and 4.",
     page: "/products/anti-vibration-mounts/bumper-stopper",
   },
-  "sku.anti-vibration-mounts--scorpio-footrest-mat.photo": {
-    title: "Scorpio Footrest Rubber Mat — product photo",
-    where: "The part page for Scorpio Footrest Rubber Mat: the main gallery image and thumbnails 1 and 4.",
-    page: "/products/anti-vibration-mounts/scorpio-footrest-mat",
+  "sku.pads-stoppers-caps--side-step-pad.photo": {
+    title: "Anti-Slip Side Step Pad — product photo",
+    where: "The part page for Anti-Slip Side Step Pad: the main gallery image and thumbnails 1 and 4.",
+    page: "/products/pads-stoppers-caps/side-step-pad",
   },
-  "sku.anti-vibration-mounts--tata-bumper-stopper.photo": {
-    title: "Bumper Stopper for Tata — product photo",
-    where: "The part page for Bumper Stopper for Tata: the main gallery image and thumbnails 1 and 4.",
-    page: "/products/anti-vibration-mounts/tata-bumper-stopper",
+  "sku.anti-vibration-mounts--cv-suspension-bump-stop.photo": {
+    title: "Commercial Vehicle Suspension Bump Stop — product photo",
+    where: "The part page for Commercial Vehicle Suspension Bump Stop: the main gallery image and thumbnails 1 and 4.",
+    page: "/products/anti-vibration-mounts/cv-suspension-bump-stop",
   },
   "sku.bushes--aem-insulation-bush.photo": {
     title: "AEM Insulation Bush — product photo",
     where: "The part page for AEM Insulation Bush: the main gallery image and thumbnails 1 and 4.",
     page: "/products/bushes/aem-insulation-bush",
   },
-  "sku.gaskets--c-pillar-garnish.photo": {
-    title: "C-Pillar Garnish EPDM Hard Foam — product photo",
-    where: "The part page for C-Pillar Garnish EPDM Hard Foam: the main gallery image and thumbnails 1 and 4.",
-    page: "/products/gaskets/c-pillar-garnish",
+  "sku.sponge-foam-rubber--c-pillar-garnish-seal.photo": {
+    title: "C-Pillar Garnish Seal — product photo",
+    where: "The part page for C-Pillar Garnish Seal: the main gallery image and thumbnails 1 and 4.",
+    page: "/products/sponge-foam-rubber/c-pillar-garnish-seal",
   },
   "sku.gaskets--epdm.photo": {
-    title: "EPDM Gasket — product photo",
-    where: "The part page for EPDM Gasket: the main gallery image and thumbnails 1 and 4.",
+    title: "EPDM Gaskets — product photo",
+    where: "The part page for EPDM Gaskets: the main gallery image and thumbnails 1 and 4.",
     page: "/products/gaskets/epdm",
   },
-  "sku.gaskets--foam-gaskets.photo": {
+  "sku.sponge-foam-rubber--foam-gaskets.photo": {
     title: "Foam Gaskets — product photo",
     where: "The part page for Foam Gaskets: the main gallery image and thumbnails 1 and 4.",
-    page: "/products/gaskets/foam-gaskets",
+    page: "/products/sponge-foam-rubber/foam-gaskets",
   },
   "sku.grommets--3-pin-hole-pad.photo": {
-    title: "3 Pin Hole Pad (Electrical Pass-Through) — product photo",
-    where: "The part page for 3 Pin Hole Pad (Electrical Pass-Through): the main gallery image and thumbnails 1 and 4.",
+    title: "3 Pin Hole Pad — product photo",
+    where: "The part page for 3 Pin Hole Pad: the main gallery image and thumbnails 1 and 4.",
     page: "/products/grommets/3-pin-hole-pad",
   },
   "sku.grommets--internal-fit.photo": {
-    title: "Rubber Grommet Internal Fits — product photo",
-    where: "The part page for Rubber Grommet Internal Fits: the main gallery image and thumbnails 1 and 4.",
+    title: "Internal Fit Grommets — product photo",
+    where: "The part page for Internal Fit Grommets: the main gallery image and thumbnails 1 and 4.",
     page: "/products/grommets/internal-fit",
   },
   "sku.o-rings--seal-filler-cap-o-rings.photo": {
-    title: "Seal Filler Cap O-Rings — product photo",
-    where: "The part page for Seal Filler Cap O-Rings: the main gallery image and thumbnails 1 and 4.",
+    title: "Oil Filler Cap O-Rings — product photo",
+    where: "The part page for Oil Filler Cap O-Rings: the main gallery image and thumbnails 1 and 4.",
     page: "/products/o-rings/seal-filler-cap-o-rings",
   },
   "sku.oil-seals--compression-pump-inlays.photo": {
-    title: "Silicone Compression Pump Inlays — product photo",
-    where: "The part page for Silicone Compression Pump Inlays: the main gallery image and thumbnails 1 and 4.",
+    title: "Compression Pump Inlays — product photo",
+    where: "The part page for Compression Pump Inlays: the main gallery image and thumbnails 1 and 4.",
     page: "/products/oil-seals/compression-pump-inlays",
   },
   "sku.oil-seals--epdm.photo": {
-    title: "EPDM Oil Seals — product photo",
-    where: "The part page for EPDM Oil Seals: the main gallery image and thumbnails 1 and 4.",
+    title: "EPDM Rotary Shaft Seals — product photo",
+    where: "The part page for EPDM Rotary Shaft Seals: the main gallery image and thumbnails 1 and 4.",
     page: "/products/oil-seals/epdm",
   },
   "sku.oil-seals--fkm.photo": {
-    title: "FKM Oil Seals — product photo",
-    where: "The part page for FKM Oil Seals: the main gallery image and thumbnails 1 and 4.",
+    title: "FKM Rotary Shaft Seals — product photo",
+    where: "The part page for FKM Rotary Shaft Seals: the main gallery image and thumbnails 1 and 4.",
     page: "/products/oil-seals/fkm",
   },
-  "sku.oil-seals--fkm-compression-pump-inlays.photo": {
-    title: "FKM Compression Pump Inlays — product photo",
-    where: "The part page for FKM Compression Pump Inlays: the main gallery image and thumbnails 1 and 4.",
-    page: "/products/oil-seals/fkm-compression-pump-inlays",
-  },
   "sku.oil-seals--nbr.photo": {
-    title: "NBR Oil Seals — product photo",
-    where: "The part page for NBR Oil Seals: the main gallery image and thumbnails 1 and 4.",
+    title: "NBR Rotary Shaft Seals — product photo",
+    where: "The part page for NBR Rotary Shaft Seals: the main gallery image and thumbnails 1 and 4.",
     page: "/products/oil-seals/nbr",
   },
   "sku.oil-seals--silicone.photo": {
-    title: "Silicone Oil Seals — product photo",
-    where: "The part page for Silicone Oil Seals: the main gallery image and thumbnails 1 and 4.",
+    title: "Silicone Rotary Shaft Seals — product photo",
+    where: "The part page for Silicone Rotary Shaft Seals: the main gallery image and thumbnails 1 and 4.",
     page: "/products/oil-seals/silicone",
   },
   "sku.pads-stoppers-caps--ac-flaps.photo": {
-    title: "Rubber Flap for A/C Air Extractor — product photo",
-    where: "The part page for Rubber Flap for A/C Air Extractor: the main gallery image and thumbnails 1 and 4.",
+    title: "Air Extractor Flap — product photo",
+    where: "The part page for Air Extractor Flap: the main gallery image and thumbnails 1 and 4.",
     page: "/products/pads-stoppers-caps/ac-flaps",
   },
   "sku.pads-stoppers-caps--big-support-pad.photo": {
-    title: "Big Support Pad — product photo",
-    where: "The part page for Big Support Pad: the main gallery image and thumbnails 1 and 4.",
+    title: "Rubber Support Pads — product photo",
+    where: "The part page for Rubber Support Pads: the main gallery image and thumbnails 1 and 4.",
     page: "/products/pads-stoppers-caps/big-support-pad",
   },
   "sku.pads-stoppers-caps--bolero-support-pad.photo": {
-    title: "Support Pad for Bolero — product photo",
-    where: "The part page for Support Pad for Bolero: the main gallery image and thumbnails 1 and 4.",
+    title: "Body Mount Pad — product photo",
+    where: "The part page for Body Mount Pad: the main gallery image and thumbnails 1 and 4.",
     page: "/products/pads-stoppers-caps/bolero-support-pad",
   },
   "sku.pads-stoppers-caps--boot-tailgate-switch.photo": {
-    title: "Boot Tailgate Switch — product photo",
-    where: "The part page for Boot Tailgate Switch: the main gallery image and thumbnails 1 and 4.",
+    title: "Tailgate Switch Boot — product photo",
+    where: "The part page for Tailgate Switch Boot: the main gallery image and thumbnails 1 and 4.",
     page: "/products/pads-stoppers-caps/boot-tailgate-switch",
   },
   "sku.pads-stoppers-caps--c-pad.photo": {
-    title: "C Pad — product photo",
-    where: "The part page for C Pad: the main gallery image and thumbnails 1 and 4.",
+    title: "Slotted Packing Pad — product photo",
+    where: "The part page for Slotted Packing Pad: the main gallery image and thumbnails 1 and 4.",
     page: "/products/pads-stoppers-caps/c-pad",
   },
   "sku.pads-stoppers-caps--epdm-pad.photo": {
-    title: "EPDM Pad — product photo",
-    where: "The part page for EPDM Pad: the main gallery image and thumbnails 1 and 4.",
+    title: "Flat Packing Pad — product photo",
+    where: "The part page for Flat Packing Pad: the main gallery image and thumbnails 1 and 4.",
     page: "/products/pads-stoppers-caps/epdm-pad",
   },
   "sku.pads-stoppers-caps--glove-box-stopper.photo": {
@@ -1252,34 +1197,29 @@ export const IMAGE_SLOT_LABELS = {
     page: "/products/pads-stoppers-caps/glove-box-stopper",
   },
   "sku.pads-stoppers-caps--insulator-head-cover.photo": {
-    title: "Rubber Insulator Head Cover — product photo",
-    where: "The part page for Rubber Insulator Head Cover: the main gallery image and thumbnails 1 and 4.",
+    title: "Cylinder Head Cover Insulator — product photo",
+    where: "The part page for Cylinder Head Cover Insulator: the main gallery image and thumbnails 1 and 4.",
     page: "/products/pads-stoppers-caps/insulator-head-cover",
   },
   "sku.pads-stoppers-caps--l-pad.photo": {
-    title: "L Pad — product photo",
-    where: "The part page for L Pad: the main gallery image and thumbnails 1 and 4.",
+    title: "Angle Packing Pad — product photo",
+    where: "The part page for Angle Packing Pad: the main gallery image and thumbnails 1 and 4.",
     page: "/products/pads-stoppers-caps/l-pad",
   },
   "sku.pads-stoppers-caps--oil-filler-cap.photo": {
-    title: "Oil Filler Cap — product photo",
-    where: "The part page for Oil Filler Cap: the main gallery image and thumbnails 1 and 4.",
+    title: "Rubber Oil Filler Cap — product photo",
+    where: "The part page for Rubber Oil Filler Cap: the main gallery image and thumbnails 1 and 4.",
     page: "/products/pads-stoppers-caps/oil-filler-cap",
   },
-  "sku.pads-stoppers-caps--oil-seal-filler-cap.photo": {
-    title: "Oil Seal Filler Cap — product photo",
-    where: "The part page for Oil Seal Filler Cap: the main gallery image and thumbnails 1 and 4.",
-    page: "/products/pads-stoppers-caps/oil-seal-filler-cap",
-  },
   "sku.pads-stoppers-caps--radiator-shroud-flaps.photo": {
-    title: "Rubber Radiator Shroud Flaps — product photo",
-    where: "The part page for Rubber Radiator Shroud Flaps: the main gallery image and thumbnails 1 and 4.",
+    title: "Radiator Shroud Flaps — product photo",
+    where: "The part page for Radiator Shroud Flaps: the main gallery image and thumbnails 1 and 4.",
     page: "/products/pads-stoppers-caps/radiator-shroud-flaps",
   },
-  "sku.pads-stoppers-caps--rubber-plungers.photo": {
-    title: "Rubber Plungers — product photo",
-    where: "The part page for Rubber Plungers: the main gallery image and thumbnails 1 and 4.",
-    page: "/products/pads-stoppers-caps/rubber-plungers",
+  "sku.seals--plunger-seals.photo": {
+    title: "Plunger Seals & Plunger Cups — product photo",
+    where: "The part page for Plunger Seals & Plunger Cups: the main gallery image and thumbnails 1 and 4.",
+    page: "/products/seals/plunger-seals",
   },
 } satisfies Record<ImageKey, SlotLabel>;
 
