@@ -38,6 +38,10 @@ function envValue(key: string): string | null {
 }
 
 const args = process.argv.slice(2);
+// `--all`: a Site settings publish is the one event the endpoint answers by
+// clearing every collection at once (api/revalidate/route.ts), so that is
+// what --all sends.
+if (args.includes("--all")) args.splice(0, args.length, "settings", "--type", "siteSettings");
 const typeAt = args.indexOf("--type");
 const type = typeAt === -1 ? "productCategory" : args[typeAt + 1];
 // Guard the -1 case: with no --type flag, `typeAt + 1` is 0, which silently
