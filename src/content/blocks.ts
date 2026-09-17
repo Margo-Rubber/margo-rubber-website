@@ -62,9 +62,13 @@ const partsGridSchema = z.object({
   parts: z.array(anchorSchema).min(1),
   categoryLabel: z.string().min(2),
   categorySlug: z.string().min(1),
-  /** The sheets' static list — 16–24 part NAMES with no links (sheet 09 §04).
-      When present it renders instead of the linked cards from `parts`. */
-  items: z.array(z.object({ name: z.string().min(2), availability: z.string().optional() })).optional(),
+  /** The sheets' static list — 16–24 part names (sheet 09 §04). When present
+      it renders instead of the linked cards from `parts`. A card that is a
+      part with its own page carries that page's path in `href`, and the
+      part's current name (the SKU sheets rename several). */
+  items: z
+    .array(z.object({ name: z.string().min(2), availability: z.string().optional(), href: z.string().optional() }))
+    .optional(),
 });
 
 /**

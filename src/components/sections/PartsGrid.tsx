@@ -48,8 +48,9 @@ export function PartsGrid({
   categorySlug,
 }: {
   parts: readonly { id: string; label: string; legacyUrl?: string }[];
-  /** The sheets' static list: names only, no links. Replaces `parts` when filled. */
-  items?: readonly { name: string; availability?: string }[];
+  /** The sheets' static list. Replaces `parts` when filled; a card with an
+   *  `href` is a part with its own page and its name is the link. */
+  items?: readonly { name: string; availability?: string; href?: string }[];
   categoryLabel: string;
   categorySlug: string;
 }) {
@@ -62,7 +63,15 @@ export function PartsGrid({
         {items.map((it, i) => (
           <li key={it.name} className="rounded-card border-line border bg-[#080808] p-6">
             <p className="text-eyebrow text-ink-4 font-mono">{String(i + 1).padStart(2, "0")}</p>
-            <h3 className="text-ink mt-3 text-base leading-snug font-semibold">{it.name}</h3>
+            <h3 className="text-ink mt-3 text-base leading-snug font-semibold">
+              {it.href ? (
+                <Link href={it.href} className="hover:text-accent-400 inline-flex items-center gap-1.5">
+                  {it.name} <span aria-hidden className="text-accent-400">›</span>
+                </Link>
+              ) : (
+                it.name
+              )}
+            </h3>
             {it.availability && <p className="text-ink-4 mt-2 text-sm">{it.availability}</p>}
           </li>
         ))}

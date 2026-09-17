@@ -15,6 +15,12 @@ await applyStandardCategory({
   controls: false,
   // "Link the disclaimer beneath the table" — the notes give the line verbatim.
   specFootnote: "Typical values. See our technical disclaimer.",
+  // §03 contradicts itself on silicone: the panel table says "Biocompatible
+  // grades available." while the sheet's own Remove note asks for the line
+  // that names what is not held. The note ships (Ayaz, 2026-09-17).
+  panelFix: {
+    "Silicone (VMQ)": ["Biocompatible grades available.", "Biocompatible grades available; we do not hold FDA registration or ISO 13485."],
+  },
   schemaProduct: {
     name: "Rotary and Static Oil Seals",
     description:

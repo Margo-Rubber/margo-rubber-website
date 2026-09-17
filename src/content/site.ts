@@ -108,7 +108,7 @@ export const FORBIDDEN_CLAIMS: ClaimRule[] = [
   { pattern: /RoHS[- ](certified|compliant|2\.0)|REACH[- ](certified|compliant|SVHC)(?![^.]{0,120}(roadmap|not (yet )?held|on request))/i, why: "Declarations, not certifications, and not made. Composition declarations are produced per part on request." },
   // "Do you hold FDA or ISO 13485 approval?" is answered "working toward …
   // targeted for 2027. We are not FDA registered." (sheet 23 §08).
-  { pattern: /(?<!not hold\s)ISO\s*13485(?!\s*approval\?)(?![^.]{0,80}(do not hold|not held|not hold|working toward|targeted))|(?<!not )FDA[- ](approved|grade|registered|compliant)/i, why: "Never as held. The medical page states plainly they are not." },
+  { pattern: /(?<!not hold\s)ISO\s*13485(?!\s*approval\?)(?![^.]{0,80}(do not hold|not held|not hold|working toward|targeted))|(?<!not )FDA[- ](approved|grade|registered|compliant)/i, why: "Never as held. The medical page states plainly they are not.", unless: /do not hold|not held|not registered/i },
   // The schemes may be named as what a market requires or what a
   // formulation carries (sheets 24, 28); never as held by Margo.
   { pattern: /(WRAS|NSF\/?ANSI\/?(CAN\/?)?\s*61|AS\/NZS\s*4020|KTW[- ]BWGL)[- ](approved|certified)|\b(hold|holds|certified to|approved to)\s+(WRAS|NSF|AS\/NZS\s*4020|KTW)/i, why: "Potable-water approvals attach to a formulation; Margo holds none." },
