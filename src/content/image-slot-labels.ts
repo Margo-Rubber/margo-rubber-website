@@ -201,6 +201,11 @@ export const IMAGE_SLOT_LABELS = {
     where: "Extrusion Profiles category page, the photograph behind the heading at the top.",
     page: "/products/extrusion",
   },
+  "industries.construction.hero": {
+    title: "Construction page — hero background",
+    where: "Construction page, the photograph behind the heading at the top. Stand-in: another page's photograph until this page's own is uploaded — the content sheet asks for “EPDM glazing gaskets and expansion joint seals extruded at Margo Rubber Products, Nashik”.",
+    page: "/industries/construction",
+  },
   "products.sponge-foam.hero": {
     title: "Sponge & Foam page — hero background",
     where: "Sponge & Foam Rubber category page, the photograph behind the heading at the top.",
@@ -284,6 +289,11 @@ export const IMAGE_SLOT_LABELS = {
     title: "Mining page — hero background",
     where: "Mining industry page, the photograph behind the heading at the top.",
     page: "/industries/mining",
+  },
+  "products.rubber-lining.hero": {
+    title: "Rubber Lining & Skirting page — hero background",
+    where: "Rubber Lining & Skirting page, the photograph behind the heading at the top. Stand-in: another page's photograph until this page's own is uploaded — the content sheet asks for “Natural rubber chute lining and conveyor skirting cut at Margo Rubber Products, Nashik”.",
+    page: "/products/rubber-lining",
   },
   "industries.mining.use.conveyor": {
     title: "Mining page — ‘Conveyor’ card",
@@ -576,6 +586,11 @@ export const IMAGE_SLOT_LABELS = {
     where: "Anti-Vibration Mounts category page, the photograph behind the heading at the top.",
     page: "/products/anti-vibration-mounts",
   },
+  "products.bonded-components.hero": {
+    title: "Bonded Components page — hero background",
+    where: "Bonded Components page, the photograph behind the heading at the top. Stand-in: another page's photograph until this page's own is uploaded — the content sheet asks for “Rubber-to-metal bonded mounts and bushes moulded at Margo Rubber Products, Nashik”.",
+    page: "/products/bonded-components",
+  },
   "products.anti-vibration-mounts.material.fkm": {
     title: "Anti-Vibration Mounts — FKM (Viton®) material card",
     where: "Anti-Vibration Mounts category page, ‘Material selection’ section — card 1 of 4.",
@@ -596,10 +611,35 @@ export const IMAGE_SLOT_LABELS = {
     where: "Anti-Vibration Mounts category page, ‘Material selection’ section — card 4 of 4.",
     page: "/products/anti-vibration-mounts",
   },
+  "products.anti-vibration-mounts.material.aem": {
+    title: "Anti-Vibration Mounts — AEM (Vamac®) material card",
+    where: "Anti-Vibration Mounts category page, ‘Material selection’ section — card 6 of 8. Stand-in: shows the Silicone (VMQ) card's photograph until its own is uploaded.",
+    page: "/products/anti-vibration-mounts",
+  },
+  "products.anti-vibration-mounts.material.sbr": {
+    title: "Anti-Vibration Mounts — SBR material card",
+    where: "Anti-Vibration Mounts category page, ‘Material selection’ section — card 4 of 8. Stand-in: shows the FKM (Viton®) card's photograph until its own is uploaded.",
+    page: "/products/anti-vibration-mounts",
+  },
+  "products.anti-vibration-mounts.material.cr": {
+    title: "Anti-Vibration Mounts — Neoprene (CR) material card",
+    where: "Anti-Vibration Mounts category page, ‘Material selection’ section — card 2 of 8. Stand-in: shows the EPDM card's photograph until its own is uploaded.",
+    page: "/products/anti-vibration-mounts",
+  },
+  "products.anti-vibration-mounts.material.nr": {
+    title: "Anti-Vibration Mounts — Natural rubber (NR) material card",
+    where: "Anti-Vibration Mounts category page, ‘Material selection’ section — card 1 of 8. Stand-in: shows the NBR (Nitrile) card's photograph until its own is uploaded.",
+    page: "/products/anti-vibration-mounts",
+  },
   "products.bellows.hero": {
     title: "Bellows page — hero background",
     where: "Bellows category page, the photograph behind the heading at the top.",
     page: "/products/bellows",
+  },
+  "products.diaphragms.hero": {
+    title: "Diaphragms page — hero background",
+    where: "Diaphragms page, the photograph behind the heading at the top. Stand-in: another page's photograph until this page's own is uploaded — the content sheet asks for “Fabric-reinforced rubber diaphragms moulded at Margo Rubber Products, Nashik”.",
+    page: "/products/diaphragms",
   },
   "products.bellows.material.fkm": {
     title: "Bellows — FKM (Viton®) material card",
@@ -619,6 +659,26 @@ export const IMAGE_SLOT_LABELS = {
   "products.bellows.material.silicone": {
     title: "Bellows — Silicone (VMQ) material card",
     where: "Bellows category page, ‘Material selection’ section — card 4 of 4.",
+    page: "/products/bellows",
+  },
+  "products.bellows.material.sbr": {
+    title: "Bellows — SBR material card",
+    where: "Bellows category page, ‘Material selection’ section — card 7 of 8. Stand-in: shows the Silicone (VMQ) card's photograph until its own is uploaded.",
+    page: "/products/bellows",
+  },
+  "products.bellows.material.aem": {
+    title: "Bellows — AEM (Vamac®) material card",
+    where: "Bellows category page, ‘Material selection’ section — card 5 of 8. Stand-in: shows the FKM (Viton®) card's photograph until its own is uploaded.",
+    page: "/products/bellows",
+  },
+  "products.bellows.material.cr": {
+    title: "Bellows — Neoprene (CR) material card",
+    where: "Bellows category page, ‘Material selection’ section — card 2 of 8. Stand-in: shows the EPDM card's photograph until its own is uploaded.",
+    page: "/products/bellows",
+  },
+  "products.bellows.material.nr": {
+    title: "Bellows — Natural rubber (NR) material card",
+    where: "Bellows category page, ‘Material selection’ section — card 1 of 8. Stand-in: shows the NBR (Nitrile) card's photograph until its own is uploaded.",
     page: "/products/bellows",
   },
   "products.bushes.hero": {
@@ -646,6 +706,26 @@ export const IMAGE_SLOT_LABELS = {
     where: "Bushes category page, ‘Material selection’ section — card 4 of 4.",
     page: "/products/bushes",
   },
+  "products.bushes.material.sbr": {
+    title: "Bushes — SBR material card",
+    where: "Bushes category page, ‘Material selection’ section — card 6 of 8. Stand-in: shows the Silicone (VMQ) card's photograph until its own is uploaded.",
+    page: "/products/bushes",
+  },
+  "products.bushes.material.cr": {
+    title: "Bushes — Neoprene (CR) material card",
+    where: "Bushes category page, ‘Material selection’ section — card 4 of 8. Stand-in: shows the FKM (Viton®) card's photograph until its own is uploaded.",
+    page: "/products/bushes",
+  },
+  "products.bushes.material.aem": {
+    title: "Bushes — AEM (Vamac®) material card",
+    where: "Bushes category page, ‘Material selection’ section — card 2 of 8. Stand-in: shows the EPDM card's photograph until its own is uploaded.",
+    page: "/products/bushes",
+  },
+  "products.bushes.material.nr": {
+    title: "Bushes — Natural rubber (NR) material card",
+    where: "Bushes category page, ‘Material selection’ section — card 1 of 8. Stand-in: shows the NBR (Nitrile) card's photograph until its own is uploaded.",
+    page: "/products/bushes",
+  },
   "products.gaskets.hero": {
     title: "Gaskets page — hero background",
     where: "Gaskets category page, the photograph behind the heading at the top.",
@@ -671,6 +751,31 @@ export const IMAGE_SLOT_LABELS = {
     where: "Gaskets category page, ‘Material selection’ section — card 4 of 4.",
     page: "/products/gaskets",
   },
+  "products.gaskets.material.epdm-sponge": {
+    title: "Gaskets — EPDM sponge material card",
+    where: "Gaskets category page, ‘Material selection’ section — card 9 of 9. Stand-in: shows the EPDM card's photograph until its own is uploaded.",
+    page: "/products/gaskets",
+  },
+  "products.gaskets.material.nr": {
+    title: "Gaskets — Natural rubber (NR) material card",
+    where: "Gaskets category page, ‘Material selection’ section — card 8 of 9. Stand-in: shows the Silicone (VMQ) card's photograph until its own is uploaded.",
+    page: "/products/gaskets",
+  },
+  "products.gaskets.material.sbr": {
+    title: "Gaskets — SBR material card",
+    where: "Gaskets category page, ‘Material selection’ section — card 7 of 9. Stand-in: shows the FKM (Viton®) card's photograph until its own is uploaded.",
+    page: "/products/gaskets",
+  },
+  "products.gaskets.material.cr": {
+    title: "Gaskets — Neoprene (CR) material card",
+    where: "Gaskets category page, ‘Material selection’ section — card 6 of 9. Stand-in: shows the NBR (Nitrile) card's photograph until its own is uploaded.",
+    page: "/products/gaskets",
+  },
+  "products.gaskets.material.aem": {
+    title: "Gaskets — AEM (Vamac®) material card",
+    where: "Gaskets category page, ‘Material selection’ section — card 5 of 9. Stand-in: shows the EPDM card's photograph until its own is uploaded.",
+    page: "/products/gaskets",
+  },
   "products.grommets.hero": {
     title: "Grommets page — hero background",
     where: "Grommets category page, the photograph behind the heading at the top.",
@@ -679,6 +784,26 @@ export const IMAGE_SLOT_LABELS = {
   "products.grommets.material.fkm": {
     title: "Grommets — FKM (Viton®) material card",
     where: "Grommets category page, ‘Material selection’ section — card 1 of 4.",
+    page: "/products/grommets",
+  },
+  "products.grommets.material.nr": {
+    title: "Grommets — Natural rubber (NR) material card",
+    where: "Grommets category page, ‘Material selection’ section — card 8 of 8. Stand-in: shows the FKM (Viton®) card's photograph until its own is uploaded.",
+    page: "/products/grommets",
+  },
+  "products.grommets.material.sbr": {
+    title: "Grommets — SBR material card",
+    where: "Grommets category page, ‘Material selection’ section — card 7 of 8. Stand-in: shows the Silicone (VMQ) card's photograph until its own is uploaded.",
+    page: "/products/grommets",
+  },
+  "products.grommets.material.aem": {
+    title: "Grommets — AEM (Vamac®) material card",
+    where: "Grommets category page, ‘Material selection’ section — card 5 of 8. Stand-in: shows the NBR (Nitrile) card's photograph until its own is uploaded.",
+    page: "/products/grommets",
+  },
+  "products.grommets.material.cr": {
+    title: "Grommets — Neoprene (CR) material card",
+    where: "Grommets category page, ‘Material selection’ section — card 3 of 8. Stand-in: shows the EPDM card's photograph until its own is uploaded.",
     page: "/products/grommets",
   },
   "products.grommets.material.nbr": {
@@ -704,6 +829,26 @@ export const IMAGE_SLOT_LABELS = {
   "products.leak-test-rubber.material.fkm": {
     title: "Leak Test Rubber — FKM (Viton®) material card",
     where: "Leak Test Rubber category page, ‘Material selection’ section — card 1 of 4.",
+    page: "/products/leak-test-rubber",
+  },
+  "products.leak-test-rubber.material.aem": {
+    title: "Leak Test Rubber — AEM (Vamac®) material card",
+    where: "Leak Test Rubber category page, ‘Material selection’ section — card 7 of 8. Stand-in: shows the FKM (Viton®) card's photograph until its own is uploaded.",
+    page: "/products/leak-test-rubber",
+  },
+  "products.leak-test-rubber.material.sbr": {
+    title: "Leak Test Rubber — SBR material card",
+    where: "Leak Test Rubber category page, ‘Material selection’ section — card 6 of 8. Stand-in: shows the Silicone (VMQ) card's photograph until its own is uploaded.",
+    page: "/products/leak-test-rubber",
+  },
+  "products.leak-test-rubber.material.nr": {
+    title: "Leak Test Rubber — Natural rubber (NR) material card",
+    where: "Leak Test Rubber category page, ‘Material selection’ section — card 4 of 8. Stand-in: shows the NBR (Nitrile) card's photograph until its own is uploaded.",
+    page: "/products/leak-test-rubber",
+  },
+  "products.leak-test-rubber.material.cr": {
+    title: "Leak Test Rubber — Neoprene (CR) material card",
+    where: "Leak Test Rubber category page, ‘Material selection’ section — card 3 of 8. Stand-in: shows the EPDM card's photograph until its own is uploaded.",
     page: "/products/leak-test-rubber",
   },
   "products.leak-test-rubber.material.nbr": {
@@ -741,10 +886,40 @@ export const IMAGE_SLOT_LABELS = {
     where: "O-Rings category page, ‘Material selection’ section — card 4 of 4.",
     page: "/products/o-rings",
   },
+  "products.o-rings.material.ptfe": {
+    title: "O-Rings — PTFE-encapsulated material card",
+    where: "O-Rings category page, ‘Material selection’ section — card 9 of 9. Stand-in: shows the FKM (Viton®) card's photograph until its own is uploaded.",
+    page: "/products/o-rings",
+  },
+  "products.o-rings.material.nr": {
+    title: "O-Rings — Natural rubber (NR) material card",
+    where: "O-Rings category page, ‘Material selection’ section — card 8 of 9. Stand-in: shows the Silicone (VMQ) card's photograph until its own is uploaded.",
+    page: "/products/o-rings",
+  },
+  "products.o-rings.material.sbr": {
+    title: "O-Rings — SBR material card",
+    where: "O-Rings category page, ‘Material selection’ section — card 7 of 9. Stand-in: shows the EPDM card's photograph until its own is uploaded.",
+    page: "/products/o-rings",
+  },
+  "products.o-rings.material.cr": {
+    title: "O-Rings — Neoprene (CR) material card",
+    where: "O-Rings category page, ‘Material selection’ section — card 6 of 9. Stand-in: shows the NBR (Nitrile) card's photograph until its own is uploaded.",
+    page: "/products/o-rings",
+  },
+  "products.o-rings.material.aem": {
+    title: "O-Rings — AEM (Vamac®) material card",
+    where: "O-Rings category page, ‘Material selection’ section — card 1 of 9. Stand-in: shows the FKM (Viton®) card's photograph until its own is uploaded.",
+    page: "/products/o-rings",
+  },
   "products.oil-seals.hero": {
     title: "Oil Seals page — hero background",
     where: "Oil Seals category page, the photograph behind the heading at the top.",
     page: "/products/oil-seals",
+  },
+  "products.seals.hero": {
+    title: "Reciprocating Seals page — hero background",
+    where: "Reciprocating Seals page, the photograph behind the heading at the top. Stand-in: another page's photograph until this page's own is uploaded — the content sheet asks for “Moulded rubber plunger cups and rod seals produced at Margo Rubber Products, Nashik”.",
+    page: "/products/seals",
   },
   "products.oil-seals.material.fkm": {
     title: "Oil Seals — FKM (Viton®) material card",
@@ -766,6 +941,26 @@ export const IMAGE_SLOT_LABELS = {
     where: "Oil Seals category page, ‘Material selection’ section — card 4 of 4.",
     page: "/products/oil-seals",
   },
+  "products.oil-seals.material.nr": {
+    title: "Oil Seals — Natural rubber (NR) material card",
+    where: "Oil Seals category page, ‘Material selection’ section — card 8 of 8. Stand-in: shows the Silicone (VMQ) card's photograph until its own is uploaded.",
+    page: "/products/oil-seals",
+  },
+  "products.oil-seals.material.sbr": {
+    title: "Oil Seals — SBR material card",
+    where: "Oil Seals category page, ‘Material selection’ section — card 7 of 8. Stand-in: shows the EPDM card's photograph until its own is uploaded.",
+    page: "/products/oil-seals",
+  },
+  "products.oil-seals.material.cr": {
+    title: "Oil Seals — Neoprene (CR) material card",
+    where: "Oil Seals category page, ‘Material selection’ section — card 6 of 8. Stand-in: shows the NBR (Nitrile) card's photograph until its own is uploaded.",
+    page: "/products/oil-seals",
+  },
+  "products.oil-seals.material.aem": {
+    title: "Oil Seals — AEM (Vamac®) material card",
+    where: "Oil Seals category page, ‘Material selection’ section — card 1 of 8. Stand-in: shows the FKM (Viton®) card's photograph until its own is uploaded.",
+    page: "/products/oil-seals",
+  },
   "products.pads-stoppers-caps.hero": {
     title: "Pads, Stoppers & Caps page — hero background",
     where: "Pads, Stoppers & Caps category page, the photograph behind the heading at the top.",
@@ -774,6 +969,26 @@ export const IMAGE_SLOT_LABELS = {
   "products.pads-stoppers-caps.material.fkm": {
     title: "Pads, Stoppers & Caps — FKM (Viton®) material card",
     where: "Pads, Stoppers & Caps category page, ‘Material selection’ section — card 1 of 4.",
+    page: "/products/pads-stoppers-caps",
+  },
+  "products.pads-stoppers-caps.material.aem": {
+    title: "Pads, Stoppers & Caps — AEM (Vamac®) material card",
+    where: "Pads, Stoppers & Caps category page, ‘Material selection’ section — card 6 of 8. Stand-in: shows the FKM (Viton®) card's photograph until its own is uploaded.",
+    page: "/products/pads-stoppers-caps",
+  },
+  "products.pads-stoppers-caps.material.sbr": {
+    title: "Pads, Stoppers & Caps — SBR material card",
+    where: "Pads, Stoppers & Caps category page, ‘Material selection’ section — card 5 of 8. Stand-in: shows the Silicone (VMQ) card's photograph until its own is uploaded.",
+    page: "/products/pads-stoppers-caps",
+  },
+  "products.pads-stoppers-caps.material.cr": {
+    title: "Pads, Stoppers & Caps — Neoprene (CR) material card",
+    where: "Pads, Stoppers & Caps category page, ‘Material selection’ section — card 4 of 8. Stand-in: shows the NBR (Nitrile) card's photograph until its own is uploaded.",
+    page: "/products/pads-stoppers-caps",
+  },
+  "products.pads-stoppers-caps.material.nr": {
+    title: "Pads, Stoppers & Caps — Natural rubber (NR) material card",
+    where: "Pads, Stoppers & Caps category page, ‘Material selection’ section — card 3 of 8. Stand-in: shows the EPDM card's photograph until its own is uploaded.",
     page: "/products/pads-stoppers-caps",
   },
   "products.pads-stoppers-caps.material.nbr": {
@@ -820,6 +1035,11 @@ export const IMAGE_SLOT_LABELS = {
     title: "Automotive page — hero background",
     where: "Automotive industry page, the photograph behind the heading at the top.",
     page: "/industries/automotive",
+  },
+  "industries.transport.hero": {
+    title: "Transport — Rail & Marine page — hero background",
+    where: "Transport — Rail & Marine page, the photograph behind the heading at the top. Stand-in: another page's photograph until this page's own is uploaded — the content sheet asks for “Extruded EPDM window and hatch seals produced at Margo Rubber Products, Nashik”.",
+    page: "/industries/transport",
   },
   "industries.automotive.component.1": {
     title: "Automotive — ‘Bushes & Bushings’ component photo",
