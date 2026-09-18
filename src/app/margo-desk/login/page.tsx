@@ -7,13 +7,13 @@ export default function AdminLoginPage() {
   const [error, formAction, pending] = useActionState(signInAction, null);
 
   return (
-    <main className="grid min-h-dvh place-items-center px-6">
-      <form
-        action={formAction}
-        className="border-line bg-surface-3 w-full max-w-sm rounded-xl border p-8"
-      >
-        <h1 className="text-ink text-lg font-semibold">Margo admin</h1>
-        <p className="text-ink-3 mt-2 text-sm">Enquiries dashboard.</p>
+    <main className="desk grid min-h-dvh place-items-center px-6">
+      <form action={formAction} className="desk-card w-full max-w-sm p-8">
+        <span aria-hidden className="bg-accent-400 grid size-9 place-items-center rounded-md text-sm font-bold text-white">
+          M
+        </span>
+        <h1 className="text-ink mt-5 text-lg font-semibold">Margo enquiries desk</h1>
+        <p className="text-ink-3 mt-1 text-sm">Sign in to see what the website has received.</p>
 
         <label className="mt-7 block">
           <span className="text-ink-3 text-xs">Password</span>
@@ -23,7 +23,7 @@ export default function AdminLoginPage() {
             autoComplete="current-password"
             required
             autoFocus
-            className="border-line bg-canvas text-ink focus:border-accent-400 mt-2 w-full rounded-lg border px-3 py-2.5 text-sm outline-none"
+            className="border-line bg-surface-4 text-ink focus:border-accent-400 focus:ring-accent-400/20 mt-2 w-full rounded-lg border px-3 py-2.5 text-sm outline-none focus:ring-2"
           />
         </label>
 
@@ -36,7 +36,7 @@ export default function AdminLoginPage() {
         <button
           type="submit"
           disabled={pending}
-          className="bg-accent-400 text-ink rounded-cta mt-6 w-full py-2.5 text-sm font-semibold disabled:opacity-60"
+          className="bg-accent-400 mt-6 w-full rounded-lg py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-60"
         >
           {pending ? "Checking…" : "Sign in"}
         </button>

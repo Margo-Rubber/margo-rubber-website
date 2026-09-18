@@ -37,7 +37,7 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 ## 04 Contact
 
 13. **Direct contact — phone.** The sheet publishes +91 96655 79276 for both WhatsApp and Phone and asks: should a separate landline be published?
-14. **Attachment field.** Shown with the sheet's label and hint; inert until the upload backend exists (Phase 7 — needs the storage account).
+14. ~~**Attachment field.** Shown with the sheet's label and hint; inert until the upload backend exists (Phase 7 — needs the storage account).~~ Resolved 2026-09-18: Margo's Cloudinary account (`CLOUDINARY_URL`); uploads are private, the desk signs an expiring download link. See `src/lib/enquiry/attachments.ts`.
 15. **Map still.** Links to Google Maps at the confirmed coordinates; the picture in the slot is the hero photograph until a map image is uploaded in the Studio (Photographs → "Contact page — map still").
 
 ## 06 Export
@@ -202,7 +202,7 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 
 ## Phase 7b — forms, redirects and the SKU moves
 
-108. **Attachment upload** (04 §02, 18 §09 "Send Drawing & Quote") stays an inert field until the storage account exists (item 14). The label and hint ship; nothing is uploaded.
+108. ~~**Attachment upload** (04 §02, 18 §09 "Send Drawing & Quote") stays an inert field until the storage account exists (item 14). The label and hint ship; nothing is uploaded.~~ Resolved 2026-09-18 — live on /contact, the homepage and the products hub (item 14).
 109. **Legacy WooCommerce URLs.** The 301 map for the old site's product URLs (Build Checklist B15) is taken from a crawl immediately before cutover; `src/content/redirects.ts` is where they go, next to the eight redirects already there.
 110. **SKU moves made** (each sheet's "New URL … 301 from …"): 02 → /products/extrusion/rear-windscreen-glazing-rubber, 04 → /products/pads-stoppers-caps/side-step-pad, 05 → /products/anti-vibration-mounts/cv-suspension-bump-stop, 07 → /products/sponge-foam-rubber/c-pillar-garnish-seal, 09 → /products/sponge-foam-rubber/foam-gaskets, 31 → /products/seals/plunger-seals. The image slots keep their old keys (`sku.anti-vibration-mounts--backlight-mount.photo` …) until the image-slot clean-up branch renames them with the 21 retired slots.
 111. **Duplicates folded** (sheets 16 and 29, "Duplicate — 301 this URL"): /oil-seals/fkm-compression-pump-inlays → /oil-seals/compression-pump-inlays and /pads-stoppers-caps/oil-seal-filler-cap → /pads-stoppers-caps/oil-filler-cap. Both documents carried the survivor's copy word for word after Phase 6; they are removed (dataset backup `backups/production-2026-09-16-18-51-moves.ndjson`). Item 74's question — are 28 and 29 the same cap? — is answered by the sheets as yes; if Margo says otherwise, the redirect comes out and a distinct part page is written.
