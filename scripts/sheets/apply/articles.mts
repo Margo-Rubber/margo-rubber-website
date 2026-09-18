@@ -109,7 +109,7 @@ function table(caption: string | undefined, columns: string[], rows: string[][])
     _key: key("t"),
     ...(caption ? { caption } : {}),
     columns,
-    rows: rows.map((r) => r.map((c) => c.replace(/\|/g, "／")).join(" | ")),
+    rows: rows.map((r) => r.map((c) => c.replace(/🛑\s*/g, "").replace(/\|/g, "／")).join(" | ")),
   };
 }
 
@@ -133,7 +133,14 @@ for (const stem of stems) {
   const sheet = loadSheet(stem);
   const slug = ARTICLES[stem];
   const expect: string[] = [];
-  const E = (v: string) => (expect.push(v.replace(/\*\*/g, "").replace(/🛑\s*/g, "").replace(LINK, "$1")), v);
+  // The sheet's severity glyph is the author's mark, never copy — it comes
+  // off the value as well as the expectation (table cells reach the page
+  // through E alone; paragraphs also go through block()).
+  const E = (v: string) => {
+    const clean = v.replace(/🛑\s*/g, "");
+    expect.push(clean.replace(/\*\*/g, "").replace(LINK, "$1"));
+    return clean;
+  };
   keyN = 0;
   const pending = [...(LINKS[stem] ?? [])];
   /** Link each asked-for phrase where it first appears; the words stay the sheet's. */

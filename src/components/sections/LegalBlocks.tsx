@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/Section";
 import { LegalToc } from "@/components/sections/LegalToc";
 import type { LegalBlock } from "@/content/schemas";
 import { emphasised } from "@/components/ui/Emphasis";
+import { displaySize } from "@/lib/display-size";
 
 /**
  * LEGAL DOCUMENT TEMPLATE — built to `Privacy Policy.pdf`.
@@ -75,7 +76,7 @@ export function LegalHero({
           {badge}
         </p>
 
-        <h1 className="text-display mt-5">{h1}</h1>
+        <h1 className={`${displaySize(h1)} mt-5`}>{h1}</h1>
 
         <p className="text-ink-2 mt-7 max-w-[54ch] text-lg leading-[1.8]">
           {intro}

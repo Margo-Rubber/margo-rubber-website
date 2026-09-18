@@ -15,6 +15,7 @@ import {
   EnquiryStatus,
   EnquirySubmit,
 } from "@/components/forms/EnquiryForm";
+import { displaySize } from "@/lib/display-size";
 
 /** Small inline icons. Text glyphs (⊘ ⛊ ✕) render inconsistently across
  *  platforms and did not match the design, which uses drawn marks. */
@@ -206,7 +207,7 @@ export function CertHero({
               {badge}
             </span>
 
-            <h1 className="text-display mt-6">
+            <h1 className={`${displaySize(lines)} mt-6`}>
               {lines.map((l, i) => (
                 <span
                   key={l}

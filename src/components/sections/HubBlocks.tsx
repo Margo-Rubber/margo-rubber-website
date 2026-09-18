@@ -18,6 +18,7 @@ import {
 } from "@/components/forms/EnquiryForm";
 import { AttachmentField } from "@/components/forms/AttachmentField";
 import { accented } from "@/components/ui/Emphasis";
+import { displaySize } from "@/lib/display-size";
 
 /* ────────────────────────────────────────────────────────────────────────
    HUB HERO
@@ -117,7 +118,7 @@ export function HubHero({
               {badge}
             </span>
 
-            <h1 className="text-display mt-6">
+            <h1 className={`${displaySize(lines)} mt-6`}>
               {lines.map((l, i) => (
                 <span
                   key={l}
@@ -826,6 +827,7 @@ export function CatalogueBlock({
               <input
                 name={field}
                 type={type}
+                required={field === "email"}
                 autoComplete={autocompleteFor(field)}
                 placeholder={ph}
                 className="border-line bg-surface-3 text-ink placeholder:text-ink-4 focus:border-accent-400 mt-2 w-full rounded-lg border px-4 py-3 text-sm"

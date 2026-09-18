@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/Button";
 import { Container, Eyebrow, HeroChips } from "@/components/ui/Section";
 import { emphasised } from "@/components/ui/Emphasis";
 import { hrefFor, productBySlug } from "@/content/routes";
+import { displaySize } from "@/lib/display-size";
 
 /* ── HERO ─────────────────────────────────────────────────────────────── */
 export function IndustryHero({
@@ -76,7 +77,7 @@ export function IndustryHero({
           {badge}
         </span>
 
-        <h1 className="text-display mt-6">
+        <h1 className={`${displaySize(lines)} mt-6`}>
           {lines.map((l, i) => (
             <span
               key={l}

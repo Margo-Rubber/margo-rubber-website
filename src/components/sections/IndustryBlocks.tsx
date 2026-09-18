@@ -15,6 +15,7 @@ import {
   EnquirySubmit,
 } from "@/components/forms/EnquiryForm";
 import { accented } from "@/components/ui/Emphasis";
+import { displaySize } from "@/lib/display-size";
 
 type Industry = {
   slug: string;
@@ -69,7 +70,7 @@ export function IndustriesHero({
           </span>
         )}
 
-        <h1 className="text-display mt-6">
+        <h1 className={`${displaySize(lines)} mt-6`}>
           {lines.map((l, i) => (
             <span
               key={l}
