@@ -8,6 +8,7 @@ import {
 } from "@/lib/enquiry/store";
 import { SOURCES } from "@/lib/enquiry/sources";
 import { StatusPill } from "@/components/admin/StatusPill";
+import { deskDate, deskTime } from "@/lib/admin/time";
 
 const PAGE_SIZE = 50;
 
@@ -162,25 +163,20 @@ export default async function AdminEnquiriesPage(props: PageProps<"/margo-desk">
                   className="border-line hover:bg-surface-4 border-b transition-colors last:border-b-0"
                 >
                   <td className="text-ink-3 px-4 py-3 whitespace-nowrap tabular-nums">
-                    {new Date(r.created_at).toLocaleDateString("en-GB", {
-                      day: "2-digit",
-                      month: "short",
-                      year: "numeric",
-                    })}
-                    <span className="text-ink-4 block text-[11px]">
-                      {new Date(r.created_at).toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit" })}
-                    </span>
+                    {deskDate(r.created_at)}
+                    <span className="text-ink-4 block text-[11px]">{deskTime(r.created_at)} IST</span>
                   </td>
-                  <td className="px-4 py-3">
+                  <td className="max-w-[14rem] px-4 py-3">
                     <Link
                       href={`/margo-desk/enquiry/${r.id}`}
-                      className="text-ink hover:text-accent-400 font-medium"
+                      className="text-ink hover:text-accent-400 block truncate font-medium"
+                      title={r.name || r.company || r.email}
                     >
-                      {r.name || "—"}
+                      {r.name || r.company || "—"}
                     </Link>
                   </td>
-                  <td className="text-ink-2 px-4 py-3">{r.company || "—"}</td>
-                  <td className="text-ink-2 px-4 py-3">
+                  <td className="text-ink-2 max-w-[12rem] truncate px-4 py-3">{r.company || "—"}</td>
+                  <td className="text-ink-2 px-4 py-3 whitespace-nowrap">
                     <a href={`mailto:${r.email}`} className="hover:text-ink">
                       {r.email}
                     </a>

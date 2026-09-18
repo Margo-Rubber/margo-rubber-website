@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { getEnquiry, listAttachments, STATUSES } from "@/lib/enquiry/store";
 import { attachmentLinks, formatBytes, isAttachmentsConfigured } from "@/lib/enquiry/attachments";
 import { StatusPill } from "@/components/admin/StatusPill";
+import { deskDate, deskDateTime, deskDateTimeLong } from "@/lib/admin/time";
+import { FIELD_MAP, type Source } from "@/lib/enquiry/sources";
 import { setStatusAction } from "../../../actions";
 
 /** Fields the table gives a column of its own. Everything else lives in `raw`. */
@@ -48,9 +50,12 @@ export default async function EnquiryDetailPage(
 
   // Anything submitted that did not earn a column. This is the reason `raw`
   // exists: a field added to a form later is captured from its first
-  // submission, without a migration.
+  // submission, without a migration. A raw field the form's map already
+  // placed in a column ("fullName" → name, "details" → message) is not
+  // repeated here — only what has no column of its own.
+  const mapped = new Set(Object.keys(FIELD_MAP[row.source as Source] ?? {}));
   const extras = Object.entries(row.raw).filter(
-    ([k]) => !CANONICAL_FIELDS.includes(k as (typeof CANONICAL_FIELDS)[number]),
+    ([k]) => !CANONICAL_FIELDS.includes(k as (typeof CANONICAL_FIELDS)[number]) && !mapped.has(k),
   );
 
   return (
@@ -69,10 +74,7 @@ export default async function EnquiryDetailPage(
           </div>
           <p className="text-ink-3 mt-1 text-sm">
             {row.company && row.name ? `${row.company} · ` : ""}
-            {new Date(row.created_at).toLocaleString("en-GB", {
-              dateStyle: "full",
-              timeStyle: "short",
-            })}
+            {deskDateTimeLong(row.created_at)}
           </p>
         </div>
 
@@ -170,8 +172,7 @@ export default async function EnquiryDetailPage(
                   <p className="text-ink text-sm font-medium break-all">{a.original_filename}</p>
                   <p className="text-ink-4 mt-1 text-xs">
                     {formatBytes(a.bytes)}
-                    {a.format ? ` · ${a.format.toUpperCase()}` : ""} · sent{" "}
-                    {new Date(a.created_at).toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short" })}
+                    {a.format ? ` · ${a.format.toUpperCase()}` : ""} · sent {deskDateTime(a.created_at)}
                   </p>
                   {a.download && (
                     <a
@@ -207,7 +208,7 @@ export default async function EnquiryDetailPage(
               </Row>
               <Row label="CRM">
                 {row.crm_synced_at
-                  ? `Synced ${new Date(row.crm_synced_at).toLocaleDateString("en-GB")}`
+                  ? `Synced ${deskDate(row.crm_synced_at)}`
                   : "Not synced"}
               </Row>
             </dl>
