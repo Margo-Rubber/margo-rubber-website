@@ -9,6 +9,7 @@ import {
   EnquiryStatus,
   EnquirySubmit,
 } from "@/components/forms/EnquiryForm";
+import { AttachmentField } from "@/components/forms/AttachmentField";
 
 /* ══ SHARED ═══════════════════════════════════════════════════════════════ */
 
@@ -1401,18 +1402,9 @@ export function HomeCta({
                 </label>
               ))}
 
-              <div className="sm:col-span-2">
-                <span className="text-eyebrow text-ink-4 font-mono uppercase">
-                  {uploadLabel}
-                </span>
-                {/* Not wired: file upload needs the RFQ backend, which is a
-                    launch blocker. Rendered as the design's affordance so the
-                    layout is complete, but deliberately inert. */}
-                <p className="border-line-2 text-ink-4 mt-2 flex items-center gap-3 rounded-lg border border-dashed bg-[#16191E] px-4 py-3.5 text-sm">
-                  <Icon name="package" className="text-accent-400 size-4 shrink-0" />
-                  {uploadHint}
-                </p>
-              </div>
+              {/* Sheet 01 §11: the drawing uploads to Margo's Cloudinary
+                  while the visitor types; the enquiry carries the reference. */}
+              <AttachmentField label={uploadLabel} hint={uploadHint} className="sm:col-span-2" />
             </div>
 
             <EnquirySubmit className="bg-accent-400 text-ink hover:opacity-90 shadow-glow rounded-cta mt-7 flex w-full items-center justify-center gap-2 px-6 py-4 text-sm font-semibold transition-colors">

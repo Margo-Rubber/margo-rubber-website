@@ -16,6 +16,7 @@ import {
   EnquiryStatus,
   EnquirySubmit,
 } from "@/components/forms/EnquiryForm";
+import { AttachmentField } from "@/components/forms/AttachmentField";
 import { accented } from "@/components/ui/Emphasis";
 
 /* ────────────────────────────────────────────────────────────────────────
@@ -1078,15 +1079,9 @@ export function QuoteBand({
                 )}
               </label>
             ))}
-            {/* The attachment field (sheet 02 §11) — the same inert
-                affordance as the homepage and /contact forms until the
-                upload backend exists. */}
-            {attachLabel && (
-              <div className="sm:col-span-2">
-                <span className="text-eyebrow text-ink-4 font-mono uppercase">{attachLabel}</span>
-                <p className="border-line-2 text-ink-4 mt-2 rounded-lg border border-dashed bg-[#0F1116] px-4 py-3.5 text-sm">{attachHint}</p>
-              </div>
-            )}
+            {/* The attachment field (sheet 02 §11): the same live upload as
+                the homepage and /contact forms. */}
+            {attachLabel && <AttachmentField label={attachLabel} hint={attachHint} className="sm:col-span-2" />}
           </div>
 
           <EnquirySubmit className="bg-accent-400 text-ink hover:opacity-90 mt-7 w-full rounded-cta px-6 py-3.5 text-sm font-semibold transition-colors">

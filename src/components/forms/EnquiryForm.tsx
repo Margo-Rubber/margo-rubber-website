@@ -91,11 +91,26 @@ export function EnquiryForm({
 
     const fields: Record<string, string> = {};
     let honeypot = "";
+    let attachment: unknown;
 
     for (const [key, value] of data.entries()) {
-      if (typeof value !== "string") continue; // files are handled separately
+      if (typeof value !== "string") continue; // the file itself never posts here
       if (key === "company_website") {
         honeypot = value;
+        continue;
+      }
+      // The AttachmentField's hidden inputs: the uploaded file's reference,
+      // and whether an upload is still in flight (see AttachmentField.tsx).
+      if (key === "attachment") {
+        if (value) attachment = JSON.parse(value);
+        continue;
+      }
+      if (key === "attachment_state") {
+        if (value === "uploading") {
+          setStatus("error");
+          setMessage("Your file is still uploading — give it a moment, then send again.");
+          return;
+        }
         continue;
       }
       fields[key] = value;
@@ -113,6 +128,7 @@ export function EnquiryForm({
           source,
           fields,
           company_website: honeypot,
+          attachment,
           meta: {
             page: window.location.pathname,
             referrer: document.referrer || undefined,

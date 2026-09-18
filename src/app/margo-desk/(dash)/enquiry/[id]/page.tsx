@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getEnquiry, STATUSES } from "@/lib/enquiry/store";
+import { getEnquiry, listAttachments, STATUSES } from "@/lib/enquiry/store";
+import { attachmentLinks, formatBytes, isAttachmentsConfigured } from "@/lib/enquiry/attachments";
 import { StatusPill } from "@/components/admin/StatusPill";
 import { setStatusAction } from "../../../actions";
 
@@ -31,6 +32,10 @@ export default async function EnquiryDetailPage(
   const { id } = await props.params;
   const row = await getEnquiry(id);
   if (!row) notFound();
+
+  // Links are made here, on each view, and expire in an hour — the drawing
+  // is a customer's and is never on a URL that outlives the person reading it.
+  const attachments = (await listAttachments(id)).map((a) => ({ ...a, ...attachmentLinks(a) }));
 
   // Anything submitted that did not earn a column. This is the reason `raw`
   // exists: a field added to a form later is captured from its first
@@ -130,6 +135,41 @@ export default async function EnquiryDetailPage(
             )}
           </dl>
         </section>
+
+        {attachments.length > 0 && (
+          <section className="border-line bg-surface-3 rounded-lg border p-6">
+            <h2 className="text-ink-4 text-xs font-medium tracking-wide uppercase">
+              Attached {attachments.length === 1 ? "file" : "files"}
+            </h2>
+            {!isAttachmentsConfigured() && (
+              <p className="text-danger mt-3 text-sm">
+                CLOUDINARY_URL is not set on this deployment, so the files cannot be opened from here.
+              </p>
+            )}
+            <ul className="mt-4 grid gap-4 sm:grid-cols-2">
+              {attachments.map((a) => (
+                <li key={a.id} className="border-line rounded-lg border bg-[#0D0F12] p-4">
+                  {a.preview && (
+                    // eslint-disable-next-line @next/next/no-img-element -- a signed, expiring Cloudinary URL; not a registry image
+                    <img src={a.preview} alt="" className="border-line mb-3 max-h-56 w-full rounded border object-contain" />
+                  )}
+                  <p className="text-ink text-sm font-medium break-all">{a.original_filename}</p>
+                  <p className="text-ink-4 mt-1 text-xs">
+                    {formatBytes(a.bytes)}
+                    {a.format ? ` · ${a.format.toUpperCase()}` : ""} · sent{" "}
+                    {new Date(a.created_at).toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short" })}
+                  </p>
+                  {a.download && (
+                    <a href={a.download} className="text-accent-400 mt-3 inline-block text-sm underline underline-offset-2">
+                      Download
+                    </a>
+                  )}
+                  <p className="text-ink-4 mt-2 text-[11px]">Link valid for one hour from opening this page.</p>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
 
         <aside className="space-y-6">
           <section className="border-line bg-surface-3 rounded-lg border px-6 py-2">

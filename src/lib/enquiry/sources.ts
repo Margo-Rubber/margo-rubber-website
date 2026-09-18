@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { attachmentRefSchema } from "./attachment-ref";
 
 /**
  * ENQUIRY SOURCES
@@ -170,6 +171,8 @@ export const enquiryPayloadSchema = z.object({
   }),
   /** Honeypot. Must be empty; a bot fills every field it finds. */
   company_website: z.string().max(0).optional(),
+  /** The file already uploaded to Cloudinary, by reference — see attachments.ts. */
+  attachment: attachmentRefSchema.optional(),
 });
 
 export type EnquiryPayload = z.infer<typeof enquiryPayloadSchema>;

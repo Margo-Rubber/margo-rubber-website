@@ -1,7 +1,8 @@
 import { enquiryPayloadSchema, mapAndValidate } from "@/lib/enquiry/sources";
 import { checkSpam, clientIp, spamMessage } from "@/lib/enquiry/spam";
-import { isStoreConfigured, storeEnquiry } from "@/lib/enquiry/store";
+import { isStoreConfigured, storeAttachment, storeEnquiry } from "@/lib/enquiry/store";
 import { forwardEnquiry, notifyEnquiry } from "@/lib/enquiry/notify";
+import { formatBytes, verifyUpload } from "@/lib/enquiry/attachments";
 
 /**
  * POST /api/enquiry
@@ -84,13 +85,28 @@ export async function POST(request: Request) {
 
   const userAgent = request.headers.get("user-agent") ?? undefined;
 
-  // File uploads are handled in a follow-up: they need an R2 bucket, and
-  // wiring storage before the bucket exists would mean untestable code. The
-  // field is threaded through so adding it is one call, not a refactor.
-  const fileUrl: string | undefined = undefined;
+  // ── 2b. The attached file, if any ────────────────────────────────────
+  // The browser uploaded it to Cloudinary already (see attachments.ts) and
+  // sends back a reference. Confirm the asset is really there, under our
+  // folder, before believing it — the reference is client-supplied.
+  const ref = payload.data.attachment;
+  const verified = ref ? await verifyUpload(ref) : null;
+  if (ref && !verified) {
+    return json(
+      {
+        ok: false,
+        message: "The attached file did not arrive. Please attach it again, or email it to info@margorubber.in.",
+        errors: { attachment: "Upload not found" },
+      },
+      422,
+    );
+  }
+  const attachment = ref && verified ? { name: ref.originalFilename, size: formatBytes(verified.bytes) } : undefined;
 
   // ── 3. Store ─────────────────────────────────────────────────────────
-  const stored = await storeEnquiry(mapped.data, { userAgent, fileUrl });
+  const stored = await storeEnquiry(mapped.data, { userAgent });
+  if (stored.stored && ref && verified) await storeAttachment(stored.id, ref, verified);
+  const fileUrl: string | undefined = undefined;
 
   if (!stored.stored && stored.reason === "error") {
     // The database is the system of record. Losing the row is fatal, and the
@@ -120,6 +136,7 @@ export async function POST(request: Request) {
   // ── 4. Email, waited on ──────────────────────────────────────────────
   const notified = await notifyEnquiry(mapped.data, {
     fileUrl,
+    attachment,
     enquiryId,
     stored: stored.stored,
   });
