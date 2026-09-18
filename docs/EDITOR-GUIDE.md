@@ -29,8 +29,15 @@ the site until you publish; you can save a draft and come back.
 ## Everyday tasks
 
 **Change a phone number, the address, or the hours** → Site settings →
-*Company & contact*. The footer, the contact page, the homepage strip and
-the structured data all read from here.
+*Company & contact*. The footer, the contact page's address card, the
+homepage strip and the structured data all read from here.
+
+One exception, by design: the "Ways to reach us" cards on the Contact page
+(WhatsApp · Phone · Email) carry their own number and their own note — the
+Phone card's note is the hours as the Contact sheet wrote them. Those cards
+are edited on the Contact page itself (Pages → Contact → *Ways to reach
+us*), so changing the hours in Site settings updates the address card and
+the footer but not that card. Change both, or the page contradicts itself.
 
 **Update the certificate** (new expiry, new certificate number, a standard
 gained) → Site settings → *Certifications*. The *Certification record* rows
