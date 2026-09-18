@@ -18,6 +18,8 @@ import {
   list,
   starAccent,
 } from "../lib.mts";
+import { PRODUCT_GROUPS } from "../../../src/content/routes.ts";
+import { newCategoryCards } from "./hub-cards.mts";
 
 const sheet = loadSheet("02_Products");
 const s = (n: string) => section(sheet, n);
@@ -82,6 +84,10 @@ const cards = cardRows.map((r, i) => {
       : {}),
   };
 });
+// The four categories sheets 36–39 built: their cards, in the registry's
+// group order, and the filter chip the lining card needs (OPEN-ITEMS 94).
+const order = PRODUCT_GROUPS.flatMap((g) => g.items.map((i) => i.slug));
+const allCards = [...cards, ...(await newCategoryCards())].sort((a, b) => order.indexOf(a.slug) - order.indexOf(b.slug));
 const rangeCta = litHref(range, "Closing link");
 
 /* ── 03 Capacity ─────────────────────────────────────────────────────────── */
@@ -251,10 +257,8 @@ const patch = {
   "range.eyebrow": E(lit(range, "Eyebrow")),
   "range.heading": h2(range),
   "range.body": E(paragraph(range, "Intro")),
-  "range.filters": lit(range, "Filter chips")
-    .split(" · ")
-    .map((f) => E(f.trim())),
-  "range.cards": cards,
+  "range.filters": [...lit(range, "Filter chips").split(" · ").map((f) => E(f.trim())), "Lining"],
+  "range.cards": allCards,
   "range.cta": { label: E(rangeCta.label), href: rangeCta.href },
 
   "excellence.eyebrow": E(lit(cap, "Eyebrow")),

@@ -16,6 +16,7 @@ import {
   accentLines,
   starAccent,
 } from "../lib.mts";
+import { newSectorCards } from "./hub-cards.mts";
 
 const sheet = loadSheet("05_Industries");
 const s = (n: string) => section(sheet, n);
@@ -95,12 +96,18 @@ const cards = rows(grid, "Cards").map((r) => {
 
 /* ── 04 Additional sectors ───────────────────────────────────────────────── */
 const add = s("04");
-const additional = rows(add, "Cards").map((r) => ({
-  name: E(r[0]),
-  body: E(r[1]),
-  href: r[2],
-  linkLabel: "Browse product category",
-}));
+// "Construction & glazing" leaves this list: sheet 41 built it a page and
+// asks for exactly that (OPEN-ITEMS 104).
+const additional = rows(add, "Cards")
+  .filter((r) => !/^Construction/.test(r[0]))
+  .map((r) => ({
+    name: E(r[0]),
+    body: E(r[1]),
+    href: r[2],
+    linkLabel: "Browse product category",
+  }));
+// Sheets 41 and 42's pages join the grid, after sheet 05's nine.
+const allCards = [...cards, ...(await newSectorCards())];
 
 /* ── 05 Enquiry ──────────────────────────────────────────────────────────── */
 const enq = s("05");
@@ -125,8 +132,9 @@ const patch = {
 
   "primary.eyebrow": E(lit(grid, "Eyebrow")),
   "primary.heading": h2(grid),
-  "primary.countLabel": E(lit(grid, "Counter")),
-  "primary.items": cards,
+  // "9 of 9 showing" on the sheet; the page derives the count, so eleven show as eleven.
+  "primary.countLabel": lit(grid, "Counter"),
+  "primary.items": allCards,
 
   "additional.eyebrow": E(lit(add, "Eyebrow")),
   "additional.heading": E(heading(add, "H2").value),
