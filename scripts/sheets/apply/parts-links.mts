@@ -34,7 +34,15 @@ for (const g of GRIDS) {
     eyebrow: "IN THIS CATEGORY",
     heading: g.heading,
     body: BODY,
-    items: items.map((it) => ({ name: it.name, availability: "Made to order", href: it.href })),
+    // `_key` and `_type` by hand: the insert below bypasses applyDocument's
+    // keyed() pass, and an item without them is the Studio's "Missing keys".
+    items: items.map((it, i) => ({
+      _key: it.href?.split("/").pop() || `item-${i}`,
+      _type: "partName",
+      name: it.name,
+      availability: "Made to order",
+      href: it.href,
+    })),
   };
   const has = doc.sections.some((s) => s._key === "partsGrid");
   if (!has) {

@@ -101,7 +101,7 @@ export const certificationsPage = defineType({
             defineField({ name: "scopeLine", title: "Scope", type: "text", rows: 2, validation: (r) => r.required() }),
             defineField({ name: "fields", title: "Certificate details", type: "array", of: [labelValueMember] }),
             defineField({ name: "barTitle", type: "string", validation: (r) => r.required() }),
-            defineField({ name: "barNote", type: "string", validation: (r) => r.required() }),
+            defineField({ name: "barNote", type: "string", description: "Optional." }),
             defineField({ name: "downloadLabel", type: "string", validation: (r) => r.required() }),
             defineField({
               name: "downloadHref",
@@ -191,6 +191,7 @@ export const certificationsPage = defineType({
                 }),
                 defineField({ name: "name", type: "string", validation: (r) => r.required() }),
                 defineField({ name: "body", type: "text", rows: 2, validation: (r) => r.required() }),
+                defineField({ name: "href", title: "Link address", type: "string", description: "Optional — a stage that links out, e.g. final QC to /products#testing (sheet 07 §05)." }),
               ],
               preview: { select: { title: "name", subtitle: "body" } },
             }),

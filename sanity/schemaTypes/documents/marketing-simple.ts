@@ -136,7 +136,7 @@ export const industriesHub = defineType({
   fields: [
     ...pageIdentityFields("/industries"),
     baseHeroField,
-    defineField({ name: "badge", title: "Badge above the heading", type: "string", validation: (r) => r.required(), group: "hero" }),
+    defineField({ name: "badge", title: "Badge above the heading", type: "string", description: "Optional — the sheet leaves it empty.", group: "hero" }),
     ...headingFields(),
     defineField({
       name: "intro",

@@ -249,10 +249,14 @@ export function keyed(
       const inner = keyed(type, item, path);
       if (inner && typeof inner === "object" && !Array.isArray(inner)) {
         const obj = inner as Record<string, unknown>;
-        const first = Object.values(obj).find(
-          (v) => typeof v === "string" && v.trim(),
-        ) as string | undefined;
-        let key = first ? slugify(first) : `item-${i}`;
+        // The first string whose slug is not empty: a country chip's first
+        // string is its flag emoji, which slugifies to nothing, and an empty
+        // `_key` crashes the Studio's structure tool outright.
+        let key =
+          Object.values(obj)
+            .filter((v): v is string => typeof v === "string" && Boolean(v.trim()))
+            .map(slugify)
+            .find(Boolean) ?? `item-${i}`;
         const n = (seen.get(key) ?? 0) + 1;
         seen.set(key, n);
         if (n > 1) key = `${key}-${n}`;

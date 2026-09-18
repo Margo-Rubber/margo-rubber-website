@@ -63,7 +63,8 @@ const iconCardArray = (name: string, title: string, description: string) =>
         fields: [
           iconField(),
           defineField({ name: "name", title: "Heading", type: "string", validation: (r) => r.required() }),
-          defineField({ name: "body", title: "Description", type: "text", rows: 2, validation: (r) => r.required() }),
+          // Optional: some sheets name an application without a line under it.
+          defineField({ name: "body", title: "Description", type: "text", rows: 2 }),
           defineField({ name: "href", title: "Links to", type: "string", description: "The industry page this card is about, e.g. /industries/automotive. Empty for no link." }),
         ],
         preview: { select: { title: "name", subtitle: "body" } },
@@ -365,8 +366,9 @@ export const sku = defineType({
               name: "certificate",
               fields: [
                 defineField({ name: "name", type: "string", validation: (r) => r.required() }),
-                defineField({ name: "issuer", type: "string", validation: (r) => r.required() }),
-                defineField({ name: "validity", type: "string", validation: (r) => r.required() }),
+                // Blank for a certification that is in progress rather than held.
+                defineField({ name: "issuer", type: "string" }),
+                defineField({ name: "validity", type: "string" }),
               ],
               preview: { select: { title: "name", subtitle: "issuer" } },
             }),

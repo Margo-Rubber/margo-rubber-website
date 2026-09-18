@@ -390,7 +390,7 @@ export const productsHub = defineType({
               preview: { select: { title: "name", subtitle: "version" } },
             }),
           ],
-          validation: (r) => r.required().min(1),
+          description: "Not used: the certifications strip reads the record in Site settings. Kept so older documents still open.",
         }),
       ],
       options: { collapsible: true, collapsed: true },

@@ -144,6 +144,12 @@ export const legalSection = defineType({
       description: "Optional. Falls back to the section heading.",
     }),
     defineField({
+      name: "icon",
+      title: "Icon in the contents list",
+      type: "string",
+      description: "Optional. One of the contents-list icons; an unknown name shows the document icon.",
+    }),
+    defineField({
       name: "blocks",
       title: "Content",
       type: "array",
