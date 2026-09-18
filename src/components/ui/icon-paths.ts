@@ -28,6 +28,10 @@ const PATHS = {
   airflow: "M2 8h12a3 3 0 1 0-3-3M2 16h9a3 3 0 1 1-3 3M2 12h18",
   wrench: "M14.7 6.3a4 4 0 0 0 5 5l-9.4 9.4a2.1 2.1 0 0 1-3-3l7.4-11.4Z",
   chip: "M6 6h12v12H6zM9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4",
+  /* Drawn for the three sectors the sheets added without an icon (OPEN-ITEMS 54) */
+  pick: "M3 21 13 11M9.5 6.5a9 9 0 0 1 8 8M9.5 6.5 8 5M17.5 14.5 19 16",
+  derrick: "M8 21 11 4h2l3 17M6 21h12M9.5 12h5M8.5 16.5h7M16 8h3l2-3M19 8v3",
+  wheat: "M12 22V9M12 9c-3 0-5-2-5-5 3 0 5 2 5 5ZM12 9c3 0 5-2 5-5-3 0-5 2-5 5ZM12 14c-3 0-5-2-5-5 3 0 5 2 5 5ZM12 14c3 0 5-2 5-5-3 0-5 2-5 5ZM12 19c-3 0-5-2-5-5 3 0 5 2 5 5ZM12 19c3 0 5-2 5-5-3 0-5 2-5 5Z",
 
   /* Quality assurance */
   check: "m9 12 2 2 4-4M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z",

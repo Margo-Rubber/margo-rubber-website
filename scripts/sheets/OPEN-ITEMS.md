@@ -116,7 +116,7 @@ Ayaz's instruction (2026-09-16): the sheets' copy ships as written — including
 
 ## 18 Extrusion Profiles
 
-54. **Sector card icons.** Mining, Oil & gas and Agriculture take the nearest strokes in the icon set (layers, droplet, cycle) until drawn.
+54. ~~**Sector card icons.** Mining, Oil & gas and Agriculture take the nearest strokes in the icon set (layers, droplet, cycle) until drawn.~~ Drawn 2026-09-18 — `pick`, `derrick`, `wheat` in the icon set, in the set's stroke; used on the Extrusion and Sponge & Foam sector cards (Transport takes `vehicle`).
 55. ~~**Construction card** links through the route registry to /contact?industry=Construction until the Construction page (sheet 41) is live.~~ Resolved — the page is built (Phase 7) and the card resolves to /industries/construction.
 56. ~~**Confirmation copy** "Drawing received. A named engineer replies within 48 hours to {email} with a compound recommendation, hardness grade and indicative pricing." — contact form post-submit state, Phase 7.~~ Resolved (Phase 7b): shown when Extrusion Profiles is the category on the form — which a link from this page (`?profile=`, `?request=datasheets`) pre-selects.
 57. **FAQ node empty.** The two live questions had no written answers on the sheet and no FAQ section exists; none emitted (as item 29).
