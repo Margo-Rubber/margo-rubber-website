@@ -4,6 +4,7 @@ import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { Container, Eyebrow, HeroChips } from "@/components/ui/Section";
 import { Img } from "@/components/ui/Img";
 import { emphasised } from "@/components/ui/Emphasis";
+import { displaySize } from "@/lib/display-size";
 
 /**
  * The 40–60 word direct answer rendered BEFORE elaboration — the AEO pattern
@@ -190,7 +191,7 @@ export function CategoryHero({
           </p>
         )}
 
-        <h1 className="text-display mt-6">
+        <h1 className={`${displaySize([headingLead, headingAccent])} mt-6`}>
           {/* The space before the break is invisible but keeps the two lines
               two words apart for a crawler reading the text. */}
           {headingLead}{" "}

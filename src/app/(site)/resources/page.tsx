@@ -15,6 +15,7 @@ import {
   ResourceLibrary,
   type Guide,
 } from "@/components/sections/ResourceBlocks";
+import { displaySize } from "@/lib/display-size";
 
 export async function generateMetadata() {
   const fm = await getSitePage("resources", resourcesHubSchema);
@@ -123,7 +124,7 @@ export default async function ResourcesPage() {
         <Container>
           <Breadcrumb items={crumbs} />
 
-          <h1 className="text-display mt-6">
+          <h1 className={`${displaySize(fm.h1Lines)} mt-6`}>
             {fm.h1Lines.map((line) => (
               <span key={line} className="block">
                 {line.split("*").map((part, i) =>

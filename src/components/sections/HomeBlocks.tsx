@@ -10,6 +10,7 @@ import {
   EnquirySubmit,
 } from "@/components/forms/EnquiryForm";
 import { AttachmentField } from "@/components/forms/AttachmentField";
+import { displaySize } from "@/lib/display-size";
 
 /* ══ SHARED ═══════════════════════════════════════════════════════════════ */
 
@@ -59,7 +60,7 @@ export function Marked({
 }) {
   return (
     <H
-      className={`${size === "hero" ? "text-display" : "text-display-2"} ${className}`}
+      className={`${displaySize(lines, size)} ${className}`}
     >
       {lines.map((line, li) => (
         // The space after each block line is invisible but load-bearing: without
@@ -376,7 +377,7 @@ export function HomeHero({
         fill
         priority
         sizes="100vw"
-        className="-z-20 object-cover brightness-[1.05] contrast-[1.05]"
+        className="-z-20 object-cover opacity-60 brightness-[0.95] contrast-[1.05]"
       />
       <div
         className="absolute inset-0 -z-10"

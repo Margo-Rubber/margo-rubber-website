@@ -143,7 +143,13 @@ export const FIELD_MAP: Record<Source, Record<string, Canonical>> = {
  * omitting a company name would be choosing tidy data over enquiries.
  */
 const baseFields = z.object({
-  email: z.string().trim().toLowerCase().email("Enter a valid email address"),
+  // A missing email is the common case (an empty field never reaches the
+  // map), so it gets the visitor's own sentence, not zod's.
+  email: z
+    .string({ error: "Please enter your work email address." })
+    .trim()
+    .toLowerCase()
+    .email("Enter a valid email address"),
   name: z.string().trim().max(120).optional(),
   company: z.string().trim().max(160).optional(),
   phone: z.string().trim().max(40).optional(),

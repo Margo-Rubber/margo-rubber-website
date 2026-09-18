@@ -398,7 +398,9 @@ export async function applySku(o: SkuOptions): Promise<Record<string, unknown>> 
   if (!h1) throw new Error(`${o.stem}: no H1`);
   patch.h1 = E(h1);
   patch.navLabel = h1.split(" — ")[0];
-  let intro = paragraphs(hero, "Intro sentence")[0];
+  // The severity glyph the sheets put before a warning sentence is the
+  // sheet's own mark, not copy (the four oil-seal intros carry one).
+  let intro = paragraphs(hero, "Intro sentence")[0].replace(/🛑\s*/g, "");
   const fitment = hero.fields.find((f) => /^Fitment.*version A/.test(f.label));
   if (fitment?.kind === "paragraphs") intro = `${intro} ${fitment.paragraphs[0]}`;
   patch.intro = E(intro);

@@ -12,6 +12,7 @@ import {
   EnquiryStatus,
   EnquirySubmit,
 } from "@/components/forms/EnquiryForm";
+import { displaySize } from "@/lib/display-size";
 
 /* ══ SHARED ═══════════════════════════════════════════════════════════════ */
 
@@ -45,7 +46,7 @@ export function Display({
 }) {
   return (
     <H
-      className={`${size === "hero" ? "text-display" : "text-display-2"} ${className}`}
+      className={`${displaySize(lines, size)} ${className}`}
     >
       {lines.map((line, i) => {
         const accent = accentLines.includes(i);

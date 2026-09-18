@@ -138,6 +138,8 @@ for (const route of list) {
   // a star on its own and does not match.
   const star = text.match(/(?:\*[A-Za-z]|[A-Za-z.]\*)[^*]{0,30}/);
   if (star) problems.push(`prints a marker: "…${star[0]}"`);
+  // The sheets' severity glyph is the author's mark, never copy.
+  if (text.includes("🛑")) problems.push(`prints a sheet glyph: "…${text.slice(Math.max(0, text.indexOf("🛑") - 30), text.indexOf("🛑") + 30)}"`);
 
   pages++;
   if (problems.length) {

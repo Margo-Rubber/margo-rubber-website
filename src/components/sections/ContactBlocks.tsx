@@ -16,6 +16,7 @@ import {
   useEnquiry,
 } from "@/components/forms/EnquiryForm";
 import { AttachmentField } from "@/components/forms/AttachmentField";
+import { displaySize } from "@/lib/display-size";
 
 /* ── HERO ─────────────────────────────────────────────────────────────── */
 export function ContactHero({
@@ -58,7 +59,7 @@ export function ContactHero({
           {badge}
         </p>
 
-        <h1 className="text-display mt-6">
+        <h1 className={`${displaySize(lines)} mt-6`}>
           {lines.map((l, i) => (
             <span
               key={l}

@@ -11,6 +11,7 @@ import {
   EnquirySubmit,
 } from "@/components/forms/EnquiryForm";
 import { accented } from "@/components/ui/Emphasis";
+import { displaySize } from "@/lib/display-size";
 
 /* ══ SHARED ═══════════════════════════════════════════════════════════════ */
 
@@ -34,12 +35,8 @@ function Marked({
   size?: "hero" | "section" | "column";
   className?: string;
 }) {
-  const scale =
-    size === "hero"
-      ? "text-display"
-      : size === "column"
-        ? "text-display-3"
-        : "text-display-2";
+  // Length-aware (src/lib/display-size.ts); a column heading keeps its step.
+  const scale = size === "column" ? "text-display-3" : displaySize(lines, size);
   return (
     <H className={`${scale} ${className}`}>
       {lines.map((line, li) => (
