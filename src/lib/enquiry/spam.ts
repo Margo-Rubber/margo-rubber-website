@@ -13,8 +13,16 @@
 /** Minimum plausible time to fill a form. Bots post instantly. */
 const MIN_ELAPSED_MS = 2_000;
 
-/** Per-IP submissions allowed inside the window. */
-const RATE_LIMIT = 5;
+/**
+ * Per-IP submissions allowed inside the window.
+ *
+ * Per IP, not sitewide: a busy day of enquiries from many visitors is never
+ * limited. What one address has to allow for is a shared one — an office
+ * behind a single NAT, or the carrier-grade NAT most Indian mobile networks
+ * put thousands of subscribers behind. Twenty an hour covers a whole
+ * office's procurement team and is still far below what a bot sends.
+ */
+const RATE_LIMIT = 20;
 const RATE_WINDOW_MS = 60 * 60 * 1000;
 
 export type SpamVerdict =
