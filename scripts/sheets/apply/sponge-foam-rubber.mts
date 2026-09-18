@@ -124,8 +124,8 @@ const SECTOR_ICON: Record<string, string> = {
   Construction: "building",
   "Electrical & electronics": "chip",
   "Medical & food": "shield",
-  "Transport — rail and marine": "droplet",
-  Mining: "layers",
+  "Transport — rail and marine": "vehicle",
+  Mining: "pick",
   "Water & fluid management": "droplet",
   "General industry": "wrench",
 };

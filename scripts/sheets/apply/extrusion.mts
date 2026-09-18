@@ -99,8 +99,8 @@ const [docTitle, ...docLines] = lit(qa, "Documentation package").split("\n");
 
 /* ── 07 Sectors served ───────────────────────────────────────────────────── */
 const sec = s("07");
-// Icons: the six live cards keep theirs; the three new sectors take the
-// nearest stroke in the set.
+// Icons: the six live cards keep theirs; the three new sectors have
+// their own strokes (pick, derrick, wheat — OPEN-ITEMS 54).
 const SECTOR_ICON: Record<string, string> = {
   Automotive: "vehicle",
   Construction: "building",
@@ -108,9 +108,9 @@ const SECTOR_ICON: Record<string, string> = {
   "Industrial machinery": "wrench",
   "Electrical & electronics": "chip",
   "Water & fluid management": "droplet",
-  Mining: "layers",
-  "Oil & gas": "droplet",
-  Agriculture: "cycle",
+  Mining: "pick",
+  "Oil & gas": "derrick",
+  Agriculture: "wheat",
 };
 const sectors = rows(sec, "Cards").map((r) => {
   const icon = SECTOR_ICON[r[0]];

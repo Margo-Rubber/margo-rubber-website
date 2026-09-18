@@ -189,6 +189,26 @@ export const IMAGE_SLOT_LABELS = {
     where: "Products page range grid — card 11 of 11.",
     page: "/products",
   },
+  "products.card.seals": {
+    title: "Products page — Reciprocating Seals card",
+    where: "Products page range grid. Stand-in: the Reciprocating Seals page's hero photograph until the card's own is uploaded.",
+    page: "/products",
+  },
+  "products.card.rubber-lining": {
+    title: "Products page — Rubber Lining & Skirting card",
+    where: "Products page range grid. Stand-in: the Rubber Lining & Skirting page's hero photograph until the card's own is uploaded.",
+    page: "/products",
+  },
+  "products.card.diaphragms": {
+    title: "Products page — Diaphragms card",
+    where: "Products page range grid. Stand-in: the Diaphragms page's hero photograph until the card's own is uploaded.",
+    page: "/products",
+  },
+  "products.card.bonded-components": {
+    title: "Products page — Bonded Components card",
+    where: "Products page range grid. Stand-in: the Bonded Components page's hero photograph until the card's own is uploaded.",
+    page: "/products",
+  },
 
   /* ── Product category pages ───────────────────────────────────────── */
   "products.o-rings.hero": {
@@ -281,6 +301,16 @@ export const IMAGE_SLOT_LABELS = {
   "industries.water-fluid-management": {
     title: "Industries page — Water & Fluid Management card",
     where: "Industries page grid — card 9 of 9.",
+    page: "/industries",
+  },
+  "industries.transport": {
+    title: "Industries page — Transport — Rail & Marine card",
+    where: "Industries page grid. Stand-in: the Transport — Rail & Marine page's hero photograph until the card's own is uploaded.",
+    page: "/industries",
+  },
+  "industries.construction": {
+    title: "Industries page — Construction card",
+    where: "Industries page grid. Stand-in: the Construction page's hero photograph until the card's own is uploaded.",
     page: "/industries",
   },
 
