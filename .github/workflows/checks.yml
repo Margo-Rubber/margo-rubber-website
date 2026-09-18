@@ -1,0 +1,43 @@
+# Every pull request: lint, types, build, and the content checks that need
+# a running site. No secrets are needed — the Sanity dataset is public and
+# the build runs without DATABASE_URL (the enquiry store reports itself
+# unconfigured; nothing is written). The two checks that need a secret
+# (check:jsonld's preview flag, check:cms's write token) run locally.
+name: checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm run build
+      # The content checks read the rendered pages, so serve the build.
+      - name: Start the built site
+        run: |
+          npm run start -- --port 3000 > server.log 2>&1 &
+          for i in $(seq 1 30); do curl -sf http://localhost:3000/ > /dev/null && break; sleep 2; done
+      - run: npm run check:copy
+      - run: npm run check:links
+      - run: npm run check:matrix
+      - run: npm run check:claims
+      - run: npm run check:techseo
+      - name: Server log on failure
+        if: failure()
+        run: tail -50 server.log
