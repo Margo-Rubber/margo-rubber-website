@@ -61,7 +61,7 @@ for (const r of rows) {
   const p = pathFor(r);
   if (p && !REDIRECTS.some((x) => x.from === p)) routes.add(p);
 }
-for (const p of Object.values(PAGE_PATH)) if (!NO_ROUTE.has(p.slice(1))) routes.add(p);
+for (const p of Object.values(PAGE_PATH)) if (!NO_ROUTE.has(p.slice(1)) && !REDIRECTS.some((x) => x.from === p)) routes.add(p);
 const list = (only.length ? only : [...routes]).sort();
 
 const decode = (s: string) =>

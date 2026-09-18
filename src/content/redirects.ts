@@ -62,6 +62,13 @@ export const REDIRECTS: readonly Redirect[] = [
     why: "The same cap under a name that runs two part types together (SKU 29).",
   },
 
+  /* ── The takedown (sheet 30) ─────────────────────────────────────────── */
+  {
+    from: "/why-margo",
+    to: "/about",
+    why: "Sheet 30: \"Unpublish now, 301 to /about\" — the page claimed four certifications not held; /about, /certifications and /export carry what was true.",
+  },
+
   /* ── The WordPress site's URLs (Build Checklist B15, CUTOVER.md §7) ────
      From the old site's own sitemaps, crawled 2026-09-18: 28 WooCommerce
      product pages, the pages, two category archives and the theme leftovers

@@ -24,9 +24,9 @@ import { NO_ROUTE, pathFor } from "../src/lib/published-paths.ts";
 import { REDIRECTS } from "../src/content/redirects.ts";
 
 /**
- * Never published by this script. /why-margo is the page the parked takedown
- * sheet (30) says to unpublish and redirect — it carries certifications not
- * held and a fabricated history — and it stays noindex until Ayaz decides.
+ * Never published by this script. /why-margo is the page the takedown sheet
+ * (30) says to unpublish and redirect; it 301s to /about (redirects.ts) and
+ * its document stays placeholder, as the sheet asks.
  */
 const HOLD = new Set(["/why-margo"]);
 
