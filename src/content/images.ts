@@ -109,6 +109,38 @@ export const IMAGES = {
     alt: "Gloved operator handling sheet stock at a press",
     status: "placeholder",
   },
+  "products.card.seals": {
+    src: "/images/products/446414d85bfd92e3fcd4ae2b640c6d81e9629b91.png",
+    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAQMEBv/EACAQAAICAgEFAQAAAAAAAAAAAAECAxEABEEiMTJRYbH/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AM9Lp6RKvBOyKQemSiQb+fuTbUMcMxUvfII7Y4RlUqwaNePrDLCC9hmF8XiD/9k=",
+    w: 800,
+    h: 900,
+    alt: "Rotary oil seals for gearboxes and pumps",
+    status: "placeholder",
+  },
+  "products.card.rubber-lining": {
+    src: "/images/industries-mining/mining-hero.jpg",
+    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAEAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEG/8QAHBAAAgICAwAAAAAAAAAAAAAAAAECAxETIkKR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMZK2axyfpN9i7sAD//Z",
+    w: 1400,
+    h: 420,
+    alt: "Open-pit mine with conveyor and haul roads",
+    status: "placeholder",
+  },
+  "products.card.diaphragms": {
+    src: "/images/products/4fb48cf2a43d61bec568791c2d5dbea12013f92b.png",
+    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAED/8QAIRAAAQQBAwUAAAAAAAAAAAAAAQIDBBEAEhMhIjFBUXH/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/EABURAQEAAAAAAAAAAAAAAAAAAAEA/9oADAMBAAIRAxEAPwC7kaPobQizfClHkV6w7kyc8vUlbNfTmrrIaqiT2GDcj9dhZF+ABlCMd//Z",
+    w: 800,
+    h: 900,
+    alt: "Rubber bellows and protective boots",
+    status: "placeholder",
+  },
+  "products.card.bonded-components": {
+    src: "/images/products/75ab01fa5d31999b511f4e67578971b96eddcb11.png",
+    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwQG/8QAIRAAAgEDBAMBAAAAAAAAAAAAAQIDAAQSERMiUSExccH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABgRAAIDAAAAAAAAAAAAAAAAAAABAhEx/9oADAMBAAIRAxEAPwAjLtTmTwJmDLgqnIH13V97dbsiYzFAqBdMD+USTLd3pguokk5sA44sND2K0sMEcUSqiKB8qxSwOz//2Q==",
+    w: 800,
+    h: 900,
+    alt: "Rubber-to-metal bonded anti-vibration mounts",
+    status: "placeholder",
+  },
 
   /* --- Products: Sponge & Foam Rubber category ------------------------ */
   "products.sponge-foam.hero": {
@@ -315,6 +347,21 @@ export const IMAGES = {
     blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEE/8QAGxAAAgMBAQEAAAAAAAAAAAAAAREAAhJBAwT/xAAUAQEAAAAAAAAAAAAAAAAAAAAD/8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAC/9oADAMBAAIRAxEAPwDH83qNVrgEFth8MtrDNGgch8iIaTZUb//Z",
     w: 800, h: 560,
     alt: "Valve manifold and pipework on a treatment skid",
+    status: "placeholder",
+  },
+  "industries.transport": {
+    src: "/images/industries/ef9b0fcea22b06954dcd3d147d4e70b3a4ee7463.png",
+    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAT/xAAdEAACAgMAAwAAAAAAAAAAAAABAgARAwQSEzFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCLa3cDN3kDs7ctbqOhQ9fJDt7HlyKaC0gFcxEFP//Z",
+    w: 800, h: 560,
+    alt: "Robotic automotive body assembly line",
+    status: "placeholder",
+  },
+  "industries.construction": {
+    src: "/images/products-category/9bb7539abd559eb1e8be67cf319646c7bb4c2b78.jpg",
+    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEF/8QAHBAAAgICAwAAAAAAAAAAAAAAAQIAAxFBEyRi/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwT/xAAVEQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEQMRAD8AhfjHVQIh3szPLoxJsawt6bMRKLBv/9k=",
+    w: 1800,
+    h: 1000,
+    alt: "Extrusion line inside a rubber components plant, profiles running through inline tooling stations",
     status: "placeholder",
   },
 
