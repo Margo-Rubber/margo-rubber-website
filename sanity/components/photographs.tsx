@@ -335,29 +335,38 @@ export const PhotographsView: UserViewComponent = ({ document, schemaType }) => 
   );
 };
 
-/* ── "Restore original photograph" — the delete, named for what it does ── */
+/* ── "Restore original photograph" — clears the upload, named for what it does ── */
 
 /**
- * The override document IS the replacement; removing it is what puts the
- * original back. The built-in Delete does exactly this, but "Delete" beside
- * an image an editor has just uploaded reads as "destroy my photograph", and
- * the first editor to try going back cleared the field instead — which
- * leaves a document that cannot be published. This action says what will
- * happen, shows the original that will return, and does the same delete.
+ * The site shows the original whenever the slot's override has no photograph
+ * (the query asks for `defined(image.asset)`), so putting the original back
+ * means emptying the override and publishing it empty.
+ *
+ * This used to delete the document instead, which reads as the same thing
+ * and is not: these documents have fixed ids, and the Studio shows a deleted
+ * fixed-id document as "This document has been deleted" with every field
+ * read-only — the slot could never be used again from the Studio. Emptying
+ * keeps the slot editable: the next upload goes into the same document.
+ *
+ * "Delete" beside an image an editor has just uploaded reads as "destroy my
+ * photograph", and clearing the field by hand leaves a draft that fails
+ * validation; this action says what will happen, shows the original that
+ * will return, and does the emptying and the publish in one go.
  */
 export const RestoreOriginalAction: DocumentActionComponent = (props) => {
   const { id, type, draft, published, onComplete } = props;
-  const { delete: del } = useDocumentOperation(id, type);
+  const { patch, publish } = useDocumentOperation(id, type);
   const [open, setOpen] = useState(false);
   const slot = findSlot(slotKeyFromId(id));
-  const nothingToRestore = !draft && !published;
+  const current = (draft ?? published) as { image?: unknown } | null;
+  const nothingToRestore = !current?.image;
 
   if (!slot) return null;
 
   return {
     label: "Restore original photograph",
     tone: "caution",
-    disabled: nothingToRestore || Boolean(del.disabled),
+    disabled: nothingToRestore || Boolean(patch.disabled),
     title: nothingToRestore
       ? "Nothing has been uploaded for this slot yet — the site already shows the original."
       : "Remove the uploaded replacement so the site shows the original photograph again.",
@@ -385,7 +394,10 @@ export const RestoreOriginalAction: DocumentActionComponent = (props) => {
       ),
       onCancel: () => setOpen(false),
       onConfirm: () => {
-        del.execute();
+        // Unset rather than delete — see the note above. The publish that
+        // follows is what reaches the site; the draft is folded into it.
+        patch.execute([{ unset: ["image", "alt", "note", "decorative"] }]);
+        publish.execute();
         setOpen(false);
         onComplete();
       },

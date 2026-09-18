@@ -386,7 +386,7 @@ export async function applySku(o: SkuOptions): Promise<Record<string, unknown>> 
     // The template's boilerplate is now the sheets'; nothing older survives.
     stockLabel: undefined,
     compounds: [],
-    compoundProperties: {},
+    compoundProperties: [],
     downloads: [],
   };
 
