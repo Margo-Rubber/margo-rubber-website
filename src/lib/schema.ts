@@ -11,6 +11,7 @@ import {
   type RouteEntry,
 } from "@/content/routes";
 import { SITE_URL } from "./seo";
+import { isIndexable } from "./build-mode";
 import type { Industry, ProductCategory } from "@/content/schemas";
 
 /**
@@ -658,7 +659,8 @@ export function industryGraph(
 }
 
 /**
- * Placeholder pages must not emit schema — it would assert fake data.
+ * Pages that are not indexable must not emit schema — it would assert fake
+ * data. Same gate as the robots meta and the sitemap (build-mode.ts).
  *
  * JSONLD_PREVIEW=1 lifts the gate on a development server only, so
  * `check:jsonld` can validate every route's graph before any document is
@@ -670,7 +672,7 @@ export function shouldEmitSchema(status: ContentStatus) {
     process.env.NODE_ENV !== "production"
   )
     return true;
-  return status === "published";
+  return isIndexable(status);
 }
 
 export type { SiteSettings };

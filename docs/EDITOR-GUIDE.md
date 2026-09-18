@@ -69,13 +69,14 @@ replace them with the figure when the works confirms it, and leave them
 otherwise.
 
 **Add a guide** → Guides → *+* → fill the title, the standfirst, the body,
-the questions. Set *Publication status* to Published only when it has been
-reviewed at the works; until then it is visible at its address but hidden
-from search engines.
+the questions. Leave *Publication status* on Draft until it has been
+reviewed at the works; a Draft is visible at its address but hidden from
+search engines. Then set it to Published.
 
-**Take a page off the site** → set its *Publication status* back to
-Placeholder. The page stays reachable by its address but leaves the sitemap
-and search results. (Deleting a document is not the way; ask 3rd Shade.)
+**Take a page out of search** → set its *Publication status* to Draft. The
+page stays reachable by its address but leaves the sitemap and search
+results; set it back when it is ready. (Deleting a document is not the way;
+ask 3rd Shade.)
 
 ## Things that are deliberate
 
@@ -90,10 +91,11 @@ and search results. (Deleting a document is not the way; ask 3rd Shade.)
   turns them into bold and links.
 - **A field marked "Do not change"** or "Identifier" is read by the code.
   Changing it can break the page. Leave it.
-- **Publication status** is the switch that decides whether a page is in
-  Google. Everything is Placeholder until the launch day, when 3rd Shade
-  publishes the whole site at once (see CUTOVER.md). After that, one page at
-  a time as you see fit.
+- **Publication status** decides whether a page is in Google. Before launch
+  only Published pages are; on launch day 3rd Shade turns one switch in the
+  hosting settings (see CUTOVER.md §5) and from then on every page except a
+  Draft is. So after launch the status means one thing: Draft hides a page
+  from search, anything else shows it.
 
 ## The desk
 

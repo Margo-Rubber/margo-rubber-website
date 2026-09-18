@@ -3,6 +3,7 @@ import path from "node:path";
 import matter from "gray-matter";
 import { z } from "zod";
 import { COLLECTIONS, type Collection, type Frontmatter } from "../content/schemas/index.ts";
+import { isIndexable } from "./build-mode.ts";
 
 /**
  * CONTENT LOADER
@@ -104,10 +105,10 @@ export function getStatus(collection: string, slug: string): string {
   return typeof data.status === "string" ? data.status : "placeholder";
 }
 
-/** Only published pages enter the sitemap, are indexable, and emit schema. */
+/** Only indexable pages enter the sitemap, are indexable, and emit schema. */
 export function getPublishedSlugs(collection: string): string[] {
   return getAllSlugs(collection as Collection).filter(
-    (slug) => getStatus(collection, slug) === "published",
+    (slug) => isIndexable(getStatus(collection, slug)),
   );
 }
 

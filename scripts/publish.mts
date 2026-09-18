@@ -1,6 +1,10 @@
 /**
  * PUBLISH — flip document statuses, once the site they render on is live.
  *
+ * Optional since the launch switch (NEXT_PUBLIC_SITE_LIVE, CUTOVER.md §5):
+ * the switch makes every non-draft page indexable without touching a
+ * document. Run this to make the Studio's labels say Published as well.
+ *
  *   npm run publish:pages                          what is at which status, by route
  *   npm run publish:pages -- --write               placeholder → published, every routed document
  *   npm run publish:pages -- --write /products/diaphragms /industries/transport
