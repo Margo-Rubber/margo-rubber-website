@@ -60,17 +60,31 @@ From the Build Checklist, Gate 2, still open on the client's side:
 
 ## 5. The switch
 
-Once `https://margorubber.in` serves this site:
+Once `https://margorubber.in` serves this site, in Vercel → the project →
+Settings → Environment Variables, on **Production** only:
+
+```
+NEXT_PUBLIC_SITE_LIVE = true
+```
+
+then Deployments → Redeploy the latest. That is the whole switch: with it
+set, every page whose status is not *Draft* is indexable — robots
+`index,follow`, listed in the sitemaps, JSON-LD emitted (`isIndexable`,
+`src/lib/build-mode.ts`). Nothing in the Studio needs to change, and the
+canonicals already point at the domain.
+
+Afterwards a page is hidden from search by setting its status to *Draft* in
+the Studio, and shown again by setting it back. The older per-document route
+still works and is optional — it makes the Studio's status labels say
+*Published* rather than *Placeholder*:
 
 ```bash
 npm run publish:pages              # what is at which status (dry run)
-npm run publish:pages -- --write   # placeholder → published, 76 documents, after a dataset backup
-SITE=https://margorubber.in npm run revalidate -- --all
+npm run publish:pages -- --write   # placeholder → published, after a dataset backup
 ```
 
 `/why-margo` is held out (the parked takedown sheet 30); `/thank-you` and the
-404 never index. A document can also be published one at a time in the
-Studio — the status field is the same switch.
+404 never index either way.
 
 ## 6. After the switch — prove it
 

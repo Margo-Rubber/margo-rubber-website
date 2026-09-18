@@ -32,6 +32,7 @@ npm run dev                    # http://localhost:3000
 | `SANITY_REVALIDATE_SECRET` | The Studio's publish webhook → `/api/revalidate`, and `npm run revalidate`. |
 | `SANITY_WRITE_TOKEN` | Only the apply scripts (`--write`). The site itself reads the public dataset with no token. |
 | `CLOUDINARY_URL` | Enquiry attachments. Margo's account; the secret never reaches the browser. |
+| `NEXT_PUBLIC_SITE_LIVE` | The launch switch — `true` on production once the domain serves the site; every non-draft page becomes indexable. Unset everywhere else. |
 | `RESEND_API_KEY`, `ENQUIRY_TO`, `ENQUIRY_FROM` | Enquiry notification email — not yet configured (needs the DNS records in `23_DNS_Setup_For_Website_Email.md`). |
 
 Some office and mobile networks' resolvers refuse `*.neon.tech`; the scripts
@@ -114,6 +115,8 @@ one-hour download link when someone opens the enquiry. Schema:
 - Don't run `prettier --write` over files you did not change.
 - A CMS change reaches the site through the Studio's publish webhook or
   `npm run revalidate -- --all`; a code change through the deploy.
-- Document `status` is the one switch that makes a page indexable (robots,
-  sitemap, structured data). Everything is `placeholder` until cutover;
-  `npm run publish:pages -- --write` flips it — see [CUTOVER.md](CUTOVER.md).
+- Indexability (robots, sitemap, structured data) is one gate, `isIndexable`
+  in `src/lib/build-mode.ts`: `published` always, `draft` never, `placeholder`
+  only once `NEXT_PUBLIC_SITE_LIVE=true` is set on production — the launch
+  switch, see [CUTOVER.md](CUTOVER.md) §5. `npm run publish:pages -- --write`
+  is the optional per-document route.

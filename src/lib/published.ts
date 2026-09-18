@@ -1,6 +1,7 @@
 import { cacheTag } from "next/cache";
 import { groq } from "next-sanity";
 import { client } from "../../sanity/client";
+import { isIndexable } from "@/lib/build-mode";
 import { getAllSlugs, getStatus } from "@/lib/content";
 import type { Collection } from "@/content/schemas";
 import { COLLECTIONS_FOR_PAGES } from "@/lib/page-types";
@@ -18,8 +19,8 @@ import { skuTag } from "@/lib/sku-source";
  * Status lives on the Sanity document when the page has one, and on the
  * .mdx file otherwise; the old sitemap read only the files, which is how it
  * came to be an empty urlset while 76 documents sat in the CMS. A route
- * appears here when its document's status is `published` — the same gate
- * as the robots meta and the JSON-LD, so the three can never disagree.
+ * appears here when its document's status passes `isIndexable` — the same
+ * gate as the robots meta and the JSON-LD, so the three can never disagree.
  */
 
 export type PublishedRoute = {
@@ -60,7 +61,7 @@ export async function publishedRoutes(): Promise<PublishedRoute[]> {
 
   for (const r of rows) {
     seen.add(`${r._type}:${r.slug}`);
-    if (r.status !== "published") continue;
+    if (!isIndexable(r.status)) continue;
     const path = pathFor(r);
     if (!path) continue;
     out.push({
@@ -82,7 +83,7 @@ export async function publishedRoutes(): Promise<PublishedRoute[]> {
   for (const { collection, type } of mdx) {
     for (const slug of getAllSlugs(collection as Collection)) {
       if (seen.has(`${type}:${slug}`)) continue;
-      if (getStatus(collection, slug) !== "published") continue;
+      if (!isIndexable(getStatus(collection, slug))) continue;
       const [category, part] =
         type === "sku" ? slug.split("--") : [undefined, slug];
       const path = pathFor({ _type: type, slug: part ?? slug, category });
@@ -91,7 +92,7 @@ export async function publishedRoutes(): Promise<PublishedRoute[]> {
   }
   for (const [slug, { type }] of Object.entries(COLLECTIONS_FOR_PAGES)) {
     if (NO_ROUTE.has(slug) || seen.has(`${type}:${slug}`)) continue;
-    if (getStatus("pages", slug) !== "published") continue;
+    if (!isIndexable(getStatus("pages", slug))) continue;
     out.push({ path: PAGE_PATH[slug], type, slug });
   }
 

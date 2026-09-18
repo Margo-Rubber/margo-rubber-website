@@ -81,7 +81,7 @@ export const productCategory = defineType({
       title: "Publication status",
       type: "string",
       description:
-        "Only 'Published' pages appear in Google or the sitemap. Everything else is live but marked do-not-index.",
+        "Before launch only 'Published' pages reach Google or the sitemap; once the site is live, every page except 'Draft' does. 'Draft' always stays out of Google — use it to hide a page while it is rewritten.",
       options: {
         list: [
           { title: "Placeholder — not real content yet", value: "placeholder" },

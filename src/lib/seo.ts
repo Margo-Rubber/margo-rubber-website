@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { IS_VISION } from "@/lib/build-mode";
+import { IS_VISION, isIndexable } from "@/lib/build-mode";
 
 /** B3 — domain decision pending. Change here only. */
 export const SITE_URL = "https://margorubber.in";
@@ -12,15 +12,17 @@ type SeoInput = {
 /**
  * Builds page metadata from frontmatter.
  *
- * Anything not `published` ships `noindex, nofollow` — this is what lets the
- * whole site structure exist before the content does, without repeating the
- * old site's 43-URLs/3-indexed thin-content failure.
+ * Anything not indexable (`isIndexable`, build-mode.ts: `published` always,
+ * `placeholder` once the launch switch is on, `draft` never) ships
+ * `noindex, nofollow` — this is what lets the whole site structure exist
+ * before the content does, without repeating the old site's
+ * 43-URLs/3-indexed thin-content failure.
  */
 export function buildMetadata(fm: SeoInput, path: string): Metadata {
   const url = `${SITE_URL}${path}`;
   // The vision build is never indexable, whatever the document says: its
   // copy is target state. Build Instructions §01.
-  const indexable = fm.status === "published" && !IS_VISION;
+  const indexable = isIndexable(fm.status) && !IS_VISION;
 
   return {
     metadataBase: new URL(SITE_URL),
