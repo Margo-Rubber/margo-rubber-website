@@ -89,7 +89,19 @@ homepage, the fifteen category pages and the eleven industry pages.
 
 ## 7. Legacy URLs
 
-The old site's 26 WooCommerce product URLs are 301-mapped from a crawl taken
-immediately before the switch (Build Checklist B15) into
-`src/content/redirects.ts`, next to the eight redirects already there — one
-short PR, merged before DNS moves.
+The old site's URLs — 28 WooCommerce parts, the pages, the archives and the
+theme leftovers its sitemaps list, 55 in all — are already 301-mapped in
+`src/content/redirects.ts` (crawled 2026-09-18). The day DNS moves, run
+
+```bash
+node scripts/legacy-urls.mts
+```
+
+It re-reads the old site's sitemaps and prints any URL WordPress has
+published since that has no redirect; add each to the map in one short PR,
+merged before the switch. After the switch, spot-check:
+
+```bash
+curl -sI https://margorubber.in/product/rubber-plungers/ | head -1   # 301 → /products/seals/plunger-seals
+curl -sI https://margorubber.in/about-us/ | head -1                  # 301 → /about
+```
