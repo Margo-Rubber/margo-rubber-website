@@ -499,3 +499,44 @@ body {
     }
   }
 }
+
+/* ── /margo-desk: the enquiries tool, in daylight ─────────────────────────
+   The marketing site is dark by design; a desk someone reads all day is
+   not. The tool's components use the same colour tokens as the site, so
+   re-pointing the tokens on its root is the whole theme — every `text-ink`,
+   `bg-surface-3` and `border-line` inside it resolves to these instead.
+   Status colours are darkened so they still read as text on white. */
+.desk {
+  color-scheme: light;
+  --color-canvas: #f4f6f7;
+  --color-surface: #eef1f2;
+  --color-surface-2: #ffffff;
+  --color-surface-3: #ffffff;
+  --color-surface-4: #f8fafa;
+  --color-ink: #141a1e;
+  --color-ink-2: #2f3a42;
+  --color-ink-3: #5b6873;
+  --color-ink-4: #7b8891;
+  --color-line: rgb(20 26 30 / 0.1);
+  --color-line-2: rgb(20 26 30 / 0.18);
+  --color-line-accent: rgb(15 128 135 / 0.35);
+  --color-accent-400: #0f8087;
+  --color-warn: #b56b00;
+  --color-danger: #c0392b;
+  --color-ok: #1f7a4d;
+  --desk-shadow: 0 1px 2px rgb(20 26 30 / 0.05), 0 4px 16px rgb(20 26 30 / 0.05);
+  background: var(--color-canvas);
+  color: var(--color-ink-2);
+  min-height: 100dvh;
+}
+.desk .desk-card {
+  background: var(--color-surface-3);
+  border: 1px solid var(--color-line);
+  border-radius: 0.75rem;
+  box-shadow: var(--desk-shadow);
+}
+.desk input,
+.desk select,
+.desk textarea {
+  color: var(--color-ink);
+}

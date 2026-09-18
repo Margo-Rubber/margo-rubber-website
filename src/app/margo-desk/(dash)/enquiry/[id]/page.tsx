@@ -20,9 +20,18 @@ const CANONICAL_FIELDS = [
 function Row({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div className="border-line grid grid-cols-[9rem_1fr] gap-4 border-b py-3 last:border-b-0">
-      <dt className="text-ink-4 text-xs">{label}</dt>
+      <dt className="text-ink-4 pt-0.5 text-[11px] font-semibold tracking-wide uppercase">{label}</dt>
       <dd className="text-ink-2 text-sm break-words">{children}</dd>
     </div>
+  );
+}
+
+function Panel({ title, children, className = "" }: { title?: string; children: React.ReactNode; className?: string }) {
+  return (
+    <section className={`desk-card px-6 py-2 ${className}`}>
+      {title && <h2 className="text-ink-4 border-line border-b py-3 text-[11px] font-semibold tracking-wide uppercase">{title}</h2>}
+      {children}
+    </section>
   );
 }
 
@@ -52,10 +61,14 @@ export default async function EnquiryDetailPage(
 
       <div className="mt-5 flex flex-wrap items-start justify-between gap-5">
         <div>
-          <h1 className="text-ink text-2xl font-semibold">
-            {row.name || row.company || row.email}
-          </h1>
+          <div className="flex flex-wrap items-center gap-3">
+            <h1 className="text-ink text-2xl font-semibold tracking-tight">
+              {row.name || row.company || row.email}
+            </h1>
+            <StatusPill status={row.status} />
+          </div>
           <p className="text-ink-3 mt-1 text-sm">
+            {row.company && row.name ? `${row.company} · ` : ""}
             {new Date(row.created_at).toLocaleString("en-GB", {
               dateStyle: "full",
               timeStyle: "short",
@@ -77,7 +90,7 @@ export default async function EnquiryDetailPage(
             id="status"
             name="status"
             defaultValue={row.status}
-            className="border-line bg-surface-3 text-ink rounded-lg border px-3 py-2 text-sm capitalize"
+            className="border-line bg-surface-3 text-ink rounded-lg border px-3 py-2 text-sm capitalize shadow-[var(--desk-shadow)]"
           >
             {STATUSES.map((s) => (
               <option key={s} value={s} className="capitalize">
@@ -87,15 +100,16 @@ export default async function EnquiryDetailPage(
           </select>
           <button
             type="submit"
-            className="bg-accent-400 text-ink rounded-cta px-4 py-2 text-sm font-semibold"
+            className="bg-accent-400 rounded-lg px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"
           >
             Update
           </button>
         </form>
       </div>
 
-      <div className="mt-8 grid gap-6 lg:grid-cols-[1.6fr_1fr]">
-        <section className="border-line bg-surface-3 rounded-lg border px-6 py-2">
+      <div className="mt-8 grid items-start gap-6 lg:grid-cols-[1.6fr_1fr]">
+        <div className="space-y-6">
+        <Panel title="Enquiry">
           <dl>
             <Row label="Status">
               <StatusPill status={row.status} />
@@ -134,11 +148,11 @@ export default async function EnquiryDetailPage(
               </Row>
             )}
           </dl>
-        </section>
+        </Panel>
 
         {attachments.length > 0 && (
-          <section className="border-line bg-surface-3 rounded-lg border p-6">
-            <h2 className="text-ink-4 text-xs font-medium tracking-wide uppercase">
+          <section className="desk-card p-6">
+            <h2 className="text-ink-4 text-[11px] font-semibold tracking-wide uppercase">
               Attached {attachments.length === 1 ? "file" : "files"}
             </h2>
             {!isAttachmentsConfigured() && (
@@ -148,7 +162,7 @@ export default async function EnquiryDetailPage(
             )}
             <ul className="mt-4 grid gap-4 sm:grid-cols-2">
               {attachments.map((a) => (
-                <li key={a.id} className="border-line rounded-lg border bg-[#0D0F12] p-4">
+                <li key={a.id} className="border-line bg-surface-4 rounded-lg border p-4">
                   {a.preview && (
                     // eslint-disable-next-line @next/next/no-img-element -- a signed, expiring Cloudinary URL; not a registry image
                     <img src={a.preview} alt="" className="border-line mb-3 max-h-56 w-full rounded border object-contain" />
@@ -160,7 +174,10 @@ export default async function EnquiryDetailPage(
                     {new Date(a.created_at).toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short" })}
                   </p>
                   {a.download && (
-                    <a href={a.download} className="text-accent-400 mt-3 inline-block text-sm underline underline-offset-2">
+                    <a
+                      href={a.download}
+                      className="bg-accent-400 mt-3 inline-block rounded-md px-3 py-1.5 text-sm font-medium text-white hover:opacity-90"
+                    >
                       Download
                     </a>
                   )}
@@ -170,9 +187,10 @@ export default async function EnquiryDetailPage(
             </ul>
           </section>
         )}
+        </div>
 
         <aside className="space-y-6">
-          <section className="border-line bg-surface-3 rounded-lg border px-6 py-2">
+          <Panel title="Where it came from">
             <dl>
               <Row label="Source form">
                 <span className="font-mono text-xs">{row.source}</span>
@@ -193,13 +211,10 @@ export default async function EnquiryDetailPage(
                   : "Not synced"}
               </Row>
             </dl>
-          </section>
+          </Panel>
 
           {extras.length > 0 && (
-            <section className="border-line bg-surface-3 rounded-lg border px-6 py-2">
-              <p className="text-ink-4 border-line border-b py-3 text-xs">
-                Also submitted
-              </p>
+            <Panel title="Also submitted">
               <dl>
                 {extras.map(([k, v]) => (
                   <Row key={k} label={k}>
@@ -207,7 +222,7 @@ export default async function EnquiryDetailPage(
                   </Row>
                 ))}
               </dl>
-            </section>
+            </Panel>
           )}
         </aside>
       </div>
