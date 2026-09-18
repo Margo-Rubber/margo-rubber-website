@@ -23,7 +23,6 @@ const PRIORITY: Record<string, number> = {
   "/export": 0.8,
   "/contact": 0.8,
   "/about": 0.7,
-  "/why-margo": 0.7,
   "/certifications": 0.7,
   "/case-studies": 0.6,
   "/resources": 0.6,
