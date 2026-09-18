@@ -15,6 +15,7 @@ import {
   EnquirySubmit,
   useEnquiry,
 } from "@/components/forms/EnquiryForm";
+import { AttachmentField } from "@/components/forms/AttachmentField";
 
 /* ── HERO ─────────────────────────────────────────────────────────────── */
 export function ContactHero({
@@ -443,16 +444,10 @@ export function RfqForm({
                 <FieldControl f={f} value={valueOf(f.name)} onChange={setValue(f.name)} />
               </label>
             ))}
-            {/* The attachment field (sheet 04 §02). Same inert affordance as
-                the homepage form until the upload backend exists. */}
-            {i === 0 && attachLabel && (
-              <div className="sm:col-span-2">
-                <span className="text-eyebrow text-ink-4 font-mono uppercase">{attachLabel}</span>
-                <p className="border-line-2 text-ink-4 mt-2 rounded-lg border border-dashed bg-[#16191E] px-4 py-3.5 text-sm">
-                  {attachHint}
-                </p>
-              </div>
-            )}
+            {/* The attachment field (sheet 04 §02): uploads to Margo's
+                Cloudinary while the visitor types; the enquiry carries the
+                reference. Step 1, so the file is in before the send. */}
+            {i === 0 && attachLabel && <AttachmentField label={attachLabel} hint={attachHint} className="sm:col-span-2" />}
           </div>
         ))}
 

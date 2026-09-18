@@ -52,7 +52,13 @@ function fieldRows(enquiry: MappedEnquiry): string {
 
 export async function notifyEnquiry(
   enquiry: MappedEnquiry,
-  extra: { fileUrl?: string; enquiryId?: string; stored: boolean },
+  extra: {
+    fileUrl?: string;
+    /** The attached drawing, by name — the file itself is opened from the desk, behind its login. */
+    attachment?: { name: string; size: string };
+    enquiryId?: string;
+    stored: boolean;
+  },
 ): Promise<NotifyResult> {
   const key = process.env.RESEND_API_KEY;
   const to = process.env.ENQUIRY_TO;
@@ -78,6 +84,11 @@ export async function notifyEnquiry(
       ${
         extra.fileUrl
           ? `<p style="margin:0 0 18px"><a href="${escape(extra.fileUrl)}" style="color:#1b767b">Download the attached drawing</a></p>`
+          : ""
+      }
+      ${
+        extra.attachment
+          ? `<p style="margin:0 0 18px">Attached: <strong>${escape(extra.attachment.name)}</strong> (${escape(extra.attachment.size)}) — open this enquiry in the desk to download it.</p>`
           : ""
       }
 

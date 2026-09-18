@@ -78,3 +78,38 @@ CREATE INDEX IF NOT EXISTS enquiries_page_idx
 CREATE INDEX IF NOT EXISTS enquiries_unsynced_idx
   ON enquiries (created_at DESC)
   WHERE crm_synced_at IS NULL;
+
+-- ═══════════════════════════════════════════════════════════════════════════
+-- ATTACHMENTS
+--
+-- The drawing or specification sent with an enquiry. A reference into
+-- Margo's Cloudinary account (src/lib/enquiry/attachments.ts), not a URL:
+-- links are signed at view time and expire, because customer drawings are
+-- often under NDA. One table rather than a column so an enquiry can carry
+-- more than one file when the form allows it.
+--
+-- Run once, after the table above (or: node scripts/enquiry-schema.mts).
+-- ═══════════════════════════════════════════════════════════════════════════
+
+CREATE TABLE IF NOT EXISTS enquiry_attachments (
+  id                uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  enquiry_id        uuid NOT NULL REFERENCES enquiries (id) ON DELETE CASCADE,
+  created_at        timestamptz NOT NULL DEFAULT now(),
+
+  -- Cloudinary's identity for the asset: enquiries/<uuid>[.ext], and
+  -- whether it sits in the image or the raw store.
+  public_id         text NOT NULL UNIQUE,
+  resource_type     text NOT NULL,
+  format            text,
+
+  -- What the visitor called it, and what it is.
+  original_filename text NOT NULL,
+  bytes             integer NOT NULL,
+  mime              text,
+
+  CONSTRAINT enquiry_attachments_resource_type_check
+    CHECK (resource_type IN ('image', 'raw'))
+);
+
+CREATE INDEX IF NOT EXISTS enquiry_attachments_enquiry_idx
+  ON enquiry_attachments (enquiry_id);

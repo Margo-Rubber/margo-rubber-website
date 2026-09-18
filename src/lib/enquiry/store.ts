@@ -1,5 +1,6 @@
 import { neon } from "@neondatabase/serverless";
 import type { MappedEnquiry } from "./sources";
+import type { AttachmentRef, AttachmentRow } from "./attachments";
 
 /**
  * PERSISTENCE
@@ -44,6 +45,8 @@ export type EnquiryRow = {
   crm_id: string | null;
   crm_synced_at: string | null;
   raw: Record<string, string>;
+  /** Development file store only; Postgres keeps these in enquiry_attachments. */
+  attachments?: AttachmentRow[];
 };
 
 export type StoreResult =
@@ -328,5 +331,74 @@ export async function setStatus(
       ok: false,
       message: err instanceof Error ? err.message : String(err),
     };
+  }
+}
+
+/* ── Attachments ─────────────────────────────────────────────────────────── */
+
+/**
+ * Records the file the visitor attached, once `verifyUpload` has confirmed
+ * it exists. A failure here is logged, not fatal: the enquiry row is the
+ * system of record and already stored; the desk shows the file as missing.
+ */
+export async function storeAttachment(
+  enquiryId: string,
+  ref: AttachmentRef,
+  verified: { format: string | null; bytes: number },
+): Promise<boolean> {
+  const url = process.env.DATABASE_URL;
+  const row: AttachmentRow = {
+    id: crypto.randomUUID(),
+    enquiry_id: enquiryId,
+    public_id: ref.publicId,
+    resource_type: ref.resourceType,
+    format: verified.format,
+    original_filename: ref.originalFilename,
+    bytes: verified.bytes,
+    mime: ref.mime ?? null,
+    created_at: new Date().toISOString(),
+  };
+
+  if (!url) {
+    if (!devStoreEnabled()) return false;
+    const rows = await devRead();
+    const target = rows.find((r) => r.id === enquiryId);
+    if (!target) return false;
+    target.attachments = [...(target.attachments ?? []), row];
+    await devWrite(rows);
+    return true;
+  }
+
+  try {
+    const sql = neon(url);
+    await sql`
+      INSERT INTO enquiry_attachments
+        (enquiry_id, public_id, resource_type, format, original_filename, bytes, mime)
+      VALUES
+        (${enquiryId}::uuid, ${row.public_id}, ${row.resource_type}, ${row.format},
+         ${row.original_filename}, ${row.bytes}, ${row.mime})
+    `;
+    return true;
+  } catch (err) {
+    console.error("[enquiry] attachment store failed:", err instanceof Error ? err.message : err);
+    return false;
+  }
+}
+
+export async function listAttachments(enquiryId: string): Promise<AttachmentRow[]> {
+  const url = process.env.DATABASE_URL;
+  if (!url) {
+    if (!devStoreEnabled()) return [];
+    return (await devRead()).find((r) => r.id === enquiryId)?.attachments ?? [];
+  }
+  try {
+    const sql = neon(url);
+    return (await sql`
+      SELECT * FROM enquiry_attachments
+      WHERE enquiry_id = ${enquiryId}::uuid
+      ORDER BY created_at
+    `) as AttachmentRow[];
+  } catch {
+    return [];
   }
 }
