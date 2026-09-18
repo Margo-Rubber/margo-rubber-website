@@ -29,8 +29,8 @@ export async function newCategoryCards() {
     chips: c.chips,
     image: `products.card.${c.slug}`,
     span: "normal" as const,
-    // Sheet 38 asks for a third group, "sheet and lining products"; the label is composed (OPEN-ITEMS 94).
-    ...(c.slug === "rubber-lining" ? { groupLabel: "Sheet & Lining" } : {}),
+    // Sheet 38 §10: "A third group is needed: sheet and lining products."
+    ...(c.slug === "rubber-lining" ? { groupLabel: "Sheet and lining products" } : {}),
   }));
 }
 
