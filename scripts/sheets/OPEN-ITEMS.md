@@ -235,3 +235,13 @@ Every "Technical SEO" line in the 78 sheets (2,842 instructions on 73 routes) wa
 130. **Medical Devices page audit** (RES_01 §11 🛑 "Audit the Medical Devices industry page separately. If this link implies a capability, so does everything else pointing at it"). The page ships as sheet 27 writes it, with every ISO 10993 mention as a standard the compound is assessed to and nothing in structured data; the audit is a decision for Margo, not a change the sheets specify.
 131. **Publish state.** Robots, sitemap and structured data all follow document `status`; the 🛑 "nofollow → follow, today" lines on the seven guides are met by `publish:pages` at cutover (CUTOVER.md), not by a template change.
 
+## Rulings from Ayaz, 2026-09-18
+
+Standing instructions that close whole groups of the items above:
+
+- **The sheets are the source of truth, verbatim.** A CONFIRM figure, a proposed year, a "to be confirmed" line ships exactly as the sheet writes it; nothing is softened, rounded or held back. (Closes every "confirm" item — 3, 7, 8, 9, 13, 16, 23, 24, 28, 30, 31, 43, 45, 47, 49, 50, 72, 74, 81, 85, 106 — as questions for the developer. They remain facts Margo may correct in the Studio.)
+- **Where two sheets disagree, each page prints its own sheet.** No reconciliation, no ruling sought. (Closes 121–125 and the E-part of the sign-off sheet: the selector's "Fluoroelastomer (Viton)" is sheet 02's; the IATF line on part pages is each part sheet's; sheets 19 and 40 each keep their compound table; the four oil-seal pages stay as written; /why-margo 301s to /about as sheet 30 writes — item 114.)
+- **Photographs are placeholders until Margo supplies them.** Every placement has its own slot in the Studio's Photographs menu, so replacing one never changes another; the manager uploads page by page. (Closes 12, 15, 38, 82, 93, 103, 120 as developer items.)
+- **Not now:** the enquiry notification email (Resend) and the cookie notice (27) are parked with 3rd Shade. The analytics property is Margo's optional decision.
+- **Still Margo's to supply:** the files — certificate scan (20–22), quality policy (63), test capability statement (5), datasheet PDF and its twelve figures (58, 89, 90), AS568 chart (87), the technical-data list (127), logo permission letters (12).
+
