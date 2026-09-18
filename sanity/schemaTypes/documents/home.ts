@@ -378,7 +378,7 @@ export const homePage = defineType({
         ...homeHead(),
         imageRefField("image", { required: true, group: null }),
         imageRefField("inset", { title: "Inset image", required: true, group: null }),
-        defineField({ name: "badge", type: "string", validation: (r) => r.required() }),
+        defineField({ name: "badge", type: "string", description: "Optional." }),
         listField("checks", "Points", { group: null, min: 1 }),
         defineField({
           name: "stats",
@@ -523,7 +523,7 @@ export const homePage = defineType({
           title: "Panel beside the form",
           type: "object",
           fields: [
-            defineField({ name: "badge", type: "string", validation: (r) => r.required() }),
+            defineField({ name: "badge", type: "string", description: "Optional." }),
             defineField({ name: "title", type: "string", validation: (r) => r.required() }),
             defineField({ name: "body", type: "text", rows: 3, validation: (r) => r.required() }),
             imageRefField("image", { required: true, group: null }),

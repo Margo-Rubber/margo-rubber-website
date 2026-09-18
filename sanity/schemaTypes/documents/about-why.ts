@@ -26,7 +26,9 @@ const statMember = defineArrayMember({
   type: "object",
   name: "pageStat",
   fields: [
-    defineField({ name: "value", type: "string", validation: (r) => r.required() }),
+    // A blank value is a figure the works has not confirmed yet (OPEN-ITEMS);
+    // the sheets leave it empty rather than invent it, and so may the Studio.
+    defineField({ name: "value", type: "string" }),
     defineField({ name: "label", type: "string", validation: (r) => r.required() }),
   ],
   preview: { select: { title: "value", subtitle: "label" } },
@@ -619,7 +621,7 @@ export const aboutPage = defineType({
       validation: (r) => r.required().min(8),
       group: "hero",
     }),
-    defineField({ name: "badge", title: "Badge above the heading", type: "string", validation: (r) => r.required(), group: "hero" }),
+    defineField({ name: "badge", title: "Badge above the heading", type: "string", description: "Optional — the sheet leaves it empty on some pages.", group: "hero" }),
     listField("h1Lines", "Heading lines", { group: "hero", min: 1 }),
     defineField({
       name: "h1AccentLines",
@@ -638,7 +640,7 @@ export const aboutPage = defineType({
       group: "hero",
     }),
     imageRefField("heroImage", { title: "Hero image", required: true, group: "hero" }),
-    defineField({ name: "watchLabel", type: "string", validation: (r) => r.required(), group: "hero" }),
+    defineField({ name: "watchLabel", type: "string", description: "Optional.", group: "hero" }),
     defineField({ name: "scrollLabel", type: "string", validation: (r) => r.required(), group: "hero" }),
     actionsField(),
     defineField({
@@ -772,7 +774,7 @@ export const aboutPage = defineType({
         defineField({ name: "eyebrow", title: "Small label above the heading", type: "string", validation: (r) => r.required() }),
         imageRefField("image", { required: true, group: null }),
         listField("quoteLines", "Quote lines", { group: null, min: 1 }),
-        defineField({ name: "quoteAccent", title: "Accented words", type: "string", validation: (r) => r.required() }),
+        defineField({ name: "quoteAccent", title: "Accented words", type: "string", description: "Optional — leave empty for a quote with no accent." }),
         defineField({ name: "body", type: "text", rows: 3, validation: (r) => r.required() }),
         defineField({
           name: "person",
@@ -1021,8 +1023,8 @@ export const aboutPage = defineType({
           title: "Badge over the image",
           type: "object",
           fields: [
-            defineField({ name: "title", type: "string", validation: (r) => r.required() }),
-            defineField({ name: "note", type: "string", validation: (r) => r.required() }),
+            defineField({ name: "title", type: "string", description: "Optional — the badge is not shown while empty." }),
+            defineField({ name: "note", type: "string" }),
           ],
         }),
         defineField({
@@ -1035,7 +1037,7 @@ export const aboutPage = defineType({
               name: "greenBar",
               fields: [
                 defineField({ name: "label", type: "string", validation: (r) => r.required() }),
-                defineField({ name: "note", type: "string", validation: (r) => r.required() }),
+                defineField({ name: "note", type: "string", description: "Optional." }),
                 defineField({
                   name: "pct",
                   title: "Percentage",

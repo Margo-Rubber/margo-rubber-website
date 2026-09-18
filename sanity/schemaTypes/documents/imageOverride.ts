@@ -68,7 +68,8 @@ export const imageOverride = defineType({
       description:
         "Takes the exact place and size of the picture above, everywhere it appears. Drag the crop handles to choose what stays visible when the image is cropped.",
       options: { hotspot: true },
-      validation: (r) => r.required(),
+      // Not required: a slot with no photograph is a slot showing the
+      // original, which is what "Restore original photograph" leaves behind.
     }),
 
     /**
@@ -110,7 +111,11 @@ export const imageOverride = defineType({
       hidden: ({ parent }) => parent?.decorative === true,
       validation: (r) =>
         r.custom((value, ctx) => {
-          if ((ctx.parent as { decorative?: boolean })?.decorative) return true;
+          const parent = ctx.parent as { decorative?: boolean; image?: { asset?: unknown } } | undefined;
+          if (parent?.decorative) return true;
+          // An emptied slot (after "Restore original photograph") has no
+          // photograph to describe; the rule applies once one is uploaded.
+          if (!parent?.image?.asset) return true;
           if (!value || String(value).trim().length < 10) {
             return "Describe the photograph — at least a few words. If it genuinely adds nothing, tick “This image is decorative” above.";
           }

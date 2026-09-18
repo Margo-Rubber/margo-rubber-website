@@ -28,7 +28,12 @@ import { ICON_NAMES, PROFILE_SHAPES } from "../../../src/components/ui/icon-path
  * heading in an MDX body — and it is what makes a block self-contained enough
  * to be reordered at all.
  */
-export function sectionMetaFields({ bodyRequired = false } = {}) {
+/**
+ * `headingRequired = false` is for the one block that may sit under another's
+ * heading: the second of two grouped card grids (sheet 42 §03 "Marine") has
+ * a group name and no heading of its own — the content schema says the same.
+ */
+export function sectionMetaFields({ bodyRequired = false, headingRequired = true } = {}) {
   return [
     defineField({
       name: "eyebrow",
@@ -42,7 +47,7 @@ export function sectionMetaFields({ bodyRequired = false } = {}) {
       name: "heading",
       title: "Heading",
       type: "string",
-      validation: (r) => r.required().min(4),
+      validation: (r) => (headingRequired ? r.required().min(4) : r.min(4)),
       group: "content",
     }),
     defineField({

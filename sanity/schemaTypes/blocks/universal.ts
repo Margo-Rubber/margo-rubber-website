@@ -127,7 +127,7 @@ export const cardGrid = defineType({
   type: "object",
   groups: BLOCK_GROUPS,
   fields: [
-    ...sectionMetaFields(),
+    ...sectionMetaFields({ headingRequired: false }),
     defineField({
       name: "layout",
       title: "Card style",
