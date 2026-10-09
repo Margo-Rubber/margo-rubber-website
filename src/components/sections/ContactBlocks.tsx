@@ -53,11 +53,6 @@ export function ContactHero({
         </>
       )}
 
-      {/* A technical drawing on the right, drawn line by line like a CAD
-          sheet. Over the (very dark) hero photo it sits as a glowing overlay;
-          with no photo set it carries the right half on its own. */}
-      <BlueprintArt overPhoto={!!image} />
-
       <Container>
         <Breadcrumb items={breadcrumb} className="mb-6" />
         <p className="margo-rise text-eyebrow text-accent-400 font-mono uppercase" style={{ "--d": 0 } as React.CSSProperties}>
@@ -101,82 +96,6 @@ export function ContactHero({
         )}
       </Container>
     </header>
-  );
-}
-
-/* ── HERO ART ─────────────────────────────────────────────────────────────
-   A seal drawn as a technical sheet: construction grid, outer and inner
-   diameter, a cross-section, dimension lines and a scan line. Labels are
-   symbols only (Ø OD, Ø ID, CS) — no figures, so it never states a spec.
-   pathLength=1 on every stroke lets one CSS rule draw them all in.        */
-function BlueprintArt({ overPhoto = false }: { overPhoto?: boolean }) {
-  return (
-    <div aria-hidden className={`margo-blueprint${overPhoto ? " margo-blueprint--over" : ""}`}>
-      <svg viewBox="0 0 560 560" className="margo-blueprint-svg">
-        <defs>
-          <pattern id="mbp-grid" width="28" height="28" patternUnits="userSpaceOnUse">
-            <path d="M28 0H0V28" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.18" />
-          </pattern>
-          <pattern id="mbp-hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-            <path d="M0 0V7" stroke="currentColor" strokeWidth="1.2" opacity="0.55" />
-          </pattern>
-          <radialGradient id="mbp-fade" cx="50%" cy="50%" r="50%">
-            <stop offset="55%" stopColor="#fff" />
-            <stop offset="100%" stopColor="#fff" stopOpacity="0" />
-          </radialGradient>
-          <mask id="mbp-mask">
-            <rect width="560" height="560" fill="url(#mbp-fade)" />
-          </mask>
-        </defs>
-
-        <rect width="560" height="560" fill="url(#mbp-grid)" mask="url(#mbp-mask)" />
-
-        {/* Centre lines */}
-        <g className="mbp-draw mbp-thin" style={{ "--k": 0 } as React.CSSProperties}>
-          <path pathLength={1} d="M280 40V520" />
-          <path pathLength={1} d="M40 280H520" />
-        </g>
-
-        {/* Outer and inner diameter */}
-        <circle className="mbp-draw mbp-main" style={{ "--k": 1 } as React.CSSProperties} pathLength={1} cx="280" cy="280" r="190" />
-        <circle className="mbp-draw mbp-main" style={{ "--k": 2 } as React.CSSProperties} pathLength={1} cx="280" cy="280" r="128" />
-        <circle className="mbp-pitch" cx="280" cy="280" r="159" />
-
-        {/* Cross-section cut through the ring, hatched */}
-        <g className="mbp-section">
-          <rect x="408" y="262" width="62" height="36" rx="6" fill="url(#mbp-hatch)" />
-          <rect className="mbp-draw mbp-main" style={{ "--k": 3 } as React.CSSProperties} pathLength={1} x="408" y="262" width="62" height="36" rx="6" />
-        </g>
-
-        {/* Dimension lines */}
-        <g className="mbp-draw mbp-dim" style={{ "--k": 3.5 } as React.CSSProperties}>
-          <path pathLength={1} d="M90 470H470" />
-          <path pathLength={1} d="M90 462V478M470 462V478" />
-          <path pathLength={1} d="M152 420H408" />
-          <path pathLength={1} d="M152 412V428M408 412V428" />
-          <path pathLength={1} d="M490 262V298" />
-          <path pathLength={1} d="M482 262H498M482 298H498" />
-        </g>
-        <g className="mbp-label">
-          <text x="280" y="492" textAnchor="middle">Ø OD</text>
-          <text x="280" y="442" textAnchor="middle">Ø ID</text>
-          <text x="508" y="284">CS</text>
-        </g>
-
-        {/* Title block, bottom right like a drawing sheet */}
-        <g className="mbp-draw mbp-thin" style={{ "--k": 4 } as React.CSSProperties}>
-          <rect pathLength={1} x="372" y="40" width="148" height="56" />
-          <path pathLength={1} d="M372 68H520" />
-        </g>
-        <g className="mbp-label">
-          <text x="382" y="59">RFQ · DRAWING</text>
-          <text x="382" y="87">REV A</text>
-        </g>
-
-        {/* Scan line sweeping the sheet */}
-        <rect className="mbp-scan" x="40" y="40" width="480" height="2" />
-      </svg>
-    </div>
   );
 }
 

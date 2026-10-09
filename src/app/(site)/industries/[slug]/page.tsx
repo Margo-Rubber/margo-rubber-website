@@ -7,6 +7,7 @@ import { BlockRenderer } from "@/components/blocks/BlockRenderer";
 import { Section } from "@/components/ui/Section";
 import { IndustryHero } from "@/components/sections/IndustryDetail";
 import { FurtherReading } from "@/components/sections/FurtherReading";
+import { getImageOverrides } from "@/lib/image-overrides";
 
 /** ONE file → all nine industry pages. */
 export async function generateStaticParams() {
@@ -31,6 +32,14 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
 
   const graph = industryGraph(fm, path, crumbs);
 
+  // The brightness boost exists for one stock crop that is already faded to
+  // black. Once an editor uploads a real photo for the slot, boosting it
+  // blows it out and the heavy fade hides it — so the boost only applies to
+  // the stock image, never to an uploaded one.
+  const overrides = await getImageOverrides();
+  const heroImage = fm.hero?.image;
+  const boost = Boolean(fm.heroBoost) && !(heroImage && overrides[heroImage]);
+
   return (
     <>
       {shouldEmitSchema(fm.status) && (
@@ -48,8 +57,8 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
         intro={fm.intro}
         chips={fm.heroChips}
         actions={fm.actions}
-        image={fm.hero?.image}
-        boost={fm.heroBoost}
+        image={heroImage}
+        boost={boost}
       />
 
       {/* Industry pages have no alternating band, so nothing alternates. */}
