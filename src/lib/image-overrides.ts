@@ -55,7 +55,11 @@ export async function getImageOverrides(): Promise<ImageOverrideMap> {
     // that guarantee the layout (url, width, height) are mandatory here.
     if (!r.url || !r.w || !r.h) continue;
     map[r.slot] = {
-      url: r.url,
+      // Some uploads are camera originals (8000×6000, 3–4 MB). Next fetches
+      // the original before resizing it, so cap it at Sanity's CDN first: no
+      // slot renders wider than 2400px. w/h stay the original's — only the
+      // aspect ratio matters to layout, and `fit=max` keeps it.
+      url: `${r.url}?w=2400&fit=max&q=85`,
       alt: r.alt ?? "",
       w: r.w,
       h: r.h,

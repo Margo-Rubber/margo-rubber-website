@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "check:claims": "node scripts/check-claims.mts",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "next typegen && tsc --noEmit",
     "check:links": "node scripts/check-links.mts",
     "check:links:strict": "node scripts/check-links.mts --strict",
     "gen:blur": "node scripts/gen-blur.mts",

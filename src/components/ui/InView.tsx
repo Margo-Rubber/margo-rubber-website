@@ -21,7 +21,7 @@ export function InView({
   className,
   style,
   children,
-  threshold = 0.2,
+  threshold = 0.12,
   spotlight = false,
 }: {
   as?: "div" | "ol" | "ul" | "dl" | "section" | "figure";
@@ -58,7 +58,7 @@ export function InView({
           io.disconnect();
         }
       },
-      { threshold, rootMargin: "0px 0px -8% 0px" },
+      { threshold, rootMargin: "0px 0px 0px 0px" },
     );
     io.observe(el);
     return () => {

@@ -171,7 +171,7 @@ function Photo({
     <Frame
       className={`${reveal ? "margo-reveal-img " : ""}relative isolate overflow-hidden ${ratio} ${className}`}
       style={reveal ? ({ "--rd": `${delay}ms` } as React.CSSProperties) : undefined}
-      {...(reveal ? { threshold: 0.25 } : {})}
+      {...(reveal ? { threshold: 0.08 } : {})}
     >
       {/* The reveal mask goes on this wrapper — not on the frame (the
           observer watching it would never see it on screen) and not on the
@@ -553,7 +553,7 @@ export function Story({
                 ratio="aspect-[5/4]"
                 dissolve="none"
                 sizes="(min-width:1024px) 22vw, 45vw"
-                delay={180}
+                delay={90}
               />
             </div>
             <div className="rounded-card border-line absolute right-[8%] bottom-0 w-[42%] overflow-hidden border">
@@ -562,7 +562,7 @@ export function Story({
                 ratio="aspect-[5/4]"
                 dissolve="none"
                 sizes="(min-width:1024px) 20vw, 42vw"
-                delay={360}
+                delay={180}
               />
             </div>
             <div className="bg-accent-400 text-ink shadow-glow absolute bottom-6 left-0 rounded-2xl px-6 py-4 text-center">
