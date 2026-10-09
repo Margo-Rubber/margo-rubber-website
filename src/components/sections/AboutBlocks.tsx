@@ -101,7 +101,20 @@ function CenterHead({ head }: { head: Head }) {
 }
 
 /** Split head: display left, note right-aligned on the baseline. */
-function SplitHead({ head }: { head: Head }) {
+function SplitHead({ head, stacked = false }: { head: Head; stacked?: boolean }) {
+  // stacked: the note sits under the heading instead of against the far
+  // right edge — for sections whose content doesn't span the full width.
+  if (stacked) {
+    return (
+      <header className="mb-12">
+        <Pill>{head.eyebrow}</Pill>
+        <Display lines={head.lines} accentLines={head.accentLines} className="mt-7" />
+        {head.note && (
+          <p className="text-ink-4 mt-5 max-w-[52ch] leading-relaxed">{head.note}</p>
+        )}
+      </header>
+    );
+  }
   return (
     <header className="mb-12 flex flex-wrap items-end justify-between gap-x-10 gap-y-6">
       <div>
@@ -951,7 +964,7 @@ export function Team({
     <section className="bg-surface-2 relative isolate overflow-hidden py-[70px]">
       <Bloom className="top-1/4 -left-40 size-[32rem]" />
       <Container>
-        <SplitHead head={head} />
+        <SplitHead head={head} stacked />
 
         <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {members.map((m) => (
@@ -966,18 +979,13 @@ export function Team({
                   dissolve="none"
                   sizes="(min-width:1024px) 22vw, 50vw"
                   reveal={false}
+                  brightness=""
                 />
                 {/* Portrait bleeds into the caption plate below it. */}
-                <div
-                  className="pointer-events-none absolute inset-0"
-                  style={{
-                    background:
-                      "linear-gradient(to top, var(--color-surface-3), transparent 40%)",
-                  }}
-                />
+                <div aria-hidden className="margo-founder-fade pointer-events-none absolute" />
               </div>
-              <div className="p-5">
-                <p className="margo-founder-name text-ink text-sm font-semibold">{m.name}</p>
+              <div className="margo-founder-caption p-5">
+                <p className="text-ink text-sm font-semibold">{m.name}</p>
                 <p className="text-accent-400 mt-1 text-sm">{m.role}</p>
                 {m.body && <p className="text-ink-4 mt-2 text-sm leading-relaxed">{m.body}</p>}
               </div>
@@ -1566,7 +1574,7 @@ export function Closing({
 
           <EnquiryForm
             source="about"
-            className="mx-auto mt-9 flex max-w-[34rem] flex-col gap-3 sm:flex-row"
+            className="margo-form-wrap mx-auto mt-9 flex max-w-[34rem] flex-col gap-3 sm:flex-row"
           >
             <label htmlFor="cta-email" className="sr-only">
               {placeholder}

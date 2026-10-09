@@ -8,7 +8,7 @@
  *
  *   H1     exactly one <h1>, with words in it and the two lines a space apart
  *   Meta   <title> and description present and within the sheets' limits;
- *          canonical = https://margorubber.in + path; a robots directive
+ *          canonical = https://www.margorubber.com + path; a robots directive
  *   Alt    every <img> carries alt text (decorative ones empty on purpose)
  *   CTA    a way to enquire on the page — a link to /contact or a tel: link
  *   Outline stat values and footer labels are not headings; no heading is empty
@@ -48,7 +48,7 @@ for (const f of readdirSync("scripts/sheets/out").filter((f) => f.endsWith(".jso
 }
 
 const BASE = process.env.BASE_URL ?? "http://localhost:3000";
-const SITE = "https://margorubber.in";
+const SITE = "https://www.margorubber.com";
 const client = createClient({ projectId: "jyg2beas", dataset: "production", apiVersion: "2025-01-01", useCdn: false });
 
 const only = process.argv.slice(2).filter((a) => a.startsWith("/"));

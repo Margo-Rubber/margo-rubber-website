@@ -520,8 +520,10 @@ export function TrustBar({
   return (
     <section className="bg-canvas border-line border-y py-10">
       <Container>
-        <p className="text-eyebrow text-ink-4 text-center font-mono uppercase">
-          {label}
+        {/* Label animates (rules draw out, light sweep); the names below
+            stay as a still, scrollable row. */}
+        <p className="margo-trust-label text-eyebrow text-center font-mono uppercase">
+          <span className="margo-trust-label-text">{label}</span>
         </p>
       </Container>
       {/* Edge-to-edge and horizontally scrollable rather than a JS marquee, so

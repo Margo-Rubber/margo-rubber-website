@@ -109,7 +109,7 @@ const RULES: Rule[] = [
     if (!/\?(part|product|industry|sector|request|topic)=[^ ]*.{0,40}canonical/i.test(i.text) && !/canonicals? to \/contact/i.test(i.text)) return null;
     const p = await page("/contact?part=Diaphragms&industry=Construction");
     const canonical = p.html.match(/<link\b[^>]*rel="canonical"[^>]*href="([^"]*)"/)?.[1] ?? p.html.match(/<link\b[^>]*href="([^"]*)"[^>]*rel="canonical"/)?.[1];
-    return canonical === "https://margorubber.in/contact" ? pass("canonical is /contact") : fail(`canonical is ${canonical}`);
+    return canonical === "https://www.margorubber.com/contact" ? pass("canonical is /contact") : fail(`canonical is ${canonical}`);
   },
   // Questions are <h3>, answers <p>
   (i, p, route) => {

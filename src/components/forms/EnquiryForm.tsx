@@ -4,11 +4,13 @@ import {
   createContext,
   useContext,
   useEffect,
+  useId,
   useRef,
   useState,
   type FormEvent,
   type ReactNode,
 } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 /**
@@ -184,8 +186,45 @@ export function EnquiryForm({
         </div>
 
         {children}
+
+        <EnquiryConsent />
       </form>
     </EnquiryContext.Provider>
+  );
+}
+
+/**
+ * PRIVACY NOTICE + MARKETING OPT-IN — on every form, added here once rather
+ * than in nine sections.
+ *
+ * India's DPDP Act expects notice at or before the point data is collected,
+ * and these forms also take drawing uploads, so the notice sits with the
+ * submit button and links the policy. The marketing box is separate and
+ * unticked: the Privacy Policy promises nobody is added to a marketing list
+ * without asking, and a pre-ticked or bundled box would not be asking.
+ *
+ * Ticked, it posts `marketingOptIn=Yes`, which lands in the enquiry's `raw`
+ * fields and the notification email like any unmapped field (sources.ts).
+ * Unticked, nothing is sent. Hidden once a form shows its own confirmation.
+ */
+function EnquiryConsent() {
+  const { status } = useEnquiry();
+  const id = useId();
+  if (status === "success") return null;
+  return (
+    <div className="margo-consent">
+      <label htmlFor={`${id}-mkt`} className="margo-consent-opt">
+        <input id={`${id}-mkt`} type="checkbox" name="marketingOptIn" value="Yes" />
+        <span>
+          Email me occasional product and compound updates. Optional; unsubscribe any time.
+        </span>
+      </label>
+      <p className="margo-consent-note">
+        By submitting, you agree to our{" "}
+        <Link href="/legal/privacy-policy">Privacy Policy</Link>. Drawings and files you
+        upload are treated as confidential.
+      </p>
+    </div>
   );
 }
 

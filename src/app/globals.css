@@ -949,9 +949,15 @@ body {
 
   /* 1 · Hero photo: settles in on load, then a slow camera drift, with a
      soft light sweep passing over the plant every few seconds. */
+  /* Kept close to 1:1 so the full plant frame shows: it settles in from a
+     slight zoom to its natural size, then drifts only up to 3%. */
   @keyframes margo-about-settle {
-    from { opacity: 0; transform: scale(1.14); }
-    to { opacity: 1; transform: scale(1.03); }
+    from { opacity: 0; transform: scale(1.08); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  @keyframes margo-about-drift-wide {
+    0%, 100% { transform: scale(1) translate3d(0, 0, 0); }
+    50% { transform: scale(1.03) translate3d(-0.6%, -0.3%, 0); }
   }
   @keyframes margo-about-drift {
     0%, 100% { transform: scale(1.03) translate3d(0, 0, 0); }
@@ -960,8 +966,23 @@ body {
   .margo-about-hero-img {
     animation:
       margo-about-settle 1.8s var(--ease-entrance) both,
-      margo-about-drift 22s ease-in-out 1.8s infinite;
+      margo-about-drift-wide 22s ease-in-out 1.8s infinite;
     will-change: transform;
+  }
+  /* Desktop: the hero photo is close to square while the hero is wide, so
+     "cover" blew it up ~18% and cut a sixth off the top and bottom. Show the
+     whole frame instead, full height on the right, fading into the dark
+     surface on the left where the copy sits. Phones keep the full-bleed
+     cover, since the copy sits over the whole photo there. */
+  @media (min-width: 64rem) {
+    .margo-about-hero-img {
+      /* !important: the <img> also carries Tailwind's object-cover utility,
+         which outranks this layer for phones-first cover behaviour. */
+      object-fit: contain !important;
+      object-position: right center;
+      -webkit-mask-image: linear-gradient(to right, transparent 28%, #000 58%);
+      mask-image: linear-gradient(to right, transparent 28%, #000 58%);
+    }
   }
   .margo-about-hero-sweep {
     position: absolute;
@@ -1116,8 +1137,11 @@ body {
   }
 
   /* Founder cards: photos load plainly (no scroll wipe). On hover the card
-     lifts with an accent edge, the portrait warms from slightly muted to
-     full colour and eases in, and a line draws under the name. */
+     lifts with an accent edge and the portrait warms up and eases in.
+     No lines: the colour change sits on the <img> only (a filter on the
+     wrapper also tinted the fade, so it stopped matching the caption), the
+     fade reaches 2px past the photo's edge, and the caption overlaps it by
+     1px — together that closes the hairline seam the lifted card showed. */
   .margo-founder {
     transition:
       transform 500ms var(--ease-entrance),
@@ -1125,17 +1149,25 @@ body {
       box-shadow 500ms var(--ease-entrance);
   }
   .margo-founder img {
-    transition: transform 900ms var(--ease-entrance);
+    filter: saturate(0.85) brightness(0.9);
+    transition:
+      transform 900ms var(--ease-entrance),
+      filter 600ms var(--ease-standard);
   }
-  .margo-founder-photo {
-    filter: saturate(0.82) brightness(0.92);
-    transition: filter 600ms var(--ease-standard);
+  .margo-founder-fade {
+    inset: 0 0 -2px 0;
+    background: linear-gradient(
+      to top,
+      var(--color-surface-3) 0,
+      var(--color-surface-3) 3px,
+      transparent 42%
+    );
   }
-  .margo-founder-name {
-    display: table;
-    padding-bottom: 3px;
-    background: linear-gradient(var(--color-accent-400), var(--color-accent-400)) no-repeat 0 100% / 0 1.5px;
-    transition: background-size 450ms var(--ease-entrance);
+  .margo-founder-caption {
+    position: relative;
+    z-index: 1;
+    margin-top: -1px;
+    background: var(--color-surface-3);
   }
   @media (hover: hover) {
     .margo-founder:hover {
@@ -1143,9 +1175,10 @@ body {
       border-color: rgb(43 188 196 / 0.45);
       box-shadow: 0 26px 50px -28px rgb(43 188 196 / 0.55);
     }
-    .margo-founder:hover img { transform: scale(1.05); }
-    .margo-founder:hover .margo-founder-photo { filter: saturate(1.05) brightness(1.04); }
-    .margo-founder:hover .margo-founder-name { background-size: 100% 1.5px; }
+    .margo-founder:hover img {
+      transform: scale(1.05);
+      filter: saturate(1.05) brightness(1);
+    }
   }
 
   /* 5 · Team figures (founder experience, client relationship): a glow
@@ -1689,6 +1722,52 @@ body {
   .margo-faq[data-open]::before { transform: scaleY(1); }
   @media (hover: hover) { .margo-faq:hover { border-color: rgb(255 255 255 / 0.14); } }
 
+  /* ══ HOME · TRUST BAR (named accounts) ═════════════════════════════
+     Label only: accent rules draw out either side, a slow light sweeps
+     across. The names below are a still row. */
+  .margo-trust-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.1rem;
+  }
+  .margo-trust-label::before,
+  .margo-trust-label::after {
+    content: "";
+    height: 1px;
+    width: min(9rem, 14vw);
+    background: linear-gradient(90deg, transparent, var(--color-accent-400));
+    transform: scaleX(0);
+    animation: margo-rule-in 1.2s var(--ease-entrance) 0.3s forwards;
+  }
+  .margo-trust-label::before { transform-origin: right; }
+  .margo-trust-label::after {
+    transform-origin: left;
+    background: linear-gradient(270deg, transparent, var(--color-accent-400));
+  }
+  @keyframes margo-rule-in { to { transform: scaleX(1); } }
+  .margo-trust-label-text {
+    color: var(--color-ink-4);
+    background: linear-gradient(
+      100deg,
+      var(--color-ink-4) 0%,
+      var(--color-ink-4) 40%,
+      #c9f6f8 50%,
+      var(--color-ink-4) 60%,
+      var(--color-ink-4) 100%
+    );
+    background-size: 250% 100%;
+    background-position: 100% 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: margo-label-sheen 7s ease-in-out 1.2s infinite;
+  }
+  @keyframes margo-label-sheen {
+    0% { background-position: 100% 0; }
+    35%, 100% { background-position: 0% 0; }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .margo-orbit,
     .margo-lane-flow,
@@ -1715,6 +1794,8 @@ body {
       animation: none;
     }
     .margo-about-hero-sweep { display: none; }
+    .margo-trust-label::before, .margo-trust-label::after { animation: none; transform: none; }
+    .margo-trust-label-text { animation: none; }
     .margo-rise,
     .margo-contact-hero-img,
     .margo-proof-dot,
@@ -1732,6 +1813,60 @@ body {
     [data-steps-ready] > li:not([data-lit]) .margo-step-card,
     [data-steps-ready] > li[data-current] .margo-step-node {
       transform: none;
+    }
+  }
+}
+
+/* ── ENQUIRY FORMS: privacy notice + marketing opt-in (EnquiryForm.tsx) ──
+   Rendered at the end of every form. Named classes rather than utilities so
+   the layout does not depend on Tailwind having generated new classes. */
+@layer components {
+  .margo-consent {
+    grid-column: 1 / -1;
+    margin-top: 1.25rem;
+    display: grid;
+    gap: 0.6rem;
+    font-size: 0.75rem;
+    line-height: 1.55;
+    color: var(--color-ink-4);
+  }
+  .margo-consent-opt {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    cursor: pointer;
+  }
+  .margo-consent-opt input {
+    flex: none;
+    width: 1rem;
+    height: 1rem;
+    margin-top: 0.05rem;
+    accent-color: var(--color-accent-400);
+    cursor: pointer;
+  }
+  .margo-consent-opt:hover span {
+    color: var(--color-ink-3);
+  }
+  .margo-consent-note a {
+    color: var(--color-accent-400);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .margo-consent-note a:hover {
+    text-decoration-thickness: 2px;
+  }
+  /* The one-line email band on /about: let the notice drop to its own row
+     under the field and button, centred like the band. */
+  .margo-form-wrap > .margo-consent {
+    justify-items: center;
+    text-align: center;
+  }
+  @media (min-width: 40rem) {
+    .margo-form-wrap {
+      flex-wrap: wrap;
+    }
+    .margo-form-wrap > .margo-consent {
+      flex-basis: 100%;
     }
   }
 }
