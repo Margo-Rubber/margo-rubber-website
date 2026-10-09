@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import { IS_VISION, isIndexable } from "@/lib/build-mode";
 
-/** B3 — domain decision pending. Change here only. */
-export const SITE_URL = "https://margorubber.in";
+/**
+ * B3 — the site is served from www.margorubber.com; margorubber.in and the
+ * bare margorubber.com redirect there. Canonicals, sitemaps, robots and JSON-LD
+ * all read this one value. Email stays on @margorubber.in. Change here only.
+ */
+export const SITE_URL = "https://www.margorubber.com";
 
 type SeoInput = {
   seo: { title: string; description: string };

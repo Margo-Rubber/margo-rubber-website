@@ -433,14 +433,16 @@ export const IMAGES = {
   },
 
   "contact.map": {
-    // Stands in until a map still is uploaded in the Studio: the block links
-    // to Google Maps at the plant's coordinates whatever the picture shows.
-    src: "/images/contact/0d423de901bffb06f69b1e44c1fef77e980a8876.jpg",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAeEAACAwABBQAAAAAAAAAAAAABAgADEQQFIzFBof/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAXEQADAQAAAAAAAAAAAAAAAAAAAQIR/9oADAMBAAIRAxEAPwCd4S942EhUXNBG7vj7kpuZ0m241WO4LPWpJHuIiphmU8P/2Q==",
-    w: 1920,
-    h: 1080,
-    alt: "Map showing the Margo Rubber Products plant at Vilholi, Nashik",
-    status: "placeholder",
+    // Real map of the plant: OpenStreetMap data at zoom ~16.5, centred on
+    // the Google Business listing's coordinates (19.931891, 73.7327537) so
+    // the pin drawn at the frame's centre sits on the plant. Restyled dark
+    // to match the site. OSM requires the credit shown on the image.
+    src: "/images/contact/margo-plant-map.jpg",
+    blur: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk//2wBDAQ4ODhMREyYVFSZPNS01T09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0//wAARCAAJAAwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDgwflJA6+tPLo2D5IJ7k0h/pUY7/WqJP/Z",
+    w: 1200,
+    h: 900,
+    alt: "Map of the Margo Rubber Products plant at Vilholi, Nashik, just off NH160",
+    status: "final",
   },
 
   /* --- Certifications ------------------------------------------------- */

@@ -10,6 +10,7 @@ import {
   type Compound,
 } from "@/components/sections/SkuCompoundPicker";
 import { emphasised } from "@/components/ui/Emphasis";
+import { SlotValue } from "@/components/ui/SlotValue";
 
 /**
  * SKU DETAIL TEMPLATE — built to `single category.png`, section for section.
@@ -924,7 +925,7 @@ export function SkuQuality({
             <dl className="divide-line mt-6 grid grid-cols-2 gap-x-8">
               {q.metrics.map((m) => (
                 <div key={m.label} className="border-line border-b py-5">
-                  <dd className="text-ink text-2xl font-semibold">{m.value}</dd>
+                  <dd className="text-ink text-2xl font-semibold"><SlotValue value={m.value} /></dd>
                   <dt className="text-ink-4 mt-1 text-xs">{m.label}</dt>
                 </div>
               ))}

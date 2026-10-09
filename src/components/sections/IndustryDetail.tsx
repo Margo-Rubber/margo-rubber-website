@@ -397,7 +397,8 @@ export function IndustryFAQ({ items }: { items: { q: string; a: string }[] }) {
       {items.map((f, i) => (
         <div
           key={f.q}
-          className="border-line rounded-card border bg-[#0A0A0A]"
+          data-open={open === i ? "" : undefined}
+          className="margo-faq border-line rounded-card border bg-[#0A0A0A]"
         >
           {/* The question is a real heading (the sheets' "questions are <h3>");
               the button inside it is what opens the answer. */}

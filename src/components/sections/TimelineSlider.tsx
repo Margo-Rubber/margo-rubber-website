@@ -20,7 +20,7 @@ export function TimelineSlider({ items }: { items: readonly Item[] }) {
     <div>
       <ul className="flex flex-wrap justify-center gap-3">
         {items.map((it, n) => (
-          <li key={it.year}>
+          <li key={`${it.year}-${n}`}>
             <button
               type="button"
               onClick={() => setI(n)}
@@ -50,7 +50,7 @@ export function TimelineSlider({ items }: { items: readonly Item[] }) {
         />
         {items.map((it, n) => (
           <li
-            key={it.year}
+            key={`${it.year}-${n}`}
             // Every panel occupies the same grid cell, so the card height is
             // the tallest milestone and never jumps between slides.
             className={`col-start-1 row-start-1 text-center transition-opacity duration-300 ${
