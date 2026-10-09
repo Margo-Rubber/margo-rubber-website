@@ -13,6 +13,7 @@ import {
   EnquirySubmit,
 } from "@/components/forms/EnquiryForm";
 import { displaySize } from "@/lib/display-size";
+import { SlotValue } from "@/components/ui/SlotValue";
 
 /* ══ SHARED ═══════════════════════════════════════════════════════════════ */
 
@@ -392,7 +393,7 @@ export function WhyHero({
               className="rounded-card border-line bg-canvas/45 min-w-[8.5rem] border px-5 py-4 backdrop-blur"
             >
               <dd className="text-accent-400 text-xl font-semibold">
-                {s.value}
+                <SlotValue value={s.value} />
               </dd>
               <dt className="text-ink-4 mt-1 text-xs">{s.label}</dt>
             </div>
@@ -482,7 +483,7 @@ export function Heritage({
                   className="rounded-card border-line border bg-[#0D0D0D] py-6 text-center"
                 >
                   <dd className="text-accent-400 text-xl font-semibold">
-                    {s.value}
+                    <SlotValue value={s.value} />
                   </dd>
                   <dt className="text-ink-4 mt-1 text-xs">{s.label}</dt>
                 </div>
@@ -687,7 +688,7 @@ export function Quality({
                   className="rounded-card border-line border bg-[#0D0D0D] py-6 text-center"
                 >
                   <dd className="text-accent-400 text-xl font-semibold">
-                    {s.value}
+                    <SlotValue value={s.value} />
                   </dd>
                   <dt className="text-ink-4 mt-1 text-xs">{s.label}</dt>
                 </div>
@@ -793,7 +794,7 @@ export function Responsibility({
                 >
                   <Icon name={c.icon} className="text-accent-400 size-5" />
                   <p className="text-accent-400 mt-4 text-2xl font-semibold">
-                    {c.value}
+                    <SlotValue value={c.value} />
                   </p>
                   <p className="text-ink mt-1 text-sm font-semibold">{c.name}</p>
                   <p className="text-ink-4 mt-2 text-xs leading-relaxed">
@@ -871,7 +872,7 @@ export function GlobalExport({
               className="rounded-card border-line bg-canvas/50 min-w-[9rem] border px-8 py-5 text-center backdrop-blur"
             >
               <dd className="text-accent-400 text-2xl font-semibold">
-                {s.value}
+                <SlotValue value={s.value} />
               </dd>
               <dt className="text-ink-4 mt-1 text-xs">{s.label}</dt>
             </div>
@@ -1075,7 +1076,7 @@ export function Feedback({
           {stats.map((s) => (
             <div key={s.label} className="px-6 py-8 text-center">
               <dd className="text-accent-400 text-2xl font-semibold">
-                {s.value}
+                <SlotValue value={s.value} />
               </dd>
               <dt className="text-ink-4 mt-1.5 text-xs">{s.label}</dt>
             </div>

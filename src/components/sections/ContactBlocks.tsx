@@ -37,7 +37,7 @@ export function ContactHero({
   breadcrumb?: readonly Crumb[];
 }) {
   return (
-    <header className="relative isolate overflow-hidden pt-32 pb-20 md:pt-48 md:pb-28">
+    <header className="margo-contact-hero relative isolate overflow-hidden pt-32 pb-20 md:pt-48 md:pb-28">
       {image && (
         <>
           <Img
@@ -45,7 +45,7 @@ export function ContactHero({
             fill
             priority
             sizes="100vw"
-            className="-z-20 object-cover"
+            className="margo-contact-hero-img -z-20 object-cover"
           />
           {/* Copy sits left over the darkest part of the frame. */}
           <div className="from-canvas via-canvas/70 absolute inset-0 -z-10 bg-gradient-to-r from-5% via-45% to-transparent to-90%" />
@@ -53,9 +53,14 @@ export function ContactHero({
         </>
       )}
 
+      {/* A technical drawing on the right, drawn line by line like a CAD
+          sheet. Over the (very dark) hero photo it sits as a glowing overlay;
+          with no photo set it carries the right half on its own. */}
+      <BlueprintArt overPhoto={!!image} />
+
       <Container>
         <Breadcrumb items={breadcrumb} className="mb-6" />
-        <p className="text-eyebrow text-accent-400 font-mono uppercase">
+        <p className="margo-rise text-eyebrow text-accent-400 font-mono uppercase" style={{ "--d": 0 } as React.CSSProperties}>
           {badge}
         </p>
 
@@ -63,7 +68,8 @@ export function ContactHero({
           {lines.map((l, i) => (
             <span
               key={l}
-              className={`block ${accentLines.includes(i) ? "text-accent-400" : ""}`}
+              style={{ "--d": i + 1 } as React.CSSProperties}
+              className={`margo-rise block ${accentLines.includes(i) ? "text-accent-400" : ""}`}
             >
               {l}
               {/* Trailing space inside the block: invisible, but a crawler reads the lines with spaces. */}
@@ -72,16 +78,22 @@ export function ContactHero({
           ))}
         </h1>
 
-        <p className="text-ink-3 mt-6 max-w-[48ch] leading-relaxed">{intro}</p>
+        <p
+          className="margo-rise text-ink-3 mt-6 max-w-[48ch] leading-relaxed"
+          style={{ "--d": lines.length + 1 } as React.CSSProperties}
+        >
+          {intro}
+        </p>
 
         {proof.length > 0 && (
           <ul className="mt-8 flex flex-wrap gap-3">
-            {proof.map((p) => (
+            {proof.map((p, i) => (
               <li
                 key={p}
-                className="text-eyebrow border-line-2 bg-canvas/50 text-ink-2 flex items-center gap-2 rounded-md border px-3 py-2 font-mono uppercase backdrop-blur"
+                style={{ "--d": lines.length + 2 + i * 0.5 } as React.CSSProperties}
+                className="margo-rise margo-proof text-eyebrow border-line-2 bg-canvas/50 text-ink-2 flex items-center gap-2 rounded-md border px-3 py-2 font-mono uppercase backdrop-blur"
               >
-                <span aria-hidden className="bg-accent-400 size-1.5 rounded-full" />
+                <span aria-hidden className="margo-proof-dot bg-accent-400 size-1.5 rounded-full" />
                 {p}
               </li>
             ))}
@@ -89,6 +101,82 @@ export function ContactHero({
         )}
       </Container>
     </header>
+  );
+}
+
+/* ── HERO ART ─────────────────────────────────────────────────────────────
+   A seal drawn as a technical sheet: construction grid, outer and inner
+   diameter, a cross-section, dimension lines and a scan line. Labels are
+   symbols only (Ø OD, Ø ID, CS) — no figures, so it never states a spec.
+   pathLength=1 on every stroke lets one CSS rule draw them all in.        */
+function BlueprintArt({ overPhoto = false }: { overPhoto?: boolean }) {
+  return (
+    <div aria-hidden className={`margo-blueprint${overPhoto ? " margo-blueprint--over" : ""}`}>
+      <svg viewBox="0 0 560 560" className="margo-blueprint-svg">
+        <defs>
+          <pattern id="mbp-grid" width="28" height="28" patternUnits="userSpaceOnUse">
+            <path d="M28 0H0V28" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.18" />
+          </pattern>
+          <pattern id="mbp-hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <path d="M0 0V7" stroke="currentColor" strokeWidth="1.2" opacity="0.55" />
+          </pattern>
+          <radialGradient id="mbp-fade" cx="50%" cy="50%" r="50%">
+            <stop offset="55%" stopColor="#fff" />
+            <stop offset="100%" stopColor="#fff" stopOpacity="0" />
+          </radialGradient>
+          <mask id="mbp-mask">
+            <rect width="560" height="560" fill="url(#mbp-fade)" />
+          </mask>
+        </defs>
+
+        <rect width="560" height="560" fill="url(#mbp-grid)" mask="url(#mbp-mask)" />
+
+        {/* Centre lines */}
+        <g className="mbp-draw mbp-thin" style={{ "--k": 0 } as React.CSSProperties}>
+          <path pathLength={1} d="M280 40V520" />
+          <path pathLength={1} d="M40 280H520" />
+        </g>
+
+        {/* Outer and inner diameter */}
+        <circle className="mbp-draw mbp-main" style={{ "--k": 1 } as React.CSSProperties} pathLength={1} cx="280" cy="280" r="190" />
+        <circle className="mbp-draw mbp-main" style={{ "--k": 2 } as React.CSSProperties} pathLength={1} cx="280" cy="280" r="128" />
+        <circle className="mbp-pitch" cx="280" cy="280" r="159" />
+
+        {/* Cross-section cut through the ring, hatched */}
+        <g className="mbp-section">
+          <rect x="408" y="262" width="62" height="36" rx="6" fill="url(#mbp-hatch)" />
+          <rect className="mbp-draw mbp-main" style={{ "--k": 3 } as React.CSSProperties} pathLength={1} x="408" y="262" width="62" height="36" rx="6" />
+        </g>
+
+        {/* Dimension lines */}
+        <g className="mbp-draw mbp-dim" style={{ "--k": 3.5 } as React.CSSProperties}>
+          <path pathLength={1} d="M90 470H470" />
+          <path pathLength={1} d="M90 462V478M470 462V478" />
+          <path pathLength={1} d="M152 420H408" />
+          <path pathLength={1} d="M152 412V428M408 412V428" />
+          <path pathLength={1} d="M490 262V298" />
+          <path pathLength={1} d="M482 262H498M482 298H498" />
+        </g>
+        <g className="mbp-label">
+          <text x="280" y="492" textAnchor="middle">Ø OD</text>
+          <text x="280" y="442" textAnchor="middle">Ø ID</text>
+          <text x="508" y="284">CS</text>
+        </g>
+
+        {/* Title block, bottom right like a drawing sheet */}
+        <g className="mbp-draw mbp-thin" style={{ "--k": 4 } as React.CSSProperties}>
+          <rect pathLength={1} x="372" y="40" width="148" height="56" />
+          <path pathLength={1} d="M372 68H520" />
+        </g>
+        <g className="mbp-label">
+          <text x="382" y="59">RFQ · DRAWING</text>
+          <text x="382" y="87">REV A</text>
+        </g>
+
+        {/* Scan line sweeping the sheet */}
+        <rect className="mbp-scan" x="40" y="40" width="480" height="2" />
+      </svg>
+    </div>
   );
 }
 
@@ -140,8 +228,8 @@ function DirectContact({
 
         <ul className="divide-y divide-[#1B2026]">
           {contacts.map((c) => (
-            <li key={c.label} className="flex gap-4 py-5 first:pt-5">
-              <span className="grid size-10 shrink-0 place-items-center rounded-lg bg-[#172A30]">
+            <li key={c.label} className="margo-direct flex gap-4 py-5 first:pt-5">
+              <span className="margo-direct-icon grid size-10 shrink-0 place-items-center rounded-lg bg-[#172A30]">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -196,7 +284,7 @@ type Field = {
 };
 
 const inputCls =
-  "mt-2 w-full rounded-lg border border-[#1F242A] bg-[#16191E] px-4 py-3 text-sm text-ink placeholder:text-ink-4 focus:border-accent-400";
+  "margo-input mt-2 w-full rounded-lg border border-[#1F242A] bg-[#16191E] px-4 py-3 text-sm text-ink placeholder:text-ink-4 focus:border-accent-400";
 
 /**
  * The two dropdowns that name what Margo makes come from the route registry,
@@ -382,17 +470,19 @@ export function RfqForm({
   const fieldSets = [step1, step2];
 
   return (
-    <div className="rounded-card border border-[#1B2026] bg-[#15191D] p-6 md:p-8">
+    <div className="margo-form-card rounded-card relative isolate border border-[#1B2026] bg-[#15191D] p-6 md:p-8">
       {/* Stepper */}
-      <ol className="mb-8 flex items-center gap-4">
+      <ol className="margo-stepper mb-8 flex items-center gap-4" data-step={step}>
         {steps.map((label, i) => (
           <li key={label} aria-current={i === step ? "step" : undefined} className="flex flex-1 items-center gap-4 last:flex-none">
             <span className="flex items-center gap-3">
               <span
-                className={`grid size-7 place-items-center rounded-full text-xs font-semibold ${
-                  i <= step
-                    ? "border-accent-400 text-accent-400 border"
-                    : "border-line text-ink-4 border"
+                className={`margo-step-dot grid size-7 place-items-center rounded-full text-xs font-semibold ${
+                  i === step
+                    ? "border-accent-400 bg-accent-400 text-canvas is-current border"
+                    : i < step
+                      ? "border-accent-400 text-accent-400 border"
+                      : "border-line text-ink-4 border"
                 }`}
               >
                 {i + 1}
@@ -404,10 +494,9 @@ export function RfqForm({
               </span>
             </span>
             {i === 0 && (
-              <span
-                aria-hidden
-                className={`h-px flex-1 ${step > 0 ? "bg-accent-400" : "bg-line"}`}
-              />
+              <span aria-hidden className="margo-step-line bg-line relative h-px flex-1 overflow-hidden">
+                <span className="margo-step-line-fill" />
+              </span>
             )}
           </li>
         ))}
@@ -431,15 +520,15 @@ export function RfqForm({
           <div
             key={i}
             hidden={step !== i}
-            className="grid gap-5 sm:grid-cols-2"
+            className="margo-fieldset grid gap-5 sm:grid-cols-2"
           >
             {set.map((f) => (
               <label
                 key={f.name}
                 htmlFor={`contact-${f.name}`}
-                className={f.full ? "sm:col-span-2" : undefined}
+                className={`margo-field ${f.full ? "sm:col-span-2" : ""}`}
               >
-                <span className="text-eyebrow text-ink-4 font-mono uppercase">
+                <span className="margo-field-label text-eyebrow text-ink-4 font-mono uppercase">
                   {f.label}
                 </span>
                 <FieldControl f={f} value={valueOf(f.name)} onChange={setValue(f.name)} />
@@ -468,9 +557,9 @@ export function RfqForm({
           >
             ← {backLabel}
           </button>
-          <EnquirySubmit className="bg-accent-400 text-ink hover:opacity-90 flex-1 rounded-cta px-6 py-3.5 text-sm font-semibold transition-colors sm:flex-none sm:px-10">
+          <EnquirySubmit className="margo-submit bg-accent-400 text-ink hover:opacity-90 flex-1 rounded-cta px-6 py-3.5 text-sm font-semibold transition-colors sm:flex-none sm:px-10">
             <span hidden={step !== 0}>{continueLabel}</span>
-            <span hidden={step !== 1}>{submitLabel}</span> <span aria-hidden>→</span>
+            <span hidden={step !== 1}>{submitLabel}</span> <span aria-hidden className="margo-submit-arrow">→</span>
           </EnquirySubmit>
         </div>
 

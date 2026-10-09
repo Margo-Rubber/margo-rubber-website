@@ -19,6 +19,7 @@ import {
 import { AttachmentField } from "@/components/forms/AttachmentField";
 import { accented } from "@/components/ui/Emphasis";
 import { displaySize } from "@/lib/display-size";
+import { SlotValue } from "@/components/ui/SlotValue";
 
 /* ────────────────────────────────────────────────────────────────────────
    HUB HERO
@@ -372,7 +373,7 @@ export function StatCards({
           className="border-line bg-surface-3 rounded-card border p-6 text-center"
         >
           <dd className="text-accent-400 text-3xl font-bold md:text-4xl">
-            {s.value}
+            <SlotValue value={s.value} />
           </dd>
           <dt className="text-ink mt-2 text-sm font-medium">{s.label}</dt>
           {s.sub && <p className="text-ink-4 mt-1 text-xs">{s.sub}</p>}

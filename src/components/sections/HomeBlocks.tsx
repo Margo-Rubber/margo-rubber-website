@@ -4,6 +4,7 @@ import { Img } from "@/components/ui/Img";
 import { Container } from "@/components/ui/Section";
 import type { Compound } from "@/content/schemas";
 import { Bloom } from "@/components/ui/Bloom";
+import { ScrollSteps } from "@/components/ui/ScrollSteps";
 import {
   EnquiryForm,
   EnquiryStatus,
@@ -11,6 +12,7 @@ import {
 } from "@/components/forms/EnquiryForm";
 import { AttachmentField } from "@/components/forms/AttachmentField";
 import { displaySize } from "@/lib/display-size";
+import { SlotValue } from "@/components/ui/SlotValue";
 
 /* ══ SHARED ═══════════════════════════════════════════════════════════════ */
 
@@ -371,13 +373,13 @@ export function HomeHero({
   cards: readonly { value: string; label: string; icon?: string }[];
 }) {
   return (
-    <header className="bg-canvas relative isolate overflow-hidden pt-32 pb-24 md:pt-44 md:pb-32">
+    <header className="margo-hero bg-canvas relative isolate overflow-hidden pt-32 pb-24 md:pt-44 md:pb-32">
       <Img
         k={image}
         fill
         priority
         sizes="100vw"
-        className="-z-20 object-cover opacity-60 brightness-[0.95] contrast-[1.05]"
+        className="margo-hero-image -z-20 object-cover opacity-60 brightness-[0.95] contrast-[1.05]"
       />
       <div
         className="absolute inset-0 -z-10"
@@ -409,12 +411,25 @@ export function HomeHero({
       {/* Concentric ring motif behind the stat stack, as in the comp. */}
       <svg
         viewBox="0 0 600 600"
-        className="text-accent-400 pointer-events-none absolute top-1/2 right-[-8%] -z-10 hidden size-[38rem] -translate-y-1/2 opacity-30 lg:block"
+        className="margo-orbit-system text-accent-400 pointer-events-none absolute top-1/2 right-[-8%] -z-10 hidden size-[38rem] -translate-y-1/2 opacity-80 lg:block"
         aria-hidden
       >
-        <circle cx="300" cy="300" r="298" fill="none" stroke="currentColor" strokeWidth="1" />
-        <circle cx="300" cy="300" r="232" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.6" />
-        <circle cx="300" cy="300" r="164" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.35" />
+        <g className="margo-orbit margo-orbit--outer">
+          <circle cx="300" cy="300" r="298" fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.85" />
+          <circle cx="300" cy="300" r="232" fill="none" stroke="currentColor" strokeWidth="1.25" opacity="0.8" />
+          <path d="M300 2 A298 298 0 0 1 555 146" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+          <circle cx="555" cy="146" r="5" fill="currentColor" />
+        </g>
+        <g className="margo-orbit margo-orbit--middle">
+          <circle cx="300" cy="300" r="164" fill="none" stroke="currentColor" strokeWidth="1.25" opacity="0.75" />
+          <path d="M300 68 A232 232 0 0 1 510 203" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+          <circle cx="510" cy="203" r="4.5" fill="currentColor" />
+        </g>
+        <g className="margo-orbit margo-orbit--inner">
+          <circle cx="300" cy="300" r="108" fill="none" stroke="currentColor" strokeWidth="1.25" opacity="0.7" />
+          <circle cx="300" cy="192" r="4" fill="currentColor" />
+        </g>
+        <circle cx="300" cy="300" r="6" fill="currentColor" />
       </svg>
 
       <Container>
@@ -432,7 +447,7 @@ export function HomeHero({
                   <Link
                     key={a.label}
                     href={a.href}
-                    className="bg-accent-400 text-ink hover:opacity-90 shadow-glow rounded-cta inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold transition-colors"
+                    className="margo-hero-action bg-accent-400 text-ink hover:opacity-90 shadow-glow rounded-cta inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold"
                   >
                     {a.label}
                     <Arrow />
@@ -441,7 +456,7 @@ export function HomeHero({
                   <Link
                     key={a.label}
                     href={a.href}
-                    className="border-line-2 bg-canvas/60 text-ink hover:border-accent-400/60 rounded-pill inline-flex items-center gap-2.5 border px-6 py-3.5 text-sm font-semibold backdrop-blur transition-colors"
+                    className="margo-hero-action border-line-2 bg-canvas/60 text-ink hover:border-accent-400/60 rounded-pill inline-flex items-center gap-2.5 border px-6 py-3.5 text-sm font-semibold backdrop-blur"
                   >
                     <svg viewBox="0 0 24 24" className="size-3.5 fill-current" aria-hidden>
                       <path d="M8 5.5v13l11-6.5z" />
@@ -457,7 +472,7 @@ export function HomeHero({
                 <li key={c.label}>
                   <Link
                     href={c.href}
-                    className="text-eyebrow border-line-2 bg-canvas/50 text-ink-3 hover:border-accent-400/60 hover:text-ink rounded-pill inline-flex border px-3.5 py-1.5 font-mono backdrop-blur transition-colors"
+                    className="margo-hero-chip text-eyebrow border-line-2 bg-canvas/50 text-ink-3 hover:border-accent-400/60 hover:text-ink rounded-pill inline-flex border px-3.5 py-1.5 font-mono backdrop-blur"
                   >
                     {c.label}
                   </Link>
@@ -470,7 +485,7 @@ export function HomeHero({
             {cards.map((c) => (
               <div
                 key={c.label}
-                className="rounded-card border-line flex items-center gap-3 border bg-[#111418]/80 px-6 py-4 shadow-[0_0_0_1px_rgba(43,188,196,0.05)] backdrop-blur-md"
+                className="margo-hero-stat rounded-card border-line flex items-center gap-3 border bg-[#111418]/80 px-6 py-4 shadow-[0_0_0_1px_rgba(43,188,196,0.05)] backdrop-blur-md"
               >
                 {c.icon && <IconTile name={c.icon} />}
                 <div>
@@ -560,9 +575,9 @@ export function Story({
               ratio="aspect-[4/3]"
               surface="var(--color-canvas)"
               sizes="(min-width:1024px) 46vw, 100vw"
-              className="rounded-card border-line ml-[6%] border"
+              className="margo-image-frame rounded-card border-line ml-[6%] border"
             />
-            <div className="rounded-card border-line absolute right-0 bottom-0 w-[62%] border bg-[#111418]/90 p-5 backdrop-blur">
+            <div className="margo-card rounded-card border-line absolute right-0 bottom-0 w-[62%] border bg-[#111418]/90 p-5 backdrop-blur">
               <p className="text-ink flex items-center gap-2.5 text-sm font-semibold">
                 <Icon name="ribbon" className="text-accent-400 size-4" />
                 {floatCard.href ? (
@@ -592,9 +607,9 @@ export function Story({
               {stats.map((s) => (
                 <div
                   key={s.label}
-                  className="rounded-card border-line border bg-[#0F1115] px-6 py-5"
+                  className="margo-card rounded-card border-line border bg-[#0F1115] px-6 py-5"
                 >
-                  <dd className="text-ink text-xl font-semibold">{s.value}</dd>
+                  <dd className="text-ink text-xl font-semibold"><SlotValue value={s.value} /></dd>
                   <dt className="text-ink-4 mt-1 text-sm">{s.label}</dt>
                 </div>
               ))}
@@ -633,7 +648,7 @@ export function Edge({
           {items.map((it) => (
             <li
               key={it.name}
-              className="rounded-card border-line relative border bg-[#0F1115] p-7"
+              className="margo-card rounded-card border-line relative border bg-[#0F1115] p-7"
             >
               <IconTile name={it.icon} />
               <h3 className="text-ink mt-6 text-base font-semibold">
@@ -718,7 +733,7 @@ export function Portfolio({
             return (
             <li
               key={p.name}
-              className={`relative isolate ${widowed ? "lg:col-span-3" : "lg:col-span-2"}`}
+              className={`margo-product-tile relative isolate ${widowed ? "lg:col-span-3" : "lg:col-span-2"}`}
             >
               <Link
                 href={p.href}
@@ -734,7 +749,7 @@ export function Portfolio({
                       ? "(min-width:1024px) 50vw, (min-width:640px) 50vw, 100vw"
                       : "(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
                   }
-                  brightness="brightness-[0.62] transition-[filter] duration-500 group-hover:brightness-[0.78]"
+                  brightness="brightness-[0.62] transition-[filter,transform] duration-700 group-hover:brightness-[0.78]"
                 />
                 {/* Scrim only across the lower third, so the art stays legible
                     while the caption keeps its contrast. */}
@@ -824,11 +839,16 @@ export function Process({
       <Container>
         <CenterHead eyebrow={eyebrow} lines={lines} body={body} />
 
-        <ol className="relative mt-16">
+        <ScrollSteps className="margo-steps relative mt-16">
           {/* Spine. Sits behind the nodes and is hidden from assistive tech. */}
           <span
             aria-hidden
             className="bg-line-2 absolute top-0 bottom-0 left-4 w-px md:left-1/2 md:-translate-x-1/2"
+          />
+          {/* Spine fill: grows with scroll progress (see ScrollSteps). */}
+          <span
+            aria-hidden
+            className="margo-spine-fill absolute top-0 bottom-0 left-4 w-px md:left-1/2 md:-translate-x-1/2"
           />
 
           {steps.map((s, i) => (
@@ -838,7 +858,7 @@ export function Process({
             >
               <span
                 aria-hidden
-                className="bg-accent-400 text-ink shadow-glow absolute top-6 left-4 z-10 grid size-7 -translate-x-1/2 place-items-center rounded-full text-xs font-semibold md:left-1/2"
+                className="margo-step-node absolute top-6 left-4 z-10 grid size-7 -translate-x-1/2 place-items-center rounded-full text-xs font-semibold md:left-1/2"
               >
                 {i + 1}
               </span>
@@ -850,7 +870,7 @@ export function Process({
                     : "md:col-start-2 md:pl-14"
                 }
               >
-                <div className="rounded-card border-line ml-10 border bg-[#0F1115] p-6 md:ml-0">
+                <div className="margo-step-card rounded-card ml-10 border bg-[#0F1115] p-6 md:ml-0">
                   <p className="text-eyebrow text-accent-400 font-mono uppercase">
                     STEP {String(i + 1).padStart(2, "0")}
                   </p>
@@ -870,7 +890,7 @@ export function Process({
               </div>
             </li>
           ))}
-        </ol>
+        </ScrollSteps>
       </Container>
     </section>
   );
@@ -901,7 +921,7 @@ export function Facility({
       <Container>
         <div className="grid items-center gap-14 lg:grid-cols-2">
           <div className="relative pb-16">
-            <figure className="rounded-card border-line relative isolate overflow-hidden border">
+            <figure className="margo-image-frame rounded-card border-line relative isolate overflow-hidden border">
               <Photo
                 k={image}
                 ratio="aspect-[3/2]"
@@ -957,7 +977,7 @@ export function Facility({
               <dl className="border-line mt-8 grid grid-cols-2 gap-6 border-t pt-8 sm:grid-cols-4">
                 {stats.map((st) => (
                   <div key={st.label}>
-                    <dd className="text-ink text-2xl font-bold">{st.value}</dd>
+                    <dd className="text-ink text-2xl font-bold"><SlotValue value={st.value} /></dd>
                     <dt className="text-ink-4 mt-1 text-xs">{st.label}</dt>
                   </div>
                 ))}
@@ -1043,7 +1063,7 @@ export function ExportMarkets({
                 ))}
               </g>
 
-              {lanes.map((l) => {
+              {lanes.map((l, i) => {
                 const lx = r2((l.x / 100) * W);
                 const ly = r2((l.y / 100) * H);
                 // Bow each lane away from the straight line so overlapping
@@ -1058,6 +1078,30 @@ export function ExportMarkets({
                       stroke="var(--color-accent-400)"
                       strokeWidth="1.5"
                       opacity="0.85"
+                    />
+                    {/* Moving lines: dashes flow hub -> destination, then a
+                        brighter pulse rides the same route. Staggered per lane. */}
+                    <path
+                      className="margo-lane-flow"
+                      d={`M ${hx} ${hy} Q ${cx} ${cy} ${lx} ${ly}`}
+                      fill="none"
+                      stroke="var(--color-accent-400)"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      pathLength={100}
+                      style={{ animationDelay: `${-(i * 0.9)}s` }}
+                      aria-hidden
+                    />
+                    <path
+                      className="margo-lane-pulse"
+                      d={`M ${hx} ${hy} Q ${cx} ${cy} ${lx} ${ly}`}
+                      fill="none"
+                      stroke="#ffffff"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      pathLength={100}
+                      style={{ animationDelay: `${-(i * 1.1)}s` }}
+                      aria-hidden
                     />
                     <circle cx={cx} cy={cy} r="3" fill="var(--color-accent-400)" opacity="0.6" />
                     <circle cx={lx} cy={ly} r="4.5" fill="#ffffff" />
@@ -1110,7 +1154,7 @@ export function ExportMarkets({
               {lanes.map((l) => (
                 <li
                   key={l.code}
-                  className="rounded-card border-line relative flex items-center gap-4 border bg-[#0F1115] px-5 py-4"
+                  className="margo-card rounded-card border-line relative flex items-center gap-4 border bg-[#0F1115] px-5 py-4"
                 >
                   <span
                     aria-hidden="true"
@@ -1378,7 +1422,7 @@ export function HomeCta({
                   key={s.label}
                   className="rounded-card border-line bg-canvas/50 border px-5 py-4 backdrop-blur"
                 >
-                  <dd className="text-ink text-lg font-semibold">{s.value}</dd>
+                  <dd className="text-ink text-lg font-semibold"><SlotValue value={s.value} /></dd>
                   <dt className="text-eyebrow text-ink-4 mt-1 font-mono uppercase">
                     {s.label}
                   </dt>

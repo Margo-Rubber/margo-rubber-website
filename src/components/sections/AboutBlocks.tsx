@@ -13,6 +13,8 @@ import {
   EnquirySubmit,
 } from "@/components/forms/EnquiryForm";
 import { displaySize } from "@/lib/display-size";
+import { SlotValue } from "@/components/ui/SlotValue";
+import { InView } from "@/components/ui/InView";
 
 /* ══ SHARED ═══════════════════════════════════════════════════════════════ */
 
@@ -133,6 +135,8 @@ function Photo({
   priority = false,
   surface = "var(--color-surface-2)",
   brightness = "brightness-[0.9]",
+  delay = 0,
+  reveal = true,
 }: {
   k: string;
   className?: string;
@@ -144,9 +148,22 @@ function Photo({
   /** The band colour this photo dissolves into. */
   surface?: string;
   brightness?: string;
+  /** Stagger for the scroll-in reveal, in ms (collages reveal in sequence). */
+  delay?: number;
+  /** false: plain frame, loads and shows like any image (no scroll wipe). */
+  reveal?: boolean;
 }) {
+  const Frame = reveal ? InView : "div";
   return (
-    <div className={`relative isolate overflow-hidden ${ratio} ${className}`}>
+    <Frame
+      className={`${reveal ? "margo-reveal-img " : ""}relative isolate overflow-hidden ${ratio} ${className}`}
+      style={reveal ? ({ "--rd": `${delay}ms` } as React.CSSProperties) : undefined}
+      {...(reveal ? { threshold: 0.25 } : {})}
+    >
+      {/* The reveal mask goes on this wrapper — not on the frame (the
+          observer watching it would never see it on screen) and not on the
+          <img> (browsers won't lazy-load an image that is fully masked). */}
+      <div className="margo-reveal-inner absolute inset-0">
       <Img
         k={k}
         fill
@@ -174,7 +191,8 @@ function Photo({
           )}
         </>
       )}
-    </div>
+      </div>
+    </Frame>
   );
 }
 
@@ -366,8 +384,10 @@ export function AboutHero({
         fill
         priority
         sizes="100vw"
-        className="-z-20 object-cover brightness-[0.85]"
+        className="margo-about-hero-img -z-20 object-cover brightness-[0.85]"
       />
+      {/* Slow light sweep across the plant photo, under the gradients. */}
+      <span aria-hidden className="margo-about-hero-sweep -z-20" />
       {/* Copy side stays near-solid; the frame surfaces on the right. */}
       <div
         className="absolute inset-0 -z-10"
@@ -468,7 +488,7 @@ export function HeroStats({
           {stats.map((s) => (
             <div key={s.label} className="text-center">
               <dd className="text-accent-400 text-[clamp(2rem,4vw,3.25rem)] leading-none font-semibold tracking-tight">
-                {s.value}
+                <SlotValue value={s.value} />
               </dd>
               <dt className="text-eyebrow text-ink-4 mt-3 font-mono uppercase">
                 {s.label}
@@ -520,6 +540,7 @@ export function Story({
                 ratio="aspect-[5/4]"
                 dissolve="none"
                 sizes="(min-width:1024px) 22vw, 45vw"
+                delay={180}
               />
             </div>
             <div className="rounded-card border-line absolute right-[8%] bottom-0 w-[42%] overflow-hidden border">
@@ -528,10 +549,11 @@ export function Story({
                 ratio="aspect-[5/4]"
                 dissolve="none"
                 sizes="(min-width:1024px) 20vw, 42vw"
+                delay={360}
               />
             </div>
             <div className="bg-accent-400 text-ink shadow-glow absolute bottom-6 left-0 rounded-2xl px-6 py-4 text-center">
-              <p className="text-2xl leading-none font-semibold">{badge.value}</p>
+              <p className="text-2xl leading-none font-semibold"><SlotValue value={badge.value} /></p>
               <p className="text-eyebrow mt-1.5 font-mono uppercase opacity-80">
                 {badge.label}
               </p>
@@ -545,8 +567,17 @@ export function Story({
               accentLines={head.accentLines}
               className="mt-7"
             />
-            {paragraphs.map((p) => (
-              <p key={p.slice(0, 24)} className="text-ink-3 mt-6 leading-relaxed">
+            {/* Editorial serif, a size up from body copy: the story reads as
+                a story rather than a spec sheet. The first paragraph leads. */}
+            {paragraphs.map((p, i) => (
+              <p
+                key={p.slice(0, 24)}
+                className={
+                  i === 0
+                    ? "margo-story-lead text-ink mt-7"
+                    : "margo-story-body text-ink-2 mt-5"
+                }
+              >
                 {p}
               </p>
             ))}
@@ -657,23 +688,35 @@ export function Values({
       <Container>
         <SplitHead head={head} />
 
-        <ol className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <InView
+          as="ol"
+          spotlight
+          threshold={0.15}
+          className="margo-values grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
+        >
           {items.map((v, i) => (
             <li
               key={v.name}
-              className="rounded-card border-line relative border bg-surface-3 p-7"
+              data-spot
+              style={{ "--i": i } as React.CSSProperties}
+              className="margo-value rounded-card relative isolate overflow-hidden border bg-surface-3 p-7"
             >
-              <span className="text-eyebrow text-ink-4/60 absolute top-6 right-6 font-mono">
+              <span aria-hidden className="margo-value-spot" />
+              <span className="margo-value-num text-eyebrow absolute top-6 right-6 font-mono">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <IconTile name={v.icon} />
-              <h3 className="text-ink mt-6 text-base font-semibold">{v.name}</h3>
+              <span className="margo-value-icon block w-fit">
+                <IconTile name={v.icon} />
+              </span>
+              <h3 className="margo-value-title text-ink mt-6 text-base font-semibold">
+                {v.name}
+              </h3>
               <p className="text-ink-4 mt-2.5 text-sm leading-relaxed">
                 {v.body}
               </p>
             </li>
           ))}
-        </ol>
+        </InView>
       </Container>
     </section>
   );
@@ -849,7 +892,7 @@ export function Manufacturing({
             >
               <IconTile name={s.icon} />
               <div>
-                <dd className="text-ink text-lg font-semibold">{s.value}</dd>
+                <dd className="text-ink text-lg font-semibold"><SlotValue value={s.value} /></dd>
                 <dt className="text-ink-4 mt-0.5 text-sm">{s.label}</dt>
               </div>
             </div>
@@ -914,14 +957,15 @@ export function Team({
           {members.map((m) => (
             <li
               key={m.name}
-              className="rounded-card border-line overflow-hidden border bg-surface-3"
+              className="margo-founder rounded-card border-line overflow-hidden border bg-surface-3"
             >
-              <div className="relative isolate">
+              <div className="margo-founder-photo relative isolate">
                 <Photo
                   k={m.image}
                   ratio="aspect-[4/5]"
                   dissolve="none"
                   sizes="(min-width:1024px) 22vw, 50vw"
+                  reveal={false}
                 />
                 {/* Portrait bleeds into the caption plate below it. */}
                 <div
@@ -933,7 +977,7 @@ export function Team({
                 />
               </div>
               <div className="p-5">
-                <p className="text-ink text-sm font-semibold">{m.name}</p>
+                <p className="margo-founder-name text-ink text-sm font-semibold">{m.name}</p>
                 <p className="text-accent-400 mt-1 text-sm">{m.role}</p>
                 {m.body && <p className="text-ink-4 mt-2 text-sm leading-relaxed">{m.body}</p>}
               </div>
@@ -947,10 +991,10 @@ export function Team({
           {stats.filter((s) => s.value.trim()).map((s) => (
             <div
               key={s.label}
-              className="rounded-card border-line border bg-surface-3 py-8 text-center"
+              className="margo-glow-stat rounded-card border-line relative isolate overflow-hidden border bg-surface-3 py-8 text-center"
             >
-              <dd className="text-accent-400 text-2xl font-semibold">
-                {s.value}
+              <dd className="margo-glow-num text-2xl font-semibold">
+                <SlotValue value={s.value} />
               </dd>
               <dt className="text-eyebrow text-ink-4 mt-2 font-mono uppercase">
                 {s.label}
@@ -960,6 +1004,115 @@ export function Team({
         </dl>
       </Container>
     </section>
+  );
+}
+
+/* ── Markets: priority lanes as a transit board, the rest as a pipeline ──
+   Data shape is unchanged (flag, name, tier, note), so the CMS needs nothing.
+   · Flags render as ISO code plates, not emoji: Windows has no flag emoji
+     and was showing bare "AU" / "GB" letters in a misaligned column.
+   · A note like "Melbourne 18–22 d" is split into port + transit days and
+     drawn as a bar scaled to the longest lane. Anything else in the note
+     (e.g. just "Dammam") shows as the port with transit "on request".   */
+function isoFromFlag(flag: string, name: string) {
+  const letters = [...flag]
+    .map((ch) => ch.codePointAt(0) ?? 0)
+    .filter((cp) => cp >= 0x1f1e6 && cp <= 0x1f1ff)
+    .map((cp) => String.fromCharCode(cp - 0x1f1e6 + 65))
+    .join("");
+  return letters.length === 2 ? letters : name.slice(0, 2).toUpperCase();
+}
+
+function parseLane(note?: string) {
+  if (!note) return { port: "", min: 0, max: 0 };
+  const m = note.match(/^(.*?)\s*(\d+)\s*[–-]\s*(\d+)\s*d(?:ays?)?\.?$/i);
+  if (m) return { port: m[1].trim(), min: Number(m[2]), max: Number(m[3]) };
+  const single = note.match(/^(.*?)\s*(\d+)\s*d(?:ays?)?\.?$/i);
+  if (single) return { port: single[1].trim(), min: Number(single[2]), max: Number(single[2]) };
+  return { port: note.trim(), min: 0, max: 0 };
+}
+
+function MarketLanes({
+  countries,
+}: {
+  countries: readonly { flag: string; name: string; tier?: 1 | 2; note?: string }[];
+}) {
+  const lanes = countries.filter((c) => c.tier !== 2);
+  const pipeline = countries.filter((c) => c.tier === 2);
+  const parsed = lanes.map((c) => ({ ...c, ...parseLane(c.note) }));
+  const longest = Math.max(1, ...parsed.map((l) => l.max));
+
+  return (
+    <InView threshold={0.2} className="margo-lanes mt-10">
+      {lanes.length > 0 && (
+        <>
+          <p className="text-eyebrow text-ink-4 flex items-center gap-3 font-mono uppercase">
+            <span className="bg-accent-400 size-1.5 rounded-full" aria-hidden />
+            Priority lanes
+            <span className="text-accent-400">{String(lanes.length).padStart(2, "0")}</span>
+            <span className="margo-lanes-meta text-ink-4/70 ml-auto">Port · transit</span>
+          </p>
+          <ol className="border-line mt-4 overflow-hidden rounded-card border">
+            {parsed.map((l, i) => (
+              <li
+                key={l.name}
+                style={{ "--i": i, "--w": l.max ? l.max / longest : 0, "--w0": l.max ? l.min / longest : 0 } as React.CSSProperties}
+                className="margo-lane border-line border-b bg-surface-3/60 px-4 py-3.5 last:border-b-0"
+              >
+                <span className="margo-iso" aria-hidden>
+                  {isoFromFlag(l.flag, l.name)}
+                </span>
+                <span className="margo-lane-name min-w-0">
+                  <span className="text-ink block truncate text-sm font-semibold">{l.name}</span>
+                  {l.port && (
+                    <span className="text-ink-4 block truncate font-mono text-[11px] tracking-wide uppercase">
+                      {l.port}
+                    </span>
+                  )}
+                </span>
+                <span
+                  className={`margo-lane-days text-right font-mono text-xs whitespace-nowrap ${
+                    l.max ? "text-accent-400" : "text-ink-4"
+                  }`}
+                >
+                  {l.max ? `${l.min === l.max ? l.max : `${l.min}–${l.max}`} days` : ""}
+                </span>
+                <span
+                  aria-hidden
+                  className={`margo-lane-trackcell ${l.max ? "margo-lane-track" : "margo-lane-track--empty"}`}
+                >
+                  {l.max > 0 && <span className="margo-lane-bar" />}
+                </span>
+              </li>
+            ))}
+          </ol>
+        </>
+      )}
+
+      {pipeline.length > 0 && (
+        <>
+          <p className="text-eyebrow text-ink-4 mt-8 flex items-center gap-3 font-mono uppercase">
+            <span className="margo-dot-hollow size-1.5 rounded-full border" aria-hidden />
+            Further markets
+            <span className="text-ink-3">{String(pipeline.length).padStart(2, "0")}</span>
+          </p>
+          <ul className="mt-4 flex flex-wrap gap-2">
+            {pipeline.map((c, i) => (
+              <li
+                key={c.name}
+                style={{ "--i": i } as React.CSSProperties}
+                className="margo-market-chip border-line text-ink-3 inline-flex items-center gap-2 rounded-pill border py-1.5 text-sm"
+              >
+                <span className="margo-iso margo-iso--sm" aria-hidden>
+                  {isoFromFlag(c.flag, c.name)}
+                </span>
+                {c.name}
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+    </InView>
   );
 }
 
@@ -999,20 +1152,7 @@ export function Presence({
               </p>
             )}
 
-            <ul className="border-line mt-10 grid grid-cols-1 gap-x-10 border-t sm:grid-cols-2">
-              {countries.map((c) => (
-                <li
-                  key={c.name}
-                  className="border-line text-ink-2 flex items-center gap-3 border-b py-3.5 text-sm"
-                >
-                  <span aria-hidden className="text-base leading-none">
-                    {c.flag}
-                  </span>
-                  <span className={c.tier === 2 ? "text-ink-4" : ""}>{c.name}</span>
-                  {c.note && <span className="text-ink-4 ml-auto font-mono text-xs">{c.note}</span>}
-                </li>
-              ))}
-            </ul>
+            <MarketLanes countries={countries} />
             {link?.label && link.href && (
               <p className="mt-6">
                 <Link href={link.href} className="text-accent-400 text-sm font-medium hover:opacity-80">
@@ -1040,7 +1180,7 @@ export function Presence({
                 <IconTile name={s.icon} />
                 <div>
                   <p className="text-accent-400 text-xl font-semibold">
-                    {s.value}
+                    <SlotValue value={s.value} />
                   </p>
                   <p className="text-ink mt-0.5 text-sm font-medium">
                     {s.label}
@@ -1246,7 +1386,7 @@ export function Numbers({
               className="rounded-card border-line border bg-surface-3 px-6 py-8 text-center"
             >
               <dd className="text-accent-400 text-2xl font-semibold">
-                {s.value}
+                <SlotValue value={s.value} />
               </dd>
               <dt className="text-ink mt-2 text-sm font-medium">{s.label}</dt>
               <p className="text-ink-4 mt-1 text-xs">{s.note}</p>

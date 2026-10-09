@@ -1,4 +1,5 @@
 import { plainText } from "@/components/ui/Emphasis";
+import { googleMapsUrl } from "@/lib/maps";
 import type { ContentStatus } from "@/content/site";
 import { getSiteSettings } from "@/lib/settings";
 import type { SiteSettings } from "@/content/schemas/settings";
@@ -132,6 +133,8 @@ export async function placeNode(): Promise<Node> {
       latitude: entity.geo.lat,
       longitude: entity.geo.lng,
     },
+    // The Google Business listing, so search can tie the site to it.
+    hasMap: googleMapsUrl(entity.legalName),
   };
 }
 

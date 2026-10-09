@@ -20,6 +20,13 @@ const nextConfig: NextConfig = {
   // Next 16: top-level, no longer experimental.
   cacheComponents: true,
 
+  // Dev server only. Next 16 refuses its own JS chunks (403) to any host other
+  // than `localhost`, so opening the dev site via 127.0.0.1 or from a phone on
+  // the same Wi-Fi rendered the HTML but never started React — no menus, no
+  // forms, no scroll effects. These are the private-network ranges a phone or
+  // second laptop would use. Has no effect on production builds.
+  allowedDevOrigins: ["127.0.0.1", "192.168.*.*", "10.*.*.*", "172.*.*.*"],
+
   // Sanity Studio pulls in packages that ship raw .ts inside node_modules,
   // which Turbopack refuses with "Unknown module type". Naming them here
   // hands them to the compiler instead of the bundler's asset pipeline.
