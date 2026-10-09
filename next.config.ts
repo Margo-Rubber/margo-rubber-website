@@ -9,7 +9,10 @@ const nextConfig: NextConfig = {
   pageExtensions: ["ts", "tsx"],
 
   images: {
-    formats: ["image/avif", "image/webp"],
+    // WebP only. AVIF is ~20% smaller but several times slower to encode, and
+    // every new image size is encoded on its first request — that encode was
+    // the multi-second wait before photos appeared on a cold page.
+    formats: ["image/webp"],
     // Photographs uploaded through the CMS are served from Sanity's asset CDN.
     // Next fetches each original once per size variant, optimises it, and
     // serves its own cache from then on — so this costs Sanity bandwidth per
