@@ -13,6 +13,7 @@ import { Button } from "@/components/ui/Button";
 import { Container, Eyebrow } from "@/components/ui/Section";
 import {
   EnquiryForm,
+  EnquiryReceived,
   EnquiryStatus,
   EnquirySubmit,
 } from "@/components/forms/EnquiryForm";
@@ -772,6 +773,7 @@ export function CatalogueBlock({
   formBody,
   submitLabel,
   footnote,
+  fileUrl,
 }: {
   heading: string;
   body: string;
@@ -780,6 +782,8 @@ export function CatalogueBlock({
   formBody: string;
   submitLabel: string;
   footnote?: string;
+  /** The catalogue PDF from Studio. Without one, the form is a lead form only. */
+  fileUrl?: string;
 }) {
   const words = heading.split(" ");
   const accent = heading.includes("*") ? "" : words.splice(-2).join(" ");
@@ -815,7 +819,17 @@ export function CatalogueBlock({
       <div className="border-line bg-surface rounded-card border p-6">
         <p className="text-ink font-semibold">{formHeading}</p>
         <p className="text-ink-4 mt-1 text-sm">{formBody}</p>
-        <EnquiryForm source="catalogue" className="mt-5 space-y-4">
+        {/* With a PDF uploaded, the visitor stays here and gets the file the
+            moment the form goes through; without one, the old behaviour. */}
+        <EnquiryForm
+          source="catalogue"
+          className="mt-5 space-y-4"
+          redirectTo={fileUrl ? null : "/thank-you"}
+        >
+          <EnquiryReceived
+            text={fileUrl ? "Thank you. Your catalogue download has started. If you need sizes, drawings or a quote, we will follow up at {email}." : undefined}
+            action={fileUrl ? { label: "Download the catalogue (PDF)", href: fileUrl } : undefined}
+          >
           {[
             ["name", "Full Name", "Your Name", "text"],
             ["email", "Work Email", "you@company.com", "email"],
@@ -839,6 +853,7 @@ export function CatalogueBlock({
             ↓ {submitLabel}
           </EnquirySubmit>
           <EnquiryStatus />
+          </EnquiryReceived>
         </EnquiryForm>
         {footnote && (
           <p className="text-ink-4 mt-3 text-center text-[11px]">{footnote}</p>

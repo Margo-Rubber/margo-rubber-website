@@ -234,9 +234,35 @@ function EnquiryConsent() {
  * — `{email}` is the address the visitor gave. Renders the children until
  * the enquiry is sent; a form with no `text` keeps its redirect instead.
  */
-export function EnquiryReceived({ text, children }: { text?: string; children: ReactNode }) {
+export function EnquiryReceived({
+  text,
+  action,
+  children,
+}: {
+  text?: string;
+  /**
+   * A file to hand over once the enquiry is in (the catalogue PDF). Shown as
+   * a button, and also started automatically — the button stays for anyone
+   * whose browser blocked or missed the automatic download.
+   */
+  action?: { label: string; href: string };
+  children: ReactNode;
+}) {
   const { status, submitted } = useEnquiry();
-  if (!text || status !== "success") return <>{children}</>;
+  const done = status === "success";
+  const started = useRef(false);
+  const href = action?.href;
+
+  useEffect(() => {
+    // Once per submission. Navigating to an attachment URL downloads it
+    // without leaving the page.
+    if (done && href && !started.current) {
+      started.current = true;
+      window.location.assign(href);
+    }
+  }, [done, href]);
+
+  if (!text || !done) return <>{children}</>;
   const [before, after] = text.split("{email}");
   return (
     <div role="status" className="border-accent-400/40 rounded-card border bg-[#0B1416] p-6 md:p-8">
@@ -245,6 +271,14 @@ export function EnquiryReceived({ text, children }: { text?: string; children: R
         {after !== undefined && <strong className="text-accent-400 font-semibold">{submitted.email}</strong>}
         {after}
       </p>
+      {action && (
+        <a
+          href={action.href}
+          className="bg-accent-400 text-ink hover:opacity-90 mt-5 inline-flex w-full items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-semibold transition-colors"
+        >
+          ↓ {action.label}
+        </a>
+      )}
     </div>
   );
 }

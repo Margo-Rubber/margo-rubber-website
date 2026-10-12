@@ -892,6 +892,8 @@ export const productsHubSchema = baseSchema.extend({
     formBody: z.string(),
     submitLabel: z.string(),
     footnote: z.string().optional(),
+    /** Catalogue PDF uploaded in Studio — a Sanity file reference. */
+    file: z.object({ asset: z.object({ _ref: z.string() }) }).optional(),
   }).optional(),
 
   /** Closing "Request a Quote" band: contact panel + promise card + form. */
