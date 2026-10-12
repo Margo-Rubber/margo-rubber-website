@@ -464,6 +464,14 @@ export const productsHub = defineType({
         defineField({ name: "formBody", type: "text", rows: 2, validation: (r) => r.required() }),
         defineField({ name: "submitLabel", type: "string", validation: (r) => r.required() }),
         defineField({ name: "footnote", type: "string" }),
+        defineField({
+          name: "file",
+          title: "Catalogue PDF",
+          type: "file",
+          options: { accept: "application/pdf" },
+          description:
+            "The PDF visitors download after submitting the form. Replace it here when a new edition is printed; keep it under ~10 MB. Leave empty and the form only sends you the enquiry.",
+        }),
       ],
       options: { collapsible: true, collapsed: true },
       group: "sections",

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { sanityFileUrl } from "@/lib/sanity-file";
 import { compoundByCode, formatRange, getSiteSettings } from "@/lib/settings";
 import { CertificationBadges } from "@/components/sections/CertificationRecord";
 import { trail } from "@/lib/breadcrumbs";
@@ -259,6 +260,7 @@ export default async function ProductsHubPage() {
             formBody={fm.catalogue.formBody}
             submitLabel={fm.catalogue.submitLabel}
             footnote={fm.catalogue.footnote}
+            fileUrl={sanityFileUrl(fm.catalogue.file?.asset._ref, "Margo-Rubber-Catalogue.pdf")}
           />
         </Section>
       )}
