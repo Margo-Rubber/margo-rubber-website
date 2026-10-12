@@ -1892,3 +1892,41 @@ body {
     translate: -42% -50%;
   }
 }
+
+/* ── HEADER MENUS: readable link colours ──
+   Families and sectors in white; the profiles inside a family in a light
+   grey that still reads clearly on the dark panel (the body grey did not). */
+@layer components {
+  .margo-nav-main {
+    color: var(--color-ink);
+  }
+  .margo-nav-main:hover {
+    color: var(--color-accent-400);
+  }
+  .margo-nav-sub {
+    color: #c3cad6;
+  }
+  .margo-nav-sub:hover {
+    color: var(--color-ink);
+  }
+  /* "Request Quote" lands on the form, clear of the fixed header. */
+  .margo-quote-anchor {
+    scroll-margin-top: 6rem;
+  }
+}
+
+/* ── IN-PAGE LANDING POINTS ──
+   Targets of header links (/products#all-products, /contact#quote-form):
+   clear of the fixed header. "All Products" in the menu is a link, in white. */
+@layer components {
+  .margo-anchor {
+    scroll-margin-top: 6.5rem;
+  }
+  .margo-nav-all {
+    color: var(--color-ink);
+    transition: color 0.15s;
+  }
+  .margo-nav-all:hover {
+    color: var(--color-accent-400);
+  }
+}

@@ -389,7 +389,7 @@ export function RfqForm({
   const fieldSets = [step1, step2];
 
   return (
-    <div className="margo-form-card rounded-card relative isolate border border-[#1B2026] bg-[#15191D] p-6 md:p-8">
+    <div id="quote-form" className="margo-form-card margo-anchor rounded-card relative isolate border border-[#1B2026] bg-[#15191D] p-6 md:p-8">
       {/* Stepper */}
       <ol className="margo-stepper mb-8 flex items-center gap-4" data-step={step}>
         {steps.map((label, i) => (
@@ -533,7 +533,7 @@ export function QuoteSection({
   confirmations?: readonly { product: string; text: string }[];
 }) {
   return (
-    <section className="py-[70px]">
+    <section id="quote" className="margo-quote-anchor py-[70px]">
       <Container>
         <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
           <div>

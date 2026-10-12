@@ -130,7 +130,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="ml-auto flex items-center gap-3 lg:ml-0">
-          <Button href="/contact" className="hidden sm:inline-flex">
+          <Button href="/contact#quote-form" className="hidden sm:inline-flex">
             Request Quote <span aria-hidden>→</span>
           </Button>
 
@@ -238,7 +238,7 @@ export function SiteHeader() {
             </ul>
 
             <Button
-              href="/contact"
+              href="/contact#quote-form"
               onClick={closeAll}
               className="mt-4 w-full justify-center sm:hidden"
             >
@@ -257,9 +257,20 @@ function ProductsPanel() {
   return (
     <div className="flex gap-10">
       <div>
-        <PanelLabel>All Products</PanelLabel>
+        <Link
+          href="/products#all-products"
+          onClick={() =>
+            // Same-page hash links don't fire hashchange; tell the grid directly.
+            setTimeout(() => window.dispatchEvent(new Event("margo:all-products")), 0)
+          }
+          className="margo-nav-all text-[10px] font-medium tracking-[0.16em] uppercase"
+        >
+          All Products <span aria-hidden>›</span>
+        </Link>
         <ul className="mt-3 space-y-0.5">
-          {PRODUCT_MENU.categories.map((c) => (
+          {/* Every product family, the two grouped ones included, so the
+              left column is the complete list and reads as the main menu. */}
+          {[...PRODUCT_MENU.categories, ...PRODUCT_MENU.groups].map((c) => (
             <li key={c.label}>
               <PanelLink href={c.href}>{c.label}</PanelLink>
             </li>
@@ -284,7 +295,7 @@ function ProductsPanel() {
             <ul className="mt-2 grid grid-cols-2 gap-x-8 gap-y-0.5">
               {g.items.map((i) => (
                 <li key={i.label}>
-                  <PanelLink href={i.href}>{i.label}</PanelLink>
+                  <PanelLink href={i.href} tone="sub">{i.label}</PanelLink>
                 </li>
               ))}
             </ul>
@@ -318,17 +329,25 @@ function PanelLabel({ children }: { children: React.ReactNode }) {
   );
 }
 
+/**
+ * Menu link. `main` (product families, sectors) is white; `sub` (profiles
+ * inside a family) is a light grey that still reads clearly on the dark
+ * panel. Colours live in globals.css (.margo-nav-*), not in utilities, so a
+ * stale Tailwind build cannot drop them.
+ */
 function PanelLink({
   href,
   children,
+  tone = "main",
 }: {
   href: string;
   children: React.ReactNode;
+  tone?: "main" | "sub";
 }) {
   return (
     <Link
       href={href}
-      className="text-ink-3 hover:text-ink hover:bg-surface-5 -mx-2.5 block rounded-md px-2.5 py-1.5 text-sm whitespace-nowrap transition-colors"
+      className={`${tone === "main" ? "margo-nav-main" : "margo-nav-sub"} hover:bg-surface-5 -mx-2.5 block rounded-md px-2.5 py-1.5 text-sm whitespace-nowrap transition-colors`}
     >
       {children}
     </Link>
@@ -351,7 +370,7 @@ function MobileList({
           <Link
             href={i.href}
             onClick={onNavigate}
-            className="text-ink-4 hover:text-ink block py-2 text-sm"
+            className="margo-nav-main block py-2 text-sm"
           >
             {i.label}
           </Link>
@@ -371,7 +390,7 @@ function MobileProducts({ onNavigate }: { onNavigate: () => void }) {
           <Link
             href={g.href}
             onClick={onNavigate}
-            className="text-ink-2 hover:text-ink block py-2 text-sm font-semibold"
+            className="margo-nav-main block py-2 text-sm font-semibold"
           >
             {g.label}
           </Link>
@@ -381,7 +400,7 @@ function MobileProducts({ onNavigate }: { onNavigate: () => void }) {
                 <Link
                   href={i.href}
                   onClick={onNavigate}
-                  className="text-ink-4 hover:text-ink block py-2 pl-3 text-sm"
+                  className="margo-nav-sub block py-2 pl-3 text-sm"
                 >
                   {i.label}
                 </Link>
