@@ -1874,3 +1874,21 @@ body {
     }
   }
 }
+
+/* ── HOME HERO: orbit rings anchored to the stat stack ──
+   Positioned from the stat column, not the screen edge, so the rings sit
+   behind the cards identically at every desktop width. Centre sits a little
+   right of the stack's centre, as in the comp. */
+@layer components {
+  .margo-orbit-anchor {
+    position: relative;
+  }
+  .margo-orbit-anchor > .margo-orbit-system {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 38rem;
+    height: 38rem;
+    translate: -42% -50%;
+  }
+}
