@@ -408,29 +408,6 @@ export function HomeHero({
       <Bloom className="top-1/4 -left-32 size-[34rem]" />
       <Bloom className="top-1/3 right-[-6rem] size-[30rem]" />
 
-      {/* Concentric ring motif behind the stat stack, as in the comp. */}
-      <svg
-        viewBox="0 0 600 600"
-        className="margo-orbit-system text-accent-400 pointer-events-none absolute top-1/2 right-[-8%] -z-10 hidden size-[38rem] -translate-y-1/2 opacity-80 lg:block"
-        aria-hidden
-      >
-        <g className="margo-orbit margo-orbit--outer">
-          <circle cx="300" cy="300" r="298" fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.85" />
-          <circle cx="300" cy="300" r="232" fill="none" stroke="currentColor" strokeWidth="1.25" opacity="0.8" />
-          <path d="M300 2 A298 298 0 0 1 555 146" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-          <circle cx="555" cy="146" r="5" fill="currentColor" />
-        </g>
-        <g className="margo-orbit margo-orbit--middle">
-          <circle cx="300" cy="300" r="164" fill="none" stroke="currentColor" strokeWidth="1.25" opacity="0.75" />
-          <path d="M300 68 A232 232 0 0 1 510 203" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-          <circle cx="510" cy="203" r="4.5" fill="currentColor" />
-        </g>
-        <g className="margo-orbit margo-orbit--inner">
-          <circle cx="300" cy="300" r="108" fill="none" stroke="currentColor" strokeWidth="1.25" opacity="0.7" />
-          <circle cx="300" cy="192" r="4" fill="currentColor" />
-        </g>
-        <circle cx="300" cy="300" r="6" fill="currentColor" />
-      </svg>
 
       <Container>
         <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1fr)_20rem]">
@@ -481,6 +458,32 @@ export function HomeHero({
             </ul>
           </div>
 
+          <div className="margo-orbit-anchor">
+              {/* Concentric ring motif, anchored to the stat stack itself rather
+                  than to the screen edge, so it sits behind the cards the same
+                  way at every desktop width. */}
+              <svg
+                viewBox="0 0 600 600"
+                className="margo-orbit-system text-accent-400 pointer-events-none -z-10 hidden opacity-80 lg:block"
+                aria-hidden
+              >
+                <g className="margo-orbit margo-orbit--outer">
+                  <circle cx="300" cy="300" r="298" fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.85" />
+                  <circle cx="300" cy="300" r="232" fill="none" stroke="currentColor" strokeWidth="1.25" opacity="0.8" />
+                  <path d="M300 2 A298 298 0 0 1 555 146" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+                  <circle cx="555" cy="146" r="5" fill="currentColor" />
+                </g>
+                <g className="margo-orbit margo-orbit--middle">
+                  <circle cx="300" cy="300" r="164" fill="none" stroke="currentColor" strokeWidth="1.25" opacity="0.75" />
+                  <path d="M300 68 A232 232 0 0 1 510 203" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+                  <circle cx="510" cy="203" r="4.5" fill="currentColor" />
+                </g>
+                <g className="margo-orbit margo-orbit--inner">
+                  <circle cx="300" cy="300" r="108" fill="none" stroke="currentColor" strokeWidth="1.25" opacity="0.7" />
+                  <circle cx="300" cy="192" r="4" fill="currentColor" />
+                </g>
+                <circle cx="300" cy="300" r="6" fill="currentColor" />
+              </svg>
           <dl className="flex flex-col gap-3.5">
             {cards.map((c) => (
               <div
@@ -503,6 +506,7 @@ export function HomeHero({
               </div>
             ))}
           </dl>
+          </div>
         </div>
       </Container>
     </header>
