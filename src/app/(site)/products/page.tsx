@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { sanityFileUrl } from "@/lib/sanity-file";
+import { getCatalogueFileUrl } from "@/lib/catalogue-file";
 import { compoundByCode, formatRange, getSiteSettings } from "@/lib/settings";
 import { CertificationBadges } from "@/components/sections/CertificationRecord";
 import { trail } from "@/lib/breadcrumbs";
@@ -38,6 +38,7 @@ export default async function ProductsHubPage() {
   const crumbs = trail(["Products", "/products"]);
 
   const settings = await getSiteSettings();
+  const catalogueFileUrl = await getCatalogueFileUrl();
   return (
     <div className="bg-surface-2">
       <JsonLd
@@ -260,7 +261,7 @@ export default async function ProductsHubPage() {
             formBody={fm.catalogue.formBody}
             submitLabel={fm.catalogue.submitLabel}
             footnote={fm.catalogue.footnote}
-            fileUrl={sanityFileUrl(fm.catalogue.file?.asset._ref, "Margo-Rubber-Catalogue.pdf")}
+            fileUrl={catalogueFileUrl}
           />
         </Section>
       )}
