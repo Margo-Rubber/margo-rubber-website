@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Section";
 import { Img } from "@/components/ui/Img";
@@ -38,6 +39,19 @@ export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [menu, setMenu] = useState<MenuKey | null>(null);
   const [mobileSection, setMobileSection] = useState<MenuKey | null>(null);
+
+  // Any navigation closes every menu: the header lives in the layout and
+  // survives route changes, so without this a panel stays open on the page
+  // it just led to.
+  // (Adjusted during render rather than in an effect, as React recommends
+  // for state derived from a changed value.)
+  const pathname = usePathname();
+  const [lastPath, setLastPath] = useState(pathname);
+  if (pathname !== lastPath) {
+    setLastPath(pathname);
+    setMenu(null);
+    setMobileOpen(false);
+  }
   /** Viewport x the open panel centres on — the middle of its trigger. */
   const [anchor, setAnchor] = useState(0);
 
@@ -162,7 +176,14 @@ export function SiteHeader() {
           {/* Explicit shadow rather than `shadow-2xl shadow-black/50`: the
               theme replaces Tailwind's default palette, so `black` resolves to
               nothing and the pair computes to a fully transparent shadow. */}
-          <div className="panel-in border-line bg-surface-4 pointer-events-auto max-w-[calc(100vw-3rem)] rounded-xl border p-7 shadow-[0_24px_48px_-12px_rgb(0_0_0/0.7)]">
+          <div
+            // Clicking any link in the panel closes it straight away — also
+            // for same-page links (#all-products), where no route change fires.
+            onClick={(e) => {
+              if ((e.target as Element).closest("a")) setMenu(null);
+            }}
+            className="panel-in border-line bg-surface-4 pointer-events-auto max-w-[calc(100vw-3rem)] rounded-xl border p-7 shadow-[0_24px_48px_-12px_rgb(0_0_0/0.7)]"
+          >
             {menu === "products" ? <ProductsPanel /> : <IndustriesPanel />}
           </div>
         </div>
