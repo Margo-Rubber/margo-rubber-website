@@ -239,6 +239,22 @@ export function ProductRange({
   cards: Card[];
 }) {
   const [active, setActive] = useState(filters[0] ?? "All Products");
+
+  // Arriving via the header's "All Products" link shows the full range,
+  // whichever filter was picked before.
+  useEffect(() => {
+    const reset = () => setActive(filters[0] ?? "All Products");
+    const onHash = () => {
+      if (window.location.hash === "#all-products") reset();
+    };
+    onHash();
+    window.addEventListener("hashchange", onHash);
+    window.addEventListener("margo:all-products", reset);
+    return () => {
+      window.removeEventListener("hashchange", onHash);
+      window.removeEventListener("margo:all-products", reset);
+    };
+  }, [filters]);
   // The filter decides what is SHOWN, never what is rendered: all cards are in
   // the DOM at first paint and the others are hidden. Unmounting would take
   // ten of eleven category links out of the crawlable page.
@@ -260,8 +276,9 @@ export function ProductRange({
 
   return (
     <div>
-      {/* Filters sit in one rounded well rather than free-floating pills. */}
-      <div className="mb-10 flex justify-center">
+      {/* Filters sit in one rounded well rather than free-floating pills.
+          `#all-products` is where the header menu's "All Products" lands. */}
+      <div id="all-products" className="margo-anchor mb-10 flex justify-center">
         <div className="border-line bg-surface-2 rounded-pill flex flex-wrap justify-center gap-1 border p-1.5">
           {filters.map((f) => (
             <button
