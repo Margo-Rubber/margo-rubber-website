@@ -2,6 +2,7 @@ import { enquiryPayloadSchema, mapAndValidate } from "@/lib/enquiry/sources";
 import { checkSpam, clientIp, spamMessage } from "@/lib/enquiry/spam";
 import { isStoreConfigured, storeAttachment, storeEnquiry } from "@/lib/enquiry/store";
 import { forwardEnquiry, notifyEnquiry } from "@/lib/enquiry/notify";
+import { sendAutoReply } from "@/lib/enquiry/autoreply";
 import { formatBytes, verifyUpload } from "@/lib/enquiry/attachments";
 
 /**
@@ -159,8 +160,13 @@ export async function POST(request: Request) {
     }
   }
 
-  // ── 5. Forward, fire and forget ──────────────────────────────────────
-  await forwardEnquiry(mapped.data, { fileUrl, enquiryId, userAgent });
+  // ── 5. Acknowledge the buyer + forward, side by side, never fatal ─────
+  // Only reached once the enquiry is safe (stored or emailed to Margo), so a
+  // buyer is never told "we received it" for an enquiry that went nowhere.
+  await Promise.all([
+    sendAutoReply(mapped.data),
+    forwardEnquiry(mapped.data, { fileUrl, enquiryId, userAgent }),
+  ]);
 
   return json({ ok: true, id: enquiryId ?? null }, 200);
 }
