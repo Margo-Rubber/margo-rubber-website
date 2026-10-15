@@ -45,11 +45,18 @@ export async function POST(request: Request) {
     return json({ ok: false, message: "Bad signature." }, 401);
   }
 
-  let payload: { _type?: string; slug?: { current?: string } | string };
+  let payload: { _id?: string; _type?: string; slug?: { current?: string } | string };
   try {
     payload = JSON.parse(body);
   } catch {
     return json({ ok: false, message: "Expected a JSON body." }, 400);
+  }
+
+  // Drafts never reach the public site, so a draft save must not clear the
+  // cache. Without this, a webhook not filtered to published documents would
+  // invalidate pages on every Studio autosave — each one a fresh ISR write.
+  if (payload._id?.startsWith("drafts.") || payload._id?.startsWith("versions.")) {
+    return json({ ok: true, revalidated: [], skipped: "draft" }, 200);
   }
 
   const slug =

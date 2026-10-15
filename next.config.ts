@@ -23,6 +23,20 @@ const nextConfig: NextConfig = {
   // Next 16: top-level, no longer experimental.
   cacheComponents: true,
 
+  // Override Next's built-in "default" cache profile. Every `"use cache"`
+  // function here sets tags but no cacheLife, so they all fell back to the
+  // default 15-minute revalidate — and because the (site) layout reads image
+  // overrides, every page re-rendered (and wrote to Vercel ISR storage) every
+  // 15 minutes it was crawled. Freshness comes from the Sanity webhook
+  // (revalidateTag); the 30-day timer is only a safety net.
+  cacheLife: {
+    default: {
+      stale: 300, // 5 min client-side
+      revalidate: 60 * 60 * 24 * 30, // 30 days
+      expire: 60 * 60 * 24 * 365, // 1 year
+    },
+  },
+
   // Dev server only. Next 16 refuses its own JS chunks (403) to any host other
   // than `localhost`, so opening the dev site via 127.0.0.1 or from a phone on
   // the same Wi-Fi rendered the HTML but never started React — no menus, no
