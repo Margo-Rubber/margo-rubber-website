@@ -49,6 +49,19 @@ const nextConfig: NextConfig = {
   // hands them to the compiler instead of the bundler's asset pipeline.
   transpilePackages: ["sanity", "@sanity/sdk-react", "@sanity/workbench"],
 
+  // 3D models (.glb) uploaded in Studio live on Sanity's file CDN, which
+  // sends no CORS header for this site — the browser blocks the viewer's
+  // fetch of them. Served through our own domain instead, they are
+  // same-origin and need no CORS at all. See SkuModelViewer.tsx.
+  async rewrites() {
+    return [
+      {
+        source: "/sanity-files/:path*",
+        destination: "https://cdn.sanity.io/files/jyg2beas/production/:path*",
+      },
+    ];
+  },
+
   async redirects() {
     // Moved and merged part pages — src/content/redirects.ts. The 26 legacy
     // WooCommerce SKU URLs join the same list once the pre-cutover crawl

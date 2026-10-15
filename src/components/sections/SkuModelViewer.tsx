@@ -47,6 +47,11 @@ declare module "react" {
   }
 }
 
+/** Sanity file CDN → same-origin path (next.config.ts rewrites it back). */
+const SANITY_FILES = "https://cdn.sanity.io/files/jyg2beas/production/";
+const sameOrigin = (url: string) =>
+  url.startsWith(SANITY_FILES) ? `/sanity-files/${url.slice(SANITY_FILES.length)}` : url;
+
 export function SkuModelViewer({ src, alt }: { src: string; alt: string }) {
   const wrap = useRef<HTMLDivElement>(null);
   const [ready, setReady] = useState(false);
@@ -87,7 +92,7 @@ export function SkuModelViewer({ src, alt }: { src: string; alt: string }) {
     >
       {ready && !failed ? (
         <model-viewer
-          src={src}
+          src={sameOrigin(src)}
           alt={alt}
           camera-controls=""
           auto-rotate=""
