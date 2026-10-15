@@ -198,7 +198,7 @@ export default async function SkuPage(
 
       <SkuProcess steps={fm.process} />
 
-      <SkuQuality quality={fm.quality} />
+      <SkuQuality quality={fm.quality} foundingYear={settings.entity.foundingYear} />
 
       <SkuDownloads items={fm.downloads} documentation={fm.documentation} h1={fm.h1} />
 

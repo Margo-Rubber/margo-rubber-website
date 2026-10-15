@@ -25,6 +25,9 @@ export const NO_ROUTE = new Set([
   "footer",
   "not-found",
   "thank-you",
+  // 301s to /about (src/content/redirects.ts). Listing a redirecting URL in
+  // the sitemap tells Google two different things about the same page.
+  "why-margo",
 ]);
 
 export function pathFor(row: {

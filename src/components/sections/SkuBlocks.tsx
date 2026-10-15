@@ -898,7 +898,10 @@ export function SkuProcess({ steps }: { steps: readonly { name: string; body: st
 /* ══ 08 · QUALITY ASSURANCE ═══════════════════════════════════════════════ */
 export function SkuQuality({
   quality,
+  foundingYear,
 }: {
+  /** Site settings' founding year — answers "Years in operation" where a part says "On request". */
+  foundingYear?: number;
   quality?: {
     heading: string;
     body: string;
@@ -916,6 +919,19 @@ export function SkuQuality({
     tour?: { title: string; note: string };
     note?: string;
   } = quality ?? SAMPLE.quality;
+
+  // Placeholders never reach the page (SEO audit, Oct 2026): a metric that
+  // reads "On request" is a question Margo has not answered, and a tour
+  // whose film is "pending" is a play button with nothing behind it.
+  // "Years in operation" has a real answer — the founding year in settings.
+  const metrics = q.metrics
+    .map((m) =>
+      /years in operation/i.test(m.label) && /^on request$/i.test(m.value.trim()) && foundingYear
+        ? { value: `Since ${foundingYear}`, label: "In operation" }
+        : m,
+    )
+    .filter((m) => m.value.trim() && !/^on request$/i.test(m.value.trim()));
+  const tour = q.tour && !/pending/i.test(q.tour.note) ? q.tour : undefined;
   return (
     <section className="bg-band border-line border-t py-[70px]">
       <Container>
@@ -948,21 +964,21 @@ export function SkuQuality({
           <div className="rounded-card border-line h-fit border bg-[#0D0F12] p-7">
             <p className="text-eyebrow text-accent-400 font-mono uppercase">Production metrics</p>
             <dl className="divide-line mt-6 grid grid-cols-2 gap-x-8">
-              {q.metrics.map((m) => (
+              {metrics.map((m) => (
                 <div key={m.label} className="border-line border-b py-5">
                   <dd className="text-ink text-2xl font-semibold"><SlotValue value={m.value} /></dd>
                   <dt className="text-ink-4 mt-1 text-xs">{m.label}</dt>
                 </div>
               ))}
             </dl>
-            {q.tour && (
+            {tour && (
               <div className="border-line mt-6 flex items-center gap-4 rounded-lg border p-4">
                 <span className="border-accent-400/25 bg-accent-400/10 text-accent-400 grid size-10 shrink-0 place-items-center rounded border">
                   <Icon name="play" className="size-4" />
                 </span>
                 <div>
-                  <p className="text-ink text-sm font-semibold">{q.tour.title}</p>
-                  <p className="text-ink-4 mt-0.5 text-xs">{q.tour.note}</p>
+                  <p className="text-ink text-sm font-semibold">{tour.title}</p>
+                  <p className="text-ink-4 mt-0.5 text-xs">{tour.note}</p>
                 </div>
               </div>
             )}
