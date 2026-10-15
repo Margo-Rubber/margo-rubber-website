@@ -30,6 +30,7 @@
     "publish:pages": "node scripts/publish.mts"
   },
   "dependencies": {
+    "@google/model-viewer": "^4.4.0",
     "@mdx-js/loader": "^3.1.1",
     "@mdx-js/react": "^3.1.1",
     "@neondatabase/serverless": "^1.1.0",

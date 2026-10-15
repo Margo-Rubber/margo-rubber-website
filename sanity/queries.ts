@@ -204,6 +204,7 @@ export const skuBySlugQuery = groq`
     compoundPrompt,
     advantagesHeading,
     gallery,
+    "model3dUrl": model3d.asset->url,
     quickSpecs,
     order,
     assurances,

@@ -11,6 +11,7 @@ import {
 } from "@/components/sections/SkuCompoundPicker";
 import { emphasised } from "@/components/ui/Emphasis";
 import { SlotValue } from "@/components/ui/SlotValue";
+import { SkuModelViewer } from "@/components/sections/SkuModelViewer";
 
 /**
  * SKU DETAIL TEMPLATE — built to `single category.png`, section for section.
@@ -285,6 +286,7 @@ export function SkuHero({
   h1,
   intro,
   gallery,
+  model3dUrl,
   quickSpecs,
   order,
   assurances,
@@ -295,6 +297,7 @@ export function SkuHero({
   h1: string;
   intro: string;
   gallery: { main?: string; thumbs: readonly string[]; overlay: readonly { label: string; value: string; note?: string }[] };
+  model3dUrl?: string;
   quickSpecs: readonly { label: string; value: string }[];
   order?: { unit: string; defaultQty: string; minNote: string };
   assurances: readonly string[];
@@ -340,23 +343,34 @@ export function SkuHero({
               )}
             </div>
 
+            {(thumbs.length > 0 || model3dUrl) && (
             <ul className="mt-4 grid grid-cols-5 gap-3">
               {thumbs.slice(0, 4).map((t, i) => (
                 <li key={i}>
                   <Plate k={t} ratio="aspect-square" label="" sizes="120px" />
                 </li>
               ))}
+              {/* The 360° tile only when the part has a 3D model; it jumps to
+                  the interactive viewer in the Visual Reference section. It
+                  used to be a static label with nothing behind it. */}
+              {model3dUrl && (
               <li>
-                <div className="rounded-card border-line grid aspect-square place-items-center border bg-[#0D0F12]">
-                  <div className="text-center">
+                <a
+                  href="#part-3d"
+                  aria-label="View this part in 3D"
+                  className="rounded-card border-line hover:border-accent-400/60 grid aspect-square place-items-center border bg-[#0D0F12] transition-colors"
+                >
+                  <span className="text-center">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="text-accent-400 mx-auto size-4" aria-hidden>
                       <path d="M4 12a8 8 0 1 1 2.3 5.6" /><path d="M4 18v-4.5h4.5" />
                     </svg>
                     <span className="text-eyebrow text-ink-4 mt-1 block font-mono">360°</span>
-                  </div>
-                </div>
+                  </span>
+                </a>
               </li>
+              )}
             </ul>
+            )}
           </div>
 
           {/* Detail */}
@@ -441,8 +455,12 @@ export function SkuHero({
 export function SkuGallery({
   gallery,
   dimensional,
+  model3dUrl,
+  partName,
 }: {
   gallery: { main?: string; thumbs: readonly string[] };
+  model3dUrl?: string;
+  partName?: string;
   dimensional?: {
     caption: string;
     widthNote?: string;
@@ -464,23 +482,30 @@ export function SkuGallery({
   const thumbs = gallery.thumbs;
 
   return (
-    <section className="bg-band border-line border-t py-[70px]">
+    <section id="part-3d" className="bg-band border-line scroll-mt-24 border-t py-[70px]">
       <Container>
         <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
           <div>
             <Eyebrow>Product gallery</Eyebrow>
             <h2 className="text-h2 mt-3">Visual Reference</h2>
           </div>
+          {/* Badge only when there is a real 3D model behind it. */}
+          {model3dUrl && (
           <span className="text-eyebrow border-line-2 text-ink-3 inline-flex items-center gap-2 rounded-md border px-3.5 py-2 font-mono">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="size-3.5" aria-hidden>
               <path d="M4 12a8 8 0 1 1 2.3 5.6" /><path d="M4 18v-4.5h4.5" />
             </svg>
             360° PREVIEW
           </span>
+          )}
         </div>
 
         <div className="grid gap-5 lg:grid-cols-[1.6fr_1fr]">
-          <Plate k={main} ratio="aspect-[16/10]" sizes="(min-width:1024px) 58vw, 100vw" />
+          {model3dUrl ? (
+            <SkuModelViewer src={model3dUrl} alt={`3D model of ${partName ?? "this part"}`} />
+          ) : (
+            <Plate k={main} ratio="aspect-[16/10]" sizes="(min-width:1024px) 58vw, 100vw" />
+          )}
 
           <div className="grid gap-5">
             {/* Thumbnails only when the part has been photographed; the

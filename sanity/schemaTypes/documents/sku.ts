@@ -216,6 +216,15 @@ export const sku = defineType({
       ],
       group: "top",
     }),
+    defineField({
+      name: "model3d",
+      title: "3D model (.glb)",
+      type: "file",
+      options: { accept: ".glb,model/gltf-binary" },
+      description:
+        "Optional. A .glb file of this part. When set, the page shows an interactive 3D viewer visitors can drag to rotate. Keep it under ~5 MB (compress with Draco/meshopt). Leave empty and no 3D button is shown.",
+      group: "top",
+    }),
     labelValueArray("quickSpecs", "The four tiles beside the name", "top"),
     defineField({
       name: "order",

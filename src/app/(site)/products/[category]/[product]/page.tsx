@@ -159,12 +159,18 @@ export default async function SkuPage(
         h1={fm.h1}
         intro={fm.intro}
         gallery={fm.gallery}
+        model3dUrl={fm.model3dUrl}
         quickSpecs={fm.quickSpecs}
         order={fm.order}
         assurances={fm.assurances}
       />
 
-      <SkuGallery gallery={fm.gallery} dimensional={fm.dimensional} />
+      <SkuGallery
+        gallery={fm.gallery}
+        dimensional={fm.dimensional}
+        model3dUrl={fm.model3dUrl}
+        partName={fm.h1}
+      />
 
       <SkuSpecs
         productCode={fm.productCode}
