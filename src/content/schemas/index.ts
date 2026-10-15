@@ -2278,6 +2278,9 @@ export const skuSchema = baseSchema.extend({
     })
     .default({ thumbs: [], overlay: [] }),
 
+  /** Sanity CDN URL of the part's .glb model. Absent = no 3D viewer, no 3D tile. */
+  model3dUrl: z.string().url().optional(),
+
   /** The four tiles beside the H1. */
   quickSpecs: z.array(z.object({ label: z.string(), value: z.string() })).default([]),
 
