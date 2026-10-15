@@ -221,7 +221,10 @@ export async function SiteFooter() {
                 >
                   {entity.address.lines.map((line, i) => (
                     <span key={i} className="block">
-                      {line}
+                      {/* Trailing space: separate blocks on screen, but
+                          crawlers read them as one string — without it
+                          "Stop,opposite" ran together. */}
+                      {line}{" "}
                     </span>
                   ))}
                 </ContactRow>

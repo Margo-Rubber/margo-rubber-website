@@ -908,6 +908,9 @@ body {
   .margo-slot-char {
     white-space: pre;
   }
+  .margo-slot-char::before {
+    content: attr(data-c);
+  }
   .margo-slot-reel {
     position: relative;
     display: inline-block;

@@ -32,19 +32,26 @@ export function Img({
   priority = false,
   sizes,
   fill = false,
+  alt,
 }: {
   k: string;
   className?: string;
   priority?: boolean;
   sizes?: string;
   fill?: boolean;
+  /**
+   * Overrides the registry/CMS alt for this one placement — for an image
+   * whose meaning depends on where it sits (the logo inside the home link).
+   */
+  alt?: string;
 }) {
   const stock = getImage(k);
   const uploaded = useImageOverride(k);
 
-  const img = uploaded
+  const base = uploaded
     ? { src: uploaded.url, alt: uploaded.alt, w: uploaded.w, h: uploaded.h, blur: uploaded.blur }
     : stock;
+  const img = alt === undefined ? base : { ...base, alt };
 
   /**
    * Blur-up, but never on a priority image.

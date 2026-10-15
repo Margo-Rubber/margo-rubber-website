@@ -52,6 +52,7 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: [`${SITE_URL}/sitemap.xml`, `${SITE_URL}/products/sitemap/0.xml`],
-    host: SITE_URL,
+    // No `host:` line — a Yandex-only directive Google ignores, and it was
+    // emitted as a full URL where the format expects a bare hostname.
   };
 }

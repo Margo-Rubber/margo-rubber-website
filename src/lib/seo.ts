@@ -8,6 +8,18 @@ import { IS_VISION, isIndexable } from "@/lib/build-mode";
  */
 export const SITE_URL = "https://www.margorubber.com";
 
+/**
+ * The share card every page uses (WhatsApp, LinkedIn, X, Slack previews).
+ * 1200×630 in /public. Without it every link Margo sends previews with no
+ * picture (SEO audit, Oct 2026).
+ */
+const OG_IMAGE = {
+  url: "/og-default.png",
+  width: 1200,
+  height: 630,
+  alt: "Margo Rubber Products — precision moulded rubber components, Nashik, India",
+};
+
 type SeoInput = {
   seo: { title: string; description: string };
   status: "placeholder" | "draft" | "published";
@@ -60,11 +72,13 @@ export function buildMetadata(fm: SeoInput, path: string): Metadata {
       title: fm.seo.title,
       description: fm.seo.description,
       siteName: "Margo Rubber Products",
+      images: [OG_IMAGE],
     },
     twitter: {
       card: "summary_large_image",
       title: fm.seo.title,
       description: fm.seo.description,
+      images: [OG_IMAGE.url],
     },
   };
 }

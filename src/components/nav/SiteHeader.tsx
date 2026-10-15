@@ -99,7 +99,9 @@ export function SiteHeader() {
           onClick={closeAll}
         >
           <span className="flex items-center gap-2.5">
-            <Img k="brand.mark" className="size-10 shrink-0" />
+            {/* The home link's only content on phones (the wordmark is
+                sm:flex), so the logo carries the link's name. */}
+            <Img k="brand.mark" alt="Margo Rubber Products" className="size-10 shrink-0" />
             <span className="hidden flex-col leading-none sm:flex">
               <span className="text-base font-bold tracking-tight">MARGO</span>
               <span className="text-ink-4 mt-1 text-[9px] font-normal tracking-[0.22em]">

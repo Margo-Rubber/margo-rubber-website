@@ -71,9 +71,10 @@ export function SlotValue({ value }: { value: string }) {
               <span className="margo-slot-strip" />
             </span>
           ) : (
-            <span key={i} className="margo-slot-char">
-              {p}
-            </span>
+            // CSS-generated, like the reel digits: the real value is
+            // already in the sr-only span, and DOM text here made crawlers
+            // read every figure twice ("17.9M.M", "48 hrs hrs").
+            <span key={i} className="margo-slot-char" data-c={p} />
           ),
         )}
       </span>
