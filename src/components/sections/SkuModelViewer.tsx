@@ -38,6 +38,7 @@ declare module "react" {
         "rotation-per-second"?: string;
         "interaction-prompt"?: string;
         "shadow-intensity"?: string;
+        "shadow-softness"?: string;
         "environment-image"?: string;
         "touch-action"?: string;
         "disable-pan"?: string;
@@ -79,7 +80,10 @@ export function SkuModelViewer({ src, alt }: { src: string; alt: string }) {
   return (
     <div
       ref={wrap}
-      className="rounded-card border-line relative isolate aspect-[16/10] overflow-hidden border bg-[radial-gradient(ellipse_at_center,#1a1f27_0%,#0d0f12_70%)]"
+      // A light studio backdrop, not the site's dark plate: the .glb files
+      // are authored on white, and Margo's parts are mostly black rubber,
+      // which disappears against a dark background.
+      className="rounded-card border-line relative isolate aspect-[16/10] overflow-hidden border bg-[radial-gradient(ellipse_at_50%_40%,#ffffff_0%,#f1f3f5_55%,#dfe4e8_100%)]"
     >
       {ready && !failed ? (
         <model-viewer
@@ -90,8 +94,12 @@ export function SkuModelViewer({ src, alt }: { src: string; alt: string }) {
           auto-rotate-delay="1500"
           rotation-per-second="20deg"
           interaction-prompt="auto"
-          shadow-intensity="1"
-          exposure="1"
+          // Neutral studio lighting lifts the detail out of dark rubber; a
+          // soft contact shadow grounds the part on the light floor.
+          environment-image="neutral"
+          shadow-intensity="0.7"
+          shadow-softness="0.9"
+          exposure="1.15"
           disable-pan=""
           touch-action="pan-y"
           loading="eager"
@@ -106,18 +114,18 @@ export function SkuModelViewer({ src, alt }: { src: string; alt: string }) {
         />
       ) : (
         <div className="absolute inset-0 grid place-items-center">
-          <p className="text-eyebrow text-ink-4/70 font-mono uppercase">
+          <p className="text-eyebrow font-mono text-[#5b6670] uppercase">
             {failed ? "3D view unavailable" : "Loading 3D model…"}
           </p>
         </div>
       )}
 
-      <p className="text-eyebrow text-ink-4 pointer-events-none absolute bottom-3 left-4 font-mono uppercase">
+      <p className="text-eyebrow pointer-events-none absolute bottom-3 left-4 font-mono text-[#5b6670] uppercase">
         Drag to rotate · Scroll to zoom
       </p>
       {/* Corner brackets, matching the photo plates. */}
-      <span aria-hidden className="border-accent-400/40 pointer-events-none absolute top-3 left-3 size-5 border-t border-l" />
-      <span aria-hidden className="border-accent-400/40 pointer-events-none absolute right-3 bottom-3 size-5 border-r border-b" />
+      <span aria-hidden className="pointer-events-none absolute top-3 left-3 size-5 border-t border-l border-[#0f8087]/60" />
+      <span aria-hidden className="pointer-events-none absolute right-3 bottom-3 size-5 border-r border-b border-[#0f8087]/60" />
     </div>
   );
 }
