@@ -20,3 +20,27 @@ export function sanityFileUrl(
   const url = `https://cdn.sanity.io/files/${projectId}/${dataset}/${m[1]}.${m[2]}`;
   return downloadAs ? `${url}?dl=${encodeURIComponent(downloadAs)}` : url;
 }
+
+/** Where this project's uploaded files live on Sanity's CDN. */
+export const SANITY_FILES_ORIGIN = `https://cdn.sanity.io/files/${projectId}/${dataset}/`;
+
+/**
+ * Our own path for those files — next.config.ts rewrites `/sanity-files/*`
+ * to SANITY_FILES_ORIGIN. Sanity's file CDN sends no CORS header for this
+ * site, so anything the browser fetches or frames (3D models, certificate
+ * PDFs) is served same-origin instead; the URL also stays on our domain.
+ */
+export const SAME_ORIGIN_FILES = "/sanity-files/";
+
+/** A Sanity file CDN url → the same file under our own domain. Others pass through. */
+export function sameOriginFileUrl(url: string): string {
+  return url.startsWith(SANITY_FILES_ORIGIN)
+    ? `${SAME_ORIGIN_FILES}${url.slice(SANITY_FILES_ORIGIN.length)}`
+    : url;
+}
+
+/** Add Sanity's `?dl=` so the CDN sends the file as a download under `name`. */
+export function downloadUrl(url: string, name?: string): string {
+  const sep = url.includes("?") ? "&" : "?";
+  return `${url}${sep}dl=${encodeURIComponent(name ?? "")}`;
+}

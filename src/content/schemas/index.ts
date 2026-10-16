@@ -1089,6 +1089,27 @@ export const contactPageSchema = baseSchema.extend({
 });
 
 /**
+ * An uploaded certificate PDF, as the page query projects it
+ * (`document{ title, orientation, "asset": asset->{...} }`).
+ */
+export const certificateDocumentSchema = z.object({
+  /** Display name, e.g. "ISO 9001:2015 certificate 09111526A". */
+  title: z.string().optional(),
+  /** Page orientation, so the preview frame matches the sheet. */
+  orientation: z.enum(["portrait", "landscape"]).optional(),
+  asset: z
+    .object({
+      url: z.string().url(),
+      originalFilename: z.string().optional(),
+      size: z.number().optional(),
+      mimeType: z.string().optional(),
+      extension: z.string().optional(),
+    })
+    .optional(),
+});
+export type CertificateDocument = z.infer<typeof certificateDocumentSchema>;
+
+/**
  * /certifications
  *
  * Brief A11. The "What It Does Not Mean" panel carries the single most
@@ -1120,22 +1141,38 @@ export const certificationsPageSchema = baseSchema.extend({
 
   certificate: z.object({
     ...sectionMeta.shape,
-    card: z.object({
-      eyebrow: z.string(),
-      title: z.string(),
-      certifyLine: z.string(),
-      company: z.string(),
-      address: z.string(),
-      conformLine: z.string(),
-      standard: z.string(),
-      scopeLine: z.string(),
-      fields: z.array(z.object({ label: z.string(), value: z.string() })),
-      barTitle: z.string(),
-      barNote: z.string(),
-      downloadLabel: z.string(),
-      /** The certificate PDF. The button renders only when this is a file. */
-      downloadHref: z.string().optional(),
-    }),
+    /**
+     * THE CERTIFICATE ITSELF — the PDF uploaded in Studio. When present it is
+     * what the page shows (inline preview + open/download); the card below
+     * becomes its text transcription. The page query dereferences the asset,
+     * so `asset.url` arrives resolved. A deleted or unresolved asset arrives
+     * as null, is stripped, and the page falls back to the card.
+     */
+    document: certificateDocumentSchema.optional(),
+    /**
+     * Text transcription of the certificate. Every field optional: once the
+     * PDF carries the certificate, editors may trim this without the whole
+     * document failing validation and silently falling back to the .mdx.
+     */
+    card: z
+      .object({
+        eyebrow: z.string(),
+        title: z.string(),
+        certifyLine: z.string(),
+        company: z.string(),
+        address: z.string(),
+        conformLine: z.string(),
+        standard: z.string(),
+        scopeLine: z.string(),
+        fields: z.array(z.object({ label: z.string(), value: z.string() })),
+        barTitle: z.string(),
+        barNote: z.string(),
+        downloadLabel: z.string(),
+        /** LEGACY: a typed-in PDF address. Used only when no file is uploaded. */
+        downloadHref: z.string().optional(),
+      })
+      .partial()
+      .optional(),
     meta: z.array(z.object({ label: z.string(), value: z.string() })),
   }),
 

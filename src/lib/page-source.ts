@@ -39,10 +39,27 @@ const TYPE_FOR: Record<string, string> = Object.fromEntries(
   Object.entries(COLLECTIONS_FOR_PAGES).map(([slug, e]) => [slug, e.type]),
 );
 
+/**
+ * The one exception to "nothing to reshape": a FILE field arrives as a bare
+ * `{ asset: { _ref } }`, so the certificate PDF is dereferenced here to its
+ * CDN url and file metadata. A missing upload, or a reference to an asset
+ * that no longer exists, projects to null — stripped before validation, so
+ * the page falls back to the certificate card instead of breaking.
+ */
 const query = groq`
   *[_type == $type && slug.current == $slug][0]{
     ...,
-    "slug": slug.current
+    "slug": slug.current,
+    _type == "certificationsPage" => {
+      "certificate": certificate{
+        ...,
+        "document": document{
+          title,
+          orientation,
+          "asset": asset->{ url, originalFilename, size, mimeType, extension }
+        }
+      }
+    }
   }
 `;
 

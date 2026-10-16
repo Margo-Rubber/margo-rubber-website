@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 import createMDX from "@next/mdx";
 import { REDIRECTS } from "./src/content/redirects";
+import { dataset, projectId } from "./sanity/env";
 
 const nextConfig: NextConfig = {
   // NOTE: `mdx` is deliberately NOT in pageExtensions. Content files live in
@@ -49,15 +50,15 @@ const nextConfig: NextConfig = {
   // hands them to the compiler instead of the bundler's asset pipeline.
   transpilePackages: ["sanity", "@sanity/sdk-react", "@sanity/workbench"],
 
-  // 3D models (.glb) uploaded in Studio live on Sanity's file CDN, which
+  // 3D models (.glb) and certificate PDFs uploaded in Studio live on Sanity's file CDN, which
   // sends no CORS header for this site — the browser blocks the viewer's
   // fetch of them. Served through our own domain instead, they are
-  // same-origin and need no CORS at all. See SkuModelViewer.tsx.
+  // same-origin and need no CORS at all. See src/lib/sanity-file.ts.
   async rewrites() {
     return [
       {
         source: "/sanity-files/:path*",
-        destination: "https://cdn.sanity.io/files/jyg2beas/production/:path*",
+        destination: `https://cdn.sanity.io/files/${projectId}/${dataset}/:path*`,
       },
     ];
   },

@@ -86,28 +86,67 @@ export const certificationsPage = defineType({
       fields: [
         ...sectionFields(),
         defineField({
-          name: "card",
-          title: "Certificate card",
-          type: "object",
-          description: "Reproduces the certificate. Every line should match the document exactly.",
+          name: "document",
+          title: "Certificate PDF",
+          type: "file",
+          description:
+            "The certificate itself. Shown on the site as an inline preview with Open and Download buttons. When the certificate is renewed, upload the new PDF here and publish — nothing else to change.",
+          options: { accept: "application/pdf", storeOriginalFilename: true },
           fields: [
-            defineField({ name: "eyebrow", title: "Small label above the heading", type: "string", validation: (r) => r.required() }),
-            defineField({ name: "title", type: "string", validation: (r) => r.required() }),
-            defineField({ name: "certifyLine", title: "“This is to certify…”", type: "string", validation: (r) => r.required() }),
-            defineField({ name: "company", type: "string", validation: (r) => r.required() }),
-            defineField({ name: "address", type: "text", rows: 3, validation: (r) => r.required() }),
-            defineField({ name: "conformLine", title: "“…conforms to”", type: "string", validation: (r) => r.required() }),
-            defineField({ name: "standard", type: "string", validation: (r) => r.required() }),
-            defineField({ name: "scopeLine", title: "Scope", type: "text", rows: 2, validation: (r) => r.required() }),
+            defineField({
+              name: "title",
+              title: "Display name",
+              type: "string",
+              description: "Optional. e.g. “ISO 9001:2015 certificate 09111526A”. Used as the preview's label.",
+            }),
+            defineField({
+              name: "orientation",
+              title: "Page orientation",
+              type: "string",
+              options: {
+                list: [
+                  { title: "Portrait", value: "portrait" },
+                  { title: "Landscape", value: "landscape" },
+                ],
+                layout: "radio",
+                direction: "horizontal",
+              },
+              initialValue: "portrait",
+            }),
+          ],
+          // `accept` filters the upload picker; this also catches a non-PDF
+          // picked from the media library. File refs end in their extension.
+          validation: (r) =>
+            r.custom((value) => {
+              const ref = (value as { asset?: { _ref?: string } } | undefined)?.asset?._ref;
+              return !ref || ref.endsWith("-pdf") ? true : "The certificate must be a PDF file.";
+            }),
+        }),
+        defineField({
+          name: "card",
+          title: "Certificate text (transcription)",
+          type: "object",
+          description:
+            "The certificate's wording as text. Once a PDF is uploaded above, the PDF is what the site shows and this appears beneath it as a readable, searchable transcription; without a PDF this is shown as the certificate card. Keep it matching the document.",
+          options: { collapsible: true, collapsed: true },
+          fields: [
+            defineField({ name: "eyebrow", title: "Small label above the heading", type: "string" }),
+            defineField({ name: "title", type: "string" }),
+            defineField({ name: "certifyLine", title: "“This is to certify…”", type: "string" }),
+            defineField({ name: "company", type: "string" }),
+            defineField({ name: "address", type: "text", rows: 3 }),
+            defineField({ name: "conformLine", title: "“…conforms to”", type: "string" }),
+            defineField({ name: "standard", type: "string" }),
+            defineField({ name: "scopeLine", title: "Scope", type: "text", rows: 2 }),
             defineField({ name: "fields", title: "Certificate details", type: "array", of: [labelValueMember] }),
-            defineField({ name: "barTitle", type: "string", validation: (r) => r.required() }),
+            defineField({ name: "barTitle", type: "string" }),
             defineField({ name: "barNote", type: "string", description: "Optional." }),
-            defineField({ name: "downloadLabel", type: "string", validation: (r) => r.required() }),
+            defineField({ name: "downloadLabel", type: "string" }),
             defineField({
               name: "downloadHref",
-              title: "Certificate file address",
+              title: "Certificate file address (legacy)",
               type: "string",
-              description: "The button appears only once a PDF address is here.",
+              description: "Old way of linking the PDF. Ignored once a Certificate PDF is uploaded above — leave empty.",
             }),
           ],
         }),

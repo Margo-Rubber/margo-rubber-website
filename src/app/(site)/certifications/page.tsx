@@ -86,6 +86,7 @@ export default async function CertificationsPage() {
             lands on the section (#certificate, sheet 07). */}
         <div id="iso-9001" className="scroll-mt-28">
           <CertificateBlock
+            document={fm.certificate.document}
             card={fm.certificate.card}
             meta={fm.certificate.meta}
           />

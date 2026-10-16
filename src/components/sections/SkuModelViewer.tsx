@@ -8,6 +8,7 @@ import {
   type DetailedHTMLProps,
   type HTMLAttributes,
 } from "react";
+import { sameOriginFileUrl } from "@/lib/sanity-file";
 
 /**
  * INTERACTIVE 3D VIEW OF A PART — drag to rotate, pinch/scroll to zoom.
@@ -48,9 +49,7 @@ declare module "react" {
 }
 
 /** Sanity file CDN → same-origin path (next.config.ts rewrites it back). */
-const SANITY_FILES = "https://cdn.sanity.io/files/jyg2beas/production/";
-const sameOrigin = (url: string) =>
-  url.startsWith(SANITY_FILES) ? `/sanity-files/${url.slice(SANITY_FILES.length)}` : url;
+const sameOrigin = sameOriginFileUrl;
 
 export function SkuModelViewer({ src, alt }: { src: string; alt: string }) {
   const wrap = useRef<HTMLDivElement>(null);
