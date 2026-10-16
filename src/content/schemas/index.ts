@@ -75,6 +75,29 @@ export const relatedSchema = z
   .default({ products: [], industries: [], resources: [], pages: [] });
 
 /** Named on-page section that a SKU anchor resolves to. */
+/**
+ * A photograph uploaded straight to Sanity (not a registry key), as the
+ * category query projects it: the asset is dereferenced to its URL and
+ * intrinsic size, so next/image can reserve the space before it loads.
+ * Every part is optional — an empty field, or an asset deleted from the
+ * media library, arrives as null, is stripped, and nothing renders.
+ */
+export const cmsImageSchema = z.object({
+  alt: z.string().optional(),
+  caption: z.string().optional(),
+  /** Studio hotspot, 0–1 from the top-left. Used as the crop focus. */
+  hotspot: z.object({ x: z.number(), y: z.number() }).passthrough().optional(),
+  asset: z
+    .object({
+      url: z.string().url(),
+      w: z.number().positive(),
+      h: z.number().positive(),
+      lqip: z.string().optional(),
+    })
+    .optional(),
+});
+export type CmsImage = z.infer<typeof cmsImageSchema>;
+
 export const anchorSchema = z.object({
   id: z.string().regex(/^[a-z0-9-]+$/, "anchor ids are lowercase-kebab"),
   label: z.string().min(2),
@@ -479,6 +502,28 @@ export const ctaSchema = z
 export const productCategorySchema = baseSchema.extend({
   /** Short label for cards, nav and breadcrumbs. */
   navLabel: z.string().min(2),
+  /**
+   * PRODUCT PHOTOS — on every category, no section to add. A group photo and
+   * one photo per sub-product; the page merges them into its parts section,
+   * or shows them as their own section under the header when it has none.
+   */
+  rangePhotos: z
+    .object({
+      eyebrow: z.string().optional(),
+      heading: z.string().optional(),
+      groupPhoto: cmsImageSchema.optional(),
+      items: z
+        .array(
+          z.object({
+            name: z.string().min(2),
+            availability: z.string().optional(),
+            href: z.string().optional(),
+            image: cmsImageSchema.optional(),
+          }),
+        )
+        .default([]),
+    })
+    .optional(),
   intro: z.string().min(40),
   /** Hero stat row — the "AS568 · ISO · JIS · DIN / ±0.08 mm / …" strip. */
   heroStats: z

@@ -4,6 +4,7 @@ import { buildMetadata } from "@/lib/seo";
 import { productCategoryGraph, shouldEmitSchema } from "@/lib/schema";
 import { BlockRenderer } from "@/components/blocks/BlockRenderer";
 import { categorySlugs, getCategoryPage } from "@/lib/product-source";
+import { withRangePhotos } from "@/lib/range-photos";
 import { Section } from "@/components/ui/Section";
 import { CategoryHero } from "@/components/sections/Blocks";
 import { FurtherReading } from "@/components/sections/FurtherReading";
@@ -35,7 +36,10 @@ export default async function ProductCategoryPage(
   const page = await getCategoryPage(category);
   if (!page) notFound();
 
-  const { frontmatter: fm, blocks, Content, hasBody } = page;
+  const { frontmatter: fm, Content, hasBody } = page;
+  // The category's Product photos, merged into its parts section or added
+  // as their own section under the header. Unchanged when there are none.
+  const blocks = withRangePhotos(page.blocks, fm.rangePhotos, fm.navLabel, category);
   const path = `/products/${category}`;
 
   // Heading splits across two lines, second line in accent — "Precision" /

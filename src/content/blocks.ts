@@ -1,6 +1,8 @@
 import { z } from "zod";
+export { cmsImageSchema, type CmsImage } from "./schemas/index.ts";
 import {
   anchorSchema,
+  cmsImageSchema,
   faqSchema,
   applicationsSectionSchema,
   commercialSectionSchema,
@@ -47,28 +49,6 @@ import {
  * renderer, not two, and no way for the two paths to drift apart.
  */
 
-/**
- * A photograph uploaded straight to Sanity (not a registry key), as the
- * category query projects it: the asset is dereferenced to its URL and
- * intrinsic size, so next/image can reserve the space before it loads.
- * Every part is optional — an empty field, or an asset deleted from the
- * media library, arrives as null, is stripped, and nothing renders.
- */
-export const cmsImageSchema = z.object({
-  alt: z.string().optional(),
-  caption: z.string().optional(),
-  /** Studio hotspot, 0–1 from the top-left. Used as the crop focus. */
-  hotspot: z.object({ x: z.number(), y: z.number() }).passthrough().optional(),
-  asset: z
-    .object({
-      url: z.string().url(),
-      w: z.number().positive(),
-      h: z.number().positive(),
-      lqip: z.string().optional(),
-    })
-    .optional(),
-});
-export type CmsImage = z.infer<typeof cmsImageSchema>;
 
 /**
  * The parts grid is the one block with no counterpart in the .mdx frontmatter.
@@ -82,7 +62,10 @@ const partsGridSchema = z.object({
   eyebrow: z.string().min(2),
   heading: z.string().min(4),
   body: z.string().optional(),
-  parts: z.array(anchorSchema).min(1),
+  /** Linked part cards from the document's anchors. May be empty when the
+      section is built from `items` alone (a category with no part pages,
+      e.g. bellows) — the grid then draws the items, or nothing. */
+  parts: z.array(anchorSchema).default([]),
   categoryLabel: z.string().min(2),
   categorySlug: z.string().min(1),
   /** The sheets' static list — 16–24 part names (sheet 09 §04). When present

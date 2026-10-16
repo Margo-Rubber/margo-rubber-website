@@ -75,6 +75,12 @@ export const productCategoryBySlugQuery = groq`
     "slug": slug.current,
     status,
     navLabel,
+    "rangePhotos": {
+      "eyebrow": rangeEyebrow,
+      "heading": rangeHeading,
+      "groupPhoto": rangeGroupPhoto{ alt, caption, hotspot, "asset": asset->{ url, "w": metadata.dimensions.width, "h": metadata.dimensions.height, "lqip": metadata.lqip } },
+      "items": rangeParts[]{ name, availability, href, "image": image{ alt, hotspot, "asset": asset->{ url, "w": metadata.dimensions.width, "h": metadata.dimensions.height, "lqip": metadata.lqip } } }
+    },
     h1,
     h1Accent,
     intro,

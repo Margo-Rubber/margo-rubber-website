@@ -62,6 +62,7 @@ export const productCategory = defineType({
   groups: [
     { name: "hero", title: "Top of page", default: true },
     { name: "body", title: "Sections" },
+    { name: "photos", title: "Product photos" },
     { name: "meta", title: "Search & links" },
   ],
   fields: [
@@ -155,6 +156,59 @@ export const productCategory = defineType({
       ],
       group: "hero",
     }),
+    /* ── Product photos ─────────────────────────────────────────────────
+       On every category, with nothing to add first. If the page has a
+       "Parts in this category" section the photos appear in it, above its
+       list (photos set inside that section win); otherwise they appear as
+       their own section directly under the page header. */
+    defineField({
+      name: "rangeGroupPhoto",
+      title: "Group photo",
+      type: "image",
+      description: "One photograph of this category's parts together, on a white background. Shown full width above the sub-products. Replace any time.",
+      options: { hotspot: true },
+      fields: [
+        defineField({ name: "alt", title: "Description for screen readers", type: "string", description: "What is in the photo, e.g. “Rubber bellows: dust boots, CV boots and convoluted bellows”." }),
+        defineField({ name: "caption", title: "Caption", type: "string", description: "Optional line under the photo." }),
+      ],
+      group: "photos",
+    }),
+    defineField({
+      name: "rangeParts",
+      title: "Sub-product photos",
+      type: "array",
+      description: "One entry per sub-product, with or without its own page. Photos on a white background, square or 4:3. Drag to reorder.",
+      of: [
+        defineArrayMember({
+          type: "object",
+          name: "rangePart",
+          fields: [
+            defineField({ name: "name", title: "Sub-product", type: "string", validation: (r) => r.required().min(2) }),
+            defineField({
+              name: "image",
+              title: "Photo",
+              type: "image",
+              options: { hotspot: true },
+              fields: [
+                defineField({
+                  name: "alt",
+                  title: "Description for screen readers",
+                  type: "string",
+                  description: "Leave empty to use the part name.",
+                }),
+              ],
+            }),
+            defineField({ name: "availability", title: "Second line", type: "string", description: "Optional, e.g. “Made to drawing”." }),
+            defineField({ name: "href", title: "Its own page", type: "string", description: "Only if it has one, e.g. /products/gaskets/epdm. Leave empty otherwise." }),
+          ],
+          preview: { select: { title: "name", subtitle: "availability", media: "image" } },
+        }),
+      ],
+      group: "photos",
+    }),
+    defineField({ name: "rangeEyebrow", title: "Small label (own section only)", type: "string", description: "Used only when the page has no parts section. Default: “PRODUCT RANGE”.", group: "photos" }),
+    defineField({ name: "rangeHeading", title: "Heading (own section only)", type: "string", description: "Used only when the page has no parts section. Default: “What We Make in This Category”.", group: "photos" }),
+
     defineField({
       name: "heroStats",
       title: "Figures under the intro",
