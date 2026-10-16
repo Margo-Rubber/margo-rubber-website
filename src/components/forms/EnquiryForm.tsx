@@ -12,6 +12,7 @@ import {
 } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { track } from "@/lib/analytics";
 
 /**
  * ENQUIRY FORM
@@ -150,6 +151,7 @@ export function EnquiryForm({
       if (body.ok) {
         setSubmitted(fields);
         setStatus("success");
+        track("generate_lead", { form: source });
         form.reset();
         if (redirectTo) router.push(redirectTo);
         return;

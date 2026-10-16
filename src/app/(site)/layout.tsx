@@ -3,6 +3,9 @@ import { ConceptBand } from "@/components/nav/ConceptBand";
 import { ImageOverrideProvider } from "@/components/ui/ImageOverrideProvider";
 import { getImageOverrides } from "@/lib/image-overrides";
 import { SiteFooter } from "@/components/nav/SiteFooter";
+import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+import { Analytics } from "@/components/analytics/Analytics";
+import { getSiteSettings } from "@/lib/settings";
 
 /**
  * The public site's chrome.
@@ -16,7 +19,7 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
   // components and cannot fetch, and resolving overrides inside every page's
   // data fetch would mean changing the props of nearly every component that
   // takes an image key.
-  const images = await getImageOverrides();
+  const [images, settings] = await Promise.all([getImageOverrides(), getSiteSettings()]);
 
   return (
     <ImageOverrideProvider value={images}>
@@ -24,6 +27,8 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
       <main className="flex-1">{children}</main>
       <SiteFooter />
       <ConceptBand />
+      <WhatsAppButton number={settings.entity.whatsapp} />
+      <Analytics />
     </ImageOverrideProvider>
   );
 }

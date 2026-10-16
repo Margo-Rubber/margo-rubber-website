@@ -11,6 +11,7 @@ import {
   hrefFor,
 } from "@/content/routes";
 import { CopyrightYear } from "@/components/ui/CopyrightYear";
+import { CookieSettingsLink } from "@/components/analytics/CookieSettingsLink";
 
 /**
  * SITE FOOTER — built to ui-changes/footer.pdf.
@@ -333,6 +334,9 @@ export async function SiteFooter() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <CookieSettingsLink className="text-ink-4 hover:text-ink cursor-pointer text-sm transition-colors" />
+              </li>
             </ul>
           </nav>
 
