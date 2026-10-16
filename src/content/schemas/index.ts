@@ -94,7 +94,10 @@ export const cmsImageSchema = z.object({
       h: z.number().positive(),
       lqip: z.string().optional(),
     })
-    .optional(),
+    .optional()
+    // A reference the query did not dereference (a page type whose query
+    // has no photo projection) is dropped here, not allowed to fail the page.
+    .catch(undefined),
 });
 export type CmsImage = z.infer<typeof cmsImageSchema>;
 
@@ -152,9 +155,13 @@ export const cardGridSchema = z.object({
         href: z.string().optional(),
         /** A third line under the body — "Typical use" or the compound (sheets 36–42). */
         note: z.string().optional(),
+        /** The sub-product's own photo, uploaded in Studio. */
+        image: cmsImageSchema.optional(),
       }),
     )
     .min(1),
+  /** One photo of the cards' parts together, shown above the cards. */
+  groupPhoto: cmsImageSchema.optional(),
   /** What the cards' `note` is — set once for the grid, e.g. "Typical use". */
   noteLabel: z.string().optional(),
   /**
@@ -502,28 +509,6 @@ export const ctaSchema = z
 export const productCategorySchema = baseSchema.extend({
   /** Short label for cards, nav and breadcrumbs. */
   navLabel: z.string().min(2),
-  /**
-   * PRODUCT PHOTOS — on every category, no section to add. A group photo and
-   * one photo per sub-product; the page merges them into its parts section,
-   * or shows them as their own section under the header when it has none.
-   */
-  rangePhotos: z
-    .object({
-      eyebrow: z.string().optional(),
-      heading: z.string().optional(),
-      groupPhoto: cmsImageSchema.optional(),
-      items: z
-        .array(
-          z.object({
-            name: z.string().min(2),
-            availability: z.string().optional(),
-            href: z.string().optional(),
-            image: cmsImageSchema.optional(),
-          }),
-        )
-        .default([]),
-    })
-    .optional(),
   intro: z.string().min(40),
   /** Hero stat row — the "AS568 · ISO · JIS · DIN / ±0.08 mm / …" strip. */
   heroStats: z

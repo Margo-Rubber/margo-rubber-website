@@ -4,6 +4,8 @@ import { hrefFor, industryBySlug, productBySlug } from "@/content/routes";
 import { Container, Eyebrow, SectionGlow } from "@/components/ui/Section";
 import { Icon, ProfileDrawing, type IconName, type ProfileShape } from "@/components/ui/Icon";
 import { emphasised } from "@/components/ui/Emphasis";
+import type { CmsImage } from "@/content/blocks";
+import { NoPhoto, SanityPhoto } from "@/components/ui/SanityPhoto";
 
 /**
  * CATEGORY PAGE BLOCKS — the sections drawn by the two new category comps in
@@ -56,10 +58,14 @@ export function ProfileGrid({
     name: string;
     body: string;
     shape?: string;
+    image?: CmsImage;
   }[];
   /** "Quote this section" — links each coded card to the contact form with its code. */
   cardCta?: string;
 }) {
+  // Once any card has a photo, every card gets the white photo panel so the
+  // row stays level; a card without one keeps its cross-section in it.
+  const withPhotos = items.some((p) => p.image?.asset);
   return (
     <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
       {items.map((p) => {
@@ -68,15 +74,35 @@ export function ProfileGrid({
           <li
             key={p.name}
             id={p.id}
-            className={`rounded-card scroll-mt-28 px-5 py-7 text-center ${
+            className={`rounded-card scroll-mt-28 overflow-hidden text-center ${withPhotos ? "pb-7" : "px-5 py-7"} ${
               custom
                 ? "border-accent-400/40 bg-accent-400/[0.04] border border-dashed"
                 : "border-line bg-surface-3 border"
             }`}
           >
-            <span className="text-accent-400 flex justify-center">
-              <ProfileDrawing shape={(p.shape ?? "custom-profile") as ProfileShape} title={`${p.name} cross-section`} />
-            </span>
+            {withPhotos ? (
+              <div className="relative grid aspect-square place-items-center bg-white">
+                {p.image?.asset ? (
+                  <SanityPhoto
+                    image={p.image}
+                    fallbackAlt={p.name}
+                    fill
+                    fit="contain"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 240px"
+                    className="p-3"
+                  />
+                ) : (
+                  <span className="text-accent-400">
+                    <ProfileDrawing shape={(p.shape ?? "custom-profile") as ProfileShape} title={`${p.name} cross-section`} />
+                  </span>
+                )}
+              </div>
+            ) : (
+              <span className="text-accent-400 flex justify-center">
+                <ProfileDrawing shape={(p.shape ?? "custom-profile") as ProfileShape} title={`${p.name} cross-section`} />
+              </span>
+            )}
+            <div className={withPhotos ? "px-5" : undefined}>
             <h3
               className={`mt-5 text-sm font-semibold ${
                 custom ? "text-accent-400" : "text-ink"
@@ -98,6 +124,7 @@ export function ProfileGrid({
                 {cardCta} <span aria-hidden>→</span>
               </Link>
             )}
+            </div>
           </li>
         );
       })}
@@ -423,17 +450,36 @@ export function PlainCards({
   noteLabel,
   group,
 }: {
-  items: readonly { name: string; body: string; href?: string; note?: string; code?: string }[];
+  items: readonly { name: string; body: string; href?: string; note?: string; code?: string; image?: CmsImage }[];
   noteLabel?: string;
   group?: string;
 }) {
   const T = group ? "h4" : "h3";
+  // Photo panels appear once any card has a photo; then all cards get one.
+  const withPhotos = items.some((c) => c.image?.asset);
   return (
     <>
       {group && <h3 className="text-ink mb-5 text-lg font-semibold">{group}</h3>}
       <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((c) => (
-          <li key={c.name} className="border-line bg-surface-3 rounded-card flex flex-col border p-6">
+          <li key={c.name} className="border-line bg-surface-3 rounded-card flex flex-col overflow-hidden border">
+            {withPhotos && (
+              <div className="relative aspect-[4/3] bg-white">
+                {c.image?.asset ? (
+                  <SanityPhoto
+                    image={c.image}
+                    fallbackAlt={c.name}
+                    fill
+                    fit="contain"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
+                    className="p-4"
+                  />
+                ) : (
+                  <NoPhoto />
+                )}
+              </div>
+            )}
+            <div className="flex flex-1 flex-col p-6">
             <T className="text-ink text-base font-semibold">
               {c.href ? (
                 <Link href={liveHref(c.href)} className="hover:text-accent-400 inline-flex items-center gap-1.5">
@@ -451,6 +497,7 @@ export function PlainCards({
                 {emphasised(c.note, "text-ink font-semibold")}
               </p>
             )}
+            </div>
           </li>
         ))}
       </ul>

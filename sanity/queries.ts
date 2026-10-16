@@ -75,12 +75,6 @@ export const productCategoryBySlugQuery = groq`
     "slug": slug.current,
     status,
     navLabel,
-    "rangePhotos": {
-      "eyebrow": rangeEyebrow,
-      "heading": rangeHeading,
-      "groupPhoto": rangeGroupPhoto{ alt, caption, hotspot, "asset": asset->{ url, "w": metadata.dimensions.width, "h": metadata.dimensions.height, "lqip": metadata.lqip } },
-      "items": rangeParts[]{ name, availability, href, "image": image{ alt, hotspot, "asset": asset->{ url, "w": metadata.dimensions.width, "h": metadata.dimensions.height, "lqip": metadata.lqip } } }
-    },
     h1,
     h1Accent,
     intro,
@@ -109,6 +103,10 @@ export const productCategoryBySlugQuery = groq`
     sections[]{
       ...,
       _type == "block.specTable" => { "rows": rows[].cells },
+      _type == "block.cardGrid" => {
+        "items": items[]{ ..., "image": image{ alt, hotspot, "asset": asset->{ url, "w": metadata.dimensions.width, "h": metadata.dimensions.height, "lqip": metadata.lqip } } },
+        "groupPhoto": groupPhoto{ alt, caption, hotspot, "asset": asset->{ url, "w": metadata.dimensions.width, "h": metadata.dimensions.height, "lqip": metadata.lqip } }
+      },
       _type == "block.partsGrid" => {
         // Uploaded photos: asset dereferenced to URL + intrinsic size + blur.
         "items": items[]{
@@ -172,6 +170,10 @@ export const industryBySlugQuery = groq`
     sections[]{
       ...,
       _type == "block.specTable" => { "rows": rows[].cells },
+      _type == "block.cardGrid" => {
+        "items": items[]{ ..., "image": image{ alt, hotspot, "asset": asset->{ url, "w": metadata.dimensions.width, "h": metadata.dimensions.height, "lqip": metadata.lqip } } },
+        "groupPhoto": groupPhoto{ alt, caption, hotspot, "asset": asset->{ url, "w": metadata.dimensions.width, "h": metadata.dimensions.height, "lqip": metadata.lqip } }
+      },
       _type == "block.industryFaq" => { "items": ^.faqs }
     }
   }

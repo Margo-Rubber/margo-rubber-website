@@ -174,6 +174,21 @@ export const cardGrid = defineType({
               rows: 2,
               validation: (r) => r.required().min(10),
             }),
+            defineField({
+              name: "image",
+              title: "Photo",
+              type: "image",
+              description: "Optional. This sub-product on a white background, square or 4:3. Shown at the top of its card. Replace any time.",
+              options: { hotspot: true },
+              fields: [
+                defineField({
+                  name: "alt",
+                  title: "Description for screen readers",
+                  type: "string",
+                  description: "Leave empty to use the card name.",
+                }),
+              ],
+            }),
             iconField(),
             shapeField(),
             defineField({
@@ -198,11 +213,23 @@ export const cardGrid = defineType({
             }),
           ],
           preview: {
-            select: { title: "name", subtitle: "code" },
+            select: { title: "name", subtitle: "code", media: "image" },
           },
         }),
       ],
       validation: (r) => r.required().min(1),
+      group: "content",
+    }),
+    defineField({
+      name: "groupPhoto",
+      title: "Group photo",
+      type: "image",
+      description: "Optional. One photograph of these parts together, on a white background. Shown full width above the cards. Replace any time.",
+      options: { hotspot: true },
+      fields: [
+        defineField({ name: "alt", title: "Description for screen readers", type: "string", description: "What is in the photo." }),
+        defineField({ name: "caption", title: "Caption", type: "string", description: "Optional line under the photo." }),
+      ],
       group: "content",
     }),
     defineField({

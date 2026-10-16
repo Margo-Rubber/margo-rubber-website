@@ -11,6 +11,7 @@ import { Section } from "@/components/ui/Section";
 import { SpecTable } from "@/components/sections/SpecTable";
 import { MaterialCards } from "@/components/sections/MaterialCards";
 import { PartsGrid } from "@/components/sections/PartsGrid";
+import { GroupPhoto } from "@/components/ui/SanityPhoto";
 import { Prose } from "@/components/blocks/Prose";
 import {
   CtaPanel,
@@ -162,6 +163,7 @@ function renderBlock(block: Block, ctx: Ctx): ReactNode {
           className={band}
           glow={!plain}
         >
+          <GroupPhoto image={b.groupPhoto} fallbackAlt={(b.heading ?? b.group ?? "Margo Rubber Products parts").replace(/\*/g, "")} />
           {sectors ? (
             <SectorCards items={b.items} cardCta={b.cardCta} />
           ) : plain ? (
