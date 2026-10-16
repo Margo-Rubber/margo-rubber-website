@@ -104,6 +104,12 @@ export const productCategoryBySlugQuery = groq`
       ...,
       _type == "block.specTable" => { "rows": rows[].cells },
       _type == "block.partsGrid" => {
+        // Uploaded photos: asset dereferenced to URL + intrinsic size + blur.
+        "items": items[]{
+          ...,
+          "image": image{ alt, hotspot, "asset": asset->{ url, "w": metadata.dimensions.width, "h": metadata.dimensions.height, "lqip": metadata.lqip } }
+        },
+        "groupPhoto": groupPhoto{ alt, caption, hotspot, "asset": asset->{ url, "w": metadata.dimensions.width, "h": metadata.dimensions.height, "lqip": metadata.lqip } },
         "parts": ^.anchors,
         "categoryLabel": ^.navLabel,
         "categorySlug": ^.slug.current

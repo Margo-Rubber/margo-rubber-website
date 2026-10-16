@@ -48,6 +48,29 @@ import {
  */
 
 /**
+ * A photograph uploaded straight to Sanity (not a registry key), as the
+ * category query projects it: the asset is dereferenced to its URL and
+ * intrinsic size, so next/image can reserve the space before it loads.
+ * Every part is optional — an empty field, or an asset deleted from the
+ * media library, arrives as null, is stripped, and nothing renders.
+ */
+export const cmsImageSchema = z.object({
+  alt: z.string().optional(),
+  caption: z.string().optional(),
+  /** Studio hotspot, 0–1 from the top-left. Used as the crop focus. */
+  hotspot: z.object({ x: z.number(), y: z.number() }).passthrough().optional(),
+  asset: z
+    .object({
+      url: z.string().url(),
+      w: z.number().positive(),
+      h: z.number().positive(),
+      lqip: z.string().optional(),
+    })
+    .optional(),
+});
+export type CmsImage = z.infer<typeof cmsImageSchema>;
+
+/**
  * The parts grid is the one block with no counterpart in the .mdx frontmatter.
  *
  * It is generated from the `anchors:` list every category file already carries,
@@ -67,8 +90,18 @@ const partsGridSchema = z.object({
       part with its own page carries that page's path in `href`, and the
       part's current name (the SKU sheets rename several). */
   items: z
-    .array(z.object({ name: z.string().min(2), availability: z.string().optional(), href: z.string().optional() }))
+    .array(
+      z.object({
+        name: z.string().min(2),
+        availability: z.string().optional(),
+        href: z.string().optional(),
+        /** The part's own photo — for parts with or without a page. */
+        image: cmsImageSchema.optional(),
+      }),
+    )
     .optional(),
+  /** One photograph of the parts together, shown above the list. */
+  groupPhoto: cmsImageSchema.optional(),
 });
 
 /**

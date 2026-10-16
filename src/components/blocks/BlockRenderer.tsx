@@ -284,6 +284,7 @@ function renderBlock(block: Block, ctx: Ctx): ReactNode {
           <PartsGrid
             parts={b.parts}
             items={b.items}
+            groupPhoto={b.groupPhoto}
             categoryLabel={b.categoryLabel}
             categorySlug={b.categorySlug}
           />
