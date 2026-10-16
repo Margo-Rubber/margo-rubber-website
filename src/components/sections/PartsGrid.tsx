@@ -77,12 +77,17 @@ export function PartsGrid({
     <>
       {groupPhoto?.asset && (
         <figure className="mb-8">
-          <div className="rounded-card border-line overflow-hidden border bg-[#F4F5F6]">
+          {/* White, to match the photos' own white backdrop, so the photo
+              reads as the panel rather than a picture inside one. The whole
+              photo always shows: capped at 60% of the screen height and
+              centred, never cropped. */}
+          <div className="rounded-card border-line flex justify-center overflow-hidden border bg-white">
             <SanityPhoto
               image={groupPhoto}
               fallbackAlt={`${categoryLabel} made by Margo Rubber Products`}
-              sizes="(max-width: 1280px) 100vw, 1200px"
-              className="h-auto max-h-[70vh] w-full"
+              sizes="(max-width: 768px) 100vw, 900px"
+              fit="contain"
+              className="h-auto max-h-[60vh] w-auto max-w-full"
             />
           </div>
           {groupPhoto.caption && (
@@ -118,7 +123,7 @@ function PartsList({
         {items.map((it, i) => (
           <li key={it.name} className="rounded-card border-line overflow-hidden border bg-[#080808]">
             {withPhotos && (
-              <div className="relative aspect-[4/3] bg-[#F4F5F6]">
+              <div className="relative aspect-[4/3] bg-white">
                 {it.image?.asset ? (
                   <SanityPhoto
                     image={it.image}
