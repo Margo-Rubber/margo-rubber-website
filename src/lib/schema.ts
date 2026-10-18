@@ -190,8 +190,7 @@ export function offerCatalogNode(): Node {
         "@id": `${SITE_URL}${p.path}#product`,
         name: p.label,
         url: `${SITE_URL}${p.path}`,
-        manufacturer: { "@id": ORG_ID },
-      },
+manufacturer: { "@type": "Organization", "@id": ORG_ID }      },
       // No price, no availability — see the file comment.
     })),
   };
@@ -356,7 +355,7 @@ export async function productNode(
     "@id": `${SITE_URL}${path}#product`,
     name: fm.schemaProduct?.name ?? fm.h1,
     description: fm.schemaProduct?.description ?? fm.seo.description,
-    manufacturer: { "@id": ORG_ID },
+   manufacturer: { "@type": "Organization", "@id": ORG_ID },
     material: fm.schemaProduct?.material ?? compounds.map((c) => c.name),
     ...(entry?.family ? { category: FAMILY_CATEGORY[entry.family] } : {}),
     ...(related.length ? { isRelatedTo: related } : {}),
