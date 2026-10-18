@@ -35,7 +35,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         lastModified: r.lastModified,
         changeFrequency: "monthly" as const,
         priority: r.type === "productCategory" ? 0.8 : 0.5,
-        ...(img ? { images: [img] } : {}),
+        ...(img ? { images: [img.replace(/&/g, "&amp;")] } : {}),
       };
     }),
   );
