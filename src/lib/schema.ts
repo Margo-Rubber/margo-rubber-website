@@ -143,7 +143,14 @@ export async function placeNode(): Promise<Node> {
     "@type": "Place",
     "@id": PLANT_ID,
     name: `${entity.legalName} manufacturing plant`,
-    address: { "@id": ORG_ID },
+       address: {
+     "@type": "PostalAddress",
+     streetAddress: entity.address.street,
+     addressLocality: entity.address.locality,
+     addressRegion: entity.address.region,
+     postalCode: entity.address.postalCode,
+     addressCountry: entity.address.country,
+   },
     geo: {
       "@type": "GeoCoordinates",
       latitude: entity.geo.lat,
