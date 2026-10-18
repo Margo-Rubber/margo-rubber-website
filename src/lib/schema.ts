@@ -197,7 +197,7 @@ export function offerCatalogNode(): Node {
         "@id": `${SITE_URL}${p.path}#product`,
         name: p.label,
         url: `${SITE_URL}${p.path}`,
-manufacturer: { "@type": "Organization", "@id": ORG_ID }      },
+        manufacturer: { "@type": "Organization", "@id": ORG_ID }      },
       // No price, no availability — see the file comment.
     })),
   };
@@ -362,7 +362,7 @@ export async function productNode(
     "@id": `${SITE_URL}${path}#product`,
     name: fm.schemaProduct?.name ?? fm.h1,
     description: fm.schemaProduct?.description ?? fm.seo.description,
-   manufacturer: { "@type": "Organization", "@id": ORG_ID },
+    manufacturer: { "@type": "Organization", "@id": ORG_ID },
     material: fm.schemaProduct?.material ?? compounds.map((c) => c.name),
     ...(entry?.family ? { category: FAMILY_CATEGORY[entry.family] } : {}),
     ...(related.length ? { isRelatedTo: related } : {}),
@@ -444,7 +444,7 @@ export async function skuNode(
     ...(image ? { image } : {}),
     ...(partNumber ? { sku: partNumber, mpn: partNumber } : {}),
     ...(category ? { category: category.label } : {}),
-    manufacturer: { "@id": ORG_ID },
+    manufacturer: { "@type": "Organization", "@id": ORG_ID },
     // All eight compounds, as on the category pages. Sheet 32 §04 wanted
     // only the recommended rows; the later client instruction (2026-09-02,
     // sheet 36 page-level) overrides it: every part is made in every
