@@ -1725,8 +1725,16 @@ body {
     transform: scaleY(0);
     transition: transform 350ms var(--ease-entrance);
   }
-  .margo-faq[data-open] { border-color: rgb(43 188 196 / 0.35); background-color: #0c1012; }
-  .margo-faq[data-open]::before { transform: scaleY(1); }
+  .margo-faq[open] { border-color: rgb(43 188 196 / 0.35); background-color: #0c1012; }
+  .margo-faq[open]::before { transform: scaleY(1); }
+  /* The chevron, drawn here rather than typed into the question (T07). */
+  .margo-faq > summary::after {
+    content: "⌄";
+    flex-shrink: 0;
+    color: var(--color-accent-400);
+    transition: transform 250ms var(--ease-standard);
+  }
+  .margo-faq[open] > summary::after { transform: rotate(180deg); }
   @media (hover: hover) { .margo-faq:hover { border-color: rgb(255 255 255 / 0.14); } }
 
   /* ══ HOME · TRUST BAR (named accounts) ═════════════════════════════
@@ -1932,4 +1940,18 @@ body {
   .margo-nav-all:hover {
     color: var(--color-accent-400);
   }
+}
+
+/* ── ANCHOR OFFSET FOR CONTENT SECTIONS ──
+   Replaces the `scroll-mt-24` / `scroll-mt-28` utility classes that used to
+   sit on every section. The word "scroll" in a class name makes
+   readability-style extractors (what AI search tools use to read a page)
+   score the section as clutter and drop it — ticket T06. Same offset, set
+   here instead of in a class: anchors still land clear of the header. */
+main [id] {
+  scroll-margin-top: 6rem;
+}
+main li[id],
+main #iso-9001 {
+  scroll-margin-top: 7rem;
 }

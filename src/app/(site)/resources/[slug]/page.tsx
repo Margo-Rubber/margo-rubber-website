@@ -133,6 +133,9 @@ export default async function ResourceGuidePage(
               )}
               {guideReviewer.name && fm.publishedAt ? " · " : ""}
               {fm.publishedAt && <>Published {longDate(fm.publishedAt)}</>}
+              {fm.updatedAt && fm.updatedAt !== fm.publishedAt && (
+                <> · Updated <time dateTime={fm.updatedAt}>{longDate(fm.updatedAt)}</time></>
+              )}
             </p>
           )}
         </Container>

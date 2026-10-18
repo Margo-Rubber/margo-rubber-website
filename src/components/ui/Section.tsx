@@ -158,7 +158,7 @@ export function Section({
     // sequence on /export depends on it.
     <section
       id={id}
-      className={`scroll-mt-24 py-[70px] ${glow ? "relative overflow-hidden" : ""} ${className}`}
+      className={` py-[70px] ${glow ? "relative overflow-hidden" : ""} ${className}`}
     >
       {glow && <SectionGlow />}
       <Container className={glow ? "relative" : ""}>

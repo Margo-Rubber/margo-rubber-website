@@ -40,6 +40,13 @@ const PLANT_ID = `${SITE_URL}/#plant`;
 export const CATALOG_ID = `${SITE_URL}/#product-catalog`;
 export const COMPOUNDS_ID = `${SITE_URL}/#compounds`;
 
+/** Margo's confirmed public profiles (T09, 16 Oct 2026), used until Site settings list them. */
+const DEFAULT_SAME_AS = [
+  "https://www.linkedin.com/company/margo-rubber-products/",
+  "https://www.instagram.com/margorubberproducts/",
+  "https://www.google.com/maps/place/?q=place_id:ChIJjyRECkTr3TsRAPBPxlXi_jM",
+];
+
 /** The reference every page uses instead of restating the entity. */
 export const organizationRef = (): Node => ({ "@id": ORG_ID });
 
@@ -49,7 +56,7 @@ const personId = (name: string) =>
   `${SITE_URL}/about#${name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
 
 /** Slot → absolute URL, honouring a Studio override. */
-async function imageUrl(slot: string): Promise<string | null> {
+export async function imageUrl(slot: string): Promise<string | null> {
   const overrides = await getImageOverrides();
   if (overrides[slot]?.url) return overrides[slot].url;
   const stock = IMAGES[slot as ImageKey];
@@ -82,7 +89,11 @@ export async function organizationNode(): Promise<Node> {
   if (entity.areaServed.length) contactPoint.areaServed = entity.areaServed;
 
   const node: Node = {
-    "@type": ["Organization", "Manufacturer"],
+    // "Manufacturer" is not a schema.org type: the validator rejected the
+    // node and every property under it (54 errors, ticket T09). Organization
+    // plus additionalType says the same thing in valid vocabulary.
+    "@type": "Organization",
+    additionalType: "https://en.wikipedia.org/wiki/Manufacturing",
     "@id": ORG_ID,
     name: entity.legalName,
     legalName: entity.legalName,
@@ -106,7 +117,9 @@ export async function organizationNode(): Promise<Node> {
       credentialCategory: "certification",
       name: c.code,
       ...(c.identifier ? { identifier: c.identifier } : {}),
-      ...(c.validThrough ? { validThrough: c.validThrough } : {}),
+      // `expires`, not validThrough: the latter is not a property of
+      // EducationalOccupationalCredential (validator warning, T09).
+      ...(c.validThrough ? { expires: c.validThrough } : {}),
       ...(c.issuer
         ? { recognizedBy: { "@type": "Organization", name: c.issuer } }
         : {}),
@@ -114,7 +127,10 @@ export async function organizationNode(): Promise<Node> {
   };
   if (entity.description) node.description = entity.description;
   if (entity.knowsAbout.length) node.knowsAbout = entity.knowsAbout;
-  if (entity.sameAs.length) node.sameAs = entity.sameAs;
+  // Settings win; until they list profiles, the ones 3rd Shade confirmed
+  // (T09). IndiaMART, Justdial and TradeIndia join only once corrected.
+  node.sameAs = entity.sameAs.length ? entity.sameAs : DEFAULT_SAME_AS;
+  node.brand = { "@type": "Brand", name: "Margo" };
   if (entity.founders.length)
     node.founder = entity.founders.map((f) => ({ "@id": personId(f.name) }));
   return node;
@@ -365,12 +381,33 @@ export function serviceNode(fm: Industry, path: string): Node {
 }
 
 /**
+ * A real part number, or null. The SKU documents carry template text in
+ * `productCode` for most parts ("Assigned on order", "The size designation…"),
+ * which as `sku`/`mpn` reads as a fake identifier (T09). Only a value with a
+ * digit and none of those phrases counts.
+ */
+export function realPartNumber(code?: string): string | null {
+  if (!code) return null;
+  const c = code.trim();
+  if (!/\d/.test(c)) return null;
+  if (/assigned|designation|part number|on order|to (your )?drawing|dash number|request/i.test(c)) return null;
+  return c;
+}
+
+/**
  * A single named part. Narrower than the category Product above — a SKU is a
  * specific item, so it gets `isSimilarTo` back to its category rather than
  * duplicating the category's claims.
  */
 export async function skuNode(
-  fm: { h1: string; seo: { description: string }; productCode?: string },
+  fm: {
+    h1: string;
+    seo: { description: string };
+    productCode?: string;
+    gallery?: { main?: string };
+    hardness?: string;
+    specs?: readonly { label: string; value: string }[];
+  },
   path: string,
   categoryPath: string,
   /** The sibling parts the page lists under "You may also need" — sheet 32 §11. */
@@ -378,12 +415,28 @@ export async function skuNode(
 ): Promise<Node> {
   const category = productBySlug(categoryPath.split("/").pop() ?? "");
   const { compounds } = await getSiteSettings();
+  const partNumber = realPartNumber(fm.productCode);
+  const image = fm.gallery?.main ? await imageUrl(fm.gallery.main) : null;
+
+  // Hardness, temperature range and standard from the page's own spec table
+  // (T09), as the buyer reads them. No offers, no price.
+  const props: Node[] = [];
+  if (fm.hardness) props.push({ "@type": "PropertyValue", name: "Hardness", value: fm.hardness });
+  for (const r of fm.specs ?? []) {
+    if (!/hardness|temperature|standard|tolerance|material/i.test(r.label)) continue;
+    if (/hardness/i.test(r.label) && fm.hardness) continue;
+    props.push({ "@type": "PropertyValue", name: r.label, value: r.value });
+  }
+
   return {
     "@type": "Product",
     "@id": `${SITE_URL}${path}#product`,
     name: fm.h1,
     description: fm.seo.description,
-    ...(fm.productCode ? { sku: fm.productCode, mpn: fm.productCode } : {}),
+    url: `${SITE_URL}${path}`,
+    brand: { "@type": "Brand", name: "Margo" },
+    ...(image ? { image } : {}),
+    ...(partNumber ? { sku: partNumber, mpn: partNumber } : {}),
     ...(category ? { category: category.label } : {}),
     manufacturer: { "@id": ORG_ID },
     // All eight compounds, as on the category pages. Sheet 32 §04 wanted
@@ -391,6 +444,7 @@ export async function skuNode(
     // sheet 36 page-level) overrides it: every part is made in every
     // compound Margo mixes, so the array is never shortened.
     material: compounds.map((c) => c.name),
+    ...(props.length ? { additionalProperty: props } : {}),
     // Siblings when the page lists them; the category otherwise.
     isSimilarTo: siblingPaths.length
       ? siblingPaths.map((p) => ({ "@id": `${SITE_URL}${p}#product` }))
@@ -406,9 +460,14 @@ export async function skuNode(
  * and reviewedBy only once a reviewer is named in settings.
  */
 export async function articleNode(
-  fm: { h1: string; seo: { description: string }; publishedAt?: string },
+  fm: { h1: string; seo: { description: string }; publishedAt?: string; updatedAt?: string; hero?: { image?: string } },
   path: string,
 ): Promise<Node> {
+  // T17: dates and an image on every guide. The document's own publish and
+  // last-edit times when the guide does not record them by hand.
+  const published = fm.publishedAt;
+  const modified = fm.updatedAt ?? fm.publishedAt;
+  const image = fm.hero?.image ? await imageUrl(fm.hero.image) : `${SITE_URL}/og-default.png`;
   const { guideReviewer } = await getSiteSettings();
   return {
     "@type": "TechArticle",
@@ -427,8 +486,11 @@ export async function articleNode(
           },
         }
       : {}),
-    // datePublished only when the guide records one — never the build date.
-    ...(fm.publishedAt ? { datePublished: fm.publishedAt, dateModified: fm.publishedAt } : {}),
+    ...(image ? { image } : {}),
+    // Real dates only — the guide's own, or Sanity's record of the document
+    // — never the build date.
+    ...(published ? { datePublished: published } : {}),
+    ...(modified ? { dateModified: modified } : {}),
   };
 }
 

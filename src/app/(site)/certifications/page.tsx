@@ -84,7 +84,7 @@ export default async function CertificationsPage() {
         {/* The industry pages' "View ISO Certificate" lands here
             (/certifications#iso-9001, sheets 27–28); the hero's own button
             lands on the section (#certificate, sheet 07). */}
-        <div id="iso-9001" className="scroll-mt-28">
+        <div id="iso-9001">
           <CertificateBlock
             document={fm.certificate.document}
             card={fm.certificate.card}

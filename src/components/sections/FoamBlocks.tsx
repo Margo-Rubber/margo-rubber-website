@@ -324,7 +324,7 @@ export function SubCategoryBlock({
   return (
     <section
       id={id}
-      className={`relative scroll-mt-24 overflow-hidden py-[70px] ${className}`}
+      className={`relative overflow-hidden py-[70px] ${className}`}
     >
       <SectionGlow />
       <Container className="relative">

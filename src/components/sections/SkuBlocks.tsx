@@ -40,7 +40,6 @@ import { SkuModelViewer } from "@/components/sections/SkuModelViewer";
    one tray-of-mouldings plate serves until Margo shoots the parts. */
 const SAMPLE = {
   gallery: { main: "sku.product", thumbs: [] as string[] },
-  advantageImages: { main: "sku.product" },
   qualityChip: { label: "QUALITY SYSTEM", value: "ISO 9001:2015 certificate 09111526A" },
   quickSpecs: [
     { label: "HARDNESS", value: "To your drawing" },
@@ -249,19 +248,25 @@ function Plate({
   label = "Product photography pending",
   className = "",
   sizes,
+  alt,
+  priority = false,
 }: {
   k?: string;
   ratio?: string;
   label?: string;
   className?: string;
   sizes?: string;
+  /** Overrides the image's own alt — a card's photo is named after the card. */
+  alt?: string;
+  /** The page's main photo: loaded first, not lazily (T16). */
+  priority?: boolean;
 }) {
   return (
     <div
       className={`rounded-card border-line relative isolate overflow-hidden border ${ratio} ${className}`}
     >
       {k ? (
-        <Img k={k} fill sizes={sizes ?? "(min-width:1024px) 50vw, 100vw"} className="object-cover" />
+        <Img k={k} fill alt={alt} priority={priority} sizes={sizes ?? "(min-width:1024px) 50vw, 100vw"} className="object-cover" />
       ) : (
         <div className="absolute inset-0 grid place-items-center bg-[linear-gradient(135deg,#0d0f12_0%,#131720_50%,#0d0f12_100%)]">
           <div className="text-center">
@@ -309,8 +314,10 @@ export function SkuHero({
   const specs = quickSpecs.length ? quickSpecs : SAMPLE.quickSpecs;
   const ord = order ?? SAMPLE.order;
   const trust = assurances.length ? assurances : SAMPLE.assurances;
-  const main = gallery.main ?? SAMPLE.gallery.main;
-  const thumbs = gallery.thumbs.length ? gallery.thumbs : SAMPLE.gallery.thumbs;
+  // The part's own photo or none — never another part's (T08): the old
+  // fallback put the EPDM oil-seal photo on every part without one.
+  const main = gallery.main;
+  const thumbs = gallery.thumbs;
 
   return (
     <header className="bg-canvas relative isolate overflow-hidden pt-32 pb-16 md:pt-40">
@@ -322,7 +329,8 @@ export function SkuHero({
           {/* Gallery */}
           <div>
             <div className="relative">
-              <Plate k={main} ratio="aspect-[4/3]" sizes="(min-width:1024px) 46vw, 100vw" />
+              {/* The LCP element on a part page: fetched first, not lazily (T16). */}
+              <Plate k={main} ratio="aspect-[4/3]" sizes="(min-width:1024px) 46vw, 100vw" priority />
               {/* The IN STOCK badge is gone: nothing is stocked, every part is
                   made to order (sheet 32). The field stays for old records. */}
               {/* Floating spec card over the lower-right of the plate. */}
@@ -478,11 +486,11 @@ export function SkuGallery({
     tiles: readonly { value: string; label: string }[];
     footnote?: string;
   } = dimensional ?? SAMPLE.dimensional;
-  const main = gallery.main ?? SAMPLE.gallery.main;
+  const main = gallery.main;
   const thumbs = gallery.thumbs;
 
   return (
-    <section id="part-3d" className="bg-band border-line scroll-mt-24 border-t py-[70px]">
+    <section id="part-3d" className="bg-band border-line border-t py-[70px]">
       <Container>
         <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
           <div>
@@ -769,12 +777,15 @@ export function SkuAdvantages({
   items,
   chip,
   heading,
+  image,
 }: {
   items: readonly { icon: string; name: string; body: string; href?: string }[];
   /** The figure over the plate — the part's own service temperature, or the quality system. */
   chip?: { label: string; value: string; note?: string };
   /** "Why distributors buy from Margo" on a fitment part (SKU 22 §04). */
   heading?: string;
+  /** The part's own photo (a second view when it has one). */
+  image?: string;
 }) {
   const list = items.length ? items : SAMPLE.advantages;
   const badge: { label: string; value: string; note?: string } = chip ?? SAMPLE.qualityChip;
@@ -784,7 +795,7 @@ export function SkuAdvantages({
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div className="relative pb-14">
             <Plate
-              k={SAMPLE.advantageImages.main}
+              k={image}
               ratio="aspect-[4/3]"
               className="w-[86%]"
               sizes="(min-width:1024px) 40vw, 90vw"
@@ -1090,7 +1101,7 @@ export function SkuRelated({
   categorySlug,
 }: {
   /** `href` set: a part in another category (sheet 32 §11); else a sibling. */
-  items: readonly { slug: string; label: string; difference?: string; href?: string }[];
+  items: readonly { slug: string; label: string; difference?: string; href?: string; image?: string }[];
   categorySlug: string;
 }) {
   if (!items.length) return null;
@@ -1112,7 +1123,9 @@ export function SkuRelated({
           {items.slice(0, 4).map((r) => (
             <li key={r.slug} data-lift="" className="rounded-card border-line hover:border-accent-400/40 overflow-hidden border bg-[#0D0F12]">
               <Link href={r.href ?? `/products/${categorySlug}/${r.slug}`}>
-                <Plate k={SAMPLE.gallery.main} ratio="aspect-[16/9]" label="" className="rounded-none border-0 border-b" sizes="(min-width:1024px) 32vw, 100vw" />
+                {/* The linked part's own photo, named after it; no photo, no
+                    borrowed one (T08). */}
+                <Plate k={r.image} alt={r.label} ratio="aspect-[16/9]" label="" className="rounded-none border-0 border-b" sizes="(min-width:1024px) 32vw, 100vw" />
                 <span className="block p-6">
                   <span className="text-ink block text-base font-semibold">{r.label}</span>
                   {r.difference && <span className="text-ink-4 mt-2 block text-sm">{r.difference}</span>}

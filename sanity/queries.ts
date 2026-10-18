@@ -269,7 +269,10 @@ export const resourceBySlugQuery = groq`
     eyebrow,
     standfirst,
     closing,
-    publishedAt,
+    // The guide's own date when set; otherwise when the document was first
+    // created and last edited in Sanity (T17: every guide carries both).
+    "publishedAt": coalesce(publishedAt, string::split(_createdAt, "T")[0]),
+    "updatedAt": string::split(_updatedAt, "T")[0],
     readingMinutes,
     h1,
     intro,

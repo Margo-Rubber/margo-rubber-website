@@ -24,7 +24,7 @@ const components: MDXComponents = {
   h2: ({ children, id }) => (
     <h2
       id={id ?? slugify(children)}
-      className="text-h2 mt-16 mb-4 scroll-mt-24"
+      className="text-h2 mt-16 mb-4"
     >
       {children}
     </h2>
@@ -32,7 +32,7 @@ const components: MDXComponents = {
   h3: ({ children, id }) => (
     <h3
       id={id ?? slugify(children)}
-      className="text-h3 mt-10 mb-3 scroll-mt-24"
+      className="text-h3 mt-10 mb-3"
     >
       {children}
     </h3>

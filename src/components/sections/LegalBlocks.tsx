@@ -176,7 +176,7 @@ export function LegalBody({
                 key={s.id}
                 id={s.id}
                 // Clears the sticky header when a TOC link jumps here.
-                className="scroll-mt-28 first:mt-0 [&+section]:mt-14"
+                className="first:mt-0 [&+section]:mt-14"
               >
                 {/* The number is part of the heading in the comp — same
                     white, same weight, just a wider space after the stop.

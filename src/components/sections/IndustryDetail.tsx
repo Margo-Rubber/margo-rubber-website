@@ -212,7 +212,7 @@ export function ApplicationCards({
   return (
     <div className="grid gap-5 md:grid-cols-2">
       {items.map((a) => (
-        <article
+        <div
           key={a.name}
           className="border-line rounded-card overflow-hidden border bg-[#0A0A0A]"
         >
@@ -231,7 +231,7 @@ export function ApplicationCards({
             <h3 className="text-ink text-base font-semibold">{a.name}</h3>
             <p className="text-ink-4 mt-2 text-sm leading-relaxed">{emphasised(a.body, "text-ink-2 font-semibold")}</p>
           </div>
-        </article>
+        </div>
       ))}
     </div>
   );
@@ -390,55 +390,27 @@ export function ExportLane({
 }
 
 /* ── 08 · FAQ ─────────────────────────────────────────────────────────── */
+/**
+ * Native <details>/<summary>, as on the part pages and guides. The answer is
+ * ordinary, unhidden text in the HTML whether the item is open or not, so
+ * screen readers, in-page search, Google and AI answer engines all read it
+ * (ticket T07: the old accordion marked closed answers aria-hidden, and
+ * extractors dropped the whole section). The chevron is drawn in CSS
+ * (.margo-faq in globals.css), not typed into the question.
+ */
 export function IndustryFAQ({ items }: { items: { q: string; a: string }[] }) {
-  const [open, setOpen] = useState(-1);
   return (
     <div className="mx-auto max-w-[880px] space-y-3">
-      {items.map((f, i) => (
-        <div
-          key={f.q}
-          data-open={open === i ? "" : undefined}
-          className="margo-faq border-line rounded-card border bg-[#0A0A0A]"
-        >
-          {/* The question is a real heading (the sheets' "questions are <h3>");
-              the button inside it is what opens the answer. */}
-          <h3 className="m-0">
-          <button
-            type="button"
-            onClick={() => setOpen(open === i ? -1 : i)}
-            aria-expanded={open === i}
-            className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
-          >
-            <span className="text-ink text-sm font-medium">{f.q}</span>
-            <span
-              aria-hidden
-              className={`text-accent-400 shrink-0 transition-transform ${open === i ? "rotate-180" : ""}`}
-            >
-              ⌄
-            </span>
-          </button>
-          </h3>
-          {/* The chevron rotated but the panel it controls appeared in a
-              single frame, so the affordance animated and the content did not.
-              `grid-template-rows: 0fr -> 1fr` animates height without
-              measuring anything in JavaScript; the inner element needs
-              `min-h-0` or it refuses to shrink below its content. The answer
-              stays mounted, so it remains findable by in-page search and by
-              crawlers whether or not it is open. */}
-          <div
-            className="grid transition-[grid-template-rows] duration-300 ease-standard motion-reduce:transition-none"
-            style={{ gridTemplateRows: open === i ? "1fr" : "0fr" }}
-          >
-            <div className="min-h-0 overflow-hidden">
-              <p
-                className="text-ink-4 px-5 pb-5 text-sm leading-relaxed"
-                aria-hidden={open !== i}
-              >
-                {emphasised(f.a, "text-ink-2 font-semibold")}
-              </p>
-            </div>
-          </div>
-        </div>
+      {items.map((f) => (
+        <details key={f.q} className="margo-faq border-line rounded-card border bg-[#0A0A0A]">
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-left [&::-webkit-details-marker]:hidden">
+            {/* The question is a real heading (the sheets' "questions are <h3>"). */}
+            <h3 className="text-ink m-0 text-sm font-medium">{f.q}</h3>
+          </summary>
+          <p className="text-ink-4 px-5 pb-5 text-sm leading-relaxed">
+            {emphasised(f.a, "text-ink-2 font-semibold")}
+          </p>
+        </details>
       ))}
     </div>
   );

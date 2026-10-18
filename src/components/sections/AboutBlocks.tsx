@@ -533,7 +533,7 @@ export function Story({
   return (
     <section
       id="story"
-      className="bg-surface-2 relative isolate scroll-mt-24 overflow-hidden py-[70px]"
+      className="bg-surface-2 relative isolate overflow-hidden py-[70px]"
     >
       <Bloom className="top-0 -left-32 size-[34rem]" />
       <Container>
@@ -650,7 +650,7 @@ export function Vision({
 
         <div className="mt-14 grid gap-6 md:grid-cols-2">
           {items.map((it) => (
-            <article
+            <div
               key={it.eyebrow}
               className="rounded-card border-line relative isolate overflow-hidden border bg-surface-3 p-8 md:p-10"
             >
@@ -679,7 +679,7 @@ export function Vision({
                   )}
                 </p>
               </div>
-            </article>
+            </div>
           ))}
         </div>
       </Container>
@@ -851,7 +851,7 @@ export function Manufacturing({
   return (
     <section
       id="manufacturing"
-      className="relative isolate scroll-mt-24 overflow-hidden bg-band-2 py-[70px]"
+      className="relative isolate overflow-hidden bg-band-2 py-[70px]"
     >
       <span
         aria-hidden

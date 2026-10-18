@@ -880,40 +880,28 @@ export function CatalogueBlock({
   );
 }
 
+/** Native <details>: answers stay readable in the HTML when closed (ticket T07). */
 export function FAQAccordion({ items }: { items: { q: string; a: string }[] }) {
-  const [open, setOpen] = useState(0);
   return (
     <div className="space-y-3">
       {items.map((f, i) => (
-        <div
+        <details
           key={f.q}
-          className={`rounded-card border ${open === i ? "border-accent-400/40 bg-[#020909]" : "border-line bg-surface-3"}`}
+          open={i === 0}
+          className="group rounded-card border-line bg-surface-3 open:border-accent-400/40 border open:bg-[#020909]"
         >
-          <button
-            type="button"
-            onClick={() => setOpen(open === i ? -1 : i)}
-            aria-expanded={open === i}
-            className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
-          >
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-left [&::-webkit-details-marker]:hidden">
             <span className="text-ink text-sm font-medium">{f.q}</span>
             <span
-              className={`grid size-6 shrink-0 place-items-center rounded-md text-sm ${
-                open === i
-                  ? "bg-accent-400 text-canvas"
-                  : "border-line text-ink-3 border"
-              }`}
+              className="border-line text-ink-3 group-open:bg-accent-400 group-open:text-canvas grid size-6 shrink-0 place-items-center rounded-md border text-sm group-open:border-transparent"
               aria-hidden
             >
-              {open === i ? "−" : "+"}
+              <span className="group-open:hidden">+</span>
+              <span className="hidden group-open:inline">−</span>
             </span>
-          </button>
-          <p
-            hidden={open !== i}
-            className="text-ink-4 px-5 pb-5 text-sm leading-relaxed"
-          >
-            {f.a}
-          </p>
-        </div>
+          </summary>
+          <p className="text-ink-4 px-5 pb-5 text-sm leading-relaxed">{f.a}</p>
+        </details>
       ))}
     </div>
   );

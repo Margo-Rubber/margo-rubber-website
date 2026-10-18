@@ -24,6 +24,11 @@ const nextConfig: NextConfig = {
   // Next 16: top-level, no longer experimental.
   cacheComponents: true,
 
+  // Trailing slashes are removed by src/proxy.ts instead, in the SAME hop as
+  // any legacy redirect. Next's own trailing-slash redirect runs first and
+  // would add a hop to every old WordPress URL (they all end in "/").
+  skipTrailingSlashRedirect: true,
+
   // Override Next's built-in "default" cache profile. Every `"use cache"`
   // function here sets tags but no cacheLife, so they all fell back to the
   // default 15-minute revalidate — and because the (site) layout reads image
@@ -54,6 +59,37 @@ const nextConfig: NextConfig = {
   // sends no CORS header for this site — the browser blocks the viewer's
   // fetch of them. Served through our own domain instead, they are
   // same-origin and need no CORS at all. See src/lib/sanity-file.ts.
+  // T22: baseline security headers on every page. The Content-Security-
+  // Policy is REPORT-ONLY: browsers log what it would block (devtools
+  // console) but block nothing, so it cannot break the site while it is
+  // tuned. The Studio is left out — it loads its own tooling.
+  async headers() {
+    const csp = [
+      "default-src 'self'",
+      "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.clarity.ms",
+      "style-src 'self' 'unsafe-inline'",
+      "img-src 'self' data: blob: https://cdn.sanity.io https://*.google-analytics.com https://*.googletagmanager.com https://*.clarity.ms https://c.bing.com",
+      "font-src 'self' data:",
+      "connect-src 'self' https://*.sanity.io https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms",
+      "media-src 'self' https://cdn.sanity.io",
+      "frame-src 'self'",
+      "frame-ancestors 'self'",
+      "base-uri 'self'",
+      "form-action 'self'",
+    ].join("; ");
+    return [
+      {
+        source: "/((?!studio).*)",
+        headers: [
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()" },
+          { key: "Content-Security-Policy-Report-Only", value: csp },
+        ],
+      },
+    ];
+  },
+
   async rewrites() {
     return [
       {
@@ -68,7 +104,15 @@ const nextConfig: NextConfig = {
     // WooCommerce SKU URLs join the same list once the pre-cutover crawl
     // names them (blocker B15).
     // A 301 as the sheets specify — `permanent: true` would send a 308.
-    return REDIRECTS.map((r) => ({ source: r.from, destination: r.to, statusCode: 301 }));
+    // Not on margorubber.in: there, src/proxy.ts sends each old URL straight
+    // to its final www.margorubber.com address in ONE hop. Matched here
+    // first, these would add a hop on the old domain (T01).
+    return REDIRECTS.map((r) => ({
+      source: r.from,
+      destination: r.to,
+      statusCode: 301,
+      missing: [{ type: "host" as const, value: "(?:www\\.)?margorubber\\.in" }],
+    }));
   },
 };
 

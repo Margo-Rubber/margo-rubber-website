@@ -758,6 +758,8 @@ export const resourceSchema = baseSchema.extend({
   category: z.enum(["material-comparison", "sizing-spec", "sourcing-buyer", "datasheets"]),
   /** ISO date the guide was published — the byline and TechArticle.datePublished. */
   publishedAt: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
+  /** Last edit, from Sanity's record of the document (T17). */
+  updatedAt: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
   /** Card glyph on the /resources hub. */
   icon: z
     .enum(["flask", "thermometer", "book", "ruler", "wrench", "globe", "clipboard"])

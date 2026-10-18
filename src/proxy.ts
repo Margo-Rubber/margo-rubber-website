@@ -1,4 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
+import { isLegacyHost, resolveLegacy } from "@/lib/legacy-redirect";
 
 /**
  * THE GATE ON THE VISION BUILD.
@@ -20,6 +21,23 @@ import { NextResponse, type NextRequest } from "next/server";
  * excluded because it has its own login.
  */
 export function proxy(request: NextRequest) {
+  /* ── Old URLs, in one hop (ticket T01) ────────────────────────────────
+     Every request to margorubber.in, any trailing slash, and any old
+     WordPress path is answered here with a single redirect to its final
+     www.margorubber.com URL, or 410 Gone for WordPress internals. */
+  const host = request.headers.get("host") ?? "";
+  const { pathname, search } = request.nextUrl;
+  const legacy = resolveLegacy(pathname, search, isLegacyHost(host));
+  if (legacy?.kind === "gone") {
+    return new NextResponse("Gone", {
+      status: 410,
+      headers: { "Content-Type": "text/plain; charset=utf-8", "X-Robots-Tag": "noindex" },
+    });
+  }
+  if (legacy?.kind === "redirect") {
+    return NextResponse.redirect(legacy.location, 301);
+  }
+
   if (process.env.NEXT_PUBLIC_BUILD_MODE !== "vision")
     return NextResponse.next();
 
@@ -46,5 +64,10 @@ export const config = {
   matcher: [
     // Everything except: Next internals, static files, the API routes and the studio.
     "/((?!_next/|api/|studio|favicon\\.ico|robots\\.txt|sitemap\\.xml|.*\\.(?:png|jpg|jpeg|webp|avif|svg|ico|woff2?|txt|xml)$).*)",
+    // Every path on the old domain, files included, so each one redirects.
+    {
+      source: "/:path*",
+      has: [{ type: "header", key: "host", value: "(?:www\\.)?margorubber\\.in(?::\\d+)?" }],
+    },
   ],
 };

@@ -4,7 +4,7 @@ import { trail } from "@/lib/breadcrumbs";
 import { getFrontmatter } from "@/lib/content";
 import { getSkuPage, skuSlugs } from "@/lib/sku-source";
 import { buildMetadata } from "@/lib/seo";
-import { pageGraph, skuNode } from "@/lib/schema";
+import { pageGraph, realPartNumber, skuNode } from "@/lib/schema";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getSiteSettings } from "@/lib/settings";
 import {
@@ -109,7 +109,7 @@ export default async function SkuPage(
           }
           const other = await getSkuPage(fileFor(cat, slug));
           return other && other.frontmatter.category === cat
-            ? { slug: r.slug, label: other.frontmatter.h1, difference: r.difference, href: `/products/${cat}/${slug}` }
+            ? { slug: r.slug, label: other.frontmatter.h1, difference: r.difference, href: `/products/${cat}/${slug}`, image: other.frontmatter.gallery.main }
             : null;
         }
         // A bare category ("o-rings"): its page.
@@ -117,15 +117,25 @@ export default async function SkuPage(
         if (cat && !siblings.some((x) => x.slug === r.slug)) return { slug: r.slug, label: cat.label, difference: r.difference, href: hrefFor(cat) };
         // A sibling: its own document's heading, not the category file's list.
         const sib = await getSkuPage(fileFor(category, r.slug));
-        return sib ? { slug: r.slug, label: sib.frontmatter.h1, difference: r.difference } : null;
+        return sib ? { slug: r.slug, label: sib.frontmatter.h1, difference: r.difference, image: sib.frontmatter.gallery.main } : null;
       }),
     )
   ).filter((x): x is NonNullable<typeof x> => !!x);
 
+  // The category's other parts, each with its own photo (T08: every card
+  // showed the same placeholder photo, with another part's alt text).
+  const siblingCards = await Promise.all(
+    siblings.slice(0, 4).map(async (s) => {
+      const sib = await getSkuPage(fileFor(category, s.slug));
+      return { ...s, image: sib?.frontmatter.gallery.main };
+    }),
+  );
+
   const crumbs = trail(
     ["Products", "/products"],
     [categoryLabel, `/products/${category}`],
-    [fm.productCode || fm.h1, `/products/${category}/${product}`],
+    // A placeholder code ("Assigned on order") is not a name for a crumb.
+    [realPartNumber(fm.productCode) ?? fm.h1, `/products/${category}/${product}`],
   );
 
   return (
@@ -137,10 +147,9 @@ export default async function SkuPage(
           name: fm.seo.title,
           description: fm.seo.description,
           crumbs,
-          // No FAQPage node here: the five questions are the same on every
-          // part, and "Q1's answer competes with itself 31 times" (sheet 32
-          // §10). The accordion stays visible; the schema lives with the
-          // category once it has a questions section.
+          // FAQPage from the same field the accordion renders (ticket T10,
+          // 16 Oct 2026 — supersedes sheet 32 §10's "no FAQ schema on parts").
+          faqs: fm.faqs,
           extra: [
             await skuNode(
               fm,
@@ -192,7 +201,7 @@ export default async function SkuPage(
         prompt={fm.compoundPrompt}
       />
 
-      <SkuAdvantages items={fm.advantages} chip={fm.qualityChip} heading={fm.advantagesHeading} />
+      <SkuAdvantages items={fm.advantages} chip={fm.qualityChip} heading={fm.advantagesHeading} image={fm.gallery.thumbs[0] ?? fm.gallery.main} />
 
       <SkuApplications items={fm.applications} />
 
@@ -206,7 +215,7 @@ export default async function SkuPage(
 
       {/* The sheet's four named siblings with their differences when set;
           the category's other parts otherwise. */}
-      <SkuRelated items={relatedParts.length ? relatedParts : siblings} categorySlug={category} />
+      <SkuRelated items={relatedParts.length ? relatedParts : siblingCards} categorySlug={category} />
       <FurtherReading slugs={fm.related.resources} />
 
       <SkuCta

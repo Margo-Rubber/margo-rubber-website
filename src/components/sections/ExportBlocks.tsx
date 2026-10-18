@@ -385,7 +385,7 @@ export function MarketSection({
   return (
     <section
       id={market.slug}
-      className="border-line bg-canvas scroll-mt-24 border-t py-[70px]"
+      className="border-line bg-canvas border-t py-[70px]"
     >
       <Container>
         <div className="grid items-start gap-12 lg:grid-cols-2">
@@ -825,7 +825,7 @@ export function IncotermsSection({
   footnote?: string;
 }) {
   return (
-    <section id="incoterms" className="bg-surface scroll-mt-24 py-[70px]">
+    <section id="incoterms" className="bg-surface py-[70px]">
       <Container>
         {eyebrow && (
           <p className="text-eyebrow text-accent-400 flex items-center gap-3 font-mono uppercase">

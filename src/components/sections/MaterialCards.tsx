@@ -59,7 +59,7 @@ function MaterialCard({ m }: { m: Material }) {
   return (
     /* The card is addressable as #fkm, #nbr … — "FKM → /products/oil-seals#fkm"
        (sheet 01 §10); the panel inside keeps its own id for aria-controls. */
-    <article id={compoundAnchor(m.code)} className="bg-card relative isolate scroll-mt-24 overflow-hidden">
+    <div id={compoundAnchor(m.code)} className="bg-card relative isolate overflow-hidden">
       {m.image && (
         <div
           aria-hidden
@@ -148,6 +148,6 @@ function MaterialCard({ m }: { m: Material }) {
           {open ? "Show less" : "Read more"}
         </button>
       </div>
-    </article>
+    </div>
   );
 }

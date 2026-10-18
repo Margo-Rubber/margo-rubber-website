@@ -164,7 +164,7 @@ export default async function ProductsHubPage() {
         </Section>
       )}
 
-      {fm.compounds && <span id="materials" className="block scroll-mt-24" aria-hidden />}
+      {fm.compounds && <span id="materials" className="block" aria-hidden />}
       {fm.compounds && (
         /* #compounds is the section (sheet 02 §05, the export page's links,
            the DefinedTermSet); #materials is what the homepage cards link

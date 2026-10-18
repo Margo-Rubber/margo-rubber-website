@@ -74,7 +74,7 @@ export function ProfileGrid({
           <li
             key={p.name}
             id={p.id}
-            className={`rounded-card scroll-mt-28 overflow-hidden text-center ${withPhotos ? "pb-7" : "px-5 py-7"} ${
+            className={`rounded-card overflow-hidden text-center ${withPhotos ? "pb-7" : "px-5 py-7"} ${
               custom
                 ? "border-accent-400/40 bg-accent-400/[0.04] border border-dashed"
                 : "border-line bg-surface-3 border"

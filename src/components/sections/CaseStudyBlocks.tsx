@@ -304,7 +304,7 @@ export function Methodology({
   }[];
 }) {
   return (
-    <section id="methodology" className="bg-canvas scroll-mt-24 py-[70px]">
+    <section id="methodology" className="bg-canvas py-[70px]">
       <Container>
         <SectionRule index={index} label={label} />
 

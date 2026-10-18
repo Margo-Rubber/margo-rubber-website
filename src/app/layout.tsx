@@ -45,6 +45,9 @@ const newsreader = Newsreader({
   subsets: ["latin"],
   style: ["normal", "italic"],
   display: "swap",
+  // Used on /about only. Not preloaded, so the other 75 pages do not
+  // download two serif files before their first paint (T16).
+  preload: false,
 });
 
 export const metadata: Metadata = {
