@@ -13,7 +13,8 @@
  * blocked, the choice is kept in memory for the visit instead, so the
  * banner does not come straight back.
  *
- * Ads storage is always denied: the site runs no advertising tags.
+ * Google ads storage stays denied. The Meta Pixel follows the same choice
+ * as analytics: revoked until granted, for visitors who are asked.
  */
 
 export type Choice = "granted" | "denied";
@@ -69,5 +70,6 @@ export function choose(choice: Choice) {
   forcedOpen = false;
   window.gtag?.("consent", "update", { analytics_storage: choice });
   window.clarity?.("consentv2", { ad_Storage: "denied", analytics_Storage: choice });
+  window.fbq?.("consent", choice === "granted" ? "grant" : "revoke");
   window.dispatchEvent(new Event(EVENT));
 }

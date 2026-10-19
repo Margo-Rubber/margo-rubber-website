@@ -1,5 +1,6 @@
 import type { MappedEnquiry } from "./sources";
 import { FIELD_MAP } from "./sources";
+import { enquiryFingerprint, isDuplicateSend } from "./dedupe";
 
 /**
  * NOTIFICATION
@@ -111,6 +112,8 @@ export async function notifyEnquiry(
       headers: {
         Authorization: `Bearer ${key}`,
         "Content-Type": "application/json",
+        // Identical enquiry within 24h → Resend sends it once (see dedupe.ts).
+        "Idempotency-Key": `notify-${enquiryFingerprint(enquiry)}`,
       },
       body: JSON.stringify({
         from,
@@ -122,6 +125,11 @@ export async function notifyEnquiry(
       }),
       signal: AbortSignal.timeout(8_000),
     });
+
+    if (isDuplicateSend(res.status)) {
+      console.warn("[enquiry] duplicate notification suppressed for", enquiry.email);
+      return { sent: true, id: "duplicate" };
+    }
 
     if (!res.ok) {
       return {

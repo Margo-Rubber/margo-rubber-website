@@ -84,9 +84,14 @@ export function EnquiryForm({
     shownAt.current = Date.now();
   }, []);
 
+  // Set synchronously, unlike `status`. A double-click or a repeated Enter fires
+  // several submit events before React re-renders, and every one of them still
+  // sees status === "idle" — each became its own POST and its own set of emails.
+  const inFlight = useRef(false);
+
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (status === "submitting") return;
+    if (inFlight.current || status === "submitting") return;
     if (onBeforeSubmit && !onBeforeSubmit()) return;
 
     const form = event.currentTarget;
@@ -119,6 +124,7 @@ export function EnquiryForm({
       fields[key] = value;
     }
 
+    inFlight.current = true;
     setStatus("submitting");
     setMessage(null);
     setErrors({});
@@ -168,6 +174,8 @@ export function EnquiryForm({
       setMessage(
         "We could not reach the server. Please check your connection, or email us at info@margorubber.in.",
       );
+    } finally {
+      inFlight.current = false;
     }
   }
 

@@ -1,5 +1,6 @@
 import type { MappedEnquiry } from "./sources";
 import { INDUSTRY_MENU } from "@/content/navigation";
+import { enquiryFingerprint, isDuplicateSend } from "./dedupe";
 
 /**
  * AUTO-REPLY TO THE BUYER
@@ -153,7 +154,12 @@ export async function sendAutoReply(enquiry: MappedEnquiry): Promise<void> {
   try {
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
-      headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
+      headers: {
+        Authorization: `Bearer ${key}`,
+        "Content-Type": "application/json",
+        // Identical enquiry within 24h → the buyer is acknowledged once (see dedupe.ts).
+        "Idempotency-Key": `autoreply-${enquiryFingerprint(enquiry)}`,
+      },
       body: JSON.stringify({
         from,
         to: [enquiry.email],
@@ -165,7 +171,9 @@ export async function sendAutoReply(enquiry: MappedEnquiry): Promise<void> {
       }),
       signal: AbortSignal.timeout(8_000),
     });
-    if (!res.ok) {
+    if (isDuplicateSend(res.status)) {
+      console.warn("[enquiry] duplicate auto-reply suppressed for", enquiry.email);
+    } else if (!res.ok) {
       console.error("[enquiry] auto-reply failed:", res.status, (await res.text()).slice(0, 200));
     }
   } catch (err) {

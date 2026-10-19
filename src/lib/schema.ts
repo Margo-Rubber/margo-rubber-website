@@ -197,7 +197,8 @@ export function offerCatalogNode(): Node {
         "@id": `${SITE_URL}${p.path}#product`,
         name: p.label,
         url: `${SITE_URL}${p.path}`,
-        manufacturer: { "@type": "Organization", "@id": ORG_ID }      },
+        manufacturer: { "@type": "Organization", "@id": ORG_ID },
+      },
       // No price, no availability — see the file comment.
     })),
   };

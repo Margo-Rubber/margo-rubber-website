@@ -26,10 +26,10 @@ export function ConsentBanner() {
         Cookies for site analytics
       </p>
       <p className="text-ink-3 mt-2 text-sm leading-relaxed">
-        With your permission we use Google Analytics and Microsoft Clarity to
-        understand how buyers use this site, so we can improve it. No
-        advertising cookies are used. You can change this any time from
-        “Cookie settings” in the footer.{" "}
+        With your permission we use Google Analytics, Microsoft Clarity and
+        the Meta Pixel to understand how buyers use this site and to measure
+        our advertising. You can change this any time from “Cookie settings”
+        in the footer.{" "}
         <Link href="/legal/privacy-policy" className="text-accent-400 hover:underline">
           Privacy policy
         </Link>
@@ -40,7 +40,7 @@ export function ConsentBanner() {
           onClick={() => choose("granted")}
           className="bg-accent-400 text-ink rounded-cta px-5 py-2.5 text-sm font-semibold transition-opacity hover:opacity-90"
         >
-          Accept analytics
+          Accept
         </button>
         <button
           type="button"
