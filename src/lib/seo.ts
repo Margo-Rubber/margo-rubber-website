@@ -9,16 +9,15 @@ import { IS_VISION, isIndexable } from "@/lib/build-mode";
 export const SITE_URL = "https://www.margorubber.com";
 
 /**
- * The share card every page uses (WhatsApp, LinkedIn, X, Slack previews).
- * 1200×630 in /public. Without it every link Margo sends previews with no
- * picture (SEO audit, Oct 2026).
+ * Share cards (WhatsApp, LinkedIn, X, Slack previews) come from the
+ * `opengraph-image.tsx` file beside each template — home, product line, part,
+ * industry, guide — rendered by src/lib/og-card.tsx. Pages without a card of
+ * their own inherit the home card from src/app/(site)/opengraph-image.tsx.
+ *
+ * No `images` are set in buildMetadata below on purpose: config-set images
+ * override those files, which is why every page shared og-default.png until
+ * 21 Oct 2026 (ticket T15).
  */
-const OG_IMAGE = {
-  url: "/og-default.png",
-  width: 1200,
-  height: 630,
-  alt: "Margo Rubber Products — precision moulded rubber components, Nashik, India",
-};
 
 /**
  * Search snippets are cut at roughly 60 characters for a title and 155 for a
@@ -114,13 +113,11 @@ export function buildMetadata(fm: SeoInput, path: string): Metadata {
       title,
       description,
       siteName: "Margo Rubber Products",
-      images: [OG_IMAGE],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [OG_IMAGE.url],
     },
   };
 }

@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { displayName, hrefFor, industryBySlug, productBySlug } from "@/content/routes";
+import { displayName, hrefFor, productBySlug } from "@/content/routes";
 import { trail } from "@/lib/breadcrumbs";
 import { getFrontmatter } from "@/lib/content";
 import { getSkuPage, skuSlugs } from "@/lib/sku-source";
@@ -102,11 +102,10 @@ export default async function SkuPage(
       fm.relatedParts.map(async (r) => {
         if (r.slug.includes("/")) {
           const [cat, slug] = r.slug.split("/");
-          // "industries/pumps-valves": the sector page the part serves.
-          if (cat === "industries") {
-            const ind = industryBySlug(slug);
-            return ind ? { slug: r.slug, label: ind.label, difference: r.difference, href: hrefFor(ind) } : null;
-          }
+          // "industries/pumps-valves": a sector page is not a part, so it is
+          // never shown as a "You May Also Need" product card (audit, 21 Oct
+          // 2026).
+          if (cat === "industries") return null;
           const other = await getSkuPage(fileFor(cat, slug));
           return other && other.frontmatter.category === cat
             ? { slug: r.slug, label: other.frontmatter.h1, difference: r.difference, href: `/products/${cat}/${slug}`, image: other.frontmatter.gallery.main }
@@ -182,7 +181,9 @@ export default async function SkuPage(
       />
 
       <SkuSpecs
-        productCode={fm.productCode}
+        // Template text ("The size designation — shaft Ø × bore Ø × width…")
+        // is not a part number: no real code, no Product Code row.
+        productCode={realPartNumber(fm.productCode) ?? undefined}
         specs={fm.specs}
         hardness={fm.hardness}
         dimensions={fm.dimensions}

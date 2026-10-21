@@ -131,7 +131,8 @@ const METAS: Record<string, string> = {
 /** H1 rewrites: [pattern, replacement, words the H1 must then contain]. */
 const H1: Record<string, { from: RegExp; to: string; must: string[]; lines?: string[] }> = {
   "/industries/automotive": { from: /Rubber Components/i, to: "Rubber Parts", must: ["parts"] },
-  "/industries/medical-devices": { from: /Rubber Components/i, to: "Silicone & Rubber Components", must: ["silicone"] },
+  // Lookbehind: without it every re-run added another "Silicone &" (21 Oct 2026).
+  "/industries/medical-devices": { from: /(?<!Silicone & )Rubber Components/i, to: "Silicone & Rubber Components", must: ["silicone"] },
   "/industries/pumps-valves": { from: /Rubber Components/i, to: "Rubber Seals & Components", must: ["seal"] },
   "/industries/water-fluid-management": { from: /Rubber Components/i, to: "Rubber Seals & Gaskets", must: ["seal"] },
   "/industries/transport": { from: /^$/, to: "", must: ["rail", "rubber"], lines: ["Rubber Seals and Mounts", "for Rail and Marine Builders"] },
