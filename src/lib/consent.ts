@@ -70,6 +70,8 @@ export function choose(choice: Choice) {
   forcedOpen = false;
   window.gtag?.("consent", "update", { analytics_storage: choice });
   window.clarity?.("consentv2", { ad_Storage: "denied", analytics_Storage: choice });
+  // The pixel is only installed once consent is granted (Analytics.tsx).
+  if (choice === "granted") (window as { __margoLoadMeta?: () => void }).__margoLoadMeta?.();
   window.fbq?.("consent", choice === "granted" ? "grant" : "revoke");
   window.dispatchEvent(new Event(EVENT));
 }

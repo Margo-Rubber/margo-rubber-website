@@ -532,7 +532,10 @@ export function Story({
 }) {
   return (
     <section
-      id="story"
+      // Not id="story": content extractors (trafilatura, readability) take an
+      // element with that id as the whole article and drop the rest of the
+      // page — 156 of ~1,681 words kept (D5, 21 Oct 2026).
+      id="company-history"
       className="bg-surface-2 relative isolate overflow-hidden py-[70px]"
     >
       <Bloom className="top-0 -left-32 size-[34rem]" />
@@ -594,6 +597,9 @@ export function Story({
                 {p}
               </p>
             ))}
+            {/* The one place the old domain is named as a website (D9): buyers
+                and crawlers that knew the old site can match the two. */}
+            <p className="text-ink-4 mt-5 text-sm">This website was formerly margorubber.in.</p>
 
             <ul className="mt-8 space-y-3">
               {checks.map((c) => (
@@ -753,26 +759,28 @@ export function Leadership({
 }) {
   return (
     <section className="bg-surface-2 grid items-stretch gap-0 lg:grid-cols-2">
-      {/* Full-bleed plate on the left, dissolving into the copy column. */}
+      {/* The founder's portrait, shown as photographed (21 Oct 2026): no
+          dimming or desaturating filter, and only thin edge fades so the
+          plate still meets the copy column without veiling the person. */}
       <div className="relative isolate min-h-[380px] overflow-hidden lg:min-h-[620px]">
         <Img
           k={image}
           fill
           sizes="(min-width:1024px) 50vw, 100vw"
-          className="object-cover brightness-[0.8] saturate-[0.85]"
+          className="object-cover"
         />
         <div
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "linear-gradient(to top, var(--color-surface-2), transparent 40%)",
+              "linear-gradient(to top, var(--color-surface-2), transparent 12%)",
           }}
         />
         <div
           className="pointer-events-none absolute inset-0 hidden lg:block"
           style={{
             background:
-              "linear-gradient(to right, transparent 55%, var(--color-surface-2))",
+              "linear-gradient(to right, transparent 88%, var(--color-surface-2))",
           }}
         />
       </div>

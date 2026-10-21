@@ -88,6 +88,8 @@ export function EnquiryForm({
   // several submit events before React re-renders, and every one of them still
   // sees status === "idle" — each became its own POST and its own set of emails.
   const inFlight = useRef(false);
+  /** Enquiries already counted as a lead in this visit (D1). */
+  const leadsSent = useRef(new Set<string>());
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -157,8 +159,14 @@ export function EnquiryForm({
       if (body.ok) {
         setSubmitted(fields);
         setStatus("success");
-        track("generate_lead", { form: source });
         form.reset();
+        // Once per enquiry (D1): the same content sent again — a double
+        // click, a back-button resend — is the same lead, not a new one.
+        const key = `${source}:${JSON.stringify(fields)}`;
+        if (!leadsSent.current.has(key)) {
+          leadsSent.current.add(key);
+          track("generate_lead", { form: source });
+        }
         if (redirectTo) router.push(redirectTo);
         return;
       }

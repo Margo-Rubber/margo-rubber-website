@@ -1,3 +1,5 @@
+import { AnswerLead } from "@/components/sections/AnswerLead";
+import { answerBlockFor } from "@/content/answer-blocks";
 import { getSitePage } from "@/lib/page-source";
 import { IS_VISION } from "@/lib/build-mode";
 import { getSiteSettings } from "@/lib/settings";
@@ -52,6 +54,8 @@ export default async function HomePage() {
           description: fm.seo.description,
           isHome: true,
           heroSlot: fm.hero.image,
+          // The answer block is the page's one Q&A (D6).
+          faqs: answerBlockFor("/") ? [answerBlockFor("/")!] : [],
           extra: [processListNode(fm.process.steps, "/", fm.process.lines.join(" "))],
         })}
       />
@@ -66,6 +70,8 @@ export default async function HomePage() {
         chips={fm.hero.chips}
         cards={fm.hero.cards}
       />
+
+      <AnswerLead block={answerBlockFor("/")} />
 
       <TrustBar label={fm.trustbar.label} items={fm.trustbar.items} />
 

@@ -54,21 +54,12 @@ export function Img({
   const img = alt === undefined ? base : { ...base, alt };
 
   /**
-   * Blur-up, but never on a priority image.
-   *
-   * A priority image is preloaded and is usually the LCP element, so its blur
-   * would flash for a moment at best while adding ~450 bytes of base64 to the
-   * critical markup, competing with the image it is standing in for. Below the
-   * fold, where the image arrives long after the layout, the placeholder is
-   * the entire point.
-   *
-   * Spread rather than passed directly: `placeholder="blur"` throws at runtime
-   * if `blurDataURL` is undefined, which is the case for SVG entries.
+   * No blur-up placeholders (placeholder="empty", Next's default) — D2,
+   * 21 Oct 2026. Each one inlined ~1 KB of base64 into the HTML, and the
+   * page also carried it a second time in the React payload: /products/o-rings
+   * grew from 269 KB to 579 KB, 241 KB of it 208 blur previews. Width and
+   * height still reserve the space, so nothing shifts as photos arrive.
    */
-  const blurProps =
-    !priority && img.blur
-      ? ({ placeholder: "blur", blurDataURL: img.blur } as const)
-      : {};
 
   if (fill) {
     return (
@@ -82,7 +73,6 @@ export function Img({
         fetchPriority={priority ? "high" : undefined}
         sizes={sizes ?? "100vw"}
         className={className}
-        {...blurProps}
       />
     );
   }
@@ -97,7 +87,6 @@ export function Img({
       fetchPriority={priority ? "high" : undefined}
       sizes={sizes}
       className={className}
-      {...blurProps}
     />
   );
 }

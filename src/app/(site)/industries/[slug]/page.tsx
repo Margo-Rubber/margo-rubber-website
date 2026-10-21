@@ -1,3 +1,5 @@
+import { AnswerLead } from "@/components/sections/AnswerLead";
+import { answerBlockFor } from "@/content/answer-blocks";
 import { notFound } from "next/navigation";
 import { trail } from "@/lib/breadcrumbs";
 import { buildMetadata } from "@/lib/seo";
@@ -60,6 +62,8 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
         image={heroImage}
         boost={boost}
       />
+
+      <AnswerLead block={answerBlockFor(path)} />
 
       {/* Industry pages have no alternating band, so nothing alternates. */}
       <BlockRenderer blocks={blocks} comp2={false} prose={<FurtherReading slugs={fm.related.resources} />} />

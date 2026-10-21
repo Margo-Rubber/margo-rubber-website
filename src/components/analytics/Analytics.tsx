@@ -22,8 +22,21 @@ const EEA = [
 const CONSENT_JS = `if(!window.__margoConsent){(function(){var s=null;try{s=localStorage.getItem('margo-consent')}catch(e){}if(s!=='granted'&&s!=='denied')s=null;var eu=false;try{eu=/^Europe\\//.test(Intl.DateTimeFormat().resolvedOptions().timeZone||'')}catch(e){}var a=s||(eu?'denied':'granted');window.dataLayer=window.dataLayer||[];window.gtag=window.gtag||function(){dataLayer.push(arguments)};var d={ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'};gtag('consent','default',Object.assign({analytics_storage:'denied',region:${JSON.stringify(EEA)},wait_for_update:500},d));gtag('consent','default',Object.assign({analytics_storage:a},d));if(s)gtag('consent','update',{analytics_storage:s});window.__margoConsent=a;})();}`;
 
 /**
- * GA4, Clarity and the Meta Pixel, loaded after the page is interactive so
- * none of them touches LCP. Rendered by the (site) layout only: the Studio
+ * The Meta Pixel, installed only once analytics consent is granted (D1):
+ * straight away where consent starts granted, otherwise from the cookie
+ * banner's Accept (src/lib/consent.ts calls window.__margoLoadMeta). Until
+ * then fbevents.js is not even downloaded, so a visitor in the EEA, UK or
+ * Switzerland who has not accepted sends Meta nothing — the same rule
+ * Google Consent Mode applies to GA4.
+ */
+const metaLoader = (id: string) =>
+  `window.__margoLoadMeta=function(){if(window.fbq)return;!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('consent','grant');fbq('init','${id}');fbq('track','PageView');};if(window.__margoConsent==='granted')window.__margoLoadMeta();`;
+
+/**
+ * GA4 and the Meta Pixel load with `lazyOnload` — after the page has fully
+ * loaded — so neither competes with the headline for the network or the main
+ * thread (D2: together they added ~460 KB before first paint). Clarity stays
+ * `afterInteractive` so session recordings start with the page. Rendered by the (site) layout only: the Studio
  * and the enquiries desk are never tracked.
  *
  * Page views: GA4's enhanced measurement counts client-side navigations
@@ -40,22 +53,25 @@ export function Analytics() {
         <>
           <Script
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-            strategy="afterInteractive"
+            strategy="lazyOnload"
           />
-          <Script id="ga4" strategy="afterInteractive">
+          <Script id="ga4" strategy="lazyOnload">
             {`${CONSENT_JS}gtag('js',new Date());gtag('config','${GA_ID}');`}
           </Script>
         </>
       )}
       {CLARITY_ID && (
-        <Script id="clarity" strategy="afterInteractive">
+        // NOT id="clarity": an element id becomes a window property, so
+        // window.clarity was this <script> element and Clarity never started
+        // (D1). Any id that is not a global the tag uses is safe.
+        <Script id="ms-clarity" strategy="afterInteractive">
           {`${CONSENT_JS}(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","${CLARITY_ID}");window.clarity("consentv2",{ad_Storage:"denied",analytics_Storage:window.__margoConsent||"denied"});`}
         </Script>
       )}
       {META_PIXEL_ID && (
         <>
-          <Script id="meta-pixel" strategy="afterInteractive">
-            {`${CONSENT_JS}!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('consent',window.__margoConsent==='granted'?'grant':'revoke');fbq('init','${META_PIXEL_ID}');fbq('track','PageView');`}
+          <Script id="meta-pixel" strategy="lazyOnload">
+            {`${CONSENT_JS}${metaLoader(META_PIXEL_ID)}`}
           </Script>
           <MetaPageView />
         </>

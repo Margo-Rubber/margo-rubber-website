@@ -18,9 +18,11 @@ import {
   SkuHero,
   SkuProcess,
   SkuQuality,
+  SkuCompoundLinks,
   SkuRelated,
   SkuSpecs,
 } from "@/components/sections/SkuBlocks";
+import { compoundLinks } from "@/lib/compound-links";
 import { FurtherReading } from "@/components/sections/FurtherReading";
 
 /**
@@ -68,9 +70,10 @@ export default async function SkuPage(
 ) {
   const { category, product } = await props.params;
 
-  const [page, settings] = await Promise.all([
+  const [page, settings, byCompound] = await Promise.all([
     getSkuPage(fileFor(category, product)),
     getSiteSettings(),
+    compoundLinks(),
   ]);
   if (!page) notFound();
 
@@ -217,6 +220,7 @@ export default async function SkuPage(
       {/* The sheet's four named siblings with their differences when set;
           the category's other parts otherwise. */}
       <SkuRelated items={relatedParts.length ? relatedParts : siblingCards} categorySlug={category} />
+      <SkuCompoundLinks links={byCompound[fileFor(category, product)] ?? []} />
       <FurtherReading slugs={fm.related.resources} />
 
       <SkuCta

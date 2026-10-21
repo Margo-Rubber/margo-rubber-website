@@ -33,7 +33,8 @@ export async function generateMetadata() {
  * /about — brief A12.
  *
  * Carries two anchors that other pages and the old sitemap point at:
- * #story and #manufacturing. Keep both if sections are ever reordered.
+ * #company-history (was #story until 21 Oct 2026, D5) and #manufacturing.
+ * Keep both if sections are ever reordered.
  *
  * Almost every figure on this page is still awaiting Margo's sign-off, so the
  * content file ships `status: placeholder`, which means noindex plus no

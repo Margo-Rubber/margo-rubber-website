@@ -1143,6 +1143,32 @@ export function SkuRelated({
   );
 }
 
+/* ══ SAME COMPOUND (D8 / T18) ═════════════════════════════════════════════ */
+/** Text links to other parts moulded in a compound this part shares, anchored
+ *  on each part's name. Plain links in a list, so crawlers read them as
+ *  in-content links, not navigation. See src/lib/compound-links.ts. */
+export function SkuCompoundLinks({ links }: { links: readonly { href: string; label: string; shared: readonly string[] }[] }) {
+  if (!links.length) return null;
+  return (
+    <section className="bg-canvas border-line border-t py-[56px]">
+      <Container>
+        <Eyebrow>Same compound</Eyebrow>
+        <h2 className="text-h3 mt-3">Other parts we mould in the same compounds</h2>
+        <ul className="mt-6 grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
+          {links.map((l) => (
+            <li key={l.href} className="text-sm">
+              <Link href={l.href} className="text-ink hover:text-accent-400 font-medium transition-colors">
+                {l.label}
+              </Link>
+              <span className="text-ink-4"> · {l.shared.join(", ")}</span>
+            </li>
+          ))}
+        </ul>
+      </Container>
+    </section>
+  );
+}
+
 /* ══ CLOSING CTA ══════════════════════════════════════════════════════════ */
 export function SkuCta({
   h1,

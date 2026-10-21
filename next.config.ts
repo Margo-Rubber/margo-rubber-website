@@ -72,10 +72,10 @@ const nextConfig: NextConfig = {
       "font-src 'self' data:",
       "connect-src 'self' https://*.sanity.io https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms https://connect.facebook.net https://www.facebook.com",
       "media-src 'self' https://cdn.sanity.io",
-      "frame-src 'self'",
+      "frame-src 'self' https://www.facebook.com",
       "frame-ancestors 'self'",
       "base-uri 'self'",
-      "form-action 'self'",
+      "form-action 'self' https://www.facebook.com",
     ].join("; ");
     return [
       {

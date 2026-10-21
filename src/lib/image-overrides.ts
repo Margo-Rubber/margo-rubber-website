@@ -54,6 +54,11 @@ export async function getImageOverrides(): Promise<ImageOverrideMap> {
     // `alt` may legitimately be empty — a decorative image. Only the pieces
     // that guarantee the layout (url, width, height) are mandatory here.
     if (!r.url || !r.w || !r.h) continue;
+    // Retired slot (D4): "sku.product" was the shared stand-in photo for a
+    // part without its own, and holds the EPDM oil-seal photograph. No page
+    // draws it any more (SkuBlocks: a part's own photo or none), so it is
+    // not sent to the browser. Delete the upload in Studio → Photographs.
+    if (r.slot === "sku.product") continue;
     map[r.slot] = {
       // Some uploads are camera originals (8000×6000, 3–4 MB). Next fetches
       // the original before resizing it, so cap it at Sanity's CDN first: no
@@ -63,7 +68,8 @@ export async function getImageOverrides(): Promise<ImageOverrideMap> {
       alt: r.alt ?? "",
       w: r.w,
       h: r.h,
-      ...(r.blur ? { blur: r.blur } : {}),
+      // No `blur`: placeholders are off (D2), and this whole map is sent to
+      // the browser on every page, so its 35 KB of base64 went with it.
     };
   }
   return map;

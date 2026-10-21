@@ -168,15 +168,19 @@ export function CategoryHero({
             fill
             priority
             sizes="100vw"
-            className="-z-10 object-cover"
+            className="-z-10 object-cover object-right lg:brightness-[1.15] lg:contrast-[1.05]"
           />
-          {/* Legibility scrim, in two passes because the copy is set left and
-              the plant photography is brightest top-right. The vertical pass
-              grounds the whole frame; the horizontal one darkens only the
-              column the text occupies, so the image stays readable on the
-              right instead of being flattened everywhere. */}
-          <div className="from-canvas via-canvas/85 to-canvas/50 absolute inset-0 -z-10 bg-gradient-to-t" />
-          <div className="from-canvas/95 via-canvas/60 absolute inset-0 -z-10 bg-gradient-to-r to-transparent" />
+          {/* Scrim (21 Oct 2026): the product must be clearly visible. Before,
+              a full-height dark wash over the whole frame plus a second one
+              from the left buried black rubber parts in a black hero.
+              Desktop: the copy column (left ~40%) sits on solid canvas and the
+              photo is untouched from ~65% across, lifted slightly because the
+              parts are dark rubber. The fade at the foot keeps the stat row
+              on dark ground (a bright photo made "48 hrs" unreadable). Mobile keeps a full wash, as the copy sits over the
+              photo there. */}
+          <div className="from-canvas via-canvas/85 to-canvas/55 absolute inset-0 -z-10 bg-gradient-to-t lg:hidden" />
+          <div className="from-canvas via-canvas/80 absolute inset-0 -z-10 hidden bg-gradient-to-r from-30% via-45% to-transparent to-65% lg:block" />
+          <div className="from-canvas absolute inset-x-0 bottom-0 -z-10 hidden h-72 bg-gradient-to-t from-45% to-transparent lg:block" />
         </>
       )}
 

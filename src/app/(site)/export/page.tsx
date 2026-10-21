@@ -1,3 +1,5 @@
+import { AnswerLead } from "@/components/sections/AnswerLead";
+import { answerBlockFor } from "@/content/answer-blocks";
 import { ExportLaneSequence } from "@/components/sections/ExportLaneSequence";
 import { IS_VISION } from "@/lib/build-mode";
 import { Section } from "@/components/ui/Section";
@@ -49,7 +51,8 @@ export default async function ExportPage() {
           name: fm.seo.title,
           description: fm.seo.description,
           crumbs,
-          faqs: fm.faqs,
+          // The answer block first (D6), then the page's own FAQ.
+          faqs: [...(answerBlockFor("/export") ? [answerBlockFor("/export")!] : []), ...fm.faqs],
           extra: incotermsTermSetNode(
             fm.incoterms?.terms ?? fm.markets.find((m) => m.panel?.terms?.length)?.panel?.terms ?? [],
           ),
@@ -66,6 +69,8 @@ export default async function ExportPage() {
         markets={fm.markets}
         visionStrip={IS_VISION ? fm.hero.visionStrip : undefined}
       />
+
+      <AnswerLead block={answerBlockFor("/export")} />
 
       {/* Pinned scroll sequence. Sits between the hero's static overview plate
           and the per-market detail sections, so it reads as the transition

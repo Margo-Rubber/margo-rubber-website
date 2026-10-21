@@ -1,3 +1,5 @@
+import { AnswerLead } from "@/components/sections/AnswerLead";
+import { answerBlockFor } from "@/content/answer-blocks";
 import { notFound } from "next/navigation";
 import { trail } from "@/lib/breadcrumbs";
 import { buildMetadata } from "@/lib/seo";
@@ -78,6 +80,8 @@ export default async function ProductCategoryPage(
         statsAlign={fm.heroStatsAlign}
         breadcrumb={trail(["Products", "/products"], [fm.navLabel, path])}
       />
+
+      <AnswerLead block={answerBlockFor(path)} />
 
       <BlockRenderer
         blocks={blocks}

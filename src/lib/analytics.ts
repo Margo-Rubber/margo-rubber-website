@@ -47,14 +47,31 @@ const META_EVENT: Record<string, string> = {
   phone_click: "Contact",
 };
 
+/** Call one tool, never letting it break the page or the next tool (D1). */
+function safely(fn: unknown, ...args: unknown[]) {
+  if (typeof fn !== "function") return;
+  try {
+    (fn as (...a: unknown[]) => void)(...args);
+  } catch {
+    // An analytics tool failing must never surface to the visitor. Until
+    // 21 Oct 2026 a throw here (window.clarity was the <script id="clarity">
+    // element, not a function) reached the enquiry form's catch block and
+    // told buyers their sent enquiry had failed — so they sent it again.
+  }
+}
+
 /**
  * Record a conversion-type event in every tool. Safe to call anywhere on
  * the client; a no-op when analytics is off or still loading.
+ *
+ * `transport_type: "beacon"`: a tel:, mailto: or WhatsApp click hands the
+ * visitor to another app at once, and GA4's batched hit was being lost
+ * with the page (phone_click: 0 events in 28 days to 21 Oct 2026).
  */
 export function track(event: string, params?: Record<string, string | number>) {
   if (typeof window === "undefined") return;
-  window.gtag?.("event", event, params);
-  window.clarity?.("event", event);
+  safely(window.gtag, "event", event, { ...params, transport_type: "beacon" });
+  safely(window.clarity, "event", event);
   const meta = META_EVENT[event];
-  if (meta) window.fbq?.("track", meta, { content_name: String(params?.form ?? params?.page ?? event) });
+  if (meta) safely(window.fbq, "track", meta, { content_name: String(params?.form ?? params?.page ?? event) });
 }

@@ -40,10 +40,10 @@ export function SanityPhoto({
     objectFit: fit,
     ...(h ? { objectPosition: `${(h.x * 100).toFixed(1)}% ${(h.y * 100).toFixed(1)}%` } : {}),
   } as const;
-  const blur = a.lqip ? ({ placeholder: "blur", blurDataURL: a.lqip } as const) : {};
+  // No blur-up placeholder (D2): see components/ui/Img.tsx.
 
   return fill ? (
-    <NextImage src={src} alt={alt} fill sizes={sizes} className={className} style={style} {...blur} />
+    <NextImage src={src} alt={alt} fill sizes={sizes} className={className} style={style} />
   ) : (
     <NextImage
       src={src}
@@ -53,7 +53,6 @@ export function SanityPhoto({
       sizes={sizes}
       className={className}
       style={style}
-      {...blur}
     />
   );
 }

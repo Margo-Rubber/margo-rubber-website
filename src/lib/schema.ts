@@ -1,3 +1,4 @@
+import { answerBlockFor } from "@/content/answer-blocks";
 import { plainText } from "@/components/ui/Emphasis";
 import { googleMapsUrl } from "@/lib/maps";
 import type { ContentStatus } from "@/content/site";
@@ -184,22 +185,24 @@ export async function webSiteNode(): Promise<Node> {
  */
 export function offerCatalogNode(): Node {
   const live = PRODUCTS.filter((p) => p.live);
+  // An ItemList of the product lines, not an OfferCatalog of Offers (D7,
+  // 21 Oct 2026): an Offer with no price is an incomplete offer to Google,
+  // and Margo's product schema carries no offers or prices at all.
   return {
-    "@type": "OfferCatalog",
+    "@type": "ItemList",
     "@id": CATALOG_ID,
     name: "Rubber component product lines",
-    provider: { "@id": ORG_ID },
     numberOfItems: live.length,
-    itemListElement: live.map((p) => ({
-      "@type": "Offer",
-      itemOffered: {
+    itemListElement: live.map((p, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
         "@type": "Product",
         "@id": `${SITE_URL}${p.path}#product`,
         name: p.label,
         url: `${SITE_URL}${p.path}`,
         manufacturer: { "@type": "Organization", "@id": ORG_ID },
       },
-      // No price, no availability — see the file comment.
     })),
   };
 }
@@ -401,6 +404,21 @@ export function realPartNumber(code?: string): string | null {
   return c;
 }
 
+/** Compound names for a part's `material` (D7). */
+function partMaterial(
+  path: string,
+  recommended: readonly string[],
+  all: readonly { code: string; name: string }[],
+): string[] {
+  const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, "");
+  const find = (token: string) => all.find((c) => norm(c.code) === norm(token) || norm(c.name) === norm(token));
+  // "nbr", "epdm-pad", "aem-insulation-bush" → the leading token.
+  const lead = find((path.split("/").pop() ?? "").split("-")[0]);
+  if (lead) return [lead.name];
+  const own = recommended.map(find).filter((c): c is NonNullable<typeof c> => !!c);
+  return (own.length ? own : all).map((c) => c.name);
+}
+
 /**
  * A single named part. Narrower than the category Product above — a SKU is a
  * specific item, so it gets `isSimilarTo` back to its category rather than
@@ -414,6 +432,8 @@ export async function skuNode(
     gallery?: { main?: string };
     hardness?: string;
     specs?: readonly { label: string; value: string }[];
+    /** The compounds the page recommends for this part (codes). */
+    compounds?: readonly string[];
   },
   path: string,
   categoryPath: string,
@@ -446,11 +466,12 @@ export async function skuNode(
     ...(partNumber ? { sku: partNumber, mpn: partNumber } : {}),
     ...(category ? { category: category.label } : {}),
     manufacturer: { "@type": "Organization", "@id": ORG_ID },
-    // All eight compounds, as on the category pages. Sheet 32 §04 wanted
-    // only the recommended rows; the later client instruction (2026-09-02,
-    // sheet 36 page-level) overrides it: every part is made in every
-    // compound Margo mixes, so the array is never shortened.
-    material: compounds.map((c) => c.name),
+    // The part's own compound (D7, 21 Oct 2026 — supersedes the 2 Sep
+    // "all eight on every part" instruction): a part named for a compound
+    // (/oil-seals/nbr, /gaskets/epdm, epdm-pad) lists that one; any other
+    // part lists the compounds its page recommends; all eight only when the
+    // page names none.
+    material: partMaterial(path, fm.compounds ?? [], compounds),
     ...(props.length ? { additionalProperty: props } : {}),
     // Siblings when the page lists them; the category otherwise.
     isSimilarTo: siblingPaths.length
@@ -541,7 +562,7 @@ export function industriesListNode(): Node | null {
  *
  * Every route composes from this rather than hand-assembling nodes, so the
  * @id references between nodes actually resolve. The homepage — and only
- * the homepage — carries the Organization, WebSite, Place, OfferCatalog and
+ * the homepage — carries the Organization, WebSite, Place, product ItemList and
  * compound vocabulary; every other page's node points at them.
  */
 export async function pageGraph(opts: {
@@ -627,8 +648,12 @@ export async function productCategoryGraph(
       ),
     );
   }
-  if (fm.schemaTypes.includes("FAQPage")) {
-    const faq = faqNode(fm.faqs, path);
+  // The answer block (D6) is answered on the page, so it is always in the
+  // FAQPage; the page's own FAQ joins it where the page opts in.
+  {
+    const lead = answerBlockFor(path);
+    const faqs = [...(lead ? [lead] : []), ...(fm.schemaTypes.includes("FAQPage") ? fm.faqs : [])];
+    const faq = faqNode(faqs, path);
     if (faq) nodes.push(faq);
   }
   // The one category with a named catalogue: thirteen components as an
@@ -725,7 +750,9 @@ export function industryGraph(
   crumbs: { name: string; path: string }[],
 ) {
   const nodes: Node[] = [serviceNode(fm, path), breadcrumbNode(crumbs, path)];
-  const faq = faqNode(fm.faqs, path);
+  // The answer block (D6) leads the page's FAQPage.
+  const lead = answerBlockFor(path);
+  const faq = faqNode([...(lead ? [lead] : []), ...fm.faqs], path);
   if (faq) nodes.push(faq);
   return { "@context": "https://schema.org", "@graph": nodes };
 }
