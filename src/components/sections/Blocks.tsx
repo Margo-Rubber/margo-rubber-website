@@ -168,18 +168,28 @@ export function CategoryHero({
             fill
             priority
             sizes="100vw"
-            className="-z-10 object-cover object-right lg:brightness-[1.15] lg:contrast-[1.05]"
+            className="-z-10 object-cover object-right lg:contrast-[1.04]"
           />
-          {/* Scrim (21 Oct 2026): the product must be clearly visible. Before,
-              a full-height dark wash over the whole frame plus a second one
-              from the left buried black rubber parts in a black hero.
-              Desktop: the copy column (left ~40%) sits on solid canvas and the
-              photo is untouched from ~65% across, lifted slightly because the
-              parts are dark rubber. The fade at the foot keeps the stat row
-              on dark ground (a bright photo made "48 hrs" unreadable). Mobile keeps a full wash, as the copy sits over the
-              photo there. */}
+          {/* Scrim (21 Oct 2026, revised the same evening). The product must
+              stay clearly visible, but most product photos are shot on white
+              studio backgrounds, which left a bright slab on the right of a
+              black page and a hard light edge under the header.
+              1. Tone: a cool grey multiplied over the photo. Multiply leaves
+                 black rubber black and turns the white backdrop into a soft
+                 grey, so the part keeps its shape and the frame stops glowing.
+                 (The old brightness-115% lift is gone; it was what pushed the
+                 backdrop to pure white.)
+              2. Copy side: one eased fade instead of a short 30%→65% ramp,
+                 so there is no visible seam where the wash ends.
+              3. Edges: a light fade on the right edge and under the header,
+                 so the photo sits inside the page instead of against it.
+              4. Foot: unchanged, keeps the stat row on dark ground.
+              Mobile keeps its full wash, as the copy sits over the photo. */}
+          <div className="absolute inset-0 -z-10 bg-[#a1a9ae] mix-blend-multiply" />
           <div className="from-canvas via-canvas/85 to-canvas/55 absolute inset-0 -z-10 bg-gradient-to-t lg:hidden" />
-          <div className="from-canvas via-canvas/80 absolute inset-0 -z-10 hidden bg-gradient-to-r from-30% via-45% to-transparent to-65% lg:block" />
+          <div className="absolute inset-0 -z-10 hidden bg-[linear-gradient(to_right,var(--color-canvas)_28%,rgb(0_0_0/0.72)_44%,rgb(0_0_0/0.3)_62%,transparent_80%)] lg:block" />
+          <div className="absolute inset-0 -z-10 hidden bg-[linear-gradient(to_left,rgb(0_0_0/0.45),transparent_22%)] lg:block" />
+          <div className="absolute inset-x-0 top-0 -z-10 hidden h-64 bg-[linear-gradient(to_bottom,rgb(0_0_0/0.8),rgb(0_0_0/0.4)_40%,transparent)] lg:block" />
           <div className="from-canvas absolute inset-x-0 bottom-0 -z-10 hidden h-72 bg-gradient-to-t from-45% to-transparent lg:block" />
         </>
       )}
