@@ -1,4 +1,5 @@
 import { answerBlockFor } from "@/content/answer-blocks";
+import { partCompounds } from "@/lib/part-compounds";
 import { plainText } from "@/components/ui/Emphasis";
 import { googleMapsUrl } from "@/lib/maps";
 import type { ContentStatus } from "@/content/site";
@@ -404,18 +405,13 @@ export function realPartNumber(code?: string): string | null {
   return c;
 }
 
-/** Compound names for a part's `material` (D7). */
+/** Compound names for a part's `material` (D7): its own, or all eight when unknown. */
 function partMaterial(
+  fm: Parameters<typeof partCompounds>[0],
   path: string,
-  recommended: readonly string[],
   all: readonly { code: string; name: string }[],
 ): string[] {
-  const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, "");
-  const find = (token: string) => all.find((c) => norm(c.code) === norm(token) || norm(c.name) === norm(token));
-  // "nbr", "epdm-pad", "aem-insulation-bush" → the leading token.
-  const lead = find((path.split("/").pop() ?? "").split("-")[0]);
-  if (lead) return [lead.name];
-  const own = recommended.map(find).filter((c): c is NonNullable<typeof c> => !!c);
+  const own = partCompounds(fm, path, all);
   return (own.length ? own : all).map((c) => c.name);
 }
 
@@ -432,8 +428,10 @@ export async function skuNode(
     gallery?: { main?: string };
     hardness?: string;
     specs?: readonly { label: string; value: string }[];
-    /** The compounds the page recommends for this part (codes). */
+    /** Where a part's compounds live — see lib/part-compounds.ts. */
     compounds?: readonly string[];
+    compoundRanking?: readonly { code: string; rank: number; rankLabel?: string }[];
+    compoundRouter?: { columns: readonly string[]; rows: readonly (readonly string[])[] };
   },
   path: string,
   categoryPath: string,
@@ -466,12 +464,11 @@ export async function skuNode(
     ...(partNumber ? { sku: partNumber, mpn: partNumber } : {}),
     ...(category ? { category: category.label } : {}),
     manufacturer: { "@type": "Organization", "@id": ORG_ID },
-    // The part's own compound (D7, 21 Oct 2026 — supersedes the 2 Sep
-    // "all eight on every part" instruction): a part named for a compound
-    // (/oil-seals/nbr, /gaskets/epdm, epdm-pad) lists that one; any other
-    // part lists the compounds its page recommends; all eight only when the
-    // page names none.
-    material: partMaterial(path, fm.compounds ?? [], compounds),
+    // The part's own compounds (D7, 21 Oct 2026 — supersedes the 2 Sep
+    // "all eight on every part" instruction): the compound a variant part is
+    // named for, else the ones its page recommends (lib/part-compounds.ts);
+    // all eight only when the page names none.
+    material: partMaterial(fm, path, compounds),
     ...(props.length ? { additionalProperty: props } : {}),
     // Siblings when the page lists them; the category otherwise.
     isSimilarTo: siblingPaths.length

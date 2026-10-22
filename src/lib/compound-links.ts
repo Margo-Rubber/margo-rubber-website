@@ -2,6 +2,8 @@ import { createHash } from "node:crypto";
 import { cacheTag } from "next/cache";
 import { getSkuPage, skuSlugs, skuTag } from "@/lib/sku-source";
 import { isIndexable } from "@/lib/build-mode";
+import { getSiteSettings } from "@/lib/settings";
+import { partCompounds } from "@/lib/part-compounds";
 
 /**
  * "MORE PARTS IN THE SAME COMPOUND" — internal links keyed on compound (D8 / T18).
@@ -31,17 +33,24 @@ export async function compoundLinks(): Promise<Record<string, CompoundLink[]>> {
   "use cache";
   cacheTag(skuTag());
 
+  // A part's compounds come from whichever field its page uses — the URL,
+  // `compounds`, the ranking or the router table (lib/part-compounds.ts).
+  // Reading `compounds` alone gave every live part an empty list: the field
+  // is filled only in the .mdx seeds (22 Oct 2026).
+  const { compounds: all } = await getSiteSettings();
   const parts: Part[] = [];
   for (const file of (await skuSlugs()).sort()) {
     const fm = (await getSkuPage(file))?.frontmatter;
     if (!fm || !isIndexable(fm.status)) continue;
     const i = file.indexOf("--");
+    const href = `/products/${file.slice(0, i)}/${file.slice(i + 2)}`;
+    const own = partCompounds(fm, href, all);
     parts.push({
       file,
-      href: `/products/${file.slice(0, i)}/${file.slice(i + 2)}`,
+      href,
       label: fm.h1,
-      compounds: new Set(fm.compounds.map((c) => c.toLowerCase())),
-      names: new Map(fm.compounds.map((c) => [c.toLowerCase(), c])),
+      compounds: new Set(own.map((c) => c.code)),
+      names: new Map(own.map((c) => [c.code, c.name])),
     });
   }
 
