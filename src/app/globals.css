@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* Desktop-width windows that are short (laptops, 125% display scaling):
+   heroes tighten their spacing so what matters stays above the fold. */
+@custom-variant short-screen (@media (min-width: 64rem) and (max-height: 56rem));
+
 /* ============================================================
    MARGO DESIGN TOKENS
    Sampled from the Figma exports (Margo-UI/). Accent confirmed

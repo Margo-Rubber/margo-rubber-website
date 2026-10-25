@@ -62,7 +62,6 @@ export default async function ProductsHubPage() {
         intro={fm.intro}
         actions={fm.actions}
         stats={fm.heroStats}
-        divider={fm.heroDivider}
         image={fm.hero?.image}
       />
 

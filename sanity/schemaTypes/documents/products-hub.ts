@@ -73,7 +73,14 @@ export const productsHub = defineType({
       ],
       group: "hero",
     }),
-    defineField({ name: "heroDivider", title: "Divider caption", type: "string", group: "hero" }),
+    defineField({
+      name: "heroDivider",
+      title: "Divider caption (not shown)",
+      type: "string",
+      description: "No longer displayed: it repeated the badge above the heading. Kept so existing content still validates.",
+      hidden: ({ value }) => !value,
+      group: "hero",
+    }),
     listField("marquee", "Scrolling strip", {
       group: "hero",
       description: "The words that scroll across under the hero.",

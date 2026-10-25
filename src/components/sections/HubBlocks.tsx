@@ -24,7 +24,10 @@ import { SlotValue } from "@/components/ui/SlotValue";
 
 /* ────────────────────────────────────────────────────────────────────────
    HUB HERO
-   Desktop: copy left, 2x2 stat grid right. Mobile: stacked, stats 2-up.
+   Copy on the left, the product photograph on the whole right side, and the
+   stats in one solid strip along the bottom: four in a row on desktop, 2x2
+   on phones. The stats used to be a glass 2x2 grid over the right column,
+   which hid most of the parts in the photo and blurred them into smudges.
    ──────────────────────────────────────────────────────────────────────── */
 /** Hero stat icons, matching the design. Inline SVG, no icon dependency. */
 const STAT_ICON: Record<string, React.ReactNode> = {
@@ -52,7 +55,7 @@ const STAT_ICON: Record<string, React.ReactNode> = {
 function StatIcon({ name }: { name?: string }) {
   if (!name || !STAT_ICON[name]) return null;
   return (
-    <span className="mb-4 grid size-11 place-items-center rounded-lg bg-[#172A30]">
+    <span className="grid size-10 shrink-0 place-items-center rounded-lg bg-[#172A30]">
       <svg
         viewBox="0 0 24 24"
         fill="none"
@@ -76,7 +79,6 @@ export function HubHero({
   intro,
   actions,
   stats,
-  divider,
   image,
   breadcrumb,
 }: {
@@ -86,12 +88,16 @@ export function HubHero({
   intro: string;
   actions: { label: string; href: string; variant: "primary" | "secondary" }[];
   stats: { value: string; label: string; icon?: string }[];
-  divider?: string;
   image?: string;
   breadcrumb?: readonly Crumb[];
 }) {
   return (
-    <header className="border-line relative isolate overflow-hidden border-b hero-offset pb-14 md:pb-20">
+    // `short-screen:` (globals.css) tightens the whole hero on laptop-height
+    // windows so the stat strip stays above the fold there too.
+    // The stat strip follows straight on from the buttons rather than being
+    // pinned to the bottom of a full-screen hero: on a short laptop screen
+    // the pinned strip landed at (or below) the bottom edge of the window.
+    <header className="border-line relative isolate overflow-hidden border-b hero-offset pb-12 md:pb-16 short-screen:pt-[calc(var(--header-h)+1.25rem)] short-screen:pb-8">
       {image && (
         <>
           {/* The design suppresses this to ~15%; raised on request so the
@@ -112,15 +118,15 @@ export function HubHero({
         </>
       )}
       <Container>
-        <Breadcrumb items={breadcrumb} className="mb-6" />
-        <div className="grid items-center gap-12 lg:grid-cols-[1fr_auto]">
+        <Breadcrumb items={breadcrumb} className="mb-6 short-screen:mb-4" />
+        <div className="max-w-[46rem]">
           <div>
             <span className="text-eyebrow border-accent-400/40 text-accent-400 inline-flex items-center gap-2 rounded-pill border px-4 py-1.5 font-mono uppercase">
               <span className="bg-accent-400 size-1.5 rounded-full" />
               {badge}
             </span>
 
-            <h1 className={`${displaySize(lines)} mt-6`}>
+            <h1 className={`${displaySize(lines)} mt-6 short-screen:mt-4 short-screen:text-[2.5rem]`}>
               {lines.map((l, i) => (
                 <span
                   key={l}
@@ -133,11 +139,11 @@ export function HubHero({
               ))}
             </h1>
 
-            <p className="text-ink-3 mt-6 max-w-[48ch] leading-relaxed">
+            <p className="text-ink-3 mt-6 max-w-[48ch] leading-relaxed lg:max-w-[60ch] short-screen:mt-4">
               {intro}
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-wrap gap-3 short-screen:mt-6">
               {actions.map((a) => (
                 <Button key={a.label} href={a.href} variant={a.variant}>
                   {a.label} <span aria-hidden>{a.variant === "primary" ? "→" : "▶"}</span>
@@ -145,49 +151,38 @@ export function HubHero({
               ))}
             </div>
 
-            {divider && (
-              <div className="mt-10 flex max-w-[430px] items-center gap-4">
-                <span aria-hidden className="bg-line-2 h-px flex-1" />
-                <span className="text-eyebrow text-ink-4 font-mono uppercase">
-                  {divider}
-                </span>
-                <span aria-hidden className="bg-line-2 h-px flex-1" />
-              </div>
-            )}
+            {/* The "divider caption" under the buttons is no longer drawn:
+                it repeated the badge above the heading word for word. */}
           </div>
-
-          {/* Two columns, right column offset down ~20px. Measured off the
-              design, which staggers the pairs rather than aligning a 2x2. */}
-          <dl className="grid grid-cols-2 gap-5 lg:w-[560px]">
-            <div className="space-y-5">
-              {stats
-                .filter((_, i) => i % 2 === 0)
-                .map((s) => (
-                  <StatCard key={s.label} s={s} />
-                ))}
-            </div>
-            <div className="space-y-5 lg:mt-5">
-              {stats
-                .filter((_, i) => i % 2 === 1)
-                .map((s) => (
-                  <StatCard key={s.label} s={s} />
-                ))}
-            </div>
-          </dl>
         </div>
+
+        {/* The stat strip. Solid, no blur: over the photo, frosted glass
+            turned the black parts behind it into smudges. A 1px gap over the
+            line colour draws the dividers in both the 1x4 and 2x2 layouts. */}
+        {stats.length > 0 && (
+          <dl className="bg-line border-line rounded-card mt-10 grid grid-cols-2 gap-px overflow-hidden border lg:grid-cols-4 short-screen:mt-6">
+            {stats.map((s) => (
+              <StatCell key={s.label} s={s} />
+            ))}
+          </dl>
+        )}
       </Container>
     </header>
   );
 }
 
-function StatCard({ s }: { s: { value: string; label: string; icon?: string } }) {
+function StatCell({ s }: { s: { value: string; label: string; icon?: string } }) {
   return (
-    <div className="border-line bg-surface-3/70 rounded-card border p-6 backdrop-blur-sm">
-      <StatIcon name={s.icon} />
-      <dd className="text-ink text-[2.25rem] leading-none font-bold">
+    // The number reads first, as before; in the DOM the term comes first, as
+    // a definition list requires, and the grid puts the value above it.
+    <div className="bg-surface-3 grid grid-cols-[auto_minmax(0,1fr)] items-center gap-x-4 px-5 py-4 lg:px-7 short-screen:py-3">
+      <span className="row-span-2">
+        <StatIcon name={s.icon} />
+      </span>
+      <dt className="text-ink-4 col-start-2 row-start-2 mt-1.5 text-xs">{s.label}</dt>
+      <dd className="text-ink col-start-2 row-start-1 self-end text-[1.75rem] leading-none font-bold short-screen:text-[1.5rem]">
         {s.value}
       </dd>
-      <dt className="text-ink-4 mt-2.5 text-xs">{s.label}</dt>
     </div>
   );
 }
