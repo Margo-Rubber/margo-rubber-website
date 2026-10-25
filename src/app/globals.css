@@ -566,33 +566,6 @@ body {
      not like a collection of bouncing widgets.
      ============================================================ */
 
-  @keyframes margo-orbit-outer {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-  @keyframes margo-orbit-middle {
-    from { transform: rotate(360deg); }
-    to { transform: rotate(0deg); }
-  }
-  @keyframes margo-orbit-inner {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-
-  .margo-orbit {
-    transform-box: view-box;
-    transform-origin: 300px 300px;
-  }
-  .margo-orbit--outer {
-    animation: margo-orbit-outer 42s linear infinite;
-  }
-  .margo-orbit--middle {
-    animation: margo-orbit-middle 26s linear infinite;
-  }
-  .margo-orbit--inner {
-    animation: margo-orbit-inner 15s linear infinite;
-  }
-
   /* Export map: dashes streaming along each lane, plus a bright pulse riding it.
      pathLength=100 on the SVG paths makes these offsets lane-length independent. */
   @keyframes margo-lane-flow {
@@ -613,11 +586,6 @@ body {
     opacity: 0.95;
     filter: drop-shadow(0 0 4px var(--color-accent-400));
     animation: margo-lane-pulse 3.6s cubic-bezier(0.45, 0, 0.55, 1) infinite;
-  }
-
-  /* Hero orbit rings: soft glow so the brighter strokes read against the photo. */
-  .margo-orbit-system {
-    filter: drop-shadow(0 0 6px color-mix(in srgb, currentColor 55%, transparent));
   }
 
   /* Slow image drift keeps the hero moving even when nobody hovers it. */
@@ -1784,7 +1752,6 @@ body {
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .margo-orbit,
     .margo-lane-flow,
     .margo-lane-pulse,
     .margo-hero-image,
@@ -1894,14 +1861,6 @@ body {
   .margo-orbit-anchor {
     position: relative;
   }
-  .margo-orbit-anchor > .margo-orbit-system {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 38rem;
-    height: 38rem;
-    translate: -42% -50%;
-  }
 }
 
 /* ── HEADER MENUS: readable link colours ──
@@ -1954,4 +1913,111 @@ main [id] {
 main li[id],
 main #iso-9001 {
   scroll-margin-top: 7rem;
+}
+
+/* ── HOME EXPORT MAP: real map, linked dots, shared highlight ──
+   Geometry comes from lib/export-map; ExportMap.tsx sets .is-active on the
+   route group and its card together. Self-contained: the lane dash/pulse
+   animations above (.margo-lane-flow / .margo-lane-pulse) are reused as-is. */
+@layer components {
+  .xmap-land {
+    fill: #1a1e24;
+    stroke: #0f1115;
+    stroke-width: 0.6;
+    stroke-linejoin: round;
+  }
+
+  .xmap-arc {
+    stroke-width: 1.5;
+    opacity: 0.85;
+    transition:
+      stroke-width 250ms var(--ease-standard),
+      opacity 250ms var(--ease-standard),
+      filter 250ms var(--ease-standard);
+  }
+  .xmap-route.is-active .xmap-arc {
+    stroke-width: 2.5;
+    opacity: 1;
+    filter: drop-shadow(0 0 4px var(--color-accent-400)) drop-shadow(0 0 10px rgb(43 188 196 / 0.6));
+  }
+
+  .xmap-dot,
+  .xmap-ring {
+    transform-box: fill-box;
+    transform-origin: center;
+    transition:
+      transform 250ms var(--ease-entrance),
+      opacity 250ms var(--ease-standard);
+  }
+  .xmap-ring {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  .xmap-route.is-active .xmap-dot {
+    transform: scale(1.35);
+  }
+  .xmap-route.is-active .xmap-ring {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .xmap-link {
+    cursor: pointer;
+    outline: none;
+  }
+
+  .xmap-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    transition: fill 250ms var(--ease-standard);
+  }
+  .xmap-route.is-active .xmap-label {
+    fill: var(--color-accent-400);
+  }
+  .xmap-short {
+    display: none;
+  }
+
+  /* The card mirrors .margo-card:hover when its dot is the active one. */
+  .xmap-card {
+    transition-duration: 260ms;
+  }
+  .xmap-card::before {
+    transition-duration: 300ms;
+  }
+  .xmap-card.is-active {
+    transform: translateY(-5px);
+    border-color: rgb(43 188 196 / 0.42);
+    box-shadow:
+      0 0 0 1px rgb(43 188 196 / 0.08) inset,
+      0 18px 45px -22px rgb(43 188 196 / 0.42);
+  }
+  .xmap-card.is-active::before {
+    transform: translateX(120%);
+  }
+
+  /* Narrow screens: the plate is ~340px wide, so 11-unit labels would render
+     at ~6px. Swap to short names at roughly double the size. */
+  @media (max-width: 639px) {
+    .xmap-label {
+      font-size: 21px;
+      letter-spacing: 0.02em;
+    }
+    .xmap-long {
+      display: none;
+    }
+    .xmap-short {
+      display: inline;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .xmap-arc,
+    .xmap-dot,
+    .xmap-ring,
+    .xmap-label {
+      transition: none;
+    }
+  }
 }

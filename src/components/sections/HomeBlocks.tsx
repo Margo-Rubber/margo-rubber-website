@@ -1,6 +1,9 @@
 import { autocompleteFor } from "@/lib/autocomplete";
 import Link from "next/link";
 import { Img } from "@/components/ui/Img";
+import { HeroVideo } from "@/components/ui/HeroVideo";
+import { ExportMap } from "@/components/sections/ExportMap";
+import { buildExportMap, laneCards } from "@/lib/export-map";
 import { Container } from "@/components/ui/Section";
 import type { Compound } from "@/content/schemas";
 import { Bloom } from "@/components/ui/Bloom";
@@ -374,12 +377,10 @@ export function HomeHero({
 }) {
   return (
     <header className="margo-hero bg-canvas relative isolate overflow-hidden pt-32 pb-24 md:pt-44 md:pb-32">
-      <Img
+      <HeroVideo
         k={image}
-        fill
-        priority
-        sizes="100vw"
-        className="margo-hero-image -z-20 object-cover opacity-60 brightness-[0.95] contrast-[1.05]"
+        src="/videos/bg-compressed.mp4"
+        className="margo-hero-image -z-20 opacity-60 brightness-[0.95] contrast-[1.05]"
       />
       <div
         className="absolute inset-0 -z-10"
@@ -409,7 +410,11 @@ export function HomeHero({
       <Bloom className="top-1/3 right-[-6rem] size-[30rem]" />
 
 
-      <Container>
+      {/* Wide screens: up to ~1500px this is the normal site column. Beyond
+          it the side margin stops growing at 10.4% of the width (the comp's
+          proportion) instead of centring a fixed 1184px column, so the copy
+          stays left-aligned like the comp on large or zoomed-out windows. */}
+      <Container className="lg:max-w-none! lg:px-[min(max(50px,calc((100%-1184px)/2)),max(50px,10.4%))]">
         <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1fr)_20rem]">
           <div>
             <Rule>{eyebrow}</Rule>
@@ -459,31 +464,6 @@ export function HomeHero({
           </div>
 
           <div className="margo-orbit-anchor">
-              {/* Concentric ring motif, anchored to the stat stack itself rather
-                  than to the screen edge, so it sits behind the cards the same
-                  way at every desktop width. */}
-              <svg
-                viewBox="0 0 600 600"
-                className="margo-orbit-system text-accent-400 pointer-events-none -z-10 hidden opacity-80 lg:block"
-                aria-hidden
-              >
-                <g className="margo-orbit margo-orbit--outer">
-                  <circle cx="300" cy="300" r="298" fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.85" />
-                  <circle cx="300" cy="300" r="232" fill="none" stroke="currentColor" strokeWidth="1.25" opacity="0.8" />
-                  <path d="M300 2 A298 298 0 0 1 555 146" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-                  <circle cx="555" cy="146" r="5" fill="currentColor" />
-                </g>
-                <g className="margo-orbit margo-orbit--middle">
-                  <circle cx="300" cy="300" r="164" fill="none" stroke="currentColor" strokeWidth="1.25" opacity="0.75" />
-                  <path d="M300 68 A232 232 0 0 1 510 203" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-                  <circle cx="510" cy="203" r="4.5" fill="currentColor" />
-                </g>
-                <g className="margo-orbit margo-orbit--inner">
-                  <circle cx="300" cy="300" r="108" fill="none" stroke="currentColor" strokeWidth="1.25" opacity="0.7" />
-                  <circle cx="300" cy="192" r="4" fill="currentColor" />
-                </g>
-                <circle cx="300" cy="300" r="6" fill="currentColor" />
-              </svg>
           <dl className="flex flex-col gap-3.5">
             {cards.map((c) => (
               <div
@@ -1030,10 +1010,9 @@ export function ExportMarkets({
   note: string;
   noteLink?: { label: string; href: string };
 }) {
-  const W = 600;
-  const H = 380;
-  const hx = r2((hub.x / 100) * W);
-  const hy = r2((hub.y / 100) * H);
+  // Real-world geometry, projected on the server (lib/export-map). The x/y
+  // percentages still in the CMS are no longer used for placement.
+  const map = buildExportMap(lanes, pins);
 
   return (
     <section className="bg-canvas py-[70px]">
@@ -1046,143 +1025,7 @@ export function ExportMarkets({
           )}
         </header>
 
-        <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_26rem]">
-          <div className="rounded-card border-line overflow-hidden border bg-[#0F1115] p-4">
-            <svg
-              viewBox={`0 0 ${W} ${H}`}
-              className="h-auto w-full"
-              role="img"
-              aria-labelledby="home-map-title"
-              aria-describedby="home-map-desc"
-            >
-              {/* Named inside the SVG so the lanes are in the text layer a
-                  crawler reads (sheet 01 §09: <title> and <desc> on the <svg>). */}
-              <title id="home-map-title">{`Export lanes from ${hub.label}`}</title>
-              <desc id="home-map-desc">{`Sea lanes from ${hub.label} to ${lanes.map((l) => l.name).join(", ")}.`}</desc>
-              {/* Reference grid */}
-              <g stroke="var(--color-line)" strokeWidth="1">
-                {[0, 1, 2, 3, 4].map((i) => (
-                  <line key={`v${i}`} x1={(W / 4) * i} y1="0" x2={(W / 4) * i} y2={H} />
-                ))}
-                {[0, 1, 2, 3].map((i) => (
-                  <line key={`h${i}`} x1="0" y1={(H / 3) * i} x2={W} y2={(H / 3) * i} />
-                ))}
-              </g>
-
-              {lanes.map((l, i) => {
-                const lx = r2((l.x / 100) * W);
-                const ly = r2((l.y / 100) * H);
-                // Bow each lane away from the straight line so overlapping
-                // routes stay legible.
-                const cx = r2((hx + lx) / 2);
-                const cy = r2((hy + ly) / 2 - Math.abs(lx - hx) * 0.28);
-                return (
-                  <g key={l.code}>
-                    <path
-                      d={`M ${hx} ${hy} Q ${cx} ${cy} ${lx} ${ly}`}
-                      fill="none"
-                      stroke="var(--color-accent-400)"
-                      strokeWidth="1.5"
-                      opacity="0.85"
-                    />
-                    {/* Moving lines: dashes flow hub -> destination, then a
-                        brighter pulse rides the same route. Staggered per lane. */}
-                    <path
-                      className="margo-lane-flow"
-                      d={`M ${hx} ${hy} Q ${cx} ${cy} ${lx} ${ly}`}
-                      fill="none"
-                      stroke="var(--color-accent-400)"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      pathLength={100}
-                      style={{ animationDelay: `${-(i * 0.9)}s` }}
-                      aria-hidden
-                    />
-                    <path
-                      className="margo-lane-pulse"
-                      d={`M ${hx} ${hy} Q ${cx} ${cy} ${lx} ${ly}`}
-                      fill="none"
-                      stroke="#ffffff"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      pathLength={100}
-                      style={{ animationDelay: `${-(i * 1.1)}s` }}
-                      aria-hidden
-                    />
-                    <circle cx={cx} cy={cy} r="3" fill="var(--color-accent-400)" opacity="0.6" />
-                    <circle cx={lx} cy={ly} r="4.5" fill="#ffffff" />
-                    <text
-                      x={lx + 12}
-                      y={ly + 4}
-                      className="text-eyebrow"
-                      fill="var(--color-ink)"
-                      fontSize="11"
-                      fontFamily="var(--font-mono)"
-                    >
-                      {l.name.toUpperCase()}
-                    </text>
-                  </g>
-                );
-              })}
-
-              {/* Pins without a lane card: a marker and a label, no route drawn. */}
-              {pins.map((p) => {
-                const px = r2((p.x / 100) * W);
-                const py = r2((p.y / 100) * H);
-                return (
-                  <g key={`pin-${p.label}`}>
-                    <circle cx={px} cy={py} r="4" fill="var(--color-ink)" opacity="0.8" />
-                    <text x={px + 10} y={py + 4} fill="var(--color-ink-3)" fontSize="10" fontFamily="var(--font-mono)">
-                      {p.label.toUpperCase()}
-                    </text>
-                  </g>
-                );
-              })}
-
-              <circle cx={hx} cy={hy} r="14" fill="none" stroke="var(--color-accent-400)" strokeWidth="1.5" />
-              <circle cx={hx} cy={hy} r="6" fill="var(--color-accent-400)" />
-              <text
-                x={hx + 22}
-                y={hy + 4}
-                fill="var(--color-ink)"
-                fontSize="11"
-                fontFamily="var(--font-mono)"
-              >
-                {hub.label}
-              </text>
-            </svg>
-          </div>
-
-          <div className="flex flex-col gap-3.5">
-            {/* Sheet 01 §09: <h2> + four <h3> market names; the country code
-                is decoration, the accessible name is the full country. */}
-            <ul className="flex flex-col gap-3.5">
-              {lanes.map((l) => (
-                <li
-                  key={l.code}
-                  className="margo-card rounded-card border-line relative flex items-center gap-4 border bg-[#0F1115] px-5 py-4"
-                >
-                  <span
-                    aria-hidden="true"
-                    className="text-eyebrow border-accent-400/20 bg-accent-400/10 text-accent-400 grid size-10 shrink-0 place-items-center rounded-lg border font-mono"
-                  >
-                    {l.code}
-                  </span>
-                  <div>
-                    <h3 className="text-ink text-sm font-semibold">
-                      {l.href ? (
-                        <Link href={l.href} className="hover:text-accent-400 transition-colors after:absolute after:inset-0">
-                          {l.name}
-                        </Link>
-                      ) : (
-                        l.name
-                      )}
-                    </h3>
-                    <p className="text-ink-4 mt-0.5 text-sm">{l.note}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
+        <ExportMap data={map} hubLabel={hub.label} cards={laneCards(lanes, pins)}>
             <p className="text-ink-4 mt-2 flex gap-2.5 text-xs leading-relaxed">
               <Icon name="globe" className="text-accent-400 mt-px size-4 shrink-0" />
               <span>
@@ -1197,8 +1040,7 @@ export function ExportMarkets({
                 )}
               </span>
             </p>
-          </div>
-        </div>
+        </ExportMap>
       </Container>
     </section>
   );
@@ -1400,13 +1242,15 @@ export function HomeCta({
               k={panel.image}
               fill
               sizes="(min-width:1024px) 50vw, 100vw"
-              className="-z-20 object-cover brightness-[0.35]"
+              className="-z-20 object-cover brightness-[0.72]"
             />
+            {/* Lighter than before so the photo reads: dark only where the
+                stat tiles sit, fading to a light tint at the top. */}
             <div
               className="absolute inset-0 -z-10"
               style={{
                 background:
-                  "linear-gradient(to top, color-mix(in srgb, #171A1F 92%, transparent), color-mix(in srgb, #171A1F 55%, transparent))",
+                  "linear-gradient(to top, color-mix(in srgb, #171A1F 88%, transparent) 0%, color-mix(in srgb, #171A1F 72%, transparent) 45%, color-mix(in srgb, #171A1F 50%, transparent) 62%, color-mix(in srgb, #171A1F 12%, transparent) 100%)",
               }}
             />
             {panel.badge && (
@@ -1418,7 +1262,7 @@ export function HomeCta({
             <h3 className="text-ink mt-6 text-2xl leading-tight font-semibold md:text-3xl">
               {panel.title}
             </h3>
-            <p className="text-ink-3 mt-4 max-w-[42ch] text-sm leading-relaxed">
+            <p className="text-ink/75 mt-4 max-w-[42ch] text-sm leading-relaxed [text-shadow:0_1px_10px_rgb(0_0_0/0.85)]">
               {panel.body}
             </p>
 

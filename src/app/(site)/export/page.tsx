@@ -20,6 +20,7 @@ import {
   MarketSection,
 } from "@/components/sections/ExportBlocks";
 import { FurtherReading } from "@/components/sections/FurtherReading";
+import { ScrollToHash } from "@/components/ui/ScrollToHash";
 
 export async function generateMetadata() {
   const fm = await getSitePage("export", exportPageSchema);
@@ -44,6 +45,8 @@ export default async function ExportPage() {
 
   return (
     <>
+      {/* Links from the homepage map land on #australia, #uk, #uae-saudi… */}
+      <ScrollToHash />
       <JsonLd
         status={fm.status}
         graph={await pageGraph({
