@@ -72,7 +72,24 @@ export const IMAGES = {
     alt: "Precision O-rings moulded by Margo Rubber Products, Nashik, India",
     status: "placeholder",
   },
+  /* Wide (2.4:1) version for the full-bleed desktop hero (25 Oct 2026). The
+     square slot above still serves phones and anything else that reads it. */
+  "products.o-rings.hero-wide": {
+    src: "/images/products-category/o-rings-hero-wide.jpg",
+    w: 1947,
+    h: 808,
+    alt: "Three black O-rings on a dark grey studio surface",
+    status: "placeholder",
+  },
   /* --- Products: Extrusion Profiles category -------------------------- */
+  /* Wide (16:9) version for the full-bleed desktop hero (25 Oct 2026). */
+  "products.extrusion.hero-wide": {
+    src: "/images/products-category/extrusion-hero-wide.jpg",
+    w: 1672,
+    h: 941,
+    alt: "Black extruded rubber profiles, a D-section, a U-channel and a solid cord, with a coiled cord on a dark grey studio surface",
+    status: "placeholder",
+  },
   "products.extrusion.hero": {
     src: "/images/products-category/9bb7539abd559eb1e8be67cf319646c7bb4c2b78.jpg",
     blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEF/8QAHBAAAgICAwAAAAAAAAAAAAAAAQIAAxFBEyRi/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwT/xAAVEQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEQMRAD8AhfjHVQIh3szPLoxJsawt6bMRKLBv/9k=",
@@ -143,6 +160,14 @@ export const IMAGES = {
   },
 
   /* --- Products: Sponge & Foam Rubber category ------------------------ */
+  /* Wide (16:9) version for the full-bleed desktop hero (25 Oct 2026). */
+  "products.sponge-foam.hero-wide": {
+    src: "/images/products-category/sponge-foam-hero-wide.jpg",
+    w: 1672,
+    h: 940,
+    alt: "Stacked black sponge rubber sheets and a roll of adhesive-backed foam rubber tape on a dark grey studio surface",
+    status: "placeholder",
+  },
   "products.sponge-foam.hero": {
     src: "/images/products-category/2508834bbd9a6bae9c03ba86094ce277f1df025d.jpg",
     blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQG/8QAHRAAAwACAgMAAAAAAAAAAAAAAQIDABEEEiFBUf/EABQBAQAAAAAAAAAAAAAAAAAAAAH/xAAYEQACAwAAAAAAAAAAAAAAAAAAARESMf/aAAwDAQACEQMRAD8Az8OKO8kGqNc6Bb19y0wY0oi1ZVk3QBToeMYwhPRsz//Z",
@@ -376,6 +401,14 @@ export const IMAGES = {
     w: 1400,
     h: 420,
     alt: "Open-pit mine with conveyor and haul roads",
+    status: "placeholder",
+  },
+  /* Wide (16:9) version for the full-bleed desktop hero (25 Oct 2026). */
+  "products.rubber-lining.hero-wide": {
+    src: "/images/products-category/rubber-lining-skirting-hero-wide.jpg",
+    w: 1672,
+    h: 940,
+    alt: "A roll of black rubber lining sheet and stacked rubber skirting strips on a dark grey studio surface",
     status: "placeholder",
   },
   "products.rubber-lining.hero": {
@@ -880,12 +913,28 @@ export const IMAGES = {
     alt: "Valve manifold and pipework on a treatment skid",
     status: "placeholder",
   },
+  /* Wide (16:9) version for the full-bleed desktop hero (25 Oct 2026). */
+  "products.anti-vibration-mounts.hero-wide": {
+    src: "/images/products-category/anti-vibration-mounts-hero-wide.jpg",
+    w: 1672,
+    h: 941,
+    alt: "Two cylindrical rubber anti-vibration mounts with threaded steel studs on a dark grey studio surface",
+    status: "placeholder",
+  },
   "products.anti-vibration-mounts.hero": {
     src: "/images/products/75ab01fa5d31999b511f4e67578971b96eddcb11.png",
     blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwQG/8QAIRAAAgEDBAMBAAAAAAAAAAAAAQIDAAQSERMiUSExccH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABgRAAIDAAAAAAAAAAAAAAAAAAABAhEx/9oADAMBAAIRAxEAPwAjLtTmTwJmDLgqnIH13V97dbsiYzFAqBdMD+USTLd3pguokk5sA44sND2K0sMEcUSqiKB8qxSwOz//2Q==",
     w: 800,
     h: 900,
     alt: "Rubber-to-metal bonded anti-vibration mounts at Margo Rubber Products, Nashik",
+    status: "placeholder",
+  },
+  /* Wide (16:9) version for the full-bleed desktop hero (25 Oct 2026). */
+  "products.bonded-components.hero-wide": {
+    src: "/images/products-category/bonded-components-hero-wide.jpg",
+    w: 1671,
+    h: 941,
+    alt: "A rubber-to-metal bonded mount with a threaded stud and a bonded bush on a dark grey studio surface",
     status: "placeholder",
   },
   "products.bonded-components.hero": {
@@ -960,12 +1009,28 @@ export const IMAGES = {
     alt: "Coiled black nitrile rubber profile",
     status: "placeholder",
   },
+  /* Wide (16:9) version for the full-bleed desktop hero (25 Oct 2026). */
+  "products.bellows.hero-wide": {
+    src: "/images/products-category/bellows-hero-wide.jpg",
+    w: 1672,
+    h: 941,
+    alt: "A black convoluted rubber bellows boot on a dark grey studio surface",
+    status: "placeholder",
+  },
   "products.bellows.hero": {
     src: "/images/products/4fb48cf2a43d61bec568791c2d5dbea12013f92b.png",
     blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAED/8QAIRAAAQQBAwUAAAAAAAAAAAAAAQIDBBEAEhMhIjFBUXH/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/EABURAQEAAAAAAAAAAAAAAAAAAAEA/9oADAMBAAIRAxEAPwC7kaPobQizfClHkV6w7kyc8vUlbNfTmrrIaqiT2GDcj9dhZF+ABlCMd//Z",
     w: 800,
     h: 900,
     alt: "Convoluted rubber bellows moulded at Margo Rubber Products, Nashik",
+    status: "placeholder",
+  },
+  /* Wide (16:9) version for the full-bleed desktop hero (25 Oct 2026). */
+  "products.diaphragms.hero-wide": {
+    src: "/images/products-category/diaphragms-hero-wide.jpg",
+    w: 1670,
+    h: 941,
+    alt: "A flat rubber diaphragm and a convoluted rubber diaphragm, both with bolt-hole flanges, on a dark grey studio surface",
     status: "placeholder",
   },
   "products.diaphragms.hero": {
@@ -1040,6 +1105,14 @@ export const IMAGES = {
     alt: "Coiled black nitrile rubber profile",
     status: "placeholder",
   },
+  /* Wide (16:9) version for the full-bleed desktop hero (25 Oct 2026). */
+  "products.bushes.hero-wide": {
+    src: "/images/products-category/bushes-hero-wide.jpg",
+    w: 1671,
+    h: 941,
+    alt: "Three black rubber bushes, flanged, plain and metal-sleeved, on a dark grey studio surface",
+    status: "placeholder",
+  },
   "products.bushes.hero": {
     src: "/images/products/9f2968d4dfd6f2ed9996b7fd692ccf32360ae269.png",
     blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQAB/8QAIRAAAgEDBAMBAAAAAAAAAAAAAQIDAAQRBRIhIjFBgdH/xAAUAQEAAAAAAAAAAAAAAAAAAAAC/8QAFhEBAQEAAAAAAAAAAAAAAAAAABES/9oADAMBAAIRAxEAPwACwSNXQh845ClQQaSjubCNdsti1y2T3zj55rbXR0UjZO+0Z6sARzVPoaNKSJSufQB/aGyj/9k=",
@@ -1110,6 +1183,14 @@ export const IMAGES = {
     w: 600,
     h: 400,
     alt: "Coiled black nitrile rubber profile",
+    status: "placeholder",
+  },
+  /* Wide (16:9) version for the full-bleed desktop hero (25 Oct 2026). */
+  "products.gaskets.hero-wide": {
+    src: "/images/products-category/gaskets-hero-wide.jpg",
+    w: 1671,
+    h: 941,
+    alt: "Black rubber flange gasket with bolt holes and a rectangular gasket on a dark grey studio surface",
     status: "placeholder",
   },
   "products.gaskets.hero": {
@@ -1192,6 +1273,14 @@ export const IMAGES = {
     alt: "Production line assembling moulded rubber components",
     status: "placeholder",
   },
+  /* Wide (16:9) version for the full-bleed desktop hero (25 Oct 2026). */
+  "products.grommets.hero-wide": {
+    src: "/images/products-category/grommets-hero-wide.jpg",
+    w: 1671,
+    h: 941,
+    alt: "Three black rubber grommets in different sizes on a dark grey studio surface",
+    status: "placeholder",
+  },
   "products.grommets.hero": {
     src: "/images/products/93f522e98c504f8c1e2d5f6a4de1b41ea32d6a8c.png",
     blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQQG/8QAHhAAAwACAwADAAAAAAAAAAAAAQIDAAQFESESMXH/xAAUAQEAAAAAAAAAAAAAAAAAAAAC/8QAFREBAQAAAAAAAAAAAAAAAAAAAQD/2gAMAwEAAhEDEQA/AKr7Etjj91Hgk6Tj8vCrKex4QwxaMisUVj2QoBJ/MD5uc9LkddISmk9kBXVVAHYb7zSkDs4liF//2Q==",
@@ -1262,6 +1351,14 @@ export const IMAGES = {
     w: 600,
     h: 400,
     alt: "Industrial rubber manufacturing floor during production",
+    status: "placeholder",
+  },
+  /* Wide (16:9) version for the full-bleed desktop hero (25 Oct 2026). */
+  "products.leak-test-rubber.hero-wide": {
+    src: "/images/products-category/leak-test-rubber-hero-wide.jpg",
+    w: 1672,
+    h: 941,
+    alt: "A stepped black rubber leak-test seal and a sealing ring on a dark grey studio surface",
     status: "placeholder",
   },
   "products.leak-test-rubber.hero": {
@@ -1408,12 +1505,28 @@ export const IMAGES = {
     alt: "FKM (Viton) sealing components in an assembled mechanical drive",
     status: "placeholder",
   },
+  /* Wide (16:9) version for the full-bleed desktop hero (25 Oct 2026). */
+  "products.oil-seals.hero-wide": {
+    src: "/images/products-category/oil-seals-hero-wide.jpg",
+    w: 1672,
+    h: 941,
+    alt: "Two black spring-loaded rotary oil seals on a dark grey studio surface",
+    status: "placeholder",
+  },
   "products.oil-seals.hero": {
     src: "/images/products/446414d85bfd92e3fcd4ae2b640c6d81e9629b91.png",
     blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAQMEBv/EACAQAAICAgEFAQAAAAAAAAAAAAECAxEABEEiMTJRYbH/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AM9Lp6RKvBOyKQemSiQb+fuTbUMcMxUvfII7Y4RlUqwaNePrDLCC9hmF8XiD/9k=",
     w: 800,
     h: 900,
     alt: "Rotary oil seals moulded by Margo Rubber Products, Nashik, India",
+    status: "placeholder",
+  },
+  /* Wide (16:9) version for the full-bleed desktop hero (25 Oct 2026). */
+  "products.seals.hero-wide": {
+    src: "/images/products-category/reciprocating-seals-hero-wide.jpg",
+    w: 1672,
+    h: 941,
+    alt: "Three black moulded rubber reciprocating seals and plunger cups on a dark grey studio surface",
     status: "placeholder",
   },
   "products.seals.hero": {
@@ -1486,6 +1599,14 @@ export const IMAGES = {
     w: 600,
     h: 400,
     alt: "FKM (Viton) sealing components in an assembled mechanical drive",
+    status: "placeholder",
+  },
+  /* Wide (16:9) version for the full-bleed desktop hero (25 Oct 2026). */
+  "products.pads-stoppers-caps.hero-wide": {
+    src: "/images/products-category/pads-stoppers-caps-hero-wide.jpg",
+    w: 1672,
+    h: 940,
+    alt: "Black rubber pads, a tapered stopper, an end cap and a threaded buffer on a dark grey studio surface",
     status: "placeholder",
   },
   "products.pads-stoppers-caps.hero": {

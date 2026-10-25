@@ -216,6 +216,16 @@ export const IMAGE_SLOT_LABELS = {
     where: "O-Rings category page, the photograph behind the heading at the top.",
     page: "/products/o-rings",
   },
+  "products.o-rings.hero-wide": {
+    title: "O-Rings page — wide hero photo (desktop)",
+    where: "O-Rings category page on desktop: the wide photograph filling the hero behind and beside the heading. Use a landscape shot (about 2.4:1) with the product on the right.",
+    page: "/products/o-rings",
+  },
+  "products.extrusion.hero-wide": {
+    title: "Extrusion Profiles page — wide hero photo (desktop)",
+    where: "Extrusion Profiles category page on desktop: the wide photograph filling the hero beside the heading. Use a landscape shot with the product on the right.",
+    page: "/products/extrusion",
+  },
   "products.extrusion.hero": {
     title: "Extrusion Profiles page — hero background",
     where: "Extrusion Profiles category page, the photograph behind the heading at the top.",
@@ -225,6 +235,11 @@ export const IMAGE_SLOT_LABELS = {
     title: "Construction page — hero background",
     where: "Construction page, the photograph behind the heading at the top. Stand-in: another page's photograph until this page's own is uploaded — the content sheet asks for “EPDM glazing gaskets and expansion joint seals extruded at Margo Rubber Products, Nashik”.",
     page: "/industries/construction",
+  },
+  "products.sponge-foam.hero-wide": {
+    title: "Sponge & Foam page — wide hero photo (desktop)",
+    where: "Sponge & Foam Rubber category page on desktop: the wide photograph filling the hero beside the heading. Use a landscape shot with the product on the right.",
+    page: "/products/sponge-foam-rubber",
   },
   "products.sponge-foam.hero": {
     title: "Sponge & Foam page — hero background",
@@ -319,6 +334,11 @@ export const IMAGE_SLOT_LABELS = {
     title: "Mining page — hero background",
     where: "Mining industry page, the photograph behind the heading at the top.",
     page: "/industries/mining",
+  },
+  "products.rubber-lining.hero-wide": {
+    title: "Rubber Lining & Skirting page — wide hero photo (desktop)",
+    where: "Rubber Lining & Skirting page on desktop: the wide photograph filling the hero beside the heading. Use a landscape shot with the product on the right.",
+    page: "/products/rubber-lining",
   },
   "products.rubber-lining.hero": {
     title: "Rubber Lining & Skirting page — hero background",
@@ -611,10 +631,20 @@ export const IMAGE_SLOT_LABELS = {
     where: "Products page, ‘Industries we serve’ — card 8 of 9.",
     page: "/products",
   },
+  "products.anti-vibration-mounts.hero-wide": {
+    title: "Anti-Vibration Mounts page — wide hero photo (desktop)",
+    where: "Anti-Vibration Mounts category page on desktop: the wide photograph filling the hero beside the heading. Use a landscape shot with the product on the right.",
+    page: "/products/anti-vibration-mounts",
+  },
   "products.anti-vibration-mounts.hero": {
     title: "Anti-Vibration Mounts page — hero background",
     where: "Anti-Vibration Mounts category page, the photograph behind the heading at the top.",
     page: "/products/anti-vibration-mounts",
+  },
+  "products.bonded-components.hero-wide": {
+    title: "Bonded Components page — wide hero photo (desktop)",
+    where: "Bonded Components page on desktop: the wide photograph in the hero beside the heading. Use a landscape shot with the product on the right.",
+    page: "/products/bonded-components",
   },
   "products.bonded-components.hero": {
     title: "Bonded Components page — hero background",
@@ -661,10 +691,20 @@ export const IMAGE_SLOT_LABELS = {
     where: "Anti-Vibration Mounts category page, ‘Material selection’ section — card 1 of 8. Stand-in: shows the NBR (Nitrile) card's photograph until its own is uploaded.",
     page: "/products/anti-vibration-mounts",
   },
+  "products.bellows.hero-wide": {
+    title: "Bellows page — wide hero photo (desktop)",
+    where: "Bellows category page on desktop: the wide photograph filling the hero beside the heading. Use a landscape shot with the product on the right.",
+    page: "/products/bellows",
+  },
   "products.bellows.hero": {
     title: "Bellows page — hero background",
     where: "Bellows category page, the photograph behind the heading at the top.",
     page: "/products/bellows",
+  },
+  "products.diaphragms.hero-wide": {
+    title: "Diaphragms page — wide hero photo (desktop)",
+    where: "Diaphragms page on desktop: the wide photograph in the hero beside the heading. Use a landscape shot with the product on the right.",
+    page: "/products/diaphragms",
   },
   "products.diaphragms.hero": {
     title: "Diaphragms page — hero background",
@@ -711,6 +751,11 @@ export const IMAGE_SLOT_LABELS = {
     where: "Bellows category page, ‘Material selection’ section — card 1 of 8. Stand-in: shows the NBR (Nitrile) card's photograph until its own is uploaded.",
     page: "/products/bellows",
   },
+  "products.bushes.hero-wide": {
+    title: "Bushes page — wide hero photo (desktop)",
+    where: "Bushes category page on desktop: the wide photograph filling the hero beside the heading. Use a landscape shot with the product on the right.",
+    page: "/products/bushes",
+  },
   "products.bushes.hero": {
     title: "Bushes page — hero background",
     where: "Bushes category page, the photograph behind the heading at the top.",
@@ -755,6 +800,11 @@ export const IMAGE_SLOT_LABELS = {
     title: "Bushes — Natural rubber (NR) material card",
     where: "Bushes category page, ‘Material selection’ section — card 1 of 8. Stand-in: shows the NBR (Nitrile) card's photograph until its own is uploaded.",
     page: "/products/bushes",
+  },
+  "products.gaskets.hero-wide": {
+    title: "Gaskets page — wide hero photo (desktop)",
+    where: "Gaskets category page on desktop: the wide photograph filling the hero beside the heading. Use a landscape shot with the product on the right.",
+    page: "/products/gaskets",
   },
   "products.gaskets.hero": {
     title: "Gaskets page — hero background",
@@ -806,6 +856,11 @@ export const IMAGE_SLOT_LABELS = {
     where: "Gaskets category page, ‘Material selection’ section — card 5 of 9. Stand-in: shows the EPDM card's photograph until its own is uploaded.",
     page: "/products/gaskets",
   },
+  "products.grommets.hero-wide": {
+    title: "Grommets page — wide hero photo (desktop)",
+    where: "Grommets category page on desktop: the wide photograph filling the hero beside the heading. Use a landscape shot with the product on the right.",
+    page: "/products/grommets",
+  },
   "products.grommets.hero": {
     title: "Grommets page — hero background",
     where: "Grommets category page, the photograph behind the heading at the top.",
@@ -850,6 +905,11 @@ export const IMAGE_SLOT_LABELS = {
     title: "Grommets — Silicone (VMQ) material card",
     where: "Grommets category page, ‘Material selection’ section — card 4 of 4.",
     page: "/products/grommets",
+  },
+  "products.leak-test-rubber.hero-wide": {
+    title: "Leak Test Rubber page — wide hero photo (desktop)",
+    where: "Leak Test Rubber category page on desktop: the wide photograph filling the hero beside the heading. Use a landscape shot with the product on the right.",
+    page: "/products/leak-test-rubber",
   },
   "products.leak-test-rubber.hero": {
     title: "Leak Test Rubber page — hero background",
@@ -941,10 +1001,20 @@ export const IMAGE_SLOT_LABELS = {
     where: "O-Rings category page, ‘Material selection’ section — card 1 of 9. Stand-in: shows the FKM (Viton®) card's photograph until its own is uploaded.",
     page: "/products/o-rings",
   },
+  "products.oil-seals.hero-wide": {
+    title: "Oil Seals page — wide hero photo (desktop)",
+    where: "Oil Seals category page on desktop: the wide photograph filling the hero beside the heading. Use a landscape shot with the product on the right.",
+    page: "/products/oil-seals",
+  },
   "products.oil-seals.hero": {
     title: "Oil Seals page — hero background",
     where: "Oil Seals category page, the photograph behind the heading at the top.",
     page: "/products/oil-seals",
+  },
+  "products.seals.hero-wide": {
+    title: "Reciprocating Seals page — wide hero photo (desktop)",
+    where: "Reciprocating Seals page on desktop: the wide photograph filling the hero beside the heading. Use a landscape shot with the product on the right.",
+    page: "/products/seals",
   },
   "products.seals.hero": {
     title: "Reciprocating Seals page — hero background",
@@ -990,6 +1060,11 @@ export const IMAGE_SLOT_LABELS = {
     title: "Oil Seals — AEM (Vamac®) material card",
     where: "Oil Seals category page, ‘Material selection’ section — card 1 of 8. Stand-in: shows the FKM (Viton®) card's photograph until its own is uploaded.",
     page: "/products/oil-seals",
+  },
+  "products.pads-stoppers-caps.hero-wide": {
+    title: "Pads, Stoppers & Caps page — wide hero photo (desktop)",
+    where: "Pads, Stoppers & Caps category page on desktop: the wide photograph filling the hero beside the heading. Use a landscape shot with the product on the right.",
+    page: "/products/pads-stoppers-caps",
   },
   "products.pads-stoppers-caps.hero": {
     title: "Pads, Stoppers & Caps page — hero background",

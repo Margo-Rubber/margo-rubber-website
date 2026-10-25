@@ -10,6 +10,40 @@ import { Section } from "@/components/ui/Section";
 import { CategoryHero } from "@/components/sections/Blocks";
 import { FurtherReading } from "@/components/sections/FurtherReading";
 
+/** Category pages whose desktop hero uses the full-bleed photo layout (see
+ *  CategoryHero `fullBleed`), with the wide image-registry key it shows.
+ *  Add a slug here (and a wide photo to the registry) to switch a page.
+ *
+ *  `frame` is for a photo whose product reaches further left than the
+ *  others: Tailwind classes (written out here so they are generated) that
+ *  narrow the photo frame and choose which part of the photo it shows. */
+const FULL_BLEED_HERO: Record<string, { image: string; frame?: string; fit?: string }> = {
+  "o-rings": { image: "products.o-rings.hero-wide" },
+  "oil-seals": { image: "products.oil-seals.hero-wide" },
+  gaskets: { image: "products.gaskets.hero-wide" },
+  grommets: { image: "products.grommets.hero-wide" },
+  "anti-vibration-mounts": { image: "products.anti-vibration-mounts.hero-wide" },
+  bellows: { image: "products.bellows.hero-wide" },
+  "bonded-components": { image: "products.bonded-components.hero-wide" },
+  bushes: { image: "products.bushes.hero-wide" },
+  extrusion: { image: "products.extrusion.hero-wide" },
+  "leak-test-rubber": { image: "products.leak-test-rubber.hero-wide" },
+  // The slotted pad sits further left than most; a slightly narrower frame
+  // keeps it clear of the end of the first heading line.
+  "pads-stoppers-caps": { image: "products.pads-stoppers-caps.hero-wide", frame: "lg:left-[22%]" },
+  // Reciprocating Seals
+  seals: { image: "products.seals.hero-wide" },
+  "rubber-lining": { image: "products.rubber-lining.hero-wide" },
+  "sponge-foam-rubber": { image: "products.sponge-foam.hero-wide" },
+  // Long two-line heading and a photo with the product from 18% across:
+  // frame on the right 60%, photo shifted so both parts sit clear of the copy.
+  diaphragms: {
+    image: "products.diaphragms.hero-wide",
+    frame: "lg:left-[40%]",
+    fit: "object-[63%_center]",
+  },
+};
+
 /**
  * ONE file → nine product category pages.
  *
@@ -79,6 +113,10 @@ export default async function ProductCategoryPage(
         eyebrowVariant={fm.heroActions.length > 0 ? "rule" : "badge"}
         statsAlign={fm.heroStatsAlign}
         breadcrumb={trail(["Products", "/products"], [fm.navLabel, path])}
+        fullBleed={category in FULL_BLEED_HERO}
+        bleedImage={FULL_BLEED_HERO[category]?.image}
+        bleedFrame={FULL_BLEED_HERO[category]?.frame}
+        bleedFit={FULL_BLEED_HERO[category]?.fit}
       />
 
       <AnswerLead block={answerBlockFor(path)} />

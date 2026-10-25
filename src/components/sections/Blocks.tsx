@@ -136,6 +136,10 @@ export function CategoryHero({
   breadcrumb,
   statsAlign = "center",
   chips = [],
+  fullBleed = false,
+  bleedImage,
+  bleedFrame,
+  bleedFit,
 }: {
   badge: string;
   headingLead: string;
@@ -158,19 +162,74 @@ export function CategoryHero({
   breadcrumb?: readonly Crumb[];
   /** Extrusion centres the stat panel; Sponge & Foam sets it left. */
   statsAlign?: "left" | "center";
+  /**
+   * Desktop layout for the photo (25 Oct 2026, O-Rings first). Instead of a
+   * framed photo over a blurred backdrop, the photo runs the full height of
+   * the hero on the right, fading only on its left edge into one soft scrim
+   * behind the copy. Phones are unchanged.
+   */
+  fullBleed?: boolean;
+  /** Wide image key for the fullBleed desktop hero; falls back to `image`. */
+  bleedImage?: string;
+  /** fullBleed only: classes overriding the photo frame's left edge
+   *  (default 16%) and the photo's object-position (default right). */
+  bleedFrame?: string;
+  bleedFit?: string;
 }) {
+  const statsRow =
+    stats.length > 0 &&
+          (actions && actions.length > 0 ? (
+            /* The new comps set the stat row inside a bordered panel with
+               vertical rules between the columns, rather than the bare
+               border-top row the nine older pages use. */
+            <dl className="border-line bg-surface-2/60 rounded-card divide-line mt-12 grid divide-y border backdrop-blur sm:grid-cols-2 sm:divide-y-0 lg:grid-cols-4 lg:divide-x">
+              {stats.map((s) => (
+                <div
+                  key={s.label}
+                  className={`px-6 py-7 ${statsAlign === "center" ? "text-center" : ""}`}
+                >
+                  <dd className="text-ink order-1 text-2xl font-bold">
+                    {s.value}
+                  </dd>
+                  <dt className="text-ink-4 order-2 mt-1.5 text-xs">
+                    {s.label}
+                  </dt>
+                </div>
+              ))}
+            </dl>
+          ) : (
+          <dl className="border-line mt-14 grid gap-8 border-t pt-6 sm:grid-cols-2 lg:grid-cols-4">
+            {stats.map((s) => (
+              <div key={s.label}>
+                {/* Value first visually, but dt/dd order kept semantic. */}
+                <dd className="text-ink order-1 text-sm font-bold">
+                  {s.value}
+                </dd>
+                <dt className="text-ink-4 order-2 mt-1 text-xs">{s.label}</dt>
+              </div>
+            ))}
+          </dl>
+          ));
+
   return (
-    // bg-canvas: the multiply tint below needs a dark ground to blend with.
-    // With the photo no longer full-bleed, a transparent header let the
-    // tint show as a flat grey wherever the photo is not.
-    // With a photo, the hero fills the screen height on desktop (25 Oct
-    // 2026): the photo is shown whole at the hero's height, so a taller
-    // hero is what makes it large — enlarging it past the hero's height
-    // is what used to crop the rings. Copy stays at the top; the stat row
-    // sits at the foot (the spacer below takes up the difference).
+    <>
+    {/* bg-canvas: the multiply tint below needs a dark ground to blend with.
+        With the photo no longer full-bleed, a transparent header let the
+        tint show as a flat grey wherever the photo is not.
+        With a photo, the hero fills the screen height on desktop (25 Oct
+        2026): the photo is shown whole at the hero's height, so a taller
+        hero is what makes it large — enlarging it past the hero's height
+        is what used to crop the rings. Copy stays at the top; the stat row
+        sits at the foot (the spacer below takes up the difference). */}
     <header
       className={`bg-canvas relative isolate overflow-hidden ${
-        image ? "lg:flex lg:min-h-svh lg:flex-col" : ""
+        !image
+          ? ""
+          : fullBleed
+            ? // Tall enough that the ~2.4:1 photo, sized to this height,
+              // spans ~80% of the width (34vw); taller if the copy needs it.
+              "lg:flex lg:min-h-[calc(var(--header-h)+34vw)] lg:flex-col"
+            : "lg:flex lg:min-h-svh lg:flex-col"
       }`}
     >
       {image && (
@@ -181,25 +240,56 @@ export function CategoryHero({
               inside the Container below (see .hero-media) — stays whole:
               nothing in focus is ever cropped. Decorative, so alt="". Not
               priority: hidden below lg, where a lazy image is never fetched. */}
-          <Img
-            k={image}
-            fill
-            alt=""
-            sizes="40vw"
-            className="-z-30 hidden scale-[1.15] object-cover object-right blur-[28px] brightness-[0.55] saturate-[0.9] lg:block"
-          />
+          {fullBleed ? (
+            /* Desktop: the wide photo fills the hero edge to edge, product on
+               the right; the scrim below darkens only the copy side. */
+            /* The photo fills the same frame on every page: below the
+               header, the right 84% of the width, its left edge fading into
+               the copy side. Very wide shots (O-Rings, ~2.4:1) fit it almost
+               exactly; 16:9 shots are trimmed a little top and bottom rather
+               than leaving bare page beside them. */
+            <div className={`absolute top-[var(--header-h)] right-0 bottom-0 left-[16%] -z-30 hidden [mask-image:linear-gradient(to_right,transparent,#000_22%)] lg:block ${bleedFrame ?? ""}`}>
+              <Img
+                k={bleedImage ?? image}
+                fill
+                priority
+                sizes="85vw"
+                className={`object-cover ${bleedFit ?? "object-[right_center]"}`}
+              />
+            </div>
+          ) : (
+            <Img
+              k={image}
+              fill
+              alt=""
+              sizes="40vw"
+              className="-z-30 hidden scale-[1.15] object-cover object-right blur-[28px] brightness-[0.55] saturate-[0.9] lg:block"
+            />
+          )}
           {/* Tone (21 Oct 2026): a cool grey multiplied over the photos, so
               the white studio backdrops read as soft grey on a black page
               while black rubber stays black. */}
-          <div className="absolute inset-0 -z-10 bg-[#a1a9ae] mix-blend-multiply" />
+          {/* (The wide full-bleed photo is shot dark grey already, so it
+              skips the tint.) */}
+          {!fullBleed && <div className="absolute inset-0 -z-10 bg-[#a1a9ae] mix-blend-multiply" />}
           {/* Desktop legibility: a solid black panel behind the copy with a
               straight edge, then a short blend into the photo (25 Oct 2026).
               Solid to 42% / blended out by 52%; from 1024 to 1279px, 38% /
               47%, where the photo starts further left, so the panel never
               covers the product. Plus a fade under the stat row. Phones need
               neither — the photo sits under the copy there. */}
-          <div className="absolute inset-0 -z-10 hidden bg-[linear-gradient(to_right,var(--color-canvas)_0%,var(--color-canvas)_38%,transparent_47%)] lg:block xl:bg-[linear-gradient(to_right,var(--color-canvas)_0%,var(--color-canvas)_42%,transparent_52%)]" />
-          <div className="from-canvas absolute inset-x-0 bottom-0 -z-10 hidden h-[30%] bg-gradient-to-t to-transparent lg:block" />
+          {fullBleed ? (
+            <>
+              {/* One eased scrim behind the copy, no hard panel edge. */}
+              <div className="absolute inset-0 -z-10 hidden bg-[linear-gradient(to_right,rgb(0_0_0/0.92)_0%,rgb(0_0_0/0.8)_22%,rgb(0_0_0/0.45)_40%,transparent_58%)] lg:block" />
+              <div className="from-canvas absolute inset-x-0 bottom-0 -z-10 hidden h-[12%] bg-gradient-to-t to-transparent lg:block" />
+            </>
+          ) : (
+            <>
+              <div className="absolute inset-0 -z-10 hidden bg-[linear-gradient(to_right,var(--color-canvas)_0%,var(--color-canvas)_38%,transparent_47%)] lg:block xl:bg-[linear-gradient(to_right,var(--color-canvas)_0%,var(--color-canvas)_42%,transparent_52%)]" />
+              <div className="from-canvas absolute inset-x-0 bottom-0 -z-10 hidden h-[30%] bg-gradient-to-t to-transparent lg:block" />
+            </>
+          )}
         </>
       )}
 
@@ -261,47 +351,25 @@ export function CategoryHero({
             k={image}
             priority
             sizes="(min-width: 1024px) 60vw, (min-width: 640px) 32rem, 100vw"
-            className="hero-media max-lg:max-w-[32rem] max-lg:brightness-[0.7] lg:contrast-[1.04] [--hero-media-max-h:60vw]"
+            className={`hero-media max-lg:max-w-[32rem] max-lg:brightness-[0.7] lg:contrast-[1.04] [--hero-media-max-h:60vw]${
+              fullBleed ? " lg:hidden" : ""
+            }`}
           />
         )}
 
         {/* Desktop full-screen hero: pushes the stat row to the foot. */}
         {image && <div aria-hidden className="hidden lg:block lg:flex-1" />}
 
-        {stats.length > 0 &&
-          (actions && actions.length > 0 ? (
-            /* The new comps set the stat row inside a bordered panel with
-               vertical rules between the columns, rather than the bare
-               border-top row the nine older pages use. */
-            <dl className="border-line bg-surface-2/60 rounded-card divide-line mt-12 grid divide-y border backdrop-blur sm:grid-cols-2 sm:divide-y-0 lg:grid-cols-4 lg:divide-x">
-              {stats.map((s) => (
-                <div
-                  key={s.label}
-                  className={`px-6 py-7 ${statsAlign === "center" ? "text-center" : ""}`}
-                >
-                  <dd className="text-ink order-1 text-2xl font-bold">
-                    {s.value}
-                  </dd>
-                  <dt className="text-ink-4 order-2 mt-1.5 text-xs">
-                    {s.label}
-                  </dt>
-                </div>
-              ))}
-            </dl>
-          ) : (
-          <dl className="border-line mt-14 grid gap-8 border-t pt-6 sm:grid-cols-2 lg:grid-cols-4">
-            {stats.map((s) => (
-              <div key={s.label}>
-                {/* Value first visually, but dt/dd order kept semantic. */}
-                <dd className="text-ink order-1 text-sm font-bold">
-                  {s.value}
-                </dd>
-                <dt className="text-ink-4 order-2 mt-1 text-xs">{s.label}</dt>
-              </div>
-            ))}
-          </dl>
-          ))}
+        {!fullBleed && statsRow}
       </Container>
     </header>
+
+    {/* fullBleed: the stat row sits just under the photo hero, not over it. */}
+    {fullBleed && statsRow && (
+      <div className="bg-canvas">
+        <Container className="pb-12">{statsRow}</Container>
+      </div>
+    )}
+    </>
   );
 }
