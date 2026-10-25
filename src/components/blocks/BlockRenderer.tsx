@@ -317,6 +317,7 @@ function renderBlock(block: Block, ctx: Ctx): ReactNode {
           heading={b.heading}
           body={b.body}
           dividerLabel={b.dividerLabel}
+          photo={b.photo}
           buildUp={b.buildUp}
           comparisons={b.comparisons}
           note={b.note}

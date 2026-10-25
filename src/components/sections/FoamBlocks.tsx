@@ -1,6 +1,8 @@
 import { Container, Eyebrow, SectionGlow } from "@/components/ui/Section";
 import { Img } from "@/components/ui/Img";
 import { Icon, type IconName } from "@/components/ui/Icon";
+import { SanityPhoto } from "@/components/ui/SanityPhoto";
+import type { CmsImage } from "@/content/blocks";
 
 /**
  * SPONGE & FOAM BLOCKS — the sections particular to
@@ -196,11 +198,14 @@ export function DensityBlock({
 /** The tape's layer stack, drawn top to bottom as it is assembled. */
 function BuildUp({ label, layers }: { label: string; layers: readonly string[] }) {
   return (
-    <div className="border-line bg-surface-3 rounded-card border p-8">
+    // Flex column so that, stretched to the height of the product photo
+    // beside it, the caption stays at the top and the stack sits centred in
+    // the space below rather than leaving a gap under it.
+    <div className="border-line bg-surface-3 rounded-card flex flex-col border p-8">
       <p className="text-ink-4 font-mono text-[10px] tracking-[0.16em] uppercase">
         {label}
       </p>
-      <ul className="mx-auto mt-7 max-w-md space-y-2">
+      <ul className="mx-auto my-auto w-full max-w-md space-y-2 pt-7">
         {layers.map((l, i) => (
           <li key={l} className="flex items-center gap-4">
             <span
@@ -283,12 +288,37 @@ export function ComparisonRows({
   );
 }
 
+/**
+ * The product itself, uploaded in Studio. On white, like the parts group
+ * photo, because product shots arrive cut out on white; the whole photo is
+ * always visible (contain, never cropped).
+ */
+function ProductPhoto({ image, fallbackAlt }: { image: CmsImage; fallbackAlt: string }) {
+  return (
+    <figure className="flex flex-col">
+      <div className="rounded-card border-line flex flex-1 items-center justify-center overflow-hidden border bg-white p-6">
+        <SanityPhoto
+          image={image}
+          fallbackAlt={fallbackAlt}
+          sizes="(min-width: 1024px) 480px, 100vw"
+          fit="contain"
+          className="h-auto max-h-[340px] w-auto max-w-full"
+        />
+      </div>
+      {image.caption && (
+        <figcaption className="text-ink-4 mt-3 text-xs">{image.caption}</figcaption>
+      )}
+    </figure>
+  );
+}
+
 export function SubCategoryBlock({
   id,
   eyebrow,
   heading,
   body,
   dividerLabel,
+  photo,
   buildUp,
   comparisons,
   note,
@@ -300,6 +330,8 @@ export function SubCategoryBlock({
   heading: string;
   body?: string;
   dividerLabel?: string;
+  /** The product itself, uploaded in Studio. Optional. */
+  photo?: CmsImage;
   buildUp?: { label: string; layers: readonly string[] };
   comparisons: readonly {
     label: string;
@@ -349,7 +381,22 @@ export function SubCategoryBlock({
         </header>
 
         <div className="mt-10">
-          {buildUp && <BuildUp label={buildUp.label} layers={buildUp.layers} />}
+          {/* Photo beside the build-up when there is one; photo first on a
+              phone. Without a photo the build-up runs full width as before. */}
+          {photo?.asset ? (
+            <div
+              className={
+                buildUp
+                  ? "grid gap-5 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]"
+                  : "mx-auto max-w-xl"
+              }
+            >
+              <ProductPhoto image={photo} fallbackAlt={heading.split("*").join("")} />
+              {buildUp && <BuildUp label={buildUp.label} layers={buildUp.layers} />}
+            </div>
+          ) : (
+            buildUp && <BuildUp label={buildUp.label} layers={buildUp.layers} />
+          )}
           {comparisons.map((c) => (
             <ComparisonRows key={c.label} label={c.label} items={c.items} />
           ))}

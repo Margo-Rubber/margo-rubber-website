@@ -598,6 +598,25 @@ export const subCategory = defineType({
       group: "options",
     }),
     defineField({
+      name: "photo",
+      title: "Product photo",
+      type: "image",
+      description:
+        "Optional. The product itself — e.g. a roll of the tape — ideally on a plain white background, square or 4:3. Shown beside the layer build-up; the whole photo is always visible, never cropped. Leave empty and the build-up runs full width.",
+      options: { hotspot: true },
+      fields: [
+        defineField({
+          name: "alt",
+          title: "Description for screen readers",
+          type: "string",
+          description: "What is in the photo, e.g. “Roll of black self-adhesive EPDM foam tape”. Leave empty to use the heading.",
+          validation: (r) => r.max(160),
+        }),
+        defineField({ name: "caption", title: "Caption", type: "string", description: "Optional line under the photo." }),
+      ],
+      group: "content",
+    }),
+    defineField({
       name: "buildUp",
       title: "Layer build-up",
       type: "object",

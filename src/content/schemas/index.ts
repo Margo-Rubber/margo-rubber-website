@@ -439,6 +439,8 @@ export const subCategorySectionSchema = z
     /** Fragment target — the mega-dropdown links straight to this block. */
     id: z.string().regex(/^[a-z0-9-]+$/).optional(),
     dividerLabel: z.string().optional(),
+    /** The product itself (e.g. a roll of the tape), uploaded in Studio. */
+    photo: cmsImageSchema.optional(),
     buildUp: z
       .object({ label: z.string(), layers: z.array(z.string()).min(2) })
       .optional(),
