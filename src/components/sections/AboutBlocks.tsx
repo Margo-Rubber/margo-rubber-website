@@ -396,23 +396,24 @@ export function AboutHero({
           .hero-media): whole building, never cropped. */}
       {/* Slow light sweep across the plant photo, under the gradients. */}
       <span aria-hidden className="margo-about-hero-sweep -z-20" />
-      {/* Copy side stays near-solid; the frame surfaces on the right. */}
+      {/* Phones: the copy sits over the whole photo, so it is shaded from
+          the left, top and bottom. */}
       <div
-        className="absolute inset-0 -z-10"
+        className="absolute inset-0 -z-10 lg:hidden"
         style={{
           background:
             "linear-gradient(to right, var(--color-surface-2) 8%, color-mix(in srgb, var(--color-surface-2) 72%, transparent) 34%, transparent 62%)",
         }}
       />
       <div
-        className="absolute inset-0 -z-10"
+        className="absolute inset-0 -z-10 lg:hidden"
         style={{
           background:
             "linear-gradient(to top, var(--color-surface-2), transparent 26%)",
         }}
       />
       <div
-        className="absolute inset-0 -z-10"
+        className="absolute inset-0 -z-10 lg:hidden"
         style={{
           background:
             "linear-gradient(to bottom, var(--color-surface-2), transparent 14%)",
@@ -768,29 +769,17 @@ export function Leadership({
 }) {
   return (
     <section className="bg-surface-2 grid items-stretch gap-0 lg:grid-cols-2">
-      {/* The founder's portrait, shown as photographed (21 Oct 2026): no
-          dimming or desaturating filter, and only thin edge fades so the
-          plate still meets the copy column without veiling the person. */}
-      <div className="relative isolate min-h-[380px] overflow-hidden lg:min-h-[620px]">
+      {/* The founder's portrait, shown whole and as photographed (25 Oct
+          2026): no gradients, no side fill — object-contain so the full
+          figure, head to shoes, survives any screen width or browser zoom.
+          Where the column is wider than the portrait, the section's own
+          dark surface shows either side. */}
+      <div className="relative isolate min-h-[480px] overflow-hidden lg:min-h-[620px]">
         <Img
           k={image}
           fill
           sizes="(min-width:1024px) 50vw, 100vw"
-          className="object-cover"
-        />
-        <div
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to top, var(--color-surface-2), transparent 12%)",
-          }}
-        />
-        <div
-          className="pointer-events-none absolute inset-0 hidden lg:block"
-          style={{
-            background:
-              "linear-gradient(to right, transparent 88%, var(--color-surface-2))",
-          }}
+          className="object-contain"
         />
       </div>
 
@@ -989,17 +978,19 @@ export function Team({
               key={m.name}
               className="margo-founder rounded-card border-line overflow-hidden border bg-surface-3"
             >
+              {/* Full-length portrait, no fade (25 Oct 2026): the founders
+                  are shown head to shoes. 3:4 matches the uploaded portraits
+                  (1086×1334, 1053×1436) closely, and object-bottom anchors
+                  any trim to the top so the feet are never cut. */}
               <div className="margo-founder-photo relative isolate">
                 <Photo
                   k={m.image}
-                  ratio="aspect-[4/5]"
+                  ratio="aspect-[3/4]"
                   dissolve="none"
                   sizes="(min-width:1024px) 22vw, 50vw"
                   reveal={false}
-                  brightness=""
+                  brightness="object-bottom"
                 />
-                {/* Portrait bleeds into the caption plate below it. */}
-                <div aria-hidden className="margo-founder-fade pointer-events-none absolute" />
               </div>
               <div className="margo-founder-caption p-5">
                 <p className="text-ink text-sm font-semibold">{m.name}</p>

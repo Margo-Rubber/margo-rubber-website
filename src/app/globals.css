@@ -1184,8 +1184,8 @@ body {
       border-color: rgb(43 188 196 / 0.45);
       box-shadow: 0 26px 50px -28px rgb(43 188 196 / 0.55);
     }
+    /* No hover zoom: scaling would crop the full-length portrait's edges. */
     .margo-founder:hover img {
-      transform: scale(1.05);
       filter: saturate(1.05) brightness(1);
     }
   }
