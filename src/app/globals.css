@@ -946,13 +946,35 @@ body {
      surface on the left where the copy sits. Phones keep the full-bleed
      cover, since the copy sits over the whole photo there. */
   @media (min-width: 64rem) {
+    /* 25 Oct 2026: the <img> itself is sized to the photo — full hero
+       height, width from the photo's own ratio, pinned right — instead of a
+       full-width "contain" box. So the left-edge fade is measured on the
+       photo, not the page: it always dissolves the street side of the
+       frame and never reaches the building, at any width or browser zoom.
+       !important: next/image's fill writes inset/width/height inline, and
+       the <img> also carries Tailwind's object-cover for phones. */
+    /* It starts below the fixed 5rem nav (so the roof is never under it)
+       and is capped at one screen tall, so at 100% browser zoom the whole
+       building — roof to sign — fits in the first view instead of the
+       photo growing with the hero copy. The bottom edge gets a short fade
+       too, since the capped photo can end above the hero's bottom. */
     .margo-about-hero-img {
-      /* !important: the <img> also carries Tailwind's object-cover utility,
-         which outranks this layer for phones-first cover behaviour. */
-      object-fit: contain !important;
-      object-position: right center;
-      -webkit-mask-image: linear-gradient(to right, transparent 28%, #000 58%);
-      mask-image: linear-gradient(to right, transparent 28%, #000 58%);
+      top: 5.5rem !important;
+      bottom: auto !important;
+      left: auto !important;
+      right: 0 !important;
+      width: auto !important;
+      height: calc(100% - 5.5rem) !important;
+      max-height: calc(100svh - 6.5rem);
+      object-fit: fill !important;
+      -webkit-mask-image:
+        linear-gradient(to right, transparent 0, #000 22%),
+        linear-gradient(to top, transparent 0, #000 8%);
+      -webkit-mask-composite: source-in;
+      mask-image:
+        linear-gradient(to right, transparent 0, #000 22%),
+        linear-gradient(to top, transparent 0, #000 8%);
+      mask-composite: intersect;
     }
   }
   /* The light band is a wide layer slid with transform, which the GPU
@@ -1157,8 +1179,8 @@ body {
       border-color: rgb(43 188 196 / 0.45);
       box-shadow: 0 26px 50px -28px rgb(43 188 196 / 0.55);
     }
+    /* No hover zoom: scaling would crop the full-length portrait's edges. */
     .margo-founder:hover img {
-      transform: scale(1.05);
       filter: saturate(1.05) brightness(1);
     }
   }
