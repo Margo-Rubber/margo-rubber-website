@@ -159,18 +159,18 @@ export function ComponentTabs({ items }: { items: Component[] }) {
           hidden={idx !== i}
         >
           <div className="border-line rounded-card grid overflow-hidden border bg-[#0A0A0A] md:grid-cols-[minmax(0,42%)_1fr]">
-            <div className="relative min-h-[220px] overflow-hidden">
+            {/* The photo sets its own height from its own proportions, so the
+                whole part is shown rather than being cropped to the height of
+                the text beside it. Capped on desktop so a tall upload cannot
+                stretch the card; the copy sits centred against it. */}
+            <div className="relative flex items-center overflow-hidden">
               <Img
                 k={c.image}
-                fill
                 sizes="(max-width: 768px) 100vw, 42vw"
-                className="object-cover brightness-[0.85]"
+                className="block h-auto w-full object-cover brightness-[0.85] md:max-h-[560px]"
               />
-              {/* Dissolve into the panel fill: downward on mobile where the image
-                stacks above the copy, rightward on desktop where it sits beside it. */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] from-0% to-transparent to-55% md:bg-gradient-to-r md:from-transparent md:from-45% md:to-[#0A0A0A] md:to-100%" />
             </div>
-            <div className="p-6 md:p-8">
+            <div className="p-6 md:self-center md:p-8">
               <h3 className="text-h3">{c.name}</h3>
               <p className="text-ink-4 mt-3 text-sm leading-relaxed">
                 {c.body}

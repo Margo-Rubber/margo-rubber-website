@@ -361,7 +361,6 @@ export function HomeHero({
   h1Lines,
   intro,
   introLinks = [],
-  image,
   actions,
   chips,
   cards,
@@ -378,9 +377,9 @@ export function HomeHero({
   return (
     <header className="margo-hero bg-canvas relative isolate overflow-hidden hero-offset pb-24 md:pb-32">
       <HeroVideo
-        k={image}
-        src="/videos/bg-compressed.mp4"
-        className="margo-hero-image -z-20 opacity-60 brightness-[0.95] contrast-[1.05]"
+        src="/videos/hero-bg.mp4"
+        poster="/videos/hero-bg-poster.jpg"
+        className="margo-hero-image -z-20"
       />
       <div
         className="absolute inset-0 -z-10"

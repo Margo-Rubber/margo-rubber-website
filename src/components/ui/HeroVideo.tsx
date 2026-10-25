@@ -1,31 +1,31 @@
 "use client";
 
-import { getImage } from "@/content/images";
-import { useImageOverride } from "@/components/ui/ImageOverrideProvider";
-
 /**
  * Full-bleed background video for the homepage hero.
  *
- * Takes the same image-registry key the hero `Img` used and resolves it the
- * same way (CMS upload wins, stock image otherwise), but only as the POSTER,
- * so the frame is never blank while the video loads. The image slot and its
- * Sanity field are untouched; the homepage just stops drawing it as an <img>.
+ * The POSTER is the video's own first frame, exported next to it, so the
+ * picture shown while the video loads is the same picture the video starts
+ * on. It used to be the old hero photograph from the image registry, which
+ * flashed on every reload before the video took over.
+ *
+ * The darkening the hero needs (it sat at 60% opacity with brightness and
+ * contrast filters) is baked into the video file itself. CSS filters and
+ * opacity on a playing video are re-applied to every frame, and together
+ * with the slow drift animation they made playback stutter on laptops.
+ * If the video is ever replaced, re-export it with that look (or put the
+ * filters back on the className below) and export a new first-frame poster.
  *
  * Decorative: muted, no controls, hidden from assistive tech.
  */
 export function HeroVideo({
-  k,
   src,
+  poster,
   className,
 }: {
-  k: string;
   src: string;
+  poster: string;
   className?: string;
 }) {
-  const stock = getImage(k);
-  const uploaded = useImageOverride(k);
-  const poster = uploaded ? uploaded.url : stock.src;
-
   return (
     <video
       autoPlay
