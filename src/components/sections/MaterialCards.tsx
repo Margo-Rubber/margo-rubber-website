@@ -37,6 +37,14 @@ const DOT: Record<string, string> = {
  *
  * Sampled values: card #080808 · divider #0D0D0D · image extent ≈49% of card
  * height (157px of 322px), fading over its last ~40%.
+ *
+ * 25 Oct 2026: the image band is SQUARE (as wide as the card), so the
+ * whole swatch photo shows — the photos are square, and any fixed-height
+ * band cropped them. object-contain keeps a non-square upload whole too.
+ * The fade now only takes the last 12% of the band, below the parts.
+ * The card is a size container so the copy can start at the band's
+ * height (100cqw) on any card width; the title lands just under the
+ * photo, as it did on the old 175px band.
  */
 export function MaterialCards({ items }: { items: Material[] }) {
   return (
@@ -59,25 +67,25 @@ function MaterialCard({ m }: { m: Material }) {
   return (
     /* The card is addressable as #fkm, #nbr … — "FKM → /products/oil-seals#fkm"
        (sheet 01 §10); the panel inside keeps its own id for aria-controls. */
-    <div id={compoundAnchor(m.code)} className="bg-card relative isolate overflow-hidden">
+    <div id={compoundAnchor(m.code)} className="bg-card @container relative isolate overflow-hidden">
       {m.image && (
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[175px]"
+          className="pointer-events-none absolute inset-x-0 top-0 -z-10 aspect-square"
           style={{
-            // Dissolve into the card fill instead of ending on a hard edge.
-            // Fully gone by ~157px, matching the measured design.
+            // Dissolve into the card fill instead of ending on a hard edge —
+            // only over the last 12%, so the parts themselves stay clear.
             maskImage:
-              "linear-gradient(to bottom, #000 0%, #000 65%, transparent 100%)",
+              "linear-gradient(to bottom, #000 0%, #000 88%, transparent 100%)",
             WebkitMaskImage:
-              "linear-gradient(to bottom, #000 0%, #000 65%, transparent 100%)",
+              "linear-gradient(to bottom, #000 0%, #000 88%, transparent 100%)",
           }}
         >
           <Img
             k={m.image}
             fill
             sizes="(max-width: 640px) 100vw, 50vw"
-            className="object-cover"
+            className="object-contain"
           />
         </div>
       )}
@@ -94,8 +102,10 @@ function MaterialCard({ m }: { m: Material }) {
       </div>
 
       {/* Content begins below the image's visible extent — title lands 172px
-          from the card top, measured off the design. */}
-      <div className="px-5 pb-5 pt-[134px]">
+          from the card top in the design, just under the image band. Here:
+          band height (= card width, 100cqw) minus the 41px badge row and
+          overlap, so it tracks the square band at every width. */}
+      <div className="px-5 pb-5 pt-[calc(100cqw-41px)]">
         <button
           type="button"
           onClick={() => setOpen((o) => !o)}

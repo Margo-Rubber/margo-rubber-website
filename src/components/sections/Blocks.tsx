@@ -160,47 +160,60 @@ export function CategoryHero({
   statsAlign?: "left" | "center";
 }) {
   return (
-    <header className="relative isolate overflow-hidden">
+    // bg-canvas: the multiply tint below needs a dark ground to blend with.
+    // With the photo no longer full-bleed, a transparent header let the
+    // tint show as a flat grey wherever the photo is not.
+    // With a photo, the hero fills the screen height on desktop (25 Oct
+    // 2026): the photo is shown whole at the hero's height, so a taller
+    // hero is what makes it large — enlarging it past the hero's height
+    // is what used to crop the rings. Copy stays at the top; the stat row
+    // sits at the foot (the spacer below takes up the difference).
+    <header
+      className={`bg-canvas relative isolate overflow-hidden ${
+        image ? "lg:flex lg:min-h-svh lg:flex-col" : ""
+      }`}
+    >
       {image && (
         <>
+          {/* Full-bleed backdrop (desktop): the same photo, enlarged to
+              cover the hero, heavily blurred and darkened. It gives the hero
+              the edge-to-edge photographic look while the SHARP photo — drawn
+              inside the Container below (see .hero-media) — stays whole:
+              nothing in focus is ever cropped. Decorative, so alt="". Not
+              priority: hidden below lg, where a lazy image is never fetched. */}
           <Img
             k={image}
             fill
-            priority
-            sizes="100vw"
-            className="-z-10 object-cover object-right lg:contrast-[1.04]"
+            alt=""
+            sizes="40vw"
+            className="-z-30 hidden scale-[1.15] object-cover object-right blur-[28px] brightness-[0.55] saturate-[0.9] lg:block"
           />
-          {/* Scrim (21 Oct 2026, revised the same evening). The product must
-              stay clearly visible, but most product photos are shot on white
-              studio backgrounds, which left a bright slab on the right of a
-              black page and a hard light edge under the header.
-              1. Tone: a cool grey multiplied over the photo. Multiply leaves
-                 black rubber black and turns the white backdrop into a soft
-                 grey, so the part keeps its shape and the frame stops glowing.
-                 (The old brightness-115% lift is gone; it was what pushed the
-                 backdrop to pure white.)
-              2. Copy side: one eased fade instead of a short 30%→65% ramp,
-                 so there is no visible seam where the wash ends.
-              3. Edges: a light fade on the right edge and under the header,
-                 so the photo sits inside the page instead of against it.
-              4. Foot: unchanged, keeps the stat row on dark ground.
-              Mobile keeps its full wash, as the copy sits over the photo. */}
+          {/* Tone (21 Oct 2026): a cool grey multiplied over the photos, so
+              the white studio backdrops read as soft grey on a black page
+              while black rubber stays black. */}
           <div className="absolute inset-0 -z-10 bg-[#a1a9ae] mix-blend-multiply" />
-          <div className="from-canvas via-canvas/85 to-canvas/55 absolute inset-0 -z-10 bg-gradient-to-t lg:hidden" />
-          <div className="absolute inset-0 -z-10 hidden bg-[linear-gradient(to_right,var(--color-canvas)_28%,rgb(0_0_0/0.72)_44%,rgb(0_0_0/0.3)_62%,transparent_80%)] lg:block" />
-          <div className="absolute inset-0 -z-10 hidden bg-[linear-gradient(to_left,rgb(0_0_0/0.45),transparent_22%)] lg:block" />
-          <div className="absolute inset-x-0 top-0 -z-10 hidden h-64 bg-[linear-gradient(to_bottom,rgb(0_0_0/0.8),rgb(0_0_0/0.4)_40%,transparent)] lg:block" />
-          <div className="from-canvas absolute inset-x-0 bottom-0 -z-10 hidden h-72 bg-gradient-to-t from-45% to-transparent lg:block" />
+          {/* Desktop legibility: a solid black panel behind the copy with a
+              straight edge, then a short blend into the photo (25 Oct 2026).
+              Solid to 42% / blended out by 52%; from 1024 to 1279px, 38% /
+              47%, where the photo starts further left, so the panel never
+              covers the product. Plus a fade under the stat row. Phones need
+              neither — the photo sits under the copy there. */}
+          <div className="absolute inset-0 -z-10 hidden bg-[linear-gradient(to_right,var(--color-canvas)_0%,var(--color-canvas)_38%,transparent_47%)] lg:block xl:bg-[linear-gradient(to_right,var(--color-canvas)_0%,var(--color-canvas)_42%,transparent_52%)]" />
+          <div className="from-canvas absolute inset-x-0 bottom-0 -z-10 hidden h-[30%] bg-gradient-to-t to-transparent lg:block" />
         </>
       )}
 
-      <Container className="pt-32 pb-16 md:pt-48 md:pb-20">
+      <Container
+        className={`hero-offset pb-16 md:pb-20 ${
+          image ? "lg:flex lg:flex-1 lg:flex-col" : ""
+        }`}
+      >
         <Breadcrumb items={breadcrumb} className="mb-6" />
 
         {eyebrowVariant === "rule" ? (
           <Eyebrow variant="rule">{badge}</Eyebrow>
         ) : (
-          <p className="text-eyebrow border-line-2 text-ink-2 inline-flex rounded-pill border px-4 py-1.5 font-mono uppercase">
+          <p className="text-eyebrow border-line-2 text-ink-2 inline-flex self-start rounded-pill border px-4 py-1.5 font-mono uppercase">
             {badge}
           </p>
         )}
@@ -220,7 +233,7 @@ export function CategoryHero({
         {link && (
           <a
             href={link.href}
-            className="text-accent-400 mt-6 inline-flex items-center gap-1.5 text-sm font-medium"
+            className="text-accent-400 mt-6 inline-flex self-start items-center gap-1.5 text-sm font-medium"
           >
             {/* An in-page link points down the page, not out of it. */}
             {link.label} <span aria-hidden>{link.href.startsWith("#") ? "↓" : "↗"}</span>
@@ -237,6 +250,23 @@ export function CategoryHero({
             ))}
           </div>
         )}
+
+        {/* Product photograph — shown whole, never cropped or enlarged past
+            its own resolution (the category shots are 1024px squares).
+            Phones/tablets: in the flow under the copy. Desktop: anchored
+            right as the hero backdrop. Brightness on phones stands in for
+            the multiply tint above, which only reaches it on desktop. */}
+        {image && (
+          <Img
+            k={image}
+            priority
+            sizes="(min-width: 1024px) 60vw, (min-width: 640px) 32rem, 100vw"
+            className="hero-media max-lg:max-w-[32rem] max-lg:brightness-[0.7] lg:contrast-[1.04] [--hero-media-max-h:60vw]"
+          />
+        )}
+
+        {/* Desktop full-screen hero: pushes the stat row to the foot. */}
+        {image && <div aria-hidden className="hidden lg:block lg:flex-1" />}
 
         {stats.length > 0 &&
           (actions && actions.length > 0 ? (

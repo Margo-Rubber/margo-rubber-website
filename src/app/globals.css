@@ -193,6 +193,29 @@
   }
 }
 
+/* ============================================================
+   HERO OFFSET
+   Where the first line of every hero (breadcrumb / eyebrow) starts.
+   The site header is fixed and `h-20` (5rem) tall, so every hero has to
+   clear it; the gap below it is the only thing that varies by viewport.
+   Before this, each of the 16 heroes carried its own pt-28…pt-56, which
+   put the copy anywhere from 80px to 144px below the nav and read as
+   "slightly too low" on most pages. One value, used everywhere.
+   If the header height ever changes, change --header-h here.
+   ============================================================ */
+:root {
+  --header-h: 5rem;
+  --hero-gap: 2rem;
+}
+@media (min-width: 768px) {
+  :root {
+    --hero-gap: 3rem;
+  }
+}
+@utility hero-offset {
+  padding-top: calc(var(--header-h) + var(--hero-gap));
+}
+
 html {
   color-scheme: dark;
   scroll-behavior: smooth;
@@ -934,25 +957,29 @@ body {
     0%, 100% { transform: scale(1.03) translate3d(0, 0, 0); }
     50% { transform: scale(1.09) translate3d(-1.2%, -0.6%, 0); }
   }
-  .margo-about-hero-img {
-    animation:
-      margo-about-settle 1.8s var(--ease-entrance) both,
-      margo-about-drift-wide 22s ease-in-out 1.8s infinite;
-    will-change: transform;
+  /* On phones and tablets the photo sits in the page flow under the copy
+     (see .hero-media), so it only fades in: a scale would push the framed
+     image past the gutter. The settle-and-drift camera move runs where the
+     photo is the hero backdrop. */
+  @keyframes margo-about-fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
-  /* Desktop: the hero photo is close to square while the hero is wide, so
-     "cover" blew it up ~18% and cut a sixth off the top and bottom. Show the
-     whole frame instead, full height on the right, fading into the dark
-     surface on the left where the copy sits. Phones keep the full-bleed
-     cover, since the copy sits over the whole photo there. */
+  .margo-about-hero-img {
+    animation: margo-about-fade 1.2s var(--ease-entrance) both;
+  }
+  .margo-about-hero-sweep {
+    display: none;
+  }
   @media (min-width: 64rem) {
     .margo-about-hero-img {
-      /* !important: the <img> also carries Tailwind's object-cover utility,
-         which outranks this layer for phones-first cover behaviour. */
-      object-fit: contain !important;
-      object-position: right center;
-      -webkit-mask-image: linear-gradient(to right, transparent 28%, #000 58%);
-      mask-image: linear-gradient(to right, transparent 28%, #000 58%);
+      animation:
+        margo-about-settle 1.8s var(--ease-entrance) both,
+        margo-about-drift-wide 22s ease-in-out 1.8s infinite;
+      will-change: transform;
+    }
+    .margo-about-hero-sweep {
+      display: block;
     }
   }
   /* The light band is a wide layer slid with transform, which the GPU
@@ -2018,6 +2045,70 @@ main #iso-9001 {
     .xmap-ring,
     .xmap-label {
       transition: none;
+    }
+  }
+}
+
+/* ============================================================
+   HERO MEDIA  (category heroes, /about)
+
+   The hero photographs are close to square (the category shots are
+   1024x1024, the plant is 1142x1042) while the heroes are wide. Drawn
+   full-bleed with object-cover they were enlarged 1.3-1.9x (soft) and
+   lost a third to a half of the frame; on a phone only a narrow strip
+   survived. This shows the WHOLE photograph at its own proportions and
+   never above its own resolution:
+
+   · Below 64rem the image is in the page flow under the copy, full
+     column width, framed like the site's other photographs.
+   · From 64rem it is the hero backdrop: anchored right, exactly as tall
+     as the hero below the fixed header (so nothing hides under the nav),
+     with its width following from the photo's own ratio (the width and
+     height attributes), capped at --hero-media-max. If the cap is hit the
+     photo is fitted inside with object-fit: contain and the top/bottom
+     fade covers the small band that leaves, so it is still never cropped.
+
+   The element must be a non-fill <Img> (it relies on the intrinsic
+   ratio from width/height), placed inside the hero's Container, whose
+   nearest positioned ancestor is the hero itself.
+   ============================================================ */
+@layer components {
+  .hero-media {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 2.5rem;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-card);
+  }
+  @media (min-width: 64rem) {
+    .hero-media {
+      position: absolute;
+      z-index: -20;
+      top: var(--header-h);
+      bottom: 0;
+      right: 0;
+      /* auto block margins centre the box in the space below the header
+         when --hero-media-max-h makes it shorter than that space. */
+      margin: auto 0;
+      /* --hero-media-max-h: optional height cap. A square photo given
+         60vw here never hits the 60% width cap, so its box stays the
+         picture's own shape and the edge fade lands on its edges. */
+      height: min(calc(100% - var(--header-h)), var(--hero-media-max-h, 100vh));
+      width: auto;
+      max-width: var(--hero-media-max, 60%);
+      object-fit: contain;
+      object-position: right center;
+      border: 0;
+      border-radius: 0;
+      -webkit-mask-image:
+        linear-gradient(to right, transparent 0, #000 34%),
+        linear-gradient(to bottom, transparent 0, #000 18%, #000 82%, transparent 100%);
+      -webkit-mask-composite: source-in;
+      mask-image:
+        linear-gradient(to right, transparent 0, #000 34%),
+        linear-gradient(to bottom, transparent 0, #000 18%, #000 82%, transparent 100%);
+      mask-composite: intersect;
     }
   }
 }

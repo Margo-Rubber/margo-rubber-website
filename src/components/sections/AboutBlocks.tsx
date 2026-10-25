@@ -391,14 +391,9 @@ export function AboutHero({
   breadcrumb?: readonly Crumb[];
 }) {
   return (
-    <header className="bg-surface-2 relative isolate overflow-hidden pt-36 pb-24 md:pt-52 md:pb-36">
-      <Img
-        k={image}
-        fill
-        priority
-        sizes="100vw"
-        className="margo-about-hero-img -z-20 object-cover brightness-[0.85]"
-      />
+    <header className="bg-surface-2 hero-offset relative isolate overflow-hidden pb-24 md:pb-36">
+      {/* The plant photograph is drawn inside the Container below (see
+          .hero-media): whole building, never cropped. */}
       {/* Slow light sweep across the plant photo, under the gradients. */}
       <span aria-hidden className="margo-about-hero-sweep -z-20" />
       {/* Copy side stays near-solid; the frame surfaces on the right. */}
@@ -413,14 +408,14 @@ export function AboutHero({
         className="absolute inset-0 -z-10"
         style={{
           background:
-            "linear-gradient(to top, var(--color-surface-2), transparent 42%)",
+            "linear-gradient(to top, var(--color-surface-2), transparent 26%)",
         }}
       />
       <div
         className="absolute inset-0 -z-10"
         style={{
           background:
-            "linear-gradient(to bottom, var(--color-surface-2), transparent 22%)",
+            "linear-gradient(to bottom, var(--color-surface-2), transparent 14%)",
         }}
       />
 
@@ -479,6 +474,20 @@ export function AboutHero({
           </div>
           )}
         </div>
+
+        {/* The whole building, at the photo's own proportions. Phones and
+            tablets: under the copy. Desktop: full height on the right,
+            below the fixed header, fading into the surface behind the copy.
+            The old full-bleed cover cut off the roof (hidden under the nav)
+            and the ground. The 75% cap lets this wider-than-square frame
+            stay full height down to 1024px; the copy column's own scrim
+            keeps the text legible where the two overlap. */}
+        <Img
+          k={image}
+          priority
+          sizes="(min-width: 1024px) 75vw, (min-width: 768px) 40rem, 100vw"
+          className="margo-about-hero-img hero-media max-lg:max-w-[40rem] brightness-[0.85] [--hero-media-max:75%]"
+        />
       </Container>
 
       <span className="text-eyebrow text-ink-4 absolute right-6 bottom-24 hidden font-mono uppercase [writing-mode:vertical-rl] lg:block">

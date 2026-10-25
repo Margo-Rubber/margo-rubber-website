@@ -35,9 +35,9 @@ export function LegalHero({
   breadcrumb?: readonly Crumb[];
 }) {
   return (
-    // pt-32/40 clears the FIXED site header, matching every other hero. At the
+    // hero-offset clears the FIXED site header, matching every other hero. At the
     // comp's own top padding the breadcrumb renders underneath it.
-    <section className="relative overflow-hidden bg-[#101720] pt-32 pb-20 md:pt-40 md:pb-28">
+    <section className="relative overflow-hidden bg-[#101720] hero-offset pb-20 md:pb-28">
       {/* Glow. The comp's hero is measurably lighter and cooler than the band
           below it (#101720 vs #0F1115), lifted by a soft teal wash off the
           upper right. Two layers rather than one: a wide cool lift for the

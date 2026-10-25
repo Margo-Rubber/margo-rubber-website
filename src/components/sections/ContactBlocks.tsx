@@ -37,7 +37,7 @@ export function ContactHero({
   breadcrumb?: readonly Crumb[];
 }) {
   return (
-    <header className="margo-contact-hero relative isolate overflow-hidden pt-32 pb-20 md:pt-48 md:pb-28">
+    <header className="margo-contact-hero relative isolate overflow-hidden hero-offset pb-20 md:pb-28">
       {image && (
         <>
           <Img

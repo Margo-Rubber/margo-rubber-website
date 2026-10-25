@@ -91,7 +91,7 @@ export function HubHero({
   breadcrumb?: readonly Crumb[];
 }) {
   return (
-    <header className="border-line relative isolate overflow-hidden border-b pt-28 pb-14 md:pt-40 md:pb-20">
+    <header className="border-line relative isolate overflow-hidden border-b hero-offset pb-14 md:pb-20">
       {image && (
         <>
           {/* The design suppresses this to ~15%; raised on request so the

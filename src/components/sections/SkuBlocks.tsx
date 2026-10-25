@@ -320,7 +320,7 @@ export function SkuHero({
   const thumbs = gallery.thumbs;
 
   return (
-    <header className="bg-canvas relative isolate overflow-hidden pt-32 pb-16 md:pt-40">
+    <header className="bg-canvas relative isolate overflow-hidden hero-offset pb-16">
       <span aria-hidden className="bg-accent-400/10 pointer-events-none absolute -top-24 -left-32 -z-10 size-[30rem] rounded-full blur-3xl" />
       <Container>
         <Breadcrumb items={breadcrumb} className="mb-10" />

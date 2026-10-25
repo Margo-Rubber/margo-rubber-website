@@ -245,7 +245,7 @@ export function ExportHero({
   breadcrumb?: readonly Crumb[];
 }) {
   return (
-    <header className="bg-canvas relative isolate overflow-hidden pt-36 pb-12 md:pt-48 md:pb-14">
+    <header className="bg-canvas relative isolate overflow-hidden hero-offset pb-12 md:pb-14">
       <Img
         k={image}
         fill

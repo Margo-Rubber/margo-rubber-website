@@ -47,7 +47,7 @@ export function IndustriesHero({
   breadcrumb?: readonly Crumb[];
 }) {
   return (
-    <header className="relative isolate overflow-hidden pt-28 pb-12 md:pt-40 md:pb-16">
+    <header className="relative isolate overflow-hidden hero-offset pb-12 md:pb-16">
       {image && (
         <>
           <Img

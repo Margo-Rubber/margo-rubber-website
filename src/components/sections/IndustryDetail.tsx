@@ -37,7 +37,7 @@ export function IndustryHero({
   breadcrumb?: readonly Crumb[];
 }) {
   return (
-    <header className="relative isolate overflow-hidden pt-28 pb-16 md:pt-44 md:pb-24">
+    <header className="relative isolate overflow-hidden hero-offset pb-16 md:pb-24">
       {image && (
         <>
           {boost ? (

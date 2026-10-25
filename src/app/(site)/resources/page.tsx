@@ -84,7 +84,7 @@ export default async function ResourcesPage() {
         })}
       />
 
-      <header className="bg-canvas relative isolate overflow-hidden pt-36 pb-12 md:pt-48">
+      <header className="bg-canvas relative isolate overflow-hidden hero-offset pb-12">
         {/* No `resources.*` group exists in the registry, so this borrows the
             closest subject: a caliper on a moulded part. These guides are
             about specifying dimensions and materials, and dimensional

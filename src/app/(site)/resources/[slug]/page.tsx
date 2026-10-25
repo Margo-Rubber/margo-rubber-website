@@ -94,7 +94,7 @@ export default async function ResourceGuidePage(
         })}
       />
 
-      <header className="relative isolate overflow-hidden pt-36 pb-14 md:pt-48">
+      <header className="relative isolate overflow-hidden hero-offset pb-14">
         <span
           aria-hidden
           className="bg-accent-400/10 pointer-events-none absolute -top-24 -left-32 -z-10 size-[30rem] rounded-full blur-3xl"

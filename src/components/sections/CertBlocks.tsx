@@ -157,7 +157,7 @@ export function CertHero({
   breadcrumb?: readonly Crumb[];
 }) {
   return (
-    <header className="bg-canvas relative isolate overflow-hidden pt-32 pb-20 md:pt-44 md:pb-28">
+    <header className="bg-canvas relative isolate overflow-hidden hero-offset pb-20 md:pb-28">
       {/* QC inspection rather than a press or a plant exterior: this page is
           about a quality management system, and the dimensional-inspection
           bench is the part of the floor that ISO 9001 actually governs. */}

@@ -209,7 +209,7 @@ export function CaseHero({
   breadcrumb?: readonly Crumb[];
 }) {
   return (
-    <header className="bg-canvas relative isolate overflow-hidden pt-36 pb-20 md:pt-48 md:pb-28">
+    <header className="bg-canvas relative isolate overflow-hidden hero-offset pb-20 md:pb-28">
       <Bloom className="top-1/4 -left-40 size-[32rem]" />
       <Container>
         <Breadcrumb items={breadcrumb} className="mb-6" />

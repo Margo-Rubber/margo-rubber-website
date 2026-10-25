@@ -376,7 +376,7 @@ export function HomeHero({
   cards: readonly { value: string; label: string; icon?: string }[];
 }) {
   return (
-    <header className="margo-hero bg-canvas relative isolate overflow-hidden pt-32 pb-24 md:pt-44 md:pb-32">
+    <header className="margo-hero bg-canvas relative isolate overflow-hidden hero-offset pb-24 md:pb-32">
       <HeroVideo
         k={image}
         src="/videos/bg-compressed.mp4"

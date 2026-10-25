@@ -344,7 +344,7 @@ export function WhyHero({
   breadcrumb?: readonly Crumb[];
 }) {
   return (
-    <header className="bg-canvas relative isolate overflow-hidden pt-40 pb-24 md:pt-56 md:pb-32">
+    <header className="bg-canvas relative isolate overflow-hidden hero-offset pb-24 md:pb-32">
       <Img
         k={image}
         fill
