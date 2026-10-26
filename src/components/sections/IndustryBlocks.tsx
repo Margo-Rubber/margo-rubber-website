@@ -55,10 +55,8 @@ export function IndustriesHero({
             fill
             priority
             sizes="100vw"
-            className="-z-20 object-cover brightness-[0.85]"
+            className="-z-20 object-cover"
           />
-          <div className="from-canvas via-canvas/70 absolute inset-0 -z-10 bg-gradient-to-r from-10% via-50% to-transparent to-85%" />
-          <div className="from-canvas absolute inset-0 -z-10 bg-gradient-to-t from-0% to-transparent to-40%" />
         </>
       )}
       <Container>
