@@ -33,7 +33,7 @@ import {
  * would mean rendering it before knowing where to put it, and a corrected
  * position one frame later reads as a flinch. These are deliberately generous.
  */
-const PANEL_HALF: Record<MenuKey, number> = { products: 370, industries: 130 };
+const PANEL_HALF: Record<MenuKey, number> = { products: 150, industries: 130 };
 
 export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -278,53 +278,27 @@ export function SiteHeader() {
 
 function ProductsPanel() {
   return (
-    <div className="flex gap-10">
-      <div>
-        <Link
-          href="/products#all-products"
-          onClick={() =>
-            // Same-page hash links don't fire hashchange; tell the grid directly.
-            setTimeout(() => window.dispatchEvent(new Event("margo:all-products")), 0)
-          }
-          className="margo-nav-all text-[10px] font-medium tracking-[0.16em] uppercase"
-        >
-          All Products <span aria-hidden>›</span>
-        </Link>
-        <ul className="mt-3 space-y-0.5">
-          {/* Every product family, the two grouped ones included, so the
-              left column is the complete list and reads as the main menu. */}
-          {[...PRODUCT_MENU.categories, ...PRODUCT_MENU.groups].map((c) => (
-            <li key={c.label}>
-              <PanelLink href={c.href}>{c.label}</PanelLink>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <div className="border-line w-px self-stretch border-l" />
-
-      <div className="space-y-6">
-        {PRODUCT_MENU.groups.map((g) => (
-          <div key={g.label}>
-            <Link
-              href={g.href}
-              className="text-ink hover:text-accent-400 flex items-center gap-1.5 text-sm font-semibold transition-colors"
-            >
-              {g.label}
-              <span aria-hidden className="text-accent-400 text-[10px]">
-                ›
-              </span>
-            </Link>
-            <ul className="mt-2 grid grid-cols-2 gap-x-8 gap-y-0.5">
-              {g.items.map((i) => (
-                <li key={i.label}>
-                  <PanelLink href={i.href} tone="sub">{i.label}</PanelLink>
-                </li>
-              ))}
-            </ul>
-          </div>
+    <div className="min-w-56">
+      <Link
+        href="/products#all-products"
+        onClick={() =>
+          // Same-page hash links don't fire hashchange; tell the grid directly.
+          setTimeout(() => window.dispatchEvent(new Event("margo:all-products")), 0)
+        }
+        className="margo-nav-all text-[10px] font-medium tracking-[0.16em] uppercase"
+      >
+        All Products <span aria-hidden>›</span>
+      </Link>
+      <ul className="mt-3 space-y-0.5">
+        {/* Every product family, the two grouped ones included. Their
+            sub-items (profiles, foam tape) are on the mobile menu and the
+            category pages, not in this panel. */}
+        {[...PRODUCT_MENU.categories, ...PRODUCT_MENU.groups].map((c) => (
+          <li key={c.label}>
+            <PanelLink href={c.href}>{c.label}</PanelLink>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }
