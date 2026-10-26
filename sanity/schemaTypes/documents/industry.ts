@@ -48,6 +48,7 @@ export const industry = defineType({
   groups: [
     { name: "hero", title: "Top of page", default: true },
     { name: "body", title: "Sections" },
+    { name: "catalogue", title: "Catalogue" },
     { name: "meta", title: "Search & links" },
   ],
   fields: [
@@ -222,6 +223,51 @@ export const industry = defineType({
       of: ALLOWED_BLOCKS.map((type) => defineArrayMember({ type })),
       validation: (r) => r.required().min(1),
       group: "body",
+    }),
+
+    /* ── Catalogue ────────────────────────────────────────────────────────── */
+    /**
+     * This industry's own catalogue, offered at the foot of the page behind a
+     * short form (name, email, company). The hero's "Download Catalogue"
+     * button links to it with the address #catalogue.
+     *
+     * Every field is optional. Without a PDF here the page offers the main
+     * catalogue from the Products page instead, so the section and the
+     * button never lead nowhere. Empty text fields fall back to wording
+     * built from the industry's name.
+     */
+    defineField({
+      name: "catalogue",
+      title: "Industry catalogue",
+      type: "object",
+      group: "catalogue",
+      fields: [
+        defineField({
+          name: "file",
+          title: "Catalogue PDF",
+          type: "file",
+          options: { accept: "application/pdf" },
+          description:
+            "The PDF visitors from this industry download after filling in the form. Keep it under ~10 MB. Leave empty to offer the main catalogue (Products page) instead.",
+        }),
+        defineField({
+          name: "heading",
+          title: "Heading",
+          type: "string",
+          description: 'Leave empty for "Download the <industry> Catalogue". Wrap words in *asterisks* to colour them.',
+        }),
+        defineField({ name: "body", title: "Paragraph", type: "text", rows: 3 }),
+        defineField({
+          name: "bullets",
+          title: "Bullet points",
+          type: "array",
+          of: [defineArrayMember({ type: "string" })],
+        }),
+        defineField({ name: "formHeading", title: "Form heading", type: "string" }),
+        defineField({ name: "formBody", title: "Form line under the heading", type: "text", rows: 2 }),
+        defineField({ name: "submitLabel", title: "Button label", type: "string" }),
+        defineField({ name: "footnote", title: "Small print under the button", type: "string" }),
+      ],
     }),
 
     /* ── Search and links ─────────────────────────────────────────────────── */

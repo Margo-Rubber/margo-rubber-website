@@ -51,6 +51,14 @@ function quantityOf(e: MappedEnquiry): string | undefined {
 /** The sentence that plays the request back, built from whatever was given. */
 function requestLine(e: MappedEnquiry): { html: string; text: string } {
   if (e.source === "catalogue") {
+    // "Automotive catalogue" from an industry page; nothing from /products.
+    const which = e.product?.trim();
+    if (which) {
+      return {
+        html: `We received your request for the Margo Rubber <strong>${escape(which)}</strong>.`,
+        text: `We received your request for the Margo Rubber ${which}.`,
+      };
+    }
     const s = "We received your request for the Margo Rubber product catalogue.";
     return { html: s, text: s };
   }
@@ -86,7 +94,13 @@ function theirMessage(e: MappedEnquiry): string | undefined {
   return m.length > 600 ? `${m.slice(0, 600)}…` : m;
 }
 
-export async function sendAutoReply(enquiry: MappedEnquiry): Promise<void> {
+export async function sendAutoReply(
+  enquiry: MappedEnquiry,
+  extra: {
+    /** Catalogue requests: the PDF, looked up server-side (catalogue-file.ts). */
+    catalogueUrl?: string;
+  } = {},
+): Promise<void> {
   const key = process.env.RESEND_API_KEY;
   const from = process.env.ENQUIRY_FROM;
   if (!key || !from || process.env.AUTOREPLY_OFF === "true") return;
@@ -97,8 +111,13 @@ export async function sendAutoReply(enquiry: MappedEnquiry): Promise<void> {
   const message = theirMessage(enquiry);
   const company = enquiry.company?.trim();
 
+  const catalogueUrl = enquiry.source === "catalogue" ? extra.catalogueUrl : undefined;
+  const which = enquiry.source === "catalogue" ? enquiry.product?.trim() : undefined;
+
   const subject = enquiry.source === "catalogue"
-    ? "Your Margo Rubber catalogue request"
+    ? which
+      ? `Your Margo Rubber ${which}`
+      : "Your Margo Rubber catalogue request"
     : `We received your enquiry${company ? ` — ${company}` : ""} | Margo Rubber`;
 
   const p = 'style="margin:0 0 14px"';
@@ -108,6 +127,11 @@ export async function sendAutoReply(enquiry: MappedEnquiry): Promise<void> {
     <p ${p}>Greetings from Margo Rubber!</p>
     <p ${p}>Thank you for reaching out${company ? ` on behalf of <strong>${escape(company)}</strong>` : ""} and expressing your interest in our products.</p>
     <p ${p}>${line.html}</p>
+    ${
+      catalogueUrl
+        ? `<p style="margin:0 0 18px"><a href="${escape(catalogueUrl)}" style="display:inline-block;padding:11px 20px;background:#2bbcc4;color:#fff;text-decoration:none;border-radius:8px;font-weight:600">Download the catalogue (PDF)</a></p>`
+        : ""
+    }
     ${
       message
         ? `<p style="margin:0 0 6px;color:#6a6a6a;font-size:13px">Your message:</p>
@@ -134,6 +158,7 @@ export async function sendAutoReply(enquiry: MappedEnquiry): Promise<void> {
     "Greetings from Margo Rubber!",
     `Thank you for reaching out${company ? ` on behalf of ${company}` : ""} and expressing your interest in our products.`,
     line.text,
+    ...(catalogueUrl ? ["", `Download the catalogue (PDF): ${catalogueUrl}`] : []),
     ...(message ? ["", "Your message:", message] : []),
     "",
     "We would be happy to assist you with your requirement.",

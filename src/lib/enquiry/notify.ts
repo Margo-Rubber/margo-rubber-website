@@ -70,7 +70,13 @@ export async function notifyEnquiry(
     "Margo Rubber Products Website <onboarding@resend.dev>";
 
   const who = enquiry.company ?? enquiry.name ?? enquiry.email;
-  const subject = `Enquiry from ${who}${enquiry.country ? ` (${enquiry.country})` : ""}`;
+  // Catalogue requests say which catalogue up front ("Automotive catalogue
+  // request from …"), so the inbox shows the industry without opening it.
+  const kind =
+    enquiry.source === "catalogue"
+      ? `${enquiry.product ? enquiry.product.replace(/^./, (c) => c.toUpperCase()) : "Catalogue"} request`
+      : "Enquiry";
+  const subject = `${kind} from ${who}${enquiry.country ? ` (${enquiry.country})` : ""}`;
 
   const html = `
     <div style="font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif;font-size:15px;line-height:1.6;color:#111">

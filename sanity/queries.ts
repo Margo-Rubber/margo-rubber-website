@@ -157,6 +157,9 @@ export const industryBySlugQuery = groq`
     heroBoost,
     heroChips,
     actions,
+    // The text only; the PDF's address is fetched on its own (catalogue-file.ts)
+    // so the enquiry endpoint can look it up without the whole page.
+    catalogue{ heading, body, bullets, formHeading, formBody, submitLabel, footnote },
     faqs,
     nonClaims,
     schemaService,

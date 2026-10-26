@@ -724,6 +724,23 @@ export const industrySchema = baseSchema.extend({
 
   components: industryComponentsSchema.optional(),
 
+  /**
+   * The catalogue section at the foot of the page. Text only — the PDF is
+   * looked up separately (src/lib/catalogue-file.ts). Every field optional:
+   * the page fills gaps with wording built from the industry's name.
+   */
+  catalogue: z
+    .object({
+      heading: z.string().optional(),
+      body: z.string().optional(),
+      bullets: z.array(z.string()).default([]),
+      formHeading: z.string().optional(),
+      formBody: z.string().optional(),
+      submitLabel: z.string().optional(),
+      footnote: z.string().optional(),
+    })
+    .optional(),
+
   applications: industryApplicationsSchema.optional(),
 
   conditions: industryConditionsSchema.optional(),

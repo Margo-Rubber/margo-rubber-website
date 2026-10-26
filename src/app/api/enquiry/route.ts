@@ -4,6 +4,7 @@ import { isStoreConfigured, storeAttachment, storeEnquiry } from "@/lib/enquiry/
 import { forwardEnquiry, notifyEnquiry } from "@/lib/enquiry/notify";
 import { sendAutoReply } from "@/lib/enquiry/autoreply";
 import { formatBytes, verifyUpload } from "@/lib/enquiry/attachments";
+import { catalogueUrlForPage } from "@/lib/catalogue-file";
 
 /**
  * POST /api/enquiry
@@ -163,8 +164,16 @@ export async function POST(request: Request) {
   // ── 5. Acknowledge the buyer + forward, side by side, never fatal ─────
   // Only reached once the enquiry is safe (stored or emailed to Margo), so a
   // buyer is never told "we received it" for an enquiry that went nowhere.
+  // A catalogue request gets the PDF in the buyer's email too: that
+  // industry's catalogue when sent from an industry page, else the main one.
+  // Looked up here, never taken from the browser.
+  const catalogueUrl =
+    mapped.data.source === "catalogue"
+      ? await catalogueUrlForPage(mapped.data.page).catch(() => undefined)
+      : undefined;
+
   await Promise.all([
-    sendAutoReply(mapped.data),
+    sendAutoReply(mapped.data, { catalogueUrl }),
     forwardEnquiry(mapped.data, { fileUrl, enquiryId, userAgent }),
   ]);
 

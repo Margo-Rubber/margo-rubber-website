@@ -10,6 +10,8 @@ import { Section } from "@/components/ui/Section";
 import { IndustryHero } from "@/components/sections/IndustryDetail";
 import { FurtherReading } from "@/components/sections/FurtherReading";
 import { getImageOverrides } from "@/lib/image-overrides";
+import { getIndustryCatalogueFileUrl } from "@/lib/catalogue-file";
+import { CatalogueBlock } from "@/components/sections/HubBlocks";
 
 /** ONE file → all nine industry pages. */
 export async function generateStaticParams() {
@@ -42,6 +44,21 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
   const heroImage = fm.hero?.image;
   const boost = Boolean(fm.heroBoost) && !(heroImage && overrides[heroImage]);
 
+  // The hero's catalogue button scrolls to this page's own catalogue section.
+  // Sanity documents carry "#catalogue" already (migration of 26 Oct 2026);
+  // this catches any copy still pointing at the old targets.
+  const actions = fm.actions.map((a) =>
+    a.href === "/certifications" || a.href === "/products#catalogue"
+      ? { ...a, label: "Download Catalogue", href: "#catalogue" }
+      : a,
+  );
+
+  // This industry's PDF, or the main catalogue until one is uploaded.
+  const catalogueFileUrl = await getIndustryCatalogueFileUrl(slug);
+  const cat = fm.catalogue;
+  const catalogueName = `${fm.navLabel} catalogue`;
+
+
   return (
     <>
       {shouldEmitSchema(fm.status) && (
@@ -58,7 +75,7 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
         accentLines={fm.h1AccentLines}
         intro={fm.intro}
         chips={fm.heroChips}
-        actions={fm.actions}
+        actions={actions}
         image={heroImage}
         boost={boost}
       />
@@ -67,6 +84,26 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
 
       {/* Industry pages have no alternating band, so nothing alternates. */}
       <BlockRenderer blocks={blocks} comp2={false} prose={<FurtherReading slugs={fm.related.resources} />} />
+
+      {/* Industry catalogue, behind a short form. Each request is stored as a
+          "catalogue" lead with "<Industry> catalogue" as its product, and the
+          buyer's email carries the same PDF (api/enquiry). */}
+      <Section id="catalogue" className="bg-surface">
+        <CatalogueBlock
+          heading={cat?.heading ?? `Download the ${fm.navLabel} *Catalogue*`}
+          body={
+            cat?.body ??
+            `Every rubber component we make for ${fm.navLabel.toLowerCase()} applications in one PDF: part types, compounds, hardness ranges and sizes, ready to share with your engineering and purchasing teams.`
+          }
+          bullets={cat?.bullets ?? []}
+          formHeading={cat?.formHeading ?? `Get the ${fm.navLabel} catalogue`}
+          formBody={cat?.formBody ?? "Tell us where to send it. The download starts as soon as you submit."}
+          submitLabel={cat?.submitLabel ?? "Download Catalogue"}
+          footnote={cat?.footnote}
+          fileUrl={catalogueFileUrl}
+          product={catalogueName}
+        />
+      </Section>
 
       {/* Mandatory verbatim non-claim sentences, e.g. NORSOK/API on oil-gas.
           Not a block: it is a legal obligation attached to the page, not a

@@ -118,6 +118,9 @@ export const FIELD_MAP: Record<Source, Record<string, Canonical>> = {
     name: "name",
     email: "email",
     company: "company",
+    // Which catalogue: "Automotive catalogue" on an industry page. Absent on
+    // the main catalogue form on /products.
+    catalogue: "product",
   },
 
   about: {

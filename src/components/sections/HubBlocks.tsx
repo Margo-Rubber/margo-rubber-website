@@ -786,6 +786,7 @@ export function CatalogueBlock({
   submitLabel,
   footnote,
   fileUrl,
+  product,
 }: {
   heading: string;
   body: string;
@@ -796,6 +797,12 @@ export function CatalogueBlock({
   footnote?: string;
   /** The catalogue PDF from Studio. Without one, the form is a lead form only. */
   fileUrl?: string;
+  /**
+   * Which catalogue this is, e.g. "Automotive catalogue" on an industry page.
+   * Posted with the form and stored as the enquiry's product, so the desk and
+   * the notification email show which catalogue was requested.
+   */
+  product?: string;
 }) {
   const words = heading.split(" ");
   const accent = heading.includes("*") ? "" : words.splice(-2).join(" ");
@@ -838,6 +845,7 @@ export function CatalogueBlock({
           className="mt-5 space-y-4"
           redirectTo={fileUrl ? null : "/thank-you"}
         >
+          {product && <input type="hidden" name="catalogue" value={product} />}
           <EnquiryReceived
             text={fileUrl ? "Thank you. Your catalogue download has started. If you need sizes, drawings or a quote, we will follow up at {email}." : undefined}
             action={fileUrl ? { label: "Download the catalogue (PDF)", href: fileUrl } : undefined}
