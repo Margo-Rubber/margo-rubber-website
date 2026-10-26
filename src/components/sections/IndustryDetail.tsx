@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import { withoutDeadDownloads } from "@/lib/downloads";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import type { Crumb } from "@/lib/breadcrumbs";
 import Link from "next/link";
 import { Img } from "@/components/ui/Img";
+import { InView } from "@/components/ui/InView";
 import { Button } from "@/components/ui/Button";
 import { Container, Eyebrow, HeroChips } from "@/components/ui/Section";
 import { emphasised } from "@/components/ui/Emphasis";
@@ -106,7 +106,7 @@ export function IndustryHero({
   );
 }
 
-/* ── 02 · COMPONENT TABS ──────────────────────────────────────────────── */
+/* ── 02 · COMPONENT GRID ──────────────────────────────────────────────── */
 type Component = {
   key: string;
   name: string;
@@ -122,84 +122,65 @@ function liveProductHref(href: string): string {
   return entry ? hrefFor(entry) : href;
 }
 
+/**
+ * Every component this industry is supplied with, shown at once as a card
+ * grid (was a tab strip that showed one at a time). Card layout follows the
+ * category pages' parts grid: photo, number, name, one line of copy. The
+ * whole card is the link. Bullets stay in the content but are not drawn here.
+ *
+ * Motion: cards rise in one after another as the grid scrolls into view, and
+ * lift with a teal edge on hover (.margo-ind-card in globals.css). Reduced
+ * motion and no-JS both get the plain, fully visible grid.
+ *
+ * Exported under the old name so BlockRenderer and the CMS block type are
+ * untouched.
+ */
 export function ComponentTabs({ items }: { items: Component[] }) {
-  const [i, setI] = useState(0);
-  // Every panel stays in the DOM, hidden rather than unmounted: a tab that mounts on click does not exist for a crawler.
-  const panelId = (k: string) =>
+  // Same ids the tab panels carried, so any existing #component-… link still lands.
+  const cardId = (k: string) =>
     `component-${k.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
 
   return (
-    <div>
-      <div className="mb-6 flex flex-wrap gap-2" role="tablist">
-        {items.map((m, idx) => (
-          <button
-            key={m.key}
-            role="tab"
-            id={`${panelId(m.name)}-tab`}
-            aria-controls={panelId(m.name)}
-            aria-selected={idx === i}
-            onClick={() => setI(idx)}
-            className={`rounded-pill px-4 py-2 text-xs font-medium transition-colors ${
-              idx === i
-                ? "border-accent-400 text-accent-400 border"
-                : "border-line text-ink-3 hover:text-ink border"
-            }`}
-          >
-            {m.key}
-          </button>
-        ))}
-      </div>
-
+    <InView as="ol" className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {items.map((c, idx) => (
-        <div
+        <li
           key={c.name}
-          id={panelId(c.name)}
-          role="tabpanel"
-          aria-labelledby={`${panelId(c.name)}-tab`}
-          hidden={idx !== i}
+          id={cardId(c.name)}
+          data-lift=""
+          style={{ "--i": idx } as React.CSSProperties}
+          className="margo-ind-card rounded-card border-line group overflow-hidden border bg-[#080808]"
         >
-          <div className="border-line rounded-card grid overflow-hidden border bg-[#0A0A0A] md:grid-cols-[minmax(0,42%)_1fr]">
-            {/* The photo sets its own height from its own proportions, so the
-                whole part is shown rather than being cropped to the height of
-                the text beside it. Capped on desktop so a tall upload cannot
-                stretch the card; the copy sits centred against it. */}
-            <div className="relative flex items-center overflow-hidden">
+          {/* A category the registry has not flipped live (Diaphragms,
+              sheet 36) sends the click where every other link to it
+              goes — the contact form, never a 404. */}
+          <Link href={liveProductHref(c.cta.href)} className="flex h-full flex-col">
+            <div className="relative aspect-[4/3] overflow-hidden bg-white">
               <Img
                 k={c.image}
-                sizes="(max-width: 768px) 100vw, 42vw"
-                className="block h-auto w-full object-cover brightness-[0.85] md:max-h-[560px]"
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
+                className="margo-ind-card-img object-cover"
               />
             </div>
-            <div className="p-6 md:self-center md:p-8">
-              <h3 className="text-h3">{c.name}</h3>
-              <p className="text-ink-4 mt-3 text-sm leading-relaxed">
-                {c.body}
+            <div className="flex flex-1 flex-col p-6">
+              <p className="text-eyebrow text-ink-4 margo-ind-card-num font-mono">
+                {String(idx + 1).padStart(2, "0")}
               </p>
-              <ul className="mt-5 space-y-2.5">
-                {c.bullets.map((b) => (
-                  <li
-                    key={b}
-                    className="text-ink-2 flex items-start gap-2.5 text-sm"
-                  >
-                    <span
-                      aria-hidden
-                      className="bg-accent-400 mt-1.5 size-1.5 shrink-0 rounded-full"
-                    />
-                    {b}
-                  </li>
-                ))}
-              </ul>
-              {/* A category the registry has not flipped live (Diaphragms,
-                  sheet 36) sends the click where every other link to it
-                  goes — the contact form, never a 404. */}
-              <Button href={liveProductHref(c.cta.href)} variant="secondary" className="mt-6">
-                {c.cta.label} <span aria-hidden>›</span>
-              </Button>
+              <h3 className="text-ink mt-3 text-base leading-snug font-semibold">
+                {c.name}
+              </h3>
+              <p className="text-ink-4 mt-2 text-sm leading-relaxed">{c.body}</p>
+              <span className="text-accent-400 mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-medium">
+                View product
+                <span aria-hidden className="margo-ind-card-arrow">
+                  ›
+                </span>
+              </span>
             </div>
-          </div>
-        </div>
+          </Link>
+        </li>
       ))}
-    </div>
+    </InView>
   );
 }
 

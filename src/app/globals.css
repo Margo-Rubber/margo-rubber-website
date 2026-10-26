@@ -2116,3 +2116,51 @@ main #iso-9001 {
     }
   }
 }
+
+/* ── Industry pages · component grid ─────────────────────────────────────
+   Cards rise in one after another when the grid scrolls into view (InView
+   sets data-reveal-ready / data-inview); on hover the card lifts with a teal
+   edge, the photo eases in and the arrow nudges right. Reveal uses the
+   `translate` property and hover uses `transform`, so the stagger delay never
+   makes hover feel laggy. The global reduced-motion rule flattens all of it. */
+@layer components {
+  .margo-ind-card {
+    transition:
+      transform 500ms var(--ease-entrance),
+      border-color 300ms var(--ease-standard),
+      box-shadow 500ms var(--ease-entrance),
+      opacity 700ms var(--ease-entrance) calc(var(--i, 0) * 90ms),
+      translate 800ms var(--ease-entrance) calc(var(--i, 0) * 90ms);
+  }
+  [data-reveal-ready] > .margo-ind-card {
+    opacity: 0;
+    translate: 0 28px;
+  }
+  [data-inview] > .margo-ind-card {
+    opacity: 1;
+    translate: 0 0;
+  }
+  .margo-ind-card-img {
+    transition: transform 900ms var(--ease-entrance);
+  }
+  .margo-ind-card-num,
+  .margo-ind-card-arrow {
+    display: inline-block;
+    transition:
+      color 300ms var(--ease-standard),
+      transform 400ms var(--ease-entrance);
+  }
+  @media (hover: hover) {
+    .margo-ind-card:hover {
+      transform: translateY(-6px);
+      border-color: rgb(43 188 196 / 0.45);
+      box-shadow: 0 24px 50px -28px rgb(43 188 196 / 0.55);
+    }
+    .margo-ind-card:hover .margo-ind-card-img { transform: scale(1.05); }
+    .margo-ind-card:hover .margo-ind-card-num { color: var(--color-accent-400); }
+    .margo-ind-card:hover .margo-ind-card-arrow { transform: translateX(4px); }
+  }
+  .margo-ind-card:focus-within {
+    border-color: rgb(43 188 196 / 0.45);
+  }
+}
