@@ -1497,23 +1497,14 @@ export function Timeline({
 export function Clients({
   label,
   items,
-  sectors = [],
-  logos = [],
   trademarkLine,
 }: {
   label: string;
-  items: readonly string[];
-  /** Same order as items; shown under each name (sheet 03 §14). */
-  sectors?: readonly string[];
-  /** Uploaded in Studio; each names the client it belongs to. */
-  logos?: readonly (CmsImage & { client: string })[];
+  /** Name, sector (sheet 03 §14) and logo, one entry per client. */
+  items: readonly { name: string; sector?: string; logo?: CmsImage }[];
   /** From Site settings — beneath every customer list. */
   trademarkLine?: string;
 }) {
-  // Matched by name, ignoring case and spacing, so "Tata " still finds "Tata".
-  const key = (s: string) => s.trim().toLowerCase().replace(/\s+/g, " ");
-  const logoFor = new Map(logos.filter((l) => l.asset).map((l) => [key(l.client), l]));
-
   return (
     <section className="bg-surface-2 py-[70px]">
       <Container>
@@ -1521,33 +1512,30 @@ export function Clients({
           {label}
         </p>
         <ul className="mt-8 grid grid-cols-2 gap-5 md:grid-cols-4">
-          {items.map((c, i) => {
-            const logo = logoFor.get(key(c));
-            return (
-              <li
-                key={c}
-                className="rounded-card border-line text-ink-2 flex flex-col items-center justify-center border bg-surface-3 px-4 py-8 text-center text-sm font-semibold"
-              >
-                {/* On a white plate: most brand marks are drawn for a light
-                    background and disappear on the dark card. */}
-                {logo && (
-                  <span className="mb-4 flex h-16 w-full max-w-[200px] items-center justify-center rounded-lg bg-white px-4 py-3">
-                    <SanityPhoto
-                      image={logo}
-                      fallbackAlt={`${c} logo`}
-                      sizes="200px"
-                      fit="contain"
-                      className="h-full max-h-10 w-auto max-w-full"
-                    />
-                  </span>
-                )}
-                <span>
-                  {c}
-                  {sectors[i] && <span className="text-ink-4 mt-1.5 block text-xs font-normal">{sectors[i]}</span>}
+          {items.map((c) => (
+            <li
+              key={c.name}
+              className="rounded-card border-line text-ink-2 flex flex-col items-center justify-center border bg-surface-3 px-4 py-8 text-center text-sm font-semibold"
+            >
+              {/* On a white plate: most brand marks are drawn for a light
+                  background and disappear on the dark card. */}
+              {c.logo?.asset && (
+                <span className="mb-4 flex h-16 w-full max-w-[200px] items-center justify-center rounded-lg bg-white px-4 py-3">
+                  <SanityPhoto
+                    image={c.logo}
+                    fallbackAlt={`${c.name} logo`}
+                    sizes="200px"
+                    fit="contain"
+                    className="h-full max-h-10 w-auto max-w-full"
+                  />
                 </span>
-              </li>
-            );
-          })}
+              )}
+              <span>
+                {c.name}
+                {c.sector && <span className="text-ink-4 mt-1.5 block text-xs font-normal">{c.sector}</span>}
+              </span>
+            </li>
+          ))}
         </ul>
         {trademarkLine && (
           <p className="text-ink-4 mx-auto mt-6 max-w-[70ch] text-center text-xs leading-relaxed">{trademarkLine}</p>

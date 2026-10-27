@@ -155,9 +155,9 @@ export default async function AboutPage() {
 
       <Clients
         label={fm.clients.label}
-        items={fm.clients.items}
-        sectors={fm.clients.sectors}
-        logos={fm.clients.logos}
+        items={fm.clients.items.map((c, i) =>
+          typeof c === "string" ? { name: c, sector: fm.clients.sectors[i] } : c,
+        )}
         trademarkLine={settings.clients.trademarkLine}
       />
 

@@ -1154,36 +1154,39 @@ export const aboutPage = defineType({
         "NAMED COMPANIES ONLY WITH PERMISSION. The design listed eight client logos, none confirmed. Listing a company as a client without their agreement is a claim Margo cannot support.",
       fields: [
         defineField({ name: "label", type: "string", validation: (r) => r.required() }),
-        listField("items", "Clients", { group: null, min: 1 }),
-        listField("sectors", "Sector per client", { group: null, description: "One per client, in the same order — shown under the name." }),
         defineField({
-          name: "logos",
-          title: "Client logos",
+          name: "items",
+          title: "Clients",
           type: "array",
           description:
-            "One logo per client. Type the client's name exactly as it appears in the Clients list above, so the logo lands on the right card. A client without a logo shows its name only. A PNG with a transparent background works best (SVG is not accepted — export it as PNG).",
+            "One entry per client: name, sector and logo together, in the order they appear on the page. A client without a logo shows its name only.",
+          validation: (r) => r.required().min(1),
           of: [
             defineArrayMember({
-              type: "image",
-              name: "clientLogo",
-              // No SVG: the site's image optimiser rejects it. Export SVG logos as PNG.
-              options: { accept: "image/png,image/webp,image/jpeg" },
+              type: "object",
+              name: "client",
+              title: "Client",
               fields: [
+                defineField({ name: "name", title: "Client name", type: "string", validation: (r) => r.required() }),
+                defineField({ name: "sector", title: "Sector", type: "string", description: "Shown under the name, e.g. Automotive." }),
                 defineField({
-                  name: "client",
-                  title: "Client name",
-                  type: "string",
-                  description: "Exactly as written in the Clients list, e.g. Mahindra & Mahindra.",
-                  validation: (r) => r.required(),
-                }),
-                defineField({
-                  name: "alt",
-                  title: "Description for screen readers",
-                  type: "string",
-                  description: 'Leave empty for "<client> logo".',
+                  name: "logo",
+                  title: "Logo",
+                  type: "image",
+                  description:
+                    "A PNG with a transparent background works best. SVG is not accepted (the site's image optimiser rejects it) — export it as PNG.",
+                  options: { accept: "image/png,image/webp,image/jpeg" },
+                  fields: [
+                    defineField({
+                      name: "alt",
+                      title: "Description for screen readers",
+                      type: "string",
+                      description: 'Leave empty for "<client name> logo".',
+                    }),
+                  ],
                 }),
               ],
-              preview: { select: { title: "client", media: "asset" } },
+              preview: { select: { title: "name", subtitle: "sector", media: "logo" } },
             }),
           ],
         }),

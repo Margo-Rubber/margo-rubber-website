@@ -53,11 +53,17 @@ const query = groq`
     _type == "aboutPage" => {
       "clients": clients{
         ...,
-        "logos": logos[]{
-          client,
-          alt,
-          "asset": asset->{ url, "w": metadata.dimensions.width, "h": metadata.dimensions.height }
-        }
+        // Entries are objects (name, sector, logo) since 27 Oct 2026. Until the
+        // migration has converted a document, its plain list of names is
+        // returned as it is; the schema reads both.
+        "items": select(
+          count(items[_type == "client"]) > 0 => items[_type == "client"]{
+            name,
+            sector,
+            "logo": logo{ alt, hotspot, "asset": asset->{ url, "w": metadata.dimensions.width, "h": metadata.dimensions.height } }
+          },
+          items
+        )
       }
     },
     _type == "certificationsPage" => {

@@ -1482,11 +1482,25 @@ export const aboutPageSchema = baseSchema.extend({
 
   clients: z.object({
     label: z.string(),
-    items: z.array(z.string()).min(1),
-    /** Sector per name, same order as items — sheet 03 §14. */
+    /**
+     * One entry per client: name, sector and logo together (Sanity, since
+     * 27 Oct 2026). A plain name is the older shape, still used by
+     * about.mdx; its sector then comes from `sectors`, by position.
+     */
+    items: z
+      .array(
+        z.union([
+          z.string(),
+          z.object({
+            name: z.string(),
+            sector: z.string().optional(),
+            logo: cmsImageSchema.optional(),
+          }),
+        ]),
+      )
+      .min(1),
+    /** Older shape only: sector per name, same order as items — sheet 03 §14. */
     sectors: z.array(z.string()).default([]),
-    /** Logos uploaded in Studio, matched to a client by name. */
-    logos: z.array(cmsImageSchema.extend({ client: z.string() })).default([]),
   }),
 
   closing: z.object({
