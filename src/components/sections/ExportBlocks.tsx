@@ -260,7 +260,9 @@ export function ExportHero({
           rest of the site's heroes sit at 0.85, but this photograph is a dusk
           shot and starts darker than any of them), and the work of protecting
           the copy is done by a horizontal scrim over the left column rather
-          than by flattening the whole frame. The vertical wash keeps only the
+          than by flattening the whole frame. (27 Oct 2026: that scrim was too
+          light — the intro paragraph was unreadable over the cranes — so it
+          now holds ~90% dark across the text column and fades out by 80%.) The vertical wash keeps only the
           one job it is needed for:
           fading the bottom edge into the section below — and it does that in
           the last 20% only. Ramping from 45% down, as it did before, turned
@@ -277,8 +279,16 @@ export function ExportHero({
         className="absolute inset-0 -z-10"
         style={{
           background:
-            "linear-gradient(to right, color-mix(in srgb, var(--color-canvas) 64%, transparent), color-mix(in srgb, var(--color-canvas) 28%, transparent) 46%, transparent 70%)",
+            "linear-gradient(to right, color-mix(in srgb, var(--color-canvas) 92%, transparent) 0%, color-mix(in srgb, var(--color-canvas) 82%, transparent) 30%, color-mix(in srgb, var(--color-canvas) 50%, transparent) 50%, color-mix(in srgb, var(--color-canvas) 12%, transparent) 68%, transparent 80%)",
         }}
+      />
+      {/* Phones: the copy runs the full width, so the left-hand scrim alone
+          leaves the right half of every line on the bright containers. An
+          even wash behind the text column, dropped from md up. */}
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10 md:hidden"
+        style={{ background: "color-mix(in srgb, var(--color-canvas) 55%, transparent)" }}
       />
       <Bloom className="top-1/4 -left-32 size-[32rem]" />
 
