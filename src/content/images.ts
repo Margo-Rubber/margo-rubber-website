@@ -467,9 +467,10 @@ export const IMAGES = {
 
   "contact.map": {
     // Real map of the plant: OpenStreetMap data at zoom ~16.5, centred on
-    // the Google Business listing's coordinates (19.931891, 73.7327537) so
-    // the pin drawn at the frame's centre sits on the plant. Restyled dark
-    // to match the site. OSM requires the credit shown on the image.
+    // the plant's confirmed coordinates (19.9354496, 73.7331197 — 27 Oct
+    // 2026) so the pin drawn at the frame's centre sits on it. Restyled dark
+    // to match the site. Regenerate with scripts/gen-contact-map.mts. OSM
+    // requires the credit shown on the image.
     src: "/images/contact/margo-plant-map.jpg",
     blur: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk//2wBDAQ4ODhMREyYVFSZPNS01T09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0//wAARCAAJAAwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDgwflJA6+tPLo2D5IJ7k0h/pUY7/WqJP/Z",
     w: 1200,
