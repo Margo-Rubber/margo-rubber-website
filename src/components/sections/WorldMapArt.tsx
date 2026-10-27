@@ -234,8 +234,24 @@ const LANES: Record<string, string> = {
   "570,320": "M650 200C623.333 160 596.667 200 570 320",
 };
 
+/**
+ * The arc for a pin. Hand-drawn arcs above win; any other pin (a market's
+ * second pin — Saudi Arabia, Tanzania — or a new market) gets one built by
+ * the same rule all eight above follow (checked against each): a cubic from
+ * Nashik (650,200) with control points a third and two-thirds of the way
+ * across, both bowed upward and kept above the pin.
+ */
 export function laneFor(x: number, y: number): string | undefined {
-  return LANES[`${x},${y}`];
+  const drawn = LANES[`${x},${y}`];
+  if (drawn) return drawn;
+  if (!Number.isFinite(x) || !Number.isFinite(y)) return undefined;
+  const r = (n: number) => Math.round(n * 1000) / 1000;
+  const c1x = r(650 + (x - 650) / 3);
+  const c2x = r(650 + ((x - 650) * 2) / 3);
+  // A pin north of Nashik needs both control points lifted above it.
+  const c1y = r(Math.min(160, y - 40 + (200 - y) / 3));
+  const c2y = r(Math.min(160 + (y - 200) / 3, y - 40));
+  return `M650 200C${c1x} ${c1y} ${c2x} ${c2y} ${x} ${y}`;
 }
 
 /**

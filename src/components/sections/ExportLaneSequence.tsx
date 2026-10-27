@@ -82,11 +82,17 @@ export function ExportLaneSequence({
                 <MapBase />
                 <g clipPath="url(#margo-map-clip)">
                   {markets.map((m, i) => {
-                    const d = laneFor(m.pin.x, m.pin.y);
+                    // One arc per destination: the market's own pin, plus
+                    // any second pin it carries (Saudi Arabia with the UAE,
+                    // Tanzania with Kenya). All of a market's arcs share its
+                    // data-lane, so they draw together in its scroll window.
+                    const arcs = [m.pin, ...(m.pins ?? [])]
+                      .map((p) => laneFor(p.x, p.y))
+                      .filter((d): d is string => Boolean(d));
                     return (
                       <g key={m.slug}>
-                        {d && (
-                          <>
+                        {arcs.map((d, k) => (
+                          <g key={k}>
                             {/* The dashed route, always present. */}
                             <path
                               d={d}
@@ -98,7 +104,7 @@ export function ExportLaneSequence({
                             {/* The solid line that draws along it.
                                 `pathLength="1"` normalises every arc to a
                                 length of 1 regardless of its real geometry,
-                                so one dashoffset keyframe drives all eight
+                                so one dashoffset keyframe drives all of them
                                 despite them being wildly different lengths. */}
                             <path
                               className="lane-draw"
@@ -109,8 +115,8 @@ export function ExportLaneSequence({
                               strokeWidth="1.6"
                               strokeLinecap="round"
                             />
-                          </>
-                        )}
+                          </g>
+                        ))}
                         {/* Each pin is a focusable link to its market block
                             (sheet 06 §03: "pins as focusable <a> elements"). */}
                         <a href={`#${m.slug}`} aria-label={`${m.pinLabel ?? m.chip} — read the market notes`}>
