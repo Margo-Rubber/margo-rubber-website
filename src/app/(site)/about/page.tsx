@@ -157,6 +157,7 @@ export default async function AboutPage() {
         label={fm.clients.label}
         items={fm.clients.items}
         sectors={fm.clients.sectors}
+        logos={fm.clients.logos}
         trademarkLine={settings.clients.trademarkLine}
       />
 

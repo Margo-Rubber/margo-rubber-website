@@ -1156,6 +1156,37 @@ export const aboutPage = defineType({
         defineField({ name: "label", type: "string", validation: (r) => r.required() }),
         listField("items", "Clients", { group: null, min: 1 }),
         listField("sectors", "Sector per client", { group: null, description: "One per client, in the same order — shown under the name." }),
+        defineField({
+          name: "logos",
+          title: "Client logos",
+          type: "array",
+          description:
+            "One logo per client. Type the client's name exactly as it appears in the Clients list above, so the logo lands on the right card. A client without a logo shows its name only. A PNG with a transparent background works best (SVG is not accepted — export it as PNG).",
+          of: [
+            defineArrayMember({
+              type: "image",
+              name: "clientLogo",
+              // No SVG: the site's image optimiser rejects it. Export SVG logos as PNG.
+              options: { accept: "image/png,image/webp,image/jpeg" },
+              fields: [
+                defineField({
+                  name: "client",
+                  title: "Client name",
+                  type: "string",
+                  description: "Exactly as written in the Clients list, e.g. Mahindra & Mahindra.",
+                  validation: (r) => r.required(),
+                }),
+                defineField({
+                  name: "alt",
+                  title: "Description for screen readers",
+                  type: "string",
+                  description: 'Leave empty for "<client> logo".',
+                }),
+              ],
+              preview: { select: { title: "client", media: "asset" } },
+            }),
+          ],
+        }),
       ],
       options: { collapsible: true, collapsed: true },
       group: "closing",

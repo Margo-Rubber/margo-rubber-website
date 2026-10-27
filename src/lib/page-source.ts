@@ -50,6 +50,16 @@ const query = groq`
   *[_type == $type && slug.current == $slug][0]{
     ...,
     "slug": slug.current,
+    _type == "aboutPage" => {
+      "clients": clients{
+        ...,
+        "logos": logos[]{
+          client,
+          alt,
+          "asset": asset->{ url, "w": metadata.dimensions.width, "h": metadata.dimensions.height }
+        }
+      }
+    },
     _type == "certificationsPage" => {
       "certificate": certificate{
         ...,

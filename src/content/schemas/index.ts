@@ -1485,6 +1485,8 @@ export const aboutPageSchema = baseSchema.extend({
     items: z.array(z.string()).min(1),
     /** Sector per name, same order as items — sheet 03 §14. */
     sectors: z.array(z.string()).default([]),
+    /** Logos uploaded in Studio, matched to a client by name. */
+    logos: z.array(cmsImageSchema.extend({ client: z.string() })).default([]),
   }),
 
   closing: z.object({
