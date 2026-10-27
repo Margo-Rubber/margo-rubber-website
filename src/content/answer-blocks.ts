@@ -20,7 +20,10 @@ export const ANSWER_BLOCKS: Record<string, AnswerBlock> = {
   "/": {
     row: 1,
     q: "Who makes custom rubber parts to drawing in Nashik, India?",
-    a: "Margo Rubber Products, in Nashik since 2005, moulds and extrudes rubber parts to customer drawing. Its moulded-component line is certified to ISO 9001:2015 (certificate 09111526A, Integral Certification Ltd, valid to 21 February 2027). The range covers O-rings, oil seals, gaskets, bellows and bonded parts in eight compounds. Quotation in 48 hours; production in three to four weeks.",
+    // N2 (to-do, 25 Oct 2026): the parts list sits between the extrusion
+    // sentence and the certificate's scope, so an answer engine cannot merge
+    // the two into "ISO 9001:2015 certified … extruded". Same words, reordered.
+    a: "Margo Rubber Products, in Nashik since 2005, moulds and extrudes rubber parts to customer drawing. The range covers O-rings, oil seals, gaskets, bellows and bonded parts in eight compounds. Its moulded-component line is certified to ISO 9001:2015 (certificate 09111526A, Integral Certification Ltd, valid to 21 February 2027). Quotation in 48 hours; production in three to four weeks.",
   },
   "/products/o-rings": {
     row: 2,
