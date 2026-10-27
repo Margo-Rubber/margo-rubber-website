@@ -42,7 +42,9 @@ const tx1 = Math.floor((left + sw) / T), ty1 = Math.floor((top + sh) / T);
 
 console.log(`Centre ${LAT}, ${LNG} — ${(tx1 - tx0 + 1) * (ty1 - ty0 + 1)} tiles at zoom ${Z}`);
 
-const tiles: sharp.OverlayOptions[] = [];
+// A plain shape rather than sharp's own type: the type check could not see
+// sharp's namespace from a script.
+const tiles: { input: Buffer; left: number; top: number }[] = [];
 for (let ty = ty0; ty <= ty1; ty++) {
   for (let tx = tx0; tx <= tx1; tx++) {
     const url = `https://tile.openstreetmap.org/${Z}/${tx}/${ty}.png`;
