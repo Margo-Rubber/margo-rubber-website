@@ -101,7 +101,9 @@ export default async function ProductCategoryPage(
       )}
 
       <CategoryHero
-        badge={fm.heroEyebrow ?? "ISO 9001:2015 Certified · Nashik, India"}
+        // The certificate covers moulded parts only, and this fallback shows
+        // on /products/extrusion and /products/sponge-foam-rubber too (N2).
+        badge={fm.heroEyebrow ?? "ISO 9001:2015 (Moulded Parts) · Nashik, India"}
         chips={fm.heroChips}
         headingLead={headingLead}
         headingAccent={headingAccent}
