@@ -58,3 +58,7 @@ docs/seo-oct-2026/
 # (scripts/migrations/2026-10-27-catalogue-products.mts). Uploaded to Sanity;
 # not part of the repo.
 /catalogue-images/
+
+# Material card images exported from Figma for the 27 Oct 2026 swap
+# (scripts/migrations/2026-10-27-material-images.mts). Uploaded to Sanity.
+/material-images/
