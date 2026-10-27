@@ -180,7 +180,8 @@ export async function webSiteNode(): Promise<Node> {
 
 /**
  * The product lines, once, on the homepage — sheet 01 §05. The hub refers
- * to it as its mainEntity rather than emitting a second catalogue. Only
+ * to it as its mainEntity rather than emitting a second catalogue, so the
+ * @id must not change. Only
  * built pages are listed: an unbuilt line links to the contact form, and a
  * catalogue entry whose url is a form is not a product.
  */
@@ -189,6 +190,10 @@ export function offerCatalogNode(): Node {
   // An ItemList of the product lines, not an OfferCatalog of Offers (D7,
   // 21 Oct 2026): an Offer with no price is an incomplete offer to Google,
   // and Margo's product schema carries no offers or prices at all.
+  // Each line is a plain link, not a Product (27 Oct 2026): Search Console
+  // counted the 15 inline Products as "Product snippets: invalid items"
+  // (no offers, review or aggregateRating). Each line's Product node lives
+  // on its own category page.
   return {
     "@type": "ItemList",
     "@id": CATALOG_ID,
@@ -197,13 +202,8 @@ export function offerCatalogNode(): Node {
     itemListElement: live.map((p, i) => ({
       "@type": "ListItem",
       position: i + 1,
-      item: {
-        "@type": "Product",
-        "@id": `${SITE_URL}${p.path}#product`,
-        name: p.label,
-        url: `${SITE_URL}${p.path}`,
-        manufacturer: { "@type": "Organization", "@id": ORG_ID },
-      },
+      name: p.label,
+      url: `${SITE_URL}${p.path}`,
     })),
   };
 }
