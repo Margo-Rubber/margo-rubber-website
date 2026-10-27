@@ -97,7 +97,7 @@ export function ExportLaneSequence({
                             <path
                               d={d}
                               stroke="#2BBCC4"
-                              strokeOpacity="0.12"
+                              strokeOpacity="0.28"
                               strokeWidth="0.8"
                               strokeDasharray="5 4"
                             />

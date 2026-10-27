@@ -13,191 +13,194 @@
 export const MAP_VIEWBOX = "0 0 1000 500";
 
 /** Graticule, landmasses and the Nashik hub. Never animated. */
+/* Brightened 27 Oct 2026 (client: "a bit brighter"): plate #070D10 → #0D171C,
+   land #1A2428 → #28393F with borders at 0.38 (was 0.15), grid 0.08 (was
+   0.04), pins and labels lifted. */
 export function MapBase() {
   return (
     <g clipPath="url(#margo-map-clip)">
       <path
         d="M988 0H12C5.37258 0 0 5.37258 0 12V488C0 494.627 5.37258 500 12 500H988C994.627 500 1000 494.627 1000 488V12C1000 5.37258 994.627 0 988 0Z"
-        fill="#070D10"
+        fill="#0D171C"
       />
       <path
         d="M0 100H1000"
         stroke="#2BBCC4"
-        strokeOpacity="0.04"
+        strokeOpacity="0.08"
         strokeWidth="0.8"
       />
       <path
         d="M0 150H1000"
         stroke="#2BBCC4"
-        strokeOpacity="0.04"
+        strokeOpacity="0.08"
         strokeWidth="0.8"
       />
       <path
         d="M0 200H1000"
         stroke="#2BBCC4"
-        strokeOpacity="0.04"
+        strokeOpacity="0.08"
         strokeWidth="0.8"
       />
       <path
         d="M0 250H1000"
         stroke="#2BBCC4"
-        strokeOpacity="0.04"
+        strokeOpacity="0.08"
         strokeWidth="0.8"
       />
       <path
         d="M0 300H1000"
         stroke="#2BBCC4"
-        strokeOpacity="0.04"
+        strokeOpacity="0.08"
         strokeWidth="0.8"
       />
       <path
         d="M0 350H1000"
         stroke="#2BBCC4"
-        strokeOpacity="0.04"
+        strokeOpacity="0.08"
         strokeWidth="0.8"
       />
       <path
         d="M0 400H1000"
         stroke="#2BBCC4"
-        strokeOpacity="0.04"
+        strokeOpacity="0.08"
         strokeWidth="0.8"
       />
       <path
         d="M100 0V500"
         stroke="#2BBCC4"
-        strokeOpacity="0.04"
+        strokeOpacity="0.08"
         strokeWidth="0.8"
       />
       <path
         d="M200 0V500"
         stroke="#2BBCC4"
-        strokeOpacity="0.04"
+        strokeOpacity="0.08"
         strokeWidth="0.8"
       />
       <path
         d="M300 0V500"
         stroke="#2BBCC4"
-        strokeOpacity="0.04"
+        strokeOpacity="0.08"
         strokeWidth="0.8"
       />
       <path
         d="M400 0V500"
         stroke="#2BBCC4"
-        strokeOpacity="0.04"
+        strokeOpacity="0.08"
         strokeWidth="0.8"
       />
       <path
         d="M500 0V500"
         stroke="#2BBCC4"
-        strokeOpacity="0.04"
+        strokeOpacity="0.08"
         strokeWidth="0.8"
       />
       <path
         d="M600 0V500"
         stroke="#2BBCC4"
-        strokeOpacity="0.04"
+        strokeOpacity="0.08"
         strokeWidth="0.8"
       />
       <path
         d="M700 0V500"
         stroke="#2BBCC4"
-        strokeOpacity="0.04"
+        strokeOpacity="0.08"
         strokeWidth="0.8"
       />
       <path
         d="M800 0V500"
         stroke="#2BBCC4"
-        strokeOpacity="0.04"
+        strokeOpacity="0.08"
         strokeWidth="0.8"
       />
       <path
         d="M900 0V500"
         stroke="#2BBCC4"
-        strokeOpacity="0.04"
+        strokeOpacity="0.08"
         strokeWidth="0.8"
       />
       <path
         d="M100 60L160 55L220 70L270 90L280 140L260 190L230 230L200 260L170 280L140 270L110 240L90 200L80 160L85 110L100 60Z"
-        fill="#1A2428"
+        fill="#28393F"
         stroke="#2BBCC4"
-        strokeOpacity="0.15"
+        strokeOpacity="0.38"
         strokeWidth="0.8"
       />
       <path
         d="M190 270L220 265L240 280L245 310L235 360L215 400L195 420L175 400L165 360L168 320L175 290L190 270Z"
-        fill="#1A2428"
+        fill="#28393F"
         stroke="#2BBCC4"
-        strokeOpacity="0.15"
+        strokeOpacity="0.38"
         strokeWidth="0.8"
       />
       <path
         d="M440 80L510 75L530 90L520 120L490 135L460 130L440 115L435 95L440 80Z"
-        fill="#1A2428"
+        fill="#28393F"
         stroke="#2BBCC4"
-        strokeOpacity="0.15"
+        strokeOpacity="0.38"
         strokeWidth="0.8"
       />
       <path
         d="M460 165L530 155L560 170L575 210L580 260L565 320L545 370L510 395L480 390L455 360L440 300L435 240L445 195L460 165Z"
-        fill="#1A2428"
+        fill="#28393F"
         stroke="#2BBCC4"
-        strokeOpacity="0.15"
+        strokeOpacity="0.38"
         strokeWidth="0.8"
       />
       <path
         d="M540 190L600 185L620 200L615 240L590 255L560 250L540 230L535 205L540 190Z"
-        fill="#1A2428"
+        fill="#28393F"
         stroke="#2BBCC4"
-        strokeOpacity="0.15"
+        strokeOpacity="0.38"
         strokeWidth="0.8"
       />
       <path
         d="M530 50L700 45L760 70L750 110L680 120L600 115L540 100L530 50Z"
-        fill="#1A2428"
+        fill="#28393F"
         stroke="#2BBCC4"
-        strokeOpacity="0.15"
+        strokeOpacity="0.38"
         strokeWidth="0.8"
       />
       <path
         d="M620 165L660 160L675 185L670 220L645 245L620 235L610 205L620 165Z"
-        fill="#1A2428"
+        fill="#28393F"
         stroke="#2BBCC4"
-        strokeOpacity="0.15"
+        strokeOpacity="0.38"
         strokeWidth="0.8"
       />
       <path
         d="M760 220L800 215L820 235L815 270L790 280L765 265L755 240L760 220Z"
-        fill="#1A2428"
+        fill="#28393F"
         stroke="#2BBCC4"
-        strokeOpacity="0.15"
+        strokeOpacity="0.38"
         strokeWidth="0.8"
       />
       <path
         d="M800 310L880 305L910 330L905 380L870 400L820 395L790 370L785 335L800 310Z"
-        fill="#1A2428"
+        fill="#28393F"
         stroke="#2BBCC4"
-        strokeOpacity="0.15"
+        strokeOpacity="0.38"
         strokeWidth="0.8"
       />
       <path
         d="M840 140L870 135L880 155L860 165L840 158V140Z"
-        fill="#1A2428"
+        fill="#28393F"
         stroke="#2BBCC4"
-        strokeOpacity="0.15"
+        strokeOpacity="0.38"
         strokeWidth="0.8"
       />
       <path
         d="M560 290L590 285L600 310L585 340L560 335L548 315L560 290Z"
-        fill="#1A2428"
+        fill="#28393F"
         stroke="#2BBCC4"
-        strokeOpacity="0.15"
+        strokeOpacity="0.38"
         strokeWidth="0.8"
       />
       <path
         d="M455 108L470 104L472 118L460 122L452 115L455 108Z"
-        fill="#1A2428"
+        fill="#28393F"
         stroke="#2BBCC4"
-        strokeOpacity="0.15"
+        strokeOpacity="0.38"
         strokeWidth="0.8"
       />
       <path
@@ -262,8 +265,8 @@ export function laneFor(x: number, y: number): string | undefined {
 export function MapPin({ x, y, label }: { x: number; y: number; label?: string }) {
   return (
     <>
-      <circle cx={x} cy={y} r="12" stroke="#2BBCC4" opacity="0.2" />
-      <circle cx={x} cy={y} r="4" fill="#2BBCC4" fillOpacity="0.7" />
+      <circle cx={x} cy={y} r="12" stroke="#2BBCC4" opacity="0.5" />
+      <circle cx={x} cy={y} r="4" fill="#2BBCC4" />
       {label && <PinLabel x={x} y={y} label={label} />}
     </>
   );
@@ -282,7 +285,7 @@ export function PinLabel({ x, y, label, strong = false }: { x: number; y: number
       x={strong ? x : left ? x - 16 : x + 16}
       y={strong ? y - 20 : y + 4}
       textAnchor={strong ? "middle" : left ? "end" : "start"}
-      fill={strong ? "#2BBCC4" : "#9FB3B8"}
+      fill={strong ? "#2BBCC4" : "#D2DEE1"}
       fontFamily="ui-monospace, SFMono-Regular, Menlo, monospace"
       fontSize={strong ? 11 : 10}
       letterSpacing="0.12em"
