@@ -4,8 +4,8 @@
  * COOKIE CONSENT — the one place the visitor's choice lives.
  *
  * Who is asked: visitors whose browser time zone is in Europe (EEA, UK,
- * Switzerland — GDPR territory). Everyone else gets analytics by default and
- * no banner. The time zone is read in the browser, so the cached pages stay
+ * Switzerland — GDPR territory; the zone list is src/lib/consent-region.ts).
+ * Everyone else gets analytics by default and no banner. The time zone is read in the browser, so the cached pages stay
  * identical for every visitor and no geo lookup is needed. Google also
  * applies its own region defaults by IP (see Analytics.tsx), as a backstop.
  *
@@ -16,6 +16,7 @@
  * Google ads storage stays denied. The Meta Pixel follows the same choice
  * as analytics: revoked until granted, for visitors who are asked.
  */
+import { CONSENT_TIME_ZONE } from "./consent-region";
 
 export type Choice = "granted" | "denied";
 
@@ -35,7 +36,7 @@ export function storedChoice(): Choice | null {
 
 export function inConsentRegion(): boolean {
   try {
-    return /^Europe\//.test(Intl.DateTimeFormat().resolvedOptions().timeZone ?? "");
+    return CONSENT_TIME_ZONE.test(Intl.DateTimeFormat().resolvedOptions().timeZone ?? "");
   } catch {
     return false;
   }

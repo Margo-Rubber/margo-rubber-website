@@ -1,5 +1,6 @@
 import Script from "next/script";
 import { CLARITY_ID, GA_ID, META_PIXEL_ID } from "@/lib/analytics";
+import { CONSENT_TIME_ZONE } from "@/lib/consent-region";
 import { ContactClickTracker } from "./ContactClickTracker";
 import { ConsentBanner } from "./ConsentBanner";
 import { MetaPageView } from "./MetaPageView";
@@ -14,12 +15,13 @@ const EEA = [
 /**
  * Consent defaults, run at the top of BOTH inline tags (once, guarded), so
  * they are in place before either tool starts whatever order the scripts
- * load in. Must stay in step with src/lib/consent.ts — same storage key,
- * same region rule. A stored choice wins; otherwise a Europe time zone
- * starts denied and waits for the banner, everywhere else starts granted.
- * Google also applies the EEA/UK/CH default by IP through `region`.
+ * load in. Must stay in step with src/lib/consent.ts — same storage key; the
+ * region rule is shared (src/lib/consent-region.ts). A stored choice wins;
+ * otherwise a consent-region time zone starts denied and waits for the
+ * banner, everywhere else starts granted. Google also applies the EEA/UK/CH
+ * default by IP through `region`.
  */
-const CONSENT_JS = `if(!window.__margoConsent){(function(){var s=null;try{s=localStorage.getItem('margo-consent')}catch(e){}if(s!=='granted'&&s!=='denied')s=null;var eu=false;try{eu=/^Europe\\//.test(Intl.DateTimeFormat().resolvedOptions().timeZone||'')}catch(e){}var a=s||(eu?'denied':'granted');window.dataLayer=window.dataLayer||[];window.gtag=window.gtag||function(){dataLayer.push(arguments)};var d={ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'};gtag('consent','default',Object.assign({analytics_storage:'denied',region:${JSON.stringify(EEA)},wait_for_update:500},d));gtag('consent','default',Object.assign({analytics_storage:a},d));if(s)gtag('consent','update',{analytics_storage:s});window.__margoConsent=a;})();}`;
+const CONSENT_JS = `if(!window.__margoConsent){(function(){var s=null;try{s=localStorage.getItem('margo-consent')}catch(e){}if(s!=='granted'&&s!=='denied')s=null;var eu=false;try{eu=new RegExp(${JSON.stringify(CONSENT_TIME_ZONE.source)}).test(Intl.DateTimeFormat().resolvedOptions().timeZone||'')}catch(e){}var a=s||(eu?'denied':'granted');window.dataLayer=window.dataLayer||[];window.gtag=window.gtag||function(){dataLayer.push(arguments)};var d={ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'};gtag('consent','default',Object.assign({analytics_storage:'denied',region:${JSON.stringify(EEA)},wait_for_update:500},d));gtag('consent','default',Object.assign({analytics_storage:a},d));if(s)gtag('consent','update',{analytics_storage:s});window.__margoConsent=a;})();}`;
 
 /**
  * The Meta Pixel, installed only once analytics consent is granted (D1):
