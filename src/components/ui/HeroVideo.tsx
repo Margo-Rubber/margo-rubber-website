@@ -15,6 +15,18 @@
  * If the video is ever replaced, re-export it with that look (or put the
  * filters back on the className below) and export a new first-frame poster.
  *
+ * PING-PONG LOOP: the video plays forward, then in reverse, then forward
+ * again, instead of jumping back to the start. This is baked into the file
+ * (hero-bg-boomerang.mp4 = the original clip followed by its reverse, with
+ * the duplicate turnaround frames removed), so a plain `loop` is seamless.
+ * Reversing in JavaScript was avoided on purpose: browsers don't support
+ * negative playbackRate reliably, and stepping currentTime backwards forces
+ * a seek per frame, which stutters. If the clip is replaced, rebuild it with:
+ *   ffmpeg -i new.mp4 -filter_complex "[0:v]split[f][b];[b]reverse,
+ *     trim=start_frame=1:end_frame=<frames-1>,setpts=PTS-STARTPTS[r];
+ *     [f][r]concat=n=2:v=1[out]" -map "[out]" -an -c:v libx264 -crf 25
+ *     -movflags +faststart hero-bg-boomerang.mp4
+ *
  * Decorative: muted, no controls, hidden from assistive tech.
  */
 export function HeroVideo({

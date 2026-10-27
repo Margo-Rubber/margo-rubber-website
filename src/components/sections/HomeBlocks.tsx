@@ -377,7 +377,7 @@ export function HomeHero({
   return (
     <header className="margo-hero bg-canvas relative isolate overflow-hidden hero-offset pb-24 md:pb-32">
       <HeroVideo
-        src="/videos/hero-bg.mp4"
+        src="/videos/hero-bg-boomerang.mp4"
         poster="/videos/hero-bg-poster.jpg"
         className="margo-hero-image -z-20"
       />
