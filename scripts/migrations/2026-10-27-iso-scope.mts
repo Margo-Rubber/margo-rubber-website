@@ -55,20 +55,27 @@ const FIXES: Fix[] = [
     from: "SINCE 2005 · NASHIK, INDIA · ISO 9001:2015 CERTIFIED",
     to: "SINCE 2005 · NASHIK, INDIA · ISO 9001:2015 (MOULDED PARTS)",
   },
-  ...[
-    {
-      id: "industry-construction",
-      body: "EPDM glazing gaskets, facade expansion joint seals, weatherseal profiles and plant isolation mounts for construction and infrastructure — extruded and moulded to your drawing in Nashik, India.",
-    },
-    {
-      id: "industry-transport",
-      body: "EPDM window and door seals, hatch and porthole gaskets, acoustic foam and vibration mounts for rolling stock builders and shipyards — moulded and extruded to your drawing in Nashik, India.",
-    },
-    {
-      id: "productsHub-products",
-      body: "Fifteen custom rubber component lines moulded and extruded to your drawing in Nashik, India: O-rings, oil seals, gaskets, AV mounts.",
-    },
-  ].map(({ id, body }) => ({ id, path: "seo.description", from: body + ISO_END[0], to: body + ISO_END[1] })),
+  // Construction and transport: the to-do's ending alone would take them past
+  // the 220-character cap, so each loses a few words of its own text (no new
+  // facts) — "facade" and "your" (218), and "builders" (217). Approved 27 Oct.
+  {
+    id: "industry-construction",
+    path: "seo.description",
+    from: "EPDM glazing gaskets, facade expansion joint seals, weatherseal profiles and plant isolation mounts for construction and infrastructure — extruded and moulded to your drawing in Nashik, India." + ISO_END[0],
+    to: "EPDM glazing gaskets, expansion joint seals, weatherseal profiles and plant isolation mounts for construction and infrastructure — extruded and moulded to drawing in Nashik, India." + ISO_END[1],
+  },
+  {
+    id: "industry-transport",
+    path: "seo.description",
+    from: "EPDM window and door seals, hatch and porthole gaskets, acoustic foam and vibration mounts for rolling stock builders and shipyards — moulded and extruded to your drawing in Nashik, India." + ISO_END[0],
+    to: "EPDM window and door seals, hatch and porthole gaskets, acoustic foam and vibration mounts for rolling stock and shipyards — moulded and extruded to your drawing in Nashik, India." + ISO_END[1],
+  },
+  {
+    id: "productsHub-products",
+    path: "seo.description",
+    from: "Fifteen custom rubber component lines moulded and extruded to your drawing in Nashik, India: O-rings, oil seals, gaskets, AV mounts." + ISO_END[0],
+    to: "Fifteen custom rubber component lines moulded and extruded to your drawing in Nashik, India: O-rings, oil seals, gaskets, AV mounts." + ISO_END[1],
+  },
 ];
 
 const get = (doc: unknown, path: string) =>
