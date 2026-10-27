@@ -1520,13 +1520,13 @@ export function Clients({
               {/* On a white plate: most brand marks are drawn for a light
                   background and disappear on the dark card. */}
               {c.logo?.asset && (
-                <span className="mb-4 flex h-16 w-full max-w-[200px] items-center justify-center rounded-lg bg-white px-4 py-3">
+                <span className="mb-4 flex h-24 w-full max-w-[240px] items-center justify-center rounded-lg bg-white px-3 py-2">
                   <SanityPhoto
                     image={c.logo}
                     fallbackAlt={`${c.name} logo`}
-                    sizes="200px"
+                    sizes="240px"
                     fit="contain"
-                    className="h-full max-h-10 w-auto max-w-full"
+                    className="h-full max-h-20 w-auto max-w-full"
                   />
                 </span>
               )}
