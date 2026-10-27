@@ -1,5 +1,7 @@
 "use client";
 
+import { preload } from "react-dom";
+
 /**
  * Full-bleed background video for the homepage hero.
  *
@@ -29,6 +31,11 @@
  *     [f][r]concat=n=2:v=1[out]" -map "[out]" -an -c:v libx264 -crf 25
  *     -movflags +faststart hero-bg-boomerang.mp4
  *
+ * The poster is preloaded from <head> at high priority. Otherwise the
+ * browser only finds it when it reaches the <video> tag and fetches it at
+ * normal priority, and the dark page background shows for about a second
+ * before it appears.
+ *
  * Decorative: muted, no controls, hidden from assistive tech.
  */
 export function HeroVideo({
@@ -40,6 +47,7 @@ export function HeroVideo({
   poster: string;
   className?: string;
 }) {
+  preload(poster, { as: "image", fetchPriority: "high" });
   return (
     <video
       autoPlay
