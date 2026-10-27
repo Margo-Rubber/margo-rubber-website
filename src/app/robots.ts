@@ -16,6 +16,42 @@ import { SITE_URL } from "@/lib/seo";
  * cannot read either, so it can end up indexed from third-party links with no
  * description at all.
  */
+
+/**
+ * One list for every group. A crawler that matches a named group reads ONLY
+ * that group and ignores `*`, so a line added to `*` alone never reaches the
+ * answer engines (N1, 27 Oct 2026).
+ */
+const DISALLOW = [
+  // The enquiries desk. Behind a password, but a crawler should not
+  // be knocking on it at all.
+  "/margo-desk",
+  "/margo-desk/",
+  // Endpoints, not pages. Nothing here renders.
+  "/api/",
+  // The editing studio has its own login; it is not content.
+  "/studio",
+  // Query-string variants of listing pages are the same content
+  // reachable at many URLs, which splits ranking signals across them.
+  "/*?q=",
+  "/*?status=",
+  "/*?source=",
+  "/*?page=",
+  // The contact form arrives pre-filled from forty-odd links
+  // (?part=, ?industry=, ?request= …). One page, one URL: the
+  // parameterised variants canonical to /contact and are not crawled.
+  "/contact?",
+  // Data files, not pages (N1). Search Console, 25 Oct 2026: 52% of
+  // Googlebot's requests went to "other file type" — Next's RSC payloads
+  // and the 3D models — and only 13% to HTML. `&_rsc=` is the same payload
+  // on a URL that already has a query string. The page's own HTML, CSS, JS
+  // chunks (/_next/static/) and images stay open: Google needs them to
+  // render. Certificate PDFs under /sanity-files/ stay open too.
+  "/*?_rsc=",
+  "/*&_rsc=",
+  "/sanity-files/*.glb",
+];
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
@@ -24,31 +60,12 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: ["GPTBot", "OAI-SearchBot", "ClaudeBot", "PerplexityBot", "Bingbot"],
         allow: "/",
-        disallow: ["/margo-desk", "/margo-desk/", "/api/", "/studio", "/*?q=", "/*?status=", "/*?source=", "/*?page=", "/contact?"],
+        disallow: DISALLOW,
       },
       {
         userAgent: "*",
         allow: "/",
-        disallow: [
-          // The enquiries desk. Behind a password, but a crawler should not
-          // be knocking on it at all.
-          "/margo-desk",
-          "/margo-desk/",
-          // Endpoints, not pages. Nothing here renders.
-          "/api/",
-          // The editing studio has its own login; it is not content.
-          "/studio",
-          // Query-string variants of listing pages are the same content
-          // reachable at many URLs, which splits ranking signals across them.
-          "/*?q=",
-          "/*?status=",
-          "/*?source=",
-          "/*?page=",
-          // The contact form arrives pre-filled from forty-odd links
-          // (?part=, ?industry=, ?request= …). One page, one URL: the
-          // parameterised variants canonical to /contact and are not crawled.
-          "/contact?",
-        ],
+        disallow: DISALLOW,
       },
     ],
     sitemap: [`${SITE_URL}/sitemap.xml`, `${SITE_URL}/products/sitemap/0.xml`],
