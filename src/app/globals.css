@@ -1952,7 +1952,7 @@ main #iso-9001 {
    animations above (.margo-lane-flow / .margo-lane-pulse) are reused as-is. */
 @layer components {
   .xmap-land {
-    fill: #1a1e24;
+    fill: #4a515c;
     stroke: #0f1115;
     stroke-width: 0.6;
     stroke-linejoin: round;
