@@ -1,0 +1,2999 @@
+{
+  "source": "Master Catalogue 2026 v4 — products with no card on margorubber.com (cross-check of 27 Oct 2026)",
+  "products": [
+    {
+      "page": "extrusion",
+      "code": "EX-01",
+      "name": "E-section profiles",
+      "family": "Sealing sections",
+      "description": "A flat base with three upright lips. The two outer lips seal against the frame and the centre lip adds a second seal line, for cabinet and enclosure doors that see dust and splash.",
+      "types": "E-section · double-lip E · to drawing",
+      "sizeBasis": "By the metre; section to your drawing",
+      "industries": "Electrical · HVAC & appliances",
+      "compounds": [
+        {
+          "code": "VMQ",
+          "hardness": "40–75"
+        },
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        }
+      ],
+      "image": "EX-01_e-section-profiles.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "extrusion",
+      "code": "EX-02",
+      "name": "Omega profiles",
+      "family": "Sealing sections",
+      "description": "A hollow arch on two flat feet. The arch closes evenly along its length under light pressure, so it suits door and hatch rebates where the gap is not constant.",
+      "types": "omega · omega with fixing feet · to drawing",
+      "sizeBasis": "By the metre; section to your drawing",
+      "industries": "Automotive · Electrical · HVAC & appliances",
+      "compounds": [
+        {
+          "code": "VMQ",
+          "hardness": "40–75"
+        },
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        }
+      ],
+      "image": "EX-02_omega-profiles.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "extrusion",
+      "code": "EX-03",
+      "name": "Keyhole profiles",
+      "family": "Sealing sections",
+      "description": "A round hollow bulb on a narrow stem. The stem pushes into a slot or groove and holds the bulb in place, so the seal needs no adhesive and no fixings.",
+      "types": "keyhole · hollow bulb · solid bulb",
+      "sizeBasis": "By the metre; section to your drawing",
+      "industries": "Automotive · HVAC & appliances",
+      "compounds": [
+        {
+          "code": "VMQ",
+          "hardness": "40–75"
+        },
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        }
+      ],
+      "image": "EX-03_keyhole-profiles.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "extrusion",
+      "code": "EX-04",
+      "name": "Mushroom & arrow-head profiles",
+      "family": "Sealing sections",
+      "description": "A sealing head on a push-in stem. Mushroom heads seat in a groove; barbed arrow-head stems lock into drilled holes or slots, for a tool-free fit on panels and covers.",
+      "types": "mushroom · arrow-head · to drawing",
+      "sizeBasis": "By the metre; head and stem to your drawing",
+      "industries": "HVAC & appliances · Electrical",
+      "compounds": [
+        {
+          "code": "VMQ",
+          "hardness": "40–75"
+        },
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        }
+      ],
+      "image": "EX-04_mushroom-arrow-head-profiles.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "extrusion",
+      "code": "EX-05",
+      "name": "Bubble & oval hollow profiles",
+      "family": "Sealing sections",
+      "description": "Thin-wall bubble and oval sections that close large or uneven gaps at low closing force. The solid and closed-cell sponge versions share one shape, so you choose on force and duty.",
+      "types": "bubble on base · hollow oval · sponge oval",
+      "sizeBasis": "By the metre; section to your drawing",
+      "industries": "HVAC & appliances · Electrical",
+      "compounds": [
+        {
+          "code": "VMQ",
+          "hardness": "40–75"
+        },
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        }
+      ],
+      "image": "EX-05_bubble-oval-hollow-profiles.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "extrusion",
+      "code": "EX-06",
+      "name": "Wedge, triangle & trapezium profiles",
+      "family": "Sealing sections",
+      "description": "Solid wedge, triangle and trapezium strip. It fills tapered gaps, seals chamfered joints and works as a lead-in or locking strip on fabricated panels and plant.",
+      "types": "right-angle wedge · triangle · trapezium",
+      "sizeBasis": "By the metre or cut pieces; section to your drawing",
+      "industries": "Automotive · Mining",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        }
+      ],
+      "image": "EX-06_wedge-triangle-trapezium-profiles.jpg",
+      "mentionedInSiteCopy": "Industry copy: Construction \"wedge and setting-block sections\""
+    },
+    {
+      "page": "extrusion",
+      "code": "EX-07",
+      "name": "Rectangular & X-section profiles",
+      "family": "Standard profiles",
+      "description": "Solid rectangular and X-shaped sections. The X-section seals on two lobes per face and is less likely to twist in a groove than a round cord; rectangular strip packs flat joints and spacers.",
+      "types": "rectangular · X-section · to drawing",
+      "sizeBasis": "By the metre, cut pieces or joined frames; section to your drawing",
+      "industries": "Oil & Gas · Pumping · Electrical",
+      "compounds": [
+        {
+          "code": "VMQ",
+          "hardness": "40–75"
+        },
+        {
+          "code": "FKM",
+          "hardness": "60–85"
+        },
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "EX-07_rectangular-x-section-profiles.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "extrusion",
+      "code": "EX-08",
+      "name": "Flat strip",
+      "family": "Standard profiles",
+      "description": "Thin flat strip under 6 mm, supplied in coils. Used as sealing and packing strip, anti-rattle strip and spacer, cut to length at your line.",
+      "types": "plain strip · to width and thickness",
+      "sizeBasis": "Width × thickness × coil length",
+      "industries": "Pumping · Agriculture",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "EX-08_flat-strip.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "extrusion",
+      "code": "AT-37",
+      "name": "Rail coach door & window seal profiles",
+      "family": "Vehicle & transport",
+      "description": "Door-edge seals and window glazing profiles for railway coaches and metro cars, cut to length to the operator's section. They keep weather and draughts out and take the closing force of power doors. Corners are joined to the operator's drawing.",
+      "types": "door-edge seal · H glazing section · bubble seal",
+      "sizeBasis": "Cut length from your section",
+      "industries": "Automotive",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        }
+      ],
+      "image": "AT-37_rail-coach-door-window-seal-profiles.jpg",
+      "mentionedInSiteCopy": "Industry copy: Transport \"Door, gangway and vestibule seals\""
+    },
+    {
+      "page": "extrusion",
+      "code": "EX-09",
+      "name": "Sponge tube & cushioning sleeve",
+      "family": "Tube, sleeve & sponge",
+      "description": "Closed-cell sponge tube. It seals at low closing force, sleeves cables and pipes against chafing and cushions handles and edges. Firmness is set by the sponge density.",
+      "types": "thin wall · thick wall · small bore",
+      "sizeBasis": "Bore × wall × length, or coil",
+      "industries": "Automotive · HVAC & appliances · Agriculture",
+      "compounds": [],
+      "image": "EX-09_sponge-tube-cushioning-sleeve.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "extrusion",
+      "code": "EX-10",
+      "name": "Silicone sleeving",
+      "family": "Tube, sleeve & sponge",
+      "description": "Thin-wall silicone tube slid over wires, terminals and probes to guard them against heat and chafing. Bore and wall follow your wire size; supplied in coils or cut to length.",
+      "types": "plain sleeving · cut lengths · coils",
+      "sizeBasis": "Bore × wall × length",
+      "industries": "Electrical · HVAC & appliances",
+      "compounds": [
+        {
+          "code": "VMQ",
+          "hardness": "40–75"
+        }
+      ],
+      "image": "EX-10_silicone-sleeving.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "extrusion",
+      "code": "EX-20",
+      "name": "Inflatable seals",
+      "family": "Sealing sections",
+      "description": "Hollow extruded seals joined into a ring or frame. Inflated, they press against the door to close steriliser and isolator doors; deflated, the door moves freely.",
+      "types": "ring · rectangular frame · to drawing",
+      "sizeBasis": "Frame size and section to your drawing",
+      "industries": "Medical",
+      "compounds": [
+        {
+          "code": "VMQ",
+          "hardness": "40–75"
+        },
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        }
+      ],
+      "image": "EX-20_inflatable-seals.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "extrusion",
+      "code": "EX-21",
+      "name": "Joined frames from profile",
+      "family": "Sealing sections",
+      "description": "Any profile in this range cut and vulcanised at the joints into a closed frame, so the seal drops into the groove in one piece with no open ends.",
+      "types": "mitred frame · butt-joined ring · to drawing",
+      "sizeBasis": "Inside frame size and section to your drawing",
+      "industries": "HVAC & appliances · Electrical · Pumping",
+      "compounds": [
+        {
+          "code": "VMQ",
+          "hardness": "40–75"
+        },
+        {
+          "code": "FKM",
+          "hardness": "60–85"
+        },
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "EX-21_joined-frames-from-profile.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "extrusion",
+      "code": "MD-04",
+      "name": "Silicone pump tubing & profiles",
+      "family": "Tube, sleeve & sponge",
+      "description": "Extruded silicone tubing for tube-type peristaltic and metering pumps, on dosing and transfer duty and in laboratory instruments, plus cord and simple profiles. Supplied non-sterile to the equipment maker. Not for infusion, feeding or patient lines.",
+      "types": "tubing · cord · simple profile · cut length or coiled",
+      "sizeBasis": "Bore and wall to your drawing",
+      "industries": "Pumping · Medical",
+      "compounds": [
+        {
+          "code": "VMQ",
+          "hardness": "40–75"
+        }
+      ],
+      "image": "MD-04_silicone-pump-tubing-profiles.jpg",
+      "mentionedInSiteCopy": "Industry copy: Medical, peristaltic silicone tubing"
+    },
+    {
+      "page": "extrusion",
+      "code": "AT-41",
+      "name": "Marine hatch & weathertight-door packing",
+      "family": "Vehicle & transport",
+      "description": "Solid and sponge packing for hatch covers and weathertight doors on fishing boats, inland vessels and craft outside class. Cut to length from the yard's section, with moulded corner pieces. Nitrile only where oil reaches the packing.",
+      "types": "solid packing · sponge packing · corner piece",
+      "sizeBasis": "Cut length from your section",
+      "industries": "Automotive",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "AT-41_marine-hatch-weathertight-door-packing.jpg",
+      "mentionedInSiteCopy": "Industry copy: Transport \"Hatch and porthole seals\""
+    },
+    {
+      "page": "extrusion",
+      "code": "EX-11",
+      "name": "Bus & coach body profiles",
+      "family": "Vehicle & transport",
+      "description": "Partition, wheel-arch, mudguard and skirt-edge profiles for bus and coach bodies. Sections follow the body builder's drawing and come in cut lengths or coils, in EPDM or CR.",
+      "types": "H-partition · wheel-arch edge · skirt flap",
+      "sizeBasis": "By the metre; section to your drawing",
+      "industries": "Automotive",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        }
+      ],
+      "image": "EX-11_bus-coach-body-profiles.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "extrusion",
+      "code": "EX-12",
+      "name": "Truck-body, trailer & reefer-van door seals",
+      "family": "Vehicle & transport",
+      "description": "Door gasket profiles for truck bodies, trailers and refrigerated vans: a bulb seal on a mounting channel, double-fin and double-bulb sections, cut to length or joined into door frames.",
+      "types": "channel + bulb · double fin · double bulb",
+      "sizeBasis": "By the metre or joined frame; section to your drawing",
+      "industries": "Automotive",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        }
+      ],
+      "image": "EX-12_truck-body-trailer-reefer-van-door-seals.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "extrusion",
+      "code": "EX-16",
+      "name": "D & B fenders",
+      "family": "Vehicle & transport",
+      "description": "Large solid D and B sections bolted on as bumpers on vehicles, boats and plant. The B section is hollow, with a flat flange that takes the bolts.",
+      "types": "solid D · hollow B with flange",
+      "sizeBasis": "Section × length; bolt holes to your drawing",
+      "industries": "Automotive · Mining",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "SBR",
+          "hardness": "60–70"
+        },
+        {
+          "code": "NR",
+          "hardness": "40–70"
+        }
+      ],
+      "image": "EX-16_d-b-fenders.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "extrusion",
+      "code": "EX-17",
+      "name": "Flocked glass-run & waistline seals",
+      "family": "Vehicle & transport",
+      "description": "All-rubber channels with a flocked face that guide and seal sliding glass, plus inner and outer belt seals that wipe the glass at the door waist. For tractor cabs, buses and commercial vehicles.",
+      "types": "glass-run channel · inner belt · outer belt",
+      "sizeBasis": "By the metre or cut to the window; section to your drawing",
+      "industries": "Automotive · Agriculture",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        }
+      ],
+      "image": "EX-17_flocked-glass-run-waistline-seals.jpg",
+      "mentionedInSiteCopy": "Product copy: Round U-Channel card \"glass runs\""
+    },
+    {
+      "page": "extrusion",
+      "code": "EX-18",
+      "name": "Dual-hardness & solid-sponge profiles",
+      "family": "Vehicle & transport",
+      "description": "Co-extruded profiles that join a firm gripping section to a soft sponge sealing bulb in one length, for tractor and implement cab doors and panels.",
+      "types": "dense U + sponge bulb · dual hardness",
+      "sizeBasis": "By the metre; section to your drawing",
+      "industries": "Agriculture",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        }
+      ],
+      "image": "EX-18_dual-hardness-solid-sponge-profiles.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "extrusion",
+      "code": "MH-08",
+      "name": "Cab door, window & panel seals",
+      "family": "Vehicle & transport",
+      "description": "Sponge and solid seals that keep dust out of operator cabs and engine-bay panels on haul trucks, loaders and drills. Sponge closes under light door pressure; solid sections take the wear on frames and panels.",
+      "types": "door profile · window profile · moulded panel gasket",
+      "sizeBasis": "Cut length from your section, or your gasket drawing",
+      "industries": "Mining",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        }
+      ],
+      "image": "MH-08_cab-door-window-panel-seals.jpg",
+      "mentionedInSiteCopy": "Product copy: Extrusion page \"cab door seals\""
+    },
+    {
+      "page": "extrusion",
+      "code": "OG-02",
+      "name": "Pipe-clamp liners",
+      "family": "Industrial & equipment",
+      "description": "Rubber liners fitted between a pipe and its clamp, support or saddle. They stop metal-to -metal contact, so the pipe does not fret or corrode where it rests, and they take up small movement and vibration along the rack.",
+      "types": "clamp liner · support liner · saddle liner",
+      "sizeBasis": "Strip cut to length, or to your clamp drawing",
+      "industries": "Oil & Gas",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        }
+      ],
+      "image": "OG-02_pipe-clamp-liners.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "extrusion",
+      "code": "EE-04",
+      "name": "Edge beading & glazing gaskets",
+      "family": "Industrial & equipment",
+      "description": "H-section gaskets and lock strips that hold inspection and meter windows in panel doors, and the beading that frames those cut-outs . The gasket seals the glass to the sheet and the lock strip holds it in place. Supplied cut to length or coiled, to your section.",
+      "types": "H-section glazing gasket · lock strip · cut-out beading",
+      "sizeBasis": "Cut length from your section",
+      "industries": "Electrical",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "EE-04_edge-beading-glazing-gaskets.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "extrusion",
+      "code": "EX-13",
+      "name": "Crusher & chute beadings",
+      "family": "Industrial & equipment",
+      "description": "Heavy solid beadings that seal and cushion the panel joints of crushers, chutes and screens. Thick sections in natural rubber, SBR or EPDM, cut to length for each panel.",
+      "types": "U-channel beading · rounded-face beading",
+      "sizeBasis": "By the metre or cut pieces; section to your drawing",
+      "industries": "Mining",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "SBR",
+          "hardness": "60–70"
+        },
+        {
+          "code": "NR",
+          "hardness": "40–70"
+        }
+      ],
+      "image": "EX-13_crusher-chute-beadings.jpg",
+      "mentionedInSiteCopy": "Product copy: Extrusion page \"Skirting and chute seals\""
+    },
+    {
+      "page": "extrusion",
+      "code": "EX-14",
+      "name": "Appliance door seals (oven, dishwasher, chiller)",
+      "family": "Industrial & equipment",
+      "description": "Door profiles for ovens, dishwashers and display chillers: a hollow bulb on a push-in stem, a soft wiping lip, or a bulb for cold duty. Silicone for heat, EPDM for wet and cold.",
+      "types": "bulb + stem · wiping lip · chiller bulb",
+      "sizeBasis": "By the metre or joined frame; section to your drawing",
+      "industries": "HVAC & appliances",
+      "compounds": [
+        {
+          "code": "VMQ",
+          "hardness": "40–75"
+        },
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        }
+      ],
+      "image": "EX-14_appliance-door-seals-oven-dishwasher-chiller.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "extrusion",
+      "code": "EX-15",
+      "name": "Solar-panel gaskets",
+      "family": "Industrial & equipment",
+      "description": "EPDM frame gaskets that seat PV modules in their mounting frames outdoors. A U-channel with inner ribs grips the panel edge and seals it against rain.",
+      "types": "U-channel with ribs · to drawing",
+      "sizeBasis": "By the metre; channel to your panel thickness",
+      "industries": "Electrical",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        }
+      ],
+      "image": "EX-15_solar-panel-gaskets.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "extrusion",
+      "code": "EX-19",
+      "name": "Self-adhesive profiles",
+      "family": "Industrial & equipment",
+      "description": "Shaped solid or sponge profiles supplied with a pressure-sensitive adhesive strip and release liner on the base, so they fit with no fixings and no groove.",
+      "types": "D · P · rectangular · to drawing",
+      "sizeBasis": "By the metre or cut pieces; adhesive to your spec",
+      "industries": "HVAC & appliances · Electrical · Automotive",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        }
+      ],
+      "image": "EX-19_self-adhesive-profiles.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "extrusion",
+      "code": "HV-05",
+      "name": "AHU access-door & panel gaskets",
+      "family": "Industrial & equipment",
+      "description": "Extruded gaskets round the access doors of air-handling units and ducts, and push-in gaskets that seal each casing panel to the AHU frame. Doors are opened for service and must reseal; panel joints must stop air bypass.",
+      "types": "dense P or D-bulb · sponge strip · push-in foot · hollow bulb",
+      "sizeBasis": "Cut length from your section or frame drawing",
+      "industries": "HVAC & appliances",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        }
+      ],
+      "image": "HV-05_ahu-access-door-panel-gaskets.jpg",
+      "mentionedInSiteCopy": "Product copy: Extrusion page \"AHU door seals\""
+    },
+    {
+      "page": "extrusion",
+      "code": "PF-21",
+      "name": "Penstock & sluice-gate seals",
+      "family": "Industrial & equipment",
+      "description": "Hollow J-bulb and flat seals for penstocks, sluice gates and stop logs in water and wastewater channels. Cut to length, they seal the gate against its frame under the head of water. Sections are cut to the gate length; EPDM and neoprene take the water and the weather.",
+      "types": "J-bulb profile · flat seal",
+      "sizeBasis": "Cut length from your section",
+      "industries": "Pumping",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        }
+      ],
+      "image": "PF-21_penstock-sluice-gate-seals.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "gaskets",
+      "code": "GK-03",
+      "name": "Lathe-cut rings (sliced from tube)",
+      "family": "Flange, moulded & cut",
+      "description": "Thin rings and washers sliced on a lathe from extruded rubber tube to your bore, outside diameter and width. Flat, square-cut faces suit ring seals in caps and pumps. No mould needed; a new tube size may need a die.",
+      "types": "square-cut ring · flat washer · to drawing",
+      "sizeBasis": "Bore × outside diameter × width",
+      "industries": "Pumping · Automotive · Electrical",
+      "compounds": [
+        {
+          "code": "VMQ",
+          "hardness": "40–75"
+        },
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "GK-03_lathe-cut-rings-sliced-from-tube.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "gaskets",
+      "code": "GK-04",
+      "name": "Display & device gaskets (thin die-cut)",
+      "family": "Flange, moulded & cut",
+      "description": "Thin die-cut gaskets that seal displays, touch screens, meter windows and handheld device housings against dust and splash. Cut from thin rubber sheet to your outline, with a narrow wall around the window opening.",
+      "types": "window frame gasket · bezel gasket · housing gasket",
+      "sizeBasis": "Your drawing or DXF, plus sheet thickness",
+      "industries": "Electrical",
+      "compounds": [
+        {
+          "code": "VMQ",
+          "hardness": "40–75"
+        },
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        }
+      ],
+      "image": "GK-04_display-device-gaskets-thin-die-cut.jpg",
+      "mentionedInSiteCopy": "Product copy: Sponge page \"display seals\""
+    },
+    {
+      "page": "gaskets",
+      "code": "GK-08",
+      "name": "Self-adhesive solid gaskets",
+      "family": "Flange, moulded & cut",
+      "description": "Die-cut solid rubber gaskets supplied with a pressure-sensitive adhesive face and a release liner. Peel the liner and press the gasket onto panels, lids and housings, with no groove and no fixings needed.",
+      "types": "die-cut frame · strip · ring",
+      "sizeBasis": "Your drawing or DXF, plus thickness and adhesive",
+      "industries": "Electrical · HVAC & appliances",
+      "compounds": [
+        {
+          "code": "VMQ",
+          "hardness": "40–75"
+        },
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "GK-08_self-adhesive-solid-gaskets.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "gaskets",
+      "code": "MH-02",
+      "name": "Crusher & chute inspection-door gaskets",
+      "family": "Pipe, tank & plant access",
+      "description": "Moulded frame gaskets for the inspection doors on crushers, screens and transfer chutes. They close the door against dust and wet fines, and take repeated opening for liner and wear checks without tearing or taking a set.",
+      "types": "moulded frame gasket · to door drawing",
+      "sizeBasis": "To your door drawing",
+      "industries": "Mining",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "MH-02_crusher-chute-inspection-door-gaskets.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "gaskets",
+      "code": "OG-01",
+      "name": "GRE, RTR & HDPE pipe gaskets",
+      "family": "Pipe, tank & plant access",
+      "description": "Gaskets for the flanged joints of GRE and RTR composite pipe, HDPE and ductile-iron water lines, from the utility header to water-injection piping. A soft rubber face suits composite flanges, which cannot take the bolt load of a hard gasket.",
+      "types": "full-face water-line gasket · push-on lip ring",
+      "sizeBasis": "To your flange drilling or pipe OD",
+      "industries": "Oil & Gas",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "OG-01_gre-rtr-hdpe-pipe-gaskets.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "gaskets",
+      "code": "PF-18",
+      "name": "Coupling & dismantling-joint gaskets",
+      "family": "Pipe, tank & plant access",
+      "description": "Moulded wedge and stepped gaskets for sleeve couplings, flange adaptors and dismantling joints that join two pipe ends on water mains. The bolts pull the gasket onto the pipe and it seals over the pipe's OD tolerance. Send the pipe OD range and the coupling type.",
+      "types": "wedge gasket · stepped gasket",
+      "sizeBasis": "To your pipe OD range",
+      "industries": "Pumping",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "PF-18_coupling-dismantling-joint-gaskets.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "gaskets",
+      "code": "PF-19",
+      "name": "Service-saddle & repair-clamp gaskets",
+      "family": "Pipe, tank & plant access",
+      "description": "Profiled gaskets for tapping saddles, and gridded mat gaskets for stainless repair clamps that close a leak on a live main. Supplied loose, to fit your saddle or clamp. Nitrile goes where the sewage carries oil; send the saddle or clamp size and the pipe OD.",
+      "types": "saddle gasket · gridded repair mat",
+      "sizeBasis": "To your saddle or clamp size",
+      "industries": "Pumping",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        },
+        {
+          "code": "SBR",
+          "hardness": "60–70"
+        }
+      ],
+      "image": "PF-19_service-saddle-repair-clamp-gaskets.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "gaskets",
+      "code": "PF-20",
+      "name": "Wall-penetration seals",
+      "family": "Pipe, tank & plant access",
+      "description": "Moulded interlocking rubber links and puddle-flange rings that seal a pipe where it passes through a tank, chamber or wall. Rubber links and rings only; bolts and plates are not supplied. Sized to the pipe OD and the opening, so the links fill the annular gap.",
+      "types": "interlocking link · puddle-flange ring",
+      "sizeBasis": "To your pipe OD and opening",
+      "industries": "Pumping",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "PF-20_wall-penetration-seals.jpg",
+      "mentionedInSiteCopy": "Industry copy: Construction \"Pipe penetration seals\"; Extrusion page \"pipe penetration seals\""
+    },
+    {
+      "page": "gaskets",
+      "code": "AT-02",
+      "name": "Cover, sump, carrier & housing gaskets",
+      "family": "Vehicle & transport",
+      "description": "Press-in -place moulded gaskets and flat moulded gaskets for engine covers, sumps, timing covers, gearbox pans and differentials, and for intake manifolds, water pumps, thermostats and oil-filter housings. The joint and fluid decide the compound.",
+      "types": "profile gasket · flat moulded gasket · ring gasket",
+      "sizeBasis": "To your drawing",
+      "industries": "Automotive",
+      "compounds": [
+        {
+          "code": "VMQ",
+          "hardness": "40–75"
+        },
+        {
+          "code": "FKM",
+          "hardness": "60–85"
+        },
+        {
+          "code": "AEM",
+          "hardness": "55–80"
+        },
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "AT-02_cover-sump-carrier-housing-gaskets.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "gaskets",
+      "code": "AT-07",
+      "name": "Air-intake & vacuum seals",
+      "family": "Vehicle & transport",
+      "description": "Seals for the air side of the engine: airbox lid seals, duct joint seals, resonator grommets, drain duckbills and vacuum-reservoir grommets. They stop unfiltered air and water getting in, and hold vacuum on the brake and control lines. Sponge grades seal light-closing airbox lids.",
+      "types": "lid seal · duct seal · duckbill · check-valve grommet",
+      "sizeBasis": "To your drawing",
+      "industries": "Automotive",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "AT-07_air-intake-vacuum-seals.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "gaskets",
+      "code": "GK-02",
+      "name": "LPG cylinder-valve washers & seals",
+      "family": "Pumps, valves & process",
+      "description": "Small moulded washers and flat seals for LPG cylinder valves, made to the valve maker's print. They seal the valve's gas joints, and the compound is matched to LPG and the temperature range the valve sees.",
+      "types": "valve washer · flat seal · to print",
+      "sizeBasis": "To the valve maker's print",
+      "industries": "Oil & Gas",
+      "compounds": [
+        {
+          "code": "FKM",
+          "hardness": "60–85"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "GK-02_lpg-cylinder-valve-washers-seals.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "gaskets",
+      "code": "GK-06",
+      "name": "Hygienic clamp & dairy coupling seals",
+      "family": "Pumps, valves & process",
+      "description": "Gaskets for hygienic clamp joints and dairy screw couplings on process pipework, sized to the clamp or coupling standard. They seat between the two pipe ends and reseal each time the line is opened for cleaning.",
+      "types": "clamp gasket · dairy coupling seal · to standard",
+      "sizeBasis": "Your clamp or coupling standard and size",
+      "industries": "Pumping",
+      "compounds": [
+        {
+          "code": "VMQ",
+          "hardness": "40–75"
+        },
+        {
+          "code": "FKM",
+          "hardness": "60–85"
+        },
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        }
+      ],
+      "image": "GK-06_hygienic-clamp-dairy-coupling-seals.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "gaskets",
+      "code": "GK-07",
+      "name": "Plate-heat -exchanger gaskets",
+      "family": "Pumps, valves & process",
+      "description": "Moulded gaskets that sit in the grooves of each plate in a plate heat exchanger. They seal the plate pack and keep the hot and cold liquids apart. Made to the plate maker's drawing or a worn gasket.",
+      "types": "channel gasket · end-plate gasket · to plate model",
+      "sizeBasis": "To the plate model's drawing or a worn gasket",
+      "industries": "HVAC & appliances · Pumping",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "GK-07_plate-heat-exchanger-gaskets.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "gaskets",
+      "code": "PF-28",
+      "name": "Water-heater element gaskets",
+      "family": "Pumps, valves & process",
+      "description": "O-rings and flange gaskets that seal the immersion element into an electric storage water heater. They hold hot water under pressure at the element flange through every heating cycle. EPDM takes the hot water; each gasket is moulded to the element flange, its drilling and its groove.",
+      "types": "element O-ring · flange gasket",
+      "sizeBasis": "To your element flange",
+      "industries": "Pumping",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        }
+      ],
+      "image": "PF-28_water-heater-element-gaskets.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "gaskets",
+      "code": "AT-40",
+      "name": "Rail coach water-tank seals",
+      "family": "Vehicle & transport",
+      "description": "Sealing rings and filler-connector gaskets for the water tanks on railway coaches, moulded to the railway's or the coach builder's drawing. They hold the tank water in against the shock and sway of running. The water and the cleaning regime decide the compound; send both with the drawing.",
+      "types": "tank sealing ring · filler gasket",
+      "sizeBasis": "To your drawing",
+      "industries": "Automotive",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        }
+      ],
+      "image": "AT-40_rail-coach-water-tank-seals.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "gaskets",
+      "code": "AT-42",
+      "name": "Marine porthole gaskets",
+      "family": "Vehicle & transport",
+      "description": "Glass and deadlight gaskets for portholes and sidescuttles on craft outside class, moulded endless to the scuttle size, with glazing strip cut to length. They hold the glass and keep sea spray out. Natural rubber only for inboard deadlight gaskets. Send the scuttle size or the yard's drawing.",
+      "types": "glass gasket · deadlight gasket · glazing strip",
+      "sizeBasis": "Moulded endless to your scuttle size",
+      "industries": "Automotive",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        },
+        {
+          "code": "NR",
+          "hardness": "40–70"
+        }
+      ],
+      "image": "AT-42_marine-porthole-gaskets.jpg",
+      "mentionedInSiteCopy": "Industry copy: Transport \"Hatch and porthole seals\"; Sponge page \"hatch and porthole seals\""
+    },
+    {
+      "page": "gaskets",
+      "code": "EE-02",
+      "name": "Gland-plate & partition gaskets",
+      "family": "Electrical & energy",
+      "description": "Gaskets for the cable-entry gland plates, bolted access plates and internal partitions between switchgear sections. They keep dust and vermin out at the cable entry and separate one section from the next.",
+      "types": "gland-plate frame · access-plate gasket · partition strip · groove cord",
+      "sizeBasis": "To your plate or groove drawing",
+      "industries": "Electrical",
+      "compounds": [
+        {
+          "code": "VMQ",
+          "hardness": "40–75"
+        },
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        }
+      ],
+      "image": "EE-02_gland-plate-partition-gaskets.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "gaskets",
+      "code": "EE-05",
+      "name": "Luminaire & street-light gaskets",
+      "family": "Electrical & energy",
+      "description": "Lens, housing and driver-box gaskets for LED street lights, flood lights and high-bays that run hot outdoors. They keep rain and dust out of the optics and the driver through years of heat cycles. Silicone takes the heat of the driver and lens; EPDM the weather.",
+      "types": "lens gasket · housing gasket · driver-box gasket",
+      "sizeBasis": "To your drawing",
+      "industries": "Electrical",
+      "compounds": [
+        {
+          "code": "VMQ",
+          "hardness": "40–75"
+        },
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        }
+      ],
+      "image": "EE-05_luminaire-street-light-gaskets.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "gaskets",
+      "code": "GK-01",
+      "name": "EV battery-pack & charger gaskets",
+      "family": "Vehicle & transport",
+      "description": "Moulded lid and housing gaskets for EV traction-battery packs, on-board chargers and charging-station enclosures. They keep water, dust and wash spray out of long, flat joints, moulded endless to your pack or housing outline.",
+      "types": "pack lid gasket · charger housing gasket · charge-point door gasket",
+      "sizeBasis": "To your pack or housing drawing",
+      "industries": "Automotive · Electrical",
+      "compounds": [
+        {
+          "code": "VMQ",
+          "hardness": "40–75"
+        },
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        }
+      ],
+      "image": "GK-01_ev-battery-pack-charger-gaskets.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "gaskets",
+      "code": "GK-05",
+      "name": "Electrolyser & fuel-cell stack gaskets",
+      "family": "Electrical & energy",
+      "description": "Moulded frame gaskets that seal the cells and end plates of electrolyser and fuel-cell stacks. Each is a large, thin frame made to the plate outline, holding the liquids and gases inside each cell of the stack.",
+      "types": "cell frame gasket · end-plate gasket · port seal",
+      "sizeBasis": "To your plate drawing",
+      "industries": "Electrical",
+      "compounds": [
+        {
+          "code": "VMQ",
+          "hardness": "40–75"
+        },
+        {
+          "code": "FKM",
+          "hardness": "60–85"
+        },
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        }
+      ],
+      "image": "GK-05_electrolyser-fuel-cell-stack-gaskets.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "gaskets",
+      "code": "MD-01",
+      "name": "Valve-manifold gaskets & flange seals",
+      "family": "Medical & lab instruments",
+      "description": "Thin moulded gaskets and flange seals between miniature valves and the manifold blocks that carry them in analysers and lab instruments. Each set is made to the drawing revision, so the part matches the build. Send the reagent and the cleaning method.",
+      "types": "flange seal · manifold gasket · port seal set",
+      "sizeBasis": "To your drawing revision",
+      "industries": "Medical",
+      "compounds": [
+        {
+          "code": "FKM",
+          "hardness": "60–85"
+        },
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        }
+      ],
+      "image": "MD-01_valve-manifold-gaskets-flange-seals.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "gaskets",
+      "code": "MD-05",
+      "name": "Instrument door & lid gaskets",
+      "family": "Medical & lab instruments",
+      "description": "Moulded gaskets for the doors, lids and covers of benchtop and laboratory instruments that are opened, cleaned and closed every shift. They keep their seal through cleaning agents and dry heat. Fluorocarbon for many cleaning agents and dry heat to 200 °C; silicone for heat and cold. Send the cleaning method.",
+      "types": "endless moulded gasket · lid ring",
+      "sizeBasis": "To your drawing",
+      "industries": "Medical",
+      "compounds": [
+        {
+          "code": "VMQ",
+          "hardness": "40–75"
+        },
+        {
+          "code": "FKM",
+          "hardness": "60–85"
+        }
+      ],
+      "image": "MD-05_instrument-door-lid-gaskets.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "gaskets",
+      "code": "MD-06",
+      "name": "Steriliser lid & door gaskets",
+      "family": "Medical & lab instruments",
+      "description": "Moulded silicone rings for the lid or door of benchtop and vertical steam sterilisers, made to the steriliser maker's drawing. They seal the chamber through repeated steam cycles. Silicone, as the steriliser maker specifies; the cycle life is confirmed per part in your cycle. Send the maker's drawing or a worn ring.",
+      "types": "moulded ring · lid gasket · door gasket",
+      "sizeBasis": "To the steriliser maker's drawing",
+      "industries": "Medical",
+      "compounds": [
+        {
+          "code": "VMQ",
+          "hardness": "40–75"
+        }
+      ],
+      "image": "MD-06_steriliser-lid-door-gaskets.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "pads-stoppers-caps",
+      "code": "AT-18",
+      "name": "Coil-spring pads & insulators",
+      "family": "Buffers & stops",
+      "description": "Upper and lower pads that seat a coil spring on its perch, so steel never touches steel. They stop the spring clicking and wearing through its coating, and take some high-frequency road noise out of the body. Moulded to the spring end and the perch.",
+      "types": "spring seat · upper pad · lower pad",
+      "sizeBasis": "To your spring end and perch",
+      "industries": "Automotive",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "NR",
+          "hardness": "40–70"
+        }
+      ],
+      "image": "AT-18_coil-spring-pads-insulators.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "pads-stoppers-caps",
+      "code": "EE-09",
+      "name": "Transformer isolation pads",
+      "family": "Pads & feet",
+      "description": "Ribbed and waffle pads under dry-type and distribution transformers. They cut transformer hum and structure-borne vibration before it reaches the floor, the plinth or the next room. Cut to the transformer base and its load, as a loose pad.",
+      "types": "waffle pad · ribbed pad",
+      "sizeBasis": "Cut to your size",
+      "industries": "Electrical",
+      "compounds": [
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        },
+        {
+          "code": "NR",
+          "hardness": "40–70"
+        }
+      ],
+      "image": "EE-09_transformer-isolation-pads.jpg",
+      "mentionedInSiteCopy": "Industry copy: Electrical, transformer isolation pads"
+    },
+    {
+      "page": "pads-stoppers-caps",
+      "code": "HV-03",
+      "name": "Outdoor-unit anti-vibration feet",
+      "family": "Pads & feet",
+      "description": "Rubber feet between a split or heat-pump outdoor unit and its wall bracket or floor stand. The unit sits level, does not walk on its stand and does not drum against the wall of the building. Sized to the unit's weight.",
+      "types": "ribbed block · slotted foot",
+      "sizeBasis": "To your bracket and unit foot",
+      "industries": "HVAC & appliances",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        }
+      ],
+      "image": "HV-03_outdoor-unit-anti-vibration-feet.jpg",
+      "mentionedInSiteCopy": "Industry copy: HVAC outdoor units"
+    },
+    {
+      "page": "pads-stoppers-caps",
+      "code": "MD-08",
+      "name": "Instrument suction feet",
+      "family": "Pads & feet",
+      "description": "Suction feet that hold benchtop instruments still while they run. They grip the bench, so the instrument stays level and does not walk under its own vibration while it runs. Natural rubber damps the instrument's vibration; SBR is the low-cost grade. Moulded to your drawing or a sample foot, sized to the instrument's weight.",
+      "types": "suction foot · to drawing",
+      "sizeBasis": "To your drawing",
+      "industries": "Medical",
+      "compounds": [
+        {
+          "code": "SBR",
+          "hardness": "60–70"
+        },
+        {
+          "code": "NR",
+          "hardness": "40–70"
+        }
+      ],
+      "image": "MD-08_instrument-suction-feet.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "pads-stoppers-caps",
+      "code": "MH-06",
+      "name": "Haul-truck body pads",
+      "family": "Pads & feet",
+      "description": "Solid rubber pads that cushion the dump body where it rests on the chassis of haul trucks and dumpers. They take the impact of every load dropped into the body and stop steel hammering on steel.",
+      "types": "solid body pad · to body and frame",
+      "sizeBasis": "To your body and frame drawing",
+      "industries": "Mining",
+      "compounds": [
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        },
+        {
+          "code": "NR",
+          "hardness": "40–70"
+        }
+      ],
+      "image": "MH-06_haul-truck-body-pads.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "pads-stoppers-caps",
+      "code": "PS-03",
+      "name": "Stud-bonded buffers",
+      "family": "Buffers & stops",
+      "description": "Cylindrical and progressive rubber buffers bonded to a threaded stud and screwed in as end stops for cranes, machine slides and moving frames. Built like a single-ended bobbin mount, with one stud.",
+      "types": "cylindrical buffer · progressive buffer · to drawing",
+      "sizeBasis": "Ø × height × thread, or your drawing",
+      "industries": "Mining · Agriculture",
+      "compounds": [
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        },
+        {
+          "code": "NR",
+          "hardness": "40–70"
+        }
+      ],
+      "image": "PS-03_stud-bonded-buffers.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "pads-stoppers-caps",
+      "code": "AG-05",
+      "name": "Sprayer boom buffers & transport rests",
+      "family": "Buffers & stops",
+      "description": "Rubber buffers that cushion a sprayer boom against its frame in work, and rest pads that carry the boom when it is folded for transport. They stop the boom hammering and scuffing on rough field tracks. Sized to the boom.",
+      "types": "buffer block · rest pad · transport holder",
+      "sizeBasis": "To your boom drawing",
+      "industries": "Agriculture",
+      "compounds": [
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        },
+        {
+          "code": "NR",
+          "hardness": "40–70"
+        }
+      ],
+      "image": "AG-05_sprayer-boom-buffers-transport-rests.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "pads-stoppers-caps",
+      "code": "AT-38",
+      "name": "Rail coach door stoppers & bumpers",
+      "family": "Buffers & stops",
+      "description": "Moulded rubber stoppers and bumpers that take the knock out of coach doors and fittings, all rubber, to your drawing. They set the open and closed stop and stop metal striking metal. Natural rubber in protected positions; EPDM and neoprene where the stopper sees the weather.",
+      "types": "door stopper · bumper pad",
+      "sizeBasis": "To your drawing",
+      "industries": "Automotive",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        },
+        {
+          "code": "NR",
+          "hardness": "40–70"
+        }
+      ],
+      "image": "AT-38_rail-coach-door-stoppers-bumpers.jpg",
+      "mentionedInSiteCopy": "Industry copy: Transport \"Door buffers and stops\""
+    },
+    {
+      "page": "pads-stoppers-caps",
+      "code": "EE-10",
+      "name": "Snap-in door & cover bumpers",
+      "family": "Buffers & stops",
+      "description": "Snap-in bumpers that stop cabinet doors, covers and lids on control panels, instrument cases and wall enclosures. They set the closed position, take the knock of the door and stop it rattling in service. Moulded to the panel hole and sheet thickness, or to a sample.",
+      "types": "snap-in door bumper · cover bumper",
+      "sizeBasis": "To your drawing",
+      "industries": "Electrical",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        },
+        {
+          "code": "NR",
+          "hardness": "40–70"
+        }
+      ],
+      "image": "EE-10_snap-in-door-cover-bumpers.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "pads-stoppers-caps",
+      "code": "AG-01",
+      "name": "Hydraulic coupler dust caps",
+      "family": "Caps, plugs & stoppers",
+      "description": "Tethered rubber caps and plugs that keep mud and chaff out of tractor remote couplers and hose-end tips between jobs. A clean coupler stops grit reaching the hydraulic oil when the next implement is hitched. Send the coupler make and size.",
+      "types": "coupler cap · tip plug · tethered or plain",
+      "sizeBasis": "To your coupler size",
+      "industries": "Agriculture",
+      "compounds": [
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "AG-01_hydraulic-coupler-dust-caps.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "pads-stoppers-caps",
+      "code": "EE-07",
+      "name": "Port caps & dust plugs",
+      "family": "Caps, plugs & stoppers",
+      "description": "Tethered dust caps that keep dust out of unused USB, RJ45 and connector ports on control and network equipment. The tether keeps the cap on the unit, so it is pulled out by hand and pushed back after use, not lost. Moulded to the port, plain or with a flange to pull it out.",
+      "types": "tethered dust cap · flanged dust cap",
+      "sizeBasis": "To your port",
+      "industries": "Electrical",
+      "compounds": [
+        {
+          "code": "VMQ",
+          "hardness": "40–75"
+        },
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        }
+      ],
+      "image": "EE-07_port-caps-dust-plugs.jpg",
+      "mentionedInSiteCopy": "Industry copy: HVAC, port caps"
+    },
+    {
+      "page": "pads-stoppers-caps",
+      "code": "MD-09",
+      "name": "Laboratory stoppers",
+      "family": "Caps, plugs & stoppers",
+      "description": "Solid and bored tapered stoppers for laboratory glassware: flasks, test tubes and distillation set-ups . Bored stoppers carry glass tube or a thermometer through the neck. Sized to the neck of the flask or tube, solid or with one or two bores; neoprene goes where natural rubber would be attacked.",
+      "types": "solid stopper · one-hole · two-hole",
+      "sizeBasis": "To your neck size",
+      "industries": "Medical",
+      "compounds": [
+        {
+          "code": "VMQ",
+          "hardness": "40–75"
+        },
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        },
+        {
+          "code": "NR",
+          "hardness": "40–70"
+        }
+      ],
+      "image": "MD-09_laboratory-stoppers.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "pads-stoppers-caps",
+      "code": "PF-08",
+      "name": "Butterfly-valve seats & liners",
+      "family": "Valve parts & washers",
+      "description": "Replaceable moulded seats and liners for concentric butterfly valves on water and process lines. The disc closes on the rubber, which seals the line and lines the body so the fluid never touches it.",
+      "types": "loose liner · seat to your body",
+      "sizeBasis": "To your body and disc size",
+      "industries": "Oil & Gas · Pumping",
+      "compounds": [
+        {
+          "code": "FKM",
+          "hardness": "60–85"
+        },
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "PF-08_butterfly-valve-seats-liners.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "pads-stoppers-caps",
+      "code": "PF-11",
+      "name": "Check-valve flappers & foot-valve discs",
+      "family": "Valve parts & washers",
+      "description": "All-rubber flappers for swing-check valves, and rubber discs for pump foot valves. They open with the flow, shut on reverse flow and keep the pump primed. Sized to the valve, the plate and the seat it closes on.",
+      "types": "swing-check flapper · foot-valve disc",
+      "sizeBasis": "To your valve size or drawing",
+      "industries": "Pumping",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "PF-11_check-valve-flappers-foot-valve-discs.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "pads-stoppers-caps",
+      "code": "PF-12",
+      "name": "Control-valve discs & air-valve seats",
+      "family": "Valve parts & washers",
+      "description": "Rubber discs and seat rings for pressure-reducing and relief control valves, and seats for air-release valves. They shut tight at the set pressure, and on an air valve they close when the water reaches the float. Nitrile takes the water and any oil carried in the line; send the drawing or a worn disc.",
+      "types": "control-valve disc · seat ring · air-valve seat",
+      "sizeBasis": "To your drawing",
+      "industries": "Pumping",
+      "compounds": [
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "PF-12_control-valve-discs-air-valve-seats.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "pads-stoppers-caps",
+      "code": "MH-03",
+      "name": "Return-idler disc rings",
+      "family": "Special mouldings",
+      "description": "Flat and pointed rubber disc rings fitted on the tube of a return idler. They carry the belt on its dirty side and flex as they turn, so carry-back sheds off instead of building up on the roller.",
+      "types": "flat disc · pointed disc",
+      "sizeBasis": "To your idler tube OD and spacing",
+      "industries": "Mining",
+      "compounds": [
+        {
+          "code": "SBR",
+          "hardness": "60–70"
+        },
+        {
+          "code": "NR",
+          "hardness": "40–70"
+        }
+      ],
+      "image": "MH-03_return-idler-disc-rings.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "pads-stoppers-caps",
+      "code": "PF-27",
+      "name": "Tap, mixer & connector washers",
+      "family": "Valve parts & washers",
+      "description": "Flat washers and O-rings for taps, ceramic-disc cartridges, swivel spouts and flexible tap connectors. They seal at hand-tight torque and keep sealing through years of hot and cold water. Sized to the thread or fitting, and moulded to keep its shape in hot water.",
+      "types": "flat washer · cartridge O-ring · spout O-ring",
+      "sizeBasis": "To your thread or fitting size",
+      "industries": "Pumping",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "PF-27_tap-mixer-connector-washers.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "pads-stoppers-caps",
+      "code": "PF-29",
+      "name": "Flush-valve & cistern washers",
+      "family": "Valve parts & washers",
+      "description": "Flat seal washers for flush valves and fill valves in exposed and concealed cisterns. The flush washer seats on every flush and must reseal at once; the fill seal shuts the inlet when the cistern is full. Silicone keeps its seal and its shape in the cistern's water.",
+      "types": "flush-valve washer · fill-valve seal",
+      "sizeBasis": "To your valve size",
+      "industries": "Pumping",
+      "compounds": [
+        {
+          "code": "VMQ",
+          "hardness": "40–75"
+        }
+      ],
+      "image": "PF-29_flush-valve-cistern-washers.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "o-rings",
+      "code": "OR-01",
+      "name": "O-ring assortment kits",
+      "family": "Standard rings & cord",
+      "description": "Boxed sets of the most-used O-ring sizes, one compartment per size, for workshop and maintenance stores. Each box holds one compound, in the sizes and quantities agreed at quote.",
+      "types": "AS568 set · metric set · JIS set",
+      "sizeBasis": "Standard size sets, or your own size list",
+      "industries": "Mining · Automotive · Pumping · Agriculture",
+      "compounds": [
+        {
+          "code": "FKM",
+          "hardness": "60–85"
+        },
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "OR-01_o-ring-assortment-kits.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "o-rings",
+      "code": "AT-04",
+      "name": "Coolant & radiator seals",
+      "family": "Vehicle O-rings",
+      "description": "Glycol-resistant seals for coolant pipes, hose flanges, temperature sensors, quick-connectors, radiator end tanks and heater lines. They hold hot pressurised coolant at every joint between the engine and the radiator. EPDM takes the glycol; silicone goes where the joint runs hottest.",
+      "types": "pipe O-ring · flange gasket · end-tank gasket · drain O-ring",
+      "sizeBasis": "Standard O-ring sizes or your drawing",
+      "industries": "Automotive",
+      "compounds": [
+        {
+          "code": "VMQ",
+          "hardness": "40–75"
+        },
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        }
+      ],
+      "image": "AT-04_coolant-radiator-seals.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "o-rings",
+      "code": "AT-05",
+      "name": "Fuel-system seals",
+      "family": "Vehicle O-rings",
+      "description": "Fuel-resistant seals for injectors, fuel rails, pumps, filters, tank modules and regulators. Made for petrol, diesel and ethanol blends, where a general oil compound would swell and leak. Send the fuel and the blend, and we propose the compound against it.",
+      "types": "injector O-ring · rail seal · pump lock-ring seal · sender gasket",
+      "sizeBasis": "Standard sizes or your drawing",
+      "industries": "Automotive",
+      "compounds": [
+        {
+          "code": "FKM",
+          "hardness": "60–85"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "AT-05_fuel-system-seals.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "o-rings",
+      "code": "MH-07",
+      "name": "Face-seal toric rings",
+      "family": "Special sections",
+      "description": "Moulded toric rings that load the two metal faces of a face seal (duo-cone seal) on wheel hubs and final drives. They press the faces together as they wear and keep mud, water and grit out of the oil on haul trucks, loaders and dozers.",
+      "types": "toric ring · O-ring section",
+      "sizeBasis": "To your seal-ring drawing",
+      "industries": "Mining",
+      "compounds": [
+        {
+          "code": "VMQ",
+          "hardness": "40–75"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "MH-07_face-seal-toric-rings.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "o-rings",
+      "code": "MH-10",
+      "name": "Concrete-pump clamp rings",
+      "family": "Special sections",
+      "description": "Moulded rings for the clamp couplings on concrete-pump delivery lines and boom pipes. Clamped between the pipe ends, they stop grout and fines leaking at every joint while the line carries abrasive slurry under pump pressure.",
+      "types": "clamp ring · to pipe size",
+      "sizeBasis": "To your pipe size and clamp",
+      "industries": "Mining",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        },
+        {
+          "code": "SBR",
+          "hardness": "60–70"
+        }
+      ],
+      "image": "MH-10_concrete-pump-clamp-rings.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "o-rings",
+      "code": "OR-02",
+      "name": "D-rings, Y-rings & oval rings",
+      "family": "Special sections",
+      "description": "Rings with a D, Y or oval section in place of a round one. The flat back of a D-ring will not roll or twist out of its groove; a Y-ring pushes in at low force on fittings and covers.",
+      "types": "D-ring · Y-ring · oval ring",
+      "sizeBasis": "To your groove or drawing",
+      "industries": "Automotive · Pumping",
+      "compounds": [
+        {
+          "code": "FKM",
+          "hardness": "60–85"
+        },
+        {
+          "code": "AEM",
+          "hardness": "55–80"
+        },
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "OR-02_d-rings-y-rings-oval-rings.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "o-rings",
+      "code": "AT-29",
+      "name": "Connector seals & cavity plugs",
+      "family": "Vehicle O-rings",
+      "description": "Single-wire seals, radial family seals and cavity plugs that keep water out of vehicle electrical connectors. They seal each wire where it enters the connector and close every cavity that carries no wire. Sized to the wire's insulation diameter and the connector's cavity, from the connector drawing.",
+      "types": "wire seal · radial family seal · cavity plug",
+      "sizeBasis": "To your connector drawing",
+      "industries": "Automotive",
+      "compounds": [
+        {
+          "code": "VMQ",
+          "hardness": "40–75"
+        }
+      ],
+      "image": "AT-29_connector-seals-cavity-plugs.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "o-rings",
+      "code": "HV-07",
+      "name": "Refrigerant valve & circuit O-rings",
+      "family": "Equipment & appliances",
+      "description": "O-rings for refrigerant ball and solenoid valves and service-valve caps. Each compound is tested against your refrigerant and compressor oil together, because the oil is usually the harder of the two. EPDM only where the compressor oil is not a mineral oil; send the refrigerant and the oil grade.",
+      "types": "metric and imperial sizes · kitted per valve",
+      "sizeBasis": "To your groove",
+      "industries": "HVAC & appliances",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        }
+      ],
+      "image": "HV-07_refrigerant-valve-circuit-o-rings.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "o-rings",
+      "code": "OG-04",
+      "name": "Seal kits & valve soft-goods kits",
+      "family": "Pumps, water & fluid",
+      "description": "One bag per pump, valve or actuator holding every rubber part the overhaul needs: O-rings, seats, body seals, stem seals and back-up rings. Moulded to the OEM drawing or the worn set, and labelled with your part number.",
+      "types": "pump kit · valve kit · actuator kit",
+      "sizeBasis": "To your equipment model, drawing or worn set",
+      "industries": "Oil & Gas · Pumping",
+      "compounds": [
+        {
+          "code": "FKM",
+          "hardness": "60–85"
+        },
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "OG-04_seal-kits-valve-soft-goods-kits.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "o-rings",
+      "code": "PF-17",
+      "name": "Flow-meter & instrument seals",
+      "family": "Pumps, water & fluid",
+      "description": "Small moulded seal rings and O-rings between flow meters or sensors and their process connections. They seal the meter into the line without upsetting the reading. Each ring is moulded to the meter or sensor drawing, and the compound is matched to the process fluid.",
+      "types": "seal ring · O-ring set",
+      "sizeBasis": "To your drawing",
+      "industries": "Pumping",
+      "compounds": [
+        {
+          "code": "VMQ",
+          "hardness": "40–75"
+        },
+        {
+          "code": "FKM",
+          "hardness": "60–85"
+        },
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        }
+      ],
+      "image": "PF-17_flow-meter-instrument-seals.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "o-rings",
+      "code": "PF-23",
+      "name": "RO & UF pressure-vessel seals",
+      "family": "Pumps, water & fluid",
+      "description": "End-cap and port O-rings and U-cup brine seals for reverse-osmosis and ultrafiltration pressure vessels. Kitted per vessel for 2.5-, 4- and 8-inch housings, for a full set at every membrane change.",
+      "types": "end-cap O-ring · port O-ring · brine seal · kitted per vessel",
+      "sizeBasis": "2.5-, 4- and 8-inch vessels, or your drawing",
+      "industries": "Pumping",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "PF-23_ro-uf-pressure-vessel-seals.jpg",
+      "mentionedInSiteCopy": "Industry copy: Oil & gas \"pressure vessel joints\""
+    },
+    {
+      "page": "o-rings",
+      "code": "PF-24",
+      "name": "Filter-housing & softener seals",
+      "family": "Pumps, water & fluid",
+      "description": "O-rings and flat gaskets that seal filter bowls, double-O-ring cartridge ends and softener tank-to-valve joints. Send the disinfectant and its residual: chlorine, chloramine and ozone attack rubber differently. Moulded to the housing or the cartridge you send, or from a worn seal.",
+      "types": "housing O-ring · cartridge O-ring · end gasket",
+      "sizeBasis": "To your housing or cartridge",
+      "industries": "Pumping",
+      "compounds": [
+        {
+          "code": "VMQ",
+          "hardness": "40–75"
+        },
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "PF-24_filter-housing-softener-seals.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "o-rings",
+      "code": "PF-26",
+      "name": "Water-meter washers & O-rings",
+      "family": "Pumps, water & fluid",
+      "description": "Coupling washers for the tail-piece joints of domestic and bulk water meters, and the body O-rings and chamber gaskets inside multi-jet meters. They hold line pressure without being crushed out. EPDM takes the water; each washer is sized to the meter's thread and tail-piece, or to a worn sample.",
+      "types": "coupling washer · body O-ring · chamber gasket",
+      "sizeBasis": "To your meter size",
+      "industries": "Pumping",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        }
+      ],
+      "image": "PF-26_water-meter-washers-o-rings.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "o-rings",
+      "code": "PF-31",
+      "name": "Irrigation filter seals",
+      "family": "Pumps, water & fluid",
+      "description": "Lid O-rings and element seals for screen and disc filters on a drip-irrigation head unit. They seal the filter lid that farm hands open for every clean-out, and stop dirty water bypassing the element. Moulded to the filter size, or from a worn ring.",
+      "types": "lid O-ring · element seal",
+      "sizeBasis": "To your filter size",
+      "industries": "Pumping",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "PF-31_irrigation-filter-seals.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "diaphragms",
+      "code": "AG-06",
+      "name": "Spray nozzle-body O-rings & check diaphragms",
+      "family": "Equipment & appliances",
+      "description": "O-rings, cap gaskets and anti-drip check diaphragms for spray nozzle bodies, boom fittings and hand lances. Each is chemistry-specific : send the concentrate as well as the field dilution. EPDM suits water-based sprays and fertiliser, nitrile oil-based ones, fluorocarbon many solvents; send the chemical and we confirm it.",
+      "types": "O-ring · check diaphragm · cap gasket",
+      "sizeBasis": "To your fitting",
+      "industries": "Agriculture",
+      "compounds": [
+        {
+          "code": "FKM",
+          "hardness": "60–85"
+        },
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "AG-06_spray-nozzle-body-o-rings-check-diaphragms.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "diaphragms",
+      "code": "DI-02",
+      "name": "Cut flat diaphragms",
+      "family": "Diaphragm shapes",
+      "description": "Flat diaphragms die-cut from plain rubber sheet, with no mould to pay for. They suit simple discs with a plain rim or bolt holes, for short strokes and low pressures; for a fabric ply, see C06-04 .",
+      "types": "plain disc · bolt-hole rim",
+      "sizeBasis": "Diameter, thickness and hole pattern, or your drawing",
+      "industries": "Pumping",
+      "compounds": [
+        {
+          "code": "FKM",
+          "hardness": "60–85"
+        },
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "DI-02_cut-flat-diaphragms.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "diaphragms",
+      "code": "PF-13",
+      "name": "Diaphragm-valve diaphragms",
+      "family": "Pump & valve diaphragms",
+      "description": "Weir-type and control-valve diaphragms that close the valve and keep the fluid away from the bonnet and stem. Plain, or fabric-reinforced to your fabric specification for higher pressure. Send the valve size and the fluid, and we propose the compound and the fabric.",
+      "types": "weir type · control-valve type · fabric-reinforced",
+      "sizeBasis": "To your valve size or drawing",
+      "industries": "Pumping",
+      "compounds": [
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        },
+        {
+          "code": "NR",
+          "hardness": "40–70"
+        }
+      ],
+      "image": "PF-13_diaphragm-valve-diaphragms.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "diaphragms",
+      "code": "PF-14",
+      "name": "Dosing-pump diaphragms & valve seals",
+      "family": "Pump & valve diaphragms",
+      "description": "All-rubber diaphragms (no PTFE face) for chemical dosing pumps, with the valve seals and O-rings of the liquid end. Send the chemical and its strength, and we propose the compound for it. Supplied with the diaphragm as one set per liquid end.",
+      "types": "flat diaphragm · domed diaphragm · valve seal",
+      "sizeBasis": "To your pump drawing",
+      "industries": "Pumping",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        }
+      ],
+      "image": "PF-14_dosing-pump-diaphragms-valve-seals.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "diaphragms",
+      "code": "PF-15",
+      "name": "Air-operated diaphragm-pump parts",
+      "family": "Pump & valve diaphragms",
+      "description": "Rubber diaphragms, solid check balls and valve seats for air-operated double-diaphragm transfer pumps. The compound is matched to the liquid being pumped, from water and slurry to oils and solvents.",
+      "types": "fabric-reinforced diaphragm · check ball · seat",
+      "sizeBasis": "To your pump model or drawing",
+      "industries": "Oil & Gas · Pumping",
+      "compounds": [
+        {
+          "code": "FKM",
+          "hardness": "60–85"
+        },
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "PF-15_air-operated-diaphragm-pump-parts.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "diaphragms",
+      "code": "PF-16",
+      "name": "Solenoid-valve & pressure-switch diaphragms",
+      "family": "Pump & valve diaphragms",
+      "description": "All-rubber diaphragms for solenoid valves and pump pressure switches. The pilot diaphragm opens and closes the valve; the switch membrane senses line pressure. Nitrile, EPDM or fluorocarbon is picked for the fluid the valve switches. Send the valve drawing or a worn diaphragm.",
+      "types": "pilot diaphragm · switch membrane",
+      "sizeBasis": "To your drawing",
+      "industries": "Pumping",
+      "compounds": [
+        {
+          "code": "FKM",
+          "hardness": "60–85"
+        },
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "PF-16_solenoid-valve-pressure-switch-diaphragms.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "diaphragms",
+      "code": "PF-25",
+      "name": "Aeration diffuser membranes",
+      "family": "Pump & valve diaphragms",
+      "description": "Perforated rubber membranes for 9- and 12-inch fine-bubble disc diffusers in sewage and effluent aeration tanks. The slits open under air pressure and close when the air stops, so sludge stays out. Moulded to the diffuser body; silicone is offered where the effluent calls for it.",
+      "types": "9-inch disc · 12-inch disc",
+      "sizeBasis": "To your diffuser body",
+      "industries": "Pumping",
+      "compounds": [
+        {
+          "code": "VMQ",
+          "hardness": "40–75"
+        },
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        }
+      ],
+      "image": "PF-25_aeration-diffuser-membranes.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "diaphragms",
+      "code": "AG-07",
+      "name": "Sprayer-pump diaphragms",
+      "family": "Pump & valve diaphragms",
+      "description": "Moulded diaphragms for piston-diaphragm pumps on boom and orchard sprayers, and for diaphragm-pump knapsack sprayers. They flex on every stroke and keep the spray liquid away from the pump's oil side. Nitrile suits oil-based formulations and fluorocarbon many solvent-based ones; send the spray chemistry and we confirm it.",
+      "types": "flat diaphragm · plain or fabric-reinforced",
+      "sizeBasis": "To your pump drawing",
+      "industries": "Agriculture",
+      "compounds": [
+        {
+          "code": "FKM",
+          "hardness": "60–85"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "AG-07_sprayer-pump-diaphragms.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "diaphragms",
+      "code": "DI-01",
+      "name": "Fuel-system diaphragms",
+      "family": "Pump & valve diaphragms",
+      "description": "Flat and domed diaphragms for fuel pumps and fuel-pressure regulators on vehicle engines. Fluorocarbon and nitrile are matched to petrol, diesel and ethanol blends; send the fuel and the blend, and we propose the compound.",
+      "types": "flat · domed",
+      "sizeBasis": "To your pump or regulator drawing",
+      "industries": "Automotive",
+      "compounds": [
+        {
+          "code": "FKM",
+          "hardness": "60–85"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "DI-01_fuel-system-diaphragms.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "diaphragms",
+      "code": "MD-02",
+      "name": "Instrument valve diaphragms",
+      "family": "Instrument diaphragms",
+      "description": "Media-separating diaphragms for the small solenoid and isolation valves in analysers and fluid-handling assemblies. They keep the reagent away from the valve mechanism and seal on a moulded bead. EPDM suits water-based reagents and fluorocarbon many solvent-bearing ones; send the reagent and we confirm it.",
+      "types": "flat membrane · domed membrane · moulded sealing bead",
+      "sizeBasis": "To your drawing revision",
+      "industries": "Medical",
+      "compounds": [
+        {
+          "code": "FKM",
+          "hardness": "60–85"
+        },
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        }
+      ],
+      "image": "MD-02_instrument-valve-diaphragms.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "diaphragms",
+      "code": "MD-03",
+      "name": "Instrument micro-pump diaphragms",
+      "family": "Instrument diaphragms",
+      "description": "All-rubber diaphragms for the small pumps that move wash, waste and transfer liquid inside an instrument. Send the reagent and the cleaning method with the drawing. EPDM suits water-based liquids; fluorocarbon many aggressive reagents. We confirm it against yours from the pump drawing.",
+      "types": "flat · moulded profile",
+      "sizeBasis": "To your drawing revision",
+      "industries": "Medical",
+      "compounds": [
+        {
+          "code": "FKM",
+          "hardness": "60–85"
+        },
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        }
+      ],
+      "image": "MD-03_instrument-micro-pump-diaphragms.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "bellows",
+      "code": "AG-02",
+      "name": "Lever & control-rod boots",
+      "family": "Vehicle & equipment boots",
+      "description": "Rubber boots for gear, range and PTO levers and for brake and hydraulic control rods on tractors and farm machines. They keep mud, dust and water out of the housing while the lever moves through its full travel.",
+      "types": "gear and range lever boot · PTO lever boot · brake and control-rod boot",
+      "sizeBasis": "To your rod and housing",
+      "industries": "Agriculture",
+      "compounds": [
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "AG-02_lever-control-rod-boots.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "bellows",
+      "code": "AT-08",
+      "name": "Ignition boots & plug-tube seals",
+      "family": "Vehicle & equipment boots",
+      "description": "Silicone boots for coil-on -plug and plug-lead ignition, and the tube seals that keep oil out of the spark-plug well. They hold their insulation and grip on top of a hot engine. Sized to the coil, the plug and the depth of the well.",
+      "types": "coil boot · plug-wire boot · plug-tube seal",
+      "sizeBasis": "To your coil, plug and tube drawing",
+      "industries": "Automotive",
+      "compounds": [
+        {
+          "code": "VMQ",
+          "hardness": "40–75"
+        }
+      ],
+      "image": "AT-08_ignition-boots-plug-tube-seals.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "bellows",
+      "code": "AT-20",
+      "name": "CV & steering-rack boots",
+      "family": "Vehicle & equipment boots",
+      "description": "Convoluted boots that keep grease in and road dirt and water out of CV joints and steering racks. The convolutions flex through every turn of the wheel and plunge of the shaft without cracking. Moulded to the joint, the shaft and the housing.",
+      "types": "outer CV · inner CV · rack bellows",
+      "sizeBasis": "To your joint, shaft and housing size",
+      "industries": "Automotive",
+      "compounds": [
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        }
+      ],
+      "image": "AT-20_cv-steering-rack-boots.jpg",
+      "mentionedInSiteCopy": "Industry copy: Automotive \"gaiters ... driveshafts\""
+    },
+    {
+      "page": "bellows",
+      "code": "AT-21",
+      "name": "Ball-joint & tie-rod dust boots",
+      "family": "Vehicle & equipment boots",
+      "description": "Small dust boots over ball studs, tie-rod ends, pushrods, steering columns and linkage joints. Each holds its grease and keeps grit out, so the joint keeps its fit and does not develop play. Moulded to the stud, the housing and the joint's travel.",
+      "types": "ball-joint boot · tie-rod boot · pushrod boot · column boot",
+      "sizeBasis": "To your stud and housing size",
+      "industries": "Automotive",
+      "compounds": [
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "AT-21_ball-joint-tie-rod-dust-boots.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "bellows",
+      "code": "BL-01",
+      "name": "Medical-equipment bellows & dust covers",
+      "family": "Bellows & dust boots",
+      "description": "Silicone bellows and dust covers for the moving rods, slides and spindles of laboratory, analysis and medical equipment. They keep dust and splashes out of the mechanism; send the travel and the fluids they see.",
+      "types": "convoluted bellows · dust cover · to drawing",
+      "sizeBasis": "To your drawing",
+      "industries": "Medical",
+      "compounds": [
+        {
+          "code": "VMQ",
+          "hardness": "40–75"
+        }
+      ],
+      "image": "BL-01_medical-equipment-bellows-dust-covers.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "bellows",
+      "code": "OG-03",
+      "name": "Expansion joints & flexible connectors",
+      "family": "Bellows & dust boots",
+      "description": "Rubber joints and short flexible spools at pump, compressor and chilled-water connections. They absorb thermal movement, misalignment and vibration where a rigid spool would crack or pass the vibration down the line. Rubber body only; flanges, unions and control rods are yours.",
+      "types": "single-arch joint · flanged connector · union-end connector",
+      "sizeBasis": "Rubber body to your size and end detail",
+      "industries": "Oil & Gas · Pumping",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "OG-03_expansion-joints-flexible-connectors.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "bellows",
+      "code": "PF-02",
+      "name": "Mechanical-seal elastomer bellows & O-rings",
+      "family": "Bellows & dust boots",
+      "description": "Rubber bellows for single-spring elastomer-bellows mechanical seals, and the secondary O-rings that seal the seal faces to the shaft and the gland. Moulded to the seal maker's drawing for centrifugal and process pumps.",
+      "types": "elastomer bellows · secondary O-ring",
+      "sizeBasis": "To the seal maker's drawing and shaft size",
+      "industries": "Oil & Gas · Pumping",
+      "compounds": [
+        {
+          "code": "FKM",
+          "hardness": "60–85"
+        },
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "PF-02_mechanical-seal-elastomer-bellows-o-rings.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "bellows",
+      "code": "EE-08",
+      "name": "Bushing & insulator covers",
+      "family": "Electrical covers",
+      "description": "Moulded covers that fit over transformer bushings and insulator tops on distribution networks. They keep birds and animals from bridging live parts, with a lead slit for the conductor. Silicone takes years of sun and weather on the pole, and each cover is moulded to the bushing or insulator it fits.",
+      "types": "bushing cover · insulator cap · lead slit",
+      "sizeBasis": "To your fitting",
+      "industries": "Electrical",
+      "compounds": [
+        {
+          "code": "VMQ",
+          "hardness": "40–75"
+        }
+      ],
+      "image": "EE-08_bushing-insulator-covers.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "anti-vibration-mounts",
+      "code": "AT-17",
+      "name": "Strut & shock mounts",
+      "family": "Vehicles & mobile plant",
+      "description": "Bonded top mounts, upper insulators and eye bushes for struts and shock absorbers. They carry the spring load into the body, let the strut turn with the steering, and keep road noise out of the cabin. Send the drawing or a worn mount.",
+      "types": "top mount · upper insulator · eye bush · dust boot",
+      "sizeBasis": "To your drawing",
+      "industries": "Automotive",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "NR",
+          "hardness": "40–70"
+        }
+      ],
+      "image": "AT-17_strut-shock-mounts.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "anti-vibration-mounts",
+      "code": "AV-05",
+      "name": "Stainless-steel mount options",
+      "family": "Standard mounts",
+      "description": "Bobbin, captive and marine mounts bonded onto stainless-steel plates and studs you supply, in place of plated carbon steel, for offshore decks, marine engine rooms and pump rooms where plated steel corrodes.",
+      "types": "stainless bobbin · stainless captive mount · stainless marine mount",
+      "sizeBasis": "Same sizes as the carbon-steel cards, on your stainless inserts or drawing",
+      "industries": "Oil & Gas · Pumping · Automotive",
+      "compounds": [
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "AV-05_stainless-steel-mount-options.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "anti-vibration-mounts",
+      "code": "AG-04",
+      "name": "Disc-harrow suspension blocks",
+      "family": "Vehicles & mobile plant",
+      "description": "Moulded rubber blocks and buffers that carry harrow discs on their arms and let each disc follow the ground. They take the shock of stones and stubble and spring the disc back into work. Sized to the arm and the disc load, all rubber.",
+      "types": "buffer block · cylindrical buffer",
+      "sizeBasis": "To your arm and load",
+      "industries": "Agriculture",
+      "compounds": [
+        {
+          "code": "NR",
+          "hardness": "40–70"
+        }
+      ],
+      "image": "AG-04_disc-harrow-suspension-blocks.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "anti-vibration-mounts",
+      "code": "AT-39",
+      "name": "Rail underframe equipment mounts",
+      "family": "Plant, pumps, marine & rail",
+      "description": "Rubber-to -metal mounts that carry underslung compressors and auxiliary equipment cases on locomotives and coaches. They keep the equipment's vibration out of the underframe and the track's shock out of the equipment. Load and deflection are agreed against your drawing.",
+      "types": "bonded mount · centre-bush mount · rebound buffer · plate pad",
+      "sizeBasis": "To your drawing and load",
+      "industries": "Automotive",
+      "compounds": [
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        },
+        {
+          "code": "NR",
+          "hardness": "40–70"
+        }
+      ],
+      "image": "AT-39_rail-underframe-equipment-mounts.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "anti-vibration-mounts",
+      "code": "AV-01",
+      "name": "Rubber springs",
+      "family": "Plant, pumps, marine & rail",
+      "description": "Tall bonded rubber springs that carry vibrating screens, feeders and conveyors on a large deflection and a low natural frequency. Rubber is bonded between steel end plates, and each spring is rated to its load.",
+      "types": "cylindrical spring · rectangular spring · to drawing",
+      "sizeBasis": "Load per spring, deflection and fixing, or your drawing",
+      "industries": "Mining",
+      "compounds": [
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        },
+        {
+          "code": "NR",
+          "hardness": "40–70"
+        }
+      ],
+      "image": "AV-01_rubber-springs.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "anti-vibration-mounts",
+      "code": "MH-01",
+      "name": "Crusher, feeder & conveyor-drive mounts",
+      "family": "Plant, pumps, marine & rail",
+      "description": "Rubber-to -metal mounts that carry the shock and vibration of crushing plant so it does not travel into the structure. They sit under jaw and cone crushers, vibrating feeders and conveyor drive units, and are rated to the machine's static load and deflection.",
+      "types": "crusher mounts · feeder mounts · drive-unit base mounts",
+      "sizeBasis": "To your drawing, load and deflection",
+      "industries": "Mining",
+      "compounds": [
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        },
+        {
+          "code": "NR",
+          "hardness": "40–70"
+        }
+      ],
+      "image": "MH-01_crusher-feeder-conveyor-drive-mounts.jpg",
+      "mentionedInSiteCopy": "Industry copy: Mining \"vibrating screen decks\""
+    },
+    {
+      "page": "anti-vibration-mounts",
+      "code": "MH-09",
+      "name": "Roller & compactor mounts",
+      "family": "Vehicles & mobile plant",
+      "description": "Rubber-to -metal mounts that isolate the vibrating drum of a road roller, and the base plate of a plate compactor, from the frame and the operator's handle. The drum's vibration goes into the ground, not into the frame or the operator's hands. Natural rubber, in protected positions on the machine.",
+      "types": "drum mount · plate mount",
+      "sizeBasis": "To your drawing",
+      "industries": "Mining",
+      "compounds": [
+        {
+          "code": "NR",
+          "hardness": "40–70"
+        }
+      ],
+      "image": "MH-09_roller-compactor-mounts.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "bushes",
+      "code": "BU-02",
+      "name": "Spherical bushes",
+      "family": "Bonded & plain bushes",
+      "description": "Rubber bonded between a ball-shaped inner sleeve and an outer tube, so the joint can tilt as well as twist. Used on reaction rods and linkages of trucks and plant; the ball sleeve is yours or machined to drawing.",
+      "types": "spherical bush · spherical bearing · to drawing",
+      "sizeBasis": "Ball Ø, outer Ø and length, or drawing",
+      "industries": "Mining · Automotive",
+      "compounds": [
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        },
+        {
+          "code": "NR",
+          "hardness": "40–70"
+        }
+      ],
+      "image": "BU-02_spherical-bushes.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "bushes",
+      "code": "BU-03",
+      "name": "Conical bushes (fitted in pairs)",
+      "family": "Bonded & plain bushes",
+      "description": "Cone-shaped bonded bushes fitted face to face in pairs, so one pivot carries radial and axial load and the pair is preloaded on assembly. For suspension and equipment pivots on plant and commercial vehicles.",
+      "types": "conical bush · conical bush pair · to drawing",
+      "sizeBasis": "Cone angle, bore, outer Ø and length, or drawing",
+      "industries": "Mining · Automotive",
+      "compounds": [
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        },
+        {
+          "code": "NR",
+          "hardness": "40–70"
+        }
+      ],
+      "image": "BU-03_conical-bushes-fitted-in-pairs.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "bushes",
+      "code": "BU-01",
+      "name": "Eccentric & cab pivot bushes",
+      "family": "Vehicle & plant bushes",
+      "description": "Bonded bushes with an offset inner sleeve, for the pivots of tilting cabs, ROPS frames and spring eyes on trucks, loaders and tractors. The offset puts the most rubber where the load is highest.",
+      "types": "eccentric bush · offset-sleeve bush · cab pivot bush",
+      "sizeBasis": "Inner Ø, outer Ø, length and offset, or drawing",
+      "industries": "Mining · Automotive · Agriculture",
+      "compounds": [
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        },
+        {
+          "code": "NR",
+          "hardness": "40–70"
+        }
+      ],
+      "image": "BU-01_eccentric-cab-pivot-bushes.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "bushes",
+      "code": "BU-04",
+      "name": "Void bushes",
+      "family": "Bonded & plain bushes",
+      "description": "Bushes moulded with voids through the rubber, so they are soft in one direction and stiff at right angles. The voids are set to the load, for spring eyes, cab pivots and linkages on trucks and plant.",
+      "types": "single void · dual void · to drawing",
+      "sizeBasis": "Inner Ø, outer Ø, length and void direction, or drawing",
+      "industries": "Mining · Automotive",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "NR",
+          "hardness": "40–70"
+        }
+      ],
+      "image": "BU-04_void-bushes.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "bushes",
+      "code": "BU-11",
+      "name": "Propshaft centre-bearing supports",
+      "family": "Vehicle & plant bushes",
+      "description": "A moulded rubber cushion ring that holds the propeller-shaft centre bearing in your bracket on trucks, buses and tractors. It carries the shaft, takes up small misalignment and damps driveline vibration before it reaches the chassis.",
+      "types": "centre-bearing cushion · to drawing",
+      "sizeBasis": "Bearing OD, housing and shaft, or drawing",
+      "industries": "Automotive · Agriculture",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "NR",
+          "hardness": "40–70"
+        }
+      ],
+      "image": "BU-11_propshaft-centre-bearing-supports.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "bushes",
+      "code": "PF-03",
+      "name": "Submersible-pump rubber bearings",
+      "family": "Pump bearings & couplings",
+      "description": "Water-lubricated nitrile bearing bushes for borewell submersible and vertical turbine pumps. The pumped water lubricates and cools the rubber, which keeps running where grit would score a metal bearing. Nitrile takes the water and any oil film; send the bore and shaft, or a worn bush.",
+      "types": "plain bush · to bore and shaft",
+      "sizeBasis": "To your bore and shaft",
+      "industries": "Pumping",
+      "compounds": [
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "PF-03_submersible-pump-rubber-bearings.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "bushes",
+      "code": "PF-06",
+      "name": "Coupling spiders & pin bushes",
+      "family": "Pump bearings & couplings",
+      "description": "Jaw-coupling spiders and pin-bush elements for the flexible coupling between a pump and its motor. They carry the torque, take up small misalignment and damp the start-up shock. Sized to the coupling, with the hardness set to the torque it carries; send the coupling size or a worn spider.",
+      "types": "jaw spider · pin bush",
+      "sizeBasis": "To your coupling size",
+      "industries": "Oil & Gas · Pumping",
+      "compounds": [
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "PF-06_coupling-spiders-pin-bushes.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "grommets",
+      "code": "GR-03",
+      "name": "Grommet sleeves",
+      "family": "Panel & cable grommets",
+      "description": "A grommet with a tubular sleeve moulded on one face. The sleeve guides the cable for a short run past the panel and protects it where it bends or rubs against nearby parts.",
+      "types": "short sleeve · long sleeve · to drawing",
+      "sizeBasis": "Hole Ø, panel thickness, cable OD and sleeve length",
+      "industries": "Electrical",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "GR-03_grommet-sleeves.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "grommets",
+      "code": "HV-06",
+      "name": "Refrigerant-line & wiring grommets",
+      "family": "Pass-throughs & plugs",
+      "description": "Grommets where refrigerant lines, coil connections and wiring pass through the cabinet panels of indoor, outdoor and rooftop units. They seal the hole and stop vibration wearing through the copper or the cable. Sized to the tube or cable, the hole and the panel thickness.",
+      "types": "panel grommet · cone grommet",
+      "sizeBasis": "To your tube and panel size",
+      "industries": "HVAC & appliances",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        }
+      ],
+      "image": "HV-06_refrigerant-line-wiring-grommets.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "grommets",
+      "code": "MD-07",
+      "name": "Access-port plugs & pass-through grommets",
+      "family": "Pass-throughs & plugs",
+      "description": "Plugs and slit grommets that close chamber access ports on instruments and let probes, cables and tubing pass through the wall. Solid plugs seal unused ports; closed-cell plugs grip a cable or probe. Moulded to the port, with the bore for the probe or cable.",
+      "types": "solid plug · pre-drilled cord plug · slit grommet",
+      "sizeBasis": "To your port",
+      "industries": "Medical",
+      "compounds": [
+        {
+          "code": "VMQ",
+          "hardness": "40–75"
+        }
+      ],
+      "image": "MD-07_access-port-plugs-pass-through-grommets.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "grommets",
+      "code": "PF-30",
+      "name": "Drip take-off grommets",
+      "family": "Pass-throughs & plugs",
+      "description": "Self-sealing rubber grommets that seal lateral take-off fittings into the PVC or PE sub-main of a drip-irrigation system. The fitting pushes through the grommet and holds without glue or clamps. EPDM takes the water and the sun on the field; send the punch size and the pipe.",
+      "types": "take-off grommet",
+      "sizeBasis": "To your hole and pipe-wall size",
+      "industries": "Pumping",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        }
+      ],
+      "image": "PF-30_drip-take-off-grommets.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "grommets",
+      "code": "HV-04",
+      "name": "Blower-motor grommets & resilient rings",
+      "family": "Anti-vibration grommets",
+      "description": "Grommets and resilient rings that mount blower and fan motors in their brackets on indoor units, air handlers and appliances. They keep motor hum and fan imbalance out of the housing and the duct. Sized to the motor bracket and the motor's weight and speed.",
+      "types": "double-flange grommet · resilient ring",
+      "sizeBasis": "To your motor bracket",
+      "industries": "HVAC & appliances",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        }
+      ],
+      "image": "HV-04_blower-motor-grommets-resilient-rings.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "grommets",
+      "code": "AT-31",
+      "name": "Body & drain plugs",
+      "family": "Caps, plugs & stoppers",
+      "description": "Push-in plugs that close unused body holes, sill and floor drains, roof-rack holes and spare-wheel wells after painting. One-way drain valves let water out of the body and keep it from coming back in. Sized to the hole and the panel thickness, painted or bare.",
+      "types": "sill and floor drain plug · one-way drain valve",
+      "sizeBasis": "To your hole size and panel thickness",
+      "industries": "Automotive",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        }
+      ],
+      "image": "AT-31_body-drain-plugs.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "sponge-foam-rubber",
+      "code": "SF-02",
+      "name": "Hot-joint sponge seals (heater & lamp housings)",
+      "family": "Strip, cord & profiles",
+      "description": "Silicone closed-cell sponge seals for heater, lamp and luminaire housings whose joints run above 140 °C. They seal under the light clamp a housing lid can apply, as strip, cord or a joined frame.",
+      "types": "strip · cord · joined frame",
+      "sizeBasis": "Section and frame size to your drawing",
+      "industries": "HVAC & appliances · Electrical",
+      "compounds": [],
+      "image": "SF-02_hot-joint-sponge-seals-heater-lamp-housings.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "sponge-foam-rubber",
+      "code": "SF-03",
+      "name": "Moulded sponge parts",
+      "family": "Gaskets, tape & moulded parts",
+      "description": "Closed-cell sponge moulded to a three-dimensional shape in the press, so the part leaves the tool in its final form. For contoured seals and pads that a flat sheet or a straight strip cannot follow.",
+      "types": "contoured pad · moulded cap · to drawing",
+      "sizeBasis": "To your part drawing",
+      "industries": "Automotive",
+      "compounds": [],
+      "image": "SF-03_moulded-sponge-parts.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "sponge-foam-rubber",
+      "code": "SF-04",
+      "name": "Drum & pail lid seals",
+      "family": "Gaskets, tape & moulded parts",
+      "description": "Lid gaskets that keep lube-oil and chemical drums and pails sealed against leaks and moisture in storage and transport. Supplied as D-section rings sized to the lid curl, in solid rubber or closed-cell sponge.",
+      "types": "solid D-ring · sponge D-ring · to lid size",
+      "sizeBasis": "Lid diameter and curl section",
+      "industries": "Oil & Gas",
+      "compounds": [
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "SF-04_drum-pail-lid-seals.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "sponge-foam-rubber",
+      "code": "SF-05",
+      "name": "High-density microcellular pads",
+      "family": "Gaskets, tape & moulded parts",
+      "description": "Dense closed-cell sponge sheet and pads with very fine cells. They carry a standing load and absorb impact and vibration without bottoming out, where a standard sponge grade would crush flat.",
+      "types": "sheet · die-cut pad · strip",
+      "sizeBasis": "Pad size × thickness, and density",
+      "industries": "Automotive · HVAC & appliances",
+      "compounds": [],
+      "image": "SF-05_high-density-microcellular-pads.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "seals",
+      "code": "SL-01",
+      "name": "Pneumatic cylinder seals",
+      "family": "Rod, piston & pump seals",
+      "description": "Rubber piston, rod and cushion seals for air cylinders and air-operated valves. Lips are shaped for low friction on dry or lightly oiled air, so the rod starts smoothly. Cushion seals trap air, slowing the piston at end of stroke.",
+      "types": "piston seals · rod seals · cushion seals",
+      "sizeBasis": "Rod or bore Ø and groove, or your drawing",
+      "industries": "Pumping",
+      "compounds": [
+        {
+          "code": "FKM",
+          "hardness": "60–85"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "SL-01_pneumatic-cylinder-seals.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "seals",
+      "code": "AT-23",
+      "name": "Brake & clutch hydraulic seals",
+      "family": "Valve & brake seals",
+      "description": "Square-cut caliper seals, master- and wheel-cylinder cups, caliper dust boots and reservoir grommets for brake and clutch hydraulics. They run in glycol brake fluid, which swells the mineral-oil compounds. Sized to the bore and groove of the caliper or cylinder, or from a worn seal.",
+      "types": "piston seal · cup seal · dust boot · reservoir grommet",
+      "sizeBasis": "To your bore and groove",
+      "industries": "Automotive",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        }
+      ],
+      "image": "AT-23_brake-clutch-hydraulic-seals.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "seals",
+      "code": "OG-05",
+      "name": "Valve stem & actuator seals",
+      "family": "Valve & brake seals",
+      "description": "Stem seals that hold the line pressure round a turning or rising valve stem, and piston seals for the pneumatic actuators that drive the valve. Fitted on process and utility valves, to the valve maker's drawing.",
+      "types": "stem packing · stem lip seal · actuator piston seal",
+      "sizeBasis": "To your stem, bore and groove",
+      "industries": "Oil & Gas",
+      "compounds": [
+        {
+          "code": "FKM",
+          "hardness": "60–85"
+        },
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "OG-05_valve-stem-actuator-seals.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "oil-seals",
+      "code": "SL-02",
+      "name": "Grease seals (springless lip)",
+      "family": "Oil seals",
+      "description": "An oil-seal style lip with no garter spring. It holds grease in a packed bearing and keeps dust and water out on farm implements, conveyor idlers and slow-turning shafts where a spring is not needed.",
+      "types": "rubber-covered OD · metal-cased",
+      "sizeBasis": "Shaft × bore × width, or your sample",
+      "industries": "Mining · Agriculture",
+      "compounds": [
+        {
+          "code": "FKM",
+          "hardness": "60–85"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "SL-02_grease-seals-springless-lip.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "oil-seals",
+      "code": "SL-03",
+      "name": "All-rubber oil seals for large shafts",
+      "family": "Oil seals",
+      "description": "An oil seal moulded entirely in rubber, with no metal insert, for large shafts in an open housing. A cover plate holds it in the bore. For large gearboxes, crushers and slow, heavy shafts.",
+      "types": "all-rubber ring with garter spring · to drawing",
+      "sizeBasis": "Shaft × bore × width, to your drawing",
+      "industries": "Mining",
+      "compounds": [
+        {
+          "code": "FKM",
+          "hardness": "60–85"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        }
+      ],
+      "image": "SL-03_all-rubber-oil-seals-for-large-shafts.jpg",
+      "mentionedInSiteCopy": null
+    },
+    {
+      "page": "rubber-lining",
+      "code": "RL-06",
+      "name": "General-purpose rubber sheet",
+      "family": "Wear sheet & conveyor rubber",
+      "description": "Plain rubber sheet in cut sheets or pieces, in EPDM, neoprene, nitrile or natural rubber, for your own cutting into packing, pads and gaskets. Thickness, size and hardness to your order.",
+      "types": "EPDM sheet · neoprene sheet · nitrile sheet · natural rubber sheet",
+      "sizeBasis": "Thickness × sheet size, or cut pieces to your drawing",
+      "industries": "Mining · Pumping",
+      "compounds": [
+        {
+          "code": "EPDM",
+          "hardness": "50–80"
+        },
+        {
+          "code": "CR",
+          "hardness": "50–75"
+        },
+        {
+          "code": "NBR",
+          "hardness": "55–80"
+        },
+        {
+          "code": "NR",
+          "hardness": "40–70"
+        }
+      ],
+      "image": "RL-06_general-purpose-rubber-sheet.jpg",
+      "mentionedInSiteCopy": null
+    }
+  ]
+}

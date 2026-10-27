@@ -749,6 +749,13 @@ export const partsGrid = defineType({
           fields: [
             defineField({ name: "name", title: "Part", type: "string", validation: (r) => r.required().min(2) }),
             defineField({ name: "availability", title: "Availability", type: "string", description: "e.g. “to drawing” or “standard sizes”." }),
+            defineField({
+              name: "description",
+              title: "One-line description",
+              type: "text",
+              rows: 2,
+              description: "Optional. What the part is and where it is used, one or two sentences. Shown under the name, cut to two lines.",
+            }),
             defineField({ name: "href", title: "Part page", type: "string", description: "The part's own page, e.g. /products/gaskets/epdm — the name becomes the link. Empty for a family with no page." }),
             defineField({
               name: "image",

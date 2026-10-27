@@ -54,7 +54,7 @@ export function PartsGrid({
   /** The sheets' static list. Replaces `parts` when filled; a card with an
    *  `href` is a part with its own page and its name is the link. A card
    *  may carry its own photo whether or not it has a page. */
-  items?: readonly { name: string; availability?: string; href?: string; image?: CmsImage }[];
+  items?: readonly { name: string; availability?: string; description?: string; href?: string; image?: CmsImage }[];
   /** One photo of the parts together, drawn above whichever list renders. */
   groupPhoto?: CmsImage;
   categoryLabel: string;
@@ -75,7 +75,7 @@ function PartsList({
   categorySlug,
 }: {
   parts: readonly { id: string; label: string; legacyUrl?: string }[];
-  items: readonly { name: string; availability?: string; href?: string; image?: CmsImage }[];
+  items: readonly { name: string; availability?: string; description?: string; href?: string; image?: CmsImage }[];
   categoryLabel: string;
   categorySlug: string;
 }) {
@@ -118,6 +118,9 @@ function PartsList({
                 )}
               </h3>
               {it.availability && <p className="text-ink-4 mt-2 text-sm">{it.availability}</p>}
+              {it.description && (
+                <p className="text-ink-3 mt-2 line-clamp-2 text-sm leading-relaxed">{it.description}</p>
+              )}
             </div>
           </li>
         ))}

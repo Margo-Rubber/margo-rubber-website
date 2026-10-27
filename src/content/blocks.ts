@@ -77,6 +77,8 @@ const partsGridSchema = z.object({
       z.object({
         name: z.string().min(2),
         availability: z.string().optional(),
+        /** One or two sentences on what the part is (catalogue import, 27 Oct 2026). */
+        description: z.string().optional(),
         href: z.string().optional(),
         /** The part's own photo — for parts with or without a page. */
         image: cmsImageSchema.optional(),
