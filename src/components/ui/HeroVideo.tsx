@@ -13,7 +13,9 @@
  * opacity on a playing video are re-applied to every frame, and together
  * with the slow drift animation they made playback stutter on laptops.
  * If the video is ever replaced, re-export it with that look (or put the
- * filters back on the className below) and export a new first-frame poster.
+ * filters back on the className below) and export a new first-frame poster:
+ *   ffmpeg -i hero-bg-boomerang.mp4 -frames:v 1 -q:v 3 hero-bg-poster.jpg
+ * A stale poster shows the old look until the new video starts playing.
  *
  * PING-PONG LOOP: the video plays forward, then in reverse, then forward
  * again, instead of jumping back to the start. This is baked into the file

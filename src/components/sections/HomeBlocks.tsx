@@ -377,8 +377,10 @@ export function HomeHero({
   return (
     <header className="margo-hero bg-canvas relative isolate overflow-hidden hero-offset pb-24 md:pb-32">
       <HeroVideo
-        src="/videos/hero-bg-boomerang.mp4"
-        poster="/videos/hero-bg-poster.jpg"
+        // Bump ?v= whenever the video or poster file is replaced, so cached
+        // copies of the old files are not shown.
+        src="/videos/hero-bg-boomerang.mp4?v=2"
+        poster="/videos/hero-bg-poster.jpg?v=2"
         className="margo-hero-image -z-20"
       />
       <div
