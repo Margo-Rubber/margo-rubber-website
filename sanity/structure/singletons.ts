@@ -29,6 +29,7 @@ export const SINGLETON_TYPES = new Set([
   "aboutPage",
   "whyMargoPage",
   "exportPage",
+  "manufacturingPage",
   "certificationsPage",
   "caseStudiesPage",
   "contactPage",

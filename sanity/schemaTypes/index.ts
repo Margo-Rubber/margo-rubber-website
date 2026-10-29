@@ -8,6 +8,7 @@ import { SIMPLE_MARKETING_TYPES } from "./documents/marketing-simple.ts";
 import { MEDIUM_MARKETING_TYPES } from "./documents/marketing-medium.ts";
 import { productsHub } from "./documents/products-hub.ts";
 import { homePage } from "./documents/home.ts";
+import { manufacturingPage } from "./documents/manufacturing.ts";
 import { LARGE_MARKETING_TYPES } from "./documents/about-why.ts";
 import { imageOverride } from "./documents/imageOverride.ts";
 import { siteSettings } from "./documents/settings.ts";
@@ -40,6 +41,7 @@ export const schemaTypes: SchemaTypeDefinition[] = [
   ...MEDIUM_MARKETING_TYPES,
   productsHub,
   homePage,
+  manufacturingPage,
   ...LARGE_MARKETING_TYPES,
   imageOverride,
 

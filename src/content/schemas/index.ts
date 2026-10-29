@@ -2295,6 +2295,43 @@ export const utilityPageSchema = baseSchema.extend({
 });
 
 /**
+ * /manufacturing — the process page (3rd Shade keyword pack K5, 25 Oct 2026).
+ *
+ * An article-shaped one-off: H1, an answer paragraph (fixed in code with the
+ * other answer blocks), then H2 sections of paragraphs, bullets and small
+ * tables, closed by one CTA. Sections are structured rather than free prose
+ * so the .mdx fallback carries the identical content and the page stays
+ * string-checkable. Table rows are pipe-separated cells, the same convention
+ * the resource guides' tables use (Sanity arrays cannot nest arrays).
+ */
+export const manufacturingPageSchema = baseSchema.extend({
+  /** One short line under the H1; the answer block itself lives in answer-blocks.ts. */
+  standfirst: z.string().optional(),
+  sections: z
+    .array(
+      z.object({
+        heading: z.string().min(4),
+        /** Paragraphs, blank-line separated; **bold** and [text](/path) render through emphasised(). */
+        intro: z.string().optional(),
+        bullets: z.array(z.string()).default([]),
+        table: z
+          .object({
+            columns: z.array(z.string()).min(2),
+            /** One string per row, cells separated by | . */
+            rows: z.array(z.string()).min(1),
+            caption: z.string().optional(),
+          })
+          .optional(),
+        /** Paragraphs after the table. */
+        outro: z.string().optional(),
+      }),
+    )
+    .min(3),
+  cta: z.object({ label: z.string(), href: z.string() }).optional(),
+});
+export type ManufacturingPage = z.infer<typeof manufacturingPageSchema>;
+
+/**
  * SKU detail — /products/[category]/[product]
  *
  * Strategy D3 / Scenario 1 from §4.5: build the route and template now, ship

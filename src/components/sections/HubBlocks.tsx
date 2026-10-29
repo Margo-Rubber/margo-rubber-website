@@ -18,7 +18,7 @@ import {
   EnquirySubmit,
 } from "@/components/forms/EnquiryForm";
 import { AttachmentField } from "@/components/forms/AttachmentField";
-import { accented } from "@/components/ui/Emphasis";
+import { accented, emphasised } from "@/components/ui/Emphasis";
 import { displaySize } from "@/lib/display-size";
 import { SlotValue } from "@/components/ui/SlotValue";
 
@@ -413,7 +413,7 @@ export function ProcessSteps({
           </span>
           <div>
             <h3 className="text-ink text-sm font-semibold">{s.title}</h3>
-            <p className="text-ink-4 mt-1.5 text-sm leading-relaxed">{s.body}</p>
+            <p className="text-ink-4 mt-1.5 text-sm leading-relaxed">{emphasised(s.body)}</p>
           </div>
         </li>
       ))}

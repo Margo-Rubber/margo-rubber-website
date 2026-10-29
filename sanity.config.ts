@@ -157,6 +157,11 @@ export default defineConfig({
                         withPhotographs(S, S.document().schemaType("exportPage").documentId("exportPage-export").title("Export")),
                       ),
                     S.listItem()
+                      .title("Manufacturing")
+                      .child(
+                        withPhotographs(S, S.document().schemaType("manufacturingPage").documentId("manufacturingPage-manufacturing").title("Manufacturing")),
+                      ),
+                    S.listItem()
                       .title("Certifications")
                       .child(
                         withPhotographs(S, S.document().schemaType("certificationsPage").documentId("certificationsPage-certifications").title("Certifications")),

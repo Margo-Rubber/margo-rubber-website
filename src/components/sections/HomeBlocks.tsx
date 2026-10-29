@@ -5,6 +5,7 @@ import { HeroVideo } from "@/components/ui/HeroVideo";
 import { ExportMap } from "@/components/sections/ExportMap";
 import { buildExportMap, laneCards } from "@/lib/export-map";
 import { Container } from "@/components/ui/Section";
+import { emphasised } from "@/components/ui/Emphasis";
 import type { Compound } from "@/content/schemas";
 import { Bloom } from "@/components/ui/Bloom";
 import { ScrollSteps } from "@/components/ui/ScrollSteps";
@@ -883,7 +884,7 @@ export function Process({
                     )}
                   </h3>
                   <p className="text-ink-4 mt-2 text-sm leading-relaxed">
-                    {s.body}
+                    {emphasised(s.body)}
                   </p>
                 </div>
               </div>

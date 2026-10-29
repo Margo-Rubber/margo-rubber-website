@@ -95,6 +95,14 @@ export const ANSWER_BLOCKS: Record<string, AnswerBlock> = {
     q: "Which seal compound is used for hydrocarbon service?",
     a: "FKM is the usual choice where petroleum oils, fuels or solvents meet sustained heat: it is rated to +250 °C, continuous to +200 °C. NBR suits moderate-temperature oil contact to +120 °C. EPDM is for water and steam, not hydrocarbons. Margo is ISO 9001:2015 certified; NORSOK M-710 and API qualification is a 2027 roadmap item, not held today.",
   },
+  "/manufacturing": {
+    // K5 (keyword pack, 25 Oct 2026). The answer is the pack's opening answer
+    // block verbatim; the pack supplies no question, so this one is drafted
+    // here — reword freely, the answer must stay as written.
+    row: 0,
+    q: "How does Margo mould a rubber part?",
+    a: "Margo Rubber Products mixes its own compound, makes its own moulds and produces rubber parts as per your drawing by compression, transfer and injection moulding at one plant in Vilholi, Nashik. Every mixed batch is checked, every run is checked at set-up and every half hour, and every despatch lot is checked for dimensions and hardness before release. Quotation in 48 hours, production in three to four weeks.",
+  },
   "/export": {
     row: 20,
     q: "What lead time and documents come with an export order?",

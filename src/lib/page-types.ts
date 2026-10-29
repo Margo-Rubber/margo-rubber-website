@@ -11,6 +11,7 @@ import {
   industriesHubSchema,
   resourcesHubSchema,
   utilityPageSchema,
+  manufacturingPageSchema,
   siteSettingsSchema,
 } from "../content/schemas/index.ts";
 
@@ -38,6 +39,7 @@ export const COLLECTIONS_FOR_PAGES: Record<
   certifications: { type: "certificationsPage", schema: certificationsPageSchema },
   "case-studies": { type: "caseStudiesPage", schema: caseStudiesPageSchema },
   export: { type: "exportPage", schema: exportPageSchema },
+  manufacturing: { type: "manufacturingPage", schema: manufacturingPageSchema },
   products: { type: "productsHub", schema: productsHubSchema },
   home: { type: "homePage", schema: homePageSchema },
   "why-margo": { type: "whyMargoPage", schema: whyMargoPageSchema },
