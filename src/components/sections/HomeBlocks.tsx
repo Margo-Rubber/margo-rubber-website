@@ -360,6 +360,7 @@ export function HomeHero({
   eyebrow,
   h1Lines,
   intro,
+  mobileIntro,
   introLinks = [],
   actions,
   chips,
@@ -368,6 +369,8 @@ export function HomeHero({
   eyebrow: string;
   h1Lines: readonly string[];
   intro: string;
+  /** Shorter copy for phones; the full intro is used when absent. */
+  mobileIntro?: string;
   introLinks?: readonly { label: string; href: string }[];
   image: string;
   actions: readonly { label: string; href: string; variant: string }[];
@@ -420,9 +423,18 @@ export function HomeHero({
           <div>
             <Rule>{eyebrow}</Rule>
             <Marked as="h1" size="hero" lines={h1Lines} className="mt-6" />
-            <p className="text-ink-3 mt-7 max-w-[46ch] leading-relaxed">
-              <LinkedText text={intro} links={introLinks} />
-            </p>
+            {mobileIntro ? (
+              <>
+                <p className="text-ink-3 mt-7 max-w-[46ch] leading-relaxed md:hidden">{mobileIntro}</p>
+                <p className="text-ink-3 mt-7 hidden max-w-[46ch] leading-relaxed md:block">
+                  <LinkedText text={intro} links={introLinks} />
+                </p>
+              </>
+            ) : (
+              <p className="text-ink-3 mt-7 max-w-[46ch] leading-relaxed">
+                <LinkedText text={intro} links={introLinks} />
+              </p>
+            )}
 
             <div className="mt-9 flex flex-wrap gap-3">
               {actions.map((a) =>
@@ -430,7 +442,7 @@ export function HomeHero({
                   <Link
                     key={a.label}
                     href={a.href}
-                    className="margo-hero-action bg-accent-400 text-ink hover:opacity-90 shadow-glow rounded-cta inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold"
+                    className="margo-hero-action bg-accent-400 text-canvas hover:opacity-90 shadow-glow rounded-cta inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold"
                   >
                     {a.label}
                     <Arrow />
@@ -472,7 +484,8 @@ export function HomeHero({
                 className="margo-hero-stat rounded-card border-line flex items-center gap-3 border bg-[#111418]/80 px-6 py-4 shadow-[0_0_0_1px_rgba(43,188,196,0.05)] backdrop-blur-md"
               >
                 {c.icon && <IconTile name={c.icon} />}
-                <div>
+                <div className="flex flex-col-reverse">
+                  <dt className="text-ink-4 mt-1.5 text-sm">{c.label}</dt>
                   <dd
                     className={
                       c.icon
@@ -482,7 +495,6 @@ export function HomeHero({
                   >
                     {c.value}
                   </dd>
-                  <dt className="text-ink-4 mt-1.5 text-sm">{c.label}</dt>
                 </div>
               </div>
             ))}
@@ -594,10 +606,10 @@ export function Story({
               {stats.map((s) => (
                 <div
                   key={s.label}
-                  className="margo-card rounded-card border-line border bg-[#0F1115] px-6 py-5"
+                  className="margo-card rounded-card border-line flex flex-col-reverse border bg-[#0F1115] px-6 py-5"
                 >
-                  <dd className="text-ink text-xl font-semibold"><SlotValue value={s.value} /></dd>
                   <dt className="text-ink-4 mt-1 text-sm">{s.label}</dt>
+                  <dd className="text-ink text-xl font-semibold"><SlotValue value={s.value} /></dd>
                 </div>
               ))}
             </dl>
@@ -963,9 +975,9 @@ export function Facility({
             {stats.length > 0 && (
               <dl className="border-line mt-8 grid grid-cols-2 gap-6 border-t pt-8 sm:grid-cols-4">
                 {stats.map((st) => (
-                  <div key={st.label}>
-                    <dd className="text-ink text-2xl font-bold"><SlotValue value={st.value} /></dd>
+                  <div key={st.label} className="flex flex-col-reverse">
                     <dt className="text-ink-4 mt-1 text-xs">{st.label}</dt>
+                    <dd className="text-ink text-2xl font-bold"><SlotValue value={st.value} /></dd>
                   </div>
                 ))}
               </dl>
@@ -1034,7 +1046,7 @@ export function ExportMarkets({
                 {noteLink?.label && noteLink.href && (
                   <>
                     {" "}
-                    <Link href={noteLink.href} className="text-accent-400 hover:opacity-80">
+                    <Link href={noteLink.href} className="text-accent-400 underline decoration-accent-400/50 underline-offset-4 hover:opacity-80">
                       {noteLink.label} <span aria-hidden>→</span>
                     </Link>
                   </>
@@ -1271,12 +1283,12 @@ export function HomeCta({
               {panel.stats.map((s) => (
                 <div
                   key={s.label}
-                  className="rounded-card border-line bg-canvas/50 border px-5 py-4 backdrop-blur"
+                  className="rounded-card border-line bg-canvas/50 flex flex-col-reverse border px-5 py-4 backdrop-blur"
                 >
-                  <dd className="text-ink text-lg font-semibold"><SlotValue value={s.value} /></dd>
                   <dt className="text-eyebrow text-ink-4 mt-1 font-mono uppercase">
                     {s.label}
                   </dt>
+                  <dd className="text-ink text-lg font-semibold"><SlotValue value={s.value} /></dd>
                 </div>
               ))}
             </dl>
@@ -1303,7 +1315,7 @@ export function HomeCta({
               <AttachmentField label={uploadLabel} hint={uploadHint} className="sm:col-span-2" />
             </div>
 
-            <EnquirySubmit className="bg-accent-400 text-ink hover:opacity-90 shadow-glow rounded-cta mt-7 flex w-full items-center justify-center gap-2 px-6 py-4 text-sm font-semibold transition-colors">
+            <EnquirySubmit className="bg-accent-400 text-canvas hover:opacity-90 shadow-glow rounded-cta mt-7 flex w-full items-center justify-center gap-2 px-6 py-4 text-sm font-semibold transition-colors">
               {submitLabel}
               <Arrow />
             </EnquirySubmit>

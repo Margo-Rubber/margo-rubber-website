@@ -1,5 +1,6 @@
 "use client";
 
+import { useSyncExternalStore } from "react";
 import { preload } from "react-dom";
 
 /**
@@ -37,7 +38,22 @@ import { preload } from "react-dom";
  * before it appears.
  *
  * Decorative: muted, no controls, hidden from assistive tech.
+ *
+ * MOBILE / LOW-DATA: the poster is always rendered as a plain <img> in the
+ * server HTML (so it is the LCP element and is found immediately). The 3.5 MB
+ * video is only mounted after hydration, and only on screens 768px and wider,
+ * without reduced-motion and without the browser's Data Saver on. Phones and
+ * data-saver users therefore never download the mp4.
  */
+const noopSubscribe = () => () => {};
+
+function shouldPlayVideo(): boolean {
+  const wide = window.matchMedia("(min-width: 768px)").matches;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const conn = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
+  return wide && !reduceMotion && conn?.saveData !== true;
+}
+
 export function HeroVideo({
   src,
   poster,
@@ -48,19 +64,29 @@ export function HeroVideo({
   className?: string;
 }) {
   preload(poster, { as: "image", fetchPriority: "high" });
+  // Server and first client render: false (poster only). After hydration the
+  // client value applies, so the video mounts only where it should.
+  const play = useSyncExternalStore(noopSubscribe, shouldPlayVideo, () => false);
+  const cls = `absolute inset-0 h-full w-full object-cover ${className ?? ""}`;
   return (
-    <video
-      autoPlay
-      muted
-      loop
-      playsInline
-      preload="auto"
-      poster={poster}
-      aria-hidden
-      tabIndex={-1}
-      className={`absolute inset-0 h-full w-full object-cover ${className ?? ""}`}
-    >
-      <source src={src} type="video/mp4" />
-    </video>
+    <>
+      {/* eslint-disable-next-line @next/next/no-img-element -- decorative LCP poster, already a sized jpg */}
+      <img src={poster} alt="" aria-hidden fetchPriority="high" decoding="async" className={cls} />
+      {play && (
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster={poster}
+          aria-hidden
+          tabIndex={-1}
+          className={cls}
+        >
+          <source src={src} type="video/mp4" />
+        </video>
+      )}
+    </>
   );
 }

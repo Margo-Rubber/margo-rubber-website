@@ -371,7 +371,7 @@ function renderBlock(block: Block, ctx: Ctx): ReactNode {
                 {b.closingLink?.label && b.closingLink.href && (
                   <>
                     {" "}
-                    <Link href={b.closingLink.href} className="text-accent-400 hover:opacity-80">
+                    <Link href={b.closingLink.href} className="text-accent-400 underline decoration-accent-400/50 underline-offset-4 hover:opacity-80">
                       {b.closingLink.label} <span aria-hidden>›</span>
                     </Link>
                   </>
@@ -610,7 +610,7 @@ function renderBlock(block: Block, ctx: Ctx): ReactNode {
                 </p>
                 <p className="text-ink-3 text-sm leading-relaxed">
                   {r.href ? (
-                    <Link href={r.href} className="text-accent-400 hover:opacity-80">
+                    <Link href={r.href} className="text-accent-400 underline decoration-accent-400/50 underline-offset-4 hover:opacity-80">
                       {r.need} <span aria-hidden>›</span>
                     </Link>
                   ) : (

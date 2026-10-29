@@ -64,6 +64,7 @@ export default async function HomePage() {
         eyebrow={fm.hero.eyebrow}
         h1Lines={fm.hero.h1Lines}
         intro={fm.hero.intro}
+        mobileIntro={fm.hero.mobileIntro}
         introLinks={fm.hero.introLinks}
         image={fm.hero.image}
         actions={fm.hero.actions}

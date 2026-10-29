@@ -297,7 +297,7 @@ export async function SiteFooter() {
           </div>
           <Link
             href={fm.cta.action.href}
-            className="rounded-cta bg-accent-400 text-ink hover:opacity-90 inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-colors"
+            className="rounded-cta bg-accent-400 text-canvas hover:opacity-90 inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-colors"
           >
             {fm.cta.action.label}
             <svg

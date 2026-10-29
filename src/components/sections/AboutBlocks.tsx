@@ -444,7 +444,7 @@ export function AboutHero({
                   <Link
                     key={a.label}
                     href={a.href}
-                    className="bg-accent-400 text-ink hover:opacity-90 shadow-glow rounded-cta inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold transition-colors"
+                    className="bg-accent-400 text-canvas hover:opacity-90 shadow-glow rounded-cta inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold transition-colors"
                   >
                     {a.label}
                     <Arrow />
@@ -511,13 +511,13 @@ export function HeroStats({
       <Container>
         <dl className="border-line rounded-card grid grid-cols-2 gap-y-10 border bg-surface-3 px-6 py-12 md:grid-cols-4">
           {stats.map((s) => (
-            <div key={s.label} className="text-center">
-              <dd className="text-accent-400 text-[clamp(2rem,4vw,3.25rem)] leading-none font-semibold tracking-tight">
-                <SlotValue value={s.value} />
-              </dd>
+            <div key={s.label} className="flex flex-col-reverse text-center">
               <dt className="text-eyebrow text-ink-4 mt-3 font-mono uppercase">
                 {s.label}
               </dt>
+              <dd className="text-accent-400 text-[clamp(2rem,4vw,3.25rem)] leading-none font-semibold tracking-tight">
+                <SlotValue value={s.value} />
+              </dd>
             </div>
           ))}
         </dl>
@@ -580,7 +580,7 @@ export function Story({
                 delay={180}
               />
             </div>
-            <div className="bg-accent-400 text-ink shadow-glow absolute bottom-6 left-0 rounded-2xl px-6 py-4 text-center">
+            <div className="bg-accent-400 text-canvas shadow-glow absolute bottom-6 left-0 rounded-2xl px-6 py-4 text-center">
               <p className="text-2xl leading-none font-semibold"><SlotValue value={badge.value} /></p>
               <p className="text-eyebrow mt-1.5 font-mono uppercase opacity-80">
                 {badge.label}
@@ -912,9 +912,9 @@ export function Manufacturing({
               className="rounded-card border-line flex items-center gap-4 border bg-surface-3 p-6"
             >
               <IconTile name={s.icon} />
-              <div>
-                <dd className="text-ink text-lg font-semibold"><SlotValue value={s.value} /></dd>
+              <div className="flex flex-col-reverse">
                 <dt className="text-ink-4 mt-0.5 text-sm">{s.label}</dt>
+                <dd className="text-ink text-lg font-semibold"><SlotValue value={s.value} /></dd>
               </div>
             </div>
           ))}
@@ -1009,14 +1009,14 @@ export function Team({
           {stats.filter((s) => s.value.trim()).map((s) => (
             <div
               key={s.label}
-              className="margo-glow-stat rounded-card border-line relative isolate overflow-hidden border bg-surface-3 py-8 text-center"
+              className="margo-glow-stat flex flex-col-reverse rounded-card border-line relative isolate overflow-hidden border bg-surface-3 py-8 text-center"
             >
-              <dd className="margo-glow-num text-2xl font-semibold">
-                <SlotValue value={s.value} />
-              </dd>
               <dt className="text-eyebrow text-ink-4 mt-2 font-mono uppercase">
                 {s.label}
               </dt>
+              <dd className="margo-glow-num text-2xl font-semibold">
+                <SlotValue value={s.value} />
+              </dd>
             </div>
           ))}
         </dl>
@@ -1068,7 +1068,7 @@ function MarketLanes({
             <span className="bg-accent-400 size-1.5 rounded-full" aria-hidden />
             Priority lanes
             <span className="text-accent-400">{String(lanes.length).padStart(2, "0")}</span>
-            <span className="margo-lanes-meta text-ink-4/70 ml-auto">Port · transit</span>
+            <span className="margo-lanes-meta text-ink-4 ml-auto">Port · transit</span>
           </p>
           <ol className="border-line mt-4 overflow-hidden rounded-card border">
             {parsed.map((l, i) => (
@@ -1401,13 +1401,13 @@ export function Numbers({
           {stats.map((s) => (
             <div
               key={s.label}
-              className="rounded-card border-line border bg-surface-3 px-6 py-8 text-center"
+              className="rounded-card border-line flex flex-col border bg-surface-3 px-6 py-8 text-center"
             >
-              <dd className="text-accent-400 text-2xl font-semibold">
+              <dt className="text-ink order-2 mt-2 text-sm font-medium">{s.label}</dt>
+              <dd className="text-accent-400 order-1 text-2xl font-semibold">
                 <SlotValue value={s.value} />
               </dd>
-              <dt className="text-ink mt-2 text-sm font-medium">{s.label}</dt>
-              <p className="text-ink-4 mt-1 text-xs">{s.note}</p>
+              <dd className="text-ink-4 order-3 mt-1 text-xs">{s.note}</dd>
             </div>
           ))}
         </dl>
@@ -1608,7 +1608,7 @@ export function Closing({
               placeholder={placeholder}
               className="text-ink placeholder:text-ink-4 focus:border-accent-400 rounded-pill min-w-0 flex-1 border border-line-2 bg-surface-4/85 px-6 py-3.5 text-sm backdrop-blur"
             />
-            <EnquirySubmit className="bg-accent-400 text-ink hover:opacity-90 shadow-glow rounded-cta inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm font-semibold transition-colors">
+            <EnquirySubmit className="bg-accent-400 text-canvas hover:opacity-90 shadow-glow rounded-cta inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm font-semibold transition-colors">
               {submitLabel}
               <Arrow />
             </EnquirySubmit>

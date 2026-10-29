@@ -186,26 +186,26 @@ export function CategoryHero({
               {stats.map((s) => (
                 <div
                   key={s.label}
-                  className={`px-6 py-7 ${statsAlign === "center" ? "text-center" : ""}`}
+                  className={`flex flex-col px-6 py-7 ${statsAlign === "center" ? "text-center" : ""}`}
                 >
-                  <dd className="text-ink order-1 text-2xl font-bold">
-                    {s.value}
-                  </dd>
                   <dt className="text-ink-4 order-2 mt-1.5 text-xs">
                     {s.label}
                   </dt>
+                  <dd className="text-ink order-1 text-2xl font-bold">
+                    {s.value}
+                  </dd>
                 </div>
               ))}
             </dl>
           ) : (
           <dl className="border-line mt-14 grid gap-8 border-t pt-6 sm:grid-cols-2 lg:grid-cols-4">
             {stats.map((s) => (
-              <div key={s.label}>
+              <div key={s.label} className="flex flex-col">
                 {/* Value first visually, but dt/dd order kept semantic. */}
+                <dt className="text-ink-4 order-2 mt-1 text-xs">{s.label}</dt>
                 <dd className="text-ink order-1 text-sm font-bold">
                   {s.value}
                 </dd>
-                <dt className="text-ink-4 order-2 mt-1 text-xs">{s.label}</dt>
               </div>
             ))}
           </dl>

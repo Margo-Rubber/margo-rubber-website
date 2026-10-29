@@ -800,7 +800,7 @@ body {
      step renders fully lit, exactly as before. */
   .margo-step-node {
     background-color: var(--color-accent-400);
-    color: var(--color-ink);
+    color: var(--color-canvas);
     box-shadow: 0 0 0 4px rgb(43 188 196 / 0.12), 0 0 18px rgb(43 188 196 / 0.45);
     transition:
       background-color 450ms var(--ease-standard),
@@ -1102,7 +1102,7 @@ body {
     );
   }
   .margo-value-num {
-    color: color-mix(in srgb, var(--color-ink-4) 60%, transparent);
+    color: color-mix(in srgb, var(--color-ink-4) 85%, transparent);
     transition: color 300ms var(--ease-standard), transform 400ms var(--ease-entrance);
   }
   .margo-value-icon {

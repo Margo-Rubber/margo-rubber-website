@@ -383,13 +383,13 @@ export function StatCards({
       {stats.map((s) => (
         <div
           key={s.label}
-          className="border-line bg-surface-3 rounded-card border p-6 text-center"
+          className="border-line bg-surface-3 rounded-card flex flex-col border p-6 text-center"
         >
-          <dd className="text-accent-400 text-3xl font-bold md:text-4xl">
+          <dt className="text-ink order-2 mt-2 text-sm font-medium">{s.label}</dt>
+          <dd className="text-accent-400 order-1 text-3xl font-bold md:text-4xl">
             <SlotValue value={s.value} />
           </dd>
-          <dt className="text-ink mt-2 text-sm font-medium">{s.label}</dt>
-          {s.sub && <p className="text-ink-4 mt-1 text-xs">{s.sub}</p>}
+          {s.sub && <dd className="text-ink-4 order-3 mt-1 text-xs">{s.sub}</dd>}
         </div>
       ))}
     </dl>
@@ -675,7 +675,7 @@ export function SectorSelector({ items }: { items: Sector[] }) {
                       return (
                         <span key={name}>
                           {entry ? (
-                            <Link href={hrefFor(entry)} className="text-accent-400 hover:opacity-80">
+                            <Link href={hrefFor(entry)} className="text-accent-400 underline decoration-accent-400/50 underline-offset-4 hover:opacity-80">
                               {name.trim()}
                             </Link>
                           ) : (
@@ -869,7 +869,7 @@ export function CatalogueBlock({
               />
             </label>
           ))}
-          <EnquirySubmit className="bg-accent-400 text-ink hover:opacity-90 w-full rounded-lg px-6 py-3 text-sm font-semibold transition-colors">
+          <EnquirySubmit className="bg-accent-400 text-canvas hover:opacity-90 w-full rounded-lg px-6 py-3 text-sm font-semibold transition-colors">
             ↓ {submitLabel}
           </EnquirySubmit>
           <EnquiryStatus />
@@ -1110,7 +1110,7 @@ export function QuoteBand({
             {attachLabel && <AttachmentField label={attachLabel} hint={attachHint} className="sm:col-span-2" />}
           </div>
 
-          <EnquirySubmit className="bg-accent-400 text-ink hover:opacity-90 mt-7 w-full rounded-cta px-6 py-3.5 text-sm font-semibold transition-colors">
+          <EnquirySubmit className="bg-accent-400 text-canvas hover:opacity-90 mt-7 w-full rounded-cta px-6 py-3.5 text-sm font-semibold transition-colors">
             ➤ {submitLabel}
           </EnquirySubmit>
           <EnquiryStatus />

@@ -114,6 +114,15 @@ export const homePage = defineType({
             "The largest text on the site. Wrap words in *asterisks* to colour them.",
         }),
         defineField({ name: "intro", type: "text", rows: 3, validation: (r) => r.required().min(40) }),
+        defineField({
+          name: "mobileIntro",
+          title: "Shorter intro for phones (optional)",
+          description:
+            "Shown instead of the intro above on screens under 768px wide, so the hero stays clean over the image. Leave empty to show the full intro on phones too. Keep it to one or two short sentences (about 100 characters). It has no links.",
+          type: "text",
+          rows: 2,
+          validation: (r) => r.max(160),
+        }),
         imageRefField("image", { required: true, group: null }),
         actionsField("actions", "Buttons", { group: null, min: 1 }),
         defineField({

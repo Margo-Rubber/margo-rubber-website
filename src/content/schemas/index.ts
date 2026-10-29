@@ -1558,6 +1558,9 @@ export const homePageSchema = baseSchema.extend({
       )
       .min(1),
     chips: z.array(z.object({ label: z.string(), href: z.string() })).min(1),
+    /** Optional shorter intro shown on phones only (under 768px). When absent
+        the full intro is used at every width. */
+    mobileIntro: z.string().optional(),
     /** Phrases in the intro that link out — content sheet 01 §01 names four.
         The renderer links the first occurrence of each label as written. */
     introLinks: z.array(z.object({ label: z.string(), href: z.string() })).default([]),
