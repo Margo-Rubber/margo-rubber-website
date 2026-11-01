@@ -3,6 +3,7 @@ import { groq } from "next-sanity";
 import { client } from "../../sanity/client";
 import { pageTag } from "@/lib/page-source";
 import { industryTag } from "@/lib/industry-source";
+import { productTag } from "@/lib/product-source";
 
 /**
  * THE CATALOGUE PDF.
@@ -58,12 +59,49 @@ export async function getIndustryCatalogueFileUrl(slug: string): Promise<string 
   return getCatalogueFileUrl();
 }
 
+const productQuery = groq`*[_type == "productCategory" && slug.current == $slug][0]{
+  navLabel,
+  "url": catalogue.file.asset->url,
+  "heading": catalogue.heading,
+  "body": catalogue.body
+}`;
+
+export type ProductCatalogue = { url: string; navLabel?: string; heading?: string; body?: string };
+
+/**
+ * ONE PRODUCT LINE'S CATALOGUE PDF (Nov 2026), uploaded on the Product
+ * category document in Studio. Unlike an industry page there is no fallback:
+ * a category page without its own PDF shows no catalogue section.
+ */
+export async function getProductCatalogue(slug: string): Promise<ProductCatalogue | undefined> {
+  "use cache";
+  cacheTag(productTag(slug), productTag());
+
+  const doc = await client
+    .fetch<{ navLabel?: string; url?: string; heading?: string; body?: string } | null>(productQuery, { slug })
+    .catch(() => null);
+  if (!doc?.url) return undefined;
+  const name = `Margo-Rubber-${(doc.navLabel ?? slug).replace(/[^A-Za-z0-9]+/g, "-").replace(/^-|-$/g, "")}-Catalogue.pdf`;
+  return {
+    url: `${doc.url}?dl=${encodeURIComponent(name)}`,
+    navLabel: doc.navLabel,
+    heading: doc.heading ?? undefined,
+    body: doc.body ?? undefined,
+  };
+}
+
 /**
  * The PDF a catalogue enquiry asked for, worked out from the page it was sent
- * from: an industry page gets that industry's catalogue, anywhere else the
- * main one.
+ * from: an industry page gets that industry's catalogue, a product category
+ * page its own, anywhere else the main one.
  */
 export async function catalogueUrlForPage(page: string): Promise<string | undefined> {
   const m = page.match(/^\/industries\/([a-z0-9-]+)\/?(?:[?#].*)?$/);
-  return m ? getIndustryCatalogueFileUrl(m[1]) : getCatalogueFileUrl();
+  if (m) return getIndustryCatalogueFileUrl(m[1]);
+  const p = page.match(/^\/products\/([a-z0-9-]+)\/?(?:[?#].*)?$/);
+  if (p) {
+    const own = await getProductCatalogue(p[1]);
+    if (own) return own.url;
+  }
+  return getCatalogueFileUrl();
 }

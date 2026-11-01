@@ -328,6 +328,16 @@ export const IMAGE_SLOT_LABELS = {
     where: "Industries page grid. Stand-in: the Transport — Rail & Marine page's hero photograph until the card's own is uploaded.",
     page: "/industries",
   },
+  "industries.ev-energy-storage-renewables": {
+    title: "Industries page — EV, Energy Storage & Renewables card",
+    where: "Industries page grid. Stand-in: the EV, Energy Storage & Renewables page's hero photograph until the card's own is uploaded.",
+    page: "/industries",
+  },
+  "industries.food-beverage-pharma": {
+    title: "Industries page — Food, Beverage & Pharma card",
+    where: "Industries page grid. Stand-in: the Food, Beverage & Pharma page's hero photograph until the card's own is uploaded.",
+    page: "/industries",
+  },
   "industries.construction": {
     title: "Industries page — Construction card",
     where: "Industries page grid. Stand-in: the Construction page's hero photograph until the card's own is uploaded.",
@@ -711,6 +721,11 @@ export const IMAGE_SLOT_LABELS = {
     where: "Anti-Vibration Mounts category page, ‘Material selection’ section — card 1 of 8. Stand-in: shows the NBR (Nitrile) card's photograph until its own is uploaded.",
     page: "/products/anti-vibration-mounts",
   },
+  "products.rubber-mats.hero-wide": {
+    title: "Rubber Mats page — wide hero photo (desktop)",
+    where: "Rubber Mats category page on desktop: the wide photograph filling the hero beside the heading. Use a landscape shot with the product on the right.",
+    page: "/products/rubber-mats",
+  },
   "products.bellows.hero-wide": {
     title: "Bellows page — wide hero photo (desktop)",
     where: "Bellows category page on desktop: the wide photograph filling the hero beside the heading. Use a landscape shot with the product on the right.",
@@ -770,6 +785,126 @@ export const IMAGE_SLOT_LABELS = {
     title: "Bellows — Natural rubber (NR) material card",
     where: "Bellows category page, ‘Material selection’ section — card 1 of 8. Stand-in: shows the NBR (Nitrile) card's photograph until its own is uploaded.",
     page: "/products/bellows",
+  },
+  "products.diaphragms.material.epdm": {
+    title: "Diaphragms — EPDM material card",
+    where: "Diaphragms category page, ‘Material selection’ section — card 1 of 8. Stand-in: the Bellows page's EPDM photograph until this card's own is uploaded.",
+    page: "/products/diaphragms",
+  },
+  "products.diaphragms.material.nbr": {
+    title: "Diaphragms — NBR (Nitrile) material card",
+    where: "Diaphragms category page, ‘Material selection’ section — card 2 of 8. Stand-in: the Bellows page's NBR (Nitrile) photograph until this card's own is uploaded.",
+    page: "/products/diaphragms",
+  },
+  "products.diaphragms.material.fkm": {
+    title: "Diaphragms — FKM (Viton®) material card",
+    where: "Diaphragms category page, ‘Material selection’ section — card 3 of 8. Stand-in: the Bellows page's FKM (Viton®) photograph until this card's own is uploaded.",
+    page: "/products/diaphragms",
+  },
+  "products.diaphragms.material.aem": {
+    title: "Diaphragms — AEM (Vamac®) material card",
+    where: "Diaphragms category page, ‘Material selection’ section — card 4 of 8. Stand-in: the Bellows page's AEM (Vamac®) photograph until this card's own is uploaded.",
+    page: "/products/diaphragms",
+  },
+  "products.diaphragms.material.cr": {
+    title: "Diaphragms — Neoprene (CR) material card",
+    where: "Diaphragms category page, ‘Material selection’ section — card 5 of 8. Stand-in: the Bellows page's Neoprene (CR) photograph until this card's own is uploaded.",
+    page: "/products/diaphragms",
+  },
+  "products.diaphragms.material.nr": {
+    title: "Diaphragms — Natural rubber (NR) material card",
+    where: "Diaphragms category page, ‘Material selection’ section — card 6 of 8. Stand-in: the Bellows page's Natural rubber (NR) photograph until this card's own is uploaded.",
+    page: "/products/diaphragms",
+  },
+  "products.diaphragms.material.sbr": {
+    title: "Diaphragms — SBR material card",
+    where: "Diaphragms category page, ‘Material selection’ section — card 7 of 8. Stand-in: the Bellows page's SBR photograph until this card's own is uploaded.",
+    page: "/products/diaphragms",
+  },
+  "products.diaphragms.material.silicone": {
+    title: "Diaphragms — Silicone (VMQ) material card",
+    where: "Diaphragms category page, ‘Material selection’ section — card 8 of 8. Stand-in: the Bellows page's Silicone (VMQ) photograph until this card's own is uploaded.",
+    page: "/products/diaphragms",
+  },
+  "products.seals.material.nbr": {
+    title: "Reciprocating Seals — NBR (Nitrile) material card",
+    where: "Reciprocating Seals category page, ‘Material selection’ section — card 1 of 8. Stand-in: the Bellows page's NBR (Nitrile) photograph until this card's own is uploaded.",
+    page: "/products/seals",
+  },
+  "products.seals.material.epdm": {
+    title: "Reciprocating Seals — EPDM material card",
+    where: "Reciprocating Seals category page, ‘Material selection’ section — card 2 of 8. Stand-in: the Bellows page's EPDM photograph until this card's own is uploaded.",
+    page: "/products/seals",
+  },
+  "products.seals.material.fkm": {
+    title: "Reciprocating Seals — FKM (Viton®) material card",
+    where: "Reciprocating Seals category page, ‘Material selection’ section — card 3 of 8. Stand-in: the Bellows page's FKM (Viton®) photograph until this card's own is uploaded.",
+    page: "/products/seals",
+  },
+  "products.seals.material.aem": {
+    title: "Reciprocating Seals — AEM (Vamac®) material card",
+    where: "Reciprocating Seals category page, ‘Material selection’ section — card 4 of 8. Stand-in: the Bellows page's AEM (Vamac®) photograph until this card's own is uploaded.",
+    page: "/products/seals",
+  },
+  "products.seals.material.cr": {
+    title: "Reciprocating Seals — Neoprene (CR) material card",
+    where: "Reciprocating Seals category page, ‘Material selection’ section — card 5 of 8. Stand-in: the Bellows page's Neoprene (CR) photograph until this card's own is uploaded.",
+    page: "/products/seals",
+  },
+  "products.seals.material.nr": {
+    title: "Reciprocating Seals — Natural rubber (NR) material card",
+    where: "Reciprocating Seals category page, ‘Material selection’ section — card 6 of 8. Stand-in: the Bellows page's Natural rubber (NR) photograph until this card's own is uploaded.",
+    page: "/products/seals",
+  },
+  "products.seals.material.sbr": {
+    title: "Reciprocating Seals — SBR material card",
+    where: "Reciprocating Seals category page, ‘Material selection’ section — card 7 of 8. Stand-in: the Bellows page's SBR photograph until this card's own is uploaded.",
+    page: "/products/seals",
+  },
+  "products.seals.material.silicone": {
+    title: "Reciprocating Seals — Silicone (VMQ) material card",
+    where: "Reciprocating Seals category page, ‘Material selection’ section — card 8 of 8. Stand-in: the Bellows page's Silicone (VMQ) photograph until this card's own is uploaded.",
+    page: "/products/seals",
+  },
+  "products.rubber-mats.material.epdm": {
+    title: "Rubber Mats — EPDM material card",
+    where: "Rubber Mats category page, ‘Material selection’ section — card 1 of 8. Stand-in: the Bellows page's EPDM photograph until this card's own is uploaded.",
+    page: "/products/rubber-mats",
+  },
+  "products.rubber-mats.material.nbr": {
+    title: "Rubber Mats — NBR (Nitrile) material card",
+    where: "Rubber Mats category page, ‘Material selection’ section — card 2 of 8. Stand-in: the Bellows page's NBR (Nitrile) photograph until this card's own is uploaded.",
+    page: "/products/rubber-mats",
+  },
+  "products.rubber-mats.material.fkm": {
+    title: "Rubber Mats — FKM (Viton®) material card",
+    where: "Rubber Mats category page, ‘Material selection’ section — card 3 of 8. Stand-in: the Bellows page's FKM (Viton®) photograph until this card's own is uploaded.",
+    page: "/products/rubber-mats",
+  },
+  "products.rubber-mats.material.silicone": {
+    title: "Rubber Mats — Silicone (VMQ) material card",
+    where: "Rubber Mats category page, ‘Material selection’ section — card 4 of 8. Stand-in: the Bellows page's Silicone (VMQ) photograph until this card's own is uploaded.",
+    page: "/products/rubber-mats",
+  },
+  "products.rubber-mats.material.aem": {
+    title: "Rubber Mats — AEM (Vamac®) material card",
+    where: "Rubber Mats category page, ‘Material selection’ section — card 5 of 8. Stand-in: the Bellows page's AEM (Vamac®) photograph until this card's own is uploaded.",
+    page: "/products/rubber-mats",
+  },
+  "products.rubber-mats.material.cr": {
+    title: "Rubber Mats — Neoprene (CR) material card",
+    where: "Rubber Mats category page, ‘Material selection’ section — card 6 of 8. Stand-in: the Bellows page's Neoprene (CR) photograph until this card's own is uploaded.",
+    page: "/products/rubber-mats",
+  },
+  "products.rubber-mats.material.sbr": {
+    title: "Rubber Mats — SBR material card",
+    where: "Rubber Mats category page, ‘Material selection’ section — card 7 of 8. Stand-in: the Bellows page's SBR photograph until this card's own is uploaded.",
+    page: "/products/rubber-mats",
+  },
+  "products.rubber-mats.material.nr": {
+    title: "Rubber Mats — Natural rubber (NR) material card",
+    where: "Rubber Mats category page, ‘Material selection’ section — card 8 of 8. Stand-in: the Bellows page's Natural rubber (NR) photograph until this card's own is uploaded.",
+    page: "/products/rubber-mats",
   },
   "products.bushes.hero-wide": {
     title: "Bushes page — wide hero photo (desktop)",

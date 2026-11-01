@@ -461,8 +461,18 @@ export function PlainCards({
     <>
       {group && <h3 className="text-ink mb-5 text-lg font-semibold">{group}</h3>}
       <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {items.map((c) => (
-          <li key={c.name} className="border-line bg-surface-3 rounded-card flex flex-col overflow-hidden border">
+        {items.map((c) => {
+          // A landscape photograph (the rubber mats' 3:2 studio shots) fills
+          // the panel, so every card's picture is the same size; a square
+          // cut-out sits inside it on white, as in the parts grid.
+          const a = c.image?.asset;
+          const landscape = !!a && a.w / a.h >= 1.3;
+          return (
+          // With photos the card is the parts grid's card: near-black, not grey.
+          <li
+            key={c.name}
+            className={`border-line rounded-card flex flex-col overflow-hidden border ${withPhotos ? "bg-[#080808]" : "bg-surface-3"}`}
+          >
             {withPhotos && (
               <div className="relative aspect-[4/3] bg-white">
                 {c.image?.asset ? (
@@ -470,9 +480,9 @@ export function PlainCards({
                     image={c.image}
                     fallbackAlt={c.name}
                     fill
-                    fit="contain"
+                    fit={landscape ? "cover" : "contain"}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
-                    className="p-4"
+                    className={landscape ? undefined : "p-4"}
                   />
                 ) : (
                   <NoPhoto />
@@ -499,7 +509,8 @@ export function PlainCards({
             )}
             </div>
           </li>
-        ))}
+          );
+        })}
       </ul>
     </>
   );

@@ -83,7 +83,12 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
       <AnswerLead block={answerBlockFor(path)} />
 
       {/* Industry pages have no alternating band, so nothing alternates. */}
-      <BlockRenderer blocks={blocks} comp2={false} prose={<FurtherReading slugs={fm.related.resources} />} />
+      <BlockRenderer
+        blocks={blocks}
+        comp2={false}
+        heroEyebrow={fm.badge}
+        prose={<FurtherReading slugs={fm.related.resources} />}
+      />
 
       {/* Industry catalogue, behind a short form. Each request is stored as a
           "catalogue" lead with "<Industry> catalogue" as its product, and the
