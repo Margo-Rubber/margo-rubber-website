@@ -9,6 +9,8 @@ import { categorySlugs, getCategoryPage } from "@/lib/product-source";
 import { Section } from "@/components/ui/Section";
 import { CategoryHero } from "@/components/sections/Blocks";
 import { FurtherReading } from "@/components/sections/FurtherReading";
+import { CatalogueBlock } from "@/components/sections/HubBlocks";
+import { getProductCatalogue } from "@/lib/catalogue-file";
 
 /** Category pages whose desktop hero uses the full-bleed photo layout (see
  *  CategoryHero `fullBleed`), with the wide image-registry key it shows.
@@ -35,6 +37,9 @@ const FULL_BLEED_HERO: Record<string, { image: string; frame?: string; fit?: str
   seals: { image: "products.seals.hero-wide" },
   "rubber-lining": { image: "products.rubber-lining.hero-wide" },
   "sponge-foam-rubber": { image: "products.sponge-foam.hero-wide" },
+  // The fanned mats fill the photo edge to edge: frame on the right 60% so
+  // they sit clear of the long two-line heading and the intro.
+  "rubber-mats": { image: "products.rubber-mats.hero-wide", frame: "lg:left-[40%]" },
   // Long two-line heading and a photo with the product from 18% across:
   // frame on the right 60%, photo shifted so both parts sit clear of the copy.
   diaphragms: {
@@ -89,6 +94,9 @@ export default async function ProductCategoryPage(
    */
   const comp2 = fm.heroActions.length > 0;
 
+  // This product line's own catalogue PDF; no section without one.
+  const catalogue = await getProductCatalogue(category);
+
   return (
     <>
       {shouldEmitSchema(fm.status) && (
@@ -126,6 +134,7 @@ export default async function ProductCategoryPage(
       <BlockRenderer
         blocks={blocks}
         comp2={comp2}
+        heroEyebrow={fm.heroEyebrow}
         prose={
           // Free-form prose — passed only when the .mdx body actually has
           // any, so a structured page doesn't ship an empty padded band.
@@ -180,6 +189,27 @@ export default async function ProductCategoryPage(
           ) : undefined
         }
       />
+
+      {/* Product-line catalogue, behind the same short form as an industry
+          page's. Stored as a "catalogue" lead with "<Line> catalogue" as its
+          product, and the buyer's email carries the same PDF (api/enquiry). */}
+      {catalogue && (
+        <Section id="catalogue" className="bg-surface">
+          <CatalogueBlock
+            heading={catalogue.heading ?? `Download the ${fm.navLabel} *Catalogue*`}
+            body={
+              catalogue.body ??
+              `Every ${fm.navLabel.toLowerCase()} part we make in one PDF: part types, compounds, hardness ranges and size basis, ready to share with your engineering and purchasing teams.`
+            }
+            bullets={[]}
+            formHeading={`Get the ${fm.navLabel} catalogue`}
+            formBody="Tell us where to send it. The download starts as soon as you submit."
+            submitLabel="Download Catalogue"
+            fileUrl={catalogue.url}
+            product={`${fm.navLabel} catalogue`}
+          />
+        </Section>
+      )}
     </>
   );
 }

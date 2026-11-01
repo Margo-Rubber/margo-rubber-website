@@ -55,8 +55,10 @@ if (!write || (hasCard && hasFilter)) {
   process.exit(0);
 }
 
-let patch = client.patch(ID);
-if (!hasCard) patch = patch.insert("after", 'range.cards[_key=="rubber-lining"]', [card]);
-if (!hasFilter) patch = patch.insert("after", "range.filters[-1]", [card.tag]);
-const result = await patch.commit();
-console.log(`Patched ${result._id} rev ${result._rev}`);
+// One insert per patch — a second .insert() on the same patch replaces the
+// first — committed together in one transaction.
+const tx = client.transaction();
+if (!hasCard) tx.patch(client.patch(ID).insert("after", 'range.cards[_key=="rubber-lining"]', [card]));
+if (!hasFilter) tx.patch(client.patch(ID).insert("after", "range.filters[-1]", [card.tag]));
+const result = await tx.commit();
+console.log(`Committed transaction ${result.transactionId}`);

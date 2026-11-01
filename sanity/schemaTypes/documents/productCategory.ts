@@ -62,6 +62,7 @@ export const productCategory = defineType({
   groups: [
     { name: "hero", title: "Top of page", default: true },
     { name: "body", title: "Sections" },
+    { name: "catalogue", title: "Catalogue" },
     { name: "meta", title: "Search & links" },
   ],
   fields: [
@@ -270,6 +271,38 @@ export const productCategory = defineType({
       // intended and the editor should be told at the moment they try.
       validation: (r) => r.required().min(1),
       group: "body",
+    }),
+
+    /* ── Catalogue ────────────────────────────────────────────────────────── */
+    /**
+     * This product line's own catalogue PDF (Nov 2026). With a PDF uploaded
+     * the page ends with a catalogue section behind a short form (name,
+     * email, company), at the address #catalogue; without one the page has
+     * no catalogue section. Empty text fields fall back to wording built from
+     * the page's short name.
+     */
+    defineField({
+      name: "catalogue",
+      title: "Product-line catalogue",
+      type: "object",
+      group: "catalogue",
+      fields: [
+        defineField({
+          name: "file",
+          title: "Catalogue PDF",
+          type: "file",
+          options: { accept: "application/pdf" },
+          description:
+            "The PDF visitors download after filling in the form. Keep it under ~10 MB. Leave empty and the page shows no catalogue section.",
+        }),
+        defineField({
+          name: "heading",
+          title: "Heading",
+          type: "string",
+          description: 'Leave empty for "Download the <product> Catalogue". Wrap words in *asterisks* to colour them.',
+        }),
+        defineField({ name: "body", title: "Paragraph", type: "text", rows: 3 }),
+      ],
     }),
 
     /* ── Search and links ─────────────────────────────────────────────────── */

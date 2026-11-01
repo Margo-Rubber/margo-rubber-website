@@ -116,6 +116,40 @@ export function assignBands(blocks: Block[], alternate: boolean): BandedBlock[] 
   });
 }
 
+/* ── Section numbers ──────────────────────────────────────────────────────── */
+
+/**
+ * Eyebrows like "02 · SPECIFICATION REFERENCE" carry a section number typed
+ * into the CMS. The numbers were written against the old templates, where the
+ * hero was 01 and some sections have since moved or gone, so pages read
+ * 02, 04, 03, 05 or start at 02 (client report, 2 Nov 2026). The typed number
+ * is therefore ignored and the numbered sections are counted in the order
+ * they render — from 01, or from 02 when the page's hero eyebrow is itself
+ * numbered "01 · …" (bonded components, the Oct 2026 industry pages).
+ * Unnumbered eyebrows ("IN THIS CATEGORY") are left alone and do not take a
+ * number.
+ */
+const NUMBERED = /^\s*\d{1,2}\s*([·•\-–—])\s*/;
+
+/** The hero eyebrow's own number, or 0 when it has none. */
+export function heroNumber(heroEyebrow: string | null | undefined): number {
+  const m = heroEyebrow?.match(/^\s*(\d{1,2})\s*[·•\-–—]/);
+  return m ? Number(m[1]) : 0;
+}
+
+export function renumberSections(blocks: Block[], after = 0): Block[] {
+  let n = after;
+  return blocks.map((block) => {
+    const eyebrow = (block as { eyebrow?: unknown }).eyebrow;
+    if (typeof eyebrow !== "string") return block;
+    const m = eyebrow.match(NUMBERED);
+    if (!m) return block;
+    n += 1;
+    const label = eyebrow.slice(m[0].length);
+    return { ...block, eyebrow: `${String(n).padStart(2, "0")} ${m[1]} ${label}` } as Block;
+  });
+}
+
 function chipCount(block: Block): number {
   const chips = block.chips;
   return Array.isArray(chips) ? chips.length : 0;
@@ -668,6 +702,7 @@ export async function BlockRenderer({
   blocks,
   comp2,
   prose,
+  heroEyebrow,
 }: {
   blocks: Block[];
   comp2: boolean;
@@ -680,9 +715,11 @@ export async function BlockRenderer({
    * the same order — the CMS has no .mdx body, so the slot is simply absent.
    */
   prose?: ReactNode;
+  /** The hero's eyebrow; when it is numbered, sections continue after it. */
+  heroEyebrow?: string | null;
 }) {
   const settings = await getSiteSettings();
-  const banded = assignBands(blocks, comp2);
+  const banded = assignBands(renumberSections(blocks, heroNumber(heroEyebrow)), comp2);
   const ctaAt = banded.findIndex((b) => b.block._type === "block.ctaBand");
   const proseAt = ctaAt === -1 ? banded.length : ctaAt;
 

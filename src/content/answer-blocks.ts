@@ -213,16 +213,6 @@ export const ANSWER_BLOCKS: Record<string, AnswerBlock> = {
       "Margo Rubber specifies AEM for rocker covers and sumps to +160 °C continuous, silicone (VMQ) to +200 °C and FKM to +250 °C. Exhaust-manifold gaskets are multi-layer steel (MLS), not rubber, so Margo does not make them.",
     ],
   },
-  "/products/rubber-mats": {
-    row: 0,
-    q: "Key facts",
-    faq: false,
-    a: "Margo Rubber moulds 11 types of rubber mat in solid rubber at its plant in Vilholi, Nashik: car floor and boot mats, mud flaps, anti-fatigue, IS 15652 electrical insulating, ribbed, checker, coin, diamond-pattern, anti-vibration and drainage mats. None has a PVC, TPE or foam layer.",
-    more: [
-      "Margo Rubber makes electrical insulating mats to IS 15652, which, as amended in Amendment No. 2, sets three classes: Class A for use up to 3.3 kV at 2.0 mm thick, Class B to 11 kV at 2.5 mm and Class C to 33 kV at 3.0 mm.",
-      "What lands on a rubber mat decides its compound. Margo Rubber specifies natural rubber or SBR for dry floors and vehicles, EPDM (−40 to +140 °C) for sun and wash-down water, and NBR (−30 to +120 °C) where oil, fuel or coolant reaches the mat.",
-    ],
-  },
 };
 
 export const answerBlockFor = (path: string): AnswerBlock | undefined => ANSWER_BLOCKS[path];
