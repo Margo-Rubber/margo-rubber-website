@@ -531,15 +531,13 @@ export function Story({
   head,
   paragraphs,
   checks,
-  badge,
-  images,
+  image,
   cta,
 }: {
   head: Head;
   paragraphs: readonly string[];
   checks: readonly string[];
-  badge: { value: string; label: string };
-  images: { main: string; inset: string; lower: string };
+  image: string;
   cta: { label: string; href: string };
 }) {
   return (
@@ -553,39 +551,13 @@ export function Story({
       <Bloom className="top-0 -left-32 size-[34rem]" />
       <Container>
         <div className="grid items-center gap-14 lg:grid-cols-2">
-          {/* Collage: large plate, inset card overlapping right, lower plate. */}
-          <div className="relative pb-20 sm:pb-24">
+          <div className="rounded-card border-line overflow-hidden border">
             <Photo
-              k={images.main}
+              k={image}
               ratio="aspect-[4/3.4]"
-              dissolve="y"
-              className="rounded-card w-[86%]"
+              dissolve="none"
               sizes="(min-width:1024px) 44vw, 90vw"
             />
-            <div className="rounded-card border-line absolute top-[24%] right-0 w-[46%] overflow-hidden border">
-              <Photo
-                k={images.inset}
-                ratio="aspect-[5/4]"
-                dissolve="none"
-                sizes="(min-width:1024px) 22vw, 45vw"
-                delay={90}
-              />
-            </div>
-            <div className="rounded-card border-line absolute right-[8%] bottom-0 w-[42%] overflow-hidden border">
-              <Photo
-                k={images.lower}
-                ratio="aspect-[5/4]"
-                dissolve="none"
-                sizes="(min-width:1024px) 20vw, 42vw"
-                delay={180}
-              />
-            </div>
-            <div className="bg-accent-400 text-canvas shadow-glow absolute bottom-6 left-0 rounded-2xl px-6 py-4 text-center">
-              <p className="text-2xl leading-none font-semibold"><SlotValue value={badge.value} /></p>
-              <p className="text-eyebrow mt-1.5 font-mono uppercase opacity-80">
-                {badge.label}
-              </p>
-            </div>
           </div>
 
           <div>
@@ -839,8 +811,7 @@ export function Leadership({
 /* ══ 05 · MANUFACTURING EXCELLENCE ════════════════════════════════════════ */
 export function Manufacturing({
   head,
-  main,
-  side,
+  image,
   stats,
   portfolioLabel,
   portfolio,
@@ -848,8 +819,7 @@ export function Manufacturing({
   equipment = [],
 }: {
   head: Head;
-  main: { image: string; caption: string };
-  side: readonly string[];
+  image: string;
   stats: readonly { icon: string; value: string; label: string }[];
   portfolioLabel: string;
   portfolio: readonly { label: string; href: string }[];
@@ -868,41 +838,13 @@ export function Manufacturing({
       <Container>
         <CenterHead head={head} />
 
-        <div className="mt-14 grid gap-5 lg:grid-cols-[1.55fr_1fr]">
-          <figure className="rounded-card border-line relative isolate overflow-hidden border">
-            <Photo
-              k={main.image}
-              ratio="aspect-[16/10]"
-              dissolve="none"
-              sizes="(min-width:1024px) 60vw, 100vw"
-            />
-            <div
-              className="pointer-events-none absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(to top, color-mix(in srgb, var(--color-band-2) 92%, transparent), transparent 45%)",
-              }}
-            />
-            <figcaption className="border-accent-400/25 bg-surface-3/80 text-ink absolute bottom-5 left-5 rounded-lg border px-4 py-2 text-sm font-medium backdrop-blur">
-              {main.caption}
-            </figcaption>
-          </figure>
-
-          <div className="grid gap-5">
-            {side.map((k) => (
-              <div
-                key={k}
-                className="rounded-card border-line overflow-hidden border"
-              >
-                <Photo
-                  k={k}
-                  ratio="aspect-[16/9]"
-                  dissolve="none"
-                  sizes="(min-width:1024px) 34vw, 100vw"
-                />
-              </div>
-            ))}
-          </div>
+        <div className="rounded-card border-line mt-14 overflow-hidden border">
+          <Photo
+            k={image}
+            ratio="aspect-[16/9] lg:aspect-[21/9]"
+            dissolve="none"
+            sizes="(min-width:1280px) 1200px, 100vw"
+          />
         </div>
 
         <dl className="mt-5 grid gap-5 md:grid-cols-3">

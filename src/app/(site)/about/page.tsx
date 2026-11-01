@@ -78,8 +78,7 @@ export default async function AboutPage() {
         head={fm.story}
         paragraphs={fm.story.paragraphs}
         checks={fm.story.checks}
-        badge={fm.story.badge}
-        images={fm.story.images}
+        image={fm.story.images.main}
         cta={fm.story.cta}
       />
 
@@ -102,8 +101,7 @@ export default async function AboutPage() {
 
       <Manufacturing
         head={fm.manufacturing}
-        main={fm.manufacturing.main}
-        side={fm.manufacturing.side}
+        image={fm.manufacturing.main.image}
         stats={fm.manufacturing.stats}
         portfolioLabel={fm.manufacturing.portfolioLabel}
         portfolio={fm.manufacturing.portfolio}
