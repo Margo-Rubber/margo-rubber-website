@@ -257,17 +257,12 @@ export function ProductRange({
   const visible = cards;
 
   /**
-   * The comp runs one uniform grid, then a labelled break, then a second
-   * grid — the two continuous-form categories are set apart from the nine
-   * sold by the piece. A card carrying `groupLabel` opens that new group.
+   * One continuous grid. The comp split the continuous-form and sheet lines
+   * into labelled groups; those labels came off on client instruction
+   * (1 Nov 2026), so `groupLabel` in the CMS is no longer drawn and every
+   * card flows on in the same rows.
    */
-  const groups: { label?: string; cards: Card[] }[] = [];
-  for (const c of visible) {
-    if (!groups.length || c.groupLabel) {
-      groups.push({ label: c.groupLabel, cards: [] });
-    }
-    groups[groups.length - 1].cards.push(c);
-  }
+  const groups: { label?: string; cards: Card[] }[] = [{ cards: visible }];
 
   return (
     <div>
