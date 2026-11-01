@@ -325,7 +325,9 @@ export function ExportHero({
                 href={`#${m.slug}`}
                 // min-h-11 on mobile only: with the map pins hidden below md these chips are
                 // the sole way to reach a market, so they need a real 44px tap target.
-                className="text-eyebrow border-line-2 text-ink-3 hover:border-accent-400/60 hover:text-ink rounded-pill inline-flex min-h-11 items-center gap-2 border px-4 py-1.5 font-mono transition-colors md:min-h-0 md:px-3.5"
+                // Dark fill (client, 2 Nov 2026): the right-hand chips sat on the
+                // bright containers and the names were unreadable.
+                className="text-eyebrow border-line-2 text-ink-2 hover:border-accent-400/60 hover:text-ink rounded-pill inline-flex bg-black/80 backdrop-blur-sm min-h-11 items-center gap-2 border px-4 py-1.5 font-mono transition-colors md:min-h-0 md:px-3.5"
               >
                 <span
                   aria-hidden

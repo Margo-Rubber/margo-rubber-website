@@ -133,7 +133,7 @@ export async function SiteFooter() {
     getSiteSettings(),
   ]);
   const social = fm.social.filter((s) => s.href.trim() !== "");
-  const { entity, certifications, clients } = settings;
+  const { entity, certifications } = settings;
 
   return (
     <footer className="border-line bg-surface-2 border-t pt-16 pb-10">
@@ -229,6 +229,26 @@ export async function SiteFooter() {
                     </span>
                   ))}
                 </ContactRow>
+
+                {/* Working hours, under the address (client, 2 Nov 2026).
+                    The same Site settings string the Contact page shows. */}
+                <ContactRow
+                  icon={
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.7"
+                      className="size-4"
+                      aria-hidden
+                    >
+                      <circle cx="12" cy="12" r="9" />
+                      <path d="M12 7v5l3 2" />
+                    </svg>
+                  }
+                >
+                  {entity.hours}
+                </ContactRow>
               </ul>
             </address>
 
@@ -284,10 +304,6 @@ export async function SiteFooter() {
             ))}
           </div>
         </div>
-
-        <p className="text-ink-4 mt-8 max-w-prose text-xs leading-relaxed">
-          {clients.trademarkLine}
-        </p>
 
         {/* Closing CTA band */}
         <div className="rounded-card border-line bg-surface-3/60 mt-16 flex flex-wrap items-center justify-between gap-6 border px-7 py-6">

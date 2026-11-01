@@ -85,13 +85,12 @@ export default async function ResourcesPage() {
       />
 
       <header className="bg-canvas relative isolate overflow-hidden hero-offset pb-12">
-        {/* No `resources.*` group exists in the registry, so this borrows the
-            closest subject: a caliper on a moulded part. These guides are
+        {/* Its own slot, replaceable in Studio under "Resources page". Starts
+            as the About page's caliper on a moulded part: these guides are
             about specifying dimensions and materials, and dimensional
-            measurement is that in one frame. Worth its own photograph on the
-            shoot list rather than a borrowed one. */}
+            measurement is that in one frame. */}
         <Img
-          k="about.story.gauge"
+          k="resources.hero"
           fill
           priority
           sizes="100vw"

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins, Source_Sans_3, JetBrains_Mono, Newsreader } from "next/font/google";
+import { Poppins, Source_Sans_3, JetBrains_Mono } from "next/font/google";
 import { SITE_URL } from "@/lib/seo";
 import "./globals.css";
 
@@ -37,19 +37,6 @@ const mono = JetBrains_Mono({
   display: "swap",
 });
 
-// Editorial serif for long-form narrative (the About page's Our Story).
-// Variable font with an optical-size axis, so it stays crisp at body sizes.
-// Used sparingly via the `font-serif` token — not a third UI face.
-const newsreader = Newsreader({
-  variable: "--font-newsreader",
-  subsets: ["latin"],
-  style: ["normal", "italic"],
-  display: "swap",
-  // Used on /about only. Not preloaded, so the other 75 pages do not
-  // download two serif files before their first paint (T16).
-  preload: false,
-});
-
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
@@ -71,7 +58,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${poppins.variable} ${source.variable} ${mono.variable} ${newsreader.variable} antialiased`}
+      className={`${poppins.variable} ${source.variable} ${mono.variable} antialiased`}
     >
       {/* Browser extensions (ColorZilla's cz-shortcut-listen, Grammarly, etc.)
           inject attributes onto <body> before React hydrates, which reports as

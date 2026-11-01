@@ -1,5 +1,5 @@
 /**
- * CONTACT PAGE MAP — redraws public/images/contact/margo-plant-map.jpg.
+ * CONTACT PAGE MAP — redraws public/images/contact/margo-plant-map-2026-11.jpg.
  *
  *   node --experimental-strip-types scripts/gen-contact-map.mts
  *   node --experimental-strip-types scripts/gen-contact-map.mts 19.9354 73.7331     (other coordinates)
@@ -13,15 +13,15 @@
  * usage policy. The "© OpenStreetMap contributors" credit is drawn by the
  * page (ContactDetails.tsx) and must stay.
  *
- * Location confirmed by Margo, 27 Oct 2026 (the Google Business listing's
- * own pin is ~400 m south of the plant).
+ * Location confirmed by Margo, 2 Nov 2026: the plant building itself. The
+ * 27 Oct point (19.93545, 73.73312) put the pin on the highway, ~330 m north.
  */
 import sharp from "sharp";
 import { writeFile } from "node:fs/promises";
 
-const LAT = Number(process.argv[2] ?? 19.935449556805665);
-const LNG = Number(process.argv[3] ?? 73.73311970828622);
-const OUT = "public/images/contact/margo-plant-map.jpg";
+const LAT = Number(process.argv[2] ?? 19.932445350253296);
+const LNG = Number(process.argv[3] ?? 73.73282183068572);
+const OUT = "public/images/contact/margo-plant-map-2026-11.jpg";
 
 const W = 1200, H = 900;
 const Z = 17;                      // tiles are fetched at 17 …

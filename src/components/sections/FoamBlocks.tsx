@@ -319,6 +319,7 @@ export function SubCategoryBlock({
   body,
   dividerLabel,
   photo,
+  detailPhoto,
   buildUp,
   comparisons,
   note,
@@ -332,6 +333,8 @@ export function SubCategoryBlock({
   dividerLabel?: string;
   /** The product itself, uploaded in Studio. Optional. */
   photo?: CmsImage;
+  /** A second photo, shown in place of the build-up when set. */
+  detailPhoto?: CmsImage;
   buildUp?: { label: string; layers: readonly string[] };
   comparisons: readonly {
     label: string;
@@ -382,17 +385,24 @@ export function SubCategoryBlock({
 
         <div className="mt-10">
           {/* Photo beside the build-up when there is one; photo first on a
-              phone. Without a photo the build-up runs full width as before. */}
+              phone. Without a photo the build-up runs full width as before.
+              A second photo takes the build-up's place, in equal halves. */}
           {photo?.asset ? (
             <div
               className={
-                buildUp
-                  ? "grid gap-5 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]"
-                  : "mx-auto max-w-xl"
+                detailPhoto?.asset
+                  ? "grid gap-5 lg:grid-cols-2"
+                  : buildUp
+                    ? "grid gap-5 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]"
+                    : "mx-auto max-w-xl"
               }
             >
               <ProductPhoto image={photo} fallbackAlt={heading.split("*").join("")} />
-              {buildUp && <BuildUp label={buildUp.label} layers={buildUp.layers} />}
+              {detailPhoto?.asset ? (
+                <ProductPhoto image={detailPhoto} fallbackAlt={heading.split("*").join("")} />
+              ) : (
+                buildUp && <BuildUp label={buildUp.label} layers={buildUp.layers} />
+              )}
             </div>
           ) : (
             buildUp && <BuildUp label={buildUp.label} layers={buildUp.layers} />

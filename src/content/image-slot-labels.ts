@@ -68,10 +68,12 @@ export const PAGE_TITLES: Record<string, string> = {
   "/industries/transport": "Transport — Rail & Marine industry page",
   "/industries/food-beverage-pharma": "Food, Beverage & Pharma industry page",
   "/industries/ev-energy-storage-renewables": "EV, Energy Storage & Renewables industry page",
+  "/manufacturing": "Manufacturing page",
   "/about": "About page",
   "/export": "Export page",
   "/certifications": "Certifications page",
   "/case-studies": "Case Studies page",
+  "/resources": "Resources page",
   "/contact": "Contact page",
   "/why-margo": "Why Margo page",
   "/logo": "Logo (every page)",
@@ -205,7 +207,7 @@ export const IMAGE_SLOT_LABELS = {
   },
   "products.card.rubber-mats": {
     title: "Products page — Rubber Mats card",
-    where: "Products page range grid. Stand-in: the Rubber Mats page's hero photograph until the card's own is uploaded.",
+    where: "Products page range grid. Shows the boot liner, not the Rubber Mats page's hero photograph.",
     page: "/products",
   },
   "products.card.diaphragms": {
@@ -406,6 +408,11 @@ export const IMAGE_SLOT_LABELS = {
     where: "About page, ‘Our story’ section, the small picture overlapping the main one.",
     page: "/about",
   },
+  "resources.hero": {
+    title: "Resources page — hero background",
+    where: "Resources page, the photograph behind the heading at the top.",
+    page: "/resources",
+  },
   "about.portfolio": {
     title: "Our story — lower photo (moulded rings)",
     where: "About page, ‘Our story’ section, the lower picture.",
@@ -461,7 +468,7 @@ export const IMAGE_SLOT_LABELS = {
 
   /* ── Certifications page ──────────────────────────────────────────── */
   "certifications.facility.press-wide": {
-    title: "Certifications — facility photo 1 (press, wide)",
+    title: "Retired — Certifications — facility photo 1 (press, wide)",
     where: "Certifications page, ‘Manufacturing & facility’ section.",
     page: "/certifications",
   },
@@ -471,18 +478,18 @@ export const IMAGE_SLOT_LABELS = {
     page: "/certifications",
   },
   "certifications.facility.inspection": {
-    title: "Certifications — facility photo 3 (inspection)",
+    title: "Retired — Certifications — facility photo 3 (inspection)",
     where: "Certifications page, ‘Manufacturing & facility’ section.",
     page: "/certifications",
   },
   "certifications.facility.plant": {
-    title: "Certifications — facility photo 4 (plant)",
+    title: "Retired — Certifications — facility photo 4 (plant)",
     where: "Certifications page, ‘Manufacturing & facility’ section.",
     page: "/certifications",
   },
   "certifications.iso-badge": {
-    title: "ISO 9001:2015 badge graphic",
-    where: NOT_SHOWN,
+    title: "Certifications page — ISO 9001 hero graphic",
+    where: "Certifications page, the graphic beside the heading at the top. Keep a pure black background so it blends into the hero.",
     page: "/certifications",
   },
 
@@ -1680,9 +1687,14 @@ export const IMAGE_SLOT_LABELS = {
     where: "Export page, market block 8 of 8 (“East Africa, Kenya & Tanzania”).",
     page: "/export",
   },
+  "manufacturing.process-roadmap": {
+    title: "Manufacturing page — process roadmap (10 steps)",
+    where: "Manufacturing page, the wide graphic under the heading. Keep a pure black background and the 16:7 shape.",
+    page: "/manufacturing",
+  },
   "certifications.hero": {
-    title: "Certifications page — hero background",
-    where: "Certifications page, the photograph behind the heading at the top.",
+    title: "Retired — Certifications page hero background",
+    where: NOT_SHOWN + " The hero is plain black with the ISO 9001 graphic since 2 Nov 2026.",
     page: "/certifications",
   },
   "sku.anti-vibration-mounts--ac-vibration-weight.photo": {

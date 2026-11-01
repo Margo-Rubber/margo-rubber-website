@@ -119,7 +119,8 @@ export const productCategoryBySlugQuery = groq`
         "categorySlug": ^.slug.current
       },
       _type == "block.subCategory" => {
-        "photo": photo{ alt, caption, hotspot, "asset": asset->{ url, "w": metadata.dimensions.width, "h": metadata.dimensions.height, "lqip": metadata.lqip } }
+        "photo": photo{ alt, caption, hotspot, "asset": asset->{ url, "w": metadata.dimensions.width, "h": metadata.dimensions.height, "lqip": metadata.lqip } },
+        "detailPhoto": detailPhoto{ alt, caption, hotspot, "asset": asset->{ url, "w": metadata.dimensions.width, "h": metadata.dimensions.height, "lqip": metadata.lqip } }
       },
       _type == "block.industryFaq" => { "items": ^.faqs }
     }

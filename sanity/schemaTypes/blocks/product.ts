@@ -626,6 +626,25 @@ export const subCategory = defineType({
       group: "content",
     }),
     defineField({
+      name: "detailPhoto",
+      title: "Second photo",
+      type: "image",
+      description:
+        "Optional. A second product shot — e.g. die-cut parts made from the tape. Shown beside the product photo in place of the layer build-up; the whole photo is always visible, never cropped.",
+      options: { hotspot: true },
+      fields: [
+        defineField({
+          name: "alt",
+          title: "Description for screen readers",
+          type: "string",
+          description: "What is in the photo. Leave empty to use the heading.",
+          validation: (r) => r.max(160),
+        }),
+        defineField({ name: "caption", title: "Caption", type: "string", description: "Optional line under the photo." }),
+      ],
+      group: "content",
+    }),
+    defineField({
       name: "buildUp",
       title: "Layer build-up",
       type: "object",

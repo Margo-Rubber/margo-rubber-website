@@ -143,9 +143,9 @@ export const IMAGES = {
     status: "placeholder",
   },
   "products.card.rubber-mats": {
-    src: "/images/release-2026-10/rm-00_rubber-mats-group.webp",
+    src: "/images/release-2026-10/rm-02_boot-mat.webp",
     w: 1600, h: 1067,
-    alt: "Six solid rubber mat patterns fanned on a white background, illustrative",
+    alt: "Moulded black rubber boot liner with a ribbed floor on a white background, illustrative",
     status: "placeholder",
   },
   "products.card.diaphragms": {
@@ -485,12 +485,13 @@ export const IMAGES = {
 
   "contact.map": {
     // Real map of the plant: OpenStreetMap data at zoom ~16.5, centred on
-    // the plant's confirmed coordinates (19.9354496, 73.7331197 — 27 Oct
-    // 2026) so the pin drawn at the frame's centre sits on it. Restyled dark
-    // to match the site. Regenerate with scripts/gen-contact-map.mts. OSM
-    // requires the credit shown on the image.
-    src: "/images/contact/margo-plant-map.jpg",
-    blur: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk//2wBDAQ4ODhMREyYVFSZPNS01T09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0//wAARCAAJAAwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDgwflJA6+tPLo2D5IJ7k0h/pUY7/WqJP/Z",
+    // the plant building's coordinates (19.9324454, 73.7328218, confirmed
+    // by Margo, 2 Nov 2026) so the pin drawn at the frame's centre sits on
+    // it. Restyled dark to match the site. Regenerate with
+    // scripts/gen-contact-map.mts; the file is renamed when it is redrawn so
+    // image caches pick it up. OSM requires the credit shown on the image.
+    src: "/images/contact/margo-plant-map-2026-11.jpg",
+    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwIG/8QAGxAAAgIDAQAAAAAAAAAAAAAAAQIAMQMScUH/xAAVAQEBAAAAAAAAAAAAAAAAAAABAv/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMsWs32Kr42UE4dj6Yb2ZSUeyg//2Q==",
     w: 1200,
     h: 900,
     alt: "Map of the Margo Rubber Products plant at Vilholi, Nashik, just off NH160",
@@ -526,12 +527,14 @@ export const IMAGES = {
     alt: "Process pipework and extrusion lines at the Nashik plant",
     status: "placeholder",
   },
+  /* The certifications hero graphic (client, 2 Nov 2026): the ISO 9001
+     principles around the mark, on pure black so it sits in the black hero
+     with no visible edge. */
   "certifications.iso-badge": {
-    src: "/images/certifications/iso-9001-2015-badge.svg",
-    w: 240,
-    h: 240,
-    alt: "ISO 9001:2015 certification badge",
-    kind: "svg",
+    src: "/images/certifications/iso-9001-principles.webp",
+    w: 1254,
+    h: 1254,
+    alt: "ISO 9001 with its quality principles: customer orientation, leadership, employee involvement, process orientation, guidance, continuous enhancement, fact-based decisions and supplier partnerships",
     status: "placeholder",
   },
 
@@ -555,6 +558,15 @@ export const IMAGES = {
     status: "placeholder",
   },
   "about.story.gauge": {
+    src: "/images/about/b8297aadf52f2e62454d88960e09e6c641fdf6e8.png",
+    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAKAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQb/xAAhEAACAQMDBQAAAAAAAAAAAAABAwIABBEFITESNFGBsf/EABQBAQAAAAAAAAAAAAAAAAAAAAP/xAAZEQACAwEAAAAAAAAAAAAAAAAAAgESMVH/2gAMAwEAAhEDEQA/ADE6gi9Cl3CYqhIBeVkEk+eM80wjQ7Ja+mRiZA7mW5qS0rv1+/lU9syc15lOUjnknNC/BUi2n//Z",
+    w: 300, h: 260,
+    alt: "Operator checking a moulded part with a digital caliper",
+    status: "placeholder",
+  },
+  /* The resources hero's own slot, so Studio can replace it without touching
+     the About page. Starts as the same caliper photograph it used to borrow. */
+  "resources.hero": {
     src: "/images/about/b8297aadf52f2e62454d88960e09e6c641fdf6e8.png",
     blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAKAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQb/xAAhEAACAQMDBQAAAAAAAAAAAAABAwIABBEFITESNFGBsf/EABQBAQAAAAAAAAAAAAAAAAAAAAP/xAAZEQACAwEAAAAAAAAAAAAAAAAAAgESMVH/2gAMAwEAAhEDEQA/ADE6gi9Cl3CYqhIBeVkEk+eM80wjQ7Ja+mRiZA7mW5qS0rv1+/lU9syc15lOUjnknNC/BUi2n//Z",
     w: 300, h: 260,
@@ -877,9 +889,9 @@ export const IMAGES = {
     status: "placeholder",
   },
   "home.portfolio.rubber-mats": {
-    src: "/images/release-2026-10/rm-00_rubber-mats-group.webp",
+    src: "/images/release-2026-10/rm-02_boot-mat.webp",
     w: 1600, h: 1067,
-    alt: "Six solid rubber mat patterns fanned on a white background, illustrative",
+    alt: "Moulded black rubber boot liner with a ribbed floor on a white background, illustrative",
     status: "placeholder",
   },
   "products.sectors.automotive": {
@@ -2468,6 +2480,16 @@ export const IMAGES = {
     blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAcEAACAwEAAwAAAAAAAAAAAAABAgAEMREDEiH/xAAUAQEAAAAAAAAAAAAAAAAAAAAC/8QAFhEAAwAAAAAAAAAAAAAAAAAAAAEx/9oADAMBAAIRAxEAPwCJVtt4LrN7MvwZuSfbZXsMUAC4BzkRAqNw/9k=",
     w: 1200, h: 700,
     alt: "Stack of heat-treated wooden export pallets",
+    status: "placeholder",
+  },
+  /* Manufacturing page: the ten-step process roadmap under the heading
+     (client, 2 Nov 2026). Drawn on pure black so it sits on the page with
+     no visible edge. */
+  "manufacturing.process-roadmap": {
+    src: "/images/manufacturing/process-roadmap.webp",
+    w: 2000,
+    h: 875,
+    alt: "Margo's ten-step process, from requirement to reliability: 1 customer requirements and technical review, 2 product design and feasibility, 3 mould design and creation, 4 rubber compound development and material preparation, 5 batch mixing and numbering, 6 pre-forming, 7 hydraulic moulding and curing, 8 trimming and deflashing, 9 dimensional inspection and quality testing, 10 final inspection, packaging and dispatch",
     status: "placeholder",
   },
   "certifications.hero": {

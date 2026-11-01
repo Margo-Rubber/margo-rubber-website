@@ -308,12 +308,26 @@ export function CategoryHero({
           </p>
         )}
 
-        <h1 className={`${displaySize([headingLead, headingAccent])} mt-6`}>
+        <h1 className={`${displaySize([headingLead, ...headingAccent.split("\n")])} mt-6`}>
           {/* The space before the break is invisible but keeps the two lines
-              two words apart for a crawler reading the text. */}
+              two words apart for a crawler reading the text. A "\n" in the
+              accent is a further authored break (see ACCENT_BREAK on the
+              category route). */}
           {headingLead}{" "}
           <br />
-          <span className="text-accent-400">{headingAccent}</span>
+          <span className="text-accent-400">
+            {headingAccent.split("\n").map((line, i) => (
+              <span key={i}>
+                {i > 0 && (
+                  <>
+                    {" "}
+                    <br />
+                  </>
+                )}
+                {line}
+              </span>
+            ))}
+          </span>
         </h1>
 
         <p className="text-ink-3 mt-6 max-w-[52ch] leading-relaxed">{emphasised(intro)}</p>
