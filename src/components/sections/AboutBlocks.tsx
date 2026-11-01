@@ -838,29 +838,32 @@ export function Manufacturing({
       <Container>
         <CenterHead head={head} />
 
-        <div className="rounded-card border-line mt-14 overflow-hidden border">
-          <Photo
-            k={image}
-            ratio="aspect-[16/9] lg:aspect-[21/9]"
-            dissolve="none"
-            sizes="(min-width:1280px) 1200px, 100vw"
-          />
-        </div>
+        {/* Photo and stat cards side by side; the photo matches the stack's height. */}
+        <div className="mt-14 grid gap-5 lg:grid-cols-[1.55fr_1fr]">
+          <div className="rounded-card border-line overflow-hidden border">
+            <Photo
+              k={image}
+              ratio="aspect-[16/10] lg:aspect-auto lg:h-full"
+              dissolve="none"
+              sizes="(min-width:1024px) 60vw, 100vw"
+            />
+          </div>
 
-        <dl className="mt-5 grid gap-5 md:grid-cols-3">
-          {stats.map((s) => (
-            <div
-              key={s.label}
-              className="rounded-card border-line flex items-center gap-4 border bg-surface-3 p-6"
-            >
-              <IconTile name={s.icon} />
-              <div className="flex flex-col-reverse">
-                <dt className="text-ink-4 mt-0.5 text-sm">{s.label}</dt>
-                <dd className="text-ink text-lg font-semibold"><SlotValue value={s.value} /></dd>
+          <dl className="grid gap-5 md:grid-cols-3 lg:min-h-[24rem] lg:auto-rows-fr lg:grid-cols-1">
+            {stats.map((s) => (
+              <div
+                key={s.label}
+                className="rounded-card border-line flex items-center gap-4 border bg-surface-3 p-6"
+              >
+                <IconTile name={s.icon} />
+                <div className="flex flex-col-reverse">
+                  <dt className="text-ink-4 mt-0.5 text-sm">{s.label}</dt>
+                  <dd className="text-ink text-lg font-semibold"><SlotValue value={s.value} /></dd>
+                </div>
               </div>
-            </div>
-          ))}
-        </dl>
+            ))}
+          </dl>
+        </div>
 
         <div className="mt-14">
           <p className="text-eyebrow text-ink-4 font-mono uppercase">
