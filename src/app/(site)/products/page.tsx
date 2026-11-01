@@ -218,6 +218,7 @@ export default async function ProductsHubPage() {
           eyebrow={fm.certifications.eyebrow}
           eyebrowVariant="rule"
           accentLastWords={2}
+          align="center"
           heading={fm.certifications.heading}
           body={fm.certifications.body}
         >
@@ -228,7 +229,7 @@ export default async function ProductsHubPage() {
             scopeNote={settings.certifications.scopeNote}
           />
           {fm.certifications.cta && (
-            <p className="mt-8">
+            <p className="mt-8 text-center">
               <Link href={fm.certifications.cta.href} className="text-accent-400 text-sm font-medium hover:opacity-80">
                 {fm.certifications.cta.label} <span aria-hidden>›</span>
               </Link>

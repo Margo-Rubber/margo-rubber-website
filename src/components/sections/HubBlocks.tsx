@@ -301,14 +301,10 @@ export function ProductRange({
             </p>
           )}
 
-          {/* Equal cards, three across. The mosaic spans the earlier comp
-              used are gone: this one sizes every category the same. A group
-              of two fills the row at half width rather than sitting short. */}
-          <div
-            className={`grid grid-cols-1 gap-4 sm:grid-cols-2 ${
-              g.cards.length === 2 ? "lg:grid-cols-2" : "lg:grid-cols-3"
-            }`}
-          >
+          {/* Equal cards, three across, in every group — a short group sits
+              short rather than widening its cards (1 Nov 2026: the last three
+              cards read as three different sizes). */}
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {g.cards.map((c) => (
               <Link
                 key={c.slug}
@@ -317,22 +313,16 @@ export function ProductRange({
                 data-lift=""
                 className="group rounded-card border-line bg-surface-2 flex flex-col overflow-hidden border"
               >
-                {/* Photo on top at the same crop the overlay card used (4:3;
-                    2:1 for a half-width pair), the copy underneath it. */}
-                <div
-                  className={`relative isolate overflow-hidden ${
-                    g.cards.length === 2 ? "aspect-[4/3] lg:aspect-[2/1]" : "aspect-[4/3]"
-                  }`}
-                >
+                {/* Photo on top at the same 4:3 crop the overlay card used,
+                    the copy underneath it. The category tag drives the
+                    filter only; it is not printed on the card. */}
+                <div className="relative isolate aspect-[4/3] overflow-hidden">
                   <Img
                     k={c.image}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                   />
-                  <span className="text-eyebrow bg-canvas/70 text-accent-400 rounded-pill absolute top-4 left-4 px-3 py-1 font-mono uppercase backdrop-blur">
-                    {c.tag}
-                  </span>
                 </div>
 
                 <div className="flex flex-1 flex-col p-5">
@@ -725,10 +715,17 @@ export function ValidationPanel({
   eyebrow: string;
   cta?: { label: string; href: string };
 }) {
+  // With test groups: heading centred on top, the groups side by side under
+  // it, so a short intro never leaves an empty column beside a long list.
+  const stacked = groups.length > 0;
   return (
-    <div className="border-line bg-surface-3 rounded-card grid gap-8 border p-6 md:p-10 lg:grid-cols-2">
-      <div>
-        <Eyebrow>{eyebrow}</Eyebrow>
+    <div
+      className={`border-line bg-surface-3 rounded-card grid gap-8 border p-6 md:p-10 ${
+        stacked ? "" : "lg:grid-cols-2"
+      }`}
+    >
+      <div className={stacked ? "mx-auto max-w-[60ch] text-center" : undefined}>
+        <Eyebrow center={stacked}>{eyebrow}</Eyebrow>
         <h2 className="text-h2 mt-3">{accented(heading)}</h2>
         <p className="text-ink-4 mt-4 text-sm leading-relaxed">{body}</p>
         {cta && withoutDeadDownloads([cta]).length > 0 && (
@@ -738,7 +735,7 @@ export function ValidationPanel({
         )}
       </div>
       {groups.length > 0 ? (
-        <div className="space-y-6">
+        <div className="grid gap-x-12 gap-y-6 lg:grid-cols-2">
           {groups.map((g) => (
             <table key={g.title} className="w-full text-sm">
               <caption className="text-eyebrow text-accent-400 mb-3 text-left font-mono uppercase">
