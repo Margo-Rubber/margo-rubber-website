@@ -858,6 +858,12 @@ export const IMAGES = {
     alt: "Gloved operator handling sheet stock at a press",
     status: "placeholder",
   },
+  "home.portfolio.rubber-mats": {
+    src: "/images/release-2026-10/rm-00_rubber-mats-group.webp",
+    w: 1600, h: 1067,
+    alt: "Six solid rubber mat patterns fanned on a white background, illustrative",
+    status: "placeholder",
+  },
   "products.sectors.automotive": {
     src: "/images/industries/ef9b0fcea22b06954dcd3d147d4e70b3a4ee7463.png",
     blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAT/xAAdEAACAgMAAwAAAAAAAAAAAAABAgARAwQSEzFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCLa3cDN3kDs7ctbqOhQ9fJDt7HlyKaC0gFcxEFP//Z",

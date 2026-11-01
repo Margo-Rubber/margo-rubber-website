@@ -538,57 +538,62 @@ export const IMAGE_SLOT_LABELS = {
   },
   "home.portfolio.o-rings": {
     title: "Home — O-Rings portfolio card",
-    where: "Home page, ‘Our portfolio’ grid — card 1 of 11.",
+    where: "Home page, ‘Our portfolio’ grid — card 1 of 12.",
     page: "/",
   },
   "home.portfolio.oil-seals": {
     title: "Home — Oil Seals portfolio card",
-    where: "Home page, ‘Our portfolio’ grid — card 2 of 11.",
+    where: "Home page, ‘Our portfolio’ grid — card 2 of 12.",
     page: "/",
   },
   "home.portfolio.gaskets": {
     title: "Home — Gaskets portfolio card",
-    where: "Home page, ‘Our portfolio’ grid — card 3 of 11.",
+    where: "Home page, ‘Our portfolio’ grid — card 3 of 12.",
     page: "/",
   },
   "home.portfolio.bellows": {
     title: "Home — Bellows portfolio card",
-    where: "Home page, ‘Our portfolio’ grid — card 4 of 11.",
+    where: "Home page, ‘Our portfolio’ grid — card 4 of 12.",
     page: "/",
   },
   "home.portfolio.anti-vibration-mounts": {
     title: "Home — Anti-Vibration Mounts portfolio card",
-    where: "Home page, ‘Our portfolio’ grid — card 5 of 11.",
+    where: "Home page, ‘Our portfolio’ grid — card 5 of 12.",
     page: "/",
   },
   "home.portfolio.grommets": {
     title: "Home — Grommets portfolio card",
-    where: "Home page, ‘Our portfolio’ grid — card 6 of 11.",
+    where: "Home page, ‘Our portfolio’ grid — card 6 of 12.",
     page: "/",
   },
   "home.portfolio.bushes": {
     title: "Home — Bushes & Sleeves portfolio card",
-    where: "Home page, ‘Our portfolio’ grid — card 7 of 11.",
+    where: "Home page, ‘Our portfolio’ grid — card 7 of 12.",
     page: "/",
   },
   "home.portfolio.pads-stoppers-caps": {
     title: "Home — Pads, Stoppers & Caps portfolio card",
-    where: "Home page, ‘Our portfolio’ grid — card 8 of 11.",
+    where: "Home page, ‘Our portfolio’ grid — card 8 of 12.",
     page: "/",
   },
   "home.portfolio.leak-test-rubber": {
     title: "Home — Leak Test Rubber portfolio card",
-    where: "Home page, ‘Our portfolio’ grid — card 9 of 11.",
+    where: "Home page, ‘Our portfolio’ grid — card 9 of 12.",
     page: "/",
   },
   "home.portfolio.extrusion": {
     title: "Home — Extrusion portfolio card",
-    where: "Home page, ‘Our portfolio’ grid — card 10 of 11.",
+    where: "Home page, ‘Our portfolio’ grid — card 10 of 12.",
     page: "/",
   },
   "home.portfolio.sponge-foam-rubber": {
     title: "Home — Sponge & Foam Rubber portfolio card",
-    where: "Home page, ‘Our portfolio’ grid — card 11 of 11.",
+    where: "Home page, ‘Our portfolio’ grid — card 11 of 12.",
+    page: "/",
+  },
+  "home.portfolio.rubber-mats": {
+    title: "Home — Rubber Mats portfolio card",
+    where: "Home page, ‘Our portfolio’ grid — card 12 of 12.",
     page: "/",
   },
   "products.sectors.automotive": {

@@ -1778,6 +1778,15 @@ body {
     0% { background-position: 100% 0; }
     35%, 100% { background-position: 0% 0; }
   }
+  /* Names drift left in a slow loop; edges fade into the band. */
+  .margo-marquee {
+    mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  }
+  .margo-marquee-track {
+    animation: margo-marquee 90s linear infinite;
+  }
+  .margo-marquee:hover .margo-marquee-track { animation-play-state: paused; }
+  @keyframes margo-marquee { to { transform: translateX(-50%); } }
 
   @media (prefers-reduced-motion: reduce) {
     .margo-lane-flow,
@@ -1806,6 +1815,8 @@ body {
     .margo-about-hero-sweep { display: none; }
     .margo-trust-label::before, .margo-trust-label::after { animation: none; transform: none; }
     .margo-trust-label-text { animation: none; }
+    .margo-marquee { overflow-x: auto; scrollbar-width: none; }
+    .margo-marquee-track { animation: none; }
     .margo-rise,
     .margo-contact-hero-img,
     .margo-proof-dot,

@@ -519,24 +519,31 @@ export function TrustBar({
     <section className="bg-canvas border-line border-y py-10">
       <Container>
         {/* Label animates (rules draw out, light sweep); the names below
-            stay as a still, scrollable row. */}
+            drift slowly to the left. */}
         <p className="margo-trust-label text-eyebrow text-center font-mono uppercase">
           <span className="margo-trust-label-text">{label}</span>
         </p>
       </Container>
-      {/* Edge-to-edge and horizontally scrollable rather than a JS marquee, so
-          every name stays selectable and in the DOM. */}
-      <ul className="mt-6 flex snap-x gap-x-10 overflow-x-auto px-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-        {items.map((n) => (
-          <li
-            key={n}
-            className="text-ink-3 flex shrink-0 snap-start items-center gap-3 text-sm whitespace-nowrap"
-          >
-            <span aria-hidden className="bg-accent-400 size-1.5 rounded-full" />
-            {n}
-          </li>
-        ))}
-      </ul>
+      {/* CSS marquee: the list is rendered twice and slid by half its width,
+          so the loop is seamless. The second copy is hidden from assistive
+          tech; every name is still in the DOM once. Pauses on hover. */}
+      <div className="margo-marquee mt-6 overflow-hidden">
+        <div className="margo-marquee-track flex w-max">
+          {[0, 1].map((copy) => (
+            <ul key={copy} aria-hidden={copy === 1 || undefined} className="flex shrink-0">
+              {items.map((n) => (
+                <li
+                  key={n}
+                  className="text-ink-3 flex shrink-0 items-center gap-3 pr-10 text-sm whitespace-nowrap"
+                >
+                  <span aria-hidden className="bg-accent-400 size-1.5 rounded-full" />
+                  {n}
+                </li>
+              ))}
+            </ul>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
@@ -547,8 +554,6 @@ export function Story({
   lines,
   paragraphs,
   image,
-  imageBadge,
-  floatCard,
   stats,
   cta,
 }: {
@@ -556,8 +561,6 @@ export function Story({
   lines: readonly string[];
   paragraphs: readonly string[];
   image: string;
-  imageBadge: string;
-  floatCard: { title: string; body: string; href?: string };
   stats: readonly { value: string; label: string }[];
   cta: { label: string; href: string };
 }) {
@@ -565,33 +568,16 @@ export function Story({
     <section className="bg-canvas relative isolate overflow-hidden py-[70px]">
       <Bloom className="top-10 -left-40 size-[32rem]" />
       <Container>
-        <div className="grid items-center gap-14 lg:grid-cols-2">
-          <div className="relative pb-24">
-            <span className="text-eyebrow border-accent-400/35 bg-canvas/80 text-accent-400 absolute -top-3 left-0 z-10 rounded-md border px-3.5 py-2 font-mono backdrop-blur">
-              {imageBadge}
-            </span>
+        <div className="grid gap-14 lg:grid-cols-2">
+          {/* Fills the height of the copy beside it on desktop. */}
+          <div>
             <Photo
               k={image}
-              ratio="aspect-[4/3]"
+              ratio="aspect-[4/3] lg:aspect-auto lg:h-full"
               surface="var(--color-canvas)"
               sizes="(min-width:1024px) 46vw, 100vw"
-              className="margo-image-frame rounded-card border-line ml-[6%] border"
+              className="margo-image-frame rounded-card border-line border"
             />
-            <div className="margo-card rounded-card border-line absolute right-0 bottom-0 w-[62%] border bg-[#111418]/90 p-5 backdrop-blur">
-              <p className="text-ink flex items-center gap-2.5 text-sm font-semibold">
-                <Icon name="ribbon" className="text-accent-400 size-4" />
-                {floatCard.href ? (
-                  <Link href={floatCard.href} className="hover:text-accent-400 transition-colors after:absolute after:inset-0">
-                    {floatCard.title}
-                  </Link>
-                ) : (
-                  floatCard.title
-                )}
-              </p>
-              <p className="text-ink-4 mt-2 text-xs leading-relaxed">
-                {floatCard.body}
-              </p>
-            </div>
           </div>
 
           <div>
@@ -902,7 +888,6 @@ export function Facility({
   lines,
   body,
   image,
-  inset,
   badge,
   checks,
   stats = [],
@@ -911,7 +896,6 @@ export function Facility({
   lines: readonly string[];
   body?: string;
   image: string;
-  inset: string;
   badge: string;
   checks: readonly string[];
   stats?: readonly { value: string; label: string }[];
@@ -919,12 +903,13 @@ export function Facility({
   return (
     <section className="bg-surface-2 py-[70px]">
       <Container>
-        <div className="grid items-center gap-14 lg:grid-cols-2">
-          <div className="relative pb-16">
-            <figure className="margo-image-frame rounded-card border-line relative isolate overflow-hidden border">
+        {/* Copy on the left, photo on the right filling the copy's height. */}
+        <div className="grid gap-14 lg:grid-cols-2">
+          <div className="lg:order-2">
+            <figure className="margo-image-frame rounded-card border-line relative isolate overflow-hidden border lg:h-full">
               <Photo
                 k={image}
-                ratio="aspect-[3/2]"
+                ratio="aspect-[3/2] lg:aspect-auto lg:h-full"
                 dissolve={false}
                 sizes="(min-width:1024px) 46vw, 100vw"
               />
@@ -946,17 +931,6 @@ export function Facility({
                 </figcaption>
               )}
             </figure>
-
-            {/* Inset plate overlapping the lower-right corner. */}
-            <div className="rounded-card border-line absolute right-0 bottom-0 w-[36%] overflow-hidden border">
-              <Photo
-                k={inset}
-                ratio="aspect-[4/3]"
-                dissolve={false}
-                brightness="brightness-[0.7] saturate-0"
-                sizes="(min-width:1024px) 17vw, 36vw"
-              />
-            </div>
           </div>
 
           <div>
@@ -973,18 +947,22 @@ export function Facility({
                 </li>
               ))}
             </ul>
-            {stats.length > 0 && (
-              <dl className="border-line mt-8 grid grid-cols-2 gap-6 border-t pt-8 sm:grid-cols-4">
-                {stats.map((st) => (
-                  <div key={st.label} className="flex flex-col-reverse">
-                    <dt className="text-ink-4 mt-1 text-xs">{st.label}</dt>
-                    <dd className="text-ink text-2xl font-bold"><SlotValue value={st.value} /></dd>
-                  </div>
-                ))}
-              </dl>
-            )}
           </div>
         </div>
+
+        {/* Stats run centred across the whole section, under copy and photo. */}
+        {stats.length > 0 && (
+          <dl className="border-line mt-14 grid grid-cols-2 gap-8 border-t pt-10 text-center sm:grid-cols-4">
+            {stats.map((st) => (
+              // justify-end: in a reversed column that pins the value to
+              // the top, so the numbers line up whatever the label length.
+              <div key={st.label} className="flex flex-col-reverse justify-end">
+                <dt className="text-ink-4 mx-auto mt-1 max-w-[18ch] text-sm">{st.label}</dt>
+                <dd className="text-ink text-3xl font-bold"><SlotValue value={st.value} /></dd>
+              </div>
+            ))}
+          </dl>
+        )}
       </Container>
     </section>
   );
