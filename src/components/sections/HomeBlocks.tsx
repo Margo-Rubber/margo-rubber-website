@@ -568,11 +568,12 @@ export function Story({
     <section className="bg-canvas relative isolate overflow-hidden py-[70px]">
       <Bloom className="top-10 -left-40 size-[32rem]" />
       <Container>
-        <div className="grid items-center gap-14 lg:grid-cols-2">
+        <div className="grid gap-14 lg:grid-cols-2">
+          {/* Fills the height of the copy beside it on desktop. */}
           <div>
             <Photo
               k={image}
-              ratio="aspect-[4/3]"
+              ratio="aspect-[4/3] lg:aspect-auto lg:h-full"
               surface="var(--color-canvas)"
               sizes="(min-width:1024px) 46vw, 100vw"
               className="margo-image-frame rounded-card border-line border"
@@ -887,7 +888,6 @@ export function Facility({
   lines,
   body,
   image,
-  inset,
   badge,
   checks,
   stats = [],
@@ -896,7 +896,6 @@ export function Facility({
   lines: readonly string[];
   body?: string;
   image: string;
-  inset: string;
   badge: string;
   checks: readonly string[];
   stats?: readonly { value: string; label: string }[];
@@ -905,7 +904,7 @@ export function Facility({
     <section className="bg-surface-2 py-[70px]">
       <Container>
         <div className="grid items-center gap-14 lg:grid-cols-2">
-          <div className="relative pb-16">
+          <div>
             <figure className="margo-image-frame rounded-card border-line relative isolate overflow-hidden border">
               <Photo
                 k={image}
@@ -931,17 +930,6 @@ export function Facility({
                 </figcaption>
               )}
             </figure>
-
-            {/* Inset plate overlapping the lower-right corner. */}
-            <div className="rounded-card border-line absolute right-0 bottom-0 w-[36%] overflow-hidden border">
-              <Photo
-                k={inset}
-                ratio="aspect-[4/3]"
-                dissolve={false}
-                brightness="brightness-[0.7] saturate-0"
-                sizes="(min-width:1024px) 17vw, 36vw"
-              />
-            </div>
           </div>
 
           <div>
@@ -961,7 +949,9 @@ export function Facility({
             {stats.length > 0 && (
               <dl className="border-line mt-8 grid grid-cols-2 gap-6 border-t pt-8 sm:grid-cols-4">
                 {stats.map((st) => (
-                  <div key={st.label} className="flex flex-col-reverse">
+                  // justify-end: in a reversed column that pins the value to
+                  // the top, so the numbers line up whatever the label length.
+                  <div key={st.label} className="flex flex-col-reverse justify-end">
                     <dt className="text-ink-4 mt-1 text-xs">{st.label}</dt>
                     <dd className="text-ink text-2xl font-bold"><SlotValue value={st.value} /></dd>
                   </div>

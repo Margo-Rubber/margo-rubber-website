@@ -116,7 +116,6 @@ export default async function HomePage() {
         lines={fm.facility.lines}
         body={fm.facility.body}
         image={fm.facility.image}
-        inset={fm.facility.inset}
         badge={fm.facility.badge}
         checks={fm.facility.checks}
         stats={fm.facility.stats}
