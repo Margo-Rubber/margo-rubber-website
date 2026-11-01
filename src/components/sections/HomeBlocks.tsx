@@ -251,6 +251,12 @@ const ICONS: Record<string, React.ReactNode> = {
       <path d="m4 7.6 8 4.4 8-4.4M12 12v8.8" />
     </>
   ),
+  cup: (
+    <>
+      <path d="M5 8h11v6a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5z" />
+      <path d="M16 10h1.5a2.5 2.5 0 0 1 0 5H16M8 3.5c0 1 1 1.5 1 2.5M12 3.5c0 1 1 1.5 1 2.5" />
+    </>
+  ),
 };
 
 export function Icon({
