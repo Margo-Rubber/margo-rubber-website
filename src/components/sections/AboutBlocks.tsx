@@ -531,15 +531,13 @@ export function Story({
   head,
   paragraphs,
   checks,
-  badge,
-  images,
+  image,
   cta,
 }: {
   head: Head;
   paragraphs: readonly string[];
   checks: readonly string[];
-  badge: { value: string; label: string };
-  images: { main: string; inset: string; lower: string };
+  image: string;
   cta: { label: string; href: string };
 }) {
   return (
@@ -553,39 +551,13 @@ export function Story({
       <Bloom className="top-0 -left-32 size-[34rem]" />
       <Container>
         <div className="grid items-center gap-14 lg:grid-cols-2">
-          {/* Collage: large plate, inset card overlapping right, lower plate. */}
-          <div className="relative pb-20 sm:pb-24">
+          <div className="rounded-card border-line overflow-hidden border">
             <Photo
-              k={images.main}
+              k={image}
               ratio="aspect-[4/3.4]"
-              dissolve="y"
-              className="rounded-card w-[86%]"
+              dissolve="none"
               sizes="(min-width:1024px) 44vw, 90vw"
             />
-            <div className="rounded-card border-line absolute top-[24%] right-0 w-[46%] overflow-hidden border">
-              <Photo
-                k={images.inset}
-                ratio="aspect-[5/4]"
-                dissolve="none"
-                sizes="(min-width:1024px) 22vw, 45vw"
-                delay={90}
-              />
-            </div>
-            <div className="rounded-card border-line absolute right-[8%] bottom-0 w-[42%] overflow-hidden border">
-              <Photo
-                k={images.lower}
-                ratio="aspect-[5/4]"
-                dissolve="none"
-                sizes="(min-width:1024px) 20vw, 42vw"
-                delay={180}
-              />
-            </div>
-            <div className="bg-accent-400 text-canvas shadow-glow absolute bottom-6 left-0 rounded-2xl px-6 py-4 text-center">
-              <p className="text-2xl leading-none font-semibold"><SlotValue value={badge.value} /></p>
-              <p className="text-eyebrow mt-1.5 font-mono uppercase opacity-80">
-                {badge.label}
-              </p>
-            </div>
           </div>
 
           <div>
@@ -839,8 +811,7 @@ export function Leadership({
 /* ══ 05 · MANUFACTURING EXCELLENCE ════════════════════════════════════════ */
 export function Manufacturing({
   head,
-  main,
-  side,
+  image,
   stats,
   portfolioLabel,
   portfolio,
@@ -848,8 +819,7 @@ export function Manufacturing({
   equipment = [],
 }: {
   head: Head;
-  main: { image: string; caption: string };
-  side: readonly string[];
+  image: string;
   stats: readonly { icon: string; value: string; label: string }[];
   portfolioLabel: string;
   portfolio: readonly { label: string; href: string }[];
@@ -868,57 +838,32 @@ export function Manufacturing({
       <Container>
         <CenterHead head={head} />
 
+        {/* Photo and stat cards side by side; the photo matches the stack's height. */}
         <div className="mt-14 grid gap-5 lg:grid-cols-[1.55fr_1fr]">
-          <figure className="rounded-card border-line relative isolate overflow-hidden border">
+          <div className="rounded-card border-line overflow-hidden border">
             <Photo
-              k={main.image}
-              ratio="aspect-[16/10]"
+              k={image}
+              ratio="aspect-[16/10] lg:aspect-auto lg:h-full"
               dissolve="none"
               sizes="(min-width:1024px) 60vw, 100vw"
             />
-            <div
-              className="pointer-events-none absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(to top, color-mix(in srgb, var(--color-band-2) 92%, transparent), transparent 45%)",
-              }}
-            />
-            <figcaption className="border-accent-400/25 bg-surface-3/80 text-ink absolute bottom-5 left-5 rounded-lg border px-4 py-2 text-sm font-medium backdrop-blur">
-              {main.caption}
-            </figcaption>
-          </figure>
+          </div>
 
-          <div className="grid gap-5">
-            {side.map((k) => (
+          <dl className="grid gap-5 md:grid-cols-3 lg:min-h-[24rem] lg:auto-rows-fr lg:grid-cols-1">
+            {stats.map((s) => (
               <div
-                key={k}
-                className="rounded-card border-line overflow-hidden border"
+                key={s.label}
+                className="rounded-card border-line flex items-center gap-4 border bg-surface-3 p-6"
               >
-                <Photo
-                  k={k}
-                  ratio="aspect-[16/9]"
-                  dissolve="none"
-                  sizes="(min-width:1024px) 34vw, 100vw"
-                />
+                <IconTile name={s.icon} />
+                <div className="flex flex-col-reverse">
+                  <dt className="text-ink-4 mt-0.5 text-sm">{s.label}</dt>
+                  <dd className="text-ink text-lg font-semibold"><SlotValue value={s.value} /></dd>
+                </div>
               </div>
             ))}
-          </div>
+          </dl>
         </div>
-
-        <dl className="mt-5 grid gap-5 md:grid-cols-3">
-          {stats.map((s) => (
-            <div
-              key={s.label}
-              className="rounded-card border-line flex items-center gap-4 border bg-surface-3 p-6"
-            >
-              <IconTile name={s.icon} />
-              <div className="flex flex-col-reverse">
-                <dt className="text-ink-4 mt-0.5 text-sm">{s.label}</dt>
-                <dd className="text-ink text-lg font-semibold"><SlotValue value={s.value} /></dd>
-              </div>
-            </div>
-          ))}
-        </dl>
 
         <div className="mt-14">
           <p className="text-eyebrow text-ink-4 font-mono uppercase">
@@ -1061,7 +1006,7 @@ function MarketLanes({
   const longest = Math.max(1, ...parsed.map((l) => l.max));
 
   return (
-    <InView threshold={0.2} className="margo-lanes mt-10">
+    <InView threshold={0.2} className="margo-lanes mt-14">
       {lanes.length > 0 && (
         <>
           <p className="text-eyebrow text-ink-4 flex items-center gap-3 font-mono uppercase">
@@ -1070,12 +1015,12 @@ function MarketLanes({
             <span className="text-accent-400">{String(lanes.length).padStart(2, "0")}</span>
             <span className="margo-lanes-meta text-ink-4 ml-auto">Port · transit</span>
           </p>
-          <ol className="border-line mt-4 overflow-hidden rounded-card border">
+          <ol className="margo-lane-grid mt-4">
             {parsed.map((l, i) => (
               <li
                 key={l.name}
                 style={{ "--i": i, "--w": l.max ? l.max / longest : 0, "--w0": l.max ? l.min / longest : 0 } as React.CSSProperties}
-                className="margo-lane border-line border-b bg-surface-3/60 px-4 py-3.5 last:border-b-0"
+                className="margo-lane border-line rounded-card border bg-surface-3/60 p-5"
               >
                 <span className="margo-iso" aria-hidden>
                   {isoFromFlag(l.flag, l.name)}
@@ -1139,19 +1084,12 @@ export function Presence({
   head,
   image,
   countries,
-  stats,
   link,
 }: {
   head: Head;
   image: string;
   countries: readonly { flag: string; name: string; tier?: 1 | 2; note?: string }[];
   link?: { label: string; href: string };
-  stats: readonly {
-    icon: string;
-    value: string;
-    label: string;
-    note?: string;
-  }[];
 }) {
   return (
     <section className="bg-band-2 py-[70px]">
@@ -1169,8 +1107,6 @@ export function Presence({
                 {head.body}
               </p>
             )}
-
-            <MarketLanes countries={countries} />
             {link?.label && link.href && (
               <p className="mt-6">
                 <Link href={link.href} className="text-accent-400 text-sm font-medium hover:opacity-80">
@@ -1180,37 +1116,18 @@ export function Presence({
             )}
           </div>
 
-          <div className="flex flex-col gap-5">
-            <div className="rounded-card border-line overflow-hidden border">
-              <Photo
-                k={image}
-                ratio="aspect-[4/3]"
-                dissolve="none"
-                sizes="(min-width:1024px) 46vw, 100vw"
-              />
-            </div>
-
-            {stats.map((s) => (
-              <div
-                key={s.label}
-                className="rounded-card border-line flex items-center gap-4 border bg-surface-3 p-6"
-              >
-                <IconTile name={s.icon} />
-                <div>
-                  <p className="text-accent-400 text-xl font-semibold">
-                    <SlotValue value={s.value} />
-                  </p>
-                  <p className="text-ink mt-0.5 text-sm font-medium">
-                    {s.label}
-                  </p>
-                  {s.note && (
-                    <p className="text-ink-4 mt-0.5 text-xs">{s.note}</p>
-                  )}
-                </div>
-              </div>
-            ))}
+          {/* Stretches to the height of the copy beside it on desktop. */}
+          <div className="rounded-card border-line overflow-hidden border">
+            <Photo
+              k={image}
+              ratio="aspect-[4/3] lg:aspect-auto lg:h-full"
+              dissolve="none"
+              sizes="(min-width:1024px) 46vw, 100vw"
+            />
           </div>
         </div>
+
+        <MarketLanes countries={countries} />
       </Container>
     </section>
   );
@@ -1229,14 +1146,13 @@ export function Awards({
   auditedLabel: string;
   auditImage: string;
 }) {
+  // About shows only what is held (ISO 9001:2015); the in-progress
+  // programmes stay on the products hub and the certifications page.
+  const held = certifications.items.filter((c) => c.standing === "held");
   // The auditor band names the bodies that actually issued something — the
   // issuers of held rows — rather than a typed list of registrars.
   const auditors = [
-    ...new Set(
-      certifications.items
-        .filter((c) => c.standing === "held" && c.issuer)
-        .map((c) => c.issuer as string),
-    ),
+    ...new Set(held.filter((c) => c.issuer).map((c) => c.issuer as string)),
   ];
   return (
     <section className="bg-surface-2 relative isolate overflow-hidden py-[70px]">
@@ -1246,7 +1162,7 @@ export function Awards({
 
         <div className="mt-14">
           <CertificationBadges
-            items={certifications.items}
+            items={held}
             scopeNote={certifications.scopeNote}
             compact
           />

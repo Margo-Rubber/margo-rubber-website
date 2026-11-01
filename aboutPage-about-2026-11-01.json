@@ -1,0 +1,942 @@
+{
+  "_createdAt": "2026-09-02T12:40:16Z",
+  "_id": "aboutPage-about",
+  "_rev": "0SRQZSXP7mfyb85DOLT8LW",
+  "_system": {
+    "base": {
+      "id": "aboutPage-about",
+      "rev": "fc3Lhjz1hJmCkWtCn8lC9T"
+    }
+  },
+  "_type": "aboutPage",
+  "_updatedAt": "2026-10-29T10:54:31Z",
+  "actions": [
+    {
+      "_key": "discover-our-story",
+      "_type": "action",
+      "href": "#company-history",
+      "label": "Discover Our Story",
+      "variant": "primary"
+    },
+    {
+      "_key": "our-capabilities",
+      "_type": "action",
+      "href": "#manufacturing",
+      "label": "Our Capabilities",
+      "variant": "secondary"
+    }
+  ],
+  "awards": {
+    "accentLines": [
+      1
+    ],
+    "auditImage": "about.audit",
+    "auditedLabel": "CERTIFIED BY",
+    "auditors": [
+      "Bureau Veritas",
+      "TÜV SÜD",
+      "SGS India",
+      "FIEO"
+    ],
+    "eyebrow": "CERTIFICATIONS & AWARDS",
+    "items": [
+      {
+        "_key": "about_awards_items_0",
+        "body": "Quality Management System",
+        "icon": "medal",
+        "name": "ISO 9001 : 2015"
+      },
+      {
+        "_key": "about_awards_items_1",
+        "body": "Environmental Management",
+        "icon": "leaf",
+        "name": "ISO 14001 : 2015"
+      },
+      {
+        "_key": "about_awards_items_2",
+        "body": "EU Chemical Safety Directive",
+        "icon": "flask",
+        "name": "REACH Compliant"
+      },
+      {
+        "_key": "about_awards_items_3",
+        "body": "Hazardous Substance Free",
+        "icon": "check",
+        "name": "RoHS Certified"
+      },
+      {
+        "_key": "about_awards_items_4",
+        "body": "International Spec. Aligned",
+        "icon": "scope",
+        "name": "ASTM / DIN / JIS"
+      },
+      {
+        "_key": "about_awards_items_5",
+        "body": "Excellence in Exports 2023",
+        "icon": "trophy",
+        "name": "FIEO Export Award"
+      }
+    ],
+    "lines": [
+      "What We Hold,",
+      "and What Is Still Coming."
+    ]
+  },
+  "badge": "",
+  "clients": {
+    "items": [
+      {
+        "_key": "31325098-666",
+        "_type": "client",
+        "logo": {
+          "_type": "image",
+          "alt": "Mahindra Company Logo",
+          "asset": {
+            "_ref": "image-988a98b19d4cea43d24aa73758789adb6327a9c5-767x400-png",
+            "_type": "reference"
+          }
+        },
+        "name": "Mahindra & Mahindra",
+        "sector": "Automotive"
+      },
+      {
+        "_key": "d7120177-ec6",
+        "_type": "client",
+        "logo": {
+          "_type": "image",
+          "alt": "TATA Company Logo",
+          "asset": {
+            "_ref": "image-addeb0500737bb8c38e6dbf94f0602153d66eda4-188x148-jpg",
+            "_type": "reference"
+          }
+        },
+        "name": "Tata",
+        "sector": "Automotive"
+      },
+      {
+        "_key": "d89f0ef9-104",
+        "_type": "client",
+        "logo": {
+          "_type": "image",
+          "alt": "HYUNDAI Company Logo",
+          "asset": {
+            "_ref": "image-7246325c22ee69dc369fe11c7ae562e816ab51de-1205x980-png",
+            "_type": "reference"
+          }
+        },
+        "name": "Hyundai",
+        "sector": "Automotive"
+      },
+      {
+        "_key": "eeba9aaf-30e",
+        "_type": "client",
+        "logo": {
+          "_type": "image",
+          "alt": "Victor Reinz Company Logo",
+          "asset": {
+            "_ref": "image-52effc2dc3fc648b46617385323c8c4c2c642299-900x500-png",
+            "_type": "reference"
+          }
+        },
+        "name": "Victor Reinz",
+        "sector": "Auto components"
+      },
+      {
+        "_key": "21176a2c-3ab",
+        "_type": "client",
+        "logo": {
+          "_type": "image",
+          "alt": "IDEX India Company Logo",
+          "asset": {
+            "_ref": "image-bd8f9add0b75d82e5a34e6480ee40f40ddfc3941-271x149-jpg",
+            "_type": "reference"
+          }
+        },
+        "name": "IDEX India",
+        "sector": "Industrial machinery"
+      },
+      {
+        "_key": "1bd79e8b-0ab",
+        "_type": "client",
+        "logo": {
+          "_type": "image",
+          "alt": "Shakti Mining Equipments Company Logo",
+          "asset": {
+            "_ref": "image-471cb6aef56d0a6be96030f0dcf442041e2b17ac-344x179-jpg",
+            "_type": "reference"
+          }
+        },
+        "name": "Shakti Mining Equipments",
+        "sector": "Heavy engineering"
+      },
+      {
+        "_key": "86494b50-8fe",
+        "_type": "client",
+        "logo": {
+          "_type": "image",
+          "alt": "Starlight Company Logo",
+          "asset": {
+            "_ref": "image-0ed7588ded68f1a452a563592f72c10ace65249b-190x83-jpg",
+            "_type": "reference"
+          }
+        },
+        "name": "Starlite Lighting",
+        "sector": "Electrical"
+      },
+      {
+        "_key": "d27f89e2-029",
+        "_type": "client",
+        "logo": {
+          "_type": "image",
+          "alt": "Minerva Special Purpose Vehicle Company Logo",
+          "asset": {
+            "_ref": "image-df97b2cd50f36c67aa2e89da80174b96a2909c6f-372x297-jpg",
+            "_type": "reference"
+          }
+        },
+        "name": "Minerva Special Purpose Vehicle",
+        "sector": "Specialist vehicles"
+      }
+    ],
+    "label": "TWENTY-FOUR NAMED ACCOUNTS ACROSS SEVEN SECTORS"
+  },
+  "closing": {
+    "accentLines": [
+      1
+    ],
+    "assurances": [
+      "Reply in one business day",
+      "Quotation and feasibility report in 48 hours",
+      "Design-for-manufacture review at no cost"
+    ],
+    "body": "Our engineering team replies within one business day. A full quotation and feasibility report follows inside 48 hours, with a compound recommendation and a lead time.",
+    "eyebrow": "GET STARTED",
+    "image": "about.closing",
+    "lines": [
+      "Send a Drawing,",
+      "or Send the Part."
+    ],
+    "placeholder": "your@company.com",
+    "submitLabel": "Request Quotation"
+  },
+  "confirmWithMargo": [
+    "FOUNDING YEAR 1997 is asserted eight times on this page (hero, story, leadership, timeline, footer). site.ts still holds foundingYear as null because the blueprint and the design disagree. One source has to win before launch.",
+    "The design says AHMEDABAD, GUJARAT in the story, manufacturing and timeline sections while its own footer says Nashik, Maharashtra. Built as Nashik, matching the confirmed address. Needs a ruling.",
+    "Unverified figures carried straight from the design: 27+ years, 1,200+ active clients, 25+ export countries, 500T monthly capacity, 98.7% on-time delivery, 80,000 sq. ft. floor area, 400+ team members, 400+ compounds, 18 yrs average senior tenure, 100% safety record, < 0.1% defect rate, 48 hr sample lead time, ±0.01 mm tolerance, ₹120 Cr+ FY 2023-24 export turnover.",
+    "Capacity conflict: this page says 500 TONNES per month; site.ts records 500,000 UNITS per month from the pack. Those are not the same measure.",
+    "Certifications claimed here that Margo does NOT hold per the pack: ISO 14001:2015, NABL-accredited lab, ISO Class 7 cleanroom, REACH and RoHS certification, FIEO Export Award 2023. The /certifications page states plainly that ISO 9001:2015 is the only management system certification held.",
+    "Named auditors (Bureau Veritas, TUV SUD, SGS India, FIEO) are unconfirmed. The real certification body is still unknown, see checklist item iso-scan.",
+    "The eight client names on the trust wall are the design's, not a supplied list. Each needs permission before a logo or name is published.",
+    "Timeline milestones for 2002 through 2024 were written to fit the design's seven-year chip row. Only 1997 came from the design. All seven need Margo's real dates.",
+    "Countries list, export turnover and 'six continents' all need confirming against the actual shipping record.",
+    "Every image on this page is stock, including both portraits. See checklist item about-photos."
+  ],
+  "furtherReading": [
+    "how-to-evaluate-a-rubber-manufacturer"
+  ],
+  "green": {
+    "accentLines": [
+      1
+    ],
+    "bars": [
+      {
+        "_key": "better-material-utilisation-since-automa",
+        "_type": "greenBar",
+        "label": "Better material utilisation since automation",
+        "note": "",
+        "pct": 20
+      },
+      {
+        "_key": "less-production-time-per-cycle",
+        "_type": "greenBar",
+        "label": "Less production time per cycle",
+        "note": "",
+        "pct": 30
+      }
+    ],
+    "body": "Automating compound mixing and cure control cut scrap: material utilisation improved 20% and cycle time fell 30%, which is less rubber and less energy for the same part. The plant is fully compliant with MIDC environmental and industrial norms. We have not set a carbon target and will not publish one until we can measure against it.",
+    "eyebrow": "SUSTAINABILITY & INNOVATION",
+    "image": "about.green",
+    "imageBadge": {
+      "note": "",
+      "title": ""
+    },
+    "lines": [
+      "Less Waste per Part,",
+      "Measured Not Promised."
+    ]
+  },
+  "h1": "Precision Rubber, Made in Nashik Since 2005.",
+  "h1AccentLines": [
+    1
+  ],
+  "h1Lines": [
+    "Precision Rubber,",
+    "Made in Nashik",
+    "Since 2005."
+  ],
+  "heroImage": "about.hero",
+  "heroStats": [
+    {
+      "_key": "2005",
+      "_type": "pageStat",
+      "label": "Year Established",
+      "value": "2005"
+    },
+    {
+      "_key": "17-9m",
+      "_type": "pageStat",
+      "label": "Components Delivered Per Year",
+      "value": "17.9M"
+    },
+    {
+      "_key": "95",
+      "_type": "pageStat",
+      "label": "Export Markets",
+      "value": "95"
+    },
+    {
+      "_key": "5m",
+      "_type": "pageStat",
+      "label": "Components Per Month, Installed",
+      "value": "5M"
+    }
+  ],
+  "intro": "Margo Rubber Products is a manufacturer of moulded and extruded rubber components in Nashik, Maharashtra. Certified to ISO 9001:2015 for moulded rubber components. Compound formulation, mould tooling, moulding, finishing and testing all happen under one roof, for 24 named accounts across seven sectors.",
+  "leadership": {
+    "body": "Reverse engineering is a standard route to a first order here. We measure the part, identify the compound family, and quote against the sample. It is also the clearest test of whether a supplier actually formulates compound or simply buys it in.",
+    "eyebrow": "LEADERSHIP MESSAGE",
+    "image": "about.founder",
+    "person": {
+      "initials": "MS",
+      "name": "Mehboob Shaikh",
+      "role": "Founder & Director · Margo Rubber Products"
+    },
+    "quoteAccent": "",
+    "quoteLines": [
+      "A large share of our work arrives as a worn part in an envelope, not a CAD file.",
+      "Somebody needs that part to exist again, and it has to fit."
+    ]
+  },
+  "manufacturing": {
+    "accentLines": [
+      1
+    ],
+    "body": "A 10,000+ sq ft plant in the Nashik industrial belt, laid out for a single linear workflow with compression, transfer and injection moulding plus continuous-cure extrusion. Automated presses hold cure temperature and pressure closed-loop, which takes operator variation out of the part.",
+    "equipment": [
+      "Automated moulding presses — closed-loop temperature and pressure control",
+      "Digital curing ovens — programmable, with a retrievable cure record per batch",
+      "Compound mixing, automated — even filler distribution, batch after batch",
+      "In-line deflashing and trimming — consistent finish, less manual handling",
+      "IoT production monitoring — a slow press shows up the same day, not at month end",
+      "Centralised ERP and MES — planning, tracking and batch traceability across the plant"
+    ],
+    "eyebrow": "MANUFACTURING EXCELLENCE",
+    "lines": [
+      "One Roof, One Flow,",
+      "No Handoffs."
+    ],
+    "main": {
+      "caption": "Main production floor · Nashik",
+      "image": "about.manufacturing.floor"
+    },
+    "portfolio": [
+      {
+        "_key": "o-rings",
+        "_type": "portfolioLink",
+        "href": "/products/o-rings",
+        "label": "O-Rings"
+      },
+      {
+        "_key": "oil-seals",
+        "_type": "portfolioLink",
+        "href": "/products/oil-seals",
+        "label": "Oil Seals"
+      },
+      {
+        "_key": "gaskets",
+        "_type": "portfolioLink",
+        "href": "/products/gaskets",
+        "label": "Gaskets"
+      },
+      {
+        "_key": "bellows",
+        "_type": "portfolioLink",
+        "href": "/products/bellows",
+        "label": "Bellows"
+      },
+      {
+        "_key": "anti-vibration-mounts",
+        "_type": "portfolioLink",
+        "href": "/products/anti-vibration-mounts",
+        "label": "Anti-Vibration Mounts"
+      },
+      {
+        "_key": "grommets",
+        "_type": "portfolioLink",
+        "href": "/products/grommets",
+        "label": "Grommets"
+      },
+      {
+        "_key": "bushes-bushings",
+        "_type": "portfolioLink",
+        "href": "/products/bushes",
+        "label": "Bushes & Bushings"
+      },
+      {
+        "_key": "pads-stoppers-caps",
+        "_type": "portfolioLink",
+        "href": "/products/pads-stoppers-caps",
+        "label": "Pads, Stoppers & Caps"
+      },
+      {
+        "_key": "leak-test-rubber",
+        "_type": "portfolioLink",
+        "href": "/products/leak-test-rubber",
+        "label": "Leak Test Rubber"
+      },
+      {
+        "_key": "extrusion-profiles",
+        "_type": "portfolioLink",
+        "href": "/products/extrusion",
+        "label": "Extrusion Profiles"
+      },
+      {
+        "_key": "sponge-foam-rubber",
+        "_type": "portfolioLink",
+        "href": "/products/sponge-foam-rubber",
+        "label": "Sponge & Foam Rubber"
+      },
+      {
+        "_key": "diaphragms",
+        "_type": "portfolioLink",
+        "href": "/products/diaphragms",
+        "label": "Diaphragms"
+      }
+    ],
+    "portfolioLabel": "PRODUCT PORTFOLIO",
+    "side": [
+      "about.manufacturing.press",
+      "about.manufacturing.lab"
+    ],
+    "stats": [
+      {
+        "_key": "area",
+        "_type": "manufacturingStat",
+        "icon": "area",
+        "label": "Manufacturing Floor Area",
+        "value": "10,000+ sq ft"
+      },
+      {
+        "_key": "lab",
+        "_type": "manufacturingStat",
+        "icon": "lab",
+        "label": "Less Cycle Time · Better Material Utilisation",
+        "value": "30% / 20%"
+      },
+      {
+        "_key": "weight",
+        "_type": "manufacturingStat",
+        "icon": "weight",
+        "label": "Monthly Installed Capacity",
+        "value": "5M pcs"
+      }
+    ]
+  },
+  "numbers": {
+    "accentLines": [
+      1
+    ],
+    "eyebrow": "WHY GLOBAL CLIENTS CHOOSE US",
+    "lines": [
+      "The Numbers",
+      "Speak Clearly."
+    ],
+    "references": {
+      "body": "We will name contacts at our customers during a vendor audit or qualification, on request. Volumes and part numbers are commercially confidential and disclosed under NDA.",
+      "eyebrow": "REFERENCES"
+    },
+    "stats": [
+      {
+        "_key": "1",
+        "_type": "numberStat",
+        "label": "Target Rejection Rate",
+        "note": "Post-automation",
+        "value": "<1%"
+      },
+      {
+        "_key": "48-hrs",
+        "_type": "numberStat",
+        "label": "Quotation Turnaround",
+        "note": "Feasibility report included",
+        "value": "48 hrs"
+      },
+      {
+        "_key": "8",
+        "_type": "numberStat",
+        "label": "Compounds Mixed In-House",
+        "note": "AEM to natural rubber",
+        "value": "8"
+      },
+      {
+        "_key": "95",
+        "_type": "numberStat",
+        "label": "Repeat Order Rate",
+        "note": "10+ year average relationship",
+        "value": "95%"
+      }
+    ],
+    "testimonial": {
+      "initials": "  ",
+      "name": "Attribution pending client sign-off",
+      "quote": "Margo Rubber has been supplying high-performance sealing solutions to our facility for over a decade. Their quality consistency, technical responsiveness and on-time delivery are genuinely unmatched in the Indian manufacturing sector.",
+      "role": "Procurement lead, European energy OEM",
+      "stars": 5
+    }
+  },
+  "presence": {
+    "accentLines": [
+      1
+    ],
+    "body": "We screened and scored 95 countries across seven regions, wrote country-level sourcing playbooks for 18, and set an activation order of five. Each playbook carries duty treatment, certificate requirements, transit time and destination port — not a flag on a map.",
+    "countries": [
+      {
+        "_key": "australia",
+        "_type": "country",
+        "flag": "🇦🇺",
+        "name": "Australia",
+        "note": "Melbourne 18–22 d",
+        "tier": 1
+      },
+      {
+        "_key": "united-kingdom",
+        "_type": "country",
+        "flag": "🇬🇧",
+        "name": "United Kingdom",
+        "note": "Felixstowe 22–28 d",
+        "tier": 1
+      },
+      {
+        "_key": "uae",
+        "_type": "country",
+        "flag": "🇦🇪",
+        "name": "UAE",
+        "note": "Jebel Ali 5–8 d",
+        "tier": 1
+      },
+      {
+        "_key": "saudi-arabia",
+        "_type": "country",
+        "flag": "🇸🇦",
+        "name": "Saudi Arabia",
+        "note": "Dammam 7-9 d",
+        "tier": 1
+      },
+      {
+        "_key": "malaysia",
+        "_type": "country",
+        "flag": "🇲🇾",
+        "name": "Malaysia",
+        "note": "Port Klang 10–14 d",
+        "tier": 1
+      },
+      {
+        "_key": "south-korea",
+        "_type": "country",
+        "flag": "🇰🇷",
+        "name": "South Korea",
+        "tier": 2
+      },
+      {
+        "_key": "kenya",
+        "_type": "country",
+        "flag": "🇰🇪",
+        "name": "Kenya",
+        "tier": 2
+      },
+      {
+        "_key": "united-states",
+        "_type": "country",
+        "flag": "🇺🇸",
+        "name": "United States",
+        "tier": 2
+      },
+      {
+        "_key": "south-africa",
+        "_type": "country",
+        "flag": "🇿🇦",
+        "name": "South Africa",
+        "tier": 2
+      },
+      {
+        "_key": "singapore",
+        "_type": "country",
+        "flag": "🇸🇬",
+        "name": "Singapore",
+        "tier": 2
+      },
+      {
+        "_key": "norway",
+        "_type": "country",
+        "flag": "🇳🇴",
+        "name": "Norway",
+        "tier": 2
+      },
+      {
+        "_key": "chile",
+        "_type": "country",
+        "flag": "🇨🇱",
+        "name": "Chile",
+        "tier": 2
+      },
+      {
+        "_key": "zambia",
+        "_type": "country",
+        "flag": "🇿🇲",
+        "name": "Zambia",
+        "tier": 2
+      },
+      {
+        "_key": "tanzania",
+        "_type": "country",
+        "flag": "🇹🇿",
+        "name": "Tanzania",
+        "tier": 2
+      },
+      {
+        "_key": "ghana",
+        "_type": "country",
+        "flag": "🇬🇭",
+        "name": "Ghana",
+        "tier": 2
+      },
+      {
+        "_key": "peru",
+        "_type": "country",
+        "flag": "🇵🇪",
+        "name": "Peru",
+        "tier": 2
+      },
+      {
+        "_key": "trinidad-tobago",
+        "_type": "country",
+        "flag": "🇹🇹",
+        "name": "Trinidad & Tobago",
+        "tier": 2
+      },
+      {
+        "_key": "jordan",
+        "_type": "country",
+        "flag": "🇯🇴",
+        "name": "Jordan",
+        "tier": 2
+      }
+    ],
+    "eyebrow": "GLOBAL PRESENCE",
+    "image": "about.presence",
+    "lines": [
+      "95 Markets Screened.",
+      "Five Lanes First."
+    ],
+    "stats": [
+      {
+        "_key": "globe",
+        "_type": "presenceStat",
+        "icon": "globe",
+        "label": "Markets Screened and Scored",
+        "value": "95"
+      },
+      {
+        "_key": "truck",
+        "_type": "presenceStat",
+        "icon": "truck",
+        "label": "Country Playbooks Written",
+        "value": "18"
+      }
+    ]
+  },
+  "schemaTypes": [
+    "BreadcrumbList",
+    "Organization"
+  ],
+  "scrollLabel": "SCROLL",
+  "seo": {
+    "description": "Rubber moulding company in Vilholi, Nashik, Maharashtra, since 2005. Eight compounds mixed in-house, parts moulded to drawing. ISO 9001:2015 for moulded parts.",
+    "title": "Rubber Moulding Company in Nashik, Maharashtra | Margo"
+  },
+  "slug": {
+    "_type": "slug",
+    "current": "about"
+  },
+  "status": "placeholder",
+  "story": {
+    "accentLines": [
+      1
+    ],
+    "badge": {
+      "label": "ON-TIME DELIVERY",
+      "value": ">99%"
+    },
+    "checks": [
+      "ISO 9001:2015 certified — certificate 09111526A, Integral Certification Ltd, valid to 21 February 2027",
+      "Eight compounds mixed in-house, from AEM to natural rubber — formulation is not subcontracted",
+      "In-house test laboratory on a scheduled calibration cycle; accredited-lab testing through a NABL partner on request"
+    ],
+    "cta": {
+      "href": "#manufacturing",
+      "label": "See Our Manufacturing"
+    },
+    "eyebrow": "OUR STORY",
+    "images": {
+      "inset": "about.story.gauge",
+      "lower": "about.portfolio",
+      "main": "about.story.plant"
+    },
+    "lines": [
+      "From a 6,000 sq ft Workshop",
+      "to an Automated Plant."
+    ],
+    "paragraphs": [
+      "Margo Rubber Products was founded in Nashik in 2005. The previous works ran 6,000 sq ft and about 200,000 parts a month. Moving to a purpose-built 10,000+ sq ft plant, and automating during the move, took installed capacity to five million parts a month — twenty-five times the old works.",
+      "The plant is built for a single linear workflow: raw material in at one end, finished goods out at the other, with no cross-traffic between clean and flash-generating areas. Today it supplies 24 named accounts across automotive, industrial machinery, electrical, specialist vehicles, medical, chemicals and tooling."
+    ]
+  },
+  "team": {
+    "accentLines": [
+      1
+    ],
+    "body": "Margo is run by the two people who started it. Giving you a direct line to the people who know the product, the process, and the plant.",
+    "eyebrow": "OUR TEAM",
+    "lines": [
+      "Two Founders,",
+      "Both on the Floor."
+    ],
+    "members": [
+      {
+        "_key": "mehboob-shaikh",
+        "_type": "member",
+        "body": "Twenty years in rubber compounding. Leads formulation, product development and quality — the three things that decide whether a part works.",
+        "image": "about.team.portrait-b",
+        "name": "Mehboob Shaikh",
+        "role": "Founder & Director"
+      },
+      {
+        "_key": "ayyaz-shaikh",
+        "_type": "member",
+        "body": "Nine years leading customer relations and vendor development. Runs quotation, programme onboarding and the export desk.",
+        "image": "about.team.portrait-a",
+        "name": "Ayyaz Shaikh",
+        "role": "Co-Founder & Business Development Head"
+      }
+    ],
+    "note": "Margo is run by the two people who started it. Giving you a direct line to the people who know the product, the process, and the plant.",
+    "stats": [
+      {
+        "_key": "team-members",
+        "_type": "pageStat",
+        "label": "Team Members",
+        "value": ""
+      },
+      {
+        "_key": "20-yrs",
+        "_type": "pageStat",
+        "label": "Founder Experience in Rubber",
+        "value": "20 yrs"
+      },
+      {
+        "_key": "10-yrs",
+        "_type": "pageStat",
+        "label": "Average Client Relationship",
+        "value": "10+ yrs"
+      }
+    ]
+  },
+  "timeline": {
+    "accentLines": [
+      1
+    ],
+    "eyebrow": "COMPANY TIMELINE",
+    "items": [
+      {
+        "_key": "2005",
+        "_type": "timelineItem",
+        "body": "Margo Rubber Products established in Nashik as a compression-moulding workshop.",
+        "title": "Founded",
+        "verification": "verified",
+        "year": "2005"
+      },
+      {
+        "_key": "2008",
+        "_type": "timelineItem",
+        "body": "Quality management system independently audited and certified for moulded rubber components.",
+        "title": "First ISO 9001 certification",
+        "verification": "verified",
+        "year": "2008"
+      },
+      {
+        "_key": "2010",
+        "_type": "timelineItem",
+        "body": "Moulded sealing and vibration components qualified into a Tier-1 automotive supply chain.",
+        "title": "First automotive OEM programme",
+        "verification": "verified",
+        "year": "2010"
+      },
+      {
+        "_key": "2013",
+        "_type": "timelineItem",
+        "body": "Formulation moved off the shelf and onto our own mixing floor, across the polymer families we run today.",
+        "title": "Compound mixing brought in-house",
+        "verification": "verified",
+        "year": "2013"
+      },
+      {
+        "_key": "2015",
+        "_type": "timelineItem",
+        "body": "AEM formulations qualified for engine and transmission applications.",
+        "title": "AEM programme with Mahindra & Mahindra",
+        "verification": "verified",
+        "year": "2015"
+      },
+      {
+        "_key": "2018",
+        "_type": "timelineItem",
+        "body": "Durometer, ODR rheometer, tensile machine, ageing oven and compression-set rig brought on site, each on a calibration cycle.",
+        "title": "In-house test laboratory commissioned",
+        "verification": "verified",
+        "year": "2018"
+      },
+      {
+        "_key": "2020",
+        "_type": "timelineItem",
+        "body": "Continuous-cure extrusion added, widening the catalogue beyond moulded parts to profiles, cords and channels.",
+        "title": "Extrusion line commissioned",
+        "verification": "verified",
+        "year": "2020"
+      },
+      {
+        "_key": "2023",
+        "_type": "timelineItem",
+        "body": "Customer base spanning automotive, industrial machinery, electrical, specialist vehicles, medical, chemicals and tooling.",
+        "title": "Twenty-four accounts across seven sectors",
+        "verification": "verified",
+        "year": "2023"
+      },
+      {
+        "_key": "2026",
+        "_type": "timelineItem",
+        "body": "From 6,000 sq ft and 200,000 parts a month to 10,000+ sq ft and five million installed — automated presses, digital curing ovens, IoT monitoring and centralised ERP.",
+        "title": "New plant, automated during the move",
+        "verification": "verified",
+        "year": "2026"
+      },
+      {
+        "_key": "2026-2",
+        "_type": "timelineItem",
+        "body": "Cellular elastomers and converted foam tape added as the twelfth production line, taking the website catalogue to eleven categories.",
+        "title": "Sponge, foam and self-adhesive tape line",
+        "verification": "verified",
+        "year": "2026"
+      },
+      {
+        "_key": "2026-3",
+        "_type": "timelineItem",
+        "body": "Ninety-five markets screened and scored, eighteen country playbooks written, five lanes set for activation.",
+        "title": "Export programme opened",
+        "verification": "verified",
+        "year": "2026"
+      }
+    ],
+    "lines": [
+      "Twenty Years of",
+      "Milestones."
+    ]
+  },
+  "values": {
+    "accentLines": [],
+    "body": "Six commitments, each with a number behind it that we will show you on an audit.",
+    "eyebrow": "CORE VALUES",
+    "items": [
+      {
+        "_key": "shield",
+        "_type": "valueItem",
+        "body": "First article, in-process and final release inspection on every despatch lot. Target rejection rate under 1%.",
+        "icon": "shield",
+        "name": "Inspected, not assumed"
+      },
+      {
+        "_key": "target",
+        "_type": "valueItem",
+        "body": "Dimensional conformity to ISO 3302-1, classes M1–M4 moulded and E1–E3 extruded. Tolerance follows the section.",
+        "icon": "target",
+        "name": "Tolerance that is real"
+      },
+      {
+        "_key": "globe",
+        "_type": "valueItem",
+        "body": "We quote against ASTM D2000 / SAE J200, ASTM D1056, ISO 3601 / AS568 and IS 5382.",
+        "icon": "globe",
+        "name": "Specify us against a standard"
+      },
+      {
+        "_key": "bolt",
+        "_type": "valueItem",
+        "body": "Eight polymer families mixed in-house. Even filler distribution, batch after batch, since mixing was automated.",
+        "icon": "bolt",
+        "name": "Compound is ours"
+      },
+      {
+        "_key": "users",
+        "_type": "valueItem",
+        "body": "Our engineers work directly with your R&D on design validation. Audits welcomed, not negotiated around.",
+        "icon": "users",
+        "name": "Engineers, not account managers"
+      },
+      {
+        "_key": "leaf",
+        "_type": "valueItem",
+        "body": "Over 99% on-time delivery, 95% repeat order rate, and an average client relationship over ten years.",
+        "icon": "leaf",
+        "name": "Delivered when promised"
+      }
+    ],
+    "lines": [
+      "What We Stand For."
+    ],
+    "note": "Six commitments, each with a number behind it that we will show you on an audit."
+  },
+  "vision": {
+    "accentLines": [
+      1
+    ],
+    "eyebrow": "VISION & MISSION",
+    "items": [
+      {
+        "_key": "target",
+        "_type": "visionItem",
+        "body": "We have screened 95 countries, written country-level sourcing playbooks for 18 of them, and set an activation order of five: Australia, the United Kingdom, the UAE, Saudi Arabia and Malaysia. The research is done. The work now is filling the lanes.",
+        "eyebrow": "OUR VISION",
+        "foot": "95 markets screened · 18 playbooks written · 5 lanes first",
+        "footHref": "/export",
+        "footIcon": "trend",
+        "icon": "target",
+        "title": "To supply the export markets we have already mapped."
+      },
+      {
+        "_key": "bolt",
+        "_type": "visionItem",
+        "body": "We mix our own compound. If the part sits in hot oil we build for hot oil; if it sits in sunlight under static strain we build for ozone. The formulation is the engineering, and it is the one thing we will not subcontract.",
+        "eyebrow": "OUR MISSION",
+        "foot": "Eight compounds mixed in-house · tooling cut in-house",
+        "footIcon": "shield",
+        "icon": "bolt",
+        "title": "Formulate the compound for the job, not for the shelf."
+      }
+    ],
+    "lines": [
+      "Where We Are Going,",
+      "and What We Will Not Trade for It."
+    ],
+    "watermark": "02"
+  },
+  "watchLabel": ""
+}
