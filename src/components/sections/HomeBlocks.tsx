@@ -903,12 +903,13 @@ export function Facility({
   return (
     <section className="bg-surface-2 py-[70px]">
       <Container>
-        <div className="grid items-center gap-14 lg:grid-cols-2">
-          <div>
-            <figure className="margo-image-frame rounded-card border-line relative isolate overflow-hidden border">
+        {/* Copy on the left, photo on the right filling the copy's height. */}
+        <div className="grid gap-14 lg:grid-cols-2">
+          <div className="lg:order-2">
+            <figure className="margo-image-frame rounded-card border-line relative isolate overflow-hidden border lg:h-full">
               <Photo
                 k={image}
-                ratio="aspect-[3/2]"
+                ratio="aspect-[3/2] lg:aspect-auto lg:h-full"
                 dissolve={false}
                 sizes="(min-width:1024px) 46vw, 100vw"
               />
