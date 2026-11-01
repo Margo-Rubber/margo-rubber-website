@@ -550,13 +550,16 @@ export function Story({
     >
       <Bloom className="top-0 -left-32 size-[34rem]" />
       <Container>
-        <div className="grid items-center gap-14 lg:grid-cols-2">
-          <div className="rounded-card border-line overflow-hidden border">
+        {/* Photo column is the wider one, aligned to the top of the copy and
+            reaching a little past the container's left edge on wide screens
+            (kept small, so the frame is never cut at the window edge). */}
+        <div className="grid items-start gap-14 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
+          <div className="rounded-card border-line overflow-hidden border xl:-ml-8">
             <Photo
               k={image}
               ratio="aspect-[4/3.4]"
               dissolve="none"
-              sizes="(min-width:1024px) 44vw, 90vw"
+              sizes="(min-width:1024px) 54vw, 90vw"
             />
           </div>
 
@@ -584,25 +587,29 @@ export function Story({
             {/* The one place the old domain is named as a website (D9): buyers
                 and crawlers that knew the old site can match the two. */}
             <p className="text-ink-4 mt-5 text-sm">This website was formerly margorubber.in.</p>
-
-            <ul className="mt-8 space-y-3">
-              {checks.map((c) => (
-                <li key={c} className="text-ink-2 flex gap-3 text-sm">
-                  <Check className="text-accent-400 mt-0.5 size-4 shrink-0" />
-                  {c}
-                </li>
-              ))}
-            </ul>
-
-            <Link
-              href={cta.href}
-              className="text-accent-400 hover:opacity-80 mt-8 inline-flex items-center gap-2 text-sm font-semibold transition-colors"
-            >
-              {cta.label}
-              <Arrow />
-            </Link>
           </div>
         </div>
+
+        {/* Checks and the link run centred across the section, under both
+            the photo and the copy. */}
+        <ul className="border-line mt-14 grid gap-6 border-t pt-10 md:grid-cols-3">
+          {checks.map((c) => (
+            <li key={c} className="text-ink-2 flex flex-col items-center gap-3 text-center text-sm">
+              <Check className="text-accent-400 size-5 shrink-0" />
+              <span className="max-w-[40ch]">{c}</span>
+            </li>
+          ))}
+        </ul>
+
+        <p className="mt-10 text-center">
+          <Link
+            href={cta.href}
+            className="text-accent-400 hover:opacity-80 inline-flex items-center gap-2 text-sm font-semibold transition-colors"
+          >
+            {cta.label}
+            <Arrow />
+          </Link>
+        </p>
       </Container>
     </section>
   );
@@ -917,9 +924,32 @@ export function Team({
     <section className="bg-surface-2 relative isolate overflow-hidden py-[70px]">
       <Bloom className="top-1/4 -left-40 size-[32rem]" />
       <Container>
-        <SplitHead head={head} stacked />
+        {/* Two founders: heading and stats on the left, the portraits on
+            the right, so the row doesn't sit half empty. */}
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.3fr)] lg:items-start">
+        <div>
+          <SplitHead head={head} stacked />
 
-        <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {/* A stat whose value is empty is a question Margo has not answered
+              yet (the headcount) — it is left out rather than shown blank. */}
+          <dl className="grid gap-5 md:grid-cols-3 lg:grid-cols-1">
+            {stats.filter((s) => s.value.trim()).map((s) => (
+              <div
+                key={s.label}
+                className="margo-glow-stat flex flex-col-reverse rounded-card border-line relative isolate overflow-hidden border bg-surface-3 py-8 text-center"
+              >
+                <dt className="text-eyebrow text-ink-4 mt-2 font-mono uppercase">
+                  {s.label}
+                </dt>
+                <dd className="margo-glow-num text-2xl font-semibold">
+                  <SlotValue value={s.value} />
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+
+        <ul className="grid gap-5 sm:grid-cols-2">
           {members.map((m) => (
             <li
               key={m.name}
@@ -934,7 +964,7 @@ export function Team({
                   k={m.image}
                   ratio="aspect-[3/4]"
                   dissolve="none"
-                  sizes="(min-width:1024px) 22vw, 50vw"
+                  sizes="(min-width:1024px) 28vw, 50vw"
                   reveal={false}
                   brightness="object-bottom"
                 />
@@ -947,24 +977,7 @@ export function Team({
             </li>
           ))}
         </ul>
-
-        {/* A stat whose value is empty is a question Margo has not answered
-            yet (the headcount) — it is left out rather than shown blank. */}
-        <dl className="mt-6 grid gap-5 md:grid-cols-3">
-          {stats.filter((s) => s.value.trim()).map((s) => (
-            <div
-              key={s.label}
-              className="margo-glow-stat flex flex-col-reverse rounded-card border-line relative isolate overflow-hidden border bg-surface-3 py-8 text-center"
-            >
-              <dt className="text-eyebrow text-ink-4 mt-2 font-mono uppercase">
-                {s.label}
-              </dt>
-              <dd className="margo-glow-num text-2xl font-semibold">
-                <SlotValue value={s.value} />
-              </dd>
-            </div>
-          ))}
-        </dl>
+        </div>
       </Container>
     </section>
   );

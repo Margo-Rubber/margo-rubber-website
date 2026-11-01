@@ -568,12 +568,13 @@ export function Story({
     <section className="bg-canvas relative isolate overflow-hidden py-[70px]">
       <Bloom className="top-10 -left-40 size-[32rem]" />
       <Container>
-        <div className="grid gap-14 lg:grid-cols-2">
-          {/* Fills the height of the copy beside it on desktop. */}
+        <div className="grid items-start gap-14 lg:grid-cols-2">
+          {/* 4:3 at every width, matching the 2000×1500 artwork; top-aligned
+              with the copy. */}
           <div>
             <Photo
               k={image}
-              ratio="aspect-[4/3] lg:aspect-auto lg:h-full"
+              ratio="aspect-[4/3]"
               surface="var(--color-canvas)"
               sizes="(min-width:1024px) 46vw, 100vw"
               className="margo-image-frame rounded-card border-line border"
