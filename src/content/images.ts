@@ -142,6 +142,12 @@ export const IMAGES = {
     alt: "Open-pit mine with conveyor and haul roads",
     status: "placeholder",
   },
+  "products.card.rubber-mats": {
+    src: "/images/release-2026-10/rm-00_rubber-mats-group.webp",
+    w: 1600, h: 1067,
+    alt: "Six solid rubber mat patterns fanned on a white background, illustrative",
+    status: "placeholder",
+  },
   "products.card.diaphragms": {
     src: "/images/products/4fb48cf2a43d61bec568791c2d5dbea12013f92b.png",
     blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAED/8QAIRAAAQQBAwUAAAAAAAAAAAAAAQIDBBEAEhMhIjFBUXH/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/EABURAQEAAAAAAAAAAAAAAAAAAAEA/9oADAMBAAIRAxEAPwC7kaPobQizfClHkV6w7kyc8vUlbNfTmrrIaqiT2GDcj9dhZF+ABlCMd//Z",

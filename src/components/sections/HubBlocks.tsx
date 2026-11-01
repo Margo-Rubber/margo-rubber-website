@@ -315,25 +315,27 @@ export function ProductRange({
                 hidden={!shown(c)}
                 href={`/products/${c.slug}`}
                 data-lift=""
-                className={`group rounded-card relative isolate flex flex-col justify-end overflow-hidden p-5 ${
-                  // A half-width card at the same row height as a third-width
-                  // 4:3 one is 2:1. The comp widens this row, it does not
-                  // deepen it.
-                  g.cards.length === 2 ? "aspect-[4/3] lg:aspect-[2/1]" : "aspect-[4/3]"
-                }`}
+                className="group rounded-card border-line bg-surface-2 flex flex-col overflow-hidden border"
               >
-                <Img
-                  k={c.image}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="-z-10 object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                />
-                <div className="from-canvas via-canvas/75 absolute inset-0 -z-10 bg-gradient-to-t to-transparent" />
+                {/* Photo on top at the same crop the overlay card used (4:3;
+                    2:1 for a half-width pair), the copy underneath it. */}
+                <div
+                  className={`relative isolate overflow-hidden ${
+                    g.cards.length === 2 ? "aspect-[4/3] lg:aspect-[2/1]" : "aspect-[4/3]"
+                  }`}
+                >
+                  <Img
+                    k={c.image}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                  />
+                  <span className="text-eyebrow bg-canvas/70 text-accent-400 rounded-pill absolute top-4 left-4 px-3 py-1 font-mono uppercase backdrop-blur">
+                    {c.tag}
+                  </span>
+                </div>
 
-                <span className="text-eyebrow bg-canvas/70 text-accent-400 rounded-pill absolute top-4 left-4 px-3 py-1 font-mono uppercase backdrop-blur">
-                  {c.tag}
-                </span>
-
+                <div className="flex flex-1 flex-col p-5">
                 <p className="text-eyebrow text-accent-400 font-mono uppercase">
                   {c.kicker}
                 </p>
@@ -355,12 +357,13 @@ export function ProductRange({
 
                 {/* Sheet 02 §02: "View {Product} specifications →" — eleven
                     distinct anchor texts, not eleven "View Details". */}
-                <span className="text-accent-400 mt-4 flex items-center gap-1.5 text-sm font-medium">
+                <span className="text-accent-400 mt-auto flex items-center gap-1.5 pt-4 text-sm font-medium">
                   View {c.title} specifications
                   <span aria-hidden className="transition-transform group-hover:translate-x-0.5">
                     &rarr;
                   </span>
                 </span>
+                </div>
               </Link>
             ))}
           </div>

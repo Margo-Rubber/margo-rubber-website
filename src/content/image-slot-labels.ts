@@ -199,6 +199,11 @@ export const IMAGE_SLOT_LABELS = {
     where: "Products page range grid. Stand-in: the Rubber Lining & Skirting page's hero photograph until the card's own is uploaded.",
     page: "/products",
   },
+  "products.card.rubber-mats": {
+    title: "Products page — Rubber Mats card",
+    where: "Products page range grid. Stand-in: the Rubber Mats page's hero photograph until the card's own is uploaded.",
+    page: "/products",
+  },
   "products.card.diaphragms": {
     title: "Products page — Diaphragms card",
     where: "Products page range grid. Stand-in: the Diaphragms page's hero photograph until the card's own is uploaded.",
