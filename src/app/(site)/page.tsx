@@ -81,8 +81,6 @@ export default async function HomePage() {
         lines={fm.story.lines}
         paragraphs={fm.story.paragraphs}
         image={fm.story.image}
-        imageBadge={fm.story.imageBadge}
-        floatCard={fm.story.floatCard}
         stats={fm.story.stats}
         cta={fm.story.cta}
       />
