@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "migrate:products": "node --experimental-strip-types scripts/migrate-products.mts",
     "lint": "eslint",
     "check:claims": "node scripts/check-claims.mts",
     "typecheck": "next typegen && tsc --noEmit",
@@ -16,7 +17,6 @@
     "check:schema": "sanity schema validate && node scripts/check-field-groups.mts && node scripts/check-labels.mts",
     "gen:sanity-types": "sanity schema extract --path sanity/schema.json && sanity typegen generate",
     "check:blocks": "node scripts/check-blocks-roundtrip.mts",
-    "migrate:products": "node scripts/migrate-products.mts",
     "revalidate": "node scripts/revalidate.mts",
     "check:cms": "node scripts/check-cms-source.mts",
     "check:groups": "node scripts/check-field-groups.mts",
@@ -65,6 +65,7 @@
     "node-html-parser": "^7.1.0",
     "sharp": "^0.35.3",
     "tailwindcss": "^4",
+    "tsx": "^4.23.15",
     "typescript": "^5"
   }
 }
