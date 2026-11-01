@@ -117,7 +117,6 @@ export default async function AboutPage() {
         head={fm.presence}
         image={fm.presence.image}
         countries={fm.presence.countries}
-        stats={fm.presence.stats}
         link={fm.presence.link}
       />
 

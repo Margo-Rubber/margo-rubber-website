@@ -27,7 +27,11 @@ export function CertificationBadges({
 }) {
   return (
     <div>
-      <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <ul
+        className={`grid gap-4 ${
+          items.length === 1 ? "mx-auto max-w-md" : "sm:grid-cols-2 lg:grid-cols-3"
+        }`}
+      >
         {items.map((c) => {
           const held = c.standing === "held";
           return (
@@ -78,7 +82,11 @@ export function CertificationBadges({
         })}
       </ul>
       {scopeNote && (
-        <p className="text-ink-4 mt-6 text-xs leading-relaxed">
+        <p
+          className={`text-ink-4 mt-6 text-xs leading-relaxed ${
+            items.length === 1 ? "text-center" : ""
+          }`}
+        >
           {scopeNote}{" "}
           <Link
             href="/certifications"
