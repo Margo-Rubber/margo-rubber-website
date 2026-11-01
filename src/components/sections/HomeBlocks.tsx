@@ -947,20 +947,22 @@ export function Facility({
                 </li>
               ))}
             </ul>
-            {stats.length > 0 && (
-              <dl className="border-line mt-8 grid grid-cols-2 gap-6 border-t pt-8 sm:grid-cols-4">
-                {stats.map((st) => (
-                  // justify-end: in a reversed column that pins the value to
-                  // the top, so the numbers line up whatever the label length.
-                  <div key={st.label} className="flex flex-col-reverse justify-end">
-                    <dt className="text-ink-4 mt-1 text-xs">{st.label}</dt>
-                    <dd className="text-ink text-2xl font-bold"><SlotValue value={st.value} /></dd>
-                  </div>
-                ))}
-              </dl>
-            )}
           </div>
         </div>
+
+        {/* Stats run centred across the whole section, under copy and photo. */}
+        {stats.length > 0 && (
+          <dl className="border-line mt-14 grid grid-cols-2 gap-8 border-t pt-10 text-center sm:grid-cols-4">
+            {stats.map((st) => (
+              // justify-end: in a reversed column that pins the value to
+              // the top, so the numbers line up whatever the label length.
+              <div key={st.label} className="flex flex-col-reverse justify-end">
+                <dt className="text-ink-4 mx-auto mt-1 max-w-[18ch] text-sm">{st.label}</dt>
+                <dd className="text-ink text-3xl font-bold"><SlotValue value={st.value} /></dd>
+              </div>
+            ))}
+          </dl>
+        )}
       </Container>
     </section>
   );
