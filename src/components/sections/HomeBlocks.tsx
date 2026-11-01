@@ -251,6 +251,12 @@ const ICONS: Record<string, React.ReactNode> = {
       <path d="m4 7.6 8 4.4 8-4.4M12 12v8.8" />
     </>
   ),
+  cup: (
+    <>
+      <path d="M5 8h11v6a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5z" />
+      <path d="M16 10h1.5a2.5 2.5 0 0 1 0 5H16M8 3.5c0 1 1 1.5 1 2.5M12 3.5c0 1 1 1.5 1 2.5" />
+    </>
+  ),
 };
 
 export function Icon({
@@ -589,28 +595,32 @@ export function Story({
                 {p}
               </p>
             ))}
-
-            <dl className="mt-8 grid grid-cols-2 gap-4">
-              {stats.map((s) => (
-                <div
-                  key={s.label}
-                  className="margo-card rounded-card border-line flex flex-col-reverse border bg-[#0F1115] px-6 py-5"
-                >
-                  <dt className="text-ink-4 mt-1 text-sm">{s.label}</dt>
-                  <dd className="text-ink text-xl font-semibold"><SlotValue value={s.value} /></dd>
-                </div>
-              ))}
-            </dl>
-
-            <Link
-              href={cta.href}
-              className="text-accent-400 hover:opacity-80 mt-8 inline-flex items-center gap-2 text-sm font-semibold transition-colors"
-            >
-              {cta.label}
-              <Arrow />
-            </Link>
           </div>
         </div>
+
+        {/* Stats and the link run centred across the section, under both
+            the photo and the copy. */}
+        <dl className="mt-14 grid grid-cols-2 gap-4 lg:grid-cols-4">
+          {stats.map((s) => (
+            <div
+              key={s.label}
+              className="margo-card rounded-card border-line flex flex-col-reverse justify-end border bg-[#0F1115] px-6 py-5 text-center"
+            >
+              <dt className="text-ink-4 mt-1 text-sm">{s.label}</dt>
+              <dd className="text-ink text-xl font-semibold"><SlotValue value={s.value} /></dd>
+            </div>
+          ))}
+        </dl>
+
+        <p className="mt-10 text-center">
+          <Link
+            href={cta.href}
+            className="text-accent-400 hover:opacity-80 inline-flex items-center gap-2 text-sm font-semibold transition-colors"
+          >
+            {cta.label}
+            <Arrow />
+          </Link>
+        </p>
       </Container>
     </section>
   );

@@ -71,6 +71,9 @@ export const PRODUCT_GROUPS: readonly RouteGroup[] = [
       cat("bonded-components", "Bonded Components", "Anti-Vibration"),
       cat("bellows", "Bellows", "Protection"),
       cat("grommets", "Grommets", "Protection"),
+      // Line 16 (Oct 2026 release), grouped with protection on client
+      // instruction (1 Nov 2026) — footer and products-page filter agree.
+      cat("rubber-mats", "Rubber Mats", "Protection"),
       cat("pads-stoppers-caps", "Pads, Stoppers & Caps", "Custom"),
     ],
   },
@@ -80,9 +83,6 @@ export const PRODUCT_GROUPS: readonly RouteGroup[] = [
       cat("extrusion", "Extrusion Profiles", "Profiles"),
       cat("sponge-foam-rubber", "Sponge & Foam Rubber", "Cellular"),
       cat("rubber-lining", "Rubber Lining & Skirting", "Cellular"),
-      // Line 16 (Oct 2026 release). The footer has no moulded-only group, so
-      // mats sit last in "Sheet & profile" — knock-on edit R02, deliberate.
-      cat("rubber-mats", "Rubber Mats", "Custom"),
     ],
   },
 ];

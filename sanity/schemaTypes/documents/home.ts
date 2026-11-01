@@ -331,7 +331,7 @@ export const homePage = defineType({
                     "A value outside this list renders a blank tile, so the list is closed rather than free text.",
                   options: iconList([
                     "car", "heart", "chip", "droplet", "wrench", "package",
-                    "pickaxe", "fuel", "gauge", "wind", "leaf",
+                    "pickaxe", "fuel", "gauge", "wind", "leaf", "bolt", "cup",
                   ]),
                   validation: (r) => r.required(),
                 }),

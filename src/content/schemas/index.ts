@@ -1654,6 +1654,8 @@ export const homePageSchema = baseSchema.extend({
             "gauge",
             "wind",
             "leaf",
+            "bolt",
+            "cup",
           ]),
           name: z.string(),
           body: z.string(),

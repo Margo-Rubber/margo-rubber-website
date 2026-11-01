@@ -142,6 +142,12 @@ export const IMAGES = {
     alt: "Open-pit mine with conveyor and haul roads",
     status: "placeholder",
   },
+  "products.card.rubber-mats": {
+    src: "/images/release-2026-10/rm-00_rubber-mats-group.webp",
+    w: 1600, h: 1067,
+    alt: "Six solid rubber mat patterns fanned on a white background, illustrative",
+    status: "placeholder",
+  },
   "products.card.diaphragms": {
     src: "/images/products/4fb48cf2a43d61bec568791c2d5dbea12013f92b.png",
     blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAED/8QAIRAAAQQBAwUAAAAAAAAAAAAAAQIDBBEAEhMhIjFBUXH/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/EABURAQEAAAAAAAAAAAAAAAAAAAEA/9oADAMBAAIRAxEAPwC7kaPobQizfClHkV6w7kyc8vUlbNfTmrrIaqiT2GDcj9dhZF+ABlCMd//Z",
@@ -918,6 +924,18 @@ export const IMAGES = {
     blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEE/8QAGxAAAgMBAQEAAAAAAAAAAAAAAREAAhJBAwT/xAAUAQEAAAAAAAAAAAAAAAAAAAAD/8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAC/9oADAMBAAIRAxEAPwDH83qNVrgEFth8MtrDNGgch8iIaTZUb//Z",
     w: 800, h: 560,
     alt: "Valve manifold and pipework on a treatment skid",
+    status: "placeholder",
+  },
+  "products.sectors.ev-energy-storage-renewables": {
+    src: "/images/release-2026-10/b1-25_hero-ev-energy-storage-renewables.webp",
+    w: 1600, h: 1067,
+    alt: "EV, energy storage & renewables: illustrative in-use scene with rubber gaskets",
+    status: "placeholder",
+  },
+  "products.sectors.food-beverage-pharma": {
+    src: "/images/release-2026-10/b1-24_hero-food-beverage-pharma.webp",
+    w: 1600, h: 1067,
+    alt: "Food, beverage & pharma: illustrative in-use scene with rubber gaskets",
     status: "placeholder",
   },
   /* Wide (16:9) version for the full-bleed desktop hero (25 Oct 2026). */
