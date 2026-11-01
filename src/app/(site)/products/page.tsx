@@ -221,8 +221,10 @@ export default async function ProductsHubPage() {
           heading={fm.certifications.heading}
           body={fm.certifications.body}
         >
+          {/* Held certifications only (client instruction, 1 Nov 2026); the
+              in-progress programmes stay on /certifications. */}
           <CertificationBadges
-            items={settings.certifications.items}
+            items={settings.certifications.items.filter((c) => c.standing === "held")}
             scopeNote={settings.certifications.scopeNote}
           />
           {fm.certifications.cta && (

@@ -3,9 +3,9 @@
  *
  *   node --env-file=.env.local --experimental-strip-types scripts/migrations/2026-11-01-products-rubber-mats-card.mts [--write]
  *
- * Appends a card after Rubber Lining & Skirting in productsHub-products →
- * range.cards (so the "Sheet and lining products" group becomes a pair) and
- * adds a "Mats" filter.
+ * Inserts a card after Grommets in productsHub-products → range.cards,
+ * tagged "Protection" so the existing Protection filter shows it (client
+ * instruction, 1 Nov 2026; the footer groups it the same way).
  *
  * RUN ONLY AFTER the commit that adds the "products.card.rubber-mats" image
  * slot (src/content/images.ts) is merged to main and deployed: an unknown
@@ -33,7 +33,7 @@ const card = {
   slug: "rubber-mats",
   title: "Rubber Mats",
   kicker: "SOLID RUBBER MATS FOR VEHICLES, FLOORS AND PANELS",
-  tag: "Mats",
+  tag: "Protection",
   chips: ["Car floor mats", "Anti-fatigue mats"],
   image: "products.card.rubber-mats",
   span: "normal",
@@ -47,7 +47,7 @@ if (!range) throw new Error(`${ID} has no range`);
 const hasCard = range.cards.some((c) => c._key === card._key);
 const hasFilter = range.filters.includes(card.tag);
 console.log(`${ID}: ${range.cards.length} cards; filters ${JSON.stringify(range.filters)}`);
-console.log(`Card: ${hasCard ? "already there" : "will add after rubber-lining"}; filter "${card.tag}": ${hasFilter ? "already there" : "will add"}`);
+console.log(`Card: ${hasCard ? "already there" : "will add after grommets"}; filter "${card.tag}": ${hasFilter ? "already there" : "will add"}`);
 
 if (!write || (hasCard && hasFilter)) {
   if (!write) console.log("Dry run. Re-run with --write.");
@@ -55,7 +55,7 @@ if (!write || (hasCard && hasFilter)) {
 }
 
 let patch = client.patch(ID);
-if (!hasCard) patch = patch.insert("after", 'range.cards[_key=="rubber-lining"]', [card]);
+if (!hasCard) patch = patch.insert("after", 'range.cards[_key=="grommets"]', [card]);
 if (!hasFilter) patch = patch.insert("after", "range.filters[-1]", [card.tag]);
 const result = await patch.commit();
 console.log(`Patched ${result._id} rev ${result._rev}`);
