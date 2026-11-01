@@ -550,13 +550,15 @@ export function Story({
     >
       <Bloom className="top-0 -left-32 size-[34rem]" />
       <Container>
-        <div className="grid items-center gap-14 lg:grid-cols-2">
-          <div className="rounded-card border-line overflow-hidden border">
+        {/* Photo column is the wider one and, on wide screens, reaches a
+            little past the container's left edge. */}
+        <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
+          <div className="rounded-card border-line overflow-hidden border xl:-ml-12 2xl:-ml-20">
             <Photo
               k={image}
               ratio="aspect-[4/3.4]"
               dissolve="none"
-              sizes="(min-width:1024px) 44vw, 90vw"
+              sizes="(min-width:1024px) 54vw, 90vw"
             />
           </div>
 
