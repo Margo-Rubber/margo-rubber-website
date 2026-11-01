@@ -550,10 +550,11 @@ export function Story({
     >
       <Bloom className="top-0 -left-32 size-[34rem]" />
       <Container>
-        {/* Photo column is the wider one and, on wide screens, reaches a
-            little past the container's left edge. */}
-        <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
-          <div className="rounded-card border-line overflow-hidden border xl:-ml-12 2xl:-ml-20">
+        {/* Photo column is the wider one, aligned to the top of the copy and
+            reaching a little past the container's left edge on wide screens
+            (kept small, so the frame is never cut at the window edge). */}
+        <div className="grid items-start gap-14 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
+          <div className="rounded-card border-line overflow-hidden border xl:-ml-8">
             <Photo
               k={image}
               ratio="aspect-[4/3.4]"
@@ -586,25 +587,29 @@ export function Story({
             {/* The one place the old domain is named as a website (D9): buyers
                 and crawlers that knew the old site can match the two. */}
             <p className="text-ink-4 mt-5 text-sm">This website was formerly margorubber.in.</p>
-
-            <ul className="mt-8 space-y-3">
-              {checks.map((c) => (
-                <li key={c} className="text-ink-2 flex gap-3 text-sm">
-                  <Check className="text-accent-400 mt-0.5 size-4 shrink-0" />
-                  {c}
-                </li>
-              ))}
-            </ul>
-
-            <Link
-              href={cta.href}
-              className="text-accent-400 hover:opacity-80 mt-8 inline-flex items-center gap-2 text-sm font-semibold transition-colors"
-            >
-              {cta.label}
-              <Arrow />
-            </Link>
           </div>
         </div>
+
+        {/* Checks and the link run centred across the section, under both
+            the photo and the copy. */}
+        <ul className="border-line mt-14 grid gap-6 border-t pt-10 md:grid-cols-3">
+          {checks.map((c) => (
+            <li key={c} className="text-ink-2 flex flex-col items-center gap-3 text-center text-sm">
+              <Check className="text-accent-400 size-5 shrink-0" />
+              <span className="max-w-[40ch]">{c}</span>
+            </li>
+          ))}
+        </ul>
+
+        <p className="mt-10 text-center">
+          <Link
+            href={cta.href}
+            className="text-accent-400 hover:opacity-80 inline-flex items-center gap-2 text-sm font-semibold transition-colors"
+          >
+            {cta.label}
+            <Arrow />
+          </Link>
+        </p>
       </Container>
     </section>
   );
