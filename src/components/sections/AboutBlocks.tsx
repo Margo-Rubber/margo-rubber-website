@@ -917,9 +917,32 @@ export function Team({
     <section className="bg-surface-2 relative isolate overflow-hidden py-[70px]">
       <Bloom className="top-1/4 -left-40 size-[32rem]" />
       <Container>
-        <SplitHead head={head} stacked />
+        {/* Two founders: heading and stats on the left, the portraits on
+            the right, so the row doesn't sit half empty. */}
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.3fr)] lg:items-start">
+        <div>
+          <SplitHead head={head} stacked />
 
-        <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {/* A stat whose value is empty is a question Margo has not answered
+              yet (the headcount) — it is left out rather than shown blank. */}
+          <dl className="grid gap-5 md:grid-cols-3 lg:grid-cols-1">
+            {stats.filter((s) => s.value.trim()).map((s) => (
+              <div
+                key={s.label}
+                className="margo-glow-stat flex flex-col-reverse rounded-card border-line relative isolate overflow-hidden border bg-surface-3 py-8 text-center"
+              >
+                <dt className="text-eyebrow text-ink-4 mt-2 font-mono uppercase">
+                  {s.label}
+                </dt>
+                <dd className="margo-glow-num text-2xl font-semibold">
+                  <SlotValue value={s.value} />
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+
+        <ul className="grid gap-5 sm:grid-cols-2">
           {members.map((m) => (
             <li
               key={m.name}
@@ -934,7 +957,7 @@ export function Team({
                   k={m.image}
                   ratio="aspect-[3/4]"
                   dissolve="none"
-                  sizes="(min-width:1024px) 22vw, 50vw"
+                  sizes="(min-width:1024px) 28vw, 50vw"
                   reveal={false}
                   brightness="object-bottom"
                 />
@@ -947,24 +970,7 @@ export function Team({
             </li>
           ))}
         </ul>
-
-        {/* A stat whose value is empty is a question Margo has not answered
-            yet (the headcount) — it is left out rather than shown blank. */}
-        <dl className="mt-6 grid gap-5 md:grid-cols-3">
-          {stats.filter((s) => s.value.trim()).map((s) => (
-            <div
-              key={s.label}
-              className="margo-glow-stat flex flex-col-reverse rounded-card border-line relative isolate overflow-hidden border bg-surface-3 py-8 text-center"
-            >
-              <dt className="text-eyebrow text-ink-4 mt-2 font-mono uppercase">
-                {s.label}
-              </dt>
-              <dd className="margo-glow-num text-2xl font-semibold">
-                <SlotValue value={s.value} />
-              </dd>
-            </div>
-          ))}
-        </dl>
+        </div>
       </Container>
     </section>
   );
