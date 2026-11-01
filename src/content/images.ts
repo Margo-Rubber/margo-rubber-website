@@ -926,6 +926,18 @@ export const IMAGES = {
     alt: "Valve manifold and pipework on a treatment skid",
     status: "placeholder",
   },
+  "products.sectors.ev-energy-storage-renewables": {
+    src: "/images/release-2026-10/b1-25_hero-ev-energy-storage-renewables.webp",
+    w: 1600, h: 1067,
+    alt: "EV, energy storage & renewables: illustrative in-use scene with rubber gaskets",
+    status: "placeholder",
+  },
+  "products.sectors.food-beverage-pharma": {
+    src: "/images/release-2026-10/b1-24_hero-food-beverage-pharma.webp",
+    w: 1600, h: 1067,
+    alt: "Food, beverage & pharma: illustrative in-use scene with rubber gaskets",
+    status: "placeholder",
+  },
   /* Wide (16:9) version for the full-bleed desktop hero (25 Oct 2026). */
   "products.anti-vibration-mounts.hero-wide": {
     src: "/images/products-category/anti-vibration-mounts-hero-wide.jpg",

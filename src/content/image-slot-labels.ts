@@ -603,42 +603,52 @@ export const IMAGE_SLOT_LABELS = {
   },
   "products.sectors.automotive": {
     title: "Products page — Automotive sector card",
-    where: "Products page, ‘Industries we serve’ — card 1 of 9.",
+    where: "Products page, ‘Industries we serve’ — card 1 of 11.",
     page: "/products",
   },
   "products.sectors.oil-gas": {
     title: "Products page — Oil & Gas sector card",
-    where: "Products page, ‘Industries we serve’ — card 2 of 9.",
+    where: "Products page, ‘Industries we serve’ — card 2 of 11.",
     page: "/products",
   },
   "products.sectors.mining": {
     title: "Products page — Mining sector card",
-    where: "Products page, ‘Industries we serve’ — card 3 of 9.",
+    where: "Products page, ‘Industries we serve’ — card 3 of 11.",
     page: "/products",
   },
   "products.sectors.pumps-valves": {
     title: "Products page — Pumps & Valves sector card",
-    where: "Products page, ‘Industries we serve’ — card 4 of 9.",
+    where: "Products page, ‘Industries we serve’ — card 4 of 11.",
     page: "/products",
   },
   "products.sectors.hvac": {
     title: "Products page — HVAC sector card",
-    where: "Products page, ‘Industries we serve’ — card 5 of 9.",
+    where: "Products page, ‘Industries we serve’ — card 5 of 11.",
     page: "/products",
   },
   "products.sectors.electrical-electronics": {
     title: "Products page — Electrical sector card",
-    where: "Products page, ‘Industries we serve’ — card 6 of 9.",
+    where: "Products page, ‘Industries we serve’ — card 6 of 11.",
     page: "/products",
   },
   "products.sectors.medical-devices": {
     title: "Products page — Medical sector card",
-    where: "Products page, ‘Industries we serve’ — card 7 of 9.",
+    where: "Products page, ‘Industries we serve’ — card 7 of 11.",
     page: "/products",
   },
   "products.sectors.water-fluid-management": {
     title: "Products page — Water sector card",
-    where: "Products page, ‘Industries we serve’ — card 8 of 9.",
+    where: "Products page, ‘Industries we serve’ — card 8 of 11.",
+    page: "/products",
+  },
+  "products.sectors.ev-energy-storage-renewables": {
+    title: "Products page — EV & Renewables sector card",
+    where: "Products page, ‘Industries we serve’ — card 10 of 11. Stand-in: the EV industry page's hero photograph.",
+    page: "/products",
+  },
+  "products.sectors.food-beverage-pharma": {
+    title: "Products page — Food & Beverage sector card",
+    where: "Products page, ‘Industries we serve’ — card 11 of 11. Stand-in: the Food, Beverage & Pharma industry page's hero photograph.",
     page: "/products",
   },
   "products.anti-vibration-mounts.hero-wide": {
