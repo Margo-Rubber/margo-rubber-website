@@ -293,11 +293,12 @@ function renderBlock(block: Block, ctx: Ctx): ReactNode {
         >
           {/* Ranges and hardness come from the compound table in Site
               settings, matched by code; the block keeps its own copy only
-              for a compound the table does not list. */}
+              for a compound the table does not list, or when it is told to
+              (sponge grades are rated cooler than solid rubber). */}
           <MaterialCards
             items={b.items.map(
               (m: { code: string; tempRange: string; hardness: string }) => {
-                const c = compoundByCode(ctx.settings, m.code);
+                const c = b.ownFigures ? undefined : compoundByCode(ctx.settings, m.code);
                 return c
                   ? { ...m, tempRange: formatRangeCompact(c), hardness: c.hardness }
                   : m;

@@ -240,6 +240,8 @@ export const materialSectionSchema = z
       .min(1),
     /** Trade-mark attribution under the cards: "Viton® is a trade mark of…" */
     footnote: z.string().optional(),
+    /** Show the figures typed on the cards, not Site settings’ solid-rubber ones. */
+    ownFigures: z.boolean().optional(),
   });
 
 
