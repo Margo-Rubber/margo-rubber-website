@@ -33,7 +33,8 @@ export function SanityPhoto({
 
   // Camera originals can be 8000 px and several MB; cap at the CDN before
   // Next resizes, exactly as image-overrides.ts does.
-  const src = `${a.url}?w=2400&fit=max&q=85`;
+  // A local file (a page still held in .mdx) takes no CDN parameters.
+  const src = a.url.startsWith("/") ? a.url : `${a.url}?w=2400&fit=max&q=85`;
   const alt = image?.alt?.trim() || fallbackAlt;
   const h = image?.hotspot;
   const style = {

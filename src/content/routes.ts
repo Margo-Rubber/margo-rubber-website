@@ -48,7 +48,7 @@ const ind = (slug: string, label: string, live = true): RouteEntry => ({
   live,
 });
 
-/** Fifteen categories in the three groups the footer and the hub grid use. */
+/** Sixteen categories in the three groups the footer and the hub grid use. */
 export const PRODUCT_GROUPS: readonly RouteGroup[] = [
   {
     label: "Sealing",
@@ -80,13 +80,16 @@ export const PRODUCT_GROUPS: readonly RouteGroup[] = [
       cat("extrusion", "Extrusion Profiles", "Profiles"),
       cat("sponge-foam-rubber", "Sponge & Foam Rubber", "Cellular"),
       cat("rubber-lining", "Rubber Lining & Skirting", "Cellular"),
+      // Line 16 (Oct 2026 release). The footer has no moulded-only group, so
+      // mats sit last in "Sheet & profile" — knock-on edit R02, deliberate.
+      cat("rubber-mats", "Rubber Mats", "Custom"),
     ],
   },
 ];
 
 export const PRODUCTS: readonly RouteEntry[] = PRODUCT_GROUPS.flatMap((g) => g.items);
 
-/** Eleven industries, in the footer's order — Automotive leads, matching real volume. */
+/** Thirteen industries, in the footer's order — Automotive leads, matching real volume. */
 export const INDUSTRIES: readonly RouteEntry[] = [
   ind("automotive", "Automotive"),
   ind("mining", "Mining"),
@@ -99,6 +102,9 @@ export const INDUSTRIES: readonly RouteEntry[] = [
   ind("water-fluid-management", "Water & Fluid Management"),
   ind("construction", "Construction"),
   ind("transport", "Transport — Rail & Marine"),
+  // Industries 12 and 13 (Oct 2026 release), after Transport — knock-on N01/N02.
+  ind("food-beverage-pharma", "Food, Beverage & Pharma"),
+  ind("ev-energy-storage-renewables", "EV, Energy Storage & Renewables"),
 ];
 
 /** The footer's Company column — six entries; Why Choose Us is out. */

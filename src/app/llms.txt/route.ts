@@ -5,6 +5,7 @@ import { getSiteSettings } from "@/lib/settings";
 import { SITE_URL } from "@/lib/seo";
 import { isIndexable } from "@/lib/build-mode";
 import { pathFor } from "@/lib/published-paths";
+import { getAllSlugs, getFrontmatter } from "@/lib/content";
 import { pageTag } from "@/lib/page-source";
 import { productTag } from "@/lib/product-source";
 import { industryTag } from "@/lib/industry-source";
@@ -46,7 +47,33 @@ const query = groq`
 async function listedPages(): Promise<Row[]> {
   "use cache";
   cacheTag(pageTag(), productTag(), industryTag(), resourceTag());
-  return client.fetch<Row[]>(query).catch(() => []);
+  const rows: Row[] = await client.fetch<Row[]>(query).catch(() => [] as Row[]);
+
+  // Files the CMS does not know about yet answer for themselves — the same
+  // fallback the sitemaps use (lib/published.ts), so a page held in an .mdx
+  // file (the Oct 2026 release, before migration) is listed in both.
+  const seen = new Set(rows.map((r) => `${r._type}:${r.slug}`));
+  const files: { collection: "products" | "industries" | "resources" | "skus"; type: string }[] = [
+    { collection: "products", type: "productCategory" },
+    { collection: "skus", type: "sku" },
+    { collection: "industries", type: "industry" },
+    { collection: "resources", type: "resource" },
+  ];
+  for (const { collection, type } of files) {
+    for (const file of getAllSlugs(collection)) {
+      const [category, part] = type === "sku" ? file.split("--") : [undefined, file];
+      const slug = part ?? file;
+      if (seen.has(`${type}:${slug}`) || seen.has(`${type}:${file}`)) continue;
+      const fm = getFrontmatter(collection, file) as {
+        status: string; navLabel?: string; h1?: string; seo: { title: string; description: string };
+      };
+      rows.push({
+        _type: type, slug, status: fm.status, category, navLabel: fm.navLabel, h1: fm.h1,
+        title: fm.seo.title, description: fm.seo.description,
+      });
+    }
+  }
+  return rows;
 }
 
 const clean = (s?: string) => (s ?? "").replace(/\s*\|\s*Margo.*$/i, "").trim();

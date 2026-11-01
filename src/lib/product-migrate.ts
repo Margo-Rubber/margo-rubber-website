@@ -102,8 +102,11 @@ export function toSanityDocument(
 ): CategoryDocument {
   const sections = toBlocks(fm, slug).map(toSanityBlock).map((b) => {
     // Block-level keys are set by toBlocks; everything nested below still
-    // needs them.
-    const { _key, _type, ...rest } = b as Record<string, unknown>;
+    // needs them. The FAQ block keeps its headings only; the projection joins
+    // the document's questions back in, as on industry pages.
+    const out = { ...b } as Record<string, unknown>;
+    if (out._type === "block.industryFaq") delete out.items;
+    const { _key, _type, ...rest } = out;
     return { _key, _type, ...(deepKey(rest, String(_key)) as object) };
   });
 
@@ -122,6 +125,10 @@ export function toSanityDocument(
     ...(fm.heroLink ? { heroLink: fm.heroLink } : {}),
     heroActions: keyed(fm.heroActions, "heroAction"),
     heroBreadcrumb: fm.heroBreadcrumb,
+    ...(fm.heroEyebrow ? { heroEyebrow: fm.heroEyebrow } : {}),
+    ...(fm.heroChips.length ? { heroChips: fm.heroChips } : {}),
+    ...(fm.service ? { service: fm.service } : {}),
+    ...(fm.schemaProduct ? { schemaProduct: fm.schemaProduct } : {}),
     anchors: keyed(fm.anchors, "anchor"),
     faqs: keyed(fm.faqs, "faq"),
     confirmWithMargo: fm.confirmWithMargo,
@@ -180,6 +187,8 @@ export function toIndustryDocument(
     intro: fm.intro,
     ...(fm.hero ? { hero: fm.hero } : {}),
     heroBoost: fm.heroBoost,
+    ...(fm.heroChips.length ? { heroChips: fm.heroChips } : {}),
+    ...(fm.schemaService ? { schemaService: fm.schemaService } : {}),
     actions: keyed(fm.actions, "action"),
     faqs: keyed(fm.faqs, "faq"),
     nonClaims: fm.nonClaims,
@@ -260,6 +269,23 @@ export function toSkuDocument(
       : {}),
     downloads: keyed(fm.downloads, "download"),
     faqs: keyed(fm.faqs, "faq"),
+    // The per-part fields the sheets added after the first migration (and the
+    // Oct 2026 parts use). The router's rows are stored as objects holding
+    // their cells, as on the spec table; the projection unwraps them.
+    ...(fm.compoundRouter
+      ? {
+          compoundRouter: {
+            columns: fm.compoundRouter.columns,
+            rows: fm.compoundRouter.rows.map((cells, i) => ({ _type: "row", _key: `row-${i + 1}`, cells })),
+          },
+        }
+      : {}),
+    ...(fm.compoundPrompt ? { compoundPrompt: fm.compoundPrompt } : {}),
+    ...(fm.qualityChip ? { qualityChip: fm.qualityChip } : {}),
+    ...(fm.documentation ? { documentation: fm.documentation } : {}),
+    ...(fm.ctaBody ? { ctaBody: fm.ctaBody } : {}),
+    ...(fm.advantagesHeading ? { advantagesHeading: fm.advantagesHeading } : {}),
+    relatedParts: keyed(fm.relatedParts, "relatedPart"),
     confirmWithMargo: fm.confirmWithMargo,
     related: fm.related,
     seo: {

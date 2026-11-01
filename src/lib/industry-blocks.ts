@@ -1,4 +1,4 @@
-import type { Block, BlockType } from "../content/blocks.ts";
+import { parseFileBlocks, type Block, type BlockType } from "../content/blocks.ts";
 import type { Industry } from "../content/schemas/index.ts";
 
 /**
@@ -30,6 +30,9 @@ const ORDER: Array<{ field: keyof Industry; type: BlockType }> = [
 const FAQ_AFTER: keyof Industry = "exportLane";
 
 export function toIndustryBlocks(fm: Industry): Block[] {
+  // A page written as a block list renders that list, in its own order.
+  if (fm.sections) return parseFileBlocks(fm.sections, `industry "${fm.slug}"`, fm.faqs);
+
   const blocks: Block[] = [];
 
   const pushFaq = () => {

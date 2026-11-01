@@ -24,6 +24,8 @@ import {
 } from "@/components/sections/SkuBlocks";
 import { compoundLinks } from "@/lib/compound-links";
 import { FurtherReading } from "@/components/sections/FurtherReading";
+import { AnswerLead } from "@/components/sections/AnswerLead";
+import { answerBlockFor } from "@/content/answer-blocks";
 
 /**
  * ONE file → every SKU page, built to `single category.png` section for section.
@@ -173,8 +175,13 @@ export default async function SkuPage(
         model3dUrl={fm.model3dUrl}
         quickSpecs={fm.quickSpecs}
         order={fm.order}
+        // A part that writes its own minimum-order row has no stepper to show.
+        hideOrder={!fm.order && fm.specs.some((r) => /^minimum order$/i.test(r.label.trim()))}
         assurances={fm.assurances}
       />
+
+      {/* "Key facts" — only parts that have an answer block (the Oct 2026 pages). */}
+      <AnswerLead block={answerBlockFor(`/products/${category}/${product}`)} />
 
       <SkuGallery
         gallery={fm.gallery}

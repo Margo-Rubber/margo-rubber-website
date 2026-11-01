@@ -1546,6 +1546,61 @@ export const IMAGE_SLOT_LABELS = {
     where: "The part page for Plunger Seals & Plunger Cups: the main gallery image and thumbnails 1 and 4.",
     page: "/products/seals/plunger-seals",
   },
+  "sku.gaskets--flat-rubber-washers.photo": {
+    title: "Flat Rubber Washers — product photo",
+    where: "The part page for Flat Rubber Washers: the main gallery image and thumbnails 1 and 4.",
+    page: "/products/gaskets/flat-rubber-washers",
+  },
+  "sku.bellows--convoluted-bellows.photo": {
+    title: "Convoluted Moulded Bellows — product photo",
+    where: "The part page for Convoluted Moulded Bellows: the main gallery image and thumbnails 1 and 4.",
+    page: "/products/bellows/convoluted-bellows",
+  },
+  "sku.bellows--dust-covers-boots.photo": {
+    title: "Dust Covers & Protective Boots — product photo",
+    where: "The part page for Dust Covers & Protective Boots: the main gallery image and thumbnails 1 and 4.",
+    page: "/products/bellows/dust-covers-boots",
+  },
+  "sku.extrusion--edge-trim.photo": {
+    title: "Edge Trim (All-Rubber) — product photo",
+    where: "The part page for Edge Trim (All-Rubber): the main gallery image and thumbnails 1 and 4.",
+    page: "/products/extrusion/edge-trim",
+  },
+  "sku.gaskets--sanitary-tri-clamp-gaskets.photo": {
+    title: "Sanitary Tri-Clamp (Ferrule) Gaskets — product photo",
+    where: "The part page for Sanitary Tri-Clamp (Ferrule) Gaskets: the main gallery image and thumbnails 1 and 4.",
+    page: "/products/gaskets/sanitary-tri-clamp-gaskets",
+  },
+  "sku.gaskets--ev-battery-pack-gaskets.photo": {
+    title: "EV Battery-Pack & BESS Enclosure Gaskets — product photo",
+    where: "The part page for EV Battery-Pack & BESS Enclosure Gaskets: the main gallery image and thumbnails 1 and 4.",
+    page: "/products/gaskets/ev-battery-pack-gaskets",
+  },
+  "sku.anti-vibration-mounts--exhaust-hangers-isolators.photo": {
+    title: "Exhaust Hangers & Isolators — product photo",
+    where: "The part page for Exhaust Hangers & Isolators: the main gallery image and thumbnails 1 and 4.",
+    page: "/products/anti-vibration-mounts/exhaust-hangers-isolators",
+  },
+  "sku.gaskets--rocker-cover-sump-gaskets.photo": {
+    title: "Rocker-Cover, Sump & Intake-Manifold Gaskets — product photo",
+    where: "The part page for Rocker-Cover, Sump & Intake-Manifold Gaskets: the main gallery image and thumbnails 1 and 4.",
+    page: "/products/gaskets/rocker-cover-sump-gaskets",
+  },
+  "industries.food-beverage-pharma.hero": {
+    title: "Food, Beverage & Pharma — hero background",
+    where: "Food, Beverage & Pharma industry page, the photograph behind the heading at the top.",
+    page: "/industries/food-beverage-pharma",
+  },
+  "industries.ev-energy-storage-renewables.hero": {
+    title: "EV, Energy Storage & Renewables — hero background",
+    where: "EV, Energy Storage & Renewables industry page, the photograph behind the heading at the top.",
+    page: "/industries/ev-energy-storage-renewables",
+  },
+  "products.rubber-mats.hero": {
+    title: "Rubber Mats — hero photograph",
+    where: "Rubber Mats product page, the photograph in the hero.",
+    page: "/products/rubber-mats",
+  },
 } satisfies Record<ImageKey, SlotLabel>;
 
 export function slotLabel(key: string): SlotLabel {

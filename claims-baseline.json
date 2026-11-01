@@ -211,6 +211,7 @@
   "src/content/products/pads-stoppers-caps.mdx :: \\b(100|500|1,?000)\\s*(pcs|pieces)\\b(?=[^ :: 500 pcs",
   "src/content/products/pads-stoppers-caps.mdx :: \\bMOQ\\b|\\(at MOQ\\) :: MOQ",
   "src/content/products/pads-stoppers-caps.mdx :: within\\s+(two|2|three|3)\\s+(working|busi :: within two working days",
+  "src/content/products/rubber-mats.mdx :: (?<!not |make microcellular |SBR, )\\b(po :: PVC",
   "src/content/products/sponge-foam-rubber.mdx :: (?<!not hold\\s)ISO\\s*13485(?!\\s*approval :: FDA-compliant",
   "src/content/products/sponge-foam-rubber.mdx :: \\bMOQ\\b|\\(at MOQ\\) :: MOQ",
   "src/content/products/sponge-foam-rubber.mdx :: clean\\s*room|ISO\\s*Class\\s*7 :: cleanroom",

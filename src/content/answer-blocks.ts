@@ -14,7 +14,15 @@
  * Each block also goes into its page's FAQPage schema (see lib/schema.ts),
  * so the visible text and the structured data cannot drift apart.
  */
-export type AnswerBlock = { row: number; q: string; a: string };
+export type AnswerBlock = {
+  row: number;
+  q: string;
+  a: string;
+  /** Further paragraphs under the first — the "Key facts" of the Oct 2026 pages. */
+  more?: string[];
+  /** False keeps a heading that is not a question ("Key facts") out of FAQPage. */
+  faq?: boolean;
+};
 
 export const ANSWER_BLOCKS: Record<string, AnswerBlock> = {
   "/": {
@@ -107,6 +115,113 @@ export const ANSWER_BLOCKS: Record<string, AnswerBlock> = {
     row: 20,
     q: "What lead time and documents come with an export order?",
     a: "Production takes 3–4 weeks ex-works Nashik from drawing approval, or 2 weeks on express where capacity is confirmed. Before the vessel sails, Margo issues the commercial invoice with HS code and the packing list, and arranges the certificate of origin from the Nashik Chamber of Commerce; the shipping line issues the bill of lading. Terms: FOB Nhava Sheva or CIF.",
+  },
+  // ── October 2026 release: the 12 new pages ─────────────────────────────
+  // "Key facts" from each page.md in Drive › Margo 2 › 10 (final copy,
+  // 29 Oct 2026), pasted as written. The pages give the heading, not a
+  // question, so these render as "Key facts" and stay out of the FAQPage
+  // schema (`faq: false`).
+  "/industries/food-beverage-pharma": {
+    row: 0,
+    q: "Key facts",
+    faq: false,
+    a: "Food, beverage and pharma process seals are the gaskets, O-rings, valve seats and door seals on lines that are opened and cleaned often. Margo Rubber moulds and extrudes them to the equipment builder’s drawing in Vilholi, Nashik, in EPDM, silicone, NBR or FKM.",
+    more: [
+      "Margo Rubber’s pharma and biotech work is process equipment only: it does not make patient-contact parts. For a food or pharma line, the buyer names the product, the temperature and the cleaning cycle, and Margo picks the compound for that duty; it holds no food-contact certificate.",
+      "For food and pharma lines, Margo Rubber uses EPDM (−40 to +140 °C) for hot water, steam and CIP, silicone (−60 to +200 °C) for dry oven heat, NBR for fats and oils, and FKM (−20 to +250 °C) for fats, oils and hot acid cleaners, not for steam or hot caustic.",
+    ],
+  },
+  "/industries/ev-energy-storage-renewables": {
+    row: 0,
+    q: "Key facts",
+    faq: false,
+    a: "EV and energy-storage gaskets are the lid, door and cable-entry seals that keep water and dust out of battery packs, BESS cabinets, solar junction boxes and inverters. Margo Rubber makes them to the builder’s drawing in Vilholi, Nashik, in silicone, EPDM, neoprene (CR) or NBR.",
+    more: [
+      "Margo Rubber moulds one-piece gaskets up to 24 × 24 inches (about 610 × 610 mm). Larger pack and cabinet outlines are made as an extruded profile with joined corners, so a large cabinet door seal does not need one oversized mould.",
+      "A gasket alone cannot make an enclosure IP67. IEC 60529 rates the tested enclosure, so the gasket, the lid stiffness, the bolt spacing and the closing force are rated together. Margo Rubber sizes the gasket section and compression from the lid drawing, and holds no UL listing.",
+    ],
+  },
+  "/products/gaskets/flat-rubber-washers": {
+    row: 0,
+    q: "Key facts",
+    faq: false,
+    a: "A flat rubber washer is a ring of rubber sized by three numbers, inside diameter, outside diameter and thickness, plus a hardness. Margo Rubber die-cuts washers from calendered sheet, lathe-cuts them from extruded tube or compression moulds them at its plant in Vilholi, Nashik.",
+    more: [
+      "The medium decides a washer’s compound. EPDM suits water, steam and glycol but swells in oil, so Margo Rubber specifies NBR (−30 to +120 °C) for oil and fuel, FKM (−20 to +250 °C) for hot oil and silicone (−60 to +200 °C) for hot, dry joints.",
+    ],
+  },
+  "/products/bellows/convoluted-bellows": {
+    row: 0,
+    q: "Key facts",
+    faq: false,
+    a: "A convoluted bellows is a moulded rubber sleeve with folds that extend and compress with a moving rod, slide or actuator, keeping dust, chips, coolant and wash water off it. Margo Rubber moulds convoluted bellows in one piece to the customer’s drawing in Vilholi, Nashik.",
+    more: [
+      "To quote a convoluted bellows, Margo Rubber needs the inside diameter at each end, the free and compressed length, the stroke and the convolution count, plus the medium and temperature. A worn bellows works as a sample, and more convolutions at the same pitch give more travel.",
+    ],
+  },
+  "/products/bellows/dust-covers-boots": {
+    row: 0,
+    q: "Key facts",
+    faq: false,
+    a: "A protective boot is a moulded rubber cover that stretches over a linkage, lever, switch, rod end or connector and keeps grit, water and wash spray out of the moving joint. Margo Rubber moulds dust covers and boots in one piece to a drawing or sample in Vilholi, Nashik.",
+    more: [
+      "Neoprene (CR), rated −40 to +120 °C, is Margo Rubber’s usual compound for an outdoor dust boot that sees weather and light oil splash. A cracked old boot still gives the mounting sizes, so a buyer can send it with the part it fits over and Margo copies it.",
+    ],
+  },
+  "/products/extrusion/edge-trim": {
+    row: 0,
+    q: "Key facts",
+    faq: false,
+    a: "All-rubber edge trim is an extruded rubber U-profile that pushes onto a panel edge, covers the sharp cut and seals the gap behind it, gripping with internal fins instead of a metal carrier. Margo Rubber extrudes edge trim to a profile drawing or sample in Vilholi, Nashik.",
+    more: [
+      "All-rubber edge trim suits a known panel thickness and a part fitted once; trim with a metal carrier grips harder over a wider thickness range. Margo Rubber extrudes edge trim in EPDM (−40 to +140 °C) for sun, rain and ozone, in cut lengths or coils.",
+    ],
+  },
+  "/products/gaskets/sanitary-tri-clamp-gaskets": {
+    row: 0,
+    q: "Key facts",
+    faq: false,
+    a: "A sanitary tri-clamp gasket is the moulded rubber ring that seats between two ferrules on hygienic process pipework and reseals each time the line is opened for cleaning. Margo Rubber moulds tri-clamp gaskets to DIN 32676, ISO 2852 or ASME BPE ferrule sizes in Vilholi, Nashik.",
+    more: [
+      "Tri-clamp sizes do not all match across DIN 32676, ISO 2852 and ASME BPE, so a gasket made for one can sit proud or short in another. The drawing should name the standard the ferrules were made to. Margo Rubber moulds them in EPDM to +140 °C or silicone to +200 °C.",
+    ],
+  },
+  "/products/gaskets/ev-battery-pack-gaskets": {
+    row: 0,
+    q: "Key facts",
+    faq: false,
+    a: "An EV battery-pack gasket is the lid or housing seal that keeps water, dust and wash spray out of a traction-battery pack, charger or BESS cabinet joint. Margo Rubber moulds battery-pack gaskets endless up to 24 × 24 inches (about 610 × 610 mm) in Vilholi, Nashik.",
+    more: [
+      "No gasket alone makes a battery pack IP67, because IEC 60529 rates the tested enclosure, including lid stiffness, bolt spacing and closing force. Margo Rubber sizes the gasket section from the lid drawing, in silicone (−60 to +200 °C) with low compression set, or EPDM to +140 °C.",
+    ],
+  },
+  "/products/anti-vibration-mounts/exhaust-hangers-isolators": {
+    row: 0,
+    q: "Key facts",
+    faq: false,
+    a: "An exhaust hanger is a rubber isolator that carries the exhaust system from the vehicle body and stops engine vibration reaching the cabin. Margo Rubber moulds exhaust hangers in heat-resistant EPDM, plain or bonded to a metal insert, to the hanger-rod positions on the drawing, in Vilholi, Nashik.",
+    more: [
+      "Exhaust hangers usually tear at the pin hole because heat hardened the rubber or the system was too heavy for a plain hanger. Margo Rubber moves hot positions from EPDM (to +140 °C) to AEM (to +160 °C), and adds a bonded insert where the system is heavy.",
+    ],
+  },
+  "/products/gaskets/rocker-cover-sump-gaskets": {
+    row: 0,
+    q: "Key facts",
+    faq: false,
+    a: "Rocker-cover and sump gaskets are press-in-place or flat moulded rubber seals between an engine cover and its housing that hold back hot oil and blow-by. Margo Rubber moulds rocker-cover, sump and intake-manifold gaskets in AEM, FKM or silicone (VMQ) to the cover drawing in Vilholi, Nashik.",
+    more: [
+      "Margo Rubber specifies AEM for rocker covers and sumps to +160 °C continuous, silicone (VMQ) to +200 °C and FKM to +250 °C. Exhaust-manifold gaskets are multi-layer steel (MLS), not rubber, so Margo does not make them.",
+    ],
+  },
+  "/products/rubber-mats": {
+    row: 0,
+    q: "Key facts",
+    faq: false,
+    a: "Margo Rubber moulds 11 types of rubber mat in solid rubber at its plant in Vilholi, Nashik: car floor and boot mats, mud flaps, anti-fatigue, IS 15652 electrical insulating, ribbed, checker, coin, diamond-pattern, anti-vibration and drainage mats. None has a PVC, TPE or foam layer.",
+    more: [
+      "Margo Rubber makes electrical insulating mats to IS 15652, which, as amended in Amendment No. 2, sets three classes: Class A for use up to 3.3 kV at 2.0 mm thick, Class B to 11 kV at 2.5 mm and Class C to 33 kV at 3.0 mm.",
+      "What lands on a rubber mat decides its compound. Margo Rubber specifies natural rubber or SBR for dry floors and vehicles, EPDM (−40 to +140 °C) for sun and wash-down water, and NBR (−30 to +120 °C) where oil, fuel or coolant reaches the mat.",
+    ],
   },
 };
 

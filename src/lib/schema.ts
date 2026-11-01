@@ -649,7 +649,7 @@ export async function productCategoryGraph(
   // FAQPage; the page's own FAQ joins it where the page opts in.
   {
     const lead = answerBlockFor(path);
-    const faqs = [...(lead ? [lead] : []), ...(fm.schemaTypes.includes("FAQPage") ? fm.faqs : [])];
+    const faqs = [...(lead && lead.faq !== false ? [lead] : []), ...(fm.schemaTypes.includes("FAQPage") ? fm.faqs : [])];
     const faq = faqNode(faqs, path);
     if (faq) nodes.push(faq);
   }
@@ -749,7 +749,7 @@ export function industryGraph(
   const nodes: Node[] = [serviceNode(fm, path), breadcrumbNode(crumbs, path)];
   // The answer block (D6) leads the page's FAQPage.
   const lead = answerBlockFor(path);
-  const faq = faqNode([...(lead ? [lead] : []), ...fm.faqs], path);
+  const faq = faqNode([...(lead && lead.faq !== false ? [lead] : []), ...fm.faqs], path);
   if (faq) nodes.push(faq);
   return { "@context": "https://schema.org", "@graph": nodes };
 }
