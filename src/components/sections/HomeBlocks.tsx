@@ -589,28 +589,32 @@ export function Story({
                 {p}
               </p>
             ))}
-
-            <dl className="mt-8 grid grid-cols-2 gap-4">
-              {stats.map((s) => (
-                <div
-                  key={s.label}
-                  className="margo-card rounded-card border-line flex flex-col-reverse border bg-[#0F1115] px-6 py-5"
-                >
-                  <dt className="text-ink-4 mt-1 text-sm">{s.label}</dt>
-                  <dd className="text-ink text-xl font-semibold"><SlotValue value={s.value} /></dd>
-                </div>
-              ))}
-            </dl>
-
-            <Link
-              href={cta.href}
-              className="text-accent-400 hover:opacity-80 mt-8 inline-flex items-center gap-2 text-sm font-semibold transition-colors"
-            >
-              {cta.label}
-              <Arrow />
-            </Link>
           </div>
         </div>
+
+        {/* Stats and the link run centred across the section, under both
+            the photo and the copy. */}
+        <dl className="mt-14 grid grid-cols-2 gap-4 lg:grid-cols-4">
+          {stats.map((s) => (
+            <div
+              key={s.label}
+              className="margo-card rounded-card border-line flex flex-col-reverse justify-end border bg-[#0F1115] px-6 py-5 text-center"
+            >
+              <dt className="text-ink-4 mt-1 text-sm">{s.label}</dt>
+              <dd className="text-ink text-xl font-semibold"><SlotValue value={s.value} /></dd>
+            </div>
+          ))}
+        </dl>
+
+        <p className="mt-10 text-center">
+          <Link
+            href={cta.href}
+            className="text-accent-400 hover:opacity-80 inline-flex items-center gap-2 text-sm font-semibold transition-colors"
+          >
+            {cta.label}
+            <Arrow />
+          </Link>
+        </p>
       </Container>
     </section>
   );
