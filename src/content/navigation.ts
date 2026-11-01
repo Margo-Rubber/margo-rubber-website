@@ -70,9 +70,12 @@ export const PRODUCT_MENU = {
     {
       label: "Sponge & Foam Rubber",
       href: "/products/sponge-foam-rubber",
-      // The self-adhesive foam tape section was taken off the page (client,
-      // 2 Nov 2026), so its menu link went with it.
-      items: [],
+      items: [
+        {
+          label: "Self-Adhesive Foam Tape",
+          href: "/products/sponge-foam-rubber#self-adhesive-foam-tape",
+        },
+      ],
     },
   ],
 } as const;

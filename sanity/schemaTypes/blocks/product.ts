@@ -92,6 +92,15 @@ export const materialCards = defineType({
       description: "Attribution under the cards, e.g. “Viton® is a trade mark of The Chemours Company.”",
       group: "content",
     }),
+    defineField({
+      name: "ownFigures",
+      title: "Use the figures typed here",
+      type: "boolean",
+      description:
+        "Off: temperature and hardness come from the compound table in Site settings (solid rubber). On: the cards show the figures typed above — for sponge grades, which are rated cooler, and extrusion, whose hardness bands are narrower.",
+      initialValue: false,
+      group: "content",
+    }),
     anchorIdField(),
   ],
   preview: blockPreview("Material cards", (v) => count(v.items, "material")),

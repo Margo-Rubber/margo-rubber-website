@@ -289,7 +289,11 @@ function ProductsPanel() {
       >
         All Products <span aria-hidden>›</span>
       </Link>
-      <ul className="mt-3 space-y-0.5">
+      {/* Two columns, filled top to bottom: sixteen families in one
+          column ran past the bottom of a laptop screen (client, 2 Nov 2026).
+          The left column runs O-Rings to Rubber Mats (twelve), the right
+          Pads, Stoppers & Caps to Sponge & Foam Rubber (client). */}
+      <ul className="mt-3 grid grid-flow-col grid-rows-12 gap-x-8 gap-y-0.5">
         {/* Every product family, the two grouped ones included. Their
             sub-items (profiles, foam tape) are on the mobile menu and the
             category pages, not in this panel. */}

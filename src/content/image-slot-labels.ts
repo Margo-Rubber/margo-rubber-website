@@ -64,6 +64,10 @@ export const PAGE_TITLES: Record<string, string> = {
   "/industries/agriculture": "Agriculture industry page",
   "/industries/medical-devices": "Medical Devices industry page",
   "/industries/water-fluid-management": "Water & Fluid Management industry page",
+  "/industries/construction": "Construction industry page",
+  "/industries/transport": "Transport — Rail & Marine industry page",
+  "/industries/food-beverage-pharma": "Food, Beverage & Pharma industry page",
+  "/industries/ev-energy-storage-renewables": "EV, Energy Storage & Renewables industry page",
   "/about": "About page",
   "/export": "Export page",
   "/certifications": "Certifications page",
@@ -721,11 +725,6 @@ export const IMAGE_SLOT_LABELS = {
     where: "Anti-Vibration Mounts category page, ‘Material selection’ section — card 1 of 8. Stand-in: shows the NBR (Nitrile) card's photograph until its own is uploaded.",
     page: "/products/anti-vibration-mounts",
   },
-  "products.rubber-mats.hero-wide": {
-    title: "Rubber Mats page — wide hero photo (desktop)",
-    where: "Rubber Mats category page on desktop: the wide photograph filling the hero beside the heading. Use a landscape shot with the product on the right.",
-    page: "/products/rubber-mats",
-  },
   "products.bellows.hero-wide": {
     title: "Bellows page — wide hero photo (desktop)",
     where: "Bellows category page on desktop: the wide photograph filling the hero beside the heading. Use a landscape shot with the product on the right.",
@@ -785,6 +784,136 @@ export const IMAGE_SLOT_LABELS = {
     title: "Bellows — Natural rubber (NR) material card",
     where: "Bellows category page, ‘Material selection’ section — card 1 of 8. Stand-in: shows the NBR (Nitrile) card's photograph until its own is uploaded.",
     page: "/products/bellows",
+  },
+  "products.bonded-components.material.nr": {
+    title: "Bonded Components — Natural rubber (NR) material card",
+    where: "Bonded Components category page, ‘Material selection’ section — card 1 of 8.",
+    page: "/products/bonded-components",
+  },
+  "products.bonded-components.material.nbr": {
+    title: "Bonded Components — NBR (Nitrile) material card",
+    where: "Bonded Components category page, ‘Material selection’ section — card 2 of 8.",
+    page: "/products/bonded-components",
+  },
+  "products.bonded-components.material.epdm": {
+    title: "Bonded Components — EPDM material card",
+    where: "Bonded Components category page, ‘Material selection’ section — card 3 of 8.",
+    page: "/products/bonded-components",
+  },
+  "products.bonded-components.material.cr": {
+    title: "Bonded Components — Neoprene (CR) material card",
+    where: "Bonded Components category page, ‘Material selection’ section — card 4 of 8.",
+    page: "/products/bonded-components",
+  },
+  "products.bonded-components.material.sbr": {
+    title: "Bonded Components — SBR material card",
+    where: "Bonded Components category page, ‘Material selection’ section — card 5 of 8.",
+    page: "/products/bonded-components",
+  },
+  "products.bonded-components.material.aem": {
+    title: "Bonded Components — AEM (Vamac®) material card",
+    where: "Bonded Components category page, ‘Material selection’ section — card 6 of 8.",
+    page: "/products/bonded-components",
+  },
+  "products.bonded-components.material.fkm": {
+    title: "Bonded Components — FKM (Viton®) material card",
+    where: "Bonded Components category page, ‘Material selection’ section — card 7 of 8.",
+    page: "/products/bonded-components",
+  },
+  "products.bonded-components.material.silicone": {
+    title: "Bonded Components — Silicone (VMQ) material card",
+    where: "Bonded Components category page, ‘Material selection’ section — card 8 of 8.",
+    page: "/products/bonded-components",
+  },
+  "products.rubber-lining.material.nr": {
+    title: "Rubber Lining & Skirting — Natural rubber (NR) material card",
+    where: "Rubber Lining & Skirting category page, ‘Material selection’ section — card 1 of 8.",
+    page: "/products/rubber-lining",
+  },
+  "products.rubber-lining.material.sbr": {
+    title: "Rubber Lining & Skirting — SBR material card",
+    where: "Rubber Lining & Skirting category page, ‘Material selection’ section — card 2 of 8.",
+    page: "/products/rubber-lining",
+  },
+  "products.rubber-lining.material.epdm": {
+    title: "Rubber Lining & Skirting — EPDM material card",
+    where: "Rubber Lining & Skirting category page, ‘Material selection’ section — card 3 of 8.",
+    page: "/products/rubber-lining",
+  },
+  "products.rubber-lining.material.nbr": {
+    title: "Rubber Lining & Skirting — NBR (Nitrile) material card",
+    where: "Rubber Lining & Skirting category page, ‘Material selection’ section — card 4 of 8.",
+    page: "/products/rubber-lining",
+  },
+  "products.rubber-lining.material.cr": {
+    title: "Rubber Lining & Skirting — Neoprene (CR) material card",
+    where: "Rubber Lining & Skirting category page, ‘Material selection’ section — card 5 of 8.",
+    page: "/products/rubber-lining",
+  },
+  "products.rubber-lining.material.fkm": {
+    title: "Rubber Lining & Skirting — FKM (Viton®) material card",
+    where: "Rubber Lining & Skirting category page, ‘Material selection’ section — card 6 of 8.",
+    page: "/products/rubber-lining",
+  },
+  "products.rubber-lining.material.aem": {
+    title: "Rubber Lining & Skirting — AEM (Vamac®) material card",
+    where: "Rubber Lining & Skirting category page, ‘Material selection’ section — card 7 of 8.",
+    page: "/products/rubber-lining",
+  },
+  "products.rubber-lining.material.silicone": {
+    title: "Rubber Lining & Skirting — Silicone (VMQ) material card",
+    where: "Rubber Lining & Skirting category page, ‘Material selection’ section — card 8 of 8.",
+    page: "/products/rubber-lining",
+  },
+  "products.extrusion.material.epdm": {
+    title: "Extrusion Profiles — EPDM material card",
+    where: "Extrusion Profiles category page, ‘Material selection’ section — card 1 of 5.",
+    page: "/products/extrusion",
+  },
+  "products.extrusion.material.nbr": {
+    title: "Extrusion Profiles — NBR (Nitrile) material card",
+    where: "Extrusion Profiles category page, ‘Material selection’ section — card 2 of 5.",
+    page: "/products/extrusion",
+  },
+  "products.extrusion.material.fkm": {
+    title: "Extrusion Profiles — FKM (Viton®) material card",
+    where: "Extrusion Profiles category page, ‘Material selection’ section — card 3 of 5.",
+    page: "/products/extrusion",
+  },
+  "products.extrusion.material.silicone": {
+    title: "Extrusion Profiles — Silicone (VMQ) material card",
+    where: "Extrusion Profiles category page, ‘Material selection’ section — card 4 of 5.",
+    page: "/products/extrusion",
+  },
+  "products.extrusion.material.cr": {
+    title: "Extrusion Profiles — Neoprene (CR) material card",
+    where: "Extrusion Profiles category page, ‘Material selection’ section — card 5 of 5.",
+    page: "/products/extrusion",
+  },
+  "products.sponge-foam-rubber.material.epdm": {
+    title: "Sponge & Foam Rubber — EPDM material card",
+    where: "Sponge & Foam Rubber category page, ‘Material selection’ section — card 1 of 5.",
+    page: "/products/sponge-foam-rubber",
+  },
+  "products.sponge-foam-rubber.material.cr": {
+    title: "Sponge & Foam Rubber — Neoprene (CR) material card",
+    where: "Sponge & Foam Rubber category page, ‘Material selection’ section — card 2 of 5.",
+    page: "/products/sponge-foam-rubber",
+  },
+  "products.sponge-foam-rubber.material.nbr": {
+    title: "Sponge & Foam Rubber — NBR (Nitrile) material card",
+    where: "Sponge & Foam Rubber category page, ‘Material selection’ section — card 3 of 5.",
+    page: "/products/sponge-foam-rubber",
+  },
+  "products.sponge-foam-rubber.material.nr": {
+    title: "Sponge & Foam Rubber — Natural rubber (NR) material card",
+    where: "Sponge & Foam Rubber category page, ‘Material selection’ section — card 4 of 5.",
+    page: "/products/sponge-foam-rubber",
+  },
+  "products.sponge-foam-rubber.material.silicone": {
+    title: "Sponge & Foam Rubber — Silicone (VMQ) material card",
+    where: "Sponge & Foam Rubber category page, ‘Material selection’ section — card 5 of 5.",
+    page: "/products/sponge-foam-rubber",
   },
   "products.diaphragms.material.epdm": {
     title: "Diaphragms — EPDM material card",

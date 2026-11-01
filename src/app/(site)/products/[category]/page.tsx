@@ -37,9 +37,9 @@ const FULL_BLEED_HERO: Record<string, { image: string; frame?: string; fit?: str
   seals: { image: "products.seals.hero-wide" },
   "rubber-lining": { image: "products.rubber-lining.hero-wide" },
   "sponge-foam-rubber": { image: "products.sponge-foam.hero-wide" },
-  // The fanned mats fill the photo edge to edge: frame on the right 60% so
-  // they sit clear of the long two-line heading and the intro.
-  "rubber-mats": { image: "products.rubber-mats.hero-wide", frame: "lg:left-[40%]" },
+  // The hero slot itself: the photo uploaded to it in Studio (1 Nov 2026) is
+  // already a wide dark studio shot with the mat on the right.
+  "rubber-mats": { image: "products.rubber-mats.hero" },
   // Long two-line heading and a photo with the product from 18% across:
   // frame on the right 60%, photo shifted so both parts sit clear of the copy.
   diaphragms: {
