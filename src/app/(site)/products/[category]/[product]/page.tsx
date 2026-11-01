@@ -72,12 +72,18 @@ export default async function SkuPage(
 ) {
   const { category, product } = await props.params;
 
-  const [page, settings, byCompound] = await Promise.all([
+  // compoundLinks() is a "use cache" function that itself reads this part and
+  // the site settings. Started alongside those two calls, its cache fill
+  // joined their in-flight fills from the page's render scope and Next
+  // aborted it ("stuck on shared state from the outer render scope", 2 Nov
+  // 2026). So the part and settings resolve first; compoundLinks then finds
+  // their entries complete.
+  const [page, settings] = await Promise.all([
     getSkuPage(fileFor(category, product)),
     getSiteSettings(),
-    compoundLinks(),
   ]);
   if (!page) notFound();
+  const byCompound = await compoundLinks();
 
   const fm = page.frontmatter;
 
