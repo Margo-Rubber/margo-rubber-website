@@ -294,6 +294,7 @@ export function SkuHero({
   model3dUrl,
   quickSpecs,
   order,
+  hideOrder = false,
   assurances,
   breadcrumb,
 }: {
@@ -305,6 +306,8 @@ export function SkuHero({
   model3dUrl?: string;
   quickSpecs: readonly { label: string; value: string }[];
   order?: { unit: string; defaultQty: string; minNote: string };
+  /** No stepper: the part states its own minimum ("set by part size and tooling"). */
+  hideOrder?: boolean;
   assurances: readonly string[];
   breadcrumb?: readonly Crumb[];
 }) {
@@ -415,6 +418,7 @@ export function SkuHero({
 
             {/* Quantity stepper. Presentational: there is no cart, the value is
                 carried into the quote request. */}
+            {!hideOrder && (
             <div className="mt-7 flex flex-wrap items-center gap-4">
               <span className="text-ink-4 text-sm">QTY ({ord.unit})</span>
               <div className="border-line flex items-center rounded-lg border bg-[#0D0F12]">
@@ -424,6 +428,7 @@ export function SkuHero({
               </div>
               <span className="text-ink-4 text-sm">{ord.minNote}</span>
             </div>
+            )}
 
             <div className="mt-7 flex flex-wrap gap-3">
               <Link
@@ -587,23 +592,31 @@ export function SkuSpecs({
 }) {
   const held = settings.certifications.items.find((c) => c.standing === "held");
   const specRows = specs.length ? specs : SAMPLE.specs;
+  // A part that writes its own row for one of the site-wide facts (the Oct
+  // 2026 parts write "Minimum order: set by part size and tooling") keeps its
+  // own wording; the constant is added only where the part is silent.
+  const own = (label: string) => specRows.some((r) => r.label.trim().toLowerCase() === label.toLowerCase());
   const rows = [
     // A part page whose part number is "on request" is the one thing a
     // buyer will notice (sheet 32 §03): no code, no row.
     ...(productCode ? [{ label: "Product Code", value: productCode }] : []),
-    { label: "Product Family", value: categoryLabel },
+    ...(own("Product family") ? [] : [{ label: "Product Family", value: categoryLabel }]),
     ...(hardness ? [{ label: "Hardness", value: hardness }] : []),
     ...(dimensions ? [{ label: "Dimensions", value: dimensions }] : []),
     // Per-part rows only; a row with nothing behind it is not shown.
     ...specRows.filter((r) => r.value.trim()),
-    {
-      label: "Certifications",
-      value: held
-        ? `${held.code} — certificate ${held.identifier}, valid to ${longDate(held.validThrough)}`
-        : settings.certifications.line,
-    },
+    ...(own("Certifications")
+      ? []
+      : [
+          {
+            label: "Certifications",
+            value: held
+              ? `${held.code} — certificate ${held.identifier}, valid to ${longDate(held.validThrough)}`
+              : settings.certifications.line,
+          },
+        ]),
     // One constant, three places: the hero selector, this row and the FAQ.
-    { label: "Minimum Order", value: settings.commercial.minimumRunMoulded },
+    ...(own("Minimum order") ? [] : [{ label: "Minimum Order", value: settings.commercial.minimumRunMoulded }]),
   ];
   const tiles = dimensional?.tiles.length ? dimensional.tiles : SAMPLE.dimensional.tiles;
 

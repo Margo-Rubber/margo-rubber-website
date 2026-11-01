@@ -309,3 +309,38 @@ export function parseBlocks(
 
   return { blocks, errors };
 }
+
+/**
+ * An explicit, ordered block list written straight into an .mdx file.
+ *
+ * The older pages keep their named section fields and are converted on read
+ * (product-blocks.ts, industry-blocks.ts). A page written after the move to
+ * blocks — the 12 pages of the October 2026 release — is written in the CMS's
+ * own shape instead, as `sections:` in its frontmatter, so it renders the same
+ * universal blocks Construction and Transport use, and `migrate:products`
+ * carries the list into Sanity unchanged.
+ *
+ * Unlike `parseBlocks`, this THROWS: a bad section in a file is a developer's
+ * mistake, caught at build time, not an editor's half-finished block.
+ */
+export function parseFileBlocks(
+  input: readonly unknown[],
+  context: string,
+  /** The page's questions: an FAQ block holds only its heading, as in Sanity. */
+  faqs: readonly unknown[] = [],
+): Block[] {
+  const keyed = input.map((b, i) => {
+    if (!b || typeof b !== "object") return b;
+    const block: Record<string, unknown> = { _key: `section-${i + 1}`, ...(b as Record<string, unknown>) };
+    return block._type === "block.industryFaq" ? { ...block, items: faqs } : block;
+  });
+  const blocks: Block[] = [];
+  const errors: string[] = [];
+  keyed.forEach((raw, i) => {
+    const r = parseBlock(raw, i);
+    if (r.ok) blocks.push(r.block);
+    else errors.push(r.error);
+  });
+  if (errors.length) throw new Error(`[blocks] ${context}: ${errors.join(" | ")}`);
+  return blocks;
+}

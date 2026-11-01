@@ -1,4 +1,4 @@
-import type { Block, BlockType, CardLayout } from "../content/blocks.ts";
+import { parseFileBlocks, type Block, type BlockType, type CardLayout } from "../content/blocks.ts";
 import type { ProductCategory } from "../content/schemas/index.ts";
 
 /**
@@ -67,6 +67,9 @@ const PARTS_COPY = {
 };
 
 export function toBlocks(fm: ProductCategory, slug: string): Block[] {
+  // A page written as a block list renders that list, in its own order.
+  if (fm.sections) return parseFileBlocks(fm.sections, `productCategory "${slug}"`, fm.faqs);
+
   const blocks: Block[] = [];
 
   const pushParts = () => {

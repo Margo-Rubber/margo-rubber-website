@@ -89,7 +89,10 @@ export const cmsImageSchema = z.object({
   hotspot: z.object({ x: z.number(), y: z.number() }).passthrough().optional(),
   asset: z
     .object({
-      url: z.string().url(),
+      // A Sanity CDN URL, or a file in public/images/ for a page still held
+      // in an .mdx file (the Oct 2026 release) — migrate:products uploads
+      // those and swaps in the asset reference.
+      url: z.string().refine((u) => /^https:\/\//.test(u) || u.startsWith("/images/"), "an https URL or a /images/ path"),
       w: z.number().positive(),
       h: z.number().positive(),
       lqip: z.string().optional(),
@@ -576,6 +579,12 @@ export const productCategorySchema = baseSchema.extend({
 
   cta: ctaSchema.optional(),
 
+  /**
+   * An explicit block list, for a page written in the CMS's own shape (see
+   * parseFileBlocks in content/blocks.ts). When present it replaces the named
+   * section fields above; Sanity documents keep theirs in `sections` already.
+   */
+  sections: z.array(z.record(z.string(), z.unknown())).optional(),
   anchors: z.array(anchorSchema).default([]),
   faqs: z.array(faqSchema).default([]),
   related: relatedSchema,
@@ -751,6 +760,12 @@ export const industrySchema = baseSchema.extend({
 
   exportLane: industryExportLaneSchema.optional(),
 
+  /**
+   * An explicit block list, for a page written in the CMS's own shape (see
+   * parseFileBlocks in content/blocks.ts). When present it replaces the named
+   * section fields above; Sanity documents keep theirs in `sections` already.
+   */
+  sections: z.array(z.record(z.string(), z.unknown())).optional(),
   faqSection: sectionMeta.partial().optional(),
   faqs: z.array(faqSchema).default([]),
 

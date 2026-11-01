@@ -161,6 +161,54 @@ const client = createClient({
   token,
 });
 
+/* ── Photos ───────────────────────────────────────────────────────────────── */
+
+/**
+ * A page held in an .mdx file names its card photos by URL — a Sanity CDN
+ * URL, or a file in public/images/ (the Oct 2026 release). Sanity stores an
+ * image as a reference to an asset, so each is turned into one here: a CDN
+ * URL already names its asset; a local file is uploaded first (Sanity
+ * de-duplicates by content, so a re-run does not create copies).
+ */
+const uploaded = new Map<string, string>();
+
+async function assetRef(url: string): Promise<string> {
+  const cdn = url.match(/^https:\/\/cdn\.sanity\.io\/images\/[^/]+\/[^/]+\/([0-9a-f]+-\d+x\d+)\.(\w+)$/);
+  if (cdn) return `image-${cdn[1]}-${cdn[2]}`;
+  if (!url.startsWith("/images/")) throw new Error(`Cannot resolve image "${url}"`);
+  if (!uploaded.has(url)) {
+    const asset = await client.assets.upload("image", fs.createReadStream(`public${url}`), {
+      filename: url.split("/").pop(),
+    });
+    uploaded.set(url, asset._id);
+  }
+  return uploaded.get(url)!;
+}
+
+async function resolvePhotos(node: unknown): Promise<unknown> {
+  if (Array.isArray(node)) return Promise.all(node.map(resolvePhotos));
+  if (!node || typeof node !== "object") return node;
+  const o = node as Record<string, unknown>;
+  const asset = o.asset as { url?: unknown; _ref?: unknown } | undefined;
+  if (asset && typeof asset.url === "string" && !asset._ref) {
+    const rest = { ...o };
+    delete rest.asset;
+    return {
+      _type: "image",
+      ...rest,
+      asset: { _type: "reference", _ref: await assetRef(asset.url) },
+    };
+  }
+  const out: Record<string, unknown> = {};
+  for (const [k, v] of Object.entries(o)) out[k] = await resolvePhotos(v);
+  return out;
+}
+
+for (const d of documents) {
+  d.doc = (await resolvePhotos(d.doc)) as typeof d.doc;
+}
+if (uploaded.size) console.log(`\nUploaded ${uploaded.size} photo(s) from public/images/.`);
+
 console.log(`\nWriting ${documents.length} document(s)…`);
 
 let ok = 0;

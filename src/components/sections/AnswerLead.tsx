@@ -18,6 +18,11 @@ export function AnswerLead({ block }: { block?: AnswerBlock }) {
             {block.q}
           </h2>
           <p className="text-ink-2 mt-4 text-base leading-relaxed">{linkStandards(block.a)}</p>
+          {block.more?.map((p) => (
+            <p key={p.slice(0, 32)} className="text-ink-2 mt-4 text-base leading-relaxed">
+              {linkStandards(p)}
+            </p>
+          ))}
         </div>
       </Container>
     </section>

@@ -2291,6 +2291,76 @@ export const IMAGES = {
     alt: "Moulded rubber components photographed against a neutral backdrop",
     status: "placeholder",
   },
+
+  /* --- October 2026 release: the 12 new pages ---------------------------
+     Illustrative images from Drive › Margo 2 › 09 (28 Oct finals), resized
+     to 1600 px WebP. Swap in real Margo photos in Studio when they exist. */
+  "sku.gaskets--flat-rubber-washers.photo": {
+    src: "/images/release-2026-10/b1-02_flat-rubber-washers.webp",
+    w: 1600, h: 1067,
+    alt: "Washers: illustrative moulded rubber parts on a light studio background",
+    status: "placeholder",
+  },
+  "sku.bellows--convoluted-bellows.photo": {
+    src: "/images/release-2026-10/b3-32_convoluted-moulded-bellows.webp",
+    w: 1600, h: 1067,
+    alt: "Convoluted moulded bellows, illustrative moulded rubber parts",
+    status: "placeholder",
+  },
+  "sku.bellows--dust-covers-boots.photo": {
+    src: "/images/release-2026-10/b3-05_dust-covers-protective-boots.webp",
+    w: 1600, h: 1067,
+    alt: "Dust covers & protective boots, illustrative moulded rubber parts",
+    status: "placeholder",
+  },
+  "sku.extrusion--edge-trim.photo": {
+    src: "/images/release-2026-10/b4-01_edge-trim.webp",
+    w: 1600, h: 1067,
+    alt: "Edge trim, illustrative rubber parts",
+    status: "placeholder",
+  },
+  "sku.gaskets--sanitary-tri-clamp-gaskets.photo": {
+    src: "/images/release-2026-10/b1-08_sanitary-tri-clamp-gaskets.webp",
+    w: 1600, h: 1067,
+    alt: "Sanitary tri-clamp (ferrule) gaskets: illustrative moulded rubber parts on a light studio background",
+    status: "placeholder",
+  },
+  "sku.gaskets--ev-battery-pack-gaskets.photo": {
+    src: "/images/release-2026-10/b1-15_ev-battery-pack-gaskets.webp",
+    w: 1600, h: 1067,
+    alt: "EV battery-pack & BESS enclosure gaskets: illustrative moulded rubber parts on a light studio background",
+    status: "placeholder",
+  },
+  "sku.anti-vibration-mounts--exhaust-hangers-isolators.photo": {
+    src: "/images/release-2026-10/b3-01_exhaust-hangers-isolators.webp",
+    w: 1600, h: 1067,
+    alt: "Exhaust hangers & isolators, illustrative moulded rubber parts",
+    status: "placeholder",
+  },
+  "sku.gaskets--rocker-cover-sump-gaskets.photo": {
+    src: "/images/release-2026-10/b1-01_rocker-cover-sump-gaskets.webp",
+    w: 1600, h: 1067,
+    alt: "Rocker-cover, sump & intake-manifold gaskets: illustrative moulded rubber parts on a light studio background",
+    status: "placeholder",
+  },
+  "industries.food-beverage-pharma.hero": {
+    src: "/images/release-2026-10/b1-24_hero-food-beverage-pharma.webp",
+    w: 1600, h: 1067,
+    alt: "Food, beverage & pharma: illustrative in-use scene with rubber gaskets",
+    status: "placeholder",
+  },
+  "industries.ev-energy-storage-renewables.hero": {
+    src: "/images/release-2026-10/b1-25_hero-ev-energy-storage-renewables.webp",
+    w: 1600, h: 1067,
+    alt: "EV, energy storage & renewables: illustrative in-use scene with rubber gaskets",
+    status: "placeholder",
+  },
+  "products.rubber-mats.hero": {
+    src: "/images/release-2026-10/rm-00_rubber-mats-group.webp",
+    w: 1600, h: 1067,
+    alt: "Six solid rubber mat patterns fanned on a white background, illustrative",
+    status: "placeholder",
+  },
 } as const satisfies Record<string, ImageEntry>;
 
 export type ImageKey = keyof typeof IMAGES;
