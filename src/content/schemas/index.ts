@@ -446,6 +446,8 @@ export const subCategorySectionSchema = z
     dividerLabel: z.string().optional(),
     /** The product itself (e.g. a roll of the tape), uploaded in Studio. */
     photo: cmsImageSchema.optional(),
+    /** A second photo beside the first, in place of the build-up diagram. */
+    detailPhoto: cmsImageSchema.optional(),
     buildUp: z
       .object({ label: z.string(), layers: z.array(z.string()).min(2) })
       .optional(),

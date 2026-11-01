@@ -53,7 +53,6 @@ export default async function CaseStudiesPage() {
         h1Lines={fm.hero.h1Lines}
         paragraphs={fm.hero.paragraphs}
         image={fm.hero.image}
-        badge={fm.hero.badge}
         actions={fm.hero.actions}
       />
 

@@ -121,16 +121,6 @@ export const ANSWER_BLOCKS: Record<string, AnswerBlock> = {
   // 29 Oct 2026), pasted as written. The pages give the heading, not a
   // question, so these render as "Key facts" and stay out of the FAQPage
   // schema (`faq: false`).
-  "/industries/food-beverage-pharma": {
-    row: 0,
-    q: "Key facts",
-    faq: false,
-    a: "Food, beverage and pharma process seals are the gaskets, O-rings, valve seats and door seals on lines that are opened and cleaned often. Margo Rubber moulds and extrudes them to the equipment builder’s drawing in Vilholi, Nashik, in EPDM, silicone, NBR or FKM.",
-    more: [
-      "Margo Rubber’s pharma and biotech work is process equipment only: it does not make patient-contact parts. For a food or pharma line, the buyer names the product, the temperature and the cleaning cycle, and Margo picks the compound for that duty; it holds no food-contact certificate.",
-      "For food and pharma lines, Margo Rubber uses EPDM (−40 to +140 °C) for hot water, steam and CIP, silicone (−60 to +200 °C) for dry oven heat, NBR for fats and oils, and FKM (−20 to +250 °C) for fats, oils and hot acid cleaners, not for steam or hot caustic.",
-    ],
-  },
   "/industries/ev-energy-storage-renewables": {
     row: 0,
     q: "Key facts",

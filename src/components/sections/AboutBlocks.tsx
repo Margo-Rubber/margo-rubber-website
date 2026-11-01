@@ -570,15 +570,15 @@ export function Story({
               accentLines={head.accentLines}
               className="mt-7"
             />
-            {/* Editorial serif, a size up from body copy: the story reads as
-                a story rather than a spec sheet. The first paragraph leads. */}
+            {/* The site's body face; the first paragraph leads a shade
+                brighter and a step up. */}
             {paragraphs.map((p, i) => (
               <p
                 key={p.slice(0, 24)}
                 className={
                   i === 0
-                    ? "margo-story-lead text-ink mt-7"
-                    : "margo-story-body text-ink-2 mt-5"
+                    ? "text-ink-2 mt-7 text-lg leading-relaxed"
+                    : "text-ink-3 mt-5 leading-relaxed"
                 }
               >
                 {p}

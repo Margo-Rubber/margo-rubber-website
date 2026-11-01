@@ -49,6 +49,13 @@ const FULL_BLEED_HERO: Record<string, { image: string; frame?: string; fit?: str
   },
 };
 
+/** Category pages whose accent heading line breaks before a given word:
+ *  "Moulded in Solid Rubber for Vehicles," / "Floors and Machines" kept the
+ *  rubber mats heading off the hero photo (client, 2 Nov 2026). */
+const ACCENT_BREAK: Record<string, string> = {
+  "rubber-mats": "Floors",
+};
+
 /**
  * ONE file → nine product category pages.
  *
@@ -86,6 +93,10 @@ export default async function ProductCategoryPage(
     fm.h1Accent && fm.h1.endsWith(fm.h1Accent) ? fm.h1Accent : null;
   const headingAccent = accentFromFm ?? fm.h1.split(" ").slice(-1)[0];
   const headingLead = fm.h1.slice(0, fm.h1.length - headingAccent.length).trim();
+  // A long accent line can be broken before a chosen word, so it stays
+  // clear of a full-bleed photo (ACCENT_BREAK).
+  const breakAt = ACCENT_BREAK[category];
+  const accentLines = breakAt ? headingAccent.replace(` ${breakAt}`, `\n${breakAt}`) : headingAccent;
 
   /**
    * The newer comps alternate a near-black band with a lighter one. Whether a
@@ -114,7 +125,7 @@ export default async function ProductCategoryPage(
         badge={fm.heroEyebrow ?? "ISO 9001:2015 (Moulded Parts) · Nashik, India"}
         chips={fm.heroChips}
         headingLead={headingLead}
-        headingAccent={headingAccent}
+        headingAccent={accentLines}
         intro={fm.intro}
         link={fm.heroLink}
         stats={fm.heroStats}

@@ -501,7 +501,6 @@ export function CustomPanel({
   bullets,
   cta,
   image,
-  imageCaption,
 }: {
   eyebrow: string;
   heading: string;
@@ -509,7 +508,6 @@ export function CustomPanel({
   bullets: string[];
   cta: { label: string; href: string };
   image?: string;
-  imageCaption?: { title: string; note: string };
 }) {
   return (
     <div className="grid items-center gap-12 lg:grid-cols-2">
@@ -536,13 +534,9 @@ export function CustomPanel({
 
       {image && (
         <div className="rounded-card relative aspect-[4/3] overflow-hidden">
+          {/* No caption over the photo: the "Nashik, Maharashtra, India" line
+              was taken off every industry page (client, 2 Nov 2026). */}
           <Img k={image} fill sizes="(max-width:1024px) 100vw, 50vw" className="object-cover" />
-          {imageCaption && (
-            <div className="from-canvas absolute inset-x-0 bottom-0 bg-gradient-to-t to-transparent p-5">
-              <p className="text-ink text-sm font-semibold">{imageCaption.title}</p>
-              <p className="text-ink-4 mt-1 text-xs">{imageCaption.note}</p>
-            </div>
-          )}
         </div>
       )}
     </div>

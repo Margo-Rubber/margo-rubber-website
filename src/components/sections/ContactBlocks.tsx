@@ -141,7 +141,8 @@ function DirectContact({
       </div>
 
       <div className="border-t border-[#1B2026] p-6">
-        <p className="text-eyebrow text-ink-4 font-mono uppercase">
+        {/* Bold and brighter than the other eyebrows (client, 2 Nov 2026). */}
+        <p className="text-eyebrow text-ink font-mono font-bold uppercase">
           {directHeading}
         </p>
 

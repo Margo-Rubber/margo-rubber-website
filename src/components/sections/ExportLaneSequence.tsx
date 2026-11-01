@@ -7,6 +7,7 @@ import {
   MapPin,
   PinLabel,
   laneFor,
+  placePin,
 } from "@/components/sections/WorldMapArt";
 
 /**
@@ -56,6 +57,12 @@ export function ExportLaneSequence({
   extraPins?: readonly { label: string; x: number; y: number }[];
 }) {
   if (markets.length === 0) return null;
+  // Pins go where the ports really are; see placePin.
+  const placed = markets.map((m) => ({
+    ...m,
+    pin: placePin(m.pin, m.pinLabel ?? m.chip, m.slug),
+    pins: (m.pins ?? []).map((p) => placePin(p, p.label)),
+  }));
   const total = String(markets.length).padStart(2, "0");
 
   return (
@@ -81,7 +88,7 @@ export function ExportLaneSequence({
                 <desc id="export-map-desc">{`Sea lanes from ${hub.label} to ${markets.map((m) => m.pinLabel ?? m.chip).join(", ")}.`}</desc>
                 <MapBase />
                 <g clipPath="url(#margo-map-clip)">
-                  {markets.map((m, i) => {
+                  {placed.map((m, i) => {
                     // One arc per destination: the market's own pin, plus
                     // any second pin it carries (Saudi Arabia with the UAE,
                     // Tanzania with Kenya). All of a market's arcs share its
@@ -123,9 +130,9 @@ export function ExportLaneSequence({
                           <g className="lane-pin" data-lane={i}>
                             {/* The tooltip is the pin's <title>: port · days · FCL/LCL. */}
                             {m.pinNote && <title>{`${m.pinLabel ?? m.chip}: ${m.pinNote}`}</title>}
-                            <MapPin x={m.pin.x} y={m.pin.y} label={m.pinLabel} />
+                            <MapPin x={m.pin.x} y={m.pin.y} label={m.pinLabel} placement={m.pin.placement} />
                             {(m.pins ?? []).map((p) => (
-                              <MapPin key={p.label} x={p.x} y={p.y} label={p.label} />
+                              <MapPin key={p.label} x={p.x} y={p.y} label={p.label} placement={p.placement} />
                             ))}
                           </g>
                         </a>

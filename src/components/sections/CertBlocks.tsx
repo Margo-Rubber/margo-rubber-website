@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useSyncExternalStore } from "react";
+import { useSyncExternalStore } from "react";
 import { isFileHref } from "@/lib/downloads";
 import { downloadUrl, sameOriginFileUrl } from "@/lib/sanity-file";
 import { autocompleteFor } from "@/lib/autocomplete";
@@ -70,76 +70,6 @@ function Icon({
   );
 }
 
-/**
- * ISO medallion, rebuilt from the design rather than approximated.
- * Radial profile sampled at 261px diameter:
- *   core #082426 → bright #2BBCC4 ring at 74% of radius →
- *   outer bezel band #1B7A7F at 88-100%, carrying 12 tick marks.
- */
-function IsoMedallion() {
-  const R = 150;
-  const ticks = Array.from({ length: 12 }, (_, i) => i * 30);
-
-  return (
-    <div className="relative mx-auto size-[280px] md:size-[320px]">
-      <svg viewBox="0 0 300 300" className="size-full" role="img" aria-label="ISO 9001:2015 certified">
-        <defs>
-          <radialGradient id="isoGlow">
-            <stop offset="40%" stopColor="#2BBCC4" stopOpacity="0.22" />
-            <stop offset="100%" stopColor="#2BBCC4" stopOpacity="0" />
-          </radialGradient>
-        </defs>
-
-        {/* Ambient glow */}
-        <circle cx={R} cy={R} r={R} fill="url(#isoGlow)" />
-
-        {/* Bezel: filled disc, outer hairline, and the tick ring */}
-        <circle cx={R} cy={R} r="140" fill="#082426" />
-        <circle cx={R} cy={R} r="140" fill="none" stroke="#1B7A7F" strokeWidth="1.5" opacity="0.9" />
-        <circle cx={R} cy={R} r="122" fill="none" stroke="#1B7A7F" strokeWidth="1" opacity="0.5" />
-        {ticks.map((deg) => {
-          const rad = (deg * Math.PI) / 180;
-          const long = deg % 90 === 0;
-          const r1 = long ? 126 : 130;
-          // Rounded: raw Math.cos/sin output serialises to different float
-          // precision on server vs client, which trips a hydration mismatch.
-          const p = (v: number) => Math.round(v * 100) / 100;
-          return (
-            <line
-              key={deg}
-              x1={p(R + Math.cos(rad) * r1)}
-              y1={p(R + Math.sin(rad) * r1)}
-              x2={p(R + Math.cos(rad) * 138)}
-              y2={p(R + Math.sin(rad) * 138)}
-              stroke="#2BBCC4"
-              strokeWidth={long ? 2.5 : 1.5}
-              opacity={long ? 0.85 : 0.5}
-            />
-          );
-        })}
-
-        {/* Inner face + the bright accent ring */}
-        <circle cx={R} cy={R} r="110" fill="#051719" />
-        <circle cx={R} cy={R} r="111" fill="none" stroke="#2BBCC4" strokeWidth="2" />
-      </svg>
-
-      {/* Text sits in DOM rather than SVG so it inherits the site type scale. */}
-      <div className="absolute inset-0 grid place-items-center text-center">
-        <div>
-          <p className="text-accent-400 text-xl font-extrabold tracking-[0.1em]">
-            ISO
-          </p>
-          <p className="text-ink -mt-0.5 text-[2.9rem] leading-none font-extrabold">
-            9001
-          </p>
-          <p className="text-accent-400 mt-1 text-xl font-extrabold">2015</p>
-          <p className="text-ink-4 mt-1.5 text-xs tracking-[0.18em]">CERTIFIED</p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 /* ── HERO ─────────────────────────────────────────────────────────────── */
 export function CertHero({
   badge,
@@ -157,48 +87,10 @@ export function CertHero({
   breadcrumb?: readonly Crumb[];
 }) {
   return (
-    <header className="bg-canvas relative isolate overflow-hidden hero-offset pb-20 md:pb-28">
-      {/* QC inspection rather than a press or a plant exterior: this page is
-          about a quality management system, and the dimensional-inspection
-          bench is the part of the floor that ISO 9001 actually governs. */}
-      <Img
-        k="certifications.hero"
-        fill
-        priority
-        sizes="100vw"
-        className="-z-20 object-cover brightness-[0.95] contrast-[1.02]"
-      />
-      {/* Same two-scrim treatment as the export hero: a vertical wash that
-          only fades the bottom edge into the section below, and a horizontal
-          one carrying the work of protecting the copy. */}
-      <div
-        aria-hidden
-        className="absolute inset-0 -z-10"
-        style={{
-          background:
-            "linear-gradient(to bottom, color-mix(in srgb, var(--color-canvas) 40%, transparent) 0%, color-mix(in srgb, var(--color-canvas) 28%, transparent) 45%, color-mix(in srgb, var(--color-canvas) 46%, transparent) 80%, var(--color-canvas) 100%)",
-        }}
-      />
-      <div
-        aria-hidden
-        className="absolute inset-0 -z-10"
-        style={{
-          background:
-            "linear-gradient(to right, color-mix(in srgb, var(--color-canvas) 78%, transparent) 0%, color-mix(in srgb, var(--color-canvas) 46%, transparent) 42%, color-mix(in srgb, var(--color-canvas) 30%, transparent) 62%, color-mix(in srgb, var(--color-canvas) 72%, transparent) 100%)",
-        }}
-      />
-      {/* The medallion is thin teal linework on a transparent ground, which
-          photography destroys. This puts a soft dark disc under it so it
-          reads as it does on the flat background, without boxing it in. */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute top-1/2 right-0 -z-10 hidden size-[34rem] -translate-y-1/2 translate-x-1/4 rounded-full lg:block"
-        style={{
-          background:
-            "radial-gradient(closest-side, var(--color-canvas) 58%, color-mix(in srgb, var(--color-canvas) 72%, transparent) 78%, transparent 100%)",
-        }}
-      />
-
+    // Plain black (client, 2 Nov 2026): the inspection photo, its two scrims
+    // and the drawn seal are gone; the ISO 9001 graphic on the right is on
+    // pure black, so it sits in the hero with no visible edge.
+    <header className="relative isolate overflow-hidden bg-black hero-offset pb-20 md:pb-28">
       <Container>
         <Breadcrumb items={breadcrumb} className="mb-6" />
         <div className="grid items-center gap-12 lg:grid-cols-[1fr_auto]">
@@ -221,9 +113,9 @@ export function CertHero({
               ))}
             </h1>
 
-            {/* ink-2, not the ink-3 used for ledes on flat surfaces: this one
-                now sits on photography and the dimmer grey loses contrast. */}
-            <p className="text-ink-2 mt-6 max-w-[46ch] leading-relaxed">
+            {/* Near-white rather than the body grey: the grey read too faint
+                against the black hero (client, 2 Nov 2026). */}
+            <p className="mt-6 max-w-[46ch] leading-relaxed text-white/85">
               {intro}
             </p>
 
@@ -236,7 +128,9 @@ export function CertHero({
             </div>
           </div>
 
-          <IsoMedallion />
+          <div className="relative mx-auto aspect-square w-full max-w-[320px] md:max-w-[420px] lg:w-[460px] lg:max-w-none">
+            <Img k="certifications.iso-badge" fill priority sizes="(max-width: 768px) 320px, 460px" className="object-contain" />
+          </div>
         </div>
       </Container>
     </header>
@@ -683,6 +577,11 @@ function CertificateUnavailable() {
 }
 
 /* ── 04 · FACILITY GALLERY ────────────────────────────────────────────── */
+/**
+ * One photograph of the plant beside its capabilities. The row of thumbnails
+ * under it, which switched the photo, was taken off (client, 2 Nov 2026):
+ * the section shows the gallery's first photograph only.
+ */
 export function FacilityGallery({
   caption,
   gallery,
@@ -692,42 +591,23 @@ export function FacilityGallery({
   gallery: { image: string; alt: string }[];
   capabilities: { name: string; body: string; href?: string }[];
 }) {
-  const [active, setActive] = useState(0);
+  const photo = gallery[0];
 
   return (
     <div className="grid gap-6 lg:grid-cols-[1fr_minmax(0,380px)]">
-      <div>
+      {photo && (
         <div className="rounded-card relative aspect-[4/3] overflow-hidden">
           <Img
-            k={gallery[active].image}
+            k={photo.image}
             fill
             sizes="(max-width:1024px) 100vw, 55vw"
             className="object-cover"
           />
           <div className="from-canvas absolute inset-x-0 bottom-0 bg-gradient-to-t to-transparent p-5 pt-16">
-            <p className="text-ink-2 text-xs">
-              {active === 0 ? caption : gallery[active].alt}
-            </p>
+            <p className="text-ink-2 text-xs">{caption}</p>
           </div>
         </div>
-
-        <div className="mt-4 grid grid-cols-4 gap-3">
-          {gallery.map((g, i) => (
-            <button
-              key={g.image}
-              type="button"
-              onClick={() => setActive(i)}
-              aria-label={g.alt}
-              aria-current={i === active}
-              className={`rounded-card relative aspect-[4/3] overflow-hidden border transition-colors ${
-                i === active ? "border-accent-400" : "border-line hover:border-line-2"
-              }`}
-            >
-              <Img k={g.image} fill sizes="120px" className="object-cover" />
-            </button>
-          ))}
-        </div>
-      </div>
+      )}
 
       <ul className="space-y-3">
         {capabilities.map((c) => (

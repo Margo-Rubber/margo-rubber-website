@@ -196,7 +196,6 @@ export function CaseHero({
   h1Lines,
   paragraphs,
   image,
-  badge,
   actions,
   breadcrumb,
 }: {
@@ -204,7 +203,6 @@ export function CaseHero({
   h1Lines: readonly string[];
   paragraphs: readonly string[];
   image: string;
-  badge: { title: string; note: string };
   actions: readonly { label: string; href: string; variant: string }[];
   breadcrumb?: readonly Crumb[];
 }) {
@@ -250,8 +248,9 @@ export function CaseHero({
             </div>
           </div>
 
-          {/* Plate with the certification card overlapping its lower-right. */}
-          <div className="relative pb-14 lg:pb-0">
+          {/* The plate alone: the certification card that overlapped it was
+              removed (client, 2 Nov 2026). */}
+          <div className="relative">
             <figure className="rounded-card border-line relative isolate overflow-hidden border">
               <div className="relative isolate aspect-[4/3]">
                 <Img
@@ -270,12 +269,6 @@ export function CaseHero({
                 />
               </div>
             </figure>
-            <div className="rounded-card border-line absolute right-0 -bottom-0 border bg-[#111418]/95 px-6 py-4 backdrop-blur lg:-right-4 lg:-bottom-8">
-              <p className="text-accent-400 text-lg font-semibold">
-                {badge.title}
-              </p>
-              <p className="text-ink-4 mt-0.5 text-xs">{badge.note}</p>
-            </div>
           </div>
         </div>
       </Container>

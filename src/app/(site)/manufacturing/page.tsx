@@ -10,6 +10,7 @@ import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { Button } from "@/components/ui/Button";
 import { Container, Eyebrow, Section } from "@/components/ui/Section";
 import { accented, emphasised } from "@/components/ui/Emphasis";
+import { Img } from "@/components/ui/Img";
 
 export async function generateMetadata() {
   const fm = await getSitePage("manufacturing", manufacturingPageSchema);
@@ -86,6 +87,22 @@ export default async function ManufacturingPage() {
           {fm.standfirst && (
             <p className="text-ink-2 mt-6 max-w-[62ch] leading-relaxed">{emphasised(fm.standfirst)}</p>
           )}
+
+          {/* The ten-step roadmap (client, 2 Nov 2026), below the heading so it
+              never runs under the text. Its labels are part of the picture, so
+              on a phone it keeps a readable width and scrolls sideways rather
+              than shrinking to illegible. */}
+          <figure className="-mx-6 mt-10 overflow-x-auto px-6 md:mx-0 md:px-0">
+            <div className="relative aspect-[2000/875] min-w-[760px]">
+              <Img
+                k="manufacturing.process-roadmap"
+                fill
+                priority
+                sizes="(max-width: 760px) 760px, (max-width: 1440px) 100vw, 1290px"
+                className="object-contain"
+              />
+            </div>
+          </figure>
         </Container>
       </header>
 

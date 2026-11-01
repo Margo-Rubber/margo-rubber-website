@@ -353,6 +353,7 @@ function renderBlock(block: Block, ctx: Ctx): ReactNode {
           body={b.body}
           dividerLabel={b.dividerLabel}
           photo={b.photo}
+          detailPhoto={b.detailPhoto}
           buildUp={b.buildUp}
           comparisons={b.comparisons}
           note={b.note}
@@ -527,7 +528,6 @@ function renderBlock(block: Block, ctx: Ctx): ReactNode {
             bullets={b.bullets}
             cta={b.cta}
             image={b.image}
-            imageCaption={b.imageCaption}
           />
         </Section>
       );
