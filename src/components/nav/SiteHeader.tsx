@@ -146,11 +146,17 @@ export function SiteHeader() {
         </nav>
 
         <div className="ml-auto flex items-center gap-3 lg:ml-0">
-          {/* Shown at every width (the old `hidden sm:inline-flex` never hid it:
-              Button's own `inline-flex` won). Tightened below sm so logo,
-              CTA and menu button fit on one line down to 320px. */}
-          <Button href="/contact#quote-form" className="whitespace-nowrap max-sm:px-4">
-            Request Quote <span aria-hidden>→</span>
+          {/* The main call to action: shown at every width, never hidden (the
+              old `hidden sm:inline-flex` never hid it anyway: Button's own
+              `inline-flex` won). Tightened below sm so logo, CTA and menu
+              button share one line; below 360px the label shortens to
+              "Quote", with "Request" kept for screen readers. `relative`
+              keeps that sr-only word inside the button. */}
+          <Button href="/contact#quote-form" className="relative whitespace-nowrap max-sm:px-4">
+            <span>
+              <span className="max-[360px]:sr-only">Request </span>Quote
+            </span>
+            <span aria-hidden>→</span>
           </Button>
 
           {/* Mobile menu toggle. 44px hit target, meets the WCAG 2.2 AA
