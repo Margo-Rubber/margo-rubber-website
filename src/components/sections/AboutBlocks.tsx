@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { SiteSettings } from "@/content/schemas/settings";
 import { CertificationBadges } from "@/components/sections/CertificationRecord";
+import { PhotoCarousel } from "@/components/ui/PhotoCarousel";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import type { Crumb } from "@/lib/breadcrumbs";
 import { Img } from "@/components/ui/Img";
@@ -798,6 +799,7 @@ export function Leadership({
 export function Manufacturing({
   head,
   image,
+  more = [],
   stats,
   portfolioLabel,
   portfolio,
@@ -806,6 +808,8 @@ export function Manufacturing({
 }: {
   head: Head;
   image: string;
+  /** Further photographs: with any, the photo becomes a carousel. */
+  more?: readonly string[];
   stats: readonly { icon: string; value: string; label: string }[];
   portfolioLabel: string;
   portfolio: readonly { label: string; href: string }[];
@@ -824,16 +828,27 @@ export function Manufacturing({
       <Container>
         <CenterHead head={head} />
 
-        {/* Photo and stat cards side by side; the photo matches the stack's height. */}
+        {/* Photo and stat cards side by side; the photo matches the stack's height.
+            With more than one photograph it slides on its own, with dots to
+            pick one (client, 2 Nov 2026). */}
         <div className="mt-14 grid gap-5 lg:grid-cols-[1.55fr_1fr]">
-          <div className="rounded-card border-line overflow-hidden border">
-            <Photo
-              k={image}
-              ratio="aspect-[16/10] lg:aspect-auto lg:h-full"
-              dissolve="none"
+          {more.length > 0 ? (
+            <PhotoCarousel
+              slides={[image, ...more]}
+              ratio="aspect-[16/10] lg:aspect-auto lg:flex-1"
               sizes="(min-width:1024px) 60vw, 100vw"
+              label="The Nashik plant"
             />
-          </div>
+          ) : (
+            <div className="rounded-card border-line overflow-hidden border">
+              <Photo
+                k={image}
+                ratio="aspect-[16/10] lg:aspect-auto lg:h-full"
+                dissolve="none"
+                sizes="(min-width:1024px) 60vw, 100vw"
+              />
+            </div>
+          )}
 
           <dl className="grid gap-5 md:grid-cols-3 lg:min-h-[24rem] lg:auto-rows-fr lg:grid-cols-1">
             {stats.map((s) => (
