@@ -925,13 +925,8 @@ export function Facility({
                 dissolve={false}
                 sizes="(min-width:1024px) 46vw, 100vw"
               />
-              <div
-                className="pointer-events-none absolute inset-0"
-                style={{
-                  background:
-                    "linear-gradient(to top, color-mix(in srgb, var(--color-surface-2) 90%, transparent), transparent 45%)",
-                }}
-              />
+              {/* No dark fade over the foot of the photo (client, 2 Nov
+                  2026); a badge, when there is one, has its own backing. */}
               {/* No badge, no pill: the sheet gives this section none. */}
               {badge && (
                 <figcaption className="text-eyebrow border-line bg-canvas/70 text-ink absolute bottom-5 left-5 flex items-center gap-2.5 rounded-md border px-3.5 py-2 font-mono backdrop-blur">

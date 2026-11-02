@@ -488,7 +488,7 @@ function renderBlock(block: Block, ctx: Ctx): ReactNode {
           heading={b.heading}
           body={b.body}
         >
-          <ComponentTabs items={b.items} />
+          <ComponentTabs items={b.items} footnote={b.footnote} />
         </Section>
       );
 
@@ -514,7 +514,7 @@ function renderBlock(block: Block, ctx: Ctx): ReactNode {
           heading={b.heading}
           body={b.body}
         >
-          <ConditionGrid items={b.items} />
+          <ConditionGrid items={b.items} table={b.table} />
         </Section>
       );
 
@@ -528,6 +528,7 @@ function renderBlock(block: Block, ctx: Ctx): ReactNode {
             bullets={b.bullets}
             cta={b.cta}
             image={b.image}
+            steps={b.steps}
           />
         </Section>
       );

@@ -54,17 +54,13 @@ export function Display({
     >
       {lines.map((line, i) => {
         const accent = accentLines.includes(i);
-        const stop = line.endsWith(".") || line.endsWith("?");
-        const text = stop ? line.slice(0, -1) : line;
+        // The closing full stop takes its line's colour: white on a white
+        // line, teal on a teal one (client, 2 Nov 2026 — it used to be teal
+        // on white lines).
         return (
           <span key={line}>
             <span className={`block ${accent ? "text-accent-400" : ""}`}>
-              {text}
-              {stop && (
-                <span className={accent ? "" : "text-accent-400"}>
-                  {line.slice(-1)}
-                </span>
-              )}
+              {line}
             </span>
             {/* Whitespace between block lines, so the H1 reads with spaces to a crawler. */}
             {i < lines.length - 1 ? " " : null}

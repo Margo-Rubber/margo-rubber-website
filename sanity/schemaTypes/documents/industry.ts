@@ -132,6 +132,28 @@ export const industry = defineType({
       group: "hero",
     }),
     defineField({
+      name: "heroLead",
+      title: "Lead line above the intro",
+      type: "string",
+      description: "Optional. One short sentence in bold, above the intro.",
+      group: "hero",
+    }),
+    defineField({
+      name: "heroNote",
+      title: "Note beside the buttons",
+      type: "string",
+      description: 'Optional. e.g. "ISO 9001:2015 certified. Medical-device certification is in progress."',
+      group: "hero",
+    }),
+    defineField({
+      name: "heroAnswer",
+      title: "Summary paragraph under the buttons",
+      type: "text",
+      rows: 4,
+      description: "Optional. A self-contained summary of what we make for this sector, written so it can be quoted whole.",
+      group: "hero",
+    }),
+    defineField({
       name: "badge",
       title: "Badge above the heading",
       type: "string",

@@ -23,6 +23,9 @@ export function IndustryHero({
   boost = false,
   breadcrumb,
   chips = [],
+  lead,
+  note,
+  answer,
 }: {
   badge: string;
   lines: string[];
@@ -30,6 +33,12 @@ export function IndustryHero({
   intro: string;
   /** Short uppercase facts under the subhead (sheets 41–42). */
   chips?: readonly string[];
+  /** Bolder line above the intro. */
+  lead?: string;
+  /** Short note set beside the buttons. */
+  note?: string;
+  /** Summary paragraph under the buttons. */
+  answer?: string;
   actions: { label: string; href: string; variant: "primary" | "secondary" }[];
   image?: string;
   /** Only for sources already faded to black; a normal photo would blow out. */
@@ -90,17 +99,25 @@ export function IndustryHero({
           ))}
         </h1>
 
-        <p className="text-ink-3 mt-6 max-w-[58ch] leading-relaxed">{emphasised(intro)}</p>
+        {lead && (
+          <p className="text-ink-2 mt-5 max-w-[58ch] text-base leading-relaxed font-semibold">{lead}</p>
+        )}
+        <p className={`text-ink-3 ${lead ? "mt-3" : "mt-6"} max-w-[58ch] leading-relaxed`}>{emphasised(intro)}</p>
 
         <HeroChips chips={chips} />
 
-        <div className="mt-8 flex flex-wrap gap-3">
+        <div className="mt-8 flex flex-wrap items-center gap-3">
           {actions.map((a) => (
             <Button key={a.label} href={a.href} variant={a.variant}>
               {a.label} <span aria-hidden>→</span>
             </Button>
           ))}
+          {note && <p className="text-ink text-sm leading-snug sm:ml-2">{note}</p>}
         </div>
+
+        {answer && (
+          <p className="text-ink-3 mt-6 max-w-[68ch] text-[0.9375rem] leading-relaxed">{answer}</p>
+        )}
       </Container>
     </header>
   );
@@ -114,6 +131,7 @@ type Component = {
   bullets: string[];
   image: string;
   cta: { label: string; href: string };
+  group?: string;
 };
 
 function liveProductHref(href: string): string {
@@ -135,12 +153,68 @@ function liveProductHref(href: string): string {
  * Exported under the old name so BlockRenderer and the CMS block type are
  * untouched.
  */
-export function ComponentTabs({ items }: { items: Component[] }) {
+export function ComponentTabs({ items, footnote }: { items: Component[]; footnote?: string }) {
   // Same ids the tab panels carried, so any existing #component-… link still lands.
   const cardId = (k: string) =>
     `component-${k.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
 
+  // Named groups (Medical Devices, Nov 2026): consecutive cards sharing a
+  // heading are listed under it. The photos are product cut-outs, so they
+  // are shown whole on a light plate rather than cropped, and the cards
+  // carry no running number — the groups do the ordering.
+  if (items.some((c) => c.group)) {
+    const groups: { title?: string; items: Component[] }[] = [];
+    for (const c of items) {
+      const last = groups[groups.length - 1];
+      if (last && last.title === c.group) last.items.push(c);
+      else groups.push({ title: c.group, items: [c] });
+    }
+    return (
+      <>
+        {groups.map((g, gi) => (
+          <div key={`${g.title ?? ""}-${gi}`} className={gi > 0 ? "mt-10" : undefined}>
+            {g.title && <h3 className="text-ink font-display mb-4 text-lg font-semibold">{g.title}</h3>}
+            <InView as="ul" className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {g.items.map((c, idx) => (
+                <li
+                  key={c.name}
+                  id={cardId(c.name)}
+                  data-lift=""
+                  style={{ "--i": idx } as React.CSSProperties}
+                  className="margo-ind-card rounded-card border-line group overflow-hidden border bg-[#080808]"
+                >
+                  <Link href={liveProductHref(c.cta.href)} className="flex h-full flex-col">
+                    <div className="relative aspect-[4/3] overflow-hidden bg-[#F3F7F8]">
+                      <Img
+                        k={c.image}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
+                        className="margo-ind-card-img object-contain"
+                      />
+                    </div>
+                    <div className="flex flex-1 flex-col p-6">
+                      <h4 className="text-ink text-base leading-snug font-semibold">{c.name}</h4>
+                      <p className="text-ink-4 mt-2 text-sm leading-relaxed">{c.body}</p>
+                      <span className="text-accent-400 mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-medium">
+                        View product
+                        <span aria-hidden className="margo-ind-card-arrow">
+                          ›
+                        </span>
+                      </span>
+                    </div>
+                  </Link>
+                </li>
+              ))}
+            </InView>
+          </div>
+        ))}
+        {footnote && <p className="text-ink-4 mt-5 text-xs">{footnote}</p>}
+      </>
+    );
+  }
+
   return (
+    <>
     <InView as="ol" className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {items.map((c, idx) => (
         <li
@@ -181,6 +255,8 @@ export function ComponentTabs({ items }: { items: Component[] }) {
         </li>
       ))}
     </InView>
+    {footnote && <p className="text-ink-4 mt-5 text-xs">{footnote}</p>}
+    </>
   );
 }
 
@@ -233,11 +309,20 @@ const COND_ICON: Record<string, React.ReactNode> = {
 
 export function ConditionGrid({
   items,
+  table,
 }: {
   items: { icon: string; name: string; body: string }[];
+  /** Optional table under the cards; the first cell of each row heads it. */
+  table?: { caption: string; columns: string[]; rows: { cells: string[] }[] };
 }) {
   return (
-    <div className="border-line rounded-card grid gap-8 border bg-[#0A0A0A] p-8 md:grid-cols-2 md:p-10">
+    <>
+    {/* Three cards sit in one row of three rather than two-and-one. */}
+    <div
+      className={`border-line rounded-card grid gap-8 border bg-[#0A0A0A] p-8 md:p-10 ${
+        items.length === 3 ? "md:grid-cols-3" : "md:grid-cols-2"
+      }`}
+    >
       {items.map((c) => (
         <div key={c.name}>
           <svg
@@ -259,6 +344,44 @@ export function ConditionGrid({
         </div>
       ))}
     </div>
+    {table && (
+      <div className="border-line rounded-card mt-8 overflow-x-auto border bg-[#0A0A0A]">
+        <table className="w-full min-w-[540px] border-collapse text-left text-sm">
+          <caption className="text-ink font-display px-5 pt-5 pb-2 text-left font-semibold">{table.caption}</caption>
+          <thead>
+            <tr>
+              {table.columns.map((h) => (
+                <th
+                  key={h}
+                  scope="col"
+                  className="border-line text-ink-4 border-t px-5 py-3.5 align-top font-mono text-[0.7rem] font-medium tracking-[0.08em] uppercase"
+                >
+                  {h}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {table.rows.map((r) => (
+              <tr key={r.cells[0]}>
+                {r.cells.map((cell, i) =>
+                  i === 0 ? (
+                    <th key={i} scope="row" className="border-line text-ink border-t px-5 py-3.5 align-top font-semibold">
+                      {cell}
+                    </th>
+                  ) : (
+                    <td key={i} className="border-line text-ink-3 border-t px-5 py-3.5 align-top">
+                      {cell}
+                    </td>
+                  ),
+                )}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    )}
+    </>
   );
 }
 
@@ -501,6 +624,7 @@ export function CustomPanel({
   bullets,
   cta,
   image,
+  steps,
 }: {
   eyebrow: string;
   heading: string;
@@ -508,7 +632,29 @@ export function CustomPanel({
   bullets: string[];
   cta: { label: string; href: string };
   image?: string;
+  /** A numbered process; takes the photo's column when there is no photo. */
+  steps?: { heading: string; note?: string; items: string[] };
 }) {
+  const process = steps && (
+    <div>
+      <h3 className="text-ink text-base font-semibold">{steps.heading}</h3>
+      {steps.note && <p className="text-ink-4 mt-2 text-sm leading-relaxed">{steps.note}</p>}
+      <ol className="mt-5 grid gap-3">
+        {steps.items.map((s, i) => (
+          <li key={s} className="text-ink-2 flex items-start gap-3 text-sm leading-relaxed">
+            <span
+              aria-hidden
+              className="border-accent-400/40 text-accent-400 mt-px grid size-6 shrink-0 place-items-center rounded-full border font-mono text-[0.7rem]"
+            >
+              {i + 1}
+            </span>
+            {s}
+          </li>
+        ))}
+      </ol>
+    </div>
+  );
+
   return (
     <div className="grid items-center gap-12 lg:grid-cols-2">
       <div>
@@ -519,18 +665,27 @@ export function CustomPanel({
             {body}
           </p>
         )}
-        <ul className="mt-6 space-y-2.5">
-          {bullets.map((b) => (
-            <li key={b} className="text-ink-2 flex items-start gap-2.5 text-sm">
-              <span aria-hidden className="bg-accent-400 mt-1.5 size-1.5 shrink-0 rounded-full" />
-              {b}
-            </li>
-          ))}
-        </ul>
+        {bullets.length > 0 && (
+          <ul className="mt-6 space-y-2.5">
+            {bullets.map((b) => (
+              <li key={b} className="text-ink-2 flex items-start gap-2.5 text-sm">
+                <span aria-hidden className="bg-accent-400 mt-1.5 size-1.5 shrink-0 rounded-full" />
+                {b}
+              </li>
+            ))}
+          </ul>
+        )}
+        {process && image && <div className="mt-8">{process}</div>}
         <Button href={cta.href} className="mt-8">
           {cta.label} <span aria-hidden>→</span>
         </Button>
       </div>
+
+      {/* No photo (Medical Devices, Nov 2026: the plant photo was taken off):
+          the numbered process takes its column. */}
+      {process && !image && (
+        <div className="border-line rounded-card border bg-[#0A0A0A] p-7 md:p-8">{process}</div>
+      )}
 
       {image && (
         <div className="rounded-card relative aspect-[4/3] overflow-hidden">
