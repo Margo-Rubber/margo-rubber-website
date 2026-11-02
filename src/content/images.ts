@@ -490,8 +490,8 @@ export const IMAGES = {
     // it. Restyled dark to match the site. Regenerate with
     // scripts/gen-contact-map.mts; the file is renamed when it is redrawn so
     // image caches pick it up. OSM requires the credit shown on the image.
-    src: "/images/contact/margo-plant-map-2026-11.jpg",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwIG/8QAGxAAAgIDAQAAAAAAAAAAAAAAAQIAMQMScUH/xAAVAQEBAAAAAAAAAAAAAAAAAAABAv/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMsWs32Kr42UE4dj6Yb2ZSUeyg//2Q==",
+    src: "/images/contact/margo-plant-map-2026-11-access-road.jpg",
+    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAgb/xAAbEAACAgMBAAAAAAAAAAAAAAABAgARAzFxQf/EABUBAQEAAAAAAAAAAAAAAAAAAAEC/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AljaiiLqJszg1idlWtEwPocgbzkoP/9k=",
     w: 1200,
     h: 900,
     alt: "Map of the Margo Rubber Products plant at Vilholi, Nashik, just off NH160",

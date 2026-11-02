@@ -576,18 +576,57 @@ function CertificateUnavailable() {
   );
 }
 
+/**
+ * The DGFT Importer-Exporter Code: the registration every Indian export
+ * shipment is filed under. One copy, shown on /export and /certifications.
+ */
+export function IecCertificate() {
+  return (
+    <CertificateBlock
+      document={{
+        title: "IEC Certificate — Margo Rubber Product",
+        asset: {
+          url: "/documents/margo-iec-certificate.pdf",
+          originalFilename: "margo-iec-certificate.pdf",
+          size: 57574,
+          mimeType: "application/pdf",
+        },
+      }}
+      card={{
+        eyebrow: "Directorate General of Foreign Trade",
+        title: "Importer-Exporter Code",
+        certifyLine: "This is to certify that MARGO RUBBER PRODUCT is issued an Importer-Exporter Code (IEC) AAKFM8595Q.",
+        company: "MARGO RUBBER PRODUCT",
+        address: "SR.NO.4494/10, Vilholi, Nashik, Maharashtra 422010",
+        fields: [
+          { label: "IEC", value: "AAKFM8595Q" },
+          { label: "Nature of concern", value: "Partnership" },
+          { label: "Date of issue", value: "22/10/2026" },
+        ],
+        barTitle: "IEC Certificate",
+        barNote: "Issued by the Office of the Joint DGFT, Pune",
+      }}
+      meta={[
+        { label: "IEC Number", value: "AAKFM8595Q" },
+        { label: "Issued By", value: "DGFT, Ministry of Commerce and Industry, Government of India" },
+        { label: "Date of Issue", value: "22 October 2026" },
+        { label: "Verify", value: "dgft.gov.in › Services › View Any IEC Details" },
+      ]}
+    />
+  );
+}
+
 /* ── 04 · FACILITY GALLERY ────────────────────────────────────────────── */
 /**
  * One photograph of the plant beside its capabilities. The row of thumbnails
  * under it, which switched the photo, was taken off (client, 2 Nov 2026):
- * the section shows the gallery's first photograph only.
+ * the section shows the gallery's first photograph only. Its caption over
+ * the photo went the same day.
  */
 export function FacilityGallery({
-  caption,
   gallery,
   capabilities,
 }: {
-  caption: string;
   gallery: { image: string; alt: string }[];
   capabilities: { name: string; body: string; href?: string }[];
 }) {
@@ -603,9 +642,6 @@ export function FacilityGallery({
             sizes="(max-width:1024px) 100vw, 55vw"
             className="object-cover"
           />
-          <div className="from-canvas absolute inset-x-0 bottom-0 bg-gradient-to-t to-transparent p-5 pt-16">
-            <p className="text-ink-2 text-xs">{caption}</p>
-          </div>
         </div>
       )}
 

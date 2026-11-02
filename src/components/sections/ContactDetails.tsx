@@ -126,6 +126,14 @@ export function ContactDetails({
                 />
                 {/* Pulsing location marker: the map is centred on the plant. */}
                 <span aria-hidden className="margo-map-pin" />
+                {/* The plant building is not drawn in OpenStreetMap, so the
+                    pin carries the name (client, 2 Nov 2026). */}
+                <span
+                  aria-hidden
+                  className="bg-canvas/85 text-ink border-accent-400/40 pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[calc(100%+18px)] rounded-pill border px-3 py-1 text-xs font-semibold whitespace-nowrap backdrop-blur"
+                >
+                  {entity.legalName}
+                </span>
                 {/* Required by the OpenStreetMap licence for the map still. */}
                 <span className="margo-map-credit">© OpenStreetMap contributors</span>
                 <span className="margo-map-label bg-canvas/80 text-ink absolute right-4 bottom-4 rounded-pill px-4 py-2 text-sm font-medium backdrop-blur group-hover:text-accent-400">

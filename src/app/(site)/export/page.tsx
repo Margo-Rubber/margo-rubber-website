@@ -20,7 +20,8 @@ import {
   MarketSection,
 } from "@/components/sections/ExportBlocks";
 import { FurtherReading } from "@/components/sections/FurtherReading";
-import { CertificateBlock } from "@/components/sections/CertBlocks";
+import { IecCertificate } from "@/components/sections/CertBlocks";
+import { IEC_SECTION } from "@/content/iec";
 import { ScrollToHash } from "@/components/ui/ScrollToHash";
 
 export async function generateMetadata() {
@@ -120,42 +121,12 @@ export default async function ExportPage() {
           export shipment is filed under. */}
       <Section
         id="certification"
-        eyebrow="EXPORT REGISTRATION"
+        eyebrow={IEC_SECTION.eyebrow}
         eyebrowVariant="rule"
-        heading="Importer-Exporter Code (IEC)"
-        body="Margo Rubber Product is registered with the Directorate General of Foreign Trade, Government of India. The IEC can be verified on dgft.gov.in under Services › View Any IEC Details."
+        heading={IEC_SECTION.heading}
+        body={IEC_SECTION.body}
       >
-        <CertificateBlock
-          document={{
-            title: "IEC Certificate — Margo Rubber Product",
-            asset: {
-              url: "/documents/margo-iec-certificate.pdf",
-              originalFilename: "margo-iec-certificate.pdf",
-              size: 57574,
-              mimeType: "application/pdf",
-            },
-          }}
-          card={{
-            eyebrow: "Directorate General of Foreign Trade",
-            title: "Importer-Exporter Code",
-            certifyLine: "This is to certify that MARGO RUBBER PRODUCT is issued an Importer-Exporter Code (IEC) AAKFM8595Q.",
-            company: "MARGO RUBBER PRODUCT",
-            address: "SR.NO.4494/10, Vilholi, Nashik, Maharashtra 422010",
-            fields: [
-              { label: "IEC", value: "AAKFM8595Q" },
-              { label: "Nature of concern", value: "Partnership" },
-              { label: "Date of issue", value: "22/10/2026" },
-            ],
-            barTitle: "IEC Certificate",
-            barNote: "Issued by the Office of the Joint DGFT, Pune",
-          }}
-          meta={[
-            { label: "IEC Number", value: "AAKFM8595Q" },
-            { label: "Issued By", value: "DGFT, Ministry of Commerce and Industry, Government of India" },
-            { label: "Date of Issue", value: "22 October 2026" },
-            { label: "Verify", value: "dgft.gov.in › Services › View Any IEC Details" },
-          ]}
-        />
+        <IecCertificate />
       </Section>
 
       {/* The FAQPage node is built from this same list, so what Google is

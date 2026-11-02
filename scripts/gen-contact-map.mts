@@ -1,5 +1,5 @@
 /**
- * CONTACT PAGE MAP — redraws public/images/contact/margo-plant-map-2026-11.jpg.
+ * CONTACT PAGE MAP — redraws public/images/contact/margo-plant-map-2026-11-access-road.jpg.
  *
  *   node --experimental-strip-types scripts/gen-contact-map.mts
  *   node --experimental-strip-types scripts/gen-contact-map.mts 19.9354 73.7331     (other coordinates)
@@ -21,11 +21,14 @@ import { writeFile } from "node:fs/promises";
 
 const LAT = Number(process.argv[2] ?? 19.932445350253296);
 const LNG = Number(process.argv[3] ?? 73.73282183068572);
-const OUT = "public/images/contact/margo-plant-map-2026-11.jpg";
+const OUT = "public/images/contact/margo-plant-map-2026-11-access-road.jpg";
 
 const W = 1200, H = 900;
-const Z = 17;                      // tiles are fetched at 17 …
-const SCALE = Math.SQRT1_2;        // … and shrunk by 1/√2 → effective zoom 16.5
+// Zoom 16 at full size (2 Nov 2026): wide enough to show the highway, the
+// side roads and the area names around the plant, and OSM's own labels stay
+// crisp because the tiles are not shrunk. 16.5 showed an unlabelled block.
+const Z = 16;
+const SCALE = 1;
 const T = 256;
 
 // Web-Mercator pixel position of the point at zoom Z.
@@ -74,10 +77,10 @@ const { data, info } = await sharp(mosaic)
 /* ── Recolour: OSM's light "standard" style → the site's dark map ──────────
    Minor roads (white) become pale slate, major roads (yellow/orange/pink)
    a mid grey, water a blue-grey, parks and buildings slightly lifted
-   from the background. Everything else, labels included, goes dark. */
+   from the background. Labels come out light, everything else dark. */
 const hex = (h: string) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
 const BG = hex("#161b21"), ROAD = hex("#a6b8be"), MAJOR = hex("#4b5459"),
-  WATER = hex("#26343d"), PARK = hex("#1d262a"), BUILDING = hex("#262d34"), INK = hex("#7d8c93");
+  WATER = hex("#26343d"), PARK = hex("#1d262a"), BUILDING = hex("#262d34"), INK = hex("#c9d3d8"); // labels: light enough to read
 
 const mix = (a: number[], b: number[], t: number) => a.map((v, i) => Math.round(v + (b[i] - v) * t));
 const out = Buffer.alloc(data.length);
@@ -97,6 +100,29 @@ for (let i = 0; i < data.length; i += 3) {
   else if (lum < 120) c = INK;                                                        // labels, icons
   else c = BG;
   out.set(c, i);
+}
+
+/* ── The plant's own access road ──────────────────────────────────────────
+   OSM does not map the lane into the plant (client, 2 Nov 2026). The way
+   in, as Margo describe it: off the highway south down the colony road,
+   left (east) into the lane, then left again (north) to the building — an
+   inverse L. Drawn as minor road of OSM's width: east from the colony
+   road's edge on the row TURN px south of the plant, then north to the
+   centre, where the pin covers the end. */
+{
+  const cx = W / 2, cy = H / 2, HALF = 2; // 4 px, as OSM's minor roads at this zoom
+  const TURN = 90; // px south of the plant where the lane leaves the colony road
+  const ty = cy + TURN;
+  const isRoad = (x: number) => out[(ty * W + x) * 3] === ROAD[0];
+  let edge = -1;
+  for (let x = cx; x > cx - 150; x--) if (isRoad(x)) { edge = x; break; }
+  if (edge === -1) throw new Error("No colony road within 150 px west of the turn — check the map");
+  const paint = (x0: number, x1: number, y0: number, y1: number) => {
+    for (let y = y0; y < y1; y++) for (let x = x0; x < x1; x++) out.set(ROAD, (y * W + x) * 3);
+  };
+  paint(edge + 1, cx + HALF, ty - HALF, ty + HALF); // east along the lane
+  paint(cx - HALF, cx + HALF, cy, ty + HALF); // north to the plant
+  console.log(`Access road: east from x=${edge} at y=${ty}, then north to the plant at ${cx},${cy}`);
 }
 
 const jpg = await sharp(out, { raw: { width: info.width, height: info.height, channels: 3 } })

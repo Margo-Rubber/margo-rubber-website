@@ -10,9 +10,11 @@ import {
   CertificateBlock,
   DocsPanel,
   FacilityGallery,
+  IecCertificate,
   QualitySystem,
   ScopePanel,
 } from "@/components/sections/CertBlocks";
+import { IEC_SECTION } from "@/content/iec";
 
 export async function generateMetadata() {
   const fm = await getSitePage("certifications", certificationsPageSchema);
@@ -92,22 +94,34 @@ export default async function CertificationsPage() {
         </div>
       </Section>
 
+      {/* The export registration beside the quality certificate (client,
+          2 Nov 2026); the same block as on /export. The bands below it
+          flipped so the dark/darker alternation still holds. */}
+      <Section
+        id="iec"
+        className="bg-[#050505]"
+        eyebrow={IEC_SECTION.eyebrow}
+        heading={IEC_SECTION.heading}
+        body={IEC_SECTION.body}
+      >
+        <IecCertificate />
+      </Section>
+
       {/* 301 target for the old /our-plants/ page. */}
       <Section
         id="manufacturing"
-        className="bg-[#050505]"
         eyebrow={fm.facility.eyebrow}
         heading={fm.facility.heading}
         body={fm.facility.body}
       >
         <FacilityGallery
-          caption={fm.facility.caption}
           gallery={fm.facility.gallery}
           capabilities={fm.facility.capabilities}
         />
       </Section>
 
       <Section
+        className="bg-[#050505]"
         eyebrow={fm.system.eyebrow}
         heading={fm.system.heading}
         body={fm.system.body}
@@ -118,7 +132,7 @@ export default async function CertificationsPage() {
         />
       </Section>
 
-      <Section className="bg-[#050505]">
+      <Section>
         <DocsPanel
           heading={fm.docs.heading}
           body={fm.docs.body}
