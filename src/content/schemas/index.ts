@@ -644,8 +644,13 @@ export const industryComponentsSchema = z
         bullets: z.array(z.string()).default([]),
         image: imageRefSchema,
         cta: z.object({ label: z.string(), href: z.string() }),
+        /** Heading the card is listed under. When any card has one, the
+         *  section draws named groups of cards (Medical Devices, Nov 2026). */
+        group: z.string().optional(),
       }),
     ),
+    /** Small print under the cards, e.g. "Illustrative product images." */
+    footnote: z.string().optional(),
   });
 
 
@@ -668,6 +673,15 @@ export const industryConditionsSchema = z
         body: z.string(),
       }),
     ),
+    /** Optional table under the cards, e.g. "Which compound for which duty".
+     *  The first cell of each row is its heading. */
+    table: z
+      .object({
+        caption: z.string(),
+        columns: z.array(z.string()).min(2),
+        rows: z.array(z.object({ cells: z.array(z.string()).min(2) })).min(1),
+      })
+      .optional(),
   });
 
 
@@ -679,6 +693,14 @@ export const industryCustomSchema = z
     cta: z.object({ label: z.string(), href: z.string() }),
     image: imageRefSchema.optional(),
     imageCaption: z.object({ title: z.string(), note: z.string() }).optional(),
+    /** A numbered process, drawn in the photo's column when there is no photo. */
+    steps: z
+      .object({
+        heading: z.string(),
+        note: z.string().optional(),
+        items: z.array(z.string()).min(2),
+      })
+      .optional(),
   });
 
 
@@ -728,6 +750,12 @@ export const industrySchema = baseSchema.extend({
   badge: z.string(),
   /** Three uppercase chips under the subhead (sheets 41–42). */
   heroChips: z.array(z.string()).default([]),
+  /** A bolder line above the intro (Medical Devices, Nov 2026). */
+  heroLead: z.string().optional(),
+  /** A short note set beside the hero buttons, e.g. a certification status. */
+  heroNote: z.string().optional(),
+  /** A summary paragraph under the buttons, written to be quoted whole. */
+  heroAnswer: z.string().optional(),
   /** True only where the hero source is already faded to black (the mining
    *  crop lifted out of the design PNG). Normal photos must not be boosted. */
   heroBoost: z.boolean().default(false),

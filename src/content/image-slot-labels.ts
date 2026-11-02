@@ -1537,6 +1537,61 @@ export const IMAGE_SLOT_LABELS = {
     where: "Medical Devices industry page, ‘Quality & certification’ section.",
     page: "/industries/medical-devices",
   },
+  "industries.medical-devices.hero-lab": {
+    title: "Medical Devices page — hero background (lab bench)",
+    where: "Medical Devices industry page, the photograph behind the heading at the top.",
+    page: "/industries/medical-devices",
+  },
+  "industries.medical-devices.part.fluid-path-o-rings": {
+    title: "Medical Devices — Fluid-path O-rings",
+    where: "Medical Devices industry page, ‘Components we supply’ › Fluid path — card 1 of 10.",
+    page: "/industries/medical-devices",
+  },
+  "industries.medical-devices.part.valve-manifold-gaskets": {
+    title: "Medical Devices — Valve-manifold gaskets & flange seals",
+    where: "Medical Devices industry page, ‘Components we supply’ › Fluid path — card 2 of 10.",
+    page: "/industries/medical-devices",
+  },
+  "industries.medical-devices.part.instrument-valve-diaphragms": {
+    title: "Medical Devices — Instrument valve diaphragms",
+    where: "Medical Devices industry page, ‘Components we supply’ › Fluid path — card 3 of 10.",
+    page: "/industries/medical-devices",
+  },
+  "industries.medical-devices.part.micro-pump-diaphragms": {
+    title: "Medical Devices — Instrument micro-pump diaphragms",
+    where: "Medical Devices industry page, ‘Components we supply’ › Fluid path — card 4 of 10.",
+    page: "/industries/medical-devices",
+  },
+  "industries.medical-devices.part.silicone-pump-tubing": {
+    title: "Medical Devices — Silicone pump tubing & profiles",
+    where: "Medical Devices industry page, ‘Components we supply’ › Fluid path — card 5 of 10.",
+    page: "/industries/medical-devices",
+  },
+  "industries.medical-devices.part.instrument-door-lid-gaskets": {
+    title: "Medical Devices — Instrument door & lid gaskets",
+    where: "Medical Devices industry page, ‘Components we supply’ › Chambers, doors & ports — card 6 of 10.",
+    page: "/industries/medical-devices",
+  },
+  "industries.medical-devices.part.steriliser-door-gaskets": {
+    title: "Medical Devices — Steriliser lid & door gaskets",
+    where: "Medical Devices industry page, ‘Components we supply’ › Chambers, doors & ports — card 7 of 10.",
+    page: "/industries/medical-devices",
+  },
+  "industries.medical-devices.part.access-port-plugs-grommets": {
+    title: "Medical Devices — Access-port plugs & pass-through grommets",
+    where: "Medical Devices industry page, ‘Components we supply’ › Chambers, doors & ports — card 8 of 10.",
+    page: "/industries/medical-devices",
+  },
+  "industries.medical-devices.part.instrument-feet": {
+    title: "Medical Devices — Instrument feet & suction feet",
+    where: "Medical Devices industry page, ‘Components we supply’ › Bench hardware — card 9 of 10.",
+    page: "/industries/medical-devices",
+  },
+  "industries.medical-devices.part.laboratory-stoppers": {
+    title: "Medical Devices — Laboratory stoppers",
+    where: "Medical Devices industry page, ‘Components we supply’ › Bench hardware — card 10 of 10.",
+    page: "/industries/medical-devices",
+  },
   "industries.mining.component.1": {
     title: "Mining — ‘Anti-Vibration Mounts’ component photo",
     where: "Mining industry page, ‘Components we supply’ — tab 1 of 3 (Anti-Vibration Mounts).",

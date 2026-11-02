@@ -2,7 +2,7 @@ import { ogCard, OG_SIZE, OG_TYPE } from "@/lib/og-card";
 
 export const size = OG_SIZE;
 export const contentType = OG_TYPE;
-export const alt = "Margo Rubber Products: Custom rubber parts in 15 product lines";
+export const alt = "Margo Rubber Products: Custom rubber parts in 16 product lines";
 
 /**
  * This page's share card. Without its own file a page had no og:image at
@@ -10,5 +10,5 @@ export const alt = "Margo Rubber Products: Custom rubber parts in 15 product lin
  * would otherwise inherit (21 Oct 2026).
  */
 export default function Image() {
-  return ogCard({ eyebrow: "Products", title: "Custom rubber parts in 15 product lines" });
+  return ogCard({ eyebrow: "Products", title: "Custom rubber parts in 16 product lines" });
 }

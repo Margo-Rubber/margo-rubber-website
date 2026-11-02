@@ -131,7 +131,8 @@ export default async function ProductsHubPage() {
                     sizes="(max-width:1024px) 100vw, 50vw"
                     className="object-cover brightness-[0.9]"
                   />
-                  <div className="from-surface absolute inset-0 bg-gradient-to-t from-0% to-transparent to-55%" />
+                  {/* No dark fade over the foot of the photo (client,
+                      2 Nov 2026). */}
                 </>
               )}
               {fm.excellence.imageBadge && (
