@@ -394,49 +394,25 @@ export function AboutHero({
 }) {
   return (
     <header className="bg-surface-2 hero-offset relative isolate overflow-hidden pb-24 md:pb-36">
-      {/* The plant photograph is drawn inside the Container below (see
-          .hero-media): whole building, never cropped. */}
-      {/* Slow light sweep across the plant photo, under the gradients. */}
-      <span aria-hidden className="margo-about-hero-sweep -z-20" />
-      {/* Phones: the copy sits over the whole photo, so it is shaded from
-          the left, top and bottom. */}
-      <div
-        className="absolute inset-0 -z-10 lg:hidden"
-        style={{
-          background:
-            "linear-gradient(to right, var(--color-surface-2) 8%, color-mix(in srgb, var(--color-surface-2) 72%, transparent) 34%, transparent 62%)",
-        }}
-      />
-      <div
-        className="absolute inset-0 -z-10 lg:hidden"
-        style={{
-          background:
-            "linear-gradient(to top, var(--color-surface-2), transparent 26%)",
-        }}
-      />
-      <div
-        className="absolute inset-0 -z-10 lg:hidden"
-        style={{
-          background:
-            "linear-gradient(to bottom, var(--color-surface-2), transparent 14%)",
-        }}
-      />
-
       <Container>
         <Breadcrumb items={breadcrumb} className="mb-6" />
+        {badge && <Pill>{badge}</Pill>}
         <div className="relative">
-          <div className="max-w-[46rem]">
-            {badge && <Pill>{badge}</Pill>}
-            <Display
-              as="h1"
-              size="hero"
-              lines={lines}
-              accentLines={accentLines}
-              className="mt-7"
-            />
-            <p className="text-ink-3 mt-7 max-w-[42ch] leading-relaxed">
-              {intro}
-            </p>
+          {/* Two equal halves (client, 2 Nov 2026): the heading and the
+              paragraph on the left, the company logo on the right, as big as
+              the box the text makes — the logo's cell stretches to the text's
+              height and the logo fills it, centred. The buttons sit under
+              both. Replaces the full-height photograph. */}
+          <div className="mt-7 grid gap-x-16 lg:grid-cols-2">
+            <div>
+              <Display as="h1" size="hero" lines={lines} accentLines={accentLines} />
+              <p className="text-ink-3 mt-7 leading-relaxed">{intro}</p>
+            </div>
+            <div className="relative hidden lg:block">
+              <Img k={image} fill priority sizes="(min-width: 1280px) 600px, 45vw" className="object-contain" />
+            </div>
+          </div>
+          <div>
 
             <div className="mt-9 flex flex-wrap gap-3">
               {actions.map((a) =>
@@ -462,6 +438,11 @@ export function AboutHero({
             </div>
           </div>
 
+          {/* Phones and tablets: the logo under the buttons. */}
+          <div className="mt-10 flex justify-center lg:hidden">
+            <Img k={image} sizes="200px" className="h-auto w-[200px]" />
+          </div>
+
           {/* Film affordance — only while there is a label for it. Sheet 03
               §01: "there is no film, and the live control goes nowhere". */}
           {watchLabel && (
@@ -478,19 +459,6 @@ export function AboutHero({
           )}
         </div>
 
-        {/* The whole building, at the photo's own proportions. Phones and
-            tablets: under the copy. Desktop: full height on the right,
-            below the fixed header, fading into the surface behind the copy.
-            The old full-bleed cover cut off the roof (hidden under the nav)
-            and the ground. The 75% cap lets this wider-than-square frame
-            stay full height down to 1024px; the copy column's own scrim
-            keeps the text legible where the two overlap. */}
-        <Img
-          k={image}
-          priority
-          sizes="(min-width: 1024px) 75vw, (min-width: 768px) 40rem, 100vw"
-          className="margo-about-hero-img hero-media max-lg:max-w-[40rem] brightness-[0.85] [--hero-media-max:75%]"
-        />
       </Container>
 
       <span className="text-eyebrow text-ink-4 absolute right-6 bottom-24 hidden font-mono uppercase [writing-mode:vertical-rl] lg:block">

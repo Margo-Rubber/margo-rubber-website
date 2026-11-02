@@ -394,8 +394,8 @@ export const IMAGE_SLOT_LABELS = {
 
   /* ── About page ───────────────────────────────────────────────────── */
   "about.hero": {
-    title: "About page — hero background",
-    where: "About page, the photograph behind the heading at the top.",
+    title: "About page — hero logo",
+    where: "About page, the company logo filling the right half of the hero, as tall as the heading and paragraph beside it. Use the logo on a transparent background.",
     page: "/about",
   },
   "about.story.plant": {
