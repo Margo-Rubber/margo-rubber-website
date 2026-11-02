@@ -733,6 +733,27 @@ export function Values({
 }
 
 /* ══ 04 · LEADERSHIP MESSAGE ══════════════════════════════════════════════ */
+/** A green quotation mark sized to the quote's text; `closing` turns it
+ *  half a turn. Both sit at the top of the line, like typed marks. */
+function QuoteMark({ closing = false }: { closing?: boolean }) {
+  return (
+    <svg
+      viewBox="4.6 5.5 18 12.3"
+      className={`text-accent-400 inline-block fill-current ${
+        closing ? "ml-1.5 rotate-180" : "mr-1.5"
+      }`}
+      // In em, so the mark follows the quote's fluid size: half the text
+      // size tall (width from the 18 × 12.3 glyph box), its foot a
+      // quarter-em above the baseline — top at about cap height, where a
+      // typed quotation mark sits.
+      style={{ height: "0.5em", width: "0.73em", verticalAlign: "0.25em", opacity: 0.6 }}
+      aria-hidden
+    >
+      <path d="M9.5 5.5C6.4 7 4.6 9.6 4.6 12.9c0 2.9 1.8 4.9 4.2 4.9 2.1 0 3.7-1.5 3.7-3.5 0-1.9-1.4-3.4-3.3-3.4-.4 0-.8.1-1 .2.4-1.6 1.7-3 3.5-3.9zm9.4 0c-3.1 1.5-4.9 4.1-4.9 7.4 0 2.9 1.8 4.9 4.2 4.9 2.1 0 3.7-1.5 3.7-3.5 0-1.9-1.4-3.4-3.3-3.4-.4 0-.8.1-1 .2.4-1.6 1.7-3 3.5-3.9z" />
+    </svg>
+  );
+}
+
 export function Leadership({
   eyebrow,
   image,
@@ -769,25 +790,20 @@ export function Leadership({
         <div className="max-w-[52ch]">
           <Pill>{eyebrow}</Pill>
 
-          <svg
-            viewBox="0 0 24 24"
-            className="text-accent-400/35 mt-8 size-9 fill-current"
-            aria-hidden
-          >
-            <path d="M9.5 5.5C6.4 7 4.6 9.6 4.6 12.9c0 2.9 1.8 4.9 4.2 4.9 2.1 0 3.7-1.5 3.7-3.5 0-1.9-1.4-3.4-3.3-3.4-.4 0-.8.1-1 .2.4-1.6 1.7-3 3.5-3.9zm9.4 0c-3.1 1.5-4.9 4.1-4.9 7.4 0 2.9 1.8 4.9 4.2 4.9 2.1 0 3.7-1.5 3.7-3.5 0-1.9-1.4-3.4-3.3-3.4-.4 0-.8.1-1 .2.4-1.6 1.7-3 3.5-3.9z" />
-          </svg>
-
-          {/* The green mark above is the only quotation mark: no typed
-              “ ” around the text (client, 2 Nov 2026). */}
-          <blockquote className="text-ink mt-6 text-[clamp(1.2rem,1.8vw,1.5rem)] leading-[1.32] font-semibold tracking-tight">
+          {/* Green marks open and close the quote, in the text itself and
+              matched: same size, same gap from the words, both riding the
+              cap height (client, 2 Nov 2026). No typed “ ” around it. */}
+          <blockquote className="text-ink mt-8 text-[clamp(1.2rem,1.8vw,1.5rem)] leading-[1.32] font-semibold tracking-tight">
             <p>
               {quoteLines.map((l, i) => (
                 <span key={l} className="block">
+                  {i === 0 && <QuoteMark />}
                   {l}
                   {i < quoteLines.length - 1 && " "}
                   {i === quoteLines.length - 1 && quoteAccent && (
                     <span className="text-accent-400"> {quoteAccent}</span>
                   )}
+                  {i === quoteLines.length - 1 && <QuoteMark closing />}
                 </span>
               ))}
             </p>
