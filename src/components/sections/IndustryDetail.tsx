@@ -21,6 +21,7 @@ export function IndustryHero({
   actions,
   image,
   boost = false,
+  framed = false,
   breadcrumb,
   chips = [],
   lead,
@@ -43,6 +44,8 @@ export function IndustryHero({
   image?: string;
   /** Only for sources already faded to black; a normal photo would blow out. */
   boost?: boolean;
+  /** Set the photo whole on the right, at its own proportions, instead of filling the hero. */
+  framed?: boolean;
   breadcrumb?: readonly Crumb[];
 }) {
   return (
@@ -63,6 +66,22 @@ export function IndustryHero({
                 />
               </div>
               <div className="from-canvas absolute inset-0 -z-10 bg-gradient-to-t from-45% to-transparent to-100%" />
+            </>
+          ) : framed ? (
+            /* Medical Devices: the photo's own black background meets the page,
+               so its edges are masked soft rather than overlaid. */
+            <>
+              <div
+                className="absolute top-24 right-0 -z-20 aspect-[2000/1056] w-full opacity-40 lg:top-1/2 lg:right-[3%] lg:w-[74%] lg:-translate-y-1/2 lg:opacity-100"
+                style={{
+                  maskImage:
+                    "linear-gradient(to right, transparent, #000 30%, #000 94%, transparent), linear-gradient(to bottom, transparent, #000 10%, #000 85%, transparent)",
+                  maskComposite: "intersect",
+                }}
+              >
+                <Img k={image} fill priority sizes="(min-width: 1024px) 74vw, 100vw" className="object-contain" />
+              </div>
+              <div className="from-canvas absolute inset-0 -z-10 bg-gradient-to-t from-0% to-transparent to-25%" />
             </>
           ) : (
             <>

@@ -1538,7 +1538,7 @@ export const IMAGE_SLOT_LABELS = {
     page: "/industries/medical-devices",
   },
   "industries.medical-devices.hero-lab": {
-    title: "Medical Devices page — hero background (lab bench)",
+    title: "Medical Devices page — hero background (device and tubing)",
     where: "Medical Devices industry page, the photograph behind the heading at the top.",
     page: "/industries/medical-devices",
   },

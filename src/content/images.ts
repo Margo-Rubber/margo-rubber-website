@@ -2277,14 +2277,15 @@ export const IMAGES = {
     alt: "Margo production line at the Nashik facility",
     status: "placeholder",
   },
-  /* Medical Devices redesign (client, 2 Nov 2026): the lab-bench hero and
+  /* Medical Devices redesign (client, 2 Nov 2026): the hero (silicone tubing
+     and moulded parts beside a device, replacing the lab bench) and
      the ten component photos from the new page. Own keys, so the old hero
      slot's Studio upload does not cover the new photograph. */
   "industries.medical-devices.hero-lab": {
-    src: "/images/industries/medical-devices/hero-lab-bench.webp",
-    blur: "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIF/8QAIBAAAQMEAgMAAAAAAAAAAAAAAQACAwQREiEUMSJRYf/EABUBAQEAAAAAAAAAAAAAAAAAAAEC/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A3aijliA4zi43xOTuh7CqGDwtJES4aLtC/wB7RFQf/9k=",
-    w: 2400, h: 1600,
-    alt: "Rubber seals, gaskets, port plugs and feet on a laboratory bench",
+    src: "/images/industries/medical-devices/hero-device-tubing.webp",
+    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAGAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAUG/8QAHhAAAgIBBQEAAAAAAAAAAAAAAQMAAhEEBRJBUXH/xAAUAQEAAAAAAAAAAAAAAAAAAAAB/8QAFREBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhEDEQA/AMUm1atqbDI8lhW9LQsLXpFkDviMn7kGIiK//9k=",
+    w: 2000, h: 1056,
+    alt: "Silicone tubing coiled beside a medical device, with moulded stoppers, a diaphragm and O-rings on a dark surface",
     status: "placeholder",
   },
   "industries.medical-devices.part.fluid-path-o-rings": {
