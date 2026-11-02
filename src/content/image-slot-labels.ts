@@ -1628,7 +1628,7 @@ export const IMAGE_SLOT_LABELS = {
     page: "/industries/water-fluid-management",
   },
   "about.closing": {
-    title: "About — closing section photo",
+    title: "Retired — About — closing section photo",
     where: "About page, the photograph in the closing section at the bottom.",
     page: "/about",
   },

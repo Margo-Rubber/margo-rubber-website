@@ -749,13 +749,14 @@ export function Leadership({
   person: { initials: string; name: string; role: string };
 }) {
   return (
-    <section className="bg-surface-2 grid items-stretch gap-0 lg:grid-cols-2">
+    <section className="bg-surface-2 grid items-center gap-0 lg:grid-cols-2">
       {/* The founder's portrait, shown whole and as photographed (25 Oct
           2026): no gradients, no side fill — object-contain so the full
           figure, head to shoes, survives any screen width or browser zoom.
           Where the column is wider than the portrait, the section's own
-          dark surface shows either side. */}
-      <div className="relative isolate min-h-[480px] overflow-hidden lg:min-h-[620px]">
+          dark surface shows either side. A fixed, smaller frame rather than
+          the full height of the row (client, 2 Nov 2026). */}
+      <div className="relative isolate h-[360px] overflow-hidden lg:h-[480px]">
         <Img
           k={image}
           fill
@@ -776,18 +777,16 @@ export function Leadership({
             <path d="M9.5 5.5C6.4 7 4.6 9.6 4.6 12.9c0 2.9 1.8 4.9 4.2 4.9 2.1 0 3.7-1.5 3.7-3.5 0-1.9-1.4-3.4-3.3-3.4-.4 0-.8.1-1 .2.4-1.6 1.7-3 3.5-3.9zm9.4 0c-3.1 1.5-4.9 4.1-4.9 7.4 0 2.9 1.8 4.9 4.2 4.9 2.1 0 3.7-1.5 3.7-3.5 0-1.9-1.4-3.4-3.3-3.4-.4 0-.8.1-1 .2.4-1.6 1.7-3 3.5-3.9z" />
           </svg>
 
-          <blockquote className="text-ink mt-6 text-[clamp(1.4rem,2.4vw,2rem)] leading-[1.28] font-semibold tracking-tight">
+          {/* The green mark above is the only quotation mark: no typed
+              “ ” around the text (client, 2 Nov 2026). */}
+          <blockquote className="text-ink mt-6 text-[clamp(1.2rem,1.8vw,1.5rem)] leading-[1.32] font-semibold tracking-tight">
             <p>
               {quoteLines.map((l, i) => (
                 <span key={l} className="block">
-                  {i === 0 ? `“${l}` : l}
-                  {/* No space before the closing quote when there is no accent run. */}
-                  {i < quoteLines.length - 1 || quoteAccent ? " " : ""}
-                  {i === quoteLines.length - 1 && (
-                    <span className="text-accent-400">
-                      {quoteAccent}
-                      <span className="text-ink">{"”"}</span>
-                    </span>
+                  {l}
+                  {i < quoteLines.length - 1 && " "}
+                  {i === quoteLines.length - 1 && quoteAccent && (
+                    <span className="text-accent-400"> {quoteAccent}</span>
                   )}
                 </span>
               ))}
@@ -1481,89 +1480,3 @@ export function Clients({
   );
 }
 
-/* ══ 13 · CLOSING CTA ═════════════════════════════════════════════════════ */
-export function Closing({
-  eyebrow,
-  lines,
-  accentLines,
-  body,
-  image,
-  placeholder,
-  submitLabel,
-  assurances,
-}: {
-  eyebrow: string;
-  lines: readonly string[];
-  accentLines: readonly number[];
-  body: string;
-  image: string;
-  placeholder: string;
-  submitLabel: string;
-  assurances: readonly string[];
-}) {
-  return (
-    <section className="bg-surface-2 relative isolate overflow-hidden py-[70px]">
-      <Img
-        k={image}
-        fill
-        sizes="100vw"
-        className="-z-20 object-cover brightness-[0.6]"
-      />
-      <div
-        className="absolute inset-0 -z-10"
-        style={{
-          background:
-            "linear-gradient(to bottom, var(--color-surface-2), color-mix(in srgb, var(--color-surface-2) 62%, transparent) 48%, var(--color-surface-2))",
-        }}
-      />
-      <span
-        aria-hidden
-        className="bg-accent-400/8 pointer-events-none absolute bottom-0 left-1/2 -z-10 size-[34rem] -translate-x-1/2 translate-y-1/3 rounded-full blur-3xl"
-      />
-
-      <Container>
-        <div className="mx-auto max-w-[46ch] text-center">
-          <Pill>{eyebrow}</Pill>
-          <Display lines={lines} accentLines={accentLines} className="mt-7" />
-          <p className="text-ink-3 mx-auto mt-6 max-w-[52ch] leading-relaxed">
-            {body}
-          </p>
-
-          <EnquiryForm
-            source="about"
-            className="margo-form-wrap mx-auto mt-9 flex max-w-[34rem] flex-col gap-3 sm:flex-row"
-          >
-            <label htmlFor="cta-email" className="sr-only">
-              {placeholder}
-            </label>
-            <input
-              id="cta-email"
-              name="email"
-              type="email"
-              required
-              placeholder={placeholder}
-              className="text-ink placeholder:text-ink-4 focus:border-accent-400 rounded-pill min-w-0 flex-1 border border-line-2 bg-surface-4/85 px-6 py-3.5 text-sm backdrop-blur"
-            />
-            <EnquirySubmit className="bg-accent-400 text-canvas hover:opacity-90 shadow-glow rounded-cta inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm font-semibold transition-colors">
-              {submitLabel}
-              <Arrow />
-            </EnquirySubmit>
-            <EnquiryStatus />
-          </EnquiryForm>
-
-          <ul className="mt-7 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
-            {assurances.map((a) => (
-              <li
-                key={a}
-                className="text-ink-3 flex items-center gap-2 text-sm"
-              >
-                <Check className="text-accent-400 size-4" />
-                {a}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </Container>
-    </section>
-  );
-}
