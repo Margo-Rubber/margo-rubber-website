@@ -43,6 +43,9 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
   const overrides = await getImageOverrides();
   const heroImage = fm.hero?.image;
   const boost = Boolean(fm.heroBoost) && !(heroImage && overrides[heroImage]);
+  // Medical Devices (client, 2 Nov 2026): the device-and-tubing photo is set
+  // whole on the right at its own proportions instead of filling the hero.
+  const framed = heroImage === "industries.medical-devices.hero-lab";
 
   // The hero's catalogue button scrolls to this page's own catalogue section.
   // Sanity documents carry "#catalogue" already (migration of 26 Oct 2026);
@@ -81,6 +84,7 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
         actions={actions}
         image={heroImage}
         boost={boost}
+        framed={framed}
       />
 
       <AnswerLead block={answerBlockFor(path)} />
