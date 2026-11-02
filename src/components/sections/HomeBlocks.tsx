@@ -576,12 +576,13 @@ export function Story({
       <Container>
         <div className="grid items-start gap-14 lg:grid-cols-2">
           {/* 4:3 at every width, matching the 2000×1500 artwork; top-aligned
-              with the copy. */}
+              with the copy. No dark fade at the foot of the photo (client,
+              2 Nov 2026): the artwork is shown as uploaded. */}
           <div>
             <Photo
               k={image}
               ratio="aspect-[4/3]"
-              surface="var(--color-canvas)"
+              dissolve={false}
               sizes="(min-width:1024px) 46vw, 100vw"
               className="margo-image-frame rounded-card border-line border"
             />

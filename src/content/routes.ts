@@ -107,9 +107,11 @@ export const INDUSTRIES: readonly RouteEntry[] = [
   ind("ev-energy-storage-renewables", "EV, Energy Storage & Renewables"),
 ];
 
-/** The footer's Company column — six entries; Why Choose Us is out. */
+/** The footer's Company column — seven entries; Why Choose Us is out.
+ *  Manufacturing added after About Us (client, 2 Nov 2026). */
 export const COMPANY_LINKS: readonly { label: string; href: string }[] = [
   { label: "About Us", href: "/about" },
+  { label: "Manufacturing", href: "/manufacturing" },
   { label: "Certifications", href: "/certifications" },
   { label: "Export Markets", href: "/export" },
   { label: "Case Studies", href: "/case-studies" },

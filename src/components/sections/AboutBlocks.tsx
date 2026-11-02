@@ -1448,8 +1448,11 @@ export function Clients({
             >
               {/* On a white plate: most brand marks are drawn for a light
                   background and disappear on the dark card. */}
-              {c.logo?.asset && (
-                <span className="mb-4 flex h-24 w-full max-w-[240px] items-center justify-center rounded-lg bg-white px-3 py-2">
+              {/* Until a logo is uploaded the plate carries the name as a
+                  plain wordmark, so every card in the grid has the same
+                  shape (client, 2 Nov 2026: all 24 accounts listed). */}
+              <span className="mb-4 flex h-24 w-full max-w-[240px] items-center justify-center rounded-lg bg-white px-3 py-2">
+                {c.logo?.asset ? (
                   <SanityPhoto
                     image={c.logo}
                     fallbackAlt={`${c.name} logo`}
@@ -1457,8 +1460,12 @@ export function Clients({
                     fit="contain"
                     className="h-full max-h-20 w-auto max-w-full"
                   />
-                </span>
-              )}
+                ) : (
+                  <span aria-hidden className="text-base leading-tight font-bold text-[#1f2933]">
+                    {c.name}
+                  </span>
+                )}
+              </span>
               <span>
                 {c.name}
                 {c.sector && <span className="text-ink-4 mt-1.5 block text-xs font-normal">{c.sector}</span>}
