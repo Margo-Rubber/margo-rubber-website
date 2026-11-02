@@ -346,7 +346,7 @@ export function ExportHero({
           <Link
             href={`#${markets[0].slug}`}
             aria-label={`Skip to ${markets[0].heading}`}
-            className="text-ink-4 hover:text-accent-400 transition-colors"
+            className="text-ink-4 hover:text-accent-400 transition-colors max-md:grid max-md:size-11 max-md:place-items-center"
           >
             <svg
               viewBox="0 0 24 24"
@@ -437,7 +437,7 @@ export function MarketSection({
                   <li key={l.label}>
                     <Link
                       href={l.href}
-                      className="text-accent-400 hover:opacity-80 inline-flex items-center gap-2 text-sm transition-colors"
+                      className="text-accent-400 hover:opacity-80 inline-flex max-md:-my-3 max-md:py-3 items-center gap-2 text-sm transition-colors"
                     >
                       {l.label}
                       <Arrow className="size-3.5" />
@@ -576,13 +576,13 @@ export function ExportProcess({
                   {String(i + 1).padStart(2, "0")}
                 </span>
               </span>
-              <div className="pt-2">
+              <div className="min-w-0 pt-2">
                 <h3 className="text-ink text-lg font-semibold">{s.name}</h3>
                 {s.lines?.length ? (
                   <dl className="mt-3 max-w-[70ch] space-y-2 text-sm">
                     {s.lines.map((l) => (
-                      <div key={l.label} className="flex gap-3">
-                        <dt className="text-ink w-28 shrink-0 font-medium">{l.label}</dt>
+                      <div key={l.label} className="flex flex-col gap-0.5 sm:flex-row sm:gap-3">
+                        <dt className="text-ink shrink-0 font-medium sm:w-28">{l.label}</dt>
                         <dd className="text-ink-4 leading-relaxed">{l.text}</dd>
                       </div>
                     ))}

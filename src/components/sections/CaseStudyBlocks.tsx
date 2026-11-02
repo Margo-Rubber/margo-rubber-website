@@ -400,7 +400,7 @@ export function Meantime({
               <p className="text-ink-4 mt-3 text-sm leading-relaxed">{m.body}</p>
               <Link
                 href={m.cta.href}
-                className="text-accent-400 hover:opacity-80 mt-5 inline-flex items-center gap-1.5 text-sm font-medium transition-colors"
+                className="text-accent-400 hover:opacity-80 mt-5 inline-flex max-md:-mb-3 max-md:mt-2 max-md:py-3 items-center gap-1.5 text-sm font-medium transition-colors"
               >
                 {m.cta.label}
                 <Chevron />

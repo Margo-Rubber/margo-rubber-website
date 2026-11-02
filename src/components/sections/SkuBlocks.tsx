@@ -865,7 +865,7 @@ export function SkuApplications({
               </span>
               <h3 className="text-ink mt-5 text-base font-semibold">
                 {a.href ? (
-                  <Link href={a.href} className="hover:text-accent-400 inline-flex items-center gap-1.5">
+                  <Link href={a.href} className="hover:text-accent-400 inline-flex items-center gap-1.5 max-md:-my-3 max-md:py-3">
                     {a.name} <span aria-hidden className="text-accent-400">›</span>
                   </Link>
                 ) : (
@@ -1126,7 +1126,7 @@ export function SkuRelated({
             <Eyebrow>Related products</Eyebrow>
             <h2 className="text-h2 mt-3">You May Also Need</h2>
           </div>
-          <Link href={`/products/${categorySlug}`} className="text-accent-400 hover:opacity-80 inline-flex items-center gap-2 text-sm font-medium transition-colors">
+          <Link href={`/products/${categorySlug}`} className="text-accent-400 hover:opacity-80 inline-flex max-md:-my-3 max-md:py-3 items-center gap-2 text-sm font-medium transition-colors">
             View all products
             <Arrow />
           </Link>

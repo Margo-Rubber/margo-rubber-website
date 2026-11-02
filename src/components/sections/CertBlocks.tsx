@@ -653,7 +653,7 @@ export function FacilityGallery({
           >
             <p className="text-ink text-sm font-semibold">
               {c.href ? (
-                <Link href={c.href} className="hover:text-accent-400 inline-flex items-center gap-1.5">
+                <Link href={c.href} className="hover:text-accent-400 inline-flex items-center gap-1.5 max-md:-my-3 max-md:py-3">
                   {c.name} <span aria-hidden className="text-accent-400">›</span>
                 </Link>
               ) : (
@@ -728,7 +728,7 @@ export function QualitySystem({
             </span>
             <h3 className="text-ink mt-5 text-base font-semibold">
               {q.href ? (
-                <Link href={q.href} className="hover:text-accent-400 inline-flex items-center gap-1.5">
+                <Link href={q.href} className="hover:text-accent-400 inline-flex items-center gap-1.5 max-md:-my-3 max-md:py-3">
                   {q.name} <span aria-hidden className="text-accent-400">›</span>
                 </Link>
               ) : (

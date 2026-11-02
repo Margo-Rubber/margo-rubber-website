@@ -64,7 +64,7 @@ export function PhotoCarousel({
 
   const pull = drag ?? 0;
   const arrow =
-    "bg-canvas/70 text-ink border-line absolute top-1/2 z-10 grid size-10 -translate-y-1/2 place-items-center rounded-full border backdrop-blur transition-opacity hover:bg-canvas/90 focus-visible:opacity-100 [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:group-hover:opacity-100";
+    "bg-canvas/70 text-ink border-line absolute top-1/2 z-10 grid size-11 -translate-y-1/2 md:size-10 place-items-center rounded-full border backdrop-blur transition-opacity hover:bg-canvas/90 focus-visible:opacity-100 [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:group-hover:opacity-100";
 
   return (
     <div
@@ -154,7 +154,9 @@ export function PhotoCarousel({
       </div>
 
       {count > 1 && (
-        <div className="mt-4 flex justify-center gap-2">
+        // Each dot sits in a 44px-tall button so it can be tapped; the
+        // negative margins keep the dots where the 8px row put them.
+        <div className="-mt-0.5 -mb-[18px] flex justify-center">
           {slides.map((k, i) => (
             <button
               key={k}
@@ -162,10 +164,15 @@ export function PhotoCarousel({
               onClick={() => go(i)}
               aria-label={`Show photo ${i + 1} of ${count}`}
               aria-current={i === index}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                i === index ? "bg-accent-400 w-6" : "bg-ink-4/50 hover:bg-ink-4 w-2"
-              }`}
-            />
+              className="group/dot grid h-11 place-items-center px-1"
+            >
+              <span
+                aria-hidden
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  i === index ? "bg-accent-400 w-6" : "bg-ink-4/50 group-hover/dot:bg-ink-4 w-2"
+                }`}
+              />
+            </button>
           ))}
         </div>
       )}

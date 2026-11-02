@@ -629,7 +629,7 @@ export function Story({
         <p className="mt-10 text-center">
           <Link
             href={cta.href}
-            className="text-accent-400 hover:opacity-80 inline-flex items-center gap-2 text-sm font-semibold transition-colors"
+            className="text-accent-400 hover:opacity-80 inline-flex max-md:-my-3 max-md:py-3 items-center gap-2 text-sm font-semibold transition-colors"
           >
             {cta.label}
             <Arrow />
@@ -709,7 +709,7 @@ export function Portfolio({
           </div>
           <Link
             href={cta.href}
-            className="text-accent-400 hover:opacity-80 inline-flex items-center gap-1.5 text-sm font-semibold transition-colors"
+            className="text-accent-400 hover:opacity-80 inline-flex max-md:-my-3 max-md:py-3 items-center gap-1.5 text-sm font-semibold transition-colors"
           >
             {cta.label}
             <svg
@@ -1092,7 +1092,10 @@ export function Materials({
           )}
         </header>
 
-        <div className="rounded-card border-line overflow-x-auto border bg-[#0F1115]">
+        {/* `relative` keeps the sr-only header labels (absolutely positioned)
+            inside this scroller; without it they escaped to the page and
+            widened it past the screen on phones. */}
+        <div className="rounded-card border-line relative overflow-x-auto border bg-[#0F1115]">
           {/* A real table, styled as bars (sheet 01 §10: "Do not build it from
               <div>s — the tabular relationship is what makes it extractable").
               Compound names are row headings; the bar is a visual of the

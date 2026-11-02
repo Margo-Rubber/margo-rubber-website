@@ -151,7 +151,7 @@ export function SpecTable({ columns, rows, footnote, controls = true, chips, sea
                       <button
                         type="button"
                         onClick={() => toggleSort(i)}
-                        className="inline-flex items-center gap-1.5"
+                        className="inline-flex items-center gap-1.5 max-md:-my-3 max-md:py-3"
                       >
                         {c}
                         <span aria-hidden className="opacity-60">

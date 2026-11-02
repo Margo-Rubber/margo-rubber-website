@@ -136,13 +136,13 @@ export async function SiteFooter() {
   const { entity, certifications } = settings;
 
   return (
-    <footer className="border-line bg-surface-2 border-t pt-16 pb-10">
+    <footer className="border-line bg-surface-2 border-t pt-16 pb-24 md:pb-10">
       <Container>
         <div className="grid gap-12 lg:grid-cols-[minmax(0,22rem)_1fr] lg:gap-16">
           {/* Identity */}
           <div>
             <div className="inline-flex flex-col items-start">
-              <Img k="brand.mark" className="size-14 shrink-0" />
+              <Img k="brand.mark" sizes="56px" className="size-14 shrink-0" />
               <span className="mt-2 flex flex-col leading-none">
                 <span className="text-ink text-lg font-bold tracking-[0.14em]">
                   MARGO
@@ -176,7 +176,7 @@ export async function SiteFooter() {
                 >
                   <a
                     href={telHref(entity.phone)}
-                    className="hover:text-ink transition-colors"
+                    className="hover:text-ink transition-colors max-md:-my-3 max-md:inline-block max-md:py-3"
                   >
                     {entity.phone}
                   </a>
@@ -199,7 +199,7 @@ export async function SiteFooter() {
                 >
                   <a
                     href={`mailto:${entity.email}`}
-                    className="hover:text-ink transition-colors"
+                    className="hover:text-ink transition-colors max-md:-my-3 max-md:inline-block max-md:py-3"
                   >
                     {entity.email}
                   </a>
@@ -261,7 +261,7 @@ export async function SiteFooter() {
                       aria-label={s.label}
                       target="_blank"
                       rel="noreferrer noopener"
-                      className="border-line bg-surface-3 text-ink-3 hover:border-accent-400/50 hover:text-accent-400 grid size-9 place-items-center rounded-lg border transition-colors"
+                      className="border-line bg-surface-3 text-ink-3 hover:border-accent-400/50 hover:text-accent-400 grid size-11 place-items-center rounded-lg border transition-colors md:size-9"
                     >
                       <SocialIcon name={s.icon} />
                     </a>
@@ -285,12 +285,12 @@ export async function SiteFooter() {
                         {g.label}
                       </p>
                     )}
-                    <ul className="space-y-3">
+                    <ul className="space-y-3 max-md:space-y-0">
                       {g.links.map((l) => (
                         <li key={l.label}>
                           <Link
                             href={l.href}
-                            className="text-ink-3 hover:text-ink flex items-start gap-2.5 text-sm transition-colors"
+                            className="text-ink-3 hover:text-ink flex items-start gap-2.5 text-sm transition-colors max-md:py-3"
                           >
                             <Caret />
                             {l.label}
@@ -339,19 +339,19 @@ export async function SiteFooter() {
           </p>
 
           <nav aria-label="Legal">
-            <ul className="flex flex-wrap gap-x-7 gap-y-2">
+            <ul className="flex flex-wrap gap-x-7 gap-y-2 max-md:gap-y-0">
               {fm.legal.map((l) => (
                 <li key={l.label}>
                   <Link
                     href={l.href}
-                    className="text-ink-4 hover:text-ink text-sm transition-colors"
+                    className="text-ink-4 hover:text-ink text-sm transition-colors max-md:inline-block max-md:py-3"
                   >
                     {l.label}
                   </Link>
                 </li>
               ))}
               <li>
-                <CookieSettingsLink className="text-ink-4 hover:text-ink cursor-pointer text-sm transition-colors" />
+                <CookieSettingsLink className="text-ink-4 hover:text-ink cursor-pointer text-sm transition-colors max-md:inline-block max-md:py-3" />
               </li>
             </ul>
           </nav>

@@ -110,7 +110,7 @@ function PartsList({
               <p className="text-eyebrow text-ink-4 font-mono">{String(i + 1).padStart(2, "0")}</p>
               <h3 className="text-ink mt-3 text-base leading-snug font-semibold">
                 {it.href ? (
-                  <Link href={it.href} className="hover:text-accent-400 inline-flex items-center gap-1.5">
+                  <Link href={it.href} className="hover:text-accent-400 inline-flex items-center gap-1.5 max-md:-my-3 max-md:py-3">
                     {it.name} <span aria-hidden className="text-accent-400">›</span>
                   </Link>
                 ) : (
@@ -151,7 +151,7 @@ function PartsList({
           </p>
           <Link
             href={`/products/${categorySlug}/${p.id}`}
-            className="text-accent-400 hover:opacity-80 mt-5 inline-flex items-center gap-2 text-sm font-medium transition-colors"
+            className="text-accent-400 hover:opacity-80 mt-5 inline-flex max-md:-mb-3 max-md:mt-2 max-md:py-3 items-center gap-2 text-sm font-medium transition-colors"
           >
             View part
             <Arrow />
