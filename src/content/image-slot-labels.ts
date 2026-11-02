@@ -559,7 +559,7 @@ export const IMAGE_SLOT_LABELS = {
   /* ── Split from shared slots, 2026-09-15 — one per placement ────── */
   "home.hero": {
     title: "Home page — hero background",
-    where: "Not shown on the site at the moment: the home page hero plays a video instead, with the video's own first frame as its still. Uploading here changes nothing visible.",
+    where: "Home page, the photograph behind the heading at the top (it replaced the video, 2 Nov 2026). The copy sits on the left, so keep the left side quiet.",
     page: "/",
   },
   "home.portfolio.o-rings": {
