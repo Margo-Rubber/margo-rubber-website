@@ -92,16 +92,16 @@ export function SiteHeader() {
         }
       }}
     >
-      <Container className="flex h-20 items-center gap-8">
+      <Container className="flex h-20 items-center gap-3 sm:gap-8">
         <Link
           href="/"
-          className="text-ink shrink-0 font-bold tracking-tight"
+          className="text-ink flex min-h-11 min-w-11 shrink-0 items-center font-bold tracking-tight"
           onClick={closeAll}
         >
           <span className="flex items-center gap-2.5">
             {/* The home link's only content on phones (the wordmark is
                 sm:flex), so the logo carries the link's name. */}
-            <Img k="brand.mark" alt="Margo Rubber Products" className="size-10 shrink-0" />
+            <Img k="brand.mark" alt="Margo Rubber Products" sizes="40px" className="size-10 shrink-0" />
             <span className="hidden flex-col leading-none sm:flex">
               <span className="text-base font-bold tracking-tight">MARGO</span>
               <span className="text-ink-4 mt-1 text-[9px] font-normal tracking-[0.22em]">
@@ -146,7 +146,10 @@ export function SiteHeader() {
         </nav>
 
         <div className="ml-auto flex items-center gap-3 lg:ml-0">
-          <Button href="/contact#quote-form" className="hidden sm:inline-flex">
+          {/* Shown at every width (the old `hidden sm:inline-flex` never hid it:
+              Button's own `inline-flex` won). Tightened below sm so logo,
+              CTA and menu button fit on one line down to 320px. */}
+          <Button href="/contact#quote-form" className="whitespace-nowrap max-sm:px-4">
             Request Quote <span aria-hidden>→</span>
           </Button>
 
@@ -158,7 +161,7 @@ export function SiteHeader() {
             aria-expanded={mobileOpen}
             aria-controls="mobile-nav"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
-            className="border-line text-ink grid size-11 place-items-center rounded-lg border lg:hidden"
+            className="border-line text-ink grid size-11 shrink-0 place-items-center rounded-lg border lg:hidden"
           >
             <span aria-hidden className="text-lg leading-none">
               {mobileOpen ? "✕" : "☰"}
@@ -208,7 +211,7 @@ export function SiteHeader() {
                       <Link
                         href={n.href}
                         onClick={closeAll}
-                        className="text-ink-2 hover:text-ink block py-4 text-sm"
+                        className="text-ink-2 hover:text-ink block py-4 text-base sm:text-sm"
                       >
                         {n.label}
                       </Link>
@@ -224,7 +227,7 @@ export function SiteHeader() {
                       <Link
                         href={n.href}
                         onClick={closeAll}
-                        className="text-ink-2 hover:text-ink flex-1 py-4 text-sm"
+                        className="text-ink-2 hover:text-ink flex-1 py-4 text-base sm:text-sm"
                       >
                         {n.label}
                       </Link>
@@ -371,7 +374,7 @@ function MobileList({
           <Link
             href={i.href}
             onClick={onNavigate}
-            className="margo-nav-main block py-2 text-sm"
+            className="margo-nav-main block py-2.5 text-base sm:text-sm"
           >
             {i.label}
           </Link>
@@ -391,7 +394,7 @@ function MobileProducts({ onNavigate }: { onNavigate: () => void }) {
           <Link
             href={g.href}
             onClick={onNavigate}
-            className="margo-nav-main block py-2 text-sm font-semibold"
+            className="margo-nav-main block py-2.5 text-base font-semibold sm:text-sm"
           >
             {g.label}
           </Link>
@@ -401,7 +404,7 @@ function MobileProducts({ onNavigate }: { onNavigate: () => void }) {
                 <Link
                   href={i.href}
                   onClick={onNavigate}
-                  className="margo-nav-sub block py-2 pl-3 text-sm"
+                  className="margo-nav-sub block py-2.5 pl-3 text-base sm:text-sm"
                 >
                   {i.label}
                 </Link>

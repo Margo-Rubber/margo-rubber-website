@@ -890,17 +890,22 @@ body {
   .margo-slot {
     --cell: 1.12em;
     display: inline-block;
+    max-width: 100%;
     vertical-align: top;
     font-variant-numeric: tabular-nums;
   }
+  /* Wraps when the figure is longer than its column ("3–4 weeks from
+     approved sample" on a phone); a fixed one-line height pushed it off
+     screen and made the whole page scroll sideways. */
   .margo-slot-face {
     display: inline-flex;
+    flex-wrap: wrap;
     align-items: flex-start;
-    height: var(--cell);
+    min-height: var(--cell);
     line-height: var(--cell);
   }
   .margo-slot-char {
-    white-space: pre;
+    white-space: pre-wrap;
   }
   .margo-slot-char::before {
     content: attr(data-c);
@@ -2156,5 +2161,53 @@ main #iso-9001 {
   }
   .margo-ind-card:focus-within {
     border-color: rgb(43 188 196 / 0.45);
+  }
+}
+
+/* ============================================================
+   MOBILE (below md, 768px)
+   Unlayered on purpose: these must outrank Tailwind's layered utilities,
+   and they only ever apply below md, so desktop is untouched. Scoped to
+   the public site's <main> and mobile menu; the desk and the Studio are
+   not affected.
+   ============================================================ */
+@media (max-width: 767px) {
+  /* Body copy at 16px. The site sets most running text in `text-sm`, which
+     is 14px — too small to read comfortably on a phone. Re-pointing the
+     token inside <main> lifts every paragraph, list and spec value at once.
+     Controls, chips, labels, tables and mono labels keep the compact size:
+     they are UI, not copy, and several are sized to sit on one line. */
+  main {
+    --text-sm: 1rem;
+    --text-sm--line-height: 1.6;
+  }
+  main :is(button, label, nav, table, figcaption, [role="tablist"], .rounded-pill, .rounded-cta, .font-mono) {
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
+  }
+
+  /* Form fields at 16px: iOS Safari zooms the page into any field set
+     smaller than that, and does not zoom back out. 44px tall to match the
+     touch-target minimum. */
+  :is(main, #mobile-nav) :is(input:not([type="checkbox"], [type="radio"], [type="file"], [type="range"], [type="hidden"]), select, textarea) {
+    font-size: 1rem;
+  }
+  :is(main, #mobile-nav) :is(input:not([type="checkbox"], [type="radio"], [type="file"], [type="range"], [type="hidden"]), select) {
+    min-height: 2.75rem;
+  }
+
+  /* 44px touch targets for the controls that were drawn smaller: filter
+     chips, tabs and pill / CTA links. Buttons centre their own content;
+     links are made inline-flex so the label stays centred in the taller box. */
+  main :is(button.rounded-pill, [role="tab"]) {
+    min-height: 2.75rem;
+  }
+  main a:is(.rounded-pill, .rounded-cta) {
+    min-height: 2.75rem;
+    align-items: center;
+  }
+  main a:is(.rounded-pill, .rounded-cta):not(.flex, .inline-flex, .grid, .block) {
+    display: inline-flex;
+    justify-content: center;
   }
 }

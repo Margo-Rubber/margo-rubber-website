@@ -38,14 +38,14 @@ export function ConsentBanner() {
         <button
           type="button"
           onClick={() => choose("granted")}
-          className="bg-accent-400 text-canvas rounded-cta px-5 py-2.5 text-sm font-semibold transition-opacity hover:opacity-90"
+          className="bg-accent-400 text-canvas rounded-cta px-5 py-3 text-sm font-semibold md:py-2.5 transition-opacity hover:opacity-90"
         >
           Accept
         </button>
         <button
           type="button"
           onClick={() => choose("denied")}
-          className="border-line text-ink hover:border-line-2 rounded-cta border px-5 py-2.5 text-sm font-semibold transition-colors"
+          className="border-line text-ink hover:border-line-2 rounded-cta border px-5 py-3 text-sm font-semibold transition-colors md:py-2.5"
         >
           Reject
         </button>

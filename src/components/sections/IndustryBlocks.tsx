@@ -311,7 +311,7 @@ export function SectorCards({
               </p>
               <Link
                 href={s.href}
-                className="text-accent-400 mt-4 inline-flex items-center gap-1.5 text-sm"
+                className="text-accent-400 mt-4 inline-flex items-center gap-1.5 max-md:mt-1 max-md:-mb-3 max-md:py-3 text-sm"
               >
                 {s.linkLabel} <span aria-hidden>→</span>
               </Link>

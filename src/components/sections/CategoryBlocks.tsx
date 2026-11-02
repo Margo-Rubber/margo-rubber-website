@@ -119,7 +119,7 @@ export function ProfileGrid({
             {cardCta && p.code && (
               <Link
                 href={`/contact?profile=${encodeURIComponent(p.code)}`}
-                className="text-accent-400 mt-4 inline-flex items-center gap-1.5 text-xs font-medium hover:opacity-80"
+                className="text-accent-400 mt-4 inline-flex items-center gap-1.5 max-md:mt-1 max-md:-mb-3 max-md:py-3 text-xs font-medium hover:opacity-80"
               >
                 {cardCta} <span aria-hidden>→</span>
               </Link>
@@ -425,7 +425,7 @@ export function SectorCards({
           {cardCta && s.href && (
             <Link
               href={liveHref(s.href)}
-              className="text-accent-400 mt-4 inline-flex items-center gap-1.5 text-sm font-medium hover:opacity-80"
+              className="text-accent-400 mt-4 inline-flex items-center gap-1.5 max-md:mt-1 max-md:-mb-3 max-md:py-3 text-sm font-medium hover:opacity-80"
             >
               {cardCta.replace("{sector}", s.name)} <span aria-hidden>→</span>
             </Link>
@@ -492,7 +492,7 @@ export function PlainCards({
             <div className="flex flex-1 flex-col p-6">
             <T className="text-ink text-base font-semibold">
               {c.href ? (
-                <Link href={liveHref(c.href)} className="hover:text-accent-400 inline-flex items-center gap-1.5">
+                <Link href={liveHref(c.href)} className="hover:text-accent-400 inline-flex items-center gap-1.5 max-md:-my-3 max-md:py-3">
                   {c.name} <span aria-hidden className="text-accent-400">›</span>
                 </Link>
               ) : (

@@ -84,7 +84,7 @@ export function TimelineSlider({ items }: { items: readonly Item[] }) {
             type="button"
             onClick={() => go(i - 1)}
             aria-label="Previous milestone"
-            className="border-line-2 text-ink-4 hover:border-accent-400/60 hover:text-ink grid size-9 place-items-center rounded-full border transition-colors"
+            className="border-line-2 text-ink-4 hover:border-accent-400/60 hover:text-ink grid size-11 place-items-center rounded-full border transition-colors md:size-9"
           >
             <Chevron className="size-4 rotate-180" />
           </button>
@@ -95,7 +95,7 @@ export function TimelineSlider({ items }: { items: readonly Item[] }) {
             type="button"
             onClick={() => go(i + 1)}
             aria-label="Next milestone"
-            className="border-accent-400/50 text-accent-400 hover:bg-accent-400 hover:text-ink grid size-9 place-items-center rounded-full border transition-colors"
+            className="border-accent-400/50 text-accent-400 hover:bg-accent-400 hover:text-ink grid size-11 place-items-center rounded-full border transition-colors md:size-9"
           >
             <Chevron className="size-4" />
           </button>

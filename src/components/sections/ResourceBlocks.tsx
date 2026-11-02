@@ -152,7 +152,7 @@ function GuideCard({
       <p className="text-ink-4 mt-3 flex-1 text-sm leading-relaxed">{g.intro}</p>
       <Link
         href={`/resources/${g.slug}`}
-        className="text-accent-400 hover:opacity-80 mt-6 inline-flex items-center gap-2 text-sm font-medium transition-colors"
+        className="text-accent-400 hover:opacity-80 mt-6 inline-flex max-md:-mb-3 max-md:mt-3 max-md:py-3 items-center gap-2 text-sm font-medium transition-colors"
       >
         Read Guide
         <Arrow />
@@ -397,7 +397,7 @@ export function ResourceCta({
                 <Link
                   key={a.label}
                   href={a.href}
-                  className="text-ink-2 hover:text-ink inline-flex items-center gap-2 text-sm font-medium transition-colors"
+                  className="text-ink-2 hover:text-ink inline-flex items-center gap-2 text-sm font-medium transition-colors max-md:-my-3 max-md:py-3"
                 >
                   {a.label}
                   <span aria-hidden>&rarr;</span>

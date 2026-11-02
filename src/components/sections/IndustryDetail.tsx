@@ -437,7 +437,7 @@ export function QualityCards({
             <Link
               key={l.label}
               href={l.href}
-              className="text-accent-400 inline-flex items-center gap-1.5 text-sm"
+              className="text-accent-400 inline-flex items-center gap-1.5 text-sm max-md:-my-3 max-md:py-3"
             >
               {l.label} <span aria-hidden>›</span>
             </Link>

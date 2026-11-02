@@ -24,7 +24,10 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
   return (
     <ImageOverrideProvider value={images}>
       <SiteHeader />
-      <main className="flex-1">{children}</main>
+      {/* overflow-x-clip: a safety net so a decorative glow or an
+          over-wide element can never make a phone scroll sideways. `clip`,
+          not `hidden`, so sticky elements inside keep working. */}
+      <main className="flex-1 overflow-x-clip">{children}</main>
       <SiteFooter />
       <ConceptBand />
       <WhatsAppButton number={settings.entity.whatsapp} />

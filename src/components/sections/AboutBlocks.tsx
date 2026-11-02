@@ -406,7 +406,10 @@ export function AboutHero({
               <p className="text-ink-3 mt-7 leading-relaxed">{intro}</p>
             </div>
             <div className="relative hidden lg:block">
-              <Img k={image} fill priority sizes="(min-width: 1280px) 600px, 45vw" className="object-contain" />
+              {/* Below lg this cell is hidden, so `sizes` asks for a 1px image
+                  there: `priority` preloads it at every width, and on phones
+                  that was a full-size download nobody sees. */}
+              <Img k={image} fill priority sizes="(min-width: 1280px) 600px, (min-width: 1024px) 45vw, 1px" className="object-contain" />
             </div>
           </div>
           <div>
@@ -569,7 +572,7 @@ export function Story({
         <p className="mt-10 text-center">
           <Link
             href={cta.href}
-            className="text-accent-400 hover:opacity-80 inline-flex items-center gap-2 text-sm font-semibold transition-colors"
+            className="text-accent-400 hover:opacity-80 inline-flex max-md:-my-3 max-md:py-3 items-center gap-2 text-sm font-semibold transition-colors"
           >
             {cta.label}
             <Arrow />

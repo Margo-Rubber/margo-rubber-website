@@ -390,12 +390,12 @@ export function RfqForm({
   const fieldSets = [step1, step2];
 
   return (
-    <div id="quote-form" className="margo-form-card margo-anchor rounded-card relative isolate border border-[#1B2026] bg-[#15191D] p-6 md:p-8">
+    <div id="quote-form" className="margo-form-card margo-anchor rounded-card relative isolate border border-[#1B2026] bg-[#15191D] p-5 sm:p-6 md:p-8">
       {/* Stepper */}
-      <ol className="margo-stepper mb-8 flex items-center gap-4" data-step={step}>
+      <ol className="margo-stepper mb-8 flex items-center gap-2 sm:gap-4" data-step={step}>
         {steps.map((label, i) => (
-          <li key={label} aria-current={i === step ? "step" : undefined} className="flex flex-1 items-center gap-4 last:flex-none">
-            <span className="flex items-center gap-3">
+          <li key={label} aria-current={i === step ? "step" : undefined} className="flex flex-1 items-center gap-2 last:flex-none sm:gap-4">
+            <span className="flex items-center gap-2 sm:gap-3">
               <span
                 className={`margo-step-dot grid size-7 place-items-center rounded-full text-xs font-semibold ${
                   i === step
@@ -408,7 +408,7 @@ export function RfqForm({
                 {i + 1}
               </span>
               <span
-                className={`text-eyebrow font-mono uppercase ${i <= step ? "text-ink" : "text-ink-4"}`}
+                className={`text-eyebrow font-mono uppercase max-sm:tracking-[0.1em] ${i <= step ? "text-ink" : "text-ink-4"}`}
               >
                 {label}
               </span>
@@ -548,7 +548,7 @@ export function QuoteSection({
           </p>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-[minmax(0,340px)_1fr]">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,340px)_1fr]">
           <DirectContact
             facility={facility}
             directHeading={directHeading}

@@ -92,7 +92,7 @@ function MaterialCard({ m }: { m: Material }) {
           onClick={() => setOpen((o) => !o)}
           aria-expanded={open}
           aria-controls={panelId}
-          className="flex w-full items-center justify-between gap-3 text-left"
+          className="flex w-full items-center justify-between gap-3 text-left max-md:min-h-11"
         >
           <h3 className="text-ink text-base leading-snug font-semibold">{m.name}</h3>
           <span
@@ -126,7 +126,7 @@ function MaterialCard({ m }: { m: Material }) {
         <button
           type="button"
           onClick={() => setOpen((o) => !o)}
-          className="text-accent-400 mt-1 self-start text-sm"
+          className="text-accent-400 mt-1 self-start text-sm max-md:-mt-2 max-md:-mb-3 max-md:py-3"
         >
           {open ? "Show less" : "Read more"}
         </button>

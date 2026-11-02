@@ -36,7 +36,7 @@ export function Breadcrumb({
                 {c.name}
               </span>
             ) : (
-              <Link href={c.path} className="hover:text-ink transition-colors">
+              <Link href={c.path} className="hover:text-ink transition-colors max-md:-my-3 max-md:inline-block max-md:py-3">
                 {c.name}
               </Link>
             )}
