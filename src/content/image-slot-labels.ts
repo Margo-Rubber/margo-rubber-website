@@ -1009,42 +1009,42 @@ export const IMAGE_SLOT_LABELS = {
   },
   "products.rubber-mats.material.epdm": {
     title: "Rubber Mats — EPDM material card",
-    where: "Rubber Mats category page, ‘Material selection’ section — card 1 of 8. Stand-in: a rubber mat photograph from this page until this card's own is uploaded.",
+    where: "Rubber Mats category page, ‘Material selection’ section — card 1 of 8. Shows the Nov 2026 material photograph (Figma “Margo — Material card images”).",
     page: "/products/rubber-mats",
   },
   "products.rubber-mats.material.nbr": {
     title: "Rubber Mats — NBR (Nitrile) material card",
-    where: "Rubber Mats category page, ‘Material selection’ section — card 2 of 8. Stand-in: a rubber mat photograph from this page until this card's own is uploaded.",
+    where: "Rubber Mats category page, ‘Material selection’ section — card 2 of 8. Shows the Nov 2026 material photograph (Figma “Margo — Material card images”).",
     page: "/products/rubber-mats",
   },
   "products.rubber-mats.material.fkm": {
     title: "Rubber Mats — FKM (Viton®) material card",
-    where: "Rubber Mats category page, ‘Material selection’ section — card 3 of 8. Stand-in: a rubber mat photograph from this page until this card's own is uploaded.",
+    where: "Rubber Mats category page, ‘Material selection’ section — card 3 of 8. Shows the Nov 2026 material photograph (Figma “Margo — Material card images”).",
     page: "/products/rubber-mats",
   },
   "products.rubber-mats.material.silicone": {
     title: "Rubber Mats — Silicone (VMQ) material card",
-    where: "Rubber Mats category page, ‘Material selection’ section — card 4 of 8. Stand-in: a rubber mat photograph from this page until this card's own is uploaded.",
+    where: "Rubber Mats category page, ‘Material selection’ section — card 4 of 8. Shows the Nov 2026 material photograph (Figma “Margo — Material card images”).",
     page: "/products/rubber-mats",
   },
   "products.rubber-mats.material.aem": {
     title: "Rubber Mats — AEM (Vamac®) material card",
-    where: "Rubber Mats category page, ‘Material selection’ section — card 5 of 8. Stand-in: a rubber mat photograph from this page until this card's own is uploaded.",
+    where: "Rubber Mats category page, ‘Material selection’ section — card 5 of 8. Shows the Nov 2026 material photograph (Figma “Margo — Material card images”).",
     page: "/products/rubber-mats",
   },
   "products.rubber-mats.material.cr": {
     title: "Rubber Mats — Neoprene (CR) material card",
-    where: "Rubber Mats category page, ‘Material selection’ section — card 6 of 8. Stand-in: a rubber mat photograph from this page until this card's own is uploaded.",
+    where: "Rubber Mats category page, ‘Material selection’ section — card 6 of 8. Shows the Nov 2026 material photograph (Figma “Margo — Material card images”).",
     page: "/products/rubber-mats",
   },
   "products.rubber-mats.material.sbr": {
     title: "Rubber Mats — SBR material card",
-    where: "Rubber Mats category page, ‘Material selection’ section — card 7 of 8. Stand-in: a rubber mat photograph from this page until this card's own is uploaded.",
+    where: "Rubber Mats category page, ‘Material selection’ section — card 7 of 8. Shows the Nov 2026 material photograph (Figma “Margo — Material card images”).",
     page: "/products/rubber-mats",
   },
   "products.rubber-mats.material.nr": {
     title: "Rubber Mats — Natural rubber (NR) material card",
-    where: "Rubber Mats category page, ‘Material selection’ section — card 8 of 8. Stand-in: a rubber mat photograph from this page until this card's own is uploaded.",
+    where: "Rubber Mats category page, ‘Material selection’ section — card 8 of 8. Shows the Nov 2026 material photograph (Figma “Margo — Material card images”).",
     page: "/products/rubber-mats",
   },
   "products.bushes.hero-wide": {
