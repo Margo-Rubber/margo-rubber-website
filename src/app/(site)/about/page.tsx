@@ -1,5 +1,5 @@
 import { getSitePage } from "@/lib/page-source";
-import { getSiteSettings } from "@/lib/settings";
+import { getSiteSettings, telHref } from "@/lib/settings";
 import { trail } from "@/lib/breadcrumbs";
 import { buildMetadata } from "@/lib/seo";
 import { pageGraph, personNodes } from "@/lib/schema";
@@ -9,7 +9,6 @@ import {
   AboutHero,
   Awards,
   Clients,
-  Closing,
   Green,
   HeroStats,
   Leadership,
@@ -23,6 +22,7 @@ import {
   Vision,
 } from "@/components/sections/AboutBlocks";
 import { FurtherReading } from "@/components/sections/FurtherReading";
+import { CTABand } from "@/components/sections/Blocks";
 
 export async function generateMetadata() {
   const fm = await getSitePage("about", aboutPageSchema);
@@ -160,15 +160,17 @@ export default async function AboutPage() {
 
       <FurtherReading slugs={fm.furtherReading} />
 
-      <Closing
+      {/* The same closing band as the product category pages (client,
+          2 Nov 2026), in place of the photo-backed email box. Wording from
+          Studio → About page → closing; the email field became the button. */}
+      <CTABand
         eyebrow={fm.closing.eyebrow}
-        lines={fm.closing.lines}
-        accentLines={fm.closing.accentLines}
+        heading={fm.closing.lines
+          .map((l, i) => (fm.closing.accentLines.includes(i) ? `*${l}*` : l))
+          .join(" ")}
         body={fm.closing.body}
-        image={fm.closing.image}
-        placeholder={fm.closing.placeholder}
-        submitLabel={fm.closing.submitLabel}
-        assurances={fm.closing.assurances}
+        primary={{ label: fm.closing.submitLabel, href: "/contact" }}
+        secondary={{ label: "Call Technical Sales", href: telHref(settings.entity.phone) }}
       />
     </>
   );
