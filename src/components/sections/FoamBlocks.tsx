@@ -356,6 +356,11 @@ export function SubCategoryBlock({
     ),
   );
 
+  // A photo with nothing else beside it (no build-up, no second photo) takes
+  // the heading and paragraph into the panel on its right instead of above
+  // the pair (client, 2 Nov 2026: the self-adhesive foam tape section).
+  const textBeside = Boolean(photo?.asset) && !detailPhoto?.asset && !buildUp;
+
   return (
     <section
       id={id}
@@ -371,22 +376,25 @@ export function SubCategoryBlock({
           </p>
         )}
 
-        <header className="mx-auto mt-12 max-w-[52rem] text-center">
-          <Eyebrow variant="rule" center>
-            {eyebrow}
-          </Eyebrow>
-          <h2 className="text-h2 mt-3">{marked}</h2>
-          {body && (
-            <p className="text-ink-3 mx-auto mt-4 max-w-[62ch] leading-relaxed">
-              {body}
-            </p>
-          )}
-        </header>
+        {!textBeside && (
+          <header className="mx-auto mt-12 max-w-[52rem] text-center">
+            <Eyebrow variant="rule" center>
+              {eyebrow}
+            </Eyebrow>
+            <h2 className="text-h2 mt-3">{marked}</h2>
+            {body && (
+              <p className="text-ink-3 mx-auto mt-4 max-w-[62ch] leading-relaxed">
+                {body}
+              </p>
+            )}
+          </header>
+        )}
 
-        <div className="mt-10">
+        <div className={textBeside ? "mt-12" : "mt-10"}>
           {/* Photo beside the build-up when there is one; photo first on a
               phone. Without a photo the build-up runs full width as before.
-              A second photo takes the build-up's place, in equal halves. */}
+              A second photo takes the build-up's place, in equal halves.
+              With neither, the heading and paragraph take that place. */}
           {photo?.asset ? (
             <div
               className={
@@ -394,14 +402,20 @@ export function SubCategoryBlock({
                   ? "grid gap-5 lg:grid-cols-2"
                   : buildUp
                     ? "grid gap-5 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]"
-                    : "mx-auto max-w-xl"
+                    : "grid items-stretch gap-5 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]"
               }
             >
               <ProductPhoto image={photo} fallbackAlt={heading.split("*").join("")} />
               {detailPhoto?.asset ? (
                 <ProductPhoto image={detailPhoto} fallbackAlt={heading.split("*").join("")} />
+              ) : buildUp ? (
+                <BuildUp label={buildUp.label} layers={buildUp.layers} />
               ) : (
-                buildUp && <BuildUp label={buildUp.label} layers={buildUp.layers} />
+                <div className="border-line bg-surface-3 rounded-card flex flex-col justify-center border p-8 md:p-10">
+                  <Eyebrow variant="rule">{eyebrow}</Eyebrow>
+                  <h2 className="text-h2 mt-3">{marked}</h2>
+                  {body && <p className="text-ink-3 mt-4 max-w-[62ch] leading-relaxed">{body}</p>}
+                </div>
               )}
             </div>
           ) : (
