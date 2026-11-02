@@ -543,11 +543,12 @@ export const IMAGES = {
      replaced before launch: attaching a stock face to a named executive
      is a misrepresentation, so the page ships with role-only captions
      until Margo supplies real photography. See checklist item about-photos. */
+  /* The company logo, the right half of the About hero (2 Nov 2026), on a
+     transparent background so it sits on the hero surface. */
   "about.hero": {
-    src: "/images/about/3798ac3da876f78b65b2d44688050da2955e8d39.jpg",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMG/8QAGhAAAgMBAQAAAAAAAAAAAAAAAAECAxEiUf/EABUBAQEAAAAAAAAAAAAAAAAAAAEC/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AzVKrfUo6vNJWY5toAFP/2Q==",
-    w: 2000, h: 1200,
-    alt: "Wide view of the Margo Rubber Products production floor",
+    src: "/images/about/margo-logo-transparent.png",
+    w: 566, h: 473,
+    alt: "Margo Rubber Products logo",
     status: "placeholder",
   },
   "about.story.plant": {
