@@ -26,13 +26,16 @@ import { SlotValue } from "@/components/ui/SlotValue";
 export function Rule({
   children,
   center = false,
+  className = "text-accent-400",
 }: {
   children: React.ReactNode;
   center?: boolean;
+  /** Colour and any extra styling; the accent by default. */
+  className?: string;
 }) {
   return (
     <p
-      className={`text-eyebrow text-accent-400 flex items-center gap-4 font-mono uppercase ${
+      className={`text-eyebrow flex items-center gap-4 font-mono uppercase ${className} ${
         center ? "justify-center" : ""
       }`}
     >
@@ -431,17 +434,23 @@ export function HomeHero({
       <Container className="lg:max-w-none! lg:px-[min(max(50px,calc((100%-1184px)/2)),max(50px,10.4%))]">
         <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1fr)_20rem]">
           <div>
-            <Rule>{eyebrow}</Rule>
+            {/* Eyebrow, intro and stat labels lifted (client, 2 Nov 2026):
+                the accent and the body grey both sank into the photograph.
+                A brighter teal with a soft dark halo for the eyebrow; near-
+                white for the intro and the stat labels. */}
+            <Rule className="font-semibold text-[#6FE3E9] [text-shadow:0_1px_10px_rgb(0_0_0/0.9)]">
+              {eyebrow}
+            </Rule>
             <Marked as="h1" size="hero" lines={h1Lines} className="mt-6" />
             {mobileIntro ? (
               <>
-                <p className="text-ink-3 mt-7 max-w-[46ch] leading-relaxed md:hidden">{mobileIntro}</p>
-                <p className="text-ink-3 mt-7 hidden max-w-[46ch] leading-relaxed md:block">
+                <p className="mt-7 max-w-[46ch] leading-relaxed text-white/85 md:hidden">{mobileIntro}</p>
+                <p className="mt-7 hidden max-w-[46ch] leading-relaxed text-white/85 md:block">
                   <LinkedText text={intro} links={introLinks} />
                 </p>
               </>
             ) : (
-              <p className="text-ink-3 mt-7 max-w-[46ch] leading-relaxed">
+              <p className="mt-7 max-w-[46ch] leading-relaxed text-white/85">
                 <LinkedText text={intro} links={introLinks} />
               </p>
             )}
@@ -495,7 +504,7 @@ export function HomeHero({
               >
                 {c.icon && <IconTile name={c.icon} />}
                 <div className="flex flex-col-reverse">
-                  <dt className="text-ink-4 mt-1.5 text-sm">{c.label}</dt>
+                  <dt className="mt-1.5 text-sm text-white/75">{c.label}</dt>
                   <dd
                     className={
                       c.icon
