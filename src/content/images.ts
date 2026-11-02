@@ -794,11 +794,13 @@ export const IMAGES = {
      One slot per placement, so a photograph can be changed in one place
      without moving anywhere else. Each starts as a copy of the slot it was
      split from; see scripts/migrations/split-shared-image-slots.mts. */
+  /* Home hero background (client, 2 Nov 2026), replacing the video:
+     moulded parts in a hex grid over the sea beside a container ship. */
   "home.hero": {
-    src: "/images/about/3798ac3da876f78b65b2d44688050da2955e8d39.jpg",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMG/8QAGhAAAgMBAQAAAAAAAAAAAAAAAAECAxEiUf/EABUBAQEAAAAAAAAAAAAAAAAAAAEC/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AzVKrfUo6vNJWY5toAFP/2Q==",
-    w: 2000, h: 1200,
-    alt: "Wide view of the Margo Rubber Products production floor",
+    src: "/images/home/hero-components-ship.webp",
+    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQF/8QAHRAAAgIBBQAAAAAAAAAAAAAAAQIAAxEFITFBUf/EABQBAQAAAAAAAAAAAAAAAAAAAAT/xAAVEQEBAAAAAAAAAAAAAAAAAAABAP/aAAwDAQACEQMRAD8AwarFG5bAPJHkvTVa6kCVLlR24GSYiIGEhf/Z",
+    w: 1536, h: 1024,
+    alt: "Moulded rubber components laid out in a hexagonal grid over the sea beside a container ship under way",
     status: "placeholder",
   },
   "home.portfolio.o-rings": {

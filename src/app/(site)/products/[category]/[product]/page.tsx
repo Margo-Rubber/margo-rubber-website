@@ -122,9 +122,10 @@ export default async function SkuPage(
             ? { slug: r.slug, label: other.frontmatter.h1, difference: r.difference, href: `/products/${cat}/${slug}`, image: other.frontmatter.gallery.main }
             : null;
         }
-        // A bare category ("o-rings"): its page.
+        // A bare category ("o-rings"): its page, with the photo its card
+        // carries on /products (the card was an empty placeholder before).
         const cat = productBySlug(r.slug);
-        if (cat && !siblings.some((x) => x.slug === r.slug)) return { slug: r.slug, label: cat.label, difference: r.difference, href: hrefFor(cat) };
+        if (cat && !siblings.some((x) => x.slug === r.slug)) return { slug: r.slug, label: cat.label, difference: r.difference, href: hrefFor(cat), image: `products.card.${r.slug}` };
         // A sibling: its own document's heading, not the category file's list.
         const sib = await getSkuPage(fileFor(category, r.slug));
         return sib ? { slug: r.slug, label: sib.frontmatter.h1, difference: r.difference, image: sib.frontmatter.gallery.main } : null;

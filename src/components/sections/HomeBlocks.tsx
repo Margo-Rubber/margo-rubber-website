@@ -1,7 +1,6 @@
 import { autocompleteFor } from "@/lib/autocomplete";
 import Link from "next/link";
 import { Img } from "@/components/ui/Img";
-import { HeroVideo } from "@/components/ui/HeroVideo";
 import { ExportMap } from "@/components/sections/ExportMap";
 import { buildExportMap, laneCards } from "@/lib/export-map";
 import { Container } from "@/components/ui/Section";
@@ -369,6 +368,7 @@ export function HomeHero({
   intro,
   mobileIntro,
   introLinks = [],
+  image,
   actions,
   chips,
   cards,
@@ -386,12 +386,15 @@ export function HomeHero({
 }) {
   return (
     <header className="margo-hero bg-canvas relative isolate overflow-hidden hero-offset pb-24 md:pb-32">
-      <HeroVideo
-        // Bump ?v= whenever the video or poster file is replaced, so cached
-        // copies of the old files are not shown.
-        src="/videos/hero-bg-boomerang.mp4?v=2"
-        poster="/videos/hero-bg-poster.jpg?v=2"
-        className="margo-hero-image -z-20"
+      {/* A still photograph in place of the video (client, 2 Nov 2026),
+          replaceable in Studio → Photographs → Home page → hero background.
+          The slow drift the video had is kept as a gentle zoom. */}
+      <Img
+        k={image}
+        fill
+        priority
+        sizes="100vw"
+        className="margo-hero-image -z-20 object-cover"
       />
       <div
         className="absolute inset-0 -z-10"
