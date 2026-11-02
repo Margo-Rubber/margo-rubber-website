@@ -102,6 +102,7 @@ export default async function AboutPage() {
       <Manufacturing
         head={fm.manufacturing}
         image={fm.manufacturing.main.image}
+        more={["about.manufacturing.packaging", "about.manufacturing.line"]}
         stats={fm.manufacturing.stats}
         portfolioLabel={fm.manufacturing.portfolioLabel}
         portfolio={fm.manufacturing.portfolio}

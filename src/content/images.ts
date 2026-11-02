@@ -588,6 +588,21 @@ export const IMAGES = {
     alt: "Compression presses lined up across the moulding bay",
     status: "placeholder",
   },
+  /* Manufacturing carousel, slides 2 and 3 (client, 2 Nov 2026). */
+  "about.manufacturing.packaging": {
+    src: "/images/about/manufacturing-packaging.webp",
+    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAT/xAAfEAACAgIBBQAAAAAAAAAAAAABAwIRAAUhEjFxcqH/xAAVAQEBAAAAAAAAAAAAAAAAAAABAv/EABgRAAMBAQAAAAAAAAAAAAAAAAABAhEh/9oADAMBAAIRAxEAPwCVe2eh5bNdoPayLHmvXKBtESiJEQPVyDyb+DGMalZpS6z/2Q==",
+    w: 1600, h: 900,
+    alt: "Two operators sorting moulded rubber parts into bags in the packaging area",
+    status: "placeholder",
+  },
+  "about.manufacturing.line": {
+    src: "/images/about/manufacturing-production-floor.webp",
+    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIE/8QAHhAAAQUAAgMAAAAAAAAAAAAAAgABAwQREhMhYcH/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAERIf/aAAwDAQACEQMRAD8Ak7FnqErUVdo+XHSHfOenW6CsVgSd44wcSccfX+uiJFAsP//Z",
+    w: 1600, h: 900,
+    alt: "Operators at the HMM moulding presses on the production floor, with parts laid out on steel benches",
+    status: "placeholder",
+  },
   "about.manufacturing.press": {
     src: "/images/about/3a774ed6e2b6a01e0341ff19e7a48b3573322721.png",
     blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAGAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAeEAABBAIDAQAAAAAAAAAAAAACAAEDEQQSBSExsf/EABQBAQAAAAAAAAAAAAAAAAAAAAH/xAAXEQEAAwAAAAAAAAAAAAAAAAAAAREh/9oADAMBAAIRAxEAPwCYDNcJGdoxu78v6mRyMkkxGZFs/uvVoiIwU//Z",

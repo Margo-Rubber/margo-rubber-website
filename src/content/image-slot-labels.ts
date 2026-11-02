@@ -419,8 +419,18 @@ export const IMAGE_SLOT_LABELS = {
     page: "/about",
   },
   "about.manufacturing.floor": {
-    title: "Manufacturing — main floor photo",
-    where: "About page, ‘Manufacturing’ section, the large photograph.",
+    title: "Manufacturing — carousel photo 1 (main floor)",
+    where: "About page, ‘Manufacturing’ section, the sliding photographs beside the figures — slide 1 of 3.",
+    page: "/about",
+  },
+  "about.manufacturing.packaging": {
+    title: "Manufacturing — carousel photo 2 (packaging area)",
+    where: "About page, ‘Manufacturing’ section, the sliding photographs beside the figures — slide 2 of 3.",
+    page: "/about",
+  },
+  "about.manufacturing.line": {
+    title: "Manufacturing — carousel photo 3 (production floor)",
+    where: "About page, ‘Manufacturing’ section, the sliding photographs beside the figures — slide 3 of 3.",
     page: "/about",
   },
   "about.manufacturing.press": {

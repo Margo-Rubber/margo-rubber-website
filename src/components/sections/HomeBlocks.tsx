@@ -552,7 +552,8 @@ export function TrustBar({
               {items.map((n) => (
                 <li
                   key={n}
-                  className="text-ink-3 flex shrink-0 items-center gap-3 pr-10 text-sm whitespace-nowrap"
+                  // White names (client, 2 Nov 2026), not the body grey.
+                  className="text-ink flex shrink-0 items-center gap-3 pr-10 text-sm whitespace-nowrap"
                 >
                   <span aria-hidden className="bg-accent-400 size-1.5 rounded-full" />
                   {n}
