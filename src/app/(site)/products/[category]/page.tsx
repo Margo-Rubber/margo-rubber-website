@@ -123,7 +123,10 @@ export default async function ProductCategoryPage(
   const catalogue = await getProductCatalogue(category);
 
   return (
-    <>
+    // One <article> around the page, so the answer paragraph under the first
+    // question is in the article's flow: text extraction dropped it when it
+    // sat in a section outside any article (3rd Shade fix 10).
+    <article>
       {shouldEmitSchema(fm.status) && (
         <script
           type="application/ld+json"
@@ -235,7 +238,7 @@ export default async function ProductCategoryPage(
           />
         </Section>
       )}
-    </>
+    </article>
   );
 }
 

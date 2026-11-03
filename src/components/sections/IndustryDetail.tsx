@@ -1,4 +1,6 @@
-"use client";
+// Server component: nothing in this file needs the browser (no state,
+// effects or handlers), so it ships no JavaScript of its own. It was a
+// client module — 3rd Shade fix 8, 3 Nov 2026.
 
 import { withoutDeadDownloads } from "@/lib/downloads";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
