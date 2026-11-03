@@ -76,6 +76,24 @@ async function listedPages(): Promise<Row[]> {
   return rows;
 }
 
+/** The company pages, listed under Company. Append a row to add one. */
+const COMPANY_PAGES: [name: string, path: string][] = [
+  ["Home", "/"],
+  ["About", "/about"],
+  ["Case studies", "/case-studies"],
+  ["Certifications", "/certifications"],
+  ["Contact", "/contact"],
+  ["Export", "/export"],
+  ["Industries", "/industries"],
+  ["Disclaimer", "/legal/disclaimer"],
+  ["Export compliance", "/legal/export-compliance"],
+  ["Privacy policy", "/legal/privacy-policy"],
+  ["Terms", "/legal/terms"],
+  ["Manufacturing", "/manufacturing"],
+  ["Products", "/products"],
+  ["Resources", "/resources"],
+];
+
 const clean = (s?: string) => (s ?? "").replace(/\s*\|\s*Margo.*$/i, "").trim();
 
 function section(heading: string, rows: Row[]): string | null {
@@ -115,6 +133,8 @@ export async function GET() {
       `- Terms: ${commercial.terms}`,
       `- Contact: ${entity.email} · ${entity.phone} · ${entity.hours}`,
     ].join("\n"),
+    "",
+    COMPANY_PAGES.map(([name, path]) => `- [${name}](${SITE_URL}${path})`).join("\n"),
     "",
     section("Product lines", of("productCategory")),
     "",

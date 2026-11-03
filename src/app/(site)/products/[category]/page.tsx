@@ -11,6 +11,7 @@ import { CategoryHero } from "@/components/sections/Blocks";
 import { FurtherReading } from "@/components/sections/FurtherReading";
 import { CatalogueBlock } from "@/components/sections/HubBlocks";
 import { getProductCatalogue } from "@/lib/catalogue-file";
+import type { Block } from "@/content/blocks";
 
 /** Category pages whose desktop hero uses the full-bleed photo layout (see
  *  CategoryHero `fullBleed`), with the wide image-registry key it shows.
@@ -56,6 +57,14 @@ const ACCENT_BREAK: Record<string, string> = {
   "rubber-mats": "Floors",
 };
 
+/** Category pages whose own questions are in the FAQPage but whose section
+ *  list has no FAQ block: the block is added before the closing CTA, so every
+ *  question in the schema is also on the page. The rubber mats document in
+ *  Studio lost its FAQ block while keeping its six questions (3 Nov 2026). */
+const FAQ_SECTION: Record<string, { eyebrow: string; heading: string }> = {
+  "rubber-mats": { eyebrow: "FAQ", heading: "Technical & Commercial Questions" },
+};
+
 /**
  * ONE file → nine product category pages.
  *
@@ -83,7 +92,12 @@ export default async function ProductCategoryPage(
   const page = await getCategoryPage(category);
   if (!page) notFound();
 
-  const { frontmatter: fm, blocks, Content, hasBody } = page;
+  const { frontmatter: fm, Content, hasBody } = page;
+  const faqSection = FAQ_SECTION[category];
+  const blocks =
+    faqSection && fm.faqs.length && !page.blocks.some((b) => b._type === "block.industryFaq")
+      ? withFaqBlock(page.blocks, { _type: "block.industryFaq", _key: "faq", ...faqSection, items: fm.faqs })
+      : page.blocks;
   const path = `/products/${category}`;
 
   // Heading splits across two lines, second line in accent — "Precision" /
@@ -223,4 +237,10 @@ export default async function ProductCategoryPage(
       )}
     </>
   );
+}
+
+/** Inserts the FAQ block before a closing CTA band, or at the end. */
+function withFaqBlock(blocks: Block[], faq: Block): Block[] {
+  const last = blocks.at(-1);
+  return last?._type === "block.ctaBand" ? [...blocks.slice(0, -1), faq, last] : [...blocks, faq];
 }

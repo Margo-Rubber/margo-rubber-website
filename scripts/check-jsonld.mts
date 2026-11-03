@@ -129,6 +129,8 @@ async function graphsOf(
   return { graphs, html, status: res.status };
 }
 
+const ORG_ID = "https://www.margorubber.com/#organization";
+
 const home = await graphsOf("/");
 const about = await graphsOf("/about");
 // The homepage defines the entity; /about defines the people the entity's
@@ -163,14 +165,18 @@ for (const route of [...routes].sort()) {
   for (const g of graphs)
     for (const n of g) if (n["@id"]) localIds.add(n["@id"]);
 
+  // The site layout emits the Organization on every page — exactly once.
+  const orgs = graphs.flat().filter((n) => n["@id"] === ORG_ID).length;
+  if (orgs !== 1) say(route, `Organization emitted ${orgs} times; must be exactly once`);
+
   for (const g of graphs) {
     for (const top of g) {
       nodes++;
       const t = types(top);
       if (!t.length)
         say(route, `node without @type: ${JSON.stringify(top).slice(0, 80)}`);
-      if (t.includes("Organization") && route !== "/")
-        say(route, "restates the Organization; must reference /#organization");
+      if (t.includes("Organization") && top["@id"] !== ORG_ID)
+        say(route, "an Organization node other than /#organization");
       if (t.includes("WebSite") && route !== "/")
         say(route, "restates the WebSite node");
       if (/Page$/.test(t[0] ?? "") && typeof top.url === "string") {

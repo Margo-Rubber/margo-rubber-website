@@ -20,10 +20,10 @@ import type { Industry, ProductCategory } from "@/content/schemas";
 /**
  * JSON-LD @graph builders — content sheets 01–35, "Schema" sections.
  *
- * ONE ENTITY. The Organization node is emitted in full on the homepage and
- * nowhere else; every other page refers to it by @id. Repeating the block
- * per page creates forty competing entity definitions, which is what the
- * old site's structured data would have done had it emitted any.
+ * ONE ENTITY. The Organization node is emitted in full once per page, by the
+ * site layout (app/(site)/layout.tsx), always under the same @id; page graphs
+ * refer to it by that @id and never restate it. Every page carrying it means
+ * references such as Person.worksFor on /about resolve on the page itself.
  *
  * Only what is held goes in. No Offer, price, availability, AggregateRating
  * or Review anywhere — Margo quotes per part and has no reviews to
@@ -42,12 +42,18 @@ const PLANT_ID = `${SITE_URL}/#plant`;
 export const CATALOG_ID = `${SITE_URL}/#product-catalog`;
 export const COMPOUNDS_ID = `${SITE_URL}/#compounds`;
 
-/** Margo's confirmed public profiles (T09, 16 Oct 2026), used until Site settings list them. */
+/** Margo's confirmed public profiles (T09, 16 Oct 2026). Append a URL here
+ *  (or list it in Site settings) to add it to Organization.sameAs. */
 const DEFAULT_SAME_AS = [
   "https://www.linkedin.com/company/margo-rubber-products/",
   "https://www.instagram.com/margorubberproducts/",
   "https://www.google.com/maps/place/?q=place_id:ChIJjyRECkTr3TsRAPBPxlXi_jM",
 ];
+
+/** Organization.openingHoursSpecification, once confirmed. Empty emits
+ *  nothing; add entries of the form
+ *  { "@type": "OpeningHoursSpecification", dayOfWeek: [...], opens: "HH:MM", closes: "HH:MM" }. */
+const OPENING_HOURS: Node[] = [];
 
 /** The reference every page uses instead of restating the entity. */
 export const organizationRef = (): Node => ({ "@id": ORG_ID });
@@ -65,7 +71,7 @@ export async function imageUrl(slot: string): Promise<string | null> {
   return stock ? `${SITE_URL}${stock.src}` : null;
 }
 
-/* ── The entity — homepage only ─────────────────────────────────────────── */
+/* ── The entity — once per page, from the site layout ──────────────────── */
 
 /**
  * Organization + Manufacturer. Address, contact, hours and area served from
@@ -98,7 +104,9 @@ export async function organizationNode(): Promise<Node> {
     additionalType: "https://en.wikipedia.org/wiki/Manufacturing",
     "@id": ORG_ID,
     name: entity.legalName,
+    alternateName: "Margo Rubber",
     legalName: entity.legalName,
+    taxID: "27AAKFM8595Q1Z1",
     url: `${SITE_URL}/`,
     logo: `${SITE_URL}${IMAGES["brand.logo"].src}`,
     foundingDate: String(entity.foundingYear),
@@ -129,9 +137,10 @@ export async function organizationNode(): Promise<Node> {
   };
   if (entity.description) node.description = entity.description;
   if (entity.knowsAbout.length) node.knowsAbout = entity.knowsAbout;
-  // Settings win; until they list profiles, the ones 3rd Shade confirmed
-  // (T09). IndiaMART, Justdial and TradeIndia join only once corrected.
-  node.sameAs = entity.sameAs.length ? entity.sameAs : DEFAULT_SAME_AS;
+  // The profiles 3rd Shade confirmed (T09) plus any Site settings list.
+  // IndiaMART, Justdial and TradeIndia join only once corrected.
+  node.sameAs = [...new Set([...DEFAULT_SAME_AS, ...entity.sameAs])];
+  if (OPENING_HOURS.length) node.openingHoursSpecification = OPENING_HOURS;
   node.brand = { "@type": "Brand", name: "Margo" };
   if (entity.founders.length)
     node.founder = entity.founders.map((f) => ({ "@id": personId(f.name) }));
@@ -558,9 +567,10 @@ export function industriesListNode(): Node | null {
  * The general page graph.
  *
  * Every route composes from this rather than hand-assembling nodes, so the
- * @id references between nodes actually resolve. The homepage — and only
- * the homepage — carries the Organization, WebSite, Place, product ItemList and
- * compound vocabulary; every other page's node points at them.
+ * @id references between nodes actually resolve. The Organization comes
+ * from the site layout on every page; the homepage — and only the homepage —
+ * carries the WebSite, Place, product ItemList and compound vocabulary, and
+ * every other page's node points at them.
  */
 export async function pageGraph(opts: {
   type?: "WebPage" | "AboutPage" | "ContactPage" | "CollectionPage";
@@ -576,16 +586,12 @@ export async function pageGraph(opts: {
   /** ISO date the page was last revised (legal pages). */
   dateModified?: string;
   extra?: (Node | null)[];
-  /** The homepage, and only the homepage, declares the entity nodes. */
+  /** The homepage, and only the homepage, declares the WebSite and Place. */
   isHome?: boolean;
 }): Promise<Record<string, unknown>> {
   const nodes: Node[] = [];
   if (opts.isHome) {
-    nodes.push(
-      await organizationNode(),
-      await webSiteNode(),
-      await placeNode(),
-    );
+    nodes.push(await webSiteNode(), await placeNode());
   }
 
   const hero = opts.heroSlot
