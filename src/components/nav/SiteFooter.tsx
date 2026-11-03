@@ -142,7 +142,7 @@ export async function SiteFooter() {
           {/* Identity */}
           <div>
             <div className="inline-flex flex-col items-start">
-              <Img k="brand.mark" className="size-14 shrink-0" />
+              <Img k="brand.mark" sizes="56px" className="size-14 shrink-0" />
               <span className="mt-2 flex flex-col leading-none">
                 <span className="text-ink text-lg font-bold tracking-[0.14em]">
                   MARGO

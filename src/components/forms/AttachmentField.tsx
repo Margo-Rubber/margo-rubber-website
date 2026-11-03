@@ -2,7 +2,9 @@
 
 import { useEffect, useId, useRef, useState } from "react";
 import { Icon } from "@/components/ui/Icon";
-import { ACCEPT, MAX_BYTES, type AttachmentRef } from "@/lib/enquiry/attachment-ref";
+// The zod-free constants; the type import is erased from the bundle.
+import { ACCEPT, MAX_BYTES } from "@/lib/enquiry/attachment-limits";
+import type { AttachmentRef } from "@/lib/enquiry/attachment-ref";
 
 /**
  * "Attach drawing / spec (optional) — PDF, DWG or image, max 10MB" (sheet

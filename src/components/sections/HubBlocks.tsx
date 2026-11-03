@@ -315,7 +315,10 @@ export function ProductRange({
                   <Img
                     k={c.image}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    // The rendered tile: one across under 640px (the column less
+                    // its 24px gutters), two to 1024px, then three in the
+                    // 1184px column (3rd Shade fix 11).
+                    sizes="(max-width: 640px) calc(100vw - 48px), (max-width: 1024px) calc(50vw - 40px), 380px"
                     className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                   />
                 </div>
@@ -639,7 +642,7 @@ export function SectorSelector({ items }: { items: Sector[] }) {
                   <Img
                     k={s.image}
                     fill
-                    sizes="(max-width: 1024px) 100vw, 60vw"
+                    sizes="(max-width: 1024px) calc(100vw - 48px), 880px"
                     className="object-cover brightness-[0.8]"
                   />
                   <div className="from-surface-3 via-surface-3/35 absolute inset-0 bg-gradient-to-t from-0% via-40% to-transparent to-78%" />

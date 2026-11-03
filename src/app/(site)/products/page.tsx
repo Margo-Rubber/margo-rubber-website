@@ -128,7 +128,7 @@ export default async function ProductsHubPage() {
                   <Img
                     k={fm.excellence.image}
                     fill
-                    sizes="(max-width:1024px) 100vw, 50vw"
+                    sizes="(max-width:1024px) calc(100vw - 48px), 600px"
                     className="object-cover brightness-[0.9]"
                   />
                   {/* No dark fade over the foot of the photo (client,

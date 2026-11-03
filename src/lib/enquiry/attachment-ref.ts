@@ -8,10 +8,10 @@ import { z } from "zod";
  * browser bundle.
  */
 
-export const MAX_BYTES = 10 * 1024 * 1024;
-
-/** What the form accepts (sheet 01 §11: ".pdf,.dwg,.dxf,image/*", max 10MB). */
-export const ACCEPT = ".pdf,.dwg,.dxf,image/*";
+// The limits live in attachment-limits.ts, which has no zod, so the
+// browser can import them on their own.
+import { MAX_BYTES } from "./attachment-limits";
+export { ACCEPT, MAX_BYTES } from "./attachment-limits";
 
 export const attachmentRefSchema = z.object({
   publicId: z.string().regex(/^enquiries\/[a-f0-9-]{36}(\.[a-z0-9]{1,5})?$/),

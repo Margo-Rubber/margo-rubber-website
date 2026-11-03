@@ -121,12 +121,20 @@ const components: PortableTextComponents = {
         </div>
       );
     },
-    // The answer up front.
+    // The answer up front, as a plain paragraph in the article's flow: an
+    // <aside> is read as a sidebar and dropped by text extraction, so the
+    // answer under the first question went missing (3rd Shade fix 10).
+    // The panel look is on the paragraph itself.
     callout: ({ value }) => (
-      <aside className="rounded-card border-line border-l-accent-400 my-8 border border-l-2 bg-[#0B0D10] p-6">
-        {value?.title ? <p className="text-ink font-semibold">{String(value.title)}</p> : null}
-        <p className="text-ink-3 mt-2 text-sm leading-relaxed">{String(value?.body ?? "")}</p>
-      </aside>
+      <p className="rounded-card border-line border-l-accent-400 text-ink-3 my-8 border border-l-2 bg-[#0B0D10] p-6 text-sm leading-relaxed">
+        {value?.title ? (
+          <>
+            <strong className="text-ink font-semibold">{String(value.title)}</strong>
+            <br />
+          </>
+        ) : null}
+        {String(value?.body ?? "")}
+      </p>
     ),
     // An image inside the prose. Still a registry key, never an upload — the
     // same contract as the rest of the site.
