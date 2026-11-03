@@ -10,6 +10,8 @@ import { pageTag } from "@/lib/page-source";
 import { productTag } from "@/lib/product-source";
 import { industryTag } from "@/lib/industry-source";
 import { resourceTag } from "@/lib/resource-source";
+import { legalTag } from "@/lib/legal-source";
+import { COLLECTIONS_FOR_PAGES } from "@/lib/page-types";
 
 /**
  * /llms.txt
@@ -37,8 +39,11 @@ type Row = {
   description?: string;
 };
 
+/** The marketing pages (home, About, Contact…) by their Sanity type. */
+const PAGE_TYPES = [...new Set(Object.values(COLLECTIONS_FOR_PAGES).map((p) => p.type))];
+
 const query = groq`
-  *[_type in ["productCategory", "sku", "industry", "resource"] && defined(slug.current) && !(_id in path("drafts.**"))]{
+  *[_type in $types && defined(slug.current) && !(_id in path("drafts.**"))]{
     _type, "slug": slug.current, status, category, navLabel, h1,
     "title": seo.title, "description": seo.description
   }
@@ -46,18 +51,20 @@ const query = groq`
 
 async function listedPages(): Promise<Row[]> {
   "use cache";
-  cacheTag(pageTag(), productTag(), industryTag(), resourceTag());
-  const rows: Row[] = await client.fetch<Row[]>(query).catch(() => [] as Row[]);
+  cacheTag(pageTag(), productTag(), industryTag(), resourceTag(), legalTag());
+  const types = ["productCategory", "sku", "industry", "resource", "legal", ...PAGE_TYPES];
+  const rows: Row[] = await client.fetch<Row[]>(query, { types }).catch(() => [] as Row[]);
 
   // Files the CMS does not know about yet answer for themselves — the same
   // fallback the sitemaps use (lib/published.ts), so a page held in an .mdx
   // file (the Oct 2026 release, before migration) is listed in both.
   const seen = new Set(rows.map((r) => `${r._type}:${r.slug}`));
-  const files: { collection: "products" | "industries" | "resources" | "skus"; type: string }[] = [
+  const files: { collection: "products" | "industries" | "resources" | "skus" | "legal"; type: string }[] = [
     { collection: "products", type: "productCategory" },
     { collection: "skus", type: "sku" },
     { collection: "industries", type: "industry" },
     { collection: "resources", type: "resource" },
+    { collection: "legal", type: "legal" },
   ];
   for (const { collection, type } of files) {
     for (const file of getAllSlugs(collection)) {
@@ -96,6 +103,9 @@ export async function GET() {
     listedPages(),
   ]);
   const of = (t: string) => rows.filter((r) => r._type === t);
+  // Home, About, Contact and the other main pages were missing until the
+  // 2 Nov GEO audit (P4) counted 14 published pages absent from this file.
+  const main = rows.filter((r) => PAGE_TYPES.includes(r._type));
 
   const parts: (string | null)[] = [
     `# ${entity.legalName}`,
@@ -116,6 +126,8 @@ export async function GET() {
       `- Contact: ${entity.email} · ${entity.phone} · ${entity.hours}`,
     ].join("\n"),
     "",
+    section("Main pages", main),
+    "",
     section("Product lines", of("productCategory")),
     "",
     section("Parts", of("sku")),
@@ -123,6 +135,8 @@ export async function GET() {
     section("Industries", of("industry")),
     "",
     section("Technical guides", of("resource")),
+    "",
+    section("Legal", of("legal")),
     "",
     "## Notes",
     "",
