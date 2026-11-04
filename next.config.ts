@@ -43,6 +43,13 @@ const nextConfig: NextConfig = {
     },
   },
 
+  // Styles arrive inside the HTML, so first paint does not wait on a stylesheet
+  // competing with fonts and scripts on a slow connection. Experimental, and
+  // production builds only.
+  experimental: {
+    inlineCss: true,
+  },
+
   // Dev server only. Next 16 refuses its own JS chunks (403) to any host other
   // than `localhost`, so opening the dev site via 127.0.0.1 or from a phone on
   // the same Wi-Fi rendered the HTML but never started React — no menus, no
