@@ -11,6 +11,11 @@ import { EXPORT_GEO, HUB_COORDS } from "@/content/export-geo";
  * market sections. Server-only: the projection and Natural Earth outlines run
  * here and the browser receives finished path strings.
  *
+ * The land outline is the exception: it is a separate file, drawn by
+ * export/world-land.svg/route.ts from the same projection. Inlined, its 109 KB
+ * path went out twice per page (markup and RSC payload), more than half of
+ * /export's compressed HTML, and it is never animated or linked.
+ *
  * Real geography (client, 2 Nov 2026: "export map is wrong"). The Figma
  * plate's continents were hand-drawn blobs and the CMS pin coordinates were
  * read off them, so the UK sat in the sea and Singapore next to Australia.
@@ -33,13 +38,13 @@ const projection = geoEquirectangular()
   .translate([HUB.x, HUB.y])
   .clipExtent([[0, 0], [1000, 500]]);
 
-let landCache: string | null = null;
-function plate() {
-  if (landCache === null) {
-    const topo = world as unknown as Topology<{ countries: GeometryCollection }>;
-    landCache = geoPath(projection).digits(1)(feature(topo, topo.objects.countries)) ?? "";
-  }
-  return { land: landCache };
+export const WORLD_LAND_SRC = "/export/world-land.svg";
+
+/** The landmasses as a standalone SVG document, same size as the plate. */
+export function worldLandSvg() {
+  const topo = world as unknown as Topology<{ countries: GeometryCollection }>;
+  const land = geoPath(projection).digits(1)(feature(topo, topo.objects.countries)) ?? "";
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${MAP_VIEWBOX}" width="1000" height="500"><path d="${land}" fill="#28393F" stroke="#2BBCC4" stroke-opacity="0.38" stroke-width="0.6" stroke-linejoin="round"/></svg>`;
 }
 
 export type LabelPlacement = { dx: number; dy: number; anchor: "start" | "middle" | "end" };
@@ -218,14 +223,7 @@ export function MapBase() {
         strokeOpacity="0.08"
         strokeWidth="0.8"
       />
-      <path
-        d={plate().land}
-        fill="#28393F"
-        stroke="#2BBCC4"
-        strokeOpacity="0.38"
-        strokeWidth="0.6"
-        strokeLinejoin="round"
-      />
+      <image href={WORLD_LAND_SRC} width="1000" height="500" />
     </g>
   );
 }
