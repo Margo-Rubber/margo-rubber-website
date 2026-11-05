@@ -48,6 +48,7 @@ const DEFAULT_SAME_AS = [
   "https://www.linkedin.com/company/margo-rubber-products/",
   "https://www.instagram.com/margorubberproducts/",
   "https://www.google.com/maps/place/?q=place_id:ChIJjyRECkTr3TsRAPBPxlXi_jM",
+  "https://www.wikidata.org/wiki/Q142029599",
 ];
 
 /** Organization.openingHoursSpecification, once confirmed. Empty emits
