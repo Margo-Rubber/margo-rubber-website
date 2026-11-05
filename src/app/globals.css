@@ -619,9 +619,13 @@ body {
     0%, 100% { transform: scale(1.015) translate3d(0, 0, 0); }
     50% { transform: scale(1.045) translate3d(-0.7%, -0.35%, 0); }
   }
-  .margo-hero-image {
-    animation: margo-hero-drift 18s ease-in-out infinite;
-    will-change: transform;
+  /* Wide screens only: a full-bleed photo repainting for ever costs a phone
+     more than the drift is worth. */
+  @media (min-width: 64rem) {
+    .margo-hero-image {
+      animation: margo-hero-drift 18s ease-in-out infinite;
+      will-change: transform;
+    }
   }
 
   /* Hero stat plates: a quiet cyan sweep appears on hover, then the whole plate
@@ -1369,13 +1373,16 @@ body {
   .margo-contact-hero-img {
     /* Phones: the copy sits over the whole photo, so dim it for legibility. */
     filter: brightness(0.5);
-    animation: margo-about-drift 24s ease-in-out infinite;
-    will-change: transform;
   }
   /* Only on wide screens, where the photo sits beside the copy rather
-     than behind it: on a phone the brighter sparks would fight the text. */
+     than behind it: on a phone the brighter sparks would fight the text, and
+     the drift costs more repainting than it is worth. */
   @media (min-width: 64rem) {
-    .margo-contact-hero-img { filter: brightness(1.22) contrast(1.06); }
+    .margo-contact-hero-img {
+      filter: brightness(1.22) contrast(1.06);
+      animation: margo-about-drift 24s ease-in-out infinite;
+      will-change: transform;
+    }
   }
   /* Over a photo the drawing gets a soft dark backing so its lines and
      labels hold up against the bright smoke. */

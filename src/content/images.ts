@@ -17,12 +17,6 @@
 
 export type ImageEntry = {
   src: string;
-  /**
-   * Base64 blur placeholder, GENERATED — do not hand-edit. Run `npm run
-   * gen:blur` after adding or replacing an image and it is rewritten from the
-   * file on disk. Absent for SVGs, which bypass next/image entirely.
-   */
-  blur?: string;
   w: number;
   h: number;
   alt: string;
@@ -48,7 +42,6 @@ export const IMAGES = {
      white strokes vanish on white. */
   "brand.mark": {
     src: "/images/brand/margo-mark.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAMAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAQMEBv/EACEQAQAABgICAwAAAAAAAAAAAAEAAgMEERIhMUFhQoGR/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAXEQADAQAAAAAAAAAAAAAAAAAAAREh/9oADAMBAAIRAxEAPwDMUbe2XWemuUGbfXQTv3Cm3o8aZml8TdZ9xOXNY4J0Mj9hiA3FR+X4EJKW0//Z",
     w: 528,
     h: 528,
     alt: "",
@@ -56,7 +49,6 @@ export const IMAGES = {
   },
   "brand.logo": {
     src: "/images/brand/margo-logo.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAKAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAQMEBv/EAB0QAQACAgMBAQAAAAAAAAAAAAECEQADEjFhBCH/xAAVAQEBAAAAAAAAAAAAAAAAAAACA//EABYRAQEBAAAAAAAAAAAAAAAAAAAREv/aAAwDAQACEQMRAD8AyeijQEoWnL8Wq6xP0QlLfNjFS+wy/ZJ5QbbffHDJRaXvFEtv/9k=",
     w: 303,
     h: 265,
     alt: "Margo Rubber Products",
@@ -66,7 +58,6 @@ export const IMAGES = {
   /* --- Products: O-Rings category ------------------------------------ */
   "products.o-rings.hero": {
     src: "/images/products-category/b5055d3713fe47c212af01797a415dd08bf49102.jpg",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIG/8QAHBABAQEAAQUAAAAAAAAAAAAAAQIAAxEhMUFR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMdXKAhEh67aLJUZk6J4+ZmD/9k=",
     w: 1800,
     h: 1200,
     alt: "Precision O-rings moulded by Margo Rubber Products, Nashik, India",
@@ -92,7 +83,6 @@ export const IMAGES = {
   },
   "products.extrusion.hero": {
     src: "/images/products-category/9bb7539abd559eb1e8be67cf319646c7bb4c2b78.jpg",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEF/8QAHBAAAgICAwAAAAAAAAAAAAAAAQIAAxFBEyRi/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwT/xAAVEQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEQMRAD8AhfjHVQIh3szPLoxJsawt6bMRKLBv/9k=",
     w: 1800,
     h: 1000,
     alt: "Extrusion line inside a rubber components plant, profiles running through inline tooling stations",
@@ -100,7 +90,6 @@ export const IMAGES = {
   },
   "industries.construction.hero": {
     src: "/images/products-category/9bb7539abd559eb1e8be67cf319646c7bb4c2b78.jpg",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEF/8QAHBAAAgICAwAAAAAAAAAAAAAAAQIAAxFBEyRi/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwT/xAAVEQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEQMRAD8AhfjHVQIh3szPLoxJsawt6bMRKLBv/9k=",
     w: 1800,
     h: 1000,
     alt: "Extrusion line inside a rubber components plant, profiles running through inline tooling stations",
@@ -112,7 +101,6 @@ export const IMAGES = {
      proper 4:3 card crop can be dropped in later without touching the hero. */
   "products.card.extrusion": {
     src: "/images/products-category/9bb7539abd559eb1e8be67cf319646c7bb4c2b78.jpg",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEF/8QAHBAAAgICAwAAAAAAAAAAAAAAAQIAAxFBEyRi/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwT/xAAVEQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEQMRAD8AhfjHVQIh3szPLoxJsawt6bMRKLBv/9k=",
     w: 1800,
     h: 1000,
     alt: "Rubber extrusion line running continuous profile through inline tooling",
@@ -120,7 +108,6 @@ export const IMAGES = {
   },
   "products.card.sponge-foam-rubber": {
     src: "/images/products-category/2508834bbd9a6bae9c03ba86094ce277f1df025d.jpg",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQG/8QAHRAAAwACAgMAAAAAAAAAAAAAAQIDABEEEiFBUf/EABQBAQAAAAAAAAAAAAAAAAAAAAH/xAAYEQACAwAAAAAAAAAAAAAAAAAAARESMf/aAAwDAQACEQMRAD8Az8OKO8kGqNc6Bb19y0wY0oi1ZVk3QBToeMYwhPRsz//Z",
     w: 1600,
     h: 1000,
     alt: "Gloved operator handling sheet stock at a press",
@@ -128,7 +115,6 @@ export const IMAGES = {
   },
   "products.card.seals": {
     src: "/images/products/446414d85bfd92e3fcd4ae2b640c6d81e9629b91.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAQMEBv/EACAQAAICAgEFAQAAAAAAAAAAAAECAxEABEEiMTJRYbH/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AM9Lp6RKvBOyKQemSiQb+fuTbUMcMxUvfII7Y4RlUqwaNePrDLCC9hmF8XiD/9k=",
     w: 800,
     h: 900,
     alt: "Rotary oil seals for gearboxes and pumps",
@@ -136,7 +122,6 @@ export const IMAGES = {
   },
   "products.card.rubber-lining": {
     src: "/images/industries-mining/mining-hero.jpg",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAEAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEG/8QAHBAAAgICAwAAAAAAAAAAAAAAAAECAxETIkKR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMZK2axyfpN9i7sAD//Z",
     w: 1400,
     h: 420,
     alt: "Open-pit mine with conveyor and haul roads",
@@ -150,7 +135,6 @@ export const IMAGES = {
   },
   "products.card.diaphragms": {
     src: "/images/products/4fb48cf2a43d61bec568791c2d5dbea12013f92b.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAED/8QAIRAAAQQBAwUAAAAAAAAAAAAAAQIDBBEAEhMhIjFBUXH/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/EABURAQEAAAAAAAAAAAAAAAAAAAEA/9oADAMBAAIRAxEAPwC7kaPobQizfClHkV6w7kyc8vUlbNfTmrrIaqiT2GDcj9dhZF+ABlCMd//Z",
     w: 800,
     h: 900,
     alt: "Rubber bellows and protective boots",
@@ -158,7 +142,6 @@ export const IMAGES = {
   },
   "products.card.bonded-components": {
     src: "/images/products/75ab01fa5d31999b511f4e67578971b96eddcb11.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwQG/8QAIRAAAgEDBAMBAAAAAAAAAAAAAQIDAAQSERMiUSExccH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABgRAAIDAAAAAAAAAAAAAAAAAAABAhEx/9oADAMBAAIRAxEAPwAjLtTmTwJmDLgqnIH13V97dbsiYzFAqBdMD+USTLd3pguokk5sA44sND2K0sMEcUSqiKB8qxSwOz//2Q==",
     w: 800,
     h: 900,
     alt: "Rubber-to-metal bonded anti-vibration mounts",
@@ -176,7 +159,6 @@ export const IMAGES = {
   },
   "products.sponge-foam.hero": {
     src: "/images/products-category/2508834bbd9a6bae9c03ba86094ce277f1df025d.jpg",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQG/8QAHRAAAwACAgMAAAAAAAAAAAAAAQIDABEEEiFBUf/EABQBAQAAAAAAAAAAAAAAAAAAAAH/xAAYEQACAwAAAAAAAAAAAAAAAAAAARESMf/aAAwDAQACEQMRAD8Az8OKO8kGqNc6Bb19y0wY0oi1ZVk3QBToeMYwhPRsz//Z",
     w: 1600,
     h: 1000,
     alt: "Gloved operator feeding sheet stock into a press on the shop floor",
@@ -184,7 +166,6 @@ export const IMAGES = {
   },
   "products.sponge-foam.hvac": {
     src: "/images/products-category/f13ce855ebddcffcea38d2de9bfebdbab2e3d2f9.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAID/8QAIBAAAgIBAwUAAAAAAAAAAAAAAQIAAxEEIjEFEkFRcf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AMOnBqD20LbeudxK7T89HEvU0WXXszJqiOByMDwIiItf/9k=",
     w: 600,
     h: 400,
     alt: "Insulated HVAC ductwork running through a plant roof void",
@@ -192,7 +173,6 @@ export const IMAGES = {
   },
   "products.sponge-foam.gaskets": {
     src: "/images/products-category/718f7a259b1feb65f2ed2b4f2ce45a9a9352b62c.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAUG/8QAHRAAAgIDAAMAAAAAAAAAAAAAAgMBEQAEEhMhsf/EABUBAQEAAAAAAAAAAAAAAAAAAAME/8QAGREAAgMBAAAAAAAAAAAAAAAAAREAAgQh/9oADAMBAAIRAxEAPwCo3baRbC5HyLYMCEdVdjc/MzuyzWSQp2TeJrHmoovVzjGFcPhlOdizE//Z",
     w: 600,
     h: 400,
     alt: "Digital calipers measuring the section of a moulded rubber seal",
@@ -200,7 +180,6 @@ export const IMAGES = {
   },
   "products.sponge-foam.automotive": {
     src: "/images/products-category/0b5bf692fcb8f28ffc80bce735e80cc85c501209.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMG/8QAIhAAAQQBAgcAAAAAAAAAAAAAAQACAwQRBRITIjFBUWGB/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwC2o4raZIDLHA5/KZHePQ7lZM26keGNrcYAY3vcQT8HREUH/9k=",
     w: 600,
     h: 400,
     alt: "Rubber weatherseal along a car window frame, beaded with rain",
@@ -208,7 +187,6 @@ export const IMAGES = {
   },
   "products.sponge-foam.cleanroom": {
     src: "/images/products-category/2880ed3ca5cd67672d30688dce5f496b6a062a37.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAP/xAAjEAACAQMBCQAAAAAAAAAAAAABAgMABCEFERITFCIxUYGx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAXEQADAQAAAAAAAAAAAAAAAAAAAREx/9oADAMBAAIRAxEAPwCc3MSZhG8NoVXKnOPAHb5VXaOybh3uoGCY9RjiBYAH3SlQ9go//9k=",
     w: 600,
     h: 400,
     alt: "Moulding machines in line on a rubber production floor",
@@ -219,7 +197,6 @@ export const IMAGES = {
   /* --- Products hub: the nine category cards (800×900) ---------------- */
   "products.card.o-rings": {
     src: "/images/products/02c119a1180fdfe14c8f924ae98fb0884999f496.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAgMEBf/EACMQAAIBBAEDBQAAAAAAAAAAAAECAwAEERITISMyMUFCUbH/xAAUAQEAAAAAAAAAAAAAAAAAAAAC/8QAFxEBAQEBAAAAAAAAAAAAAAAAAQARIf/aAAwDAQACEQMRAD8AxUtZ7QsvEUOCGjYZYD3/ACiuMSsskq6lxsNRqCMnBAqq1Lyyqtw5lXTlO3kQfjn6pvA04E7SDugMFK+Ax0A6+gpHIJt//9k=",
     w: 800,
     h: 900,
     alt: "Custom O-rings in FKM, NBR, EPDM and silicone",
@@ -227,7 +204,6 @@ export const IMAGES = {
   },
   "products.card.oil-seals": {
     src: "/images/products/446414d85bfd92e3fcd4ae2b640c6d81e9629b91.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAQMEBv/EACAQAAICAgEFAQAAAAAAAAAAAAECAxEABEEiMTJRYbH/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AM9Lp6RKvBOyKQemSiQb+fuTbUMcMxUvfII7Y4RlUqwaNePrDLCC9hmF8XiD/9k=",
     w: 800,
     h: 900,
     alt: "Rotary oil seals for gearboxes and pumps",
@@ -235,7 +211,6 @@ export const IMAGES = {
   },
   "products.card.gaskets": {
     src: "/images/products/4c6677128b58b94c724e7539dd343714f110a975.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwEF/8QAIxAAAgICAQIHAAAAAAAAAAAAAQIDEQAEBRMxISJBQlFhwf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8Ar8lEk6x9UEH3FSVP1Y9cbW3F2ouoBfjXlYfuZj8csrlDIwjNMFrsfm8aPVUA2zE33Jwj/9k=",
     w: 800,
     h: 900,
     alt: "Moulded and die-cut rubber gaskets for flanged joints",
@@ -243,7 +218,6 @@ export const IMAGES = {
   },
   "products.card.bellows": {
     src: "/images/products/4fb48cf2a43d61bec568791c2d5dbea12013f92b.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAED/8QAIRAAAQQBAwUAAAAAAAAAAAAAAQIDBBEAEhMhIjFBUXH/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/EABURAQEAAAAAAAAAAAAAAAAAAAEA/9oADAMBAAIRAxEAPwC7kaPobQizfClHkV6w7kyc8vUlbNfTmrrIaqiT2GDcj9dhZF+ABlCMd//Z",
     w: 800,
     h: 900,
     alt: "Rubber bellows and protective boots",
@@ -251,7 +225,6 @@ export const IMAGES = {
   },
   "products.card.anti-vibration-mounts": {
     src: "/images/products/75ab01fa5d31999b511f4e67578971b96eddcb11.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwQG/8QAIRAAAgEDBAMBAAAAAAAAAAAAAQIDAAQSERMiUSExccH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABgRAAIDAAAAAAAAAAAAAAAAAAABAhEx/9oADAMBAAIRAxEAPwAjLtTmTwJmDLgqnIH13V97dbsiYzFAqBdMD+USTLd3pguokk5sA44sND2K0sMEcUSqiKB8qxSwOz//2Q==",
     w: 800,
     h: 900,
     alt: "Rubber-to-metal bonded anti-vibration mounts",
@@ -259,7 +232,6 @@ export const IMAGES = {
   },
   "products.card.grommets": {
     src: "/images/products/93f522e98c504f8c1e2d5f6a4de1b41ea32d6a8c.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQQG/8QAHhAAAwACAwADAAAAAAAAAAAAAQIDAAQFESESMXH/xAAUAQEAAAAAAAAAAAAAAAAAAAAC/8QAFREBAQAAAAAAAAAAAAAAAAAAAQD/2gAMAwEAAhEDEQA/AKr7Etjj91Hgk6Tj8vCrKex4QwxaMisUVj2QoBJ/MD5uc9LkddISmk9kBXVVAHYb7zSkDs4liF//2Q==",
     w: 800,
     h: 900,
     alt: "Rubber grommets for cable and panel pass-throughs",
@@ -267,7 +239,6 @@ export const IMAGES = {
   },
   "products.card.bushes": {
     src: "/images/products/9f2968d4dfd6f2ed9996b7fd692ccf32360ae269.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQAB/8QAIRAAAgEDBAMBAAAAAAAAAAAAAQIDAAQRBRIhIjFBgdH/xAAUAQEAAAAAAAAAAAAAAAAAAAAC/8QAFhEBAQEAAAAAAAAAAAAAAAAAABES/9oADAMBAAIRAxEAPwACwSNXQh845ClQQaSjubCNdsti1y2T3zj55rbXR0UjZO+0Z6sARzVPoaNKSJSufQB/aGyj/9k=",
     w: 800,
     h: 900,
     alt: "Rubber bushes and bushings for suspension and mounting",
@@ -275,7 +246,6 @@ export const IMAGES = {
   },
   "products.card.pads-stoppers-caps": {
     src: "/images/products/aea163e6d5b7af55e715b43d25d1f381505ab88a.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAwQFBv/EAB4QAAICAwADAQAAAAAAAAAAAAECAxEABCESIkEx/8QAFAEBAAAAAAAAAAAAAAAAAAAAAf/EABcRAQEBAQAAAAAAAAAAAAAAAAEAEUH/2gAMAwEAAhEDEQA/ANTp7UbsxDC+FiRRPP3GEdJUV4j5owsMPoORYJHRhsSEO/gIwKoAc+YXXMezArtAgr1AFgADgw2QO3//2Q==",
     w: 800,
     h: 900,
     alt: "Rubber pads, stoppers and protective caps",
@@ -283,7 +253,6 @@ export const IMAGES = {
   },
   "products.card.leak-test-rubber": {
     src: "/images/products/f0cbf4be4c181a6af58d3d24a36cb41938ac4689.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABAH/xAAiEAABAwMDBQAAAAAAAAAAAAABAgMRAAQhEjJBBSIxocH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AEtoVq7lmFEGAeSM0G7acQ6Cl5Q1CTBjkj5RbnqDtutte8bSkk5jE1E3IVJU2DJkSfAOY91B/9k=",
     w: 800,
     h: 900,
     alt: "Leak-test rubber for alloy-wheel pressure testing",
@@ -292,7 +261,6 @@ export const IMAGES = {
 
   "products.hero": {
     src: "/images/products/e0d3b61aaf8e1dc5b62852ca1532a354cdd9ab6d.jpg",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMG/8QAGhAAAwEAAwAAAAAAAAAAAAAAAAECERIhcf/EABQBAQAAAAAAAAAAAAAAAAAAAAH/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDKxMcdafpK3KrO2ABf/9k=",
     w: 1800,
     h: 1000,
     alt: "Interior of a heavy industrial manufacturing plant",
@@ -300,7 +268,6 @@ export const IMAGES = {
   },
   "products.excellence": {
     src: "/images/products/b14698d80519a6f61c9afed983aee3176ba3e8dd.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAgQFBv/EACEQAAEDAwQDAAAAAAAAAAAAAAEAAgMEETETITKBMzRy/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/xAAZEQACAwEAAAAAAAAAAAAAAAAAARESIUH/2gAMAwEAAhEDEQA/AM6KyN8rTIHyWNgCcDpDLWs1XGJjIgTw3NjhMn1+lIqfIPkKJxgr0//Z",
     w: 800,
     h: 600,
     alt: "Operators working a compression press on the Nashik production floor",
@@ -309,7 +276,6 @@ export const IMAGES = {
 
   "industries.hero": {
     src: "/images/industries/industries-hero.jpg",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMG/8QAGhAAAgMBAQAAAAAAAAAAAAAAAAECAxEiUf/EABUBAQEAAAAAAAAAAAAAAAAAAAEC/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AzVKrfUo6vNJWY5toAFP/2Q==",
     w: 2000,
     h: 1200,
     alt: "Interior of a large manufacturing hall with rows of machinery",
@@ -319,70 +285,60 @@ export const IMAGES = {
   /* --- Industry / sector photography (800×560) ------------------------ */
   "industries.automotive": {
     src: "/images/industries/ef9b0fcea22b06954dcd3d147d4e70b3a4ee7463.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAT/xAAdEAACAgMAAwAAAAAAAAAAAAABAgARAwQSEzFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCLa3cDN3kDs7ctbqOhQ9fJDt7HlyKaC0gFcxEFP//Z",
     w: 800, h: 560,
     alt: "Robotic automotive body assembly line",
     status: "placeholder",
   },
   "industries.oil-gas": {
     src: "/images/industries/585674e23c667606a0041e38d48fbbc07ca83204.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAED/8QAHBAAAgICAwAAAAAAAAAAAAAAAAECEhFBBRUh/8QAFQEBAQAAAAAAAAAAAAAAAAAABAX/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQITYZH/2gAMAwEAAhEDEQA/AK+XjFKqtl480advDdQA2Gd9Kqpn/9k=",
     w: 800, h: 560,
     alt: "Offshore oil and gas platform at sunset",
     status: "placeholder",
   },
   "industries.mining": {
     src: "/images/industries/815cceecbc7e146feb8e36383209151c6a7b31f6.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAbEAEAAgIDAAAAAAAAAAAAAAABAAIRITJRcf/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAVEQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEQMRAD8AnGxpVq9mYSw8K28TURDKT//Z",
     w: 800, h: 560,
     alt: "Haul trucks and excavators in an open-pit mine",
     status: "placeholder",
   },
   "industries.pumps-valves": {
     src: "/images/industries/421c154cfdc2c9aa18ab2918ef9efb1184cb60bc.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIE/8QAHhAAAgEEAwEAAAAAAAAAAAAAAQIDAAQSIQURMZH/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/EABkRAQACAwAAAAAAAAAAAAAAAAEAEQISIf/aAAwDAQACEQMRAD8Axzci0j4KWxdhkuWxv3XlVHdNbgxq0ajsnposz9NKU2o3JjJK7P/Z",
     w: 800, h: 560,
     alt: "Industrial pump housings in a process plant",
     status: "placeholder",
   },
   "industries.hvac": {
     src: "/images/industries/43b1dcb1e3e1692fc39a3a141bd8d408ee28b984.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAgEAABBAEEAwAAAAAAAAAAAAACAAEDEQQSExQhIzGh/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/xAAWEQEBAQAAAAAAAAAAAAAAAAARACH/2gAMAwEAAhEDEQA/AJHHkjjyJPFYDZRE/elq7+qYOIZgJbgNbeienREcaGl//9k=",
     w: 800, h: 560,
     alt: "Rooftop HVAC condenser units and pipework",
     status: "placeholder",
   },
   "industries.electrical-electronics": {
     src: "/images/industries/3a827cca46f2ae89cdeca92efc05965d64d9520f.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQF/8QAGhAAAgMBAQAAAAAAAAAAAAAAAQIABBEDIv/EABUBAQEAAAAAAAAAAAAAAAAAAAEC/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AMGvcVK48quDMEm63CXJUHIiVQ//2Q==",
     w: 800, h: 560,
     alt: "Printed circuit board detail",
     status: "placeholder",
   },
   "industries.agriculture": {
     src: "/images/industries/8bf6d91e2004803ae4f15901b0ef909853be3e6a.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIF/8QAHhAAAQMEAwAAAAAAAAAAAAAAAQACAwQGESESIoL/xAAUAQEAAAAAAAAAAAAAAAAAAAAC/8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAR/9oADAMBAAIRAxEAPwDVjueOSbiKZ7Y99nOG1ZuOnBwYyPYRERnhf//Z",
     w: 800, h: 560,
     alt: "Tractor working a field at dusk",
     status: "placeholder",
   },
   "industries.medical-devices": {
     src: "/images/industries/be6a1db6c73766bcc4a639616b812d3b543c02e6.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAT/xAAdEAACAwACAwAAAAAAAAAAAAABAgAEEQNRBRQx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQT/xAAZEQEAAgMAAAAAAAAAAAAAAAABAAIDESH/2gAMAwEAAhEDEQA/ALPFVqzqzVwWr/NIGb0Jb6LOSz8ibvWxEpyXVhoHk//Z",
     w: 800, h: 560,
     alt: "Laboratory pipetting into sample vials",
     status: "placeholder",
   },
   "industries.water-fluid-management": {
     src: "/images/industries/a3ebd35d30ff2200c507e4cce2b2826ecf9c91a8.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEE/8QAGxAAAgMBAQEAAAAAAAAAAAAAAREAAhJBAwT/xAAUAQEAAAAAAAAAAAAAAAAAAAAD/8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAC/9oADAMBAAIRAxEAPwDH83qNVrgEFth8MtrDNGgch8iIaTZUb//Z",
     w: 800, h: 560,
     alt: "Valve manifold and pipework on a treatment skid",
     status: "placeholder",
   },
   "industries.transport": {
     src: "/images/industries/ef9b0fcea22b06954dcd3d147d4e70b3a4ee7463.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAT/xAAdEAACAgMAAwAAAAAAAAAAAAABAgARAwQSEzFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCLa3cDN3kDs7ctbqOhQ9fJDt7HlyKaC0gFcxEFP//Z",
     w: 800, h: 560,
     alt: "Robotic automotive body assembly line",
     status: "placeholder",
@@ -401,7 +357,6 @@ export const IMAGES = {
   },
   "industries.construction": {
     src: "/images/products-category/9bb7539abd559eb1e8be67cf319646c7bb4c2b78.jpg",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEF/8QAHBAAAgICAwAAAAAAAAAAAAAAAQIAAxFBEyRi/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwT/xAAVEQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEQMRAD8AhfjHVQIh3szPLoxJsawt6bMRKLBv/9k=",
     w: 1800,
     h: 1000,
     alt: "Extrusion line inside a rubber components plant, profiles running through inline tooling stations",
@@ -415,7 +370,6 @@ export const IMAGES = {
      full-resolution original when supplied. */
   "industries.mining.hero": {
     src: "/images/industries-mining/mining-hero.jpg",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAEAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEG/8QAHBAAAgICAwAAAAAAAAAAAAAAAAECAxETIkKR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMZK2axyfpN9i7sAD//Z",
     w: 1400,
     h: 420,
     alt: "Open-pit mine with conveyor and haul roads",
@@ -431,7 +385,6 @@ export const IMAGES = {
   },
   "products.rubber-lining.hero": {
     src: "/images/industries-mining/mining-hero.jpg",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAEAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEG/8QAHBAAAgICAwAAAAAAAAAAAAAAAAECAxETIkKR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMZK2axyfpN9i7sAD//Z",
     w: 1400,
     h: 420,
     alt: "Open-pit mine with conveyor and haul roads",
@@ -439,35 +392,30 @@ export const IMAGES = {
   },
   "industries.mining.use.conveyor": {
     src: "/images/industries-mining/8912e946fb2b7ef398ba66386c814245a973a3ba.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAME/8QAHhAAAQQDAAMAAAAAAAAAAAAAAQACBBEDBSEUIvD/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABURAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIRAxEAPwDPK2UrGXBszJ6AWW2eqD91KJB859Vz7iIkWv/Z",
     w: 500, h: 320,
     alt: "Conveyor belt carrying ore across a mine site",
     status: "placeholder",
   },
   "industries.mining.use.crushers": {
     src: "/images/industries-mining/f56d36a67e8fd014baa2f82a4e66fedaa4bf66e6.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAT/xAAbEAACAwEBAQAAAAAAAAAAAAABAgADEQQSUf/EABUBAQEAAAAAAAAAAAAAAAAAAAME/8QAFREBAQAAAAAAAAAAAAAAAAAAAQD/2gAMAwEAAhEDEQA/AHD1djr7ekuu5igLssru9Lr81iH4SDESdZwv/9k=",
     w: 500, h: 320,
     alt: "Excavator working a terraced open-pit bench",
     status: "placeholder",
   },
   "industries.mining.use.haul": {
     src: "/images/industries-mining/ecd12ac69ab9eaf56d361a625d43fa7e9b3ae82d.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIF/8QAHRAAAgEFAQEAAAAAAAAAAAAAAQIDAAQREyES0f/EABQBAQAAAAAAAAAAAAAAAAAAAAP/xAAWEQEBAQAAAAAAAAAAAAAAAAAAESH/2gAMAwEAAhEDEQA/AMi2nhL6pA67OKU4QflWLkRDWsS5Xjeic5pSihrr/9k=",
     w: 500, h: 320,
     alt: "Haul trucks operating in an open-pit mine",
     status: "placeholder",
   },
   "industries.mining.use.hydraulic": {
     src: "/images/industries-mining/390280bf1b110793813eb924d8642215678aa078.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEE/8QAHRAAAQUAAwEAAAAAAAAAAAAAAQACAxESISRSgf/EABUBAQEAAAAAAAAAAAAAAAAAAAIE/8QAFhEBAQEAAAAAAAAAAAAAAAAAAAFB/9oADAMBAAIRAxEAPwCWyAdWMAXeyOfiwvk24ullk0fRpEVFga//2Q==",
     w: 500, h: 320,
     alt: "Hydraulic lines on an industrial production line",
     status: "placeholder",
   },
   "industries.mining.facility": {
     src: "/images/industries-mining/8f478e737375813fdb3396476d6ace2563de2c9f.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAwL/xAAiEAACAQIFBQAAAAAAAAAAAAABAgMAEQQFEjEzEyFhc6H/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/EABcRAQADAAAAAAAAAAAAAAAAAAABAjH/2gAMAwEAAhEDEQA/AHiiCurRKquwDaVuD38bfKRIMLY9TDR6iTu1qrKeOT1iin5TVdRTr//Z",
     w: 700, h: 520,
     alt: "Margo production line at the Nashik facility",
     status: "placeholder",
@@ -476,7 +424,6 @@ export const IMAGES = {
   /* --- Contact --------------------------------------------------------- */
   "contact.hero": {
     src: "/images/contact/0d423de901bffb06f69b1e44c1fef77e980a8876.jpg",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAeEAACAwABBQAAAAAAAAAAAAABAgADEQQFIzFBof/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAXEQADAQAAAAAAAAAAAAAAAAAAAQIR/9oADAMBAAIRAxEAPwCd4S942EhUXNBG7vj7kpuZ0m241WO4LPWpJHuIiphmU8P/2Q==",
     w: 1920,
     h: 1080,
     alt: "Welder working on a component, sparks visible",
@@ -491,7 +438,6 @@ export const IMAGES = {
     // scripts/gen-contact-map.mts; the file is renamed when it is redrawn so
     // image caches pick it up. OSM requires the credit shown on the image.
     src: "/images/contact/margo-plant-map-2026-11-access-road.jpg",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAgb/xAAbEAACAgMBAAAAAAAAAAAAAAABAgARAzFxQf/EABUBAQEAAAAAAAAAAAAAAAAAAAEC/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AljaiiLqJszg1idlWtEwPocgbzkoP/9k=",
     w: 1200,
     h: 900,
     alt: "Map of the Margo Rubber Products plant at Vilholi, Nashik, just off NH160",
@@ -501,28 +447,24 @@ export const IMAGES = {
   /* --- Certifications ------------------------------------------------- */
   "certifications.facility.press-wide": {
     src: "/images/certifications/30762e5cda42ef64cdc538710fb78406b1f30d09.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFAABAAAAAAAAAAAAAAAAAAAABf/EACMQAAEEAQIHAQAAAAAAAAAAAAECAwQRABIhBQYyNHFygaL/xAAUAQEAAAAAAAAAAAAAAAAAAAAB/8QAFxEBAAMAAAAAAAAAAAAAAAAAAAERIf/aAAwDAQACEQMRAD8ANVPQ82USY8V1yiCdFq/OHFUZs6S2FGt72N/cb5c6FeuDcU75zzhGGn//2Q==",
     w: 800, h: 600,
     alt: "Operator working a compression press on the Nashik floor",
     status: "placeholder",
   },
   "certifications.facility.press-close": {
     src: "/images/certifications/7fd0302833ac7d23c718ff6ff8e1022aaa40bafa.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAgQFBv/EACIQAAEDAwMFAAAAAAAAAAAAAAEAAgMEESETMYEUMjM0cv/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAGBEAAgMAAAAAAAAAAAAAAAAAAAEREiH/2gAMAwEAAhEDEQA/AM71kb5WmQPktgAnYcIZa1mq4xMZECezJsdkyfX4Uip8g+QonGCp/9k=",
     w: 800, h: 600,
     alt: "Workers operating heavy machinery on the production floor",
     status: "placeholder",
   },
   "certifications.facility.inspection": {
     src: "/images/certifications/cf68df8beea532026c3f12ce9f20465dd31e9e4f.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQQG/8QAIxAAAgEDAQkAAAAAAAAAAAAAAQIDAAQFESEiMTM0QVFhcf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFxEBAQEBAAAAAAAAAAAAAAAAAREAIf/aAAwDAQACEQMRAD8AJZLmW+uUtklOjjanAa+fdUx4PM7xDogLsdDIB3rR4rlx0bkesf7TqzVgXf/Z",
     w: 800, h: 600,
     alt: "Dimensional inspection at the QC workstation",
     status: "placeholder",
   },
   "certifications.facility.plant": {
     src: "/images/certifications/efbfef5dd384cbe6b7aae6c5ab7d59da5df85737.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABAX/xAAkEAABAwMBCQAAAAAAAAAAAAACAAEDBBEhMQUSEzRBYXFykf/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAYEQACAwAAAAAAAAAAAAAAAAAAIQECEf/aAAwDAQACEQMRAD8AnUlMcsIlxDEyLJdrqjHC242NMX1v9dO2TyMHoKWPXy6GsUVR/9k=",
     w: 800, h: 600,
     alt: "Process pipework and extrusion lines at the Nashik plant",
     status: "placeholder",
@@ -553,14 +495,12 @@ export const IMAGES = {
   },
   "about.story.plant": {
     src: "/images/about/200f507621dfa9d10259a1c042a7e0409cfdc5c4.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwIG/8QAHhAAAgIABwAAAAAAAAAAAAAAAQIAAxESITEyM3H/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMtWiBeRGMNggJzHXyVX1mC28K//2Q==",
     w: 700, h: 520,
     alt: "Mixing and calendering machinery on the shop floor",
     status: "placeholder",
   },
   "about.story.gauge": {
     src: "/images/about/b8297aadf52f2e62454d88960e09e6c641fdf6e8.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAKAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQb/xAAhEAACAQMDBQAAAAAAAAAAAAABAwIABBEFITESNFGBsf/EABQBAQAAAAAAAAAAAAAAAAAAAAP/xAAZEQACAwEAAAAAAAAAAAAAAAAAAgESMVH/2gAMAwEAAhEDEQA/ADE6gi9Cl3CYqhIBeVkEk+eM80wjQ7Ja+mRiZA7mW5qS0rv1+/lU9syc15lOUjnknNC/BUi2n//Z",
     w: 300, h: 260,
     alt: "Operator checking a moulded part with a digital caliper",
     status: "placeholder",
@@ -569,21 +509,18 @@ export const IMAGES = {
      the About page. Starts as the same caliper photograph it used to borrow. */
   "resources.hero": {
     src: "/images/about/b8297aadf52f2e62454d88960e09e6c641fdf6e8.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAKAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQb/xAAhEAACAQMDBQAAAAAAAAAAAAABAwIABBEFITESNFGBsf/EABQBAQAAAAAAAAAAAAAAAAAAAAP/xAAZEQACAwEAAAAAAAAAAAAAAAAAAgESMVH/2gAMAwEAAhEDEQA/ADE6gi9Cl3CYqhIBeVkEk+eM80wjQ7Ja+mRiZA7mW5qS0rv1+/lU9syc15lOUjnknNC/BUi2n//Z",
     w: 300, h: 260,
     alt: "Operator checking a moulded part with a digital caliper",
     status: "placeholder",
   },
   "about.leadership": {
     src: "/images/about/d6c6dafd5f7e6fc35b02d70a6724d50fcc38e25e.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAPAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQP/xAAfEAACAQQDAQEAAAAAAAAAAAABAgMABBEhE2GxEjL/xAAVAQEBAAAAAAAAAAAAAAAAAAAEBf/EABgRAAMBAQAAAAAAAAAAAAAAAAABAgMx/9oADAMBAAIRAxEAPwABGFwIo4oByDZYdeUikFpAgjZXlcfpsZ3RrKwjaO3PGiDLEjbnvHlSE8sahfveN4zukS0ibcPTjP/Z",
     w: 480, h: 580,
     alt: "Engineer inspecting a mould under work lighting",
     status: "placeholder",
   },
   "about.manufacturing.floor": {
     src: "/images/about/39792f06f998682ea06f21c231551c36f5ef12e7.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQG/8QAHRAAAgIDAAMAAAAAAAAAAAAAAQIAAwQRIRNDYf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDO+SjJ05w0rbfrJUGTNXWGIZXHeD5EQP/Z",
     w: 900, h: 580,
     alt: "Compression presses lined up across the moulding bay",
     status: "placeholder",
@@ -591,70 +528,60 @@ export const IMAGES = {
   /* Manufacturing carousel, slides 2 and 3 (client, 2 Nov 2026). */
   "about.manufacturing.packaging": {
     src: "/images/about/manufacturing-packaging.webp",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAT/xAAfEAACAgIBBQAAAAAAAAAAAAABAwIRAAUhEjFxcqH/xAAVAQEBAAAAAAAAAAAAAAAAAAABAv/EABgRAAMBAQAAAAAAAAAAAAAAAAABAhEh/9oADAMBAAIRAxEAPwCVe2eh5bNdoPayLHmvXKBtESiJEQPVyDyb+DGMalZpS6z/2Q==",
     w: 1600, h: 900,
     alt: "Two operators sorting moulded rubber parts into bags in the packaging area",
     status: "placeholder",
   },
   "about.manufacturing.line": {
     src: "/images/about/manufacturing-production-floor.webp",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIE/8QAHhAAAQUAAgMAAAAAAAAAAAAAAgABAwQREhMhYcH/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAERIf/aAAwDAQACEQMRAD8Ak7FnqErUVdo+XHSHfOenW6CsVgSd44wcSccfX+uiJFAsP//Z",
     w: 1600, h: 900,
     alt: "Operators at the HMM moulding presses on the production floor, with parts laid out on steel benches",
     status: "placeholder",
   },
   "about.manufacturing.press": {
     src: "/images/about/3a774ed6e2b6a01e0341ff19e7a48b3573322721.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAGAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAeEAABBAIDAQAAAAAAAAAAAAACAAEDEQQSBSExsf/EABQBAQAAAAAAAAAAAAAAAAAAAAH/xAAXEQEAAwAAAAAAAAAAAAAAAAAAAREh/9oADAMBAAIRAxEAPwCYDNcJGdoxu78v6mRyMkkxGZFs/uvVoiIwU//Z",
     w: 500, h: 260,
     alt: "Operators loading a compression press",
     status: "placeholder",
   },
   "about.manufacturing.lab": {
     src: "/images/about/5d011e8f1b8e9a2c1ffc9b8873fdbe3792f99cb2.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAGAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEC/8QAHhABAAIBBAMAAAAAAAAAAAAAAQIDAAURElETFCH/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFxEBAAMAAAAAAAAAAAAAAAAAAAExQf/aAAwDAQACEQMRAD8Axp5Tbons+JLYSWSSTkdZb7bIzCsNmMX69m/WMYmzH//Z",
     w: 500, h: 260,
     alt: "Technician examining a sample under a microscope in the test lab",
     status: "placeholder",
   },
   "about.portfolio": {
     src: "/images/about/7e7238ebfa42ca5def47fba863c87eabc6457ae9.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAKAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAQIEBf/EACEQAAICAQIHAAAAAAAAAAAAAAECAxEABSEEEhUxQVGh/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABcRAAMBAAAAAAAAAAAAAAAAAAABElH/2gAMAwEAAhEDEQA/AM8arx8UlCeS735jeHqeqHZZSQPNA5LIaUV7YfMWRmUgKxAodjiVgp6f/9k=",
     w: 400, h: 340,
     alt: "Batch of finished moulded rubber rings",
     status: "placeholder",
   },
   "about.team.lab": {
     src: "/images/about/fbe22a16b1a0e063f55fac832b04a4fee8d789cb.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAPAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAIFBv/EACEQAAEDBAIDAQAAAAAAAAAAAAECAwQABRESITEGUpHB/8QAFAEBAAAAAAAAAAAAAAAAAAAAA//EABYRAQEBAAAAAAAAAAAAAAAAAAABIf/aAAwDAQACEQMRAD8A0jccpSeM5PuanTrlbrfILMpxCHMBWux6+UN+QQxjRC9QD2O+aaOiPcmhJMZl0qJBW82Co4/KSaN//9k=",
     w: 480, h: 580,
     alt: "Quality technicians at the test bench",
     status: "placeholder",
   },
   "about.team.portrait-a": {
     src: "/images/about/36dddc9e1436f8079d6dadfde3d4f838e2a0def2.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAPAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQf/xAAlEAACAQMDAgcAAAAAAAAAAAABAgMABAUREiEGExQiMUFRodH/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AZv8AMwW2StLfxSJ5j3VDDge278p1SCoI5BqXZuBoupJ0uJBGsr79+m7RT6HSqLimdcZbLK4Z1jALAcH4+qD/2Q==",
     w: 480, h: 580,
     alt: "Placeholder portrait, to be replaced with the real team photograph",
     status: "placeholder",
   },
   "about.team.portrait-b": {
     src: "/images/about/f673ef5e26cd807812649e1057fe6c3732e20391.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAALAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAUG/8QAJBAAAgAEBAcAAAAAAAAAAAAAAQIAAwQRBQYSURMUITFBgZH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABcRAQEBAQAAAAAAAAAAAAAAABEAASH/2gAMAwEAAhEDEQA/AKmJLI5dZrkXp04jk7bQSizBhj04Zq15Bv1RwSR7HeBZlmuuGVQDEapspDbyNN7fYx94p1i4X//Z",
     w: 900, h: 800,
     alt: "Placeholder portrait, to be replaced with the real team photograph",
     status: "placeholder",
   },
   "about.presence": {
     src: "/images/about/08ccb1822c58b0e1ccf8b04752ffc0e376945750.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAED/8QAHRAAAgICAwEAAAAAAAAAAAAAAQIAAxESBEFCof/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAVEQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEQMRAD8AySwVEqyBqyMajyesCTkro4Cq9oK52UnHyIhhV//Z",
     w: 750, h: 520,
     alt: "Aerial view of stacked shipping containers at an export terminal",
     status: "placeholder",
   },
   "about.green": {
     src: "/images/about/3e7bec0c9f3cd5eee760f9d3a4765d4d4960192a.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIF/8QAIhAAAQIDCQAAAAAAAAAAAAAAAAECBBEhAwUGFiJTk9Hh/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQT/xAAZEQACAwEAAAAAAAAAAAAAAAAAAQIDERL/2gAMAwEAAhEDEQA/ANhuJLulpW0dWVG+l5mgduI407AJHfPR5R//2Q==",
     w: 750, h: 520,
     alt: "Wind turbines above open farmland",
     status: "placeholder",
@@ -665,63 +592,54 @@ export const IMAGES = {
      card art stays in the order the comp sets. */
   "home.story": {
     src: "/images/home/9bdb88cbf9df2a3ece934ab581cd22671ca697d9.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwIG/8QAHRAAAgIBBQAAAAAAAAAAAAAAAQIAESEDEjIzcf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AyyIgW9xFw2CA5OfJWn1GC3KFf//Z",
     w: 800, h: 600,
     alt: "The Margo Rubber Products shop floor at Vilholi, Nashik",
     status: "placeholder",
   },
   "home.facility": {
     src: "/images/home/e1c7a11041eaed2b9d0a9649cc84dbe535258a6f.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQG/8QAHRAAAgICAwEAAAAAAAAAAAAAAQIAAwQhERNDYf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDO9lGSQ5w0rbnzJUGTNXWGIYOu9D5EQP/Z",
     w: 1200, h: 800,
     alt: "Production bay with compression presses and stock material",
     status: "placeholder",
   },
   "home.contact": {
     src: "/images/home/6c68ee445947ec7f383cd0439109cb62fbc1bb68.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAPAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAMF/8QAIRAAAgIBBAIDAAAAAAAAAAAAAQIDEQAEBRIxISJhccH/xAAVAQEBAAAAAAAAAAAAAAAAAAABA//EABYRAQEBAAAAAAAAAAAAAAAAAAEAEv/aAAwDAQACEQMRAD8AbLtcUzEvPAjL2qiv3LnS6eVVMCxKvECiC3n7zKMvJKR3DOFsk3djvCR7hqYwbkZ+Rv2PXx3gBU03/9k=",
     w: 800, h: 1000,
     alt: "Operators packing finished components for export dispatch",
     status: "placeholder",
   },
   "home.product.o-rings": {
     src: "/images/home/45b2f14ecef0d29f3a6668bbcc0e3e0c8814f066.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMG/8QAHhAAAgEDBQAAAAAAAAAAAAAAAQIAAwQSERNBUtH/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AyFKtbqgV7dWPbIg+Sb1lzO2gC8AnUxED/9k=",
     w: 600, h: 340,
     alt: "Calendered rubber stock on the mill",
     status: "placeholder",
   },
   "home.product.gaskets": {
     src: "/images/home/c55bb2d85780bee06d8bfafcf4f6d0dc5b8be3ff.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAdEAABBAMBAQAAAAAAAAAAAAACAAEREgMTMSFh/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AJERdsjiTuNZmO/Uya9hanKk+W6iIP/Z",
     w: 600, h: 340,
     alt: "Close view of a moulded rubber component",
     status: "placeholder",
   },
   "home.product.moulded": {
     src: "/images/home/ac21c1e8b9e8321200cf4973c54de95bfcbc5228.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIG/8QAGxAAAgEFAAAAAAAAAAAAAAAAAAIBAxESISL/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AzCVFiN3IZ1ynkAD/2Q==",
     w: 600, h: 340,
     alt: "Overhead gantry above the moulding bay",
     status: "placeholder",
   },
   "home.product.sheets": {
     src: "/images/home/de306a9160ef2bba3abd07c0ac6d77f0d077cecf.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQG/8QAHxAAAgIBBAMAAAAAAAAAAAAAAQIAAwQREhQhMUGR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AM7ya8khrcagPu8ouzX5J2SsMQ1ZHfWh9RED/9k=",
     w: 600, h: 340,
     alt: "Rolled rubber sheet stock in the works",
     status: "placeholder",
   },
   "home.product.extruded": {
     src: "/images/home/950e8ff579b84c9c422d54723ce41b49e95e2ee3.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQG/8QAGhAAAwEAAwAAAAAAAAAAAAAAAAECIRFBof/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDNOplcz2vSdvdAA//Z",
     w: 600, h: 340,
     alt: "Extrusion line pipework and ducting",
     status: "placeholder",
   },
   "home.product.custom": {
     src: "/images/home/cd8b948d88912933d9e0c8a7432de78636c70800.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMG/8QAIRAAAgEDAwUAAAAAAAAAAAAAAQIRAAMEBRITBiMxUYH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AM7h6pYxLR48BOU+LhcmPhqz9Q3GbtjYgnapZjAmfdKUR//Z",
     w: 600, h: 340,
     alt: "Assembly and finishing stations under white partitions",
     status: "placeholder",
@@ -732,35 +650,30 @@ export const IMAGES = {
      seventh near-identical container shot. */
   "why.hero": {
     src: "/images/why-margo/c49f9d96443843ae62a37ed10ac28d0ce7447b9e.jpg",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEC/8QAHRAAAQQDAQEAAAAAAAAAAAAAAQACAxEhIlEEMf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAGBEAAgMAAAAAAAAAAAAAAAAAAAECEVH/2gAMAwEAAhEDEQA/ANxw24sZFrdWKyO/VHeB2NAO0QiJbI4rD//Z",
     w: 1920, h: 1080,
     alt: "Process pipework and machinery across a manufacturing hall",
     status: "placeholder",
   },
   "why.heritage": {
     src: "/images/why-margo/adf959e07936fb5f4bce323db8f26de01a831a3e.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMG/8QAGxAAAQUBAQAAAAAAAAAAAAAAAQACAxExEiL/xAAUAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AzMTYj6cDVZalIG9msREF/9k=",
     w: 900, h: 600,
     alt: "Long production bay with moulding machinery in service",
     status: "placeholder",
   },
   "why.manufacturing": {
     src: "/images/why-margo/4b0f590fdec50c3db2aacc467c9392873d42376a.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAFAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIE/8QAHRAAAQQCAwAAAAAAAAAAAAAAAQACAwQRIRIyYf/EABQBAQAAAAAAAAAAAAAAAAAAAAP/xAAXEQEBAQEAAAAAAAAAAAAAAAABAAIR/9oADAMBAAIRAxEAPwDHUtvhY0R6aMAA79VS25uZJc3J31REJkn2vW//2Q==",
     w: 1600, h: 600,
     alt: "Robotic handling arms on an automated production cell",
     status: "placeholder",
   },
   "why.quality": {
     src: "/images/why-margo/16a166a740e41645c5519b72c9d971b3f0d8cb4f.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwIE/8QAIRAAAgEDAwUAAAAAAAAAAAAAAQIDAAQFERJxITEyM4H/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAEhEf/aAAwDAQACEQMRAD8AzZCwhNzAIlG5yHkcqSrnQ9Ne3ymtsOqK5F7LFvcttVgBQ53xk5FWnrXgUcCun//Z",
     w: 800, h: 600,
     alt: "Microscope on the quality control laboratory bench",
     status: "placeholder",
   },
   "why.support": {
     src: "/images/why-margo/dc2081305a354358c516cebae6bccdac91133eb2.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAPAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAEC/8QAIxAAAgICAQIHAAAAAAAAAAAAAQIDEQQSAAUhIzFCUWFxof/EABQBAQAAAAAAAAAAAAAAAAAAAAP/xAAZEQACAwEAAAAAAAAAAAAAAAAAARESIkH/2gAMAwEAAhEDEQA/AFZ8uL4rIEmMseoKNep9/jy4OGOZU1iV3UeoqLPJ1PElMQTZ7sHsVBv7q+b6a+cmLSJHINiSzHuT+cPVpFzRLp//2Q==",
     w: 800, h: 1000,
     alt: "Engineer in high-visibility gear inspecting an installation",
     status: "placeholder",
@@ -773,7 +686,6 @@ export const IMAGES = {
   /* ── /case-studies ───────────────────────────────────────────────────── */
   "case-studies.hero": {
     src: "/images/case-studies/a28e53ff97d42482aa7288fa2f136df7c4921cbc.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAgQFBv/EACIQAAIBAgUFAAAAAAAAAAAAAAEDAgAEERMhMTIUNHFygf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAGBEAAgMAAAAAAAAAAAAAAAAAAAEREiH/2gAMAwEAAhEDEQA/AM71i5tiWCbMNACdh8oW3sM2RUuCgTw1OB2pk9ufFSbjmPUVE4wVP//Z",
     w: 1200, h: 800,
     alt: "Operators working a compression press on the Nashik production floor",
     status: "placeholder",
@@ -785,21 +697,18 @@ export const IMAGES = {
      which is why they are shared rather than keyed per product. */
   "sku.product": {
     src: "/images/skus/77c79999d2988d3c3a879a7b62dff88f5e778975.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAUG/8QAIBAAAQMDBQEAAAAAAAAAAAAAAQACAwQREiE0QlFxcv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPOjzuGkDFpcb9BDqYzFUPjJBLTbRWuL/golZupPUH/9k=",
     w: 800, h: 600,
     alt: "Moulded rubber components photographed against a neutral backdrop",
     status: "placeholder",
   },
   "sku.machining": {
     src: "/images/skus/c35420853d8134a2dfd995d00337f53a5bab2b21.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAKAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAQIDBv/EAB8QAAICAQQDAAAAAAAAAAAAAAECAAMREhMhMTJRcf/EABUBAQEAAAAAAAAAAAAAAAAAAAEC/8QAGBEBAQADAAAAAAAAAAAAAAAAAQACESH/2gAMAwEAAhEDEQA/AMiu2VIszyR0YLLaVcgIxHvViK3kv2RbuI8pcTd//9k=",
     w: 500, h: 400,
     alt: "Operator setting up a machining pass on the shop floor",
     status: "placeholder",
   },
   "sku.finishing": {
     src: "/images/skus/d155b80b89739452527187ec53e6ab7c35e952b3.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAwX/xAAgEAABBAEEAwAAAAAAAAAAAAABAAIDEQQFEnKxMzXC/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAVEQEBAAAAAAAAAAAAAAAAAAAAQf/aAAwDAQACEQMRAD8AOLVzlSyMdGGRmwNzrd2o8WHbS4iBu42BI8A0hxfaDl8pM7yR8B2VVEf/2Q==",
     w: 800, h: 600,
     alt: "Grinding and finishing work throwing sparks in the workshop",
     status: "placeholder",
@@ -813,14 +722,12 @@ export const IMAGES = {
      moulded parts in a hex grid over the sea beside a container ship. */
   "home.hero": {
     src: "/images/home/hero-components-ship.webp",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQF/8QAHRAAAgIBBQAAAAAAAAAAAAAAAQIAAxEFITFBUf/EABQBAQAAAAAAAAAAAAAAAAAAAAT/xAAVEQEBAAAAAAAAAAAAAAAAAAABAP/aAAwDAQACEQMRAD8AwarFG5bAPJHkvTVa6kCVLlR24GSYiIGEhf/Z",
     w: 1536, h: 1024,
     alt: "Moulded rubber components laid out in a hexagonal grid over the sea beside a container ship under way",
     status: "placeholder",
   },
   "home.portfolio.o-rings": {
     src: "/images/products/02c119a1180fdfe14c8f924ae98fb0884999f496.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAgMEBf/EACMQAAIBBAEDBQAAAAAAAAAAAAECAwAEERITISMyMUFCUbH/xAAUAQEAAAAAAAAAAAAAAAAAAAAC/8QAFxEBAQEBAAAAAAAAAAAAAAAAAQARIf/aAAwDAQACEQMRAD8AxUtZ7QsvEUOCGjYZYD3/ACiuMSsskq6lxsNRqCMnBAqq1Lyyqtw5lXTlO3kQfjn6pvA04E7SDugMFK+Ax0A6+gpHIJt//9k=",
     w: 800,
     h: 900,
     alt: "Custom O-rings in FKM, NBR, EPDM and silicone",
@@ -828,7 +735,6 @@ export const IMAGES = {
   },
   "home.portfolio.oil-seals": {
     src: "/images/products/446414d85bfd92e3fcd4ae2b640c6d81e9629b91.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAQMEBv/EACAQAAICAgEFAQAAAAAAAAAAAAECAxEABEEiMTJRYbH/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AM9Lp6RKvBOyKQemSiQb+fuTbUMcMxUvfII7Y4RlUqwaNePrDLCC9hmF8XiD/9k=",
     w: 800,
     h: 900,
     alt: "Rotary oil seals for gearboxes and pumps",
@@ -836,7 +742,6 @@ export const IMAGES = {
   },
   "home.portfolio.gaskets": {
     src: "/images/products/4c6677128b58b94c724e7539dd343714f110a975.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwEF/8QAIxAAAgICAQIHAAAAAAAAAAAAAQIDEQAEBRMxISJBQlFhwf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8Ar8lEk6x9UEH3FSVP1Y9cbW3F2ouoBfjXlYfuZj8csrlDIwjNMFrsfm8aPVUA2zE33Jwj/9k=",
     w: 800,
     h: 900,
     alt: "Moulded and die-cut rubber gaskets for flanged joints",
@@ -844,7 +749,6 @@ export const IMAGES = {
   },
   "home.portfolio.bellows": {
     src: "/images/products/4fb48cf2a43d61bec568791c2d5dbea12013f92b.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAED/8QAIRAAAQQBAwUAAAAAAAAAAAAAAQIDBBEAEhMhIjFBUXH/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/EABURAQEAAAAAAAAAAAAAAAAAAAEA/9oADAMBAAIRAxEAPwC7kaPobQizfClHkV6w7kyc8vUlbNfTmrrIaqiT2GDcj9dhZF+ABlCMd//Z",
     w: 800,
     h: 900,
     alt: "Rubber bellows and protective boots",
@@ -852,7 +756,6 @@ export const IMAGES = {
   },
   "home.portfolio.anti-vibration-mounts": {
     src: "/images/products/75ab01fa5d31999b511f4e67578971b96eddcb11.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwQG/8QAIRAAAgEDBAMBAAAAAAAAAAAAAQIDAAQSERMiUSExccH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABgRAAIDAAAAAAAAAAAAAAAAAAABAhEx/9oADAMBAAIRAxEAPwAjLtTmTwJmDLgqnIH13V97dbsiYzFAqBdMD+USTLd3pguokk5sA44sND2K0sMEcUSqiKB8qxSwOz//2Q==",
     w: 800,
     h: 900,
     alt: "Rubber-to-metal bonded anti-vibration mounts",
@@ -860,7 +763,6 @@ export const IMAGES = {
   },
   "home.portfolio.grommets": {
     src: "/images/products/93f522e98c504f8c1e2d5f6a4de1b41ea32d6a8c.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQQG/8QAHhAAAwACAwADAAAAAAAAAAAAAQIDAAQFESESMXH/xAAUAQEAAAAAAAAAAAAAAAAAAAAC/8QAFREBAQAAAAAAAAAAAAAAAAAAAQD/2gAMAwEAAhEDEQA/AKr7Etjj91Hgk6Tj8vCrKex4QwxaMisUVj2QoBJ/MD5uc9LkddISmk9kBXVVAHYb7zSkDs4liF//2Q==",
     w: 800,
     h: 900,
     alt: "Rubber grommets for cable and panel pass-throughs",
@@ -868,7 +770,6 @@ export const IMAGES = {
   },
   "home.portfolio.bushes": {
     src: "/images/products/9f2968d4dfd6f2ed9996b7fd692ccf32360ae269.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQAB/8QAIRAAAgEDBAMBAAAAAAAAAAAAAQIDAAQRBRIhIjFBgdH/xAAUAQEAAAAAAAAAAAAAAAAAAAAC/8QAFhEBAQEAAAAAAAAAAAAAAAAAABES/9oADAMBAAIRAxEAPwACwSNXQh845ClQQaSjubCNdsti1y2T3zj55rbXR0UjZO+0Z6sARzVPoaNKSJSufQB/aGyj/9k=",
     w: 800,
     h: 900,
     alt: "Rubber bushes and bushings for suspension and mounting",
@@ -876,7 +777,6 @@ export const IMAGES = {
   },
   "home.portfolio.pads-stoppers-caps": {
     src: "/images/products/aea163e6d5b7af55e715b43d25d1f381505ab88a.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAwQFBv/EAB4QAAICAwADAQAAAAAAAAAAAAECAxEABCESIkEx/8QAFAEBAAAAAAAAAAAAAAAAAAAAAf/EABcRAQEBAQAAAAAAAAAAAAAAAAEAEUH/2gAMAwEAAhEDEQA/ANTp7UbsxDC+FiRRPP3GEdJUV4j5owsMPoORYJHRhsSEO/gIwKoAc+YXXMezArtAgr1AFgADgw2QO3//2Q==",
     w: 800,
     h: 900,
     alt: "Rubber pads, stoppers and protective caps",
@@ -884,7 +784,6 @@ export const IMAGES = {
   },
   "home.portfolio.leak-test-rubber": {
     src: "/images/products/f0cbf4be4c181a6af58d3d24a36cb41938ac4689.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABAH/xAAiEAABAwMDBQAAAAAAAAAAAAABAgMRAAQhEjJBBSIxocH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AEtoVq7lmFEGAeSM0G7acQ6Cl5Q1CTBjkj5RbnqDtutte8bSkk5jE1E3IVJU2DJkSfAOY91B/9k=",
     w: 800,
     h: 900,
     alt: "Leak-test rubber for alloy-wheel pressure testing",
@@ -892,7 +791,6 @@ export const IMAGES = {
   },
   "home.portfolio.extrusion": {
     src: "/images/products-category/9bb7539abd559eb1e8be67cf319646c7bb4c2b78.jpg",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEF/8QAHBAAAgICAwAAAAAAAAAAAAAAAQIAAxFBEyRi/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwT/xAAVEQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEQMRAD8AhfjHVQIh3szPLoxJsawt6bMRKLBv/9k=",
     w: 1800,
     h: 1000,
     alt: "Rubber extrusion line running continuous profile through inline tooling",
@@ -900,7 +798,6 @@ export const IMAGES = {
   },
   "home.portfolio.sponge-foam-rubber": {
     src: "/images/products-category/2508834bbd9a6bae9c03ba86094ce277f1df025d.jpg",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQG/8QAHRAAAwACAgMAAAAAAAAAAAAAAQIDABEEEiFBUf/EABQBAQAAAAAAAAAAAAAAAAAAAAH/xAAYEQACAwAAAAAAAAAAAAAAAAAAARESMf/aAAwDAQACEQMRAD8Az8OKO8kGqNc6Bb19y0wY0oi1ZVk3QBToeMYwhPRsz//Z",
     w: 1600,
     h: 1000,
     alt: "Gloved operator handling sheet stock at a press",
@@ -914,56 +811,48 @@ export const IMAGES = {
   },
   "products.sectors.automotive": {
     src: "/images/industries/ef9b0fcea22b06954dcd3d147d4e70b3a4ee7463.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAT/xAAdEAACAgMAAwAAAAAAAAAAAAABAgARAwQSEzFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCLa3cDN3kDs7ctbqOhQ9fJDt7HlyKaC0gFcxEFP//Z",
     w: 800, h: 560,
     alt: "Robotic automotive body assembly line",
     status: "placeholder",
   },
   "products.sectors.oil-gas": {
     src: "/images/industries/585674e23c667606a0041e38d48fbbc07ca83204.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAED/8QAHBAAAgICAwAAAAAAAAAAAAAAAAECEhFBBRUh/8QAFQEBAQAAAAAAAAAAAAAAAAAABAX/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQITYZH/2gAMAwEAAhEDEQA/AK+XjFKqtl480advDdQA2Gd9Kqpn/9k=",
     w: 800, h: 560,
     alt: "Offshore oil and gas platform at sunset",
     status: "placeholder",
   },
   "products.sectors.mining": {
     src: "/images/industries/815cceecbc7e146feb8e36383209151c6a7b31f6.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAbEAEAAgIDAAAAAAAAAAAAAAABAAIRITJRcf/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAVEQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEQMRAD8AnGxpVq9mYSw8K28TURDKT//Z",
     w: 800, h: 560,
     alt: "Haul trucks and excavators in an open-pit mine",
     status: "placeholder",
   },
   "products.sectors.pumps-valves": {
     src: "/images/industries/421c154cfdc2c9aa18ab2918ef9efb1184cb60bc.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIE/8QAHhAAAgEEAwEAAAAAAAAAAAAAAQIDAAQSIQURMZH/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/EABkRAQACAwAAAAAAAAAAAAAAAAEAEQISIf/aAAwDAQACEQMRAD8Axzci0j4KWxdhkuWxv3XlVHdNbgxq0ajsnposz9NKU2o3JjJK7P/Z",
     w: 800, h: 560,
     alt: "Industrial pump housings in a process plant",
     status: "placeholder",
   },
   "products.sectors.hvac": {
     src: "/images/industries/43b1dcb1e3e1692fc39a3a141bd8d408ee28b984.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAgEAABBAEEAwAAAAAAAAAAAAACAAEDEQQSExQhIzGh/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/xAAWEQEBAQAAAAAAAAAAAAAAAAARACH/2gAMAwEAAhEDEQA/AJHHkjjyJPFYDZRE/elq7+qYOIZgJbgNbeienREcaGl//9k=",
     w: 800, h: 560,
     alt: "Rooftop HVAC condenser units and pipework",
     status: "placeholder",
   },
   "products.sectors.electrical-electronics": {
     src: "/images/industries/3a827cca46f2ae89cdeca92efc05965d64d9520f.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQF/8QAGhAAAgMBAQAAAAAAAAAAAAAAAQIABBEDIv/EABUBAQEAAAAAAAAAAAAAAAAAAAEC/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AMGvcVK48quDMEm63CXJUHIiVQ//2Q==",
     w: 800, h: 560,
     alt: "Printed circuit board detail",
     status: "placeholder",
   },
   "products.sectors.medical-devices": {
     src: "/images/industries/be6a1db6c73766bcc4a639616b812d3b543c02e6.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAT/xAAdEAACAwACAwAAAAAAAAAAAAABAgAEEQNRBRQx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQT/xAAZEQEAAgMAAAAAAAAAAAAAAAABAAIDESH/2gAMAwEAAhEDEQA/ALPFVqzqzVwWr/NIGb0Jb6LOSz8ibvWxEpyXVhoHk//Z",
     w: 800, h: 560,
     alt: "Laboratory pipetting into sample vials",
     status: "placeholder",
   },
   "products.sectors.water-fluid-management": {
     src: "/images/industries/a3ebd35d30ff2200c507e4cce2b2826ecf9c91a8.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEE/8QAGxAAAgMBAQEAAAAAAAAAAAAAAREAAhJBAwT/xAAUAQEAAAAAAAAAAAAAAAAAAAAD/8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAC/9oADAMBAAIRAxEAPwDH83qNVrgEFth8MtrDNGgch8iIaTZUb//Z",
     w: 800, h: 560,
     alt: "Valve manifold and pipework on a treatment skid",
     status: "placeholder",
@@ -972,7 +861,6 @@ export const IMAGES = {
      to upload one. Stand-in: the Agriculture industry page hero. */
   "products.sectors.agriculture": {
     src: "/images/industries/8bf6d91e2004803ae4f15901b0ef909853be3e6a.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIF/8QAHhAAAQMEAwAAAAAAAAAAAAAAAQACAwQGESESIoL/xAAUAQEAAAAAAAAAAAAAAAAAAAAC/8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAR/9oADAMBAAIRAxEAPwDVjueOSbiKZ7Y99nOG1ZuOnBwYyPYRERnhf//Z",
     w: 800, h: 560,
     alt: "Tractor working a field at dusk",
     status: "placeholder",
@@ -999,7 +887,6 @@ export const IMAGES = {
   },
   "products.anti-vibration-mounts.hero": {
     src: "/images/products/75ab01fa5d31999b511f4e67578971b96eddcb11.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwQG/8QAIRAAAgEDBAMBAAAAAAAAAAAAAQIDAAQSERMiUSExccH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABgRAAIDAAAAAAAAAAAAAAAAAAABAhEx/9oADAMBAAIRAxEAPwAjLtTmTwJmDLgqnIH13V97dbsiYzFAqBdMD+USTLd3pguokk5sA44sND2K0sMEcUSqiKB8qxSwOz//2Q==",
     w: 800,
     h: 900,
     alt: "Rubber-to-metal bonded anti-vibration mounts at Margo Rubber Products, Nashik",
@@ -1015,7 +902,6 @@ export const IMAGES = {
   },
   "products.bonded-components.hero": {
     src: "/images/products/75ab01fa5d31999b511f4e67578971b96eddcb11.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwQG/8QAIRAAAgEDBAMBAAAAAAAAAAAAAQIDAAQSERMiUSExccH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABgRAAIDAAAAAAAAAAAAAAAAAAABAhEx/9oADAMBAAIRAxEAPwAjLtTmTwJmDLgqnIH13V97dbsiYzFAqBdMD+USTLd3pguokk5sA44sND2K0sMEcUSqiKB8qxSwOz//2Q==",
     w: 800,
     h: 900,
     alt: "Rubber-to-metal bonded anti-vibration mounts",
@@ -1023,7 +909,6 @@ export const IMAGES = {
   },
   "products.anti-vibration-mounts.material.fkm": {
     src: "/images/products-category/e7261bcef11d425da03cc396a9380a40a734352d.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAeEAEAAgIBBQAAAAAAAAAAAAABAgMAESEEIkFCof/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAWEQADAAAAAAAAAAAAAAAAAAAAASH/2gAMAwEAAhEDEQA/AJdnQwFaby42hbE4knjWLarKkrGLKJ3xPSTyx+4xiUA6f//Z",
     w: 600,
     h: 400,
     alt: "FKM (Viton) sealing components in an assembled mechanical drive",
@@ -1031,7 +916,6 @@ export const IMAGES = {
   },
   "products.anti-vibration-mounts.material.nbr": {
     src: "/images/products-category/2f17f6aa8aaabf127e5bb87058dc7e63b345a62a.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIG/8QAHBABAQEAAQUAAAAAAAAAAAAAAQIAAxEhMUFR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMdXKAhEh67aLJUZk6J4+ZmD/9k=",
     w: 600,
     h: 400,
     alt: "Coiled black nitrile rubber profile",
@@ -1039,7 +923,6 @@ export const IMAGES = {
   },
   "products.anti-vibration-mounts.material.epdm": {
     src: "/images/products-category/d7bde97b0771dcfebef40dd17fb85dd96347efea.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAME/8QAHxAAAgICAQUAAAAAAAAAAAAAAQIAAwQRMRIhIkGR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AJLa9ivZUhYceOhv76m1MrCpRUfROgT1c9xERC//2Q==",
     w: 600,
     h: 400,
     alt: "Production line assembling moulded rubber components",
@@ -1047,7 +930,6 @@ export const IMAGES = {
   },
   "products.anti-vibration-mounts.material.silicone": {
     src: "/images/products-category/ff30392082191f2d632b4ed7a40a4fedf596a14e.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMG/8QAHRAAAQQDAQEAAAAAAAAAAAAAAQACAxIEESExQf/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPwZDWu1LGa1PWs6T8UjmzWNQGjfgA0ERE3//Z",
     w: 600,
     h: 400,
     alt: "Industrial rubber manufacturing floor during production",
@@ -1055,7 +937,6 @@ export const IMAGES = {
   },
   "products.anti-vibration-mounts.material.aem": {
     src: "/images/products-category/ff30392082191f2d632b4ed7a40a4fedf596a14e.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMG/8QAHRAAAQQDAQEAAAAAAAAAAAAAAQACAxIEESExQf/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPwZDWu1LGa1PWs6T8UjmzWNQGjfgA0ERE3//Z",
     w: 600,
     h: 400,
     alt: "Industrial rubber manufacturing floor during production",
@@ -1063,7 +944,6 @@ export const IMAGES = {
   },
   "products.anti-vibration-mounts.material.sbr": {
     src: "/images/products-category/e7261bcef11d425da03cc396a9380a40a734352d.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAeEAEAAgIBBQAAAAAAAAAAAAABAgMAESEEIkFCof/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAWEQADAAAAAAAAAAAAAAAAAAAAASH/2gAMAwEAAhEDEQA/AJdnQwFaby42hbE4knjWLarKkrGLKJ3xPSTyx+4xiUA6f//Z",
     w: 600,
     h: 400,
     alt: "FKM (Viton) sealing components in an assembled mechanical drive",
@@ -1071,7 +951,6 @@ export const IMAGES = {
   },
   "products.anti-vibration-mounts.material.cr": {
     src: "/images/products-category/d7bde97b0771dcfebef40dd17fb85dd96347efea.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAME/8QAHxAAAgICAQUAAAAAAAAAAAAAAQIAAwQRMRIhIkGR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AJLa9ivZUhYceOhv76m1MrCpRUfROgT1c9xERC//2Q==",
     w: 600,
     h: 400,
     alt: "Production line assembling moulded rubber components",
@@ -1079,7 +958,6 @@ export const IMAGES = {
   },
   "products.anti-vibration-mounts.material.nr": {
     src: "/images/products-category/2f17f6aa8aaabf127e5bb87058dc7e63b345a62a.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIG/8QAHBABAQEAAQUAAAAAAAAAAAAAAQIAAxEhMUFR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMdXKAhEh67aLJUZk6J4+ZmD/9k=",
     w: 600,
     h: 400,
     alt: "Coiled black nitrile rubber profile",
@@ -1095,7 +973,6 @@ export const IMAGES = {
   },
   "products.bellows.hero": {
     src: "/images/products/4fb48cf2a43d61bec568791c2d5dbea12013f92b.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAED/8QAIRAAAQQBAwUAAAAAAAAAAAAAAQIDBBEAEhMhIjFBUXH/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/EABURAQEAAAAAAAAAAAAAAAAAAAEA/9oADAMBAAIRAxEAPwC7kaPobQizfClHkV6w7kyc8vUlbNfTmrrIaqiT2GDcj9dhZF+ABlCMd//Z",
     w: 800,
     h: 900,
     alt: "Convoluted rubber bellows moulded at Margo Rubber Products, Nashik",
@@ -1111,7 +988,6 @@ export const IMAGES = {
   },
   "products.diaphragms.hero": {
     src: "/images/products/4fb48cf2a43d61bec568791c2d5dbea12013f92b.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAED/8QAIRAAAQQBAwUAAAAAAAAAAAAAAQIDBBEAEhMhIjFBUXH/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/EABURAQEAAAAAAAAAAAAAAAAAAAEA/9oADAMBAAIRAxEAPwC7kaPobQizfClHkV6w7kyc8vUlbNfTmrrIaqiT2GDcj9dhZF+ABlCMd//Z",
     w: 800,
     h: 900,
     alt: "Rubber bellows and protective boots",
@@ -1119,7 +995,6 @@ export const IMAGES = {
   },
   "products.bellows.material.fkm": {
     src: "/images/products-category/e7261bcef11d425da03cc396a9380a40a734352d.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAeEAEAAgIBBQAAAAAAAAAAAAABAgMAESEEIkFCof/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAWEQADAAAAAAAAAAAAAAAAAAAAASH/2gAMAwEAAhEDEQA/AJdnQwFaby42hbE4knjWLarKkrGLKJ3xPSTyx+4xiUA6f//Z",
     w: 600,
     h: 400,
     alt: "FKM (Viton) sealing components in an assembled mechanical drive",
@@ -1127,7 +1002,6 @@ export const IMAGES = {
   },
   "products.bellows.material.nbr": {
     src: "/images/products-category/2f17f6aa8aaabf127e5bb87058dc7e63b345a62a.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIG/8QAHBABAQEAAQUAAAAAAAAAAAAAAQIAAxEhMUFR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMdXKAhEh67aLJUZk6J4+ZmD/9k=",
     w: 600,
     h: 400,
     alt: "Coiled black nitrile rubber profile",
@@ -1135,7 +1009,6 @@ export const IMAGES = {
   },
   "products.bellows.material.epdm": {
     src: "/images/products-category/d7bde97b0771dcfebef40dd17fb85dd96347efea.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAME/8QAHxAAAgICAQUAAAAAAAAAAAAAAQIAAwQRMRIhIkGR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AJLa9ivZUhYceOhv76m1MrCpRUfROgT1c9xERC//2Q==",
     w: 600,
     h: 400,
     alt: "Production line assembling moulded rubber components",
@@ -1143,7 +1016,6 @@ export const IMAGES = {
   },
   "products.bellows.material.silicone": {
     src: "/images/products-category/ff30392082191f2d632b4ed7a40a4fedf596a14e.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMG/8QAHRAAAQQDAQEAAAAAAAAAAAAAAQACAxIEESExQf/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPwZDWu1LGa1PWs6T8UjmzWNQGjfgA0ERE3//Z",
     w: 600,
     h: 400,
     alt: "Industrial rubber manufacturing floor during production",
@@ -1505,7 +1377,6 @@ export const IMAGES = {
   },
   "products.bellows.material.sbr": {
     src: "/images/products-category/ff30392082191f2d632b4ed7a40a4fedf596a14e.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMG/8QAHRAAAQQDAQEAAAAAAAAAAAAAAQACAxIEESExQf/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPwZDWu1LGa1PWs6T8UjmzWNQGjfgA0ERE3//Z",
     w: 600,
     h: 400,
     alt: "Industrial rubber manufacturing floor during production",
@@ -1513,7 +1384,6 @@ export const IMAGES = {
   },
   "products.bellows.material.aem": {
     src: "/images/products-category/e7261bcef11d425da03cc396a9380a40a734352d.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAeEAEAAgIBBQAAAAAAAAAAAAABAgMAESEEIkFCof/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAWEQADAAAAAAAAAAAAAAAAAAAAASH/2gAMAwEAAhEDEQA/AJdnQwFaby42hbE4knjWLarKkrGLKJ3xPSTyx+4xiUA6f//Z",
     w: 600,
     h: 400,
     alt: "FKM (Viton) sealing components in an assembled mechanical drive",
@@ -1521,7 +1391,6 @@ export const IMAGES = {
   },
   "products.bellows.material.cr": {
     src: "/images/products-category/d7bde97b0771dcfebef40dd17fb85dd96347efea.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAME/8QAHxAAAgICAQUAAAAAAAAAAAAAAQIAAwQRMRIhIkGR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AJLa9ivZUhYceOhv76m1MrCpRUfROgT1c9xERC//2Q==",
     w: 600,
     h: 400,
     alt: "Production line assembling moulded rubber components",
@@ -1529,7 +1398,6 @@ export const IMAGES = {
   },
   "products.bellows.material.nr": {
     src: "/images/products-category/2f17f6aa8aaabf127e5bb87058dc7e63b345a62a.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIG/8QAHBABAQEAAQUAAAAAAAAAAAAAAQIAAxEhMUFR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMdXKAhEh67aLJUZk6J4+ZmD/9k=",
     w: 600,
     h: 400,
     alt: "Coiled black nitrile rubber profile",
@@ -1545,7 +1413,6 @@ export const IMAGES = {
   },
   "products.bushes.hero": {
     src: "/images/products/9f2968d4dfd6f2ed9996b7fd692ccf32360ae269.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQAB/8QAIRAAAgEDBAMBAAAAAAAAAAAAAQIDAAQRBRIhIjFBgdH/xAAUAQEAAAAAAAAAAAAAAAAAAAAC/8QAFhEBAQEAAAAAAAAAAAAAAAAAABES/9oADAMBAAIRAxEAPwACwSNXQh845ClQQaSjubCNdsti1y2T3zj55rbXR0UjZO+0Z6sARzVPoaNKSJSufQB/aGyj/9k=",
     w: 800,
     h: 900,
     alt: "Bonded rubber silent-block bushes at Margo Rubber Products, Nashik",
@@ -1553,7 +1420,6 @@ export const IMAGES = {
   },
   "products.bushes.material.fkm": {
     src: "/images/products-category/e7261bcef11d425da03cc396a9380a40a734352d.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAeEAEAAgIBBQAAAAAAAAAAAAABAgMAESEEIkFCof/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAWEQADAAAAAAAAAAAAAAAAAAAAASH/2gAMAwEAAhEDEQA/AJdnQwFaby42hbE4knjWLarKkrGLKJ3xPSTyx+4xiUA6f//Z",
     w: 600,
     h: 400,
     alt: "FKM (Viton) sealing components in an assembled mechanical drive",
@@ -1561,7 +1427,6 @@ export const IMAGES = {
   },
   "products.bushes.material.nbr": {
     src: "/images/products-category/2f17f6aa8aaabf127e5bb87058dc7e63b345a62a.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIG/8QAHBABAQEAAQUAAAAAAAAAAAAAAQIAAxEhMUFR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMdXKAhEh67aLJUZk6J4+ZmD/9k=",
     w: 600,
     h: 400,
     alt: "Coiled black nitrile rubber profile",
@@ -1569,7 +1434,6 @@ export const IMAGES = {
   },
   "products.bushes.material.epdm": {
     src: "/images/products-category/d7bde97b0771dcfebef40dd17fb85dd96347efea.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAME/8QAHxAAAgICAQUAAAAAAAAAAAAAAQIAAwQRMRIhIkGR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AJLa9ivZUhYceOhv76m1MrCpRUfROgT1c9xERC//2Q==",
     w: 600,
     h: 400,
     alt: "Production line assembling moulded rubber components",
@@ -1577,7 +1441,6 @@ export const IMAGES = {
   },
   "products.bushes.material.silicone": {
     src: "/images/products-category/ff30392082191f2d632b4ed7a40a4fedf596a14e.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMG/8QAHRAAAQQDAQEAAAAAAAAAAAAAAQACAxIEESExQf/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPwZDWu1LGa1PWs6T8UjmzWNQGjfgA0ERE3//Z",
     w: 600,
     h: 400,
     alt: "Industrial rubber manufacturing floor during production",
@@ -1585,7 +1448,6 @@ export const IMAGES = {
   },
   "products.bushes.material.sbr": {
     src: "/images/products-category/ff30392082191f2d632b4ed7a40a4fedf596a14e.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMG/8QAHRAAAQQDAQEAAAAAAAAAAAAAAQACAxIEESExQf/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPwZDWu1LGa1PWs6T8UjmzWNQGjfgA0ERE3//Z",
     w: 600,
     h: 400,
     alt: "Industrial rubber manufacturing floor during production",
@@ -1593,7 +1455,6 @@ export const IMAGES = {
   },
   "products.bushes.material.cr": {
     src: "/images/products-category/e7261bcef11d425da03cc396a9380a40a734352d.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAeEAEAAgIBBQAAAAAAAAAAAAABAgMAESEEIkFCof/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAWEQADAAAAAAAAAAAAAAAAAAAAASH/2gAMAwEAAhEDEQA/AJdnQwFaby42hbE4knjWLarKkrGLKJ3xPSTyx+4xiUA6f//Z",
     w: 600,
     h: 400,
     alt: "FKM (Viton) sealing components in an assembled mechanical drive",
@@ -1601,7 +1462,6 @@ export const IMAGES = {
   },
   "products.bushes.material.aem": {
     src: "/images/products-category/d7bde97b0771dcfebef40dd17fb85dd96347efea.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAME/8QAHxAAAgICAQUAAAAAAAAAAAAAAQIAAwQRMRIhIkGR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AJLa9ivZUhYceOhv76m1MrCpRUfROgT1c9xERC//2Q==",
     w: 600,
     h: 400,
     alt: "Production line assembling moulded rubber components",
@@ -1609,7 +1469,6 @@ export const IMAGES = {
   },
   "products.bushes.material.nr": {
     src: "/images/products-category/2f17f6aa8aaabf127e5bb87058dc7e63b345a62a.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIG/8QAHBABAQEAAQUAAAAAAAAAAAAAAQIAAxEhMUFR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMdXKAhEh67aLJUZk6J4+ZmD/9k=",
     w: 600,
     h: 400,
     alt: "Coiled black nitrile rubber profile",
@@ -1625,7 +1484,6 @@ export const IMAGES = {
   },
   "products.gaskets.hero": {
     src: "/images/products/4c6677128b58b94c724e7539dd343714f110a975.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwEF/8QAIxAAAgICAQIHAAAAAAAAAAAAAQIDEQAEBRMxISJBQlFhwf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8Ar8lEk6x9UEH3FSVP1Y9cbW3F2ouoBfjXlYfuZj8csrlDIwjNMFrsfm8aPVUA2zE33Jwj/9k=",
     w: 800,
     h: 900,
     alt: "Moulded EPDM flange gaskets at Margo Rubber Products, Nashik",
@@ -1633,7 +1491,6 @@ export const IMAGES = {
   },
   "products.gaskets.material.fkm": {
     src: "/images/products-category/e7261bcef11d425da03cc396a9380a40a734352d.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAeEAEAAgIBBQAAAAAAAAAAAAABAgMAESEEIkFCof/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAWEQADAAAAAAAAAAAAAAAAAAAAASH/2gAMAwEAAhEDEQA/AJdnQwFaby42hbE4knjWLarKkrGLKJ3xPSTyx+4xiUA6f//Z",
     w: 600,
     h: 400,
     alt: "FKM (Viton) sealing components in an assembled mechanical drive",
@@ -1641,7 +1498,6 @@ export const IMAGES = {
   },
   "products.gaskets.material.nbr": {
     src: "/images/products-category/2f17f6aa8aaabf127e5bb87058dc7e63b345a62a.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIG/8QAHBABAQEAAQUAAAAAAAAAAAAAAQIAAxEhMUFR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMdXKAhEh67aLJUZk6J4+ZmD/9k=",
     w: 600,
     h: 400,
     alt: "Coiled black nitrile rubber profile",
@@ -1649,7 +1505,6 @@ export const IMAGES = {
   },
   "products.gaskets.material.epdm": {
     src: "/images/products-category/d7bde97b0771dcfebef40dd17fb85dd96347efea.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAME/8QAHxAAAgICAQUAAAAAAAAAAAAAAQIAAwQRMRIhIkGR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AJLa9ivZUhYceOhv76m1MrCpRUfROgT1c9xERC//2Q==",
     w: 600,
     h: 400,
     alt: "Production line assembling moulded rubber components",
@@ -1657,7 +1512,6 @@ export const IMAGES = {
   },
   "products.gaskets.material.silicone": {
     src: "/images/products-category/ff30392082191f2d632b4ed7a40a4fedf596a14e.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMG/8QAHRAAAQQDAQEAAAAAAAAAAAAAAQACAxIEESExQf/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPwZDWu1LGa1PWs6T8UjmzWNQGjfgA0ERE3//Z",
     w: 600,
     h: 400,
     alt: "Industrial rubber manufacturing floor during production",
@@ -1672,7 +1526,6 @@ export const IMAGES = {
   },
   "products.gaskets.material.nr": {
     src: "/images/products-category/ff30392082191f2d632b4ed7a40a4fedf596a14e.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMG/8QAHRAAAQQDAQEAAAAAAAAAAAAAAQACAxIEESExQf/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPwZDWu1LGa1PWs6T8UjmzWNQGjfgA0ERE3//Z",
     w: 600,
     h: 400,
     alt: "Industrial rubber manufacturing floor during production",
@@ -1680,7 +1533,6 @@ export const IMAGES = {
   },
   "products.gaskets.material.sbr": {
     src: "/images/products-category/e7261bcef11d425da03cc396a9380a40a734352d.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAeEAEAAgIBBQAAAAAAAAAAAAABAgMAESEEIkFCof/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAWEQADAAAAAAAAAAAAAAAAAAAAASH/2gAMAwEAAhEDEQA/AJdnQwFaby42hbE4knjWLarKkrGLKJ3xPSTyx+4xiUA6f//Z",
     w: 600,
     h: 400,
     alt: "FKM (Viton) sealing components in an assembled mechanical drive",
@@ -1688,7 +1540,6 @@ export const IMAGES = {
   },
   "products.gaskets.material.cr": {
     src: "/images/products-category/2f17f6aa8aaabf127e5bb87058dc7e63b345a62a.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIG/8QAHBABAQEAAQUAAAAAAAAAAAAAAQIAAxEhMUFR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMdXKAhEh67aLJUZk6J4+ZmD/9k=",
     w: 600,
     h: 400,
     alt: "Coiled black nitrile rubber profile",
@@ -1696,7 +1547,6 @@ export const IMAGES = {
   },
   "products.gaskets.material.aem": {
     src: "/images/products-category/d7bde97b0771dcfebef40dd17fb85dd96347efea.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAME/8QAHxAAAgICAQUAAAAAAAAAAAAAAQIAAwQRMRIhIkGR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AJLa9ivZUhYceOhv76m1MrCpRUfROgT1c9xERC//2Q==",
     w: 600,
     h: 400,
     alt: "Production line assembling moulded rubber components",
@@ -1712,7 +1562,6 @@ export const IMAGES = {
   },
   "products.grommets.hero": {
     src: "/images/products/93f522e98c504f8c1e2d5f6a4de1b41ea32d6a8c.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQQG/8QAHhAAAwACAwADAAAAAAAAAAAAAQIDAAQFESESMXH/xAAUAQEAAAAAAAAAAAAAAAAAAAAC/8QAFREBAQAAAAAAAAAAAAAAAAAAAQD/2gAMAwEAAhEDEQA/AKr7Etjj91Hgk6Tj8vCrKex4QwxaMisUVj2QoBJ/MD5uc9LkddISmk9kBXVVAHYb7zSkDs4liF//2Q==",
     w: 800,
     h: 900,
     alt: "Moulded rubber cable grommets at Margo Rubber Products, Nashik",
@@ -1720,7 +1569,6 @@ export const IMAGES = {
   },
   "products.grommets.material.fkm": {
     src: "/images/products-category/e7261bcef11d425da03cc396a9380a40a734352d.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAeEAEAAgIBBQAAAAAAAAAAAAABAgMAESEEIkFCof/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAWEQADAAAAAAAAAAAAAAAAAAAAASH/2gAMAwEAAhEDEQA/AJdnQwFaby42hbE4knjWLarKkrGLKJ3xPSTyx+4xiUA6f//Z",
     w: 600,
     h: 400,
     alt: "FKM (Viton) sealing components in an assembled mechanical drive",
@@ -1728,7 +1576,6 @@ export const IMAGES = {
   },
   "products.grommets.material.nr": {
     src: "/images/products-category/e7261bcef11d425da03cc396a9380a40a734352d.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAeEAEAAgIBBQAAAAAAAAAAAAABAgMAESEEIkFCof/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAWEQADAAAAAAAAAAAAAAAAAAAAASH/2gAMAwEAAhEDEQA/AJdnQwFaby42hbE4knjWLarKkrGLKJ3xPSTyx+4xiUA6f//Z",
     w: 600,
     h: 400,
     alt: "FKM (Viton) sealing components in an assembled mechanical drive",
@@ -1736,7 +1583,6 @@ export const IMAGES = {
   },
   "products.grommets.material.sbr": {
     src: "/images/products-category/ff30392082191f2d632b4ed7a40a4fedf596a14e.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMG/8QAHRAAAQQDAQEAAAAAAAAAAAAAAQACAxIEESExQf/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPwZDWu1LGa1PWs6T8UjmzWNQGjfgA0ERE3//Z",
     w: 600,
     h: 400,
     alt: "Industrial rubber manufacturing floor during production",
@@ -1744,7 +1590,6 @@ export const IMAGES = {
   },
   "products.grommets.material.aem": {
     src: "/images/products-category/2f17f6aa8aaabf127e5bb87058dc7e63b345a62a.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIG/8QAHBABAQEAAQUAAAAAAAAAAAAAAQIAAxEhMUFR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMdXKAhEh67aLJUZk6J4+ZmD/9k=",
     w: 600,
     h: 400,
     alt: "Coiled black nitrile rubber profile",
@@ -1752,7 +1597,6 @@ export const IMAGES = {
   },
   "products.grommets.material.cr": {
     src: "/images/products-category/d7bde97b0771dcfebef40dd17fb85dd96347efea.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAME/8QAHxAAAgICAQUAAAAAAAAAAAAAAQIAAwQRMRIhIkGR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AJLa9ivZUhYceOhv76m1MrCpRUfROgT1c9xERC//2Q==",
     w: 600,
     h: 400,
     alt: "Production line assembling moulded rubber components",
@@ -1760,7 +1604,6 @@ export const IMAGES = {
   },
   "products.grommets.material.nbr": {
     src: "/images/products-category/2f17f6aa8aaabf127e5bb87058dc7e63b345a62a.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIG/8QAHBABAQEAAQUAAAAAAAAAAAAAAQIAAxEhMUFR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMdXKAhEh67aLJUZk6J4+ZmD/9k=",
     w: 600,
     h: 400,
     alt: "Coiled black nitrile rubber profile",
@@ -1768,7 +1611,6 @@ export const IMAGES = {
   },
   "products.grommets.material.epdm": {
     src: "/images/products-category/d7bde97b0771dcfebef40dd17fb85dd96347efea.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAME/8QAHxAAAgICAQUAAAAAAAAAAAAAAQIAAwQRMRIhIkGR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AJLa9ivZUhYceOhv76m1MrCpRUfROgT1c9xERC//2Q==",
     w: 600,
     h: 400,
     alt: "Production line assembling moulded rubber components",
@@ -1776,7 +1618,6 @@ export const IMAGES = {
   },
   "products.grommets.material.silicone": {
     src: "/images/products-category/ff30392082191f2d632b4ed7a40a4fedf596a14e.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMG/8QAHRAAAQQDAQEAAAAAAAAAAAAAAQACAxIEESExQf/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPwZDWu1LGa1PWs6T8UjmzWNQGjfgA0ERE3//Z",
     w: 600,
     h: 400,
     alt: "Industrial rubber manufacturing floor during production",
@@ -1792,7 +1633,6 @@ export const IMAGES = {
   },
   "products.leak-test-rubber.hero": {
     src: "/images/products/f0cbf4be4c181a6af58d3d24a36cb41938ac4689.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABAH/xAAiEAABAwMDBQAAAAAAAAAAAAABAgMRAAQhEjJBBSIxocH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AEtoVq7lmFEGAeSM0G7acQ6Cl5Q1CTBjkj5RbnqDtutte8bSkk5jE1E3IVJU2DJkSfAOY91B/9k=",
     w: 800,
     h: 900,
     alt: "Profiled leak-test sealing rubber for alloy wheel rigs, made at Margo Rubber Products, Nashik",
@@ -1800,7 +1640,6 @@ export const IMAGES = {
   },
   "products.leak-test-rubber.material.fkm": {
     src: "/images/products-category/e7261bcef11d425da03cc396a9380a40a734352d.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAeEAEAAgIBBQAAAAAAAAAAAAABAgMAESEEIkFCof/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAWEQADAAAAAAAAAAAAAAAAAAAAASH/2gAMAwEAAhEDEQA/AJdnQwFaby42hbE4knjWLarKkrGLKJ3xPSTyx+4xiUA6f//Z",
     w: 600,
     h: 400,
     alt: "FKM (Viton) sealing components in an assembled mechanical drive",
@@ -1808,7 +1647,6 @@ export const IMAGES = {
   },
   "products.leak-test-rubber.material.aem": {
     src: "/images/products-category/e7261bcef11d425da03cc396a9380a40a734352d.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAeEAEAAgIBBQAAAAAAAAAAAAABAgMAESEEIkFCof/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAWEQADAAAAAAAAAAAAAAAAAAAAASH/2gAMAwEAAhEDEQA/AJdnQwFaby42hbE4knjWLarKkrGLKJ3xPSTyx+4xiUA6f//Z",
     w: 600,
     h: 400,
     alt: "FKM (Viton) sealing components in an assembled mechanical drive",
@@ -1816,7 +1654,6 @@ export const IMAGES = {
   },
   "products.leak-test-rubber.material.sbr": {
     src: "/images/products-category/ff30392082191f2d632b4ed7a40a4fedf596a14e.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMG/8QAHRAAAQQDAQEAAAAAAAAAAAAAAQACAxIEESExQf/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPwZDWu1LGa1PWs6T8UjmzWNQGjfgA0ERE3//Z",
     w: 600,
     h: 400,
     alt: "Industrial rubber manufacturing floor during production",
@@ -1824,7 +1661,6 @@ export const IMAGES = {
   },
   "products.leak-test-rubber.material.nr": {
     src: "/images/products-category/2f17f6aa8aaabf127e5bb87058dc7e63b345a62a.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIG/8QAHBABAQEAAQUAAAAAAAAAAAAAAQIAAxEhMUFR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMdXKAhEh67aLJUZk6J4+ZmD/9k=",
     w: 600,
     h: 400,
     alt: "Coiled black nitrile rubber profile",
@@ -1832,7 +1668,6 @@ export const IMAGES = {
   },
   "products.leak-test-rubber.material.cr": {
     src: "/images/products-category/d7bde97b0771dcfebef40dd17fb85dd96347efea.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAME/8QAHxAAAgICAQUAAAAAAAAAAAAAAQIAAwQRMRIhIkGR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AJLa9ivZUhYceOhv76m1MrCpRUfROgT1c9xERC//2Q==",
     w: 600,
     h: 400,
     alt: "Production line assembling moulded rubber components",
@@ -1840,7 +1675,6 @@ export const IMAGES = {
   },
   "products.leak-test-rubber.material.nbr": {
     src: "/images/products-category/2f17f6aa8aaabf127e5bb87058dc7e63b345a62a.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIG/8QAHBABAQEAAQUAAAAAAAAAAAAAAQIAAxEhMUFR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMdXKAhEh67aLJUZk6J4+ZmD/9k=",
     w: 600,
     h: 400,
     alt: "Coiled black nitrile rubber profile",
@@ -1848,7 +1682,6 @@ export const IMAGES = {
   },
   "products.leak-test-rubber.material.epdm": {
     src: "/images/products-category/d7bde97b0771dcfebef40dd17fb85dd96347efea.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAME/8QAHxAAAgICAQUAAAAAAAAAAAAAAQIAAwQRMRIhIkGR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AJLa9ivZUhYceOhv76m1MrCpRUfROgT1c9xERC//2Q==",
     w: 600,
     h: 400,
     alt: "Production line assembling moulded rubber components",
@@ -1856,7 +1689,6 @@ export const IMAGES = {
   },
   "products.leak-test-rubber.material.silicone": {
     src: "/images/products-category/ff30392082191f2d632b4ed7a40a4fedf596a14e.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMG/8QAHRAAAQQDAQEAAAAAAAAAAAAAAQACAxIEESExQf/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPwZDWu1LGa1PWs6T8UjmzWNQGjfgA0ERE3//Z",
     w: 600,
     h: 400,
     alt: "Industrial rubber manufacturing floor during production",
@@ -1864,7 +1696,6 @@ export const IMAGES = {
   },
   "products.o-rings.material.fkm": {
     src: "/images/products-category/e7261bcef11d425da03cc396a9380a40a734352d.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAeEAEAAgIBBQAAAAAAAAAAAAABAgMAESEEIkFCof/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAWEQADAAAAAAAAAAAAAAAAAAAAASH/2gAMAwEAAhEDEQA/AJdnQwFaby42hbE4knjWLarKkrGLKJ3xPSTyx+4xiUA6f//Z",
     w: 600,
     h: 400,
     alt: "FKM (Viton) sealing components in an assembled mechanical drive",
@@ -1872,7 +1703,6 @@ export const IMAGES = {
   },
   "products.o-rings.material.nbr": {
     src: "/images/products-category/2f17f6aa8aaabf127e5bb87058dc7e63b345a62a.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIG/8QAHBABAQEAAQUAAAAAAAAAAAAAAQIAAxEhMUFR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMdXKAhEh67aLJUZk6J4+ZmD/9k=",
     w: 600,
     h: 400,
     alt: "Coiled black nitrile rubber profile",
@@ -1880,7 +1710,6 @@ export const IMAGES = {
   },
   "products.o-rings.material.epdm": {
     src: "/images/products-category/d7bde97b0771dcfebef40dd17fb85dd96347efea.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAME/8QAHxAAAgICAQUAAAAAAAAAAAAAAQIAAwQRMRIhIkGR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AJLa9ivZUhYceOhv76m1MrCpRUfROgT1c9xERC//2Q==",
     w: 600,
     h: 400,
     alt: "Production line assembling moulded rubber components",
@@ -1888,7 +1717,6 @@ export const IMAGES = {
   },
   "products.o-rings.material.silicone": {
     src: "/images/products-category/ff30392082191f2d632b4ed7a40a4fedf596a14e.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMG/8QAHRAAAQQDAQEAAAAAAAAAAAAAAQACAxIEESExQf/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPwZDWu1LGa1PWs6T8UjmzWNQGjfgA0ERE3//Z",
     w: 600,
     h: 400,
     alt: "Industrial rubber manufacturing floor during production",
@@ -1896,7 +1724,6 @@ export const IMAGES = {
   },
   "products.o-rings.material.ptfe": {
     src: "/images/products-category/e7261bcef11d425da03cc396a9380a40a734352d.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAeEAEAAgIBBQAAAAAAAAAAAAABAgMAESEEIkFCof/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAWEQADAAAAAAAAAAAAAAAAAAAAASH/2gAMAwEAAhEDEQA/AJdnQwFaby42hbE4knjWLarKkrGLKJ3xPSTyx+4xiUA6f//Z",
     w: 600,
     h: 400,
     alt: "FKM (Viton) sealing components in an assembled mechanical drive",
@@ -1904,7 +1731,6 @@ export const IMAGES = {
   },
   "products.o-rings.material.nr": {
     src: "/images/products-category/ff30392082191f2d632b4ed7a40a4fedf596a14e.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMG/8QAHRAAAQQDAQEAAAAAAAAAAAAAAQACAxIEESExQf/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPwZDWu1LGa1PWs6T8UjmzWNQGjfgA0ERE3//Z",
     w: 600,
     h: 400,
     alt: "Industrial rubber manufacturing floor during production",
@@ -1912,7 +1738,6 @@ export const IMAGES = {
   },
   "products.o-rings.material.sbr": {
     src: "/images/products-category/d7bde97b0771dcfebef40dd17fb85dd96347efea.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAME/8QAHxAAAgICAQUAAAAAAAAAAAAAAQIAAwQRMRIhIkGR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AJLa9ivZUhYceOhv76m1MrCpRUfROgT1c9xERC//2Q==",
     w: 600,
     h: 400,
     alt: "Production line assembling moulded rubber components",
@@ -1920,7 +1745,6 @@ export const IMAGES = {
   },
   "products.o-rings.material.cr": {
     src: "/images/products-category/2f17f6aa8aaabf127e5bb87058dc7e63b345a62a.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIG/8QAHBABAQEAAQUAAAAAAAAAAAAAAQIAAxEhMUFR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMdXKAhEh67aLJUZk6J4+ZmD/9k=",
     w: 600,
     h: 400,
     alt: "Coiled black nitrile rubber profile",
@@ -1928,7 +1752,6 @@ export const IMAGES = {
   },
   "products.o-rings.material.aem": {
     src: "/images/products-category/e7261bcef11d425da03cc396a9380a40a734352d.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAeEAEAAgIBBQAAAAAAAAAAAAABAgMAESEEIkFCof/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAWEQADAAAAAAAAAAAAAAAAAAAAASH/2gAMAwEAAhEDEQA/AJdnQwFaby42hbE4knjWLarKkrGLKJ3xPSTyx+4xiUA6f//Z",
     w: 600,
     h: 400,
     alt: "FKM (Viton) sealing components in an assembled mechanical drive",
@@ -1944,7 +1767,6 @@ export const IMAGES = {
   },
   "products.oil-seals.hero": {
     src: "/images/products/446414d85bfd92e3fcd4ae2b640c6d81e9629b91.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAQMEBv/EACAQAAICAgEFAQAAAAAAAAAAAAECAxEABEEiMTJRYbH/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AM9Lp6RKvBOyKQemSiQb+fuTbUMcMxUvfII7Y4RlUqwaNePrDLCC9hmF8XiD/9k=",
     w: 800,
     h: 900,
     alt: "Rotary oil seals moulded by Margo Rubber Products, Nashik, India",
@@ -1960,7 +1782,6 @@ export const IMAGES = {
   },
   "products.seals.hero": {
     src: "/images/products/446414d85bfd92e3fcd4ae2b640c6d81e9629b91.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAQMEBv/EACAQAAICAgEFAQAAAAAAAAAAAAECAxEABEEiMTJRYbH/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AM9Lp6RKvBOyKQemSiQb+fuTbUMcMxUvfII7Y4RlUqwaNePrDLCC9hmF8XiD/9k=",
     w: 800,
     h: 900,
     alt: "Rotary oil seals for gearboxes and pumps",
@@ -1968,7 +1789,6 @@ export const IMAGES = {
   },
   "products.oil-seals.material.fkm": {
     src: "/images/products-category/e7261bcef11d425da03cc396a9380a40a734352d.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAeEAEAAgIBBQAAAAAAAAAAAAABAgMAESEEIkFCof/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAWEQADAAAAAAAAAAAAAAAAAAAAASH/2gAMAwEAAhEDEQA/AJdnQwFaby42hbE4knjWLarKkrGLKJ3xPSTyx+4xiUA6f//Z",
     w: 600,
     h: 400,
     alt: "FKM (Viton) sealing components in an assembled mechanical drive",
@@ -1976,7 +1796,6 @@ export const IMAGES = {
   },
   "products.oil-seals.material.nbr": {
     src: "/images/products-category/2f17f6aa8aaabf127e5bb87058dc7e63b345a62a.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIG/8QAHBABAQEAAQUAAAAAAAAAAAAAAQIAAxEhMUFR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMdXKAhEh67aLJUZk6J4+ZmD/9k=",
     w: 600,
     h: 400,
     alt: "Coiled black nitrile rubber profile",
@@ -1984,7 +1803,6 @@ export const IMAGES = {
   },
   "products.oil-seals.material.epdm": {
     src: "/images/products-category/d7bde97b0771dcfebef40dd17fb85dd96347efea.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAME/8QAHxAAAgICAQUAAAAAAAAAAAAAAQIAAwQRMRIhIkGR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AJLa9ivZUhYceOhv76m1MrCpRUfROgT1c9xERC//2Q==",
     w: 600,
     h: 400,
     alt: "Production line assembling moulded rubber components",
@@ -1992,7 +1810,6 @@ export const IMAGES = {
   },
   "products.oil-seals.material.silicone": {
     src: "/images/products-category/ff30392082191f2d632b4ed7a40a4fedf596a14e.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMG/8QAHRAAAQQDAQEAAAAAAAAAAAAAAQACAxIEESExQf/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPwZDWu1LGa1PWs6T8UjmzWNQGjfgA0ERE3//Z",
     w: 600,
     h: 400,
     alt: "Industrial rubber manufacturing floor during production",
@@ -2000,7 +1817,6 @@ export const IMAGES = {
   },
   "products.oil-seals.material.nr": {
     src: "/images/products-category/ff30392082191f2d632b4ed7a40a4fedf596a14e.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMG/8QAHRAAAQQDAQEAAAAAAAAAAAAAAQACAxIEESExQf/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPwZDWu1LGa1PWs6T8UjmzWNQGjfgA0ERE3//Z",
     w: 600,
     h: 400,
     alt: "Industrial rubber manufacturing floor during production",
@@ -2008,7 +1824,6 @@ export const IMAGES = {
   },
   "products.oil-seals.material.sbr": {
     src: "/images/products-category/d7bde97b0771dcfebef40dd17fb85dd96347efea.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAME/8QAHxAAAgICAQUAAAAAAAAAAAAAAQIAAwQRMRIhIkGR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AJLa9ivZUhYceOhv76m1MrCpRUfROgT1c9xERC//2Q==",
     w: 600,
     h: 400,
     alt: "Production line assembling moulded rubber components",
@@ -2016,7 +1831,6 @@ export const IMAGES = {
   },
   "products.oil-seals.material.cr": {
     src: "/images/products-category/2f17f6aa8aaabf127e5bb87058dc7e63b345a62a.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIG/8QAHBABAQEAAQUAAAAAAAAAAAAAAQIAAxEhMUFR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMdXKAhEh67aLJUZk6J4+ZmD/9k=",
     w: 600,
     h: 400,
     alt: "Coiled black nitrile rubber profile",
@@ -2024,7 +1838,6 @@ export const IMAGES = {
   },
   "products.oil-seals.material.aem": {
     src: "/images/products-category/e7261bcef11d425da03cc396a9380a40a734352d.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAeEAEAAgIBBQAAAAAAAAAAAAABAgMAESEEIkFCof/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAWEQADAAAAAAAAAAAAAAAAAAAAASH/2gAMAwEAAhEDEQA/AJdnQwFaby42hbE4knjWLarKkrGLKJ3xPSTyx+4xiUA6f//Z",
     w: 600,
     h: 400,
     alt: "FKM (Viton) sealing components in an assembled mechanical drive",
@@ -2040,7 +1853,6 @@ export const IMAGES = {
   },
   "products.pads-stoppers-caps.hero": {
     src: "/images/products/aea163e6d5b7af55e715b43d25d1f381505ab88a.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAANAAwDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAwQFBv/EAB4QAAICAwADAQAAAAAAAAAAAAECAxEABCESIkEx/8QAFAEBAAAAAAAAAAAAAAAAAAAAAf/EABcRAQEBAQAAAAAAAAAAAAAAAAEAEUH/2gAMAwEAAhEDEQA/ANTp7UbsxDC+FiRRPP3GEdJUV4j5owsMPoORYJHRhsSEO/gIwKoAc+YXXMezArtAgr1AFgADgw2QO3//2Q==",
     w: 800,
     h: 900,
     alt: "Moulded rubber pads, filler caps and stoppers made at Margo Rubber Products, Nashik",
@@ -2048,7 +1860,6 @@ export const IMAGES = {
   },
   "products.pads-stoppers-caps.material.fkm": {
     src: "/images/products-category/e7261bcef11d425da03cc396a9380a40a734352d.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAeEAEAAgIBBQAAAAAAAAAAAAABAgMAESEEIkFCof/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAWEQADAAAAAAAAAAAAAAAAAAAAASH/2gAMAwEAAhEDEQA/AJdnQwFaby42hbE4knjWLarKkrGLKJ3xPSTyx+4xiUA6f//Z",
     w: 600,
     h: 400,
     alt: "FKM (Viton) sealing components in an assembled mechanical drive",
@@ -2056,7 +1867,6 @@ export const IMAGES = {
   },
   "products.pads-stoppers-caps.material.aem": {
     src: "/images/products-category/e7261bcef11d425da03cc396a9380a40a734352d.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAeEAEAAgIBBQAAAAAAAAAAAAABAgMAESEEIkFCof/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAWEQADAAAAAAAAAAAAAAAAAAAAASH/2gAMAwEAAhEDEQA/AJdnQwFaby42hbE4knjWLarKkrGLKJ3xPSTyx+4xiUA6f//Z",
     w: 600,
     h: 400,
     alt: "FKM (Viton) sealing components in an assembled mechanical drive",
@@ -2064,7 +1874,6 @@ export const IMAGES = {
   },
   "products.pads-stoppers-caps.material.sbr": {
     src: "/images/products-category/ff30392082191f2d632b4ed7a40a4fedf596a14e.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMG/8QAHRAAAQQDAQEAAAAAAAAAAAAAAQACAxIEESExQf/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPwZDWu1LGa1PWs6T8UjmzWNQGjfgA0ERE3//Z",
     w: 600,
     h: 400,
     alt: "Industrial rubber manufacturing floor during production",
@@ -2072,7 +1881,6 @@ export const IMAGES = {
   },
   "products.pads-stoppers-caps.material.cr": {
     src: "/images/products-category/2f17f6aa8aaabf127e5bb87058dc7e63b345a62a.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIG/8QAHBABAQEAAQUAAAAAAAAAAAAAAQIAAxEhMUFR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMdXKAhEh67aLJUZk6J4+ZmD/9k=",
     w: 600,
     h: 400,
     alt: "Coiled black nitrile rubber profile",
@@ -2080,7 +1888,6 @@ export const IMAGES = {
   },
   "products.pads-stoppers-caps.material.nr": {
     src: "/images/products-category/d7bde97b0771dcfebef40dd17fb85dd96347efea.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAME/8QAHxAAAgICAQUAAAAAAAAAAAAAAQIAAwQRMRIhIkGR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AJLa9ivZUhYceOhv76m1MrCpRUfROgT1c9xERC//2Q==",
     w: 600,
     h: 400,
     alt: "Production line assembling moulded rubber components",
@@ -2088,7 +1895,6 @@ export const IMAGES = {
   },
   "products.pads-stoppers-caps.material.nbr": {
     src: "/images/products-category/2f17f6aa8aaabf127e5bb87058dc7e63b345a62a.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIG/8QAHBABAQEAAQUAAAAAAAAAAAAAAQIAAxEhMUFR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMdXKAhEh67aLJUZk6J4+ZmD/9k=",
     w: 600,
     h: 400,
     alt: "Coiled black nitrile rubber profile",
@@ -2096,7 +1902,6 @@ export const IMAGES = {
   },
   "products.pads-stoppers-caps.material.epdm": {
     src: "/images/products-category/d7bde97b0771dcfebef40dd17fb85dd96347efea.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAME/8QAHxAAAgICAQUAAAAAAAAAAAAAAQIAAwQRMRIhIkGR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AJLa9ivZUhYceOhv76m1MrCpRUfROgT1c9xERC//2Q==",
     w: 600,
     h: 400,
     alt: "Production line assembling moulded rubber components",
@@ -2104,7 +1909,6 @@ export const IMAGES = {
   },
   "products.pads-stoppers-caps.material.silicone": {
     src: "/images/products-category/ff30392082191f2d632b4ed7a40a4fedf596a14e.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMG/8QAHRAAAQQDAQEAAAAAAAAAAAAAAQACAxIEESExQf/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPwZDWu1LGa1PWs6T8UjmzWNQGjfgA0ERE3//Z",
     w: 600,
     h: 400,
     alt: "Industrial rubber manufacturing floor during production",
@@ -2112,182 +1916,156 @@ export const IMAGES = {
   },
   "industries.agriculture.hero": {
     src: "/images/industries/8bf6d91e2004803ae4f15901b0ef909853be3e6a.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIF/8QAHhAAAQMEAwAAAAAAAAAAAAAAAQACAwQGESESIoL/xAAUAQEAAAAAAAAAAAAAAAAAAAAC/8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAR/9oADAMBAAIRAxEAPwDVjueOSbiKZ7Y99nOG1ZuOnBwYyPYRERnhf//Z",
     w: 800, h: 560,
     alt: "Tractor working a field at dusk",
     status: "placeholder",
   },
   "industries.agriculture.component.1": {
     src: "/images/industries/8bf6d91e2004803ae4f15901b0ef909853be3e6a.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIF/8QAHhAAAQMEAwAAAAAAAAAAAAAAAQACAwQGESESIoL/xAAUAQEAAAAAAAAAAAAAAAAAAAAC/8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAR/9oADAMBAAIRAxEAPwDVjueOSbiKZ7Y99nOG1ZuOnBwYyPYRERnhf//Z",
     w: 800, h: 560,
     alt: "Tractor working a field at dusk",
     status: "placeholder",
   },
   "industries.agriculture.component.2": {
     src: "/images/industries/8bf6d91e2004803ae4f15901b0ef909853be3e6a.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIF/8QAHhAAAQMEAwAAAAAAAAAAAAAAAQACAwQGESESIoL/xAAUAQEAAAAAAAAAAAAAAAAAAAAC/8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAR/9oADAMBAAIRAxEAPwDVjueOSbiKZ7Y99nOG1ZuOnBwYyPYRERnhf//Z",
     w: 800, h: 560,
     alt: "Tractor working a field at dusk",
     status: "placeholder",
   },
   "industries.agriculture.component.3": {
     src: "/images/industries/8bf6d91e2004803ae4f15901b0ef909853be3e6a.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIF/8QAHhAAAQMEAwAAAAAAAAAAAAAAAQACAwQGESESIoL/xAAUAQEAAAAAAAAAAAAAAAAAAAAC/8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAR/9oADAMBAAIRAxEAPwDVjueOSbiKZ7Y99nOG1ZuOnBwYyPYRERnhf//Z",
     w: 800, h: 560,
     alt: "Tractor working a field at dusk",
     status: "placeholder",
   },
   "industries.agriculture.facility": {
     src: "/images/industries-mining/8f478e737375813fdb3396476d6ace2563de2c9f.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAwL/xAAiEAACAQIFBQAAAAAAAAAAAAABAgMAEQQFEjEzEyFhc6H/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/EABcRAQADAAAAAAAAAAAAAAAAAAABAjH/2gAMAwEAAhEDEQA/AHiiCurRKquwDaVuD38bfKRIMLY9TDR6iTu1qrKeOT1iin5TVdRTr//Z",
     w: 700, h: 520,
     alt: "Margo production line at the Nashik facility",
     status: "placeholder",
   },
   "industries.automotive.hero": {
     src: "/images/industries/ef9b0fcea22b06954dcd3d147d4e70b3a4ee7463.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAT/xAAdEAACAgMAAwAAAAAAAAAAAAABAgARAwQSEzFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCLa3cDN3kDs7ctbqOhQ9fJDt7HlyKaC0gFcxEFP//Z",
     w: 800, h: 560,
     alt: "Robotic automotive body assembly line",
     status: "placeholder",
   },
   "industries.transport.hero": {
     src: "/images/industries/ef9b0fcea22b06954dcd3d147d4e70b3a4ee7463.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAT/xAAdEAACAgMAAwAAAAAAAAAAAAABAgARAwQSEzFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCLa3cDN3kDs7ctbqOhQ9fJDt7HlyKaC0gFcxEFP//Z",
     w: 800, h: 560,
     alt: "Robotic automotive body assembly line",
     status: "placeholder",
   },
   "industries.automotive.component.1": {
     src: "/images/industries/ef9b0fcea22b06954dcd3d147d4e70b3a4ee7463.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAT/xAAdEAACAgMAAwAAAAAAAAAAAAABAgARAwQSEzFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCLa3cDN3kDs7ctbqOhQ9fJDt7HlyKaC0gFcxEFP//Z",
     w: 800, h: 560,
     alt: "Robotic automotive body assembly line",
     status: "placeholder",
   },
   "industries.automotive.component.2": {
     src: "/images/industries/ef9b0fcea22b06954dcd3d147d4e70b3a4ee7463.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAT/xAAdEAACAgMAAwAAAAAAAAAAAAABAgARAwQSEzFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCLa3cDN3kDs7ctbqOhQ9fJDt7HlyKaC0gFcxEFP//Z",
     w: 800, h: 560,
     alt: "Robotic automotive body assembly line",
     status: "placeholder",
   },
   "industries.automotive.component.3": {
     src: "/images/industries/ef9b0fcea22b06954dcd3d147d4e70b3a4ee7463.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAT/xAAdEAACAgMAAwAAAAAAAAAAAAABAgARAwQSEzFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCLa3cDN3kDs7ctbqOhQ9fJDt7HlyKaC0gFcxEFP//Z",
     w: 800, h: 560,
     alt: "Robotic automotive body assembly line",
     status: "placeholder",
   },
   "industries.automotive.facility": {
     src: "/images/industries-mining/8f478e737375813fdb3396476d6ace2563de2c9f.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAwL/xAAiEAACAQIFBQAAAAAAAAAAAAABAgMAEQQFEjEzEyFhc6H/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/EABcRAQADAAAAAAAAAAAAAAAAAAABAjH/2gAMAwEAAhEDEQA/AHiiCurRKquwDaVuD38bfKRIMLY9TDR6iTu1qrKeOT1iin5TVdRTr//Z",
     w: 700, h: 520,
     alt: "Margo production line at the Nashik facility",
     status: "placeholder",
   },
   "industries.electrical-electronics.hero": {
     src: "/images/industries/3a827cca46f2ae89cdeca92efc05965d64d9520f.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQF/8QAGhAAAgMBAQAAAAAAAAAAAAAAAQIABBEDIv/EABUBAQEAAAAAAAAAAAAAAAAAAAEC/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AMGvcVK48quDMEm63CXJUHIiVQ//2Q==",
     w: 800, h: 560,
     alt: "Printed circuit board detail",
     status: "placeholder",
   },
   "industries.electrical-electronics.component.1": {
     src: "/images/industries/3a827cca46f2ae89cdeca92efc05965d64d9520f.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQF/8QAGhAAAgMBAQAAAAAAAAAAAAAAAQIABBEDIv/EABUBAQEAAAAAAAAAAAAAAAAAAAEC/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AMGvcVK48quDMEm63CXJUHIiVQ//2Q==",
     w: 800, h: 560,
     alt: "Printed circuit board detail",
     status: "placeholder",
   },
   "industries.electrical-electronics.component.2": {
     src: "/images/industries/3a827cca46f2ae89cdeca92efc05965d64d9520f.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQF/8QAGhAAAgMBAQAAAAAAAAAAAAAAAQIABBEDIv/EABUBAQEAAAAAAAAAAAAAAAAAAAEC/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AMGvcVK48quDMEm63CXJUHIiVQ//2Q==",
     w: 800, h: 560,
     alt: "Printed circuit board detail",
     status: "placeholder",
   },
   "industries.electrical-electronics.component.3": {
     src: "/images/industries/3a827cca46f2ae89cdeca92efc05965d64d9520f.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQF/8QAGhAAAgMBAQAAAAAAAAAAAAAAAQIABBEDIv/EABUBAQEAAAAAAAAAAAAAAAAAAAEC/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AMGvcVK48quDMEm63CXJUHIiVQ//2Q==",
     w: 800, h: 560,
     alt: "Printed circuit board detail",
     status: "placeholder",
   },
   "industries.electrical-electronics.facility": {
     src: "/images/industries-mining/8f478e737375813fdb3396476d6ace2563de2c9f.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAwL/xAAiEAACAQIFBQAAAAAAAAAAAAABAgMAEQQFEjEzEyFhc6H/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/EABcRAQADAAAAAAAAAAAAAAAAAAABAjH/2gAMAwEAAhEDEQA/AHiiCurRKquwDaVuD38bfKRIMLY9TDR6iTu1qrKeOT1iin5TVdRTr//Z",
     w: 700, h: 520,
     alt: "Margo production line at the Nashik facility",
     status: "placeholder",
   },
   "industries.hvac.hero": {
     src: "/images/industries/43b1dcb1e3e1692fc39a3a141bd8d408ee28b984.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAgEAABBAEEAwAAAAAAAAAAAAACAAEDEQQSExQhIzGh/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/xAAWEQEBAQAAAAAAAAAAAAAAAAARACH/2gAMAwEAAhEDEQA/AJHHkjjyJPFYDZRE/elq7+qYOIZgJbgNbeienREcaGl//9k=",
     w: 800, h: 560,
     alt: "Rooftop HVAC condenser units and pipework",
     status: "placeholder",
   },
   "industries.hvac.component.1": {
     src: "/images/industries/43b1dcb1e3e1692fc39a3a141bd8d408ee28b984.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAgEAABBAEEAwAAAAAAAAAAAAACAAEDEQQSExQhIzGh/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/xAAWEQEBAQAAAAAAAAAAAAAAAAARACH/2gAMAwEAAhEDEQA/AJHHkjjyJPFYDZRE/elq7+qYOIZgJbgNbeienREcaGl//9k=",
     w: 800, h: 560,
     alt: "Rooftop HVAC condenser units and pipework",
     status: "placeholder",
   },
   "industries.hvac.component.2": {
     src: "/images/industries/43b1dcb1e3e1692fc39a3a141bd8d408ee28b984.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAgEAABBAEEAwAAAAAAAAAAAAACAAEDEQQSExQhIzGh/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/xAAWEQEBAQAAAAAAAAAAAAAAAAARACH/2gAMAwEAAhEDEQA/AJHHkjjyJPFYDZRE/elq7+qYOIZgJbgNbeienREcaGl//9k=",
     w: 800, h: 560,
     alt: "Rooftop HVAC condenser units and pipework",
     status: "placeholder",
   },
   "industries.hvac.component.3": {
     src: "/images/industries/43b1dcb1e3e1692fc39a3a141bd8d408ee28b984.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAgEAABBAEEAwAAAAAAAAAAAAACAAEDEQQSExQhIzGh/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/xAAWEQEBAQAAAAAAAAAAAAAAAAARACH/2gAMAwEAAhEDEQA/AJHHkjjyJPFYDZRE/elq7+qYOIZgJbgNbeienREcaGl//9k=",
     w: 800, h: 560,
     alt: "Rooftop HVAC condenser units and pipework",
     status: "placeholder",
   },
   "industries.hvac.facility": {
     src: "/images/industries-mining/8f478e737375813fdb3396476d6ace2563de2c9f.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAwL/xAAiEAACAQIFBQAAAAAAAAAAAAABAgMAEQQFEjEzEyFhc6H/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/EABcRAQADAAAAAAAAAAAAAAAAAAABAjH/2gAMAwEAAhEDEQA/AHiiCurRKquwDaVuD38bfKRIMLY9TDR6iTu1qrKeOT1iin5TVdRTr//Z",
     w: 700, h: 520,
     alt: "Margo production line at the Nashik facility",
     status: "placeholder",
   },
   "industries.medical-devices.hero": {
     src: "/images/industries/be6a1db6c73766bcc4a639616b812d3b543c02e6.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAT/xAAdEAACAwACAwAAAAAAAAAAAAABAgAEEQNRBRQx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQT/xAAZEQEAAgMAAAAAAAAAAAAAAAABAAIDESH/2gAMAwEAAhEDEQA/ALPFVqzqzVwWr/NIGb0Jb6LOSz8ibvWxEpyXVhoHk//Z",
     w: 800, h: 560,
     alt: "Laboratory pipetting into sample vials",
     status: "placeholder",
   },
   "industries.medical-devices.component.1": {
     src: "/images/industries/be6a1db6c73766bcc4a639616b812d3b543c02e6.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAT/xAAdEAACAwACAwAAAAAAAAAAAAABAgAEEQNRBRQx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQT/xAAZEQEAAgMAAAAAAAAAAAAAAAABAAIDESH/2gAMAwEAAhEDEQA/ALPFVqzqzVwWr/NIGb0Jb6LOSz8ibvWxEpyXVhoHk//Z",
     w: 800, h: 560,
     alt: "Laboratory pipetting into sample vials",
     status: "placeholder",
   },
   "industries.medical-devices.component.2": {
     src: "/images/industries/be6a1db6c73766bcc4a639616b812d3b543c02e6.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAT/xAAdEAACAwACAwAAAAAAAAAAAAABAgAEEQNRBRQx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQT/xAAZEQEAAgMAAAAAAAAAAAAAAAABAAIDESH/2gAMAwEAAhEDEQA/ALPFVqzqzVwWr/NIGb0Jb6LOSz8ibvWxEpyXVhoHk//Z",
     w: 800, h: 560,
     alt: "Laboratory pipetting into sample vials",
     status: "placeholder",
   },
   "industries.medical-devices.component.3": {
     src: "/images/industries/be6a1db6c73766bcc4a639616b812d3b543c02e6.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAT/xAAdEAACAwACAwAAAAAAAAAAAAABAgAEEQNRBRQx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQT/xAAZEQEAAgMAAAAAAAAAAAAAAAABAAIDESH/2gAMAwEAAhEDEQA/ALPFVqzqzVwWr/NIGb0Jb6LOSz8ibvWxEpyXVhoHk//Z",
     w: 800, h: 560,
     alt: "Laboratory pipetting into sample vials",
     status: "placeholder",
   },
   "industries.medical-devices.facility": {
     src: "/images/industries-mining/8f478e737375813fdb3396476d6ace2563de2c9f.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAwL/xAAiEAACAQIFBQAAAAAAAAAAAAABAgMAEQQFEjEzEyFhc6H/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/EABcRAQADAAAAAAAAAAAAAAAAAAABAjH/2gAMAwEAAhEDEQA/AHiiCurRKquwDaVuD38bfKRIMLY9TDR6iTu1qrKeOT1iin5TVdRTr//Z",
     w: 700, h: 520,
     alt: "Margo production line at the Nashik facility",
     status: "placeholder",
@@ -2298,294 +2076,252 @@ export const IMAGES = {
      slot's Studio upload does not cover the new photograph. */
   "industries.medical-devices.hero-lab": {
     src: "/images/industries/medical-devices/hero-device-tubing.webp",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAGAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAUG/8QAHhAAAgIBBQEAAAAAAAAAAAAAAQMAAhEEBRJBUXH/xAAUAQEAAAAAAAAAAAAAAAAAAAAB/8QAFREBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhEDEQA/AMUm1atqbDI8lhW9LQsLXpFkDviMn7kGIiK//9k=",
     w: 2000, h: 1056,
     alt: "Silicone tubing coiled beside a medical device, with moulded stoppers, a diaphragm and O-rings on a dark surface",
     status: "placeholder",
   },
   "industries.medical-devices.part.fluid-path-o-rings": {
     src: "/images/industries/medical-devices/fluid-path-o-rings.webp",
-    blur: "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQG/8QAHxAAAAYBBQAAAAAAAAAAAAAAAAECAxESBBNBQnHR/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/xAAVEQEBAAAAAAAAAAAAAAAAAAAAQf/aAAwDAQACEQMRAD8A0WUjJU+k21KJuOJxPfoqbvQtSLbwACkf/9k=",
     w: 1200, h: 800,
     alt: "Fluid-path O-rings",
     status: "placeholder",
   },
   "industries.medical-devices.part.valve-manifold-gaskets": {
     src: "/images/industries/medical-devices/valve-manifold-gaskets.webp",
-    blur: "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQF/8QAHxAAAQQBBQEAAAAAAAAAAAAAAgABAxEEEhQhUWEk/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AN2aHP3Uhjlloe9AtG1DffdKvEHJaH6ZAI74dhrj31EQf//Z",
     w: 1200, h: 800,
     alt: "Valve-manifold gaskets and flange seals",
     status: "placeholder",
   },
   "industries.medical-devices.part.instrument-valve-diaphragms": {
     src: "/images/industries/medical-devices/instrument-valve-diaphragms.webp",
-    blur: "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQG/8QAHRAAAgMAAgMAAAAAAAAAAAAAAQMAAgQRISIxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A0GpexWtmlbWtWKeOeoHBPH2VYWtdkox6rJYfdLHsREI//9k=",
     w: 1200, h: 800,
     alt: "Instrument valve diaphragms",
     status: "placeholder",
   },
   "industries.medical-devices.part.micro-pump-diaphragms": {
     src: "/images/industries/medical-devices/micro-pump-diaphragms.webp",
-    blur: "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMF/8QAIBAAAgEDBAMAAAAAAAAAAAAAAQIRAAMEEhMhURUiQv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDfyfI27tzaY3LZ9l0qsiPnk8z3V8MZexOS6l2MgFYKjox1SlB//9k=",
     w: 1200, h: 800,
     alt: "Instrument micro-pump diaphragms",
     status: "placeholder",
   },
   "industries.medical-devices.part.silicone-pump-tubing": {
     src: "/images/industries/medical-devices/silicone-pump-tubing.webp",
-    blur: "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIG/8QAGhABAAIDAQAAAAAAAAAAAAAAAQACAxEiUf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A1dzKW3VU8JeNs16NMRCP/9k=",
     w: 1200, h: 800,
     alt: "Silicone pump tubing and profiles",
     status: "placeholder",
   },
   "industries.medical-devices.part.instrument-door-lid-gaskets": {
     src: "/images/industries/medical-devices/instrument-door-lid-gaskets.webp",
-    blur: "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMG/8QAHhAAAgICAgMAAAAAAAAAAAAAAQIDEQAEEiFBUXH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/ANBKu48jgrIygmgsixoR47FteW0llEJEps8jQNmh6s9n7jGEf//Z",
     w: 1200, h: 800,
     alt: "Instrument door and lid gaskets",
     status: "placeholder",
   },
   "industries.medical-devices.part.steriliser-door-gaskets": {
     src: "/images/industries/medical-devices/steriliser-door-gaskets.webp",
-    blur: "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQF/8QAIRAAAgEEAAcAAAAAAAAAAAAAAQIDAAQREgUTMUFxgdH/xAAUAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A2rlLuJ2Z4pbjZjqY7hkwOwwB9qnh7zmA89XLBjjIPT2AT5xSlIf/2Q==",
     w: 1200, h: 800,
     alt: "Steriliser lid and door gaskets",
     status: "placeholder",
   },
   "industries.medical-devices.part.access-port-plugs-grommets": {
     src: "/images/industries/medical-devices/access-port-plugs-grommets.webp",
-    blur: "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMG/8QAHRAAAwACAgMAAAAAAAAAAAAAAQIDAAQREiExkf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A0OxtbMrui6taICoV04PPPv5ltSlrR70m0mJI6OPIxjCP/9k=",
     w: 1200, h: 800,
     alt: "Access-port plugs and pass-through grommets",
     status: "placeholder",
   },
   "industries.medical-devices.part.instrument-feet": {
     src: "/images/industries/medical-devices/instrument-feet.webp",
-    blur: "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIG/8QAIBAAAgIBBAMBAAAAAAAAAAAAAQIDEQAEBSFBEjFRcf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A0GoXc0Z5IWSQXYjFC6Prn73+Zemm3AIyz6ZWZTQcMB5ChzXWMYR//9k=",
     w: 1200, h: 800,
     alt: "Instrument feet and suction feet",
     status: "placeholder",
   },
   "industries.medical-devices.part.laboratory-stoppers": {
     src: "/images/industries/medical-devices/laboratory-stoppers.webp",
-    blur: "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMG/8QAIBAAAQMDBQEAAAAAAAAAAAAAAgABAwQRQQUSISIx4f/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAwDAQACEQMRAD8A0RFqTH0CmIL5J2e11Vjq+d0EXuJPiIhX/9k=",
     w: 1200, h: 800,
     alt: "Laboratory stoppers",
     status: "placeholder",
   },
   "industries.mining.component.1": {
     src: "/images/industries-mining/e7261bcef11d425da03cc396a9380a40a734352d.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAeEAEAAgIBBQAAAAAAAAAAAAABAgMAESEEIkFCof/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAWEQADAAAAAAAAAAAAAAAAAAAAASH/2gAMAwEAAhEDEQA/AJdnQwFaby42hbE4knjWLarKkrGLKJ3xPSTyx+4xiUA6f//Z",
     w: 600, h: 400,
     alt: "Rubber-to-metal bonded mounts on assembled machinery",
     status: "placeholder",
   },
   "industries.mining.component.2": {
     src: "/images/industries-mining/e7261bcef11d425da03cc396a9380a40a734352d.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAeEAEAAgIBBQAAAAAAAAAAAAABAgMAESEEIkFCof/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAWEQADAAAAAAAAAAAAAAAAAAAAASH/2gAMAwEAAhEDEQA/AJdnQwFaby42hbE4knjWLarKkrGLKJ3xPSTyx+4xiUA6f//Z",
     w: 600, h: 400,
     alt: "Rubber-to-metal bonded mounts on assembled machinery",
     status: "placeholder",
   },
   "industries.mining.component.3": {
     src: "/images/industries-mining/e7261bcef11d425da03cc396a9380a40a734352d.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAeEAEAAgIBBQAAAAAAAAAAAAABAgMAESEEIkFCof/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAWEQADAAAAAAAAAAAAAAAAAAAAASH/2gAMAwEAAhEDEQA/AJdnQwFaby42hbE4knjWLarKkrGLKJ3xPSTyx+4xiUA6f//Z",
     w: 600, h: 400,
     alt: "Rubber-to-metal bonded mounts on assembled machinery",
     status: "placeholder",
   },
   "industries.oil-gas.hero": {
     src: "/images/industries/585674e23c667606a0041e38d48fbbc07ca83204.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAED/8QAHBAAAgICAwAAAAAAAAAAAAAAAAECEhFBBRUh/8QAFQEBAQAAAAAAAAAAAAAAAAAABAX/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQITYZH/2gAMAwEAAhEDEQA/AK+XjFKqtl480advDdQA2Gd9Kqpn/9k=",
     w: 800, h: 560,
     alt: "Offshore oil and gas platform at sunset",
     status: "placeholder",
   },
   "industries.oil-gas.component.1": {
     src: "/images/industries/585674e23c667606a0041e38d48fbbc07ca83204.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAED/8QAHBAAAgICAwAAAAAAAAAAAAAAAAECEhFBBRUh/8QAFQEBAQAAAAAAAAAAAAAAAAAABAX/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQITYZH/2gAMAwEAAhEDEQA/AK+XjFKqtl480advDdQA2Gd9Kqpn/9k=",
     w: 800, h: 560,
     alt: "Offshore oil and gas platform at sunset",
     status: "placeholder",
   },
   "industries.oil-gas.component.2": {
     src: "/images/industries/585674e23c667606a0041e38d48fbbc07ca83204.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAED/8QAHBAAAgICAwAAAAAAAAAAAAAAAAECEhFBBRUh/8QAFQEBAQAAAAAAAAAAAAAAAAAABAX/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQITYZH/2gAMAwEAAhEDEQA/AK+XjFKqtl480advDdQA2Gd9Kqpn/9k=",
     w: 800, h: 560,
     alt: "Offshore oil and gas platform at sunset",
     status: "placeholder",
   },
   "industries.oil-gas.component.3": {
     src: "/images/industries/585674e23c667606a0041e38d48fbbc07ca83204.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAED/8QAHBAAAgICAwAAAAAAAAAAAAAAAAECEhFBBRUh/8QAFQEBAQAAAAAAAAAAAAAAAAAABAX/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQITYZH/2gAMAwEAAhEDEQA/AK+XjFKqtl480advDdQA2Gd9Kqpn/9k=",
     w: 800, h: 560,
     alt: "Offshore oil and gas platform at sunset",
     status: "placeholder",
   },
   "industries.oil-gas.facility": {
     src: "/images/industries-mining/8f478e737375813fdb3396476d6ace2563de2c9f.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAwL/xAAiEAACAQIFBQAAAAAAAAAAAAABAgMAEQQFEjEzEyFhc6H/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/EABcRAQADAAAAAAAAAAAAAAAAAAABAjH/2gAMAwEAAhEDEQA/AHiiCurRKquwDaVuD38bfKRIMLY9TDR6iTu1qrKeOT1iin5TVdRTr//Z",
     w: 700, h: 520,
     alt: "Margo production line at the Nashik facility",
     status: "placeholder",
   },
   "industries.pumps-valves.hero": {
     src: "/images/industries/421c154cfdc2c9aa18ab2918ef9efb1184cb60bc.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIE/8QAHhAAAgEEAwEAAAAAAAAAAAAAAQIDAAQSIQURMZH/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/EABkRAQACAwAAAAAAAAAAAAAAAAEAEQISIf/aAAwDAQACEQMRAD8Axzci0j4KWxdhkuWxv3XlVHdNbgxq0ajsnposz9NKU2o3JjJK7P/Z",
     w: 800, h: 560,
     alt: "Industrial pump housings in a process plant",
     status: "placeholder",
   },
   "industries.pumps-valves.component.1": {
     src: "/images/industries/421c154cfdc2c9aa18ab2918ef9efb1184cb60bc.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIE/8QAHhAAAgEEAwEAAAAAAAAAAAAAAQIDAAQSIQURMZH/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/EABkRAQACAwAAAAAAAAAAAAAAAAEAEQISIf/aAAwDAQACEQMRAD8Axzci0j4KWxdhkuWxv3XlVHdNbgxq0ajsnposz9NKU2o3JjJK7P/Z",
     w: 800, h: 560,
     alt: "Industrial pump housings in a process plant",
     status: "placeholder",
   },
   "industries.pumps-valves.component.2": {
     src: "/images/industries/421c154cfdc2c9aa18ab2918ef9efb1184cb60bc.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIE/8QAHhAAAgEEAwEAAAAAAAAAAAAAAQIDAAQSIQURMZH/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/EABkRAQACAwAAAAAAAAAAAAAAAAEAEQISIf/aAAwDAQACEQMRAD8Axzci0j4KWxdhkuWxv3XlVHdNbgxq0ajsnposz9NKU2o3JjJK7P/Z",
     w: 800, h: 560,
     alt: "Industrial pump housings in a process plant",
     status: "placeholder",
   },
   "industries.pumps-valves.component.3": {
     src: "/images/industries/421c154cfdc2c9aa18ab2918ef9efb1184cb60bc.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIE/8QAHhAAAgEEAwEAAAAAAAAAAAAAAQIDAAQSIQURMZH/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/EABkRAQACAwAAAAAAAAAAAAAAAAEAEQISIf/aAAwDAQACEQMRAD8Axzci0j4KWxdhkuWxv3XlVHdNbgxq0ajsnposz9NKU2o3JjJK7P/Z",
     w: 800, h: 560,
     alt: "Industrial pump housings in a process plant",
     status: "placeholder",
   },
   "industries.pumps-valves.facility": {
     src: "/images/industries-mining/8f478e737375813fdb3396476d6ace2563de2c9f.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAwL/xAAiEAACAQIFBQAAAAAAAAAAAAABAgMAEQQFEjEzEyFhc6H/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/EABcRAQADAAAAAAAAAAAAAAAAAAABAjH/2gAMAwEAAhEDEQA/AHiiCurRKquwDaVuD38bfKRIMLY9TDR6iTu1qrKeOT1iin5TVdRTr//Z",
     w: 700, h: 520,
     alt: "Margo production line at the Nashik facility",
     status: "placeholder",
   },
   "industries.water-fluid-management.hero": {
     src: "/images/industries/a3ebd35d30ff2200c507e4cce2b2826ecf9c91a8.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEE/8QAGxAAAgMBAQEAAAAAAAAAAAAAAREAAhJBAwT/xAAUAQEAAAAAAAAAAAAAAAAAAAAD/8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAC/9oADAMBAAIRAxEAPwDH83qNVrgEFth8MtrDNGgch8iIaTZUb//Z",
     w: 800, h: 560,
     alt: "Valve manifold and pipework on a treatment skid",
     status: "placeholder",
   },
   "industries.water-fluid-management.component.1": {
     src: "/images/industries/a3ebd35d30ff2200c507e4cce2b2826ecf9c91a8.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEE/8QAGxAAAgMBAQEAAAAAAAAAAAAAAREAAhJBAwT/xAAUAQEAAAAAAAAAAAAAAAAAAAAD/8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAC/9oADAMBAAIRAxEAPwDH83qNVrgEFth8MtrDNGgch8iIaTZUb//Z",
     w: 800, h: 560,
     alt: "Valve manifold and pipework on a treatment skid",
     status: "placeholder",
   },
   "industries.water-fluid-management.component.2": {
     src: "/images/industries/a3ebd35d30ff2200c507e4cce2b2826ecf9c91a8.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEE/8QAGxAAAgMBAQEAAAAAAAAAAAAAAREAAhJBAwT/xAAUAQEAAAAAAAAAAAAAAAAAAAAD/8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAC/9oADAMBAAIRAxEAPwDH83qNVrgEFth8MtrDNGgch8iIaTZUb//Z",
     w: 800, h: 560,
     alt: "Valve manifold and pipework on a treatment skid",
     status: "placeholder",
   },
   "industries.water-fluid-management.component.3": {
     src: "/images/industries/a3ebd35d30ff2200c507e4cce2b2826ecf9c91a8.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEE/8QAGxAAAgMBAQEAAAAAAAAAAAAAAREAAhJBAwT/xAAUAQEAAAAAAAAAAAAAAAAAAAAD/8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAC/9oADAMBAAIRAxEAPwDH83qNVrgEFth8MtrDNGgch8iIaTZUb//Z",
     w: 800, h: 560,
     alt: "Valve manifold and pipework on a treatment skid",
     status: "placeholder",
   },
   "industries.water-fluid-management.facility": {
     src: "/images/industries-mining/8f478e737375813fdb3396476d6ace2563de2c9f.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAwL/xAAiEAACAQIFBQAAAAAAAAAAAAABAgMAEQQFEjEzEyFhc6H/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/EABcRAQADAAAAAAAAAAAAAAAAAAABAjH/2gAMAwEAAhEDEQA/AHiiCurRKquwDaVuD38bfKRIMLY9TDR6iTu1qrKeOT1iin5TVdRTr//Z",
     w: 700, h: 520,
     alt: "Margo production line at the Nashik facility",
     status: "placeholder",
   },
   "about.closing": {
     src: "/images/about/3798ac3da876f78b65b2d44688050da2955e8d39.jpg",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMG/8QAGhAAAgMBAQAAAAAAAAAAAAAAAAECAxEiUf/EABUBAQEAAAAAAAAAAAAAAAAAAAEC/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AzVKrfUo6vNJWY5toAFP/2Q==",
     w: 2000, h: 1200,
     alt: "Wide view of the Margo Rubber Products production floor",
     status: "placeholder",
   },
   "about.audit": {
     src: "/images/about/39792f06f998682ea06f21c231551c36f5ef12e7.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQG/8QAHRAAAgIDAAMAAAAAAAAAAAAAAQIAAwQRIRNDYf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDO+SjJ05w0rbfrJUGTNXWGIZXHeD5EQP/Z",
     w: 900, h: 580,
     alt: "Compression presses lined up across the moulding bay",
     status: "placeholder",
   },
   "about.founder": {
     src: "/images/about/f673ef5e26cd807812649e1057fe6c3732e20391.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAALAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAUG/8QAJBAAAgAEBAcAAAAAAAAAAAAAAQIAAwQRBQYSURMUITFBgZH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABcRAQEBAQAAAAAAAAAAAAAAABEAASH/2gAMAwEAAhEDEQA/AKmJLI5dZrkXp04jk7bQSizBhj04Zq15Bv1RwSR7HeBZlmuuGVQDEapspDbyNN7fYx94p1i4X//Z",
     w: 900, h: 800,
     alt: "Placeholder portrait, to be replaced with the real team photograph",
     status: "placeholder",
   },
   "why.global-export": {
     src: "/images/about/08ccb1822c58b0e1ccf8b04752ffc0e376945750.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAIAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAED/8QAHRAAAgICAwEAAAAAAAAAAAAAAQIAAxESBEFCof/EABQBAQAAAAAAAAAAAAAAAAAAAAL/xAAVEQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEQMRAD8AySwVEqyBqyMajyesCTkro4Cq9oK52UnHyIhhV//Z",
     w: 750, h: 520,
     alt: "Aerial view of stacked shipping containers at an export terminal",
     status: "placeholder",
   },
   "export.hero": {
     src: "/images/export/467089438ce4c9529f1e433887979c80af2ed5c5.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQF/8QAHhAAAgICAgMAAAAAAAAAAAAAAQIABAMFERITMWH/xAAUAQEAAAAAAAAAAAAAAAAAAAAB/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AK7G2uriPjplfpdZnpt7zAnLV7tz7DgRERX/2Q==",
     w: 1200, h: 700,
     alt: "Loaded container vessel alongside a container terminal",
     status: "placeholder",
   },
   "export.market.1": {
     src: "/images/export/467089438ce4c9529f1e433887979c80af2ed5c5.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQF/8QAHhAAAgICAgMAAAAAAAAAAAAAAQIABAMFERITMWH/xAAUAQEAAAAAAAAAAAAAAAAAAAAB/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AK7G2uriPjplfpdZnpt7zAnLV7tz7DgRERX/2Q==",
     w: 1200, h: 700,
     alt: "Loaded container vessel alongside a container terminal",
     status: "placeholder",
   },
   "export.market.2": {
     src: "/images/export/32c40b13bb1c3081339aceb730c7c031e04ad922.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAME/8QAHhAAAgEEAwEAAAAAAAAAAAAAAQMCAAQFERITIbH/xAAUAQEAAAAAAAAAAAAAAAAAAAAE/8QAFxEBAQEBAAAAAAAAAAAAAAAAAQARIf/aAAwDAQACEQMRAD8A0ZTJLsbha2dsu0bHEjyoKncOjzS4xgSdAgb+UpSBdiIYcv/Z",
     w: 1200, h: 700,
     alt: "Container vessel under quayside gantry cranes",
     status: "placeholder",
   },
   "export.market.3": {
     src: "/images/export/0a53228982cdb3473b5d4587c251f02f50b71367.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMF/8QAIBAAAQMCBwAAAAAAAAAAAAAAAQACEQMhBAUUIkFRUv/EABQBAQAAAAAAAAAAAAAAAAAAAAT/xAAYEQACAwAAAAAAAAAAAAAAAAABAwARIf/aAAwDAQACEQMRAD8Aym5c01hvlhm8XtwraDD+nDoIiAXMNbHhCxeT/9k=",
     w: 1200, h: 700,
     alt: "Stacked shipping containers seen from below",
     status: "placeholder",
   },
   "export.market.4": {
     src: "/images/export/1a18e551df947879d77fea8ab401c270f041ebcd.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIE/8QAHBAAAgIDAQEAAAAAAAAAAAAAAQIDEQASISJB/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwT/xAAZEQEAAgMAAAAAAAAAAAAAAAABAAIREjH/2gAMAwEAAhEDEQA/AMmrsplgjU6Jfp+UOkV8yDEwrZIOixYJoYxkrZ2SKczP/9k=",
     w: 1200, h: 700,
     alt: "Forklift moving palletised goods in a distribution warehouse",
     status: "placeholder",
   },
   "export.market.5": {
     src: "/images/export/ae164d282b0b3051bd2207ab4b02699c424b9d46.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAcEAACAwEAAwAAAAAAAAAAAAABAgAEMREDEiH/xAAUAQEAAAAAAAAAAAAAAAAAAAAC/8QAFhEAAwAAAAAAAAAAAAAAAAAAAAEx/9oADAMBAAIRAxEAPwCJVtt4LrN7MvwZuSfbZXsMUAC4BzkRAqNw/9k=",
     w: 1200, h: 700,
     alt: "Stack of heat-treated wooden export pallets",
     status: "placeholder",
   },
   "export.market.6": {
     src: "/images/export/467089438ce4c9529f1e433887979c80af2ed5c5.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQF/8QAHhAAAgICAgMAAAAAAAAAAAAAAQIABAMFERITMWH/xAAUAQEAAAAAAAAAAAAAAAAAAAAB/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AK7G2uriPjplfpdZnpt7zAnLV7tz7DgRERX/2Q==",
     w: 1200, h: 700,
     alt: "Loaded container vessel alongside a container terminal",
     status: "placeholder",
   },
   "export.market.7": {
     src: "/images/export/32c40b13bb1c3081339aceb730c7c031e04ad922.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAME/8QAHhAAAgEEAwEAAAAAAAAAAAAAAQMCAAQFERITIbH/xAAUAQEAAAAAAAAAAAAAAAAAAAAE/8QAFxEBAQEBAAAAAAAAAAAAAAAAAQARIf/aAAwDAQACEQMRAD8A0ZTJLsbha2dsu0bHEjyoKncOjzS4xgSdAgb+UpSBdiIYcv/Z",
     w: 1200, h: 700,
     alt: "Container vessel under quayside gantry cranes",
     status: "placeholder",
   },
   "export.market.8": {
     src: "/images/export/ae164d282b0b3051bd2207ab4b02699c424b9d46.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAHAAwDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAcEAACAwEAAwAAAAAAAAAAAAABAgAEMREDEiH/xAAUAQEAAAAAAAAAAAAAAAAAAAAC/8QAFhEAAwAAAAAAAAAAAAAAAAAAAAEx/9oADAMBAAIRAxEAPwCJVtt4LrN7MvwZuSfbZXsMUAC4BzkRAqNw/9k=",
     w: 1200, h: 700,
     alt: "Stack of heat-treated wooden export pallets",
     status: "placeholder",
@@ -2602,210 +2338,180 @@ export const IMAGES = {
   },
   "certifications.hero": {
     src: "/images/certifications/cf68df8beea532026c3f12ce9f20465dd31e9e4f.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQQG/8QAIxAAAgEDAQkAAAAAAAAAAAAAAQIDAAQFESEiMTM0QVFhcf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFxEBAQEBAAAAAAAAAAAAAAAAAREAIf/aAAwDAQACEQMRAD8AJZLmW+uUtklOjjanAa+fdUx4PM7xDogLsdDIB3rR4rlx0bkesf7TqzVgXf/Z",
     w: 800, h: 600,
     alt: "Dimensional inspection at the QC workstation",
     status: "placeholder",
   },
   "sku.anti-vibration-mounts--ac-vibration-weight.photo": {
     src: "/images/skus/77c79999d2988d3c3a879a7b62dff88f5e778975.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAUG/8QAIBAAAQMDBQEAAAAAAAAAAAAAAQACAwQREiE0QlFxcv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPOjzuGkDFpcb9BDqYzFUPjJBLTbRWuL/golZupPUH/9k=",
     w: 800, h: 600,
     alt: "Moulded rubber components photographed against a neutral backdrop",
     status: "placeholder",
   },
   "sku.extrusion--rear-windscreen-glazing-rubber.photo": {
     src: "/images/skus/77c79999d2988d3c3a879a7b62dff88f5e778975.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAUG/8QAIBAAAQMDBQEAAAAAAAAAAAAAAQACAwQREiE0QlFxcv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPOjzuGkDFpcb9BDqYzFUPjJBLTbRWuL/golZupPUH/9k=",
     w: 800, h: 600,
     alt: "Moulded rubber components photographed against a neutral backdrop",
     status: "placeholder",
   },
   "sku.anti-vibration-mounts--bumper-stopper.photo": {
     src: "/images/skus/77c79999d2988d3c3a879a7b62dff88f5e778975.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAUG/8QAIBAAAQMDBQEAAAAAAAAAAAAAAQACAwQREiE0QlFxcv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPOjzuGkDFpcb9BDqYzFUPjJBLTbRWuL/golZupPUH/9k=",
     w: 800, h: 600,
     alt: "Moulded rubber components photographed against a neutral backdrop",
     status: "placeholder",
   },
   "sku.pads-stoppers-caps--side-step-pad.photo": {
     src: "/images/skus/77c79999d2988d3c3a879a7b62dff88f5e778975.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAUG/8QAIBAAAQMDBQEAAAAAAAAAAAAAAQACAwQREiE0QlFxcv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPOjzuGkDFpcb9BDqYzFUPjJBLTbRWuL/golZupPUH/9k=",
     w: 800, h: 600,
     alt: "Moulded rubber components photographed against a neutral backdrop",
     status: "placeholder",
   },
   "sku.anti-vibration-mounts--cv-suspension-bump-stop.photo": {
     src: "/images/skus/77c79999d2988d3c3a879a7b62dff88f5e778975.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAUG/8QAIBAAAQMDBQEAAAAAAAAAAAAAAQACAwQREiE0QlFxcv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPOjzuGkDFpcb9BDqYzFUPjJBLTbRWuL/golZupPUH/9k=",
     w: 800, h: 600,
     alt: "Moulded rubber components photographed against a neutral backdrop",
     status: "placeholder",
   },
   "sku.bushes--aem-insulation-bush.photo": {
     src: "/images/skus/77c79999d2988d3c3a879a7b62dff88f5e778975.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAUG/8QAIBAAAQMDBQEAAAAAAAAAAAAAAQACAwQREiE0QlFxcv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPOjzuGkDFpcb9BDqYzFUPjJBLTbRWuL/golZupPUH/9k=",
     w: 800, h: 600,
     alt: "Moulded rubber components photographed against a neutral backdrop",
     status: "placeholder",
   },
   "sku.sponge-foam-rubber--c-pillar-garnish-seal.photo": {
     src: "/images/skus/77c79999d2988d3c3a879a7b62dff88f5e778975.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAUG/8QAIBAAAQMDBQEAAAAAAAAAAAAAAQACAwQREiE0QlFxcv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPOjzuGkDFpcb9BDqYzFUPjJBLTbRWuL/golZupPUH/9k=",
     w: 800, h: 600,
     alt: "Moulded rubber components photographed against a neutral backdrop",
     status: "placeholder",
   },
   "sku.gaskets--epdm.photo": {
     src: "/images/skus/77c79999d2988d3c3a879a7b62dff88f5e778975.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAUG/8QAIBAAAQMDBQEAAAAAAAAAAAAAAQACAwQREiE0QlFxcv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPOjzuGkDFpcb9BDqYzFUPjJBLTbRWuL/golZupPUH/9k=",
     w: 800, h: 600,
     alt: "Moulded rubber components photographed against a neutral backdrop",
     status: "placeholder",
   },
   "sku.sponge-foam-rubber--foam-gaskets.photo": {
     src: "/images/skus/77c79999d2988d3c3a879a7b62dff88f5e778975.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAUG/8QAIBAAAQMDBQEAAAAAAAAAAAAAAQACAwQREiE0QlFxcv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPOjzuGkDFpcb9BDqYzFUPjJBLTbRWuL/golZupPUH/9k=",
     w: 800, h: 600,
     alt: "Moulded rubber components photographed against a neutral backdrop",
     status: "placeholder",
   },
   "sku.grommets--3-pin-hole-pad.photo": {
     src: "/images/skus/77c79999d2988d3c3a879a7b62dff88f5e778975.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAUG/8QAIBAAAQMDBQEAAAAAAAAAAAAAAQACAwQREiE0QlFxcv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPOjzuGkDFpcb9BDqYzFUPjJBLTbRWuL/golZupPUH/9k=",
     w: 800, h: 600,
     alt: "Moulded rubber components photographed against a neutral backdrop",
     status: "placeholder",
   },
   "sku.grommets--internal-fit.photo": {
     src: "/images/skus/77c79999d2988d3c3a879a7b62dff88f5e778975.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAUG/8QAIBAAAQMDBQEAAAAAAAAAAAAAAQACAwQREiE0QlFxcv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPOjzuGkDFpcb9BDqYzFUPjJBLTbRWuL/golZupPUH/9k=",
     w: 800, h: 600,
     alt: "Moulded rubber components photographed against a neutral backdrop",
     status: "placeholder",
   },
   "sku.o-rings--seal-filler-cap-o-rings.photo": {
     src: "/images/skus/77c79999d2988d3c3a879a7b62dff88f5e778975.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAUG/8QAIBAAAQMDBQEAAAAAAAAAAAAAAQACAwQREiE0QlFxcv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPOjzuGkDFpcb9BDqYzFUPjJBLTbRWuL/golZupPUH/9k=",
     w: 800, h: 600,
     alt: "Moulded rubber components photographed against a neutral backdrop",
     status: "placeholder",
   },
   "sku.oil-seals--compression-pump-inlays.photo": {
     src: "/images/skus/77c79999d2988d3c3a879a7b62dff88f5e778975.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAUG/8QAIBAAAQMDBQEAAAAAAAAAAAAAAQACAwQREiE0QlFxcv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPOjzuGkDFpcb9BDqYzFUPjJBLTbRWuL/golZupPUH/9k=",
     w: 800, h: 600,
     alt: "Moulded rubber components photographed against a neutral backdrop",
     status: "placeholder",
   },
   "sku.oil-seals--epdm.photo": {
     src: "/images/skus/77c79999d2988d3c3a879a7b62dff88f5e778975.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAUG/8QAIBAAAQMDBQEAAAAAAAAAAAAAAQACAwQREiE0QlFxcv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPOjzuGkDFpcb9BDqYzFUPjJBLTbRWuL/golZupPUH/9k=",
     w: 800, h: 600,
     alt: "Moulded rubber components photographed against a neutral backdrop",
     status: "placeholder",
   },
   "sku.oil-seals--fkm.photo": {
     src: "/images/skus/77c79999d2988d3c3a879a7b62dff88f5e778975.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAUG/8QAIBAAAQMDBQEAAAAAAAAAAAAAAQACAwQREiE0QlFxcv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPOjzuGkDFpcb9BDqYzFUPjJBLTbRWuL/golZupPUH/9k=",
     w: 800, h: 600,
     alt: "Moulded rubber components photographed against a neutral backdrop",
     status: "placeholder",
   },
   "sku.oil-seals--nbr.photo": {
     src: "/images/skus/77c79999d2988d3c3a879a7b62dff88f5e778975.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAUG/8QAIBAAAQMDBQEAAAAAAAAAAAAAAQACAwQREiE0QlFxcv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPOjzuGkDFpcb9BDqYzFUPjJBLTbRWuL/golZupPUH/9k=",
     w: 800, h: 600,
     alt: "Moulded rubber components photographed against a neutral backdrop",
     status: "placeholder",
   },
   "sku.oil-seals--silicone.photo": {
     src: "/images/skus/77c79999d2988d3c3a879a7b62dff88f5e778975.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAUG/8QAIBAAAQMDBQEAAAAAAAAAAAAAAQACAwQREiE0QlFxcv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPOjzuGkDFpcb9BDqYzFUPjJBLTbRWuL/golZupPUH/9k=",
     w: 800, h: 600,
     alt: "Moulded rubber components photographed against a neutral backdrop",
     status: "placeholder",
   },
   "sku.pads-stoppers-caps--ac-flaps.photo": {
     src: "/images/skus/77c79999d2988d3c3a879a7b62dff88f5e778975.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAUG/8QAIBAAAQMDBQEAAAAAAAAAAAAAAQACAwQREiE0QlFxcv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPOjzuGkDFpcb9BDqYzFUPjJBLTbRWuL/golZupPUH/9k=",
     w: 800, h: 600,
     alt: "Moulded rubber components photographed against a neutral backdrop",
     status: "placeholder",
   },
   "sku.pads-stoppers-caps--big-support-pad.photo": {
     src: "/images/skus/77c79999d2988d3c3a879a7b62dff88f5e778975.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAUG/8QAIBAAAQMDBQEAAAAAAAAAAAAAAQACAwQREiE0QlFxcv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPOjzuGkDFpcb9BDqYzFUPjJBLTbRWuL/golZupPUH/9k=",
     w: 800, h: 600,
     alt: "Moulded rubber components photographed against a neutral backdrop",
     status: "placeholder",
   },
   "sku.pads-stoppers-caps--bolero-support-pad.photo": {
     src: "/images/skus/77c79999d2988d3c3a879a7b62dff88f5e778975.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAUG/8QAIBAAAQMDBQEAAAAAAAAAAAAAAQACAwQREiE0QlFxcv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPOjzuGkDFpcb9BDqYzFUPjJBLTbRWuL/golZupPUH/9k=",
     w: 800, h: 600,
     alt: "Moulded rubber components photographed against a neutral backdrop",
     status: "placeholder",
   },
   "sku.pads-stoppers-caps--boot-tailgate-switch.photo": {
     src: "/images/skus/77c79999d2988d3c3a879a7b62dff88f5e778975.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAUG/8QAIBAAAQMDBQEAAAAAAAAAAAAAAQACAwQREiE0QlFxcv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPOjzuGkDFpcb9BDqYzFUPjJBLTbRWuL/golZupPUH/9k=",
     w: 800, h: 600,
     alt: "Moulded rubber components photographed against a neutral backdrop",
     status: "placeholder",
   },
   "sku.pads-stoppers-caps--c-pad.photo": {
     src: "/images/skus/77c79999d2988d3c3a879a7b62dff88f5e778975.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAUG/8QAIBAAAQMDBQEAAAAAAAAAAAAAAQACAwQREiE0QlFxcv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPOjzuGkDFpcb9BDqYzFUPjJBLTbRWuL/golZupPUH/9k=",
     w: 800, h: 600,
     alt: "Moulded rubber components photographed against a neutral backdrop",
     status: "placeholder",
   },
   "sku.pads-stoppers-caps--epdm-pad.photo": {
     src: "/images/skus/77c79999d2988d3c3a879a7b62dff88f5e778975.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAUG/8QAIBAAAQMDBQEAAAAAAAAAAAAAAQACAwQREiE0QlFxcv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPOjzuGkDFpcb9BDqYzFUPjJBLTbRWuL/golZupPUH/9k=",
     w: 800, h: 600,
     alt: "Moulded rubber components photographed against a neutral backdrop",
     status: "placeholder",
   },
   "sku.pads-stoppers-caps--glove-box-stopper.photo": {
     src: "/images/skus/77c79999d2988d3c3a879a7b62dff88f5e778975.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAUG/8QAIBAAAQMDBQEAAAAAAAAAAAAAAQACAwQREiE0QlFxcv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPOjzuGkDFpcb9BDqYzFUPjJBLTbRWuL/golZupPUH/9k=",
     w: 800, h: 600,
     alt: "Moulded rubber components photographed against a neutral backdrop",
     status: "placeholder",
   },
   "sku.pads-stoppers-caps--insulator-head-cover.photo": {
     src: "/images/skus/77c79999d2988d3c3a879a7b62dff88f5e778975.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAUG/8QAIBAAAQMDBQEAAAAAAAAAAAAAAQACAwQREiE0QlFxcv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPOjzuGkDFpcb9BDqYzFUPjJBLTbRWuL/golZupPUH/9k=",
     w: 800, h: 600,
     alt: "Moulded rubber components photographed against a neutral backdrop",
     status: "placeholder",
   },
   "sku.pads-stoppers-caps--l-pad.photo": {
     src: "/images/skus/77c79999d2988d3c3a879a7b62dff88f5e778975.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAUG/8QAIBAAAQMDBQEAAAAAAAAAAAAAAQACAwQREiE0QlFxcv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPOjzuGkDFpcb9BDqYzFUPjJBLTbRWuL/golZupPUH/9k=",
     w: 800, h: 600,
     alt: "Moulded rubber components photographed against a neutral backdrop",
     status: "placeholder",
   },
   "sku.pads-stoppers-caps--oil-filler-cap.photo": {
     src: "/images/skus/77c79999d2988d3c3a879a7b62dff88f5e778975.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAUG/8QAIBAAAQMDBQEAAAAAAAAAAAAAAQACAwQREiE0QlFxcv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPOjzuGkDFpcb9BDqYzFUPjJBLTbRWuL/golZupPUH/9k=",
     w: 800, h: 600,
     alt: "Moulded rubber components photographed against a neutral backdrop",
     status: "placeholder",
   },
   "sku.pads-stoppers-caps--radiator-shroud-flaps.photo": {
     src: "/images/skus/77c79999d2988d3c3a879a7b62dff88f5e778975.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAUG/8QAIBAAAQMDBQEAAAAAAAAAAAAAAQACAwQREiE0QlFxcv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPOjzuGkDFpcb9BDqYzFUPjJBLTbRWuL/golZupPUH/9k=",
     w: 800, h: 600,
     alt: "Moulded rubber components photographed against a neutral backdrop",
     status: "placeholder",
   },
   "sku.seals--plunger-seals.photo": {
     src: "/images/skus/77c79999d2988d3c3a879a7b62dff88f5e778975.png",
-    blur: "data:image/jpeg;base64,/9j/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAJAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAUG/8QAIBAAAQMDBQEAAAAAAAAAAAAAAQACAwQREiE0QlFxcv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDPOjzuGkDFpcb9BDqYzFUPjJBLTbRWuL/golZupPUH/9k=",
     w: 800, h: 600,
     alt: "Moulded rubber components photographed against a neutral backdrop",
     status: "placeholder",

@@ -12,7 +12,6 @@
     "typecheck": "next typegen && tsc --noEmit",
     "check:links": "node scripts/check-links.mts",
     "check:links:strict": "node scripts/check-links.mts --strict",
-    "gen:blur": "node scripts/gen-blur.mts",
     "check:enquiry": "node scripts/check-enquiry-map.mts",
     "check:schema": "sanity schema validate && node scripts/check-field-groups.mts && node scripts/check-labels.mts",
     "gen:sanity-types": "sanity schema extract --path sanity/schema.json && sanity typegen generate",
