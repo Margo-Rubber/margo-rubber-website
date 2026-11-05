@@ -8,7 +8,7 @@
  *     number". Same terms, reordered.
  *   · 3 category pages (anti-vibration mounts, pads, rubber mats): the material
  *     section opens with the figures from its own cards.
- *   · 8 guides: the answer under the first heading opens with a figure, or with
+ *   · 7 guides: the answer under the first heading opens with a figure, or with
  *     a count of what the guide lists where it has no spec to lead with.
  *   · New titles for gaskets/epdm, oil-seals/fkm and oil-seals/nbr, so they stop
  *     competing with their category pages.
