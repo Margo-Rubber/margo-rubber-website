@@ -59,7 +59,7 @@ specs:
   - label: "Tensile strength / elongation"
     value: "Per compound datasheet, tested to ASTM D412"
   - label: "Operating temperature"
-    value: "By compound; see the table below"
+    value: "Neoprene −40 to +120 °C; NBR −30 to +120 °C; EPDM −40 to +140 °C; silicone −60 to +200 °C"
   - label: "Colour"
     value: "Black standard; other colours on request"
   - label: "Variants"
@@ -69,7 +69,7 @@ specs:
   - label: "Certifications"
     value: "ISO 9001:2015, certificate 09111526A, Integral Certification Ltd."
   - label: "Minimum order"
-    value: "Set by part size and tooling, quoted with the part. Prototype and first-article lots sit outside it."
+    value: "Set by bellows size and tooling, quoted with the part. Prototype and first-article lots sit outside it."
 compoundRouter:
   columns:
     - "Rank"
@@ -82,7 +82,7 @@ compoundRouter:
     - ["Leave Neoprene (CR) if…", "it lives outdoors or sees hot water", "—", "Specify EPDM (−40/+140 °C)."]
     - ["Leave Neoprene (CR) if…", "it runs near an oven or hot platen", "—", "Specify silicone (−60/+200 °C)."]
     - ["Also available", "AEM (−40 to +160 °C) · SBR (−30 to +100 °C) · Natural rubber (−20 to +90 °C)", "See each compound", "The rows above are about which one your part needs."]
-compoundPrompt: "Start from the medium and the temperature, then the shape."
+compoundPrompt: "Start from what reaches the bellows and how hot it runs, then the stroke."
 qualityChip:
   label: "SERVICE RANGE"
   value: "−40 to +120 °C"
@@ -120,17 +120,17 @@ applications:
     href: "/industries/transport"
 process:
   - name: "Material compounding"
-    body: "Polymer, fillers and cure system mixed in-house for the medium and temperature on your drawing. Cure is checked on our ODR rheometer."
+    body: "Neoprene, NBR, EPDM or silicone mixed in-house for what reaches the bellows and how hot it runs. Cure is checked on our ODR rheometer."
   - name: "Tool design"
-    body: "Moulds designed and made for your part and held as a controlled record. When a mould already exists, first samples take 48–72 hours."
+    body: "Mould made from your stroke, end IDs and convolution count, and held as a controlled record. When a mould already exists, first samples take 48–72 hours."
   - name: "Moulding"
-    body: "Compression moulded, with the cavity count set by your volume."
+    body: "Moulded in one piece, with no glued seam, and the cavity count set by your volume."
   - name: "Trimming"
-    body: "Flash trimmed to the edge condition on the drawing."
+    body: "Flash trimmed along the convolutions and at the plain cuff, flange or clamp groove."
   - name: "Inspection"
-    body: "Dimensions against the drawing, hardness and batch sampling. Results go into the shipment documents."
+    body: "End IDs and free length checked against the drawing, then hardness and batch sampling. Results go into the shipment documents."
   - name: "Export packing"
-    body: "Packed by part number with labels that match the inspection sheet. ISPM-15 treated pallets where timber is used."
+    body: "Bellows packed by part number, with labels that match the inspection sheet. ISPM-15 treated pallets where timber is used."
 quality:
   heading: "Tested in Our Own Lab, Documented in Every Shipment"
   body: "Every consignment ships with a material test report, a dimensional inspection sheet and a certificate of conformance. Hardness, tensile and elongation (ASTM D412), density, compression set (ASTM D395 Method B), heat ageing, ozone resistance, fluid swell and low-temperature tests run in our own lab, and cure curves run on our own ODR rheometer. PPAP is available on request. RoHS declarations are issued for all compounds."
@@ -153,13 +153,13 @@ documentation:
     href: "/contact?part=Convoluted%20Moulded%20Bellows&doc=1"
 faqs:
   - q: "What is the minimum order for bellows?"
-    a: "There is no fixed number. The minimum is set by part size and tooling, and we quote it with the part. Send the drawing and your annual volume and you get both figures in one reply. Prototype and first-article lots sit outside the minimum."
+    a: "It depends on the bellows size and the mould, so we quote it with the part rather than publish one number. Send the end IDs, stroke and your annual volume and you get both figures in one reply. Prototype and first-article lots sit outside the minimum."
   - q: "What do I need to send for a quote?"
     a: "The ID at each end, free and compressed length, stroke and convolution count, plus the medium and temperature. A worn bellows works as a sample."
   - q: "Can you make a bellows longer than the old one?"
     a: "Yes, if the stroke needs it. More convolutions at the same pitch give more travel. Send the new stroke and the space it has to fit."
   - q: "Do you send test reports with each shipment?"
-    a: "Yes, with every consignment: material test report, dimensional inspection sheet and certificate of conformance. Hardness, tensile to ASTM D412 and compression set to ASTM D395 Method B are tested in-house."
+    a: "Yes, with every consignment: material test report, dimensional inspection sheet and certificate of conformance. A bellows lives by flexing, so hardness and tensile and elongation to ASTM D412 are tested in-house on the compound you specify."
   - q: "What are your payment and delivery terms for export orders?"
     a: "TT and LC, agreed per order. Ex-works Nashik or FOB Nhava Sheva. The commercial invoice, packing list and certificate of origin (Nashik Chamber of Commerce) travel with every consignment."
 relatedParts:
