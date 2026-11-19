@@ -66,10 +66,14 @@ export function RegionalContact({
         attributeFilter: ["href"],
       });
     };
-    const idle = () =>
-      "requestIdleCallback" in window
-        ? window.requestIdleCallback(start, { timeout: 3000 })
-        : window.setTimeout(start, 300);
+    // typeof, not `"requestIdleCallback" in window`: the `in` check narrows
+    // window to never in the else branch and fails the production type check.
+    // Safari before 18.2 has no requestIdleCallback.
+    const idle = () => {
+      if (typeof window.requestIdleCallback === "function")
+        window.requestIdleCallback(start, { timeout: 3000 });
+      else window.setTimeout(start, 300);
+    };
     if (document.readyState === "complete") idle();
     else window.addEventListener("load", idle, { once: true });
 
