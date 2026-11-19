@@ -66,6 +66,10 @@ export const siteSettingsSchema = z.object({
     geo: z.object({ lat: z.number(), lng: z.number() }),
     phone: z.string().min(8),
     whatsapp: z.string().min(8),
+    /** Shown instead of phone/whatsapp to visitors in India (see RegionalContact). */
+    india: z
+      .object({ phone: z.string().min(8), whatsapp: z.string().min(8) })
+      .optional(),
     email: z.string().email(),
     hours: z.string().min(5),
     hoursSchema: z.object({

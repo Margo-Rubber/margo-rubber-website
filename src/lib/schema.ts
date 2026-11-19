@@ -96,6 +96,17 @@ export async function organizationNode(): Promise<Node> {
     },
   };
   if (entity.areaServed.length) contactPoint.areaServed = entity.areaServed;
+  // Indian enquiries have their own number: a second contact point for IN,
+  // so search engines can tell the two apart. The page itself shows the
+  // India number to visitors in India (RegionalContact).
+  const contactPoints: Node[] = [contactPoint];
+  if (entity.india) {
+    contactPoints.push({
+      ...contactPoint,
+      telephone: entity.india.phone,
+      areaServed: ["IN"],
+    });
+  }
 
   const node: Node = {
     // "Manufacturer" is not a schema.org type: the validator rejected the
@@ -121,7 +132,7 @@ export async function organizationNode(): Promise<Node> {
     },
     email: entity.email,
     telephone: entity.phone,
-    contactPoint: [contactPoint],
+    contactPoint: contactPoints,
     location: { "@id": PLANT_ID },
     hasCredential: held.map((c) => ({
       "@type": "EducationalOccupationalCredential",

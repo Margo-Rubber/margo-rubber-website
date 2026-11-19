@@ -77,8 +77,19 @@ export const siteSettings = defineType({
             defineField({ name: "lng", title: "Longitude", type: "number", validation: (r) => r.required() }),
           ],
         }),
-        str("phone", "Phone", "The one number published everywhere."),
-        str("whatsapp", "WhatsApp"),
+        str("phone", "Phone", "The export number: what overseas visitors, and anyone outside India, see."),
+        str("whatsapp", "WhatsApp", "The export WhatsApp number."),
+        defineField({
+          name: "india",
+          title: "Contact for visitors in India",
+          description:
+            "Shown instead of the numbers above to visitors whose connection is in India. Leave empty to show the export numbers to everyone.",
+          type: "object",
+          fields: [
+            defineField({ name: "phone", title: "Phone (India)", type: "string" }),
+            defineField({ name: "whatsapp", title: "WhatsApp (India)", type: "string" }),
+          ],
+        }),
         str("email", "Email", "The one address published everywhere."),
         str("hours", "Hours, as displayed"),
         defineField({

@@ -4,6 +4,7 @@ import { ImageOverrideProvider } from "@/components/ui/ImageOverrideProvider";
 import { getImageOverrides } from "@/lib/image-overrides";
 import { SiteFooter } from "@/components/nav/SiteFooter";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+import { RegionalContact } from "@/components/ui/RegionalContact";
 import { Analytics } from "@/components/analytics/Analytics";
 import { getSiteSettings } from "@/lib/settings";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -44,6 +45,12 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
       <SiteFooter />
       <ConceptBand />
       <WhatsAppButton number={settings.entity.whatsapp} />
+      {/* Visitors in India: the export number becomes the India one. */}
+      <RegionalContact
+        exportPhone={settings.entity.phone}
+        exportWhatsapp={settings.entity.whatsapp}
+        india={settings.entity.india}
+      />
       <Analytics />
     </ImageOverrideProvider>
   );
