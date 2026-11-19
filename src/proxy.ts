@@ -39,7 +39,7 @@ export function proxy(request: NextRequest) {
   }
 
   if (process.env.NEXT_PUBLIC_BUILD_MODE !== "vision")
-    return NextResponse.next();
+    return withCountry(request, NextResponse.next());
 
   const user = process.env.PREVIEW_USER ?? "";
   const pass = process.env.PREVIEW_PASSWORD ?? "";
@@ -47,7 +47,7 @@ export function proxy(request: NextRequest) {
 
   if (user && pass && header.startsWith("Basic ")) {
     const [u, p] = atob(header.slice(6)).split(":");
-    if (u === user && p === pass) return NextResponse.next();
+    if (u === user && p === pass) return withCountry(request, NextResponse.next());
   }
 
   return new NextResponse("Authentication required", {
@@ -58,6 +58,43 @@ export function proxy(request: NextRequest) {
       "X-Robots-Tag": "noindex, nofollow",
     },
   });
+}
+
+/* ── The visitor's country, for the contact numbers ──────────────────────
+   Indian buyers and export buyers are handled by different people, so a
+   visitor in India sees the India number from Site settings and everyone
+   else the export number. The pages are pre-built and identical for all;
+   this only tells the browser which country the request came from, and
+   RegionalContact swaps the numbers there.
+
+   Vercel puts the country of the visitor's IP on every request as
+   x-vercel-ip-country. `?cc=IN` (or any two-letter code) pins a country
+   for that browser, so the team can see either version from anywhere and
+   locally, where there is no header; `?cc=` with nothing unpins it. */
+const COUNTRY_COOKIE = "mr_cc";
+const PINNED_COOKIE = "mr_cc_pin";
+
+function withCountry(request: NextRequest, response: NextResponse) {
+  const cookie = { path: "/", sameSite: "lax" as const, maxAge: 60 * 60 * 24 * 30 };
+  const override = request.nextUrl.searchParams.get("cc");
+  if (override !== null) {
+    const pinned = override.toUpperCase();
+    if (/^[A-Z]{2}$/.test(pinned)) {
+      response.cookies.set(COUNTRY_COOKIE, pinned, cookie);
+      response.cookies.set(PINNED_COOKIE, "1", cookie);
+    } else {
+      response.cookies.delete(COUNTRY_COOKIE);
+      response.cookies.delete(PINNED_COOKIE);
+    }
+    return response;
+  }
+  if (request.cookies.has(PINNED_COOKIE)) return response;
+
+  const country = (request.headers.get("x-vercel-ip-country") ?? "").toUpperCase();
+  // Read by the page's script, so not httpOnly. Set only when it changes.
+  if (/^[A-Z]{2}$/.test(country) && country !== request.cookies.get(COUNTRY_COOKIE)?.value)
+    response.cookies.set(COUNTRY_COOKIE, country, cookie);
+  return response;
 }
 
 export const config = {
