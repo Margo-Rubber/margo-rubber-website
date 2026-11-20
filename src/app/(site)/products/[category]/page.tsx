@@ -12,7 +12,8 @@ import { FurtherReading } from "@/components/sections/FurtherReading";
 import { CatalogueBlock } from "@/components/sections/HubBlocks";
 import { getProductCatalogue } from "@/lib/catalogue-file";
 import type { Block } from "@/content/blocks";
-import { landingsForCategory } from "@/content/industry-landings";
+import { INDUSTRY_LANDING_COPY, landingsForCategory } from "@/content/industry-landings";
+import { industryBySlug } from "@/content/routes";
 import Link from "next/link";
 
 /** Category pages whose desktop hero uses the full-bleed photo layout (see
@@ -95,7 +96,14 @@ export default async function ProductCategoryPage(
   if (!page) notFound();
 
   const { frontmatter: fm, Content, hasBody } = page;
-  const industryLandings = landingsForCategory(category);
+  // This line's industry versions, grouped by industry, one block each.
+  const industryGroups = Object.entries(
+    Object.groupBy(landingsForCategory(category), (x) => x.industry),
+  ).flatMap(([industry, rows]) => {
+    const copy = INDUSTRY_LANDING_COPY[industry];
+    const label = industryBySlug(industry)?.label;
+    return copy && label && rows ? [{ industry, label, copy, landings: rows.map((r) => r.landing) }] : [];
+  });
   const faqSection = FAQ_SECTION[category];
   const blocks =
     faqSection && fm.faqs.length && !page.blocks.some((b) => b._type === "block.industryFaq")
@@ -224,37 +232,46 @@ export default async function ProductCategoryPage(
       {/* The industry version of this line (src/content/industry-landings.ts):
           the category owns the generic search, the landing the industry one,
           and this link tells Google which is which. */}
-      {industryLandings.length > 0 && (
+      {industryGroups.map(({ industry, label, copy, landings }) => (
         <Section
+          key={industry}
           eyebrow="BY INDUSTRY"
           eyebrowVariant="rule"
-          heading={`${fm.navLabel} for automotive buyers`}
-          body="Volumes, compounds and sizes for vehicle makers and their Tier 1 and Tier 2 suppliers."
+          heading={`${fm.navLabel} for ${copy.buyers}`}
+          body={copy.productLinkBody}
         >
           <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {industryLandings.map(({ industry, landing }) => (
-              <li key={`${industry}/${landing.slug}`}>
+            {landings.map((l) => (
+              <li key={l.slug}>
                 <Link
-                  href={`/industries/${industry}/${landing.slug}`}
+                  href={`/industries/${industry}/${l.slug}`}
                   className="border-line rounded-card hover:border-accent-400 text-ink block border bg-[#0A0A0A] px-5 py-4 text-sm transition-colors"
                 >
-                  {landing.navLabel} <span aria-hidden>→</span>
+                  {l.navLabel} <span aria-hidden>→</span>
                 </Link>
               </li>
             ))}
-            {industryLandings.some(({ industry }) => industry === "automotive") && (
+            {!landings.some((l) => l.slug === copy.buyerPage.slug) && (
               <li>
                 <Link
-                  href="/industries/automotive/tier-2-suppliers"
+                  href={`/industries/${industry}/${copy.buyerPage.slug}`}
                   className="border-line rounded-card hover:border-accent-400 text-ink block border bg-[#0A0A0A] px-5 py-4 text-sm transition-colors"
                 >
-                  Rubber parts for Tier 2 automotive suppliers <span aria-hidden>→</span>
+                  {copy.buyerPage.label} <span aria-hidden>→</span>
                 </Link>
               </li>
             )}
+            <li>
+              <Link
+                href={`/industries/${industry}`}
+                className="border-line rounded-card hover:border-accent-400 text-ink block border bg-[#0A0A0A] px-5 py-4 text-sm transition-colors"
+              >
+                {label} rubber components: overview <span aria-hidden>→</span>
+              </Link>
+            </li>
           </ul>
         </Section>
-      )}
+      ))}
 
       {/* Product-line catalogue, behind the same short form as an industry
           page's. Stored as a "catalogue" lead with "<Line> catalogue" as its

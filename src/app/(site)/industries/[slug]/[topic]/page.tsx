@@ -9,7 +9,7 @@ import { BlockRenderer } from "@/components/blocks/BlockRenderer";
 import { IndustryHero } from "@/components/sections/IndustryDetail";
 import { Section } from "@/components/ui/Section";
 import type { Block } from "@/content/blocks";
-import { LANDINGS, landingBySlug, landingsFor, type Landing } from "@/content/industry-landings";
+import { INDUSTRY_LANDING_COPY, LANDINGS, landingBySlug, landingsFor, type Landing } from "@/content/industry-landings";
 
 /**
  * /industries/[slug]/[topic] — a landing page for one part line, buyer type
@@ -37,7 +37,7 @@ export async function generateMetadata(props: PageProps<"/industries/[slug]/[top
   return landing ? buildMetadata(landing, `/industries/${slug}/${topic}`) : {};
 }
 
-function blocksFor(l: Landing, enquiryHref: string): Block[] {
+function blocksFor(l: Landing, enquiryHref: string, faqHeading: string): Block[] {
   return [
     {
       _type: "block.componentTabs",
@@ -67,7 +67,7 @@ function blocksFor(l: Landing, enquiryHref: string): Block[] {
       _type: "block.industryFaq",
       _key: "faq",
       eyebrow: "FREQUENTLY ASKED QUESTIONS",
-      heading: "Questions from automotive buyers.",
+      heading: faqHeading,
       items: l.faqs,
     },
     {
@@ -103,7 +103,8 @@ export default async function IndustryLandingPage(props: PageProps<"/industries/
   const enquiryHref = `/contact?industry=${encodeURIComponent(pfm.navLabel)}&part=${encodeURIComponent(landing.enquiryPart)}`;
   const siblings = landingsFor(slug).filter((l) => l.slug !== topic);
   // The links to the other landings sit between the FAQ and the closing band.
-  const blocks = blocksFor(landing, enquiryHref);
+  const copy = INDUSTRY_LANDING_COPY[slug];
+  const blocks = blocksFor(landing, enquiryHref, copy?.faqHeading ?? "Common questions.");
   const body = blocks.filter((b) => b._type !== "block.closingBand");
   const closing = blocks.filter((b) => b._type === "block.closingBand");
 
@@ -134,6 +135,9 @@ export default async function IndustryLandingPage(props: PageProps<"/industries/
           { label: `All ${pfm.navLabel} Parts`, href: `/industries/${slug}`, variant: "secondary" },
         ]}
         image={pfm.hero?.image}
+        // Same rule as the parent page: the medical cut-out photo is set
+        // whole on the right rather than filling the hero.
+        framed={pfm.hero?.image === "industries.medical-devices.hero-lab"}
       />
 
       <BlockRenderer blocks={body} comp2={false} heroEyebrow={landing.badge} />
