@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { IS_VISION } from "@/lib/build-mode";
 import { SITE_URL } from "@/lib/seo";
 import { publishedRoutes } from "@/lib/published";
+import { landingPaths } from "@/content/industry-landings";
 
 /**
  * /sitemap.xml — every published document except the product tree, which
@@ -38,12 +39,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   if (IS_VISION) return [];
 
   const routes = await publishedRoutes();
-  return routes
-    .filter((r) => r.type !== "productCategory" && r.type !== "sku")
-    .map((r) => ({
-      url: `${SITE_URL}${r.path}`,
-      lastModified: r.lastModified,
+  return [
+    ...routes
+      .filter((r) => r.type !== "productCategory" && r.type !== "sku")
+      .map((r) => ({
+        url: `${SITE_URL}${r.path}`,
+        lastModified: r.lastModified,
+        changeFrequency: "monthly" as const,
+        priority: PRIORITY[r.path] ?? TYPE_PRIORITY[r.type] ?? 0.5,
+      })),
+    // Industry landing pages (src/content/industry-landings.ts) live in code,
+    // not the CMS, so publishedRoutes() does not see them.
+    ...landingPaths().map((p) => ({
+      url: `${SITE_URL}${p}`,
       changeFrequency: "monthly" as const,
-      priority: PRIORITY[r.path] ?? TYPE_PRIORITY[r.type] ?? 0.5,
-    }));
+      priority: 0.6,
+    })),
+  ];
 }

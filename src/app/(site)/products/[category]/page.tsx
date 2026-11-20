@@ -12,6 +12,8 @@ import { FurtherReading } from "@/components/sections/FurtherReading";
 import { CatalogueBlock } from "@/components/sections/HubBlocks";
 import { getProductCatalogue } from "@/lib/catalogue-file";
 import type { Block } from "@/content/blocks";
+import { landingsForCategory } from "@/content/industry-landings";
+import Link from "next/link";
 
 /** Category pages whose desktop hero uses the full-bleed photo layout (see
  *  CategoryHero `fullBleed`), with the wide image-registry key it shows.
@@ -93,6 +95,7 @@ export default async function ProductCategoryPage(
   if (!page) notFound();
 
   const { frontmatter: fm, Content, hasBody } = page;
+  const industryLandings = landingsForCategory(category);
   const faqSection = FAQ_SECTION[category];
   const blocks =
     faqSection && fm.faqs.length && !page.blocks.some((b) => b._type === "block.industryFaq")
@@ -217,6 +220,41 @@ export default async function ProductCategoryPage(
           ) : undefined
         }
       />
+
+      {/* The industry version of this line (src/content/industry-landings.ts):
+          the category owns the generic search, the landing the industry one,
+          and this link tells Google which is which. */}
+      {industryLandings.length > 0 && (
+        <Section
+          eyebrow="BY INDUSTRY"
+          eyebrowVariant="rule"
+          heading={`${fm.navLabel} for automotive buyers`}
+          body="Volumes, compounds and sizes for vehicle makers and their Tier 1 and Tier 2 suppliers."
+        >
+          <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {industryLandings.map(({ industry, landing }) => (
+              <li key={`${industry}/${landing.slug}`}>
+                <Link
+                  href={`/industries/${industry}/${landing.slug}`}
+                  className="border-line rounded-card hover:border-accent-400 text-ink block border bg-[#0A0A0A] px-5 py-4 text-sm transition-colors"
+                >
+                  {landing.navLabel} <span aria-hidden>→</span>
+                </Link>
+              </li>
+            ))}
+            {industryLandings.some(({ industry }) => industry === "automotive") && (
+              <li>
+                <Link
+                  href="/industries/automotive/tier-2-suppliers"
+                  className="border-line rounded-card hover:border-accent-400 text-ink block border bg-[#0A0A0A] px-5 py-4 text-sm transition-colors"
+                >
+                  Rubber parts for Tier 2 automotive suppliers <span aria-hidden>→</span>
+                </Link>
+              </li>
+            )}
+          </ul>
+        </Section>
+      )}
 
       {/* Product-line catalogue, behind the same short form as an industry
           page's. Stored as a "catalogue" lead with "<Line> catalogue" as its

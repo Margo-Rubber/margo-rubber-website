@@ -12,6 +12,8 @@ import { FurtherReading } from "@/components/sections/FurtherReading";
 import { getImageOverrides } from "@/lib/image-overrides";
 import { getIndustryCatalogueFileUrl } from "@/lib/catalogue-file";
 import { CatalogueBlock } from "@/components/sections/HubBlocks";
+import { landingsFor } from "@/content/industry-landings";
+import Link from "next/link";
 
 /** ONE file → all nine industry pages. */
 export async function generateStaticParams() {
@@ -60,6 +62,7 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
   const catalogueFileUrl = await getIndustryCatalogueFileUrl(slug);
   const cat = fm.catalogue;
   const catalogueName = `${fm.navLabel} catalogue`;
+  const landings = landingsFor(slug);
 
 
   return (
@@ -96,6 +99,29 @@ export default async function IndustryPage(props: PageProps<"/industries/[slug]"
         heroEyebrow={fm.badge}
         prose={<FurtherReading slugs={fm.related.resources} />}
       />
+
+      {/* Landing pages for this industry's part lines, buyers and clusters
+          (src/content/industry-landings.ts). */}
+      {landings.length > 0 && (
+        <Section
+          eyebrow={`${fm.navLabel.toUpperCase()} PARTS AND LOCATIONS`}
+          eyebrowVariant="rule"
+          heading={`${fm.navLabel} rubber parts by part and location`}
+        >
+          <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {landings.map((l) => (
+              <li key={l.slug}>
+                <Link
+                  href={`${path}/${l.slug}`}
+                  className="border-line rounded-card hover:border-accent-400 block border bg-[#0A0A0A] px-5 py-4 text-sm text-ink transition-colors"
+                >
+                  {l.navLabel} <span aria-hidden>→</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Section>
+      )}
 
       {/* Industry catalogue, behind a short form. Each request is stored as a
           "catalogue" lead with "<Industry> catalogue" as its product, and the
