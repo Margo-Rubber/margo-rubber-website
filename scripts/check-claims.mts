@@ -57,6 +57,15 @@ for (const f of walk(path.join(ROOT, "src/content")).filter((f) => f.endsWith(".
   scanText(path.relative(ROOT, f), fs.readFileSync(f, "utf8").replace(/^\s*#.*$/gm, ""));
 }
 
+/* ── 1b. Copy kept in code: industry landing pages ────────────────── */
+for (const f of ["src/content/industry-landings.ts"]) {
+  const src = fs.readFileSync(path.join(ROOT, f), "utf8")
+    .replace(/\/\*[\s\S]*?\*\//g, "")
+    .replace(/^\s*\/\/.*$/gm, "");
+  const literals = [...src.matchAll(/(["'`])((?:\\.|(?!\1)[^\\])*)\1/g)].map((m) => m[2]);
+  scanText(f, literals.join("\n"));
+}
+
 /* ── 2. Component source — JSX text and string literals only ────────── */
 for (const f of [...walk(path.join(ROOT, "src/components")), ...walk(path.join(ROOT, "src/app"))].filter((f) => f.endsWith(".tsx"))) {
   const src = fs.readFileSync(f, "utf8")
