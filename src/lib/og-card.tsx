@@ -24,17 +24,7 @@ export async function ogCard({
   /** Absolute URL of a photo on a white background. */
   photo?: string | null;
 }) {
-  // Confirm the photo is reachable before handing it to the renderer, which
-  // fails the whole card on a broken image.
-  let src: string | null = null;
-  if (photo) {
-    try {
-      const r = await fetch(photo, { method: "HEAD" });
-      if (r.ok) src = photo;
-    } catch {
-      src = null;
-    }
-  }
+  const src = photo ? await cardPhoto(photo) : null;
 
   return new ImageResponse(
     (
@@ -91,6 +81,34 @@ export async function ogCard({
     ),
     OG_SIZE,
   );
+}
+
+/**
+ * The photo as something the renderer can draw, or null to leave it out.
+ *
+ * ImageResponse (Satori + Resvg) decodes PNG, JPEG and GIF only. The October
+ * release photos are WebP (84 slots in images.ts), and a WebP photo failed the
+ * whole card with HTTP 500 — Search Console listed five part pages' share
+ * images under "Server error (5xx)" on 20 Nov 2026, and links to those pages
+ * showed no preview on WhatsApp or LinkedIn. Anything that is not already
+ * PNG/JPEG/GIF is converted to PNG here; if that fails, the card is drawn
+ * without the photo rather than not at all.
+ */
+async function cardPhoto(url: string): Promise<string | null> {
+  try {
+    const r = await fetch(url);
+    if (!r.ok) return null;
+    const type = r.headers.get("content-type") ?? "";
+    if (/image\/(png|jpe?g|gif)/i.test(type)) return url;
+    const { default: sharp } = await import("sharp");
+    const png = await sharp(Buffer.from(await r.arrayBuffer()))
+      .resize({ width: 960, height: 1040, fit: "inside", withoutEnlargement: true })
+      .png()
+      .toBuffer();
+    return `data:image/png;base64,${png.toString("base64")}`;
+  } catch {
+    return null;
+  }
 }
 
 /** Drop the " | Margo" brand suffix from a search title. */
