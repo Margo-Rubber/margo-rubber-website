@@ -142,6 +142,10 @@ export async function GET() {
     "",
     "- Figures above are the manufacturer's own and are the single source used across this site.",
     "- Only published pages are listed.",
+    "",
+    // Ownership proof for agentwebmap.com (an llms.txt directory), added
+    // 23 Nov 2026 so Margo can manage its listing there. Must stay verbatim.
+    "AgentWebMap verification: awm_2aaaaa2f9e7f7e832e275e0c372eb7c976e29788e0c5c9b2",
   ];
 
   const body = parts
