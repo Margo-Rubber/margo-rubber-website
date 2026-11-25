@@ -95,10 +95,11 @@ export async function organizationNode(): Promise<Node> {
       closes: entity.hoursSchema.closes,
     },
   };
-  if (entity.areaServed.length) contactPoint.areaServed = entity.areaServed;
-  // Indian enquiries have their own number: a second contact point for IN,
-  // so search engines can tell the two apart. The page itself shows the
-  // India number to visitors in India (RegionalContact).
+  if (entity.areaServed.length)
+    contactPoint.areaServed = entity.india ? entity.areaServed : [...new Set(["IN", ...entity.areaServed])];
+  // One number for every country since 25 Nov 2026. If Site settings ever
+  // holds an India number again, it becomes a second contact point for IN
+  // and RegionalContact shows it to visitors in India.
   const contactPoints: Node[] = [contactPoint];
   if (entity.india) {
     contactPoints.push({
