@@ -152,7 +152,7 @@ const AUTOMOTIVE: Landing[] = [
       items: [
         { name: "Suspension and chassis", body: "Silent-block, shackle and spring eye bushes for control arms, leaf springs and stabiliser links." },
         { name: "Engine and transmission", body: "AEM insulation bushes and torque rod bushes where heat and oil end a natural rubber part." },
-        { name: "Cab and body", body: "Cushion bushes and support pads that isolate a cab, bracket or panel from road vibration." },
+        { name: "Cab and body", body: "Cushion bushes and [support pads](/products/pads-stoppers-caps/big-support-pad) that isolate a cab, bracket or panel from road vibration." },
         { name: "Two-wheeler and commercial vehicle", body: "Swing-arm, handlebar and cab-mount bushes in volumes from 10,000 pieces per part number." },
       ],
     },
